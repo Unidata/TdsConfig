@@ -1,4 +1,4 @@
 TdsConfig
 =========
 
-TDS configuration for the generic IDD stream.
+TDS configuration for the thredds.ucar.edu.

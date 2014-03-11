@@ -1,41 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <threddsConfig>
-
+  
   <serverInformation>
-       <name>IDD TDS</name>
-    <logoUrl>/thredds/threddsIcon.gif</logoUrl>
-    <logoAltText>IDD TDS</logoAltText>
+    <name>THREDDS Data Server</name>
+    <logoUrl>/thredds/unidataLogo.jpg</logoUrl>
+    <logoAltText>TDS</logoAltText>
 
     <abstract>Scientific Data</abstract>
     <keywords>meteorology, atmosphere, climate, ocean, earth science</keywords>
-
+    
     <contact>
-      <name>Support</name>
-      <organization>My Group</organization>
-      <email>support@my.group</email>
+      <name>THREDDS Support</name>
+      <organization>Unidata</organization>
+      <email>support-thredds@unidata.ucar.edu</email>
       <!--phone></phone-->
     </contact>
     <hostInstitution>
-      <name>My Group</name>
-      <webSite>http://www.my.group/</webSite>
-      <logoUrl>myGroup.gif</logoUrl>
-      <logoAltText>My Group</logoAltText>
+      <name>Unidata</name>
+      <webSite>http://www.unidata.ucar.edu/</webSite>
+      <logoUrl>unidataIcon.gif</logoUrl>
+      <logoAltText>Unidata</logoAltText>
     </hostInstitution>
   </serverInformation>
 
   <contentRoots>
+    <contentRoot>motherlode</contentRoot>
     <contentRoot>idd</contentRoot>
   </contentRoots>
+
   <DataRoots>
     <idd>/data/ldm/pub</idd>
   </DataRoots>
+
+  <catalogRoot>topcatalog.xml</catalogRoot>
+  <catalogRoot>testCatalog.xml</catalogRoot>
+
+  <catalogRoot>casestudies/catalog.xml</catalogRoot>
+  <catalogRoot>casestudies/vgeeCatalog.xml</catalogRoot>
+  <catalogRoot>casestudies/ccs034Catalog.xml</catalogRoot>
+  <catalogRoot>casestudies/ccs039Catalog.xml</catalogRoot>
+  <catalogRoot>casestudies/july18_2002cat.xml</catalogRoot>
+
+  <catalogRoot>servers/radarCollections.xml</catalogRoot>
 
   <!--
    * Setup for generated HTML pages.
    *
    * NOTE: URLs may be absolute or relative, relative URLs must be relative
    * to the webapp URL, i.e., http://server:port/thredds/.
-    -->
+   * -->
   <htmlSetup>
     <!--
      * CSS documents used in generated HTML pages.
@@ -46,34 +59,31 @@
     <standardCssUrl>tds.css</standardCssUrl>
     <catalogCssUrl>tdsCat.css</catalogCssUrl>
     <openDapCssUrl>tdsDap.css</openDapCssUrl>
-
-    <!--
-     * The URLs (relative to "/thredds/") and alternate text for both
-     * folder and dataset icons used in HTML catalog views.
-     * -->
-    <folderIconUrl>folder.gif</folderIconUrl>
-    <folderIconAlt>Folder</folderIconAlt>
-    <datasetIconUrl>dataset.gif</datasetIconUrl>
-    <datasetIconAlt>Dataset</datasetIconAlt>
-
   </htmlSetup>
 
-  <!--
-   The <CatalogServices> element:
-   -->
   <CatalogServices>
-    <allowRemote>false</allowRemote>
+    <allowRemote>true</allowRemote>
   </CatalogServices>
 
   <NetcdfFileCache>
-    <minFiles>100</minFiles>
-    <maxFiles>200</maxFiles>
-    <scour>10 min</scour>
+    <minFiles>50</minFiles>
+    <maxFiles>100</maxFiles>
+    <scour>5 min</scour>
   </NetcdfFileCache>
+  <GribCollection>
+    <minFiles>5</minFiles>
+    <maxFiles>10</maxFiles>
+    <scour>5 min</scour>
+  </GribCollection>
+  <TimePartition>
+    <minFiles>5</minFiles>
+    <maxFiles>10</maxFiles>
+    <scour>5 min</scour>
+  </TimePartition>
 
   <HTTPFileCache>
-    <minFiles>25</minFiles>
-    <maxFiles>40</maxFiles>
+    <minFiles>5</minFiles>
+    <maxFiles>20</maxFiles>
     <scour>10 min</scour>
   </HTTPFileCache>
 
@@ -81,7 +91,16 @@
     <allow>true</allow>
     <scour>15 min</scour>
     <maxAge>30 min</maxAge>
+    <!--maxFileDownloadSize>52428800</maxFileDownloadSize-->
   </NetcdfSubsetService>
+
+   <FeatureCollection>
+     <RollingFileAppender>
+       <MaxFileSize>10 MB</MaxFileSize>
+       <MaxBackups>50</MaxBackups>
+       <Level>DEBUG</Level>
+     </RollingFileAppender>
+  </FeatureCollection>
 
   <WCS>
     <allow>true</allow>
@@ -93,8 +112,9 @@
   <WMS>
     <allow>true</allow>
     <allowRemote>false</allowRemote>
-    <maxImageWidth>2000</maxImageWidth>
-    <maxImageHeight>2000</maxImageHeight>
+    <allowFeatureInfo>true</allowFeatureInfo>
+    <maxImageWidth>5000</maxImageWidth>
+    <maxImageHeight>5000</maxImageHeight>
   </WMS>
 
   <NCISO>
@@ -103,11 +123,29 @@
     <isoAllow>true</isoAllow>
   </NCISO>
 
-  <!-- Viewer>my.package.MyViewer</Viewer -->
+  <CatalogGen>
+    <allow>false</allow>
+  </CatalogGen>
 
-  <FmrcInventory>
-    <openType>XML_ONLY</openType>
-  </FmrcInventory>
+  <!-- Enable DLwriter service but disable on remote catalogs.
+       -->
+  <DLwriter>
+    <allow>true</allow>
+    <allowRemote>false</allowRemote>
+  </DLwriter>
+
+  <!-- Enable DqcService.
+   -->
+  <DqcService>
+    <allow>true</allow>
+  </DqcService>
+
+  <!-- added 11/13/2012 jcaron -->
+  <!-- updated path 2013-08-20 sarms -->
+  <Netcdf4Clibrary>
+    <libraryPath>/opt/netcdf/netcdf-4/usr/lib</libraryPath>
+    <libraryName>netcdf</libraryName>
+  </Netcdf4Clibrary>
 
   <!-- nj22Config
     <ioServiceProvider class="edu.univ.ny.stuff.FooFiles"/>
@@ -119,17 +157,18 @@
   <DiskCache>
     <alwaysUse>false</alwaysUse>
     <scour>1 hour</scour>
-    <maxSize>250 M</maxSize>
+    <maxSize>1 Gb</maxSize>
   </DiskCache>
-
-  <GribIndexing>
-    <setExtendIndex>false</setExtendIndex>
-    <alwaysUseCache>false</alwaysUseCache>
-  </GribIndexing>
 
   <AggregationCache>
     <scour>24 hours</scour>
-    <maxAge>30 days</maxAge>
+    <maxAge>90 days</maxAge>
   </AggregationCache>
+
+   <GribIndex>
+     <neverUse>true</neverUse>
+   </GribIndex>
+
+
 
 </threddsConfig>
