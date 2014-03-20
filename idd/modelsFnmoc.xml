@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-         xmlns:xlink="http://www.w3.org/1999/xlink" name="Unidata THREDDS Data Server" version="1.0.2">
+         xmlns:xlink="http://www.w3.org/1999/xlink" name="Unidata THREDDS Data Server" version="1.0.6">
 
   <service name="latest" serviceType="Resolver" base=""/>
 
@@ -9,7 +9,7 @@
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
     <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
-    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
     <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
@@ -50,7 +50,7 @@
                        xlink:title="NOGAPS home page"/>
       </metadata-->
 
-      <featureCollection name="FNMOC-NAVGEM-Global_0p5deg" featureType="GRIB" harvest="true" path="grib/FNMOC/NAVGEM/Global_0p5deg">
+      <featureCollection name="FNMOC-NAVGEM-Global_0p5deg" featureType="GRIB1" harvest="true" path="grib/FNMOC/NAVGEM/Global_0p5deg">
         <metadata inherited="true">
           <documentation type="summary">FNMOC NAVGEM Global_0p5deg Model : Global Lat/Lon grid.
             Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out 66 hours.
@@ -62,7 +62,7 @@
         <collection spec="/data/ldm/pub/native/grid/FNMOC/NAVGEM/Global_0p5deg/FNMOC_NAVGEM_Global_0p5deg_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_NAVGEM_Global_0p5deg"
                     olderThan="5 min"/>
-        <update startup="nocheck" trigger="allow" />
+        <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC NAVGEM Global 0.5 degree"/>
@@ -81,7 +81,7 @@
                        xlink:title="FNMOC WW3 documentation"/>
       </metadata>
 
-      <featureCollection name="FNMOC-WW3-Global_1p0deg" featureType="GRIB" harvest="true" path="grib/FNMOC/WW3/Global_1p0deg">
+      <featureCollection name="FNMOC-WW3-Global_1p0deg" featureType="GRIB1" harvest="true" path="grib/FNMOC/WW3/Global_1p0deg">
         <metadata inherited="true">
           <documentation type="summary">FNMOC WW3 Global_1p0deg Model : Global Lat/Lon grid.
             Model runs are made at 0, and 12Z, with analysis and forecasts every 3 hours out 24 hours then every 6 hours out 180 hours.
@@ -92,7 +92,7 @@
         <collection spec="/data/ldm/pub/native/grid/FNMOC/WW3/Global_1p0deg/FNMOC_WW3_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_WW3_Global_1p0deg"
                     olderThan="5 min"/>
-        <update startup="nocheck" trigger="allow" />
+        <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC WW3 Global 1.0 degree"/>
@@ -103,7 +103,7 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="FNMOC-WW3-Mediterranean" featureType="GRIB" harvest="true" path="grib/FNMOC/WW3/Mediterranean">
+      <featureCollection name="FNMOC-WW3-Mediterranean" featureType="GRIB1" harvest="true" path="grib/FNMOC/WW3/Mediterranean">
         <metadata inherited="true">
           <documentation type="summary">FNMOC WW3 Mediterranean Model : Global Lat/Lon grid.
             Model runs are made at 0, and 12Z, with analysis and forecasts every 6 hours out 72 hours.
@@ -114,7 +114,7 @@
         <collection spec="/data/ldm/pub/native/grid/FNMOC/WW3/Mediterranean/FNMOC_WW3_Mediterranean_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_WW3_Mediterranean"
                     olderThan="5 min"/>
-        <update startup="nocheck" trigger="allow" />
+        <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC WW3 Mediterranean 0.2 degree"/>
@@ -133,7 +133,7 @@
                        xlink:title="FAROP documentation(pdf)"/>
       </metadata>
 
-      <featureCollection name="FNMOC-FAROP-Global_1p0deg" featureType="GRIB" harvest="true" path="grib/FNMOC/FAROP/Global_1p0deg">
+      <featureCollection name="FNMOC-FAROP-Global_1p0deg" featureType="GRIB1" harvest="true" path="grib/FNMOC/FAROP/Global_1p0deg">
         <metadata inherited="true">
           <documentation type="summary">FNMOC FAROP Global_1p0deg Model : Global Lat/Lon grid.
             Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out 9 hours.
@@ -144,7 +144,7 @@
         <collection spec="/data/ldm/pub/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_FAROP_Global_1p0deg"
                     olderThan="5 min"/>
-        <update startup="nocheck" trigger="allow" />
+        <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC FAROP Global 1.0 degree"/>
@@ -165,7 +165,7 @@
                        xlink:title="GCMD Notes"/>
       </metadata>
 
-      <featureCollection name="FNMOC-COAMPS-Western_Atlantic" featureType="GRIB" harvest="true" path="grib/FNMOC/COAMPS/Western_Atlantic">
+      <featureCollection name="FNMOC-COAMPS-Western_Atlantic" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Western_Atlantic">
         <metadata inherited="true">
           <documentation type="summary">FNMOC COAMPS Western Atlantic Model : Global Lat/Lon grid.
             Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 72 hours.
@@ -176,7 +176,7 @@
         <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Western_Atlantic/FNMOC_COAMPS_Western_Atlantic_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Western_Atlantic"
                     olderThan="5 min"/>
-        <update startup="nocheck" trigger="allow" />
+        <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC COAMPS Western Atlantic 0.2 degree"/>
@@ -187,7 +187,7 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="FNMOC-COAMPS-Central_America" featureType="GRIB" harvest="true" path="grib/FNMOC/COAMPS/Central_America">
+      <featureCollection name="FNMOC-COAMPS-Central_America" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Central_America">
         <metadata inherited="true">
           <documentation type="summary">FNMOC COAMPS Central America Model : Global Lat/Lon grid.
             Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 48 hours.
@@ -209,7 +209,7 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="FNMOC-COAMPS-Eastern_Pacific" featureType="GRIB" harvest="true" path="grib/FNMOC/COAMPS/Eastern_Pacific">
+      <featureCollection name="FNMOC-COAMPS-Eastern_Pacific" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Eastern_Pacific">
         <metadata inherited="true">
           <documentation type="summary">FNMOC COAMPS Eastern Pacific Model : Global Lat/Lon grid.
             Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 48 hours.
@@ -231,7 +231,7 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="FNMOC-COAMPS-Europe" featureType="GRIB" harvest="true" path="grib/FNMOC/COAMPS/Europe">
+      <featureCollection name="FNMOC-COAMPS-Europe" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Europe">
         <metadata inherited="true">
           <documentation type="summary">FNMOC COAMPS Europe Model : Global Lat/Lon grid.
             Model runs are made at 0 and 12Z, with analysis and forecasts every 6 hours out 72 hours.
@@ -260,7 +260,7 @@
                        xlink:title="NCODA documentation"/>
       </metadata>
 
-      <featureCollection name="FNMOC-NCODA-Global_Ocean" featureType="GRIB" harvest="true" path="grib/FNMOC/NCODA/Global_Ocean">
+      <featureCollection name="FNMOC-NCODA-Global_Ocean" featureType="GRIB1" harvest="true" path="grib/FNMOC/NCODA/Global_Ocean">
         <metadata inherited="true">
           <documentation type="summary">FNMOC NCODA Model : Global Lat/Lon grid.
             Model runs are made at 12Z, with analysis and forecasts at 0Z.
@@ -271,7 +271,7 @@
         <collection spec="/data/ldm/pub/native/grid/FNMOC/NCODA/Global_Ocean/FNMOC_NCODA_Global_Ocean_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_NCODA_Global_Ocean"
                     olderThan="5 min"/>
-        <update startup="nocheck" trigger="allow" />
+        <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC NCODA Global 0.25 degree"/>

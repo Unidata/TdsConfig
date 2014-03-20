@@ -1,4 +1,4 @@
 TdsConfig
 =========
 
-TDS configuration for the thredds.ucar.edu.
+TDS configuration for the TDS at thredds.ucar.edu.
