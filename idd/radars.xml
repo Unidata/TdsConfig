@@ -362,7 +362,7 @@
                          startTimeSubstitutionPattern="$1-$2-$3T$4:$5:00" duration="5 minutes"/>
       </datasetScan>
 
-      <featureCollection name="NWS NEXRAD Composite VIP 10 km" featureType="GRIB" harvest="true"
+      <featureCollection name="NWS NEXRAD Composite VIP 10 km" featureType="GRIB1" harvest="true"
                          path="grib/nexrad/composite/nws">
 
         <metadata inherited="true">
@@ -380,7 +380,7 @@
         <collection name="NEXRAD_NWS_Reflectivity"
                     spec="/data/ldm/pub/native/radar/10km_mosaic/**/.*grib1$"
                     dateFormatMark="#RADAR_10km_mosaic_#yyyyMMdd_HHmm"
-                    timePartition="1 day"
+                    timePartition="file"
                     olderThan="5 min"/>
 
         <update startup="nocheck" trigger="allow"/>
@@ -395,7 +395,7 @@
       </featureCollection>
 
 
-      <featureCollection name="Unidata NEXRAD Composite Reflectivity" featureType="GRIB" harvest="true"
+      <featureCollection name="Unidata NEXRAD Composite Reflectivity" featureType="GRIB2" harvest="true"
                          path="grib/nexrad/composite/unidata">
 
         <metadata inherited="true">
@@ -412,7 +412,7 @@
         <collection name="NEXRAD_Unidata_Reflectivity"
                     spec="/data/ldm/pub/native/radar/composite/grib2/N0R/**/.*grib2$"
                     dateFormatMark="#Level3_Composite_N0R_#yyyyMMdd_HHmm"
-                    timePartition="1 day"
+                    timePartition="file"
                     olderThan="5 min"/>
 
         <update startup="nocheck" trigger="allow"/>
@@ -422,6 +422,10 @@
           <filesSort>
             <lexigraphicByName increasing="false"/>
           </filesSort>
+        </gribConfig>
+
+        <gribConfig datasetTypes="Best Latest">
+          <parameter name="timeUnit" value="minute" />
         </gribConfig>
 
       </featureCollection>

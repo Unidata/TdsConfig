@@ -61,6 +61,7 @@
 
         <collection spec="/data/ldm/pub/native/grid/FNMOC/NAVGEM/Global_0p5deg/FNMOC_NAVGEM_Global_0p5deg_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_NAVGEM_Global_0p5deg"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
@@ -91,6 +92,7 @@
 
         <collection spec="/data/ldm/pub/native/grid/FNMOC/WW3/Global_1p0deg/FNMOC_WW3_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_WW3_Global_1p0deg"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
@@ -113,6 +115,7 @@
 
         <collection spec="/data/ldm/pub/native/grid/FNMOC/WW3/Mediterranean/FNMOC_WW3_Mediterranean_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_WW3_Mediterranean"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
@@ -143,6 +146,7 @@
 
         <collection spec="/data/ldm/pub/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_FAROP_Global_1p0deg"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
@@ -175,6 +179,7 @@
 
         <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Western_Atlantic/FNMOC_COAMPS_Western_Atlantic_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Western_Atlantic"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
@@ -197,6 +202,7 @@
 
         <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Central_America/FNMOC_COAMPS_Central_America_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Central_America"
+                    timePartition="file"
                     olderThan="5 min"/>
         <!-- tdm startup="true" rescan="0 5 * * * ? *" trigger="allow"/-->
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
@@ -219,6 +225,7 @@
 
         <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Eastern_Pacific/FNMOC_COAMPS_Eastern_Pacific_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Eastern_Pacific"
+                    timePartition="file"
                     olderThan="5 min"/>
         <!-- tdm startup="true" rescan="0 6 * * * ? *" trigger="allow"/-->
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
@@ -241,6 +248,7 @@
 
         <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Europe"
+                    timePartition="file"
                     olderThan="5 min"/>
         <!-- tdm startup="true" rescan="0 7 * * * ? *" trigger="allow"/-->
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
@@ -270,6 +278,7 @@
 
         <collection spec="/data/ldm/pub/native/grid/FNMOC/NCODA/Global_Ocean/FNMOC_NCODA_Global_Ocean_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_NCODA_Global_Ocean"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>

@@ -4,7 +4,7 @@
     <service name="odap" serviceType="OPENDAP" base="/thredds/dodsC/" />
     <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
     <service name="wms" serviceType="WMS" base="/thredds/wms/" />
-    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" />
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/" />
     <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
     <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
@@ -31,8 +31,10 @@
       </publisher>
     </metadata>
 
-    <featureCollection name="NMM_Primary_Domain" featureType="GRIB" harvest="true" path="grib/Unidata/NMM/Primary">
-      <collection spec="/data/ldm/pub/rtmodel/#yyMMddHH#_nmm.GrbF.*00" olderThan="5 min"/>
+    <featureCollection name="NMM_Primary_Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Primary">
+      <collection spec="/data/ldm/pub/rtmodel/#yyMMddHH#_nmm.GrbF.*00"
+                  timePartition="file"
+                  olderThan="5 min"/>
       <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
     </featureCollection>
 
@@ -55,8 +57,10 @@
       </netcdf>
     </datasetFmrc -->
 
-    <featureCollection name="NMM_Secondary_Domain" featureType="GRIB" harvest="true" path="grib/Unidata/NMM/Secondary">
-      <collection spec="/data/ldm/pub/rtmodel/#yyMMddHH#_nmm_alt1\.GrbF.*00" olderThan="5 min"/>
+    <featureCollection name="NMM_Secondary_Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Secondary">
+      <collection spec="/data/ldm/pub/rtmodel/#yyMMddHH#_nmm_alt1\.GrbF.*00"
+                  timePartition="file"
+                  olderThan="5 min"/>
       <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
     </featureCollection>
 
