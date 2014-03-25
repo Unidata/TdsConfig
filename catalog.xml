@@ -7,7 +7,7 @@
   <dataset name="Realtime data from IDD">
     <catalogRef xlink:href="idd/modelsNcep.xml" xlink:title="NCEP Model Data" name=""/>
     <catalogRef xlink:href="idd/modelsFnmoc.xml" xlink:title="FNMOC Model Data" name=""/>
-    <catalogRef xlink:href="modelsHrrr.xml" xlink:title="NOAA GSD Model Data" name=""/>
+    <catalogRef xlink:href="modelsOther.xml" xlink:title="Other Model Data" name=""/>
     <catalogRef xlink:href="idd/radars.xml" xlink:title="Radar Data" name=""/>
     <catalogRef xlink:href="idd/obsData.xml" xlink:title="Station Data" name=""/>
     <catalogRef xlink:href="idd/newPointObs.xml" xlink:title="Point Feature Collections" name=""/>
