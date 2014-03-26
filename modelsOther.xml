@@ -55,11 +55,12 @@
       <featureCollection name="RFC" featureType="GRIB1" harvest="true" path="grib/NPVU/RFC">
         <collection spec="/data/ldm/pub/native/grid/NPVU/RFC/**/.*grib1$"
                     dateFormatMark="yyyyMMdd#.grib1#"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
 
-        <gribConfig datasetTypes="Best LatestFile Files">
+        <gribConfig>
           <gdsHash from="-752078894" to="1193085709"/>
           <gdsName hash='-1960629519' groupName='KTUA:Arkansas-Red River RFC'/>
           <gdsName hash='-1819879011' groupName='KFWR:West Gulf RFC'/>
@@ -101,46 +102,46 @@
       <featureCollection name="AMPS-D1" featureType="GRIB1" harvest="true" path="grib/NCAR/AMPS/D1">
         <collection spec="/data/ldm/pub/native/grid/NCAR/AMPS/WRF/D1/**/.*grib1$"
                     dateFormatMark="yyyyMMdd_HHmm#.grib1#"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
-        <gribConfig datasetTypes="Best LatestFile Files" />
+        <tdm rewrite="test" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
       </featureCollection>
 
       <featureCollection name="AMPS-D2" featureType="GRIB1" harvest="true" path="grib/NCAR/AMPS/D2">
         <collection spec="/data/ldm/pub/native/grid/NCAR/AMPS/WRF/D2/**/.*grib1$"
                     dateFormatMark="yyyyMMdd_HHmm#.grib1#"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
-        <gribConfig datasetTypes="Best LatestFile Files" />
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
       </featureCollection>
 
       <featureCollection name="AMPS-D3" featureType="GRIB1" harvest="true" path="grib/NCAR/AMPS/D3">
         <collection spec="/data/ldm/pub/native/grid/NCAR/AMPS/WRF/D3/**/.*grib1$"
                     dateFormatMark="yyyyMMdd_HHmm#.grib1#"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
         <tdm startup="true" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
-        <gribConfig datasetTypes="Best LatestFile Files" />
       </featureCollection>
 
       <featureCollection name="AMPS-D5" featureType="GRIB1" harvest="true" path="grib/NCAR/AMPS/D5">
         <collection spec="/data/ldm/pub/native/grid/NCAR/AMPS/WRF/D5/**/.*grib1$"
                     dateFormatMark="yyyyMMdd_HHmm#.grib1#"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
-        <gribConfig datasetTypes="Best LatestFile Files" />
+        <tdm rewrite="test" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
       </featureCollection>
 
       <featureCollection name="AMPS-D6" featureType="GRIB1" harvest="true" path="grib/NCAR/AMPS/D6">
         <collection spec="/data/ldm/pub/native/grid/NCAR/AMPS/WRF/D6/**/.*grib1$"
                     dateFormatMark="yyyyMMdd_HHmm#.grib1#"
+                    timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
-        <gribConfig datasetTypes="Best LatestFile Files" />
+        <tdm rewrite="test" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
       </featureCollection>
 
     </dataset>
