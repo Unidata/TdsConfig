@@ -383,8 +383,8 @@
                     timePartition="file"
                     olderThan="5 min"/>
 
-        <update startup="nocheck" trigger="allow"/>
-        <tdm startup="true" rescan="0 10,25,40,55 * * * ? *" trigger="allow"/>
+        <update startup="never" trigger="allow"/>
+        <tdm startup="test" rescan="0 10,25,40,55 * * * ? *" trigger="allow"/>
 
         <gribConfig datasetTypes="Best LatestFile Files">
           <filesSort>
@@ -415,8 +415,8 @@
                     timePartition="file"
                     olderThan="5 min"/>
 
-        <update startup="nocheck" trigger="allow"/>
-        <tdm startup="true" rescan="0 10,25,40,55 * * * ? *" trigger="allow"/>
+        <update startup="never" trigger="allow"/>
+        <tdm startup="test" rescan="0 10,25,40,55 * * * ? *" trigger="allow"/>
 
         <gribConfig datasetTypes="Best Latest">
           <parameter name="timeUnit" value="minute" />

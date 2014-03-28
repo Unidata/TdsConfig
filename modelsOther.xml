@@ -55,7 +55,7 @@
       <featureCollection name="RFC" featureType="GRIB1" harvest="true" path="grib/NPVU/RFC">
         <collection spec="/data/ldm/pub/native/grid/NPVU/RFC/**/.*grib1$"
                     dateFormatMark="yyyyMMdd#.grib1#"
-                    timePartition="file"
+                    timePartition="directory"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
         <tdm rewrite="test" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>

@@ -936,7 +936,7 @@
                     dateFormatMark="#WW3_Regional_Alaska_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="nocheck" trigger="allow"/>
+        <update startup="never" trigger="allow"/>
         <tdm rewrite="test" rescan="0 4,19,34,49 * * * ? *" trigger="allow"/>
       </featureCollection>
 

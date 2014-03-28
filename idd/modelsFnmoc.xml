@@ -64,7 +64,7 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC NAVGEM Global 0.5 degree"/>
           <bestNamer name="Best FNMOC NAVGEM Global 0.5 degree Time Series" />
@@ -95,7 +95,7 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC WW3 Global 1.0 degree"/>
           <bestNamer name="Best FNMOC WW3 Global 1.0 degree Time Series" />
@@ -118,7 +118,7 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC WW3 Mediterranean 0.2 degree"/>
           <bestNamer name="Best FNMOC WW3 Mediterranean 0.2 degree Time Series" />
@@ -149,7 +149,7 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC FAROP Global 1.0 degree"/>
           <bestNamer name="Best FNMOC FAROP Global 1.0 degree Time Series" />
@@ -182,7 +182,7 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC COAMPS Western Atlantic 0.2 degree"/>
           <bestNamer name="Best FNMOC COAMPS Western Atlantic 0.2 degree Time Series" />
@@ -204,8 +204,8 @@
                     name="FNMOC_COAMPS_Central_America"
                     timePartition="file"
                     olderThan="5 min"/>
-        <!-- tdm startup="true" rescan="0 5 * * * ? *" trigger="allow"/-->
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
+        <!-- tdm rewrite="test" rescan="0 5 * * * ? *" trigger="allow"/-->
+        <tdm rewrite="test" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC COAMPS Central America 0.2 degree"/>
           <bestNamer name="Best FNMOC COAMPS Central America 0.2 degree Time Series" />
@@ -227,8 +227,8 @@
                     name="FNMOC_COAMPS_Eastern_Pacific"
                     timePartition="file"
                     olderThan="5 min"/>
-        <!-- tdm startup="true" rescan="0 6 * * * ? *" trigger="allow"/-->
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
+        <!-- tdm rewrite="test" rescan="0 6 * * * ? *" trigger="allow"/-->
+        <tdm rewrite="test" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC COAMPS Eastern Pacific 0.2 degree"/>
           <bestNamer name="Best FNMOC COAMPS Eastern Pacific 0.2 degree Time Series" />
@@ -250,8 +250,8 @@
                     name="FNMOC_COAMPS_Europe"
                     timePartition="file"
                     olderThan="5 min"/>
-        <!-- tdm startup="true" rescan="0 7 * * * ? *" trigger="allow"/-->
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
+        <!-- tdm rewrite="test" rescan="0 7 * * * ? *" trigger="allow"/-->
+        <tdm rewrite="test" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC COAMPS Europe 0.2 degree"/>
           <bestNamer name="Best FNMOC COAMPS Europe 0.2 degree Time Series" />
@@ -281,7 +281,7 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow" />
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 27 * * * ? *" trigger="allow"/>
         <gribConfig datasetTypes="Best LatestFile Files">
           <latestNamer name="Latest FNMOC NCODA Global 0.25 degree"/>
           <bestNamer name="Best FNMOC NCODA Global 0.25 degree Time Series" />
