@@ -75,8 +75,7 @@
       <featureCollection name="DGEX-CONUS_12km" featureType="GRIB2" harvest="true" path="grib/NCEP/DGEX/CONUS_12km">
         <metadata inherited="true">
           <documentation type="summary">
-            NCEP Model output Grid 185 (C) horizontal = 491 by 303 points, resolution 12 km, LambertConformal
-            projection.
+            NCEP Model output Grid 185 (C) horizontal = 491 by 303 points, resolution 12 km, LambertConformal projection.
             Model runs are made at 6 and 18Z, with forecasts starting at 84 hours, every 6 hours out to 192 hours
           </documentation>
         </metadata>
@@ -92,8 +91,7 @@
       <featureCollection name="DGEX-Alaska_12km" featureType="GRIB2" harvest="true" path="grib/NCEP/DGEX/Alaska_12km">
         <metadata inherited="true">
           <documentation type="summary">
-            NCEP Model output AWIPS Grid 186 (C) horizontal = 377 by 237 points, resolution 12 km, Polar Stereographic
-            projection.
+            NCEP Model output AWIPS Grid 186 (C) horizontal = 377 by 237 points, resolution 12 km, Polar Stereographic projection.
             Model runs are made at 0 and 12Z, with forecasts starting at 84 hours, every 6 hours out to 192 hours
           </documentation>
         </metadata>
@@ -167,8 +165,7 @@
       <featureCollection name="GFS-Global_0p5deg" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_0p5deg">
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours from 96 to 180 hours (4
-            to 7.5 days).
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours from 96 to 180 hours (4 to 7.5 days).
             Horizontal= 361 by 720 points, resolution 0.5 degree, Lat/Lon projection.
             Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
             layers.
@@ -186,8 +183,7 @@
       <featureCollection name="GFS-Global_onedeg" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_onedeg">
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 229 (F) Grid. Global Lat/Lon grid.
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out to 180 hours (7.5
-            days).
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out to 180 hours (7.5 days).
             Horizontal = 181 by 360 points, resolution 1 degree, Lat/Lon projection.
             Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
             layers.
