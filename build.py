@@ -39,7 +39,7 @@ def write_script(scriptpath, configpath):
     with open(scriptpath, 'w') as f:
         f.write('#!/bin/sh\n')
         f.write('wget https://raw.githubusercontent.com/Unidata/TdsConfig/master/%s\n' % configpath)
-        f.write('jar -x %s\n' % os.path.split(configpath)[-1])
+        f.write('jar xf %s\n' % os.path.split(configpath)[-1])
 
 if __name__ == '__main__':
     import argparse
