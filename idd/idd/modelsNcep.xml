@@ -167,11 +167,9 @@
       <featureCollection name="GFS-Global_0p5deg" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_0p5deg">
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours from 96 to 180 hours (4
-            to 7.5 days).
+            Model runs at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours from 96 to 180 hours (4 to 7.5 days).
             Horizontal= 361 by 720 points, resolution 0.5 degree, Lat/Lon projection.
-            Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
-            layers.
+            Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
           </documentation>
         </metadata>
 
@@ -186,8 +184,7 @@
       <featureCollection name="GFS-Global_onedeg" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_onedeg">
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 229 (F) Grid. Global Lat/Lon grid.
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out to 180 hours (7.5
-            days).
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out to 192 hours (8 days).
             Horizontal = 181 by 360 points, resolution 1 degree, Lat/Lon projection.
             Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
             layers.
@@ -205,10 +202,9 @@
       <featureCollection name="GFS-Global_2p5deg" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_2p5deg">
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 228 (A) Grid. Global Lat/Lon grid.
-            Model runs are made at every 12 hours from 192 to 384 hours (8 to 16 days).
+            Model runs every 12 hours from 204 to 384 hours (8 to 16 days).
             Horizontal= 73 by 144 points, resolution 2.5 degree, Lat/Lon projection.
-            Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
-            layers.
+            Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
           </documentation>
         </metadata>
 
@@ -721,7 +717,7 @@
         <documentation type="summary">NCEP Rapid Refresh (RR / RAP)) Model: frequently updated short-range weather
           forecasts. Replaced the Rapid Update Cycle (RUC/RUC2) on 05 May 2012 12Z.
           Model runs are made hourly, with analysis and hourly forecasts out to 3 hours; on the 0, 3, 6, 9, 12, 15,
-          18, and 21Z runs, there are also 4, 5, 6, 7, 8, 9, and 12 hour forecasts.
+          18, and 21Z runs, the hourly forecasts go out to 12 hours
         </documentation>
         <documentation xlink:href="http://rapidrefresh.noaa.gov/"
                        xlink:title="Earth System Research Laboratory (ESRL)"/>
