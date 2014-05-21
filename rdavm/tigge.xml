@@ -2,7 +2,7 @@
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
          xmlns:xlink="http://www.w3.org/1999/xlink"
-         name="Unidata THREDDS Data Server - NCEP models"
+         name="NCAR DSS THREDDS Data Server - TIGGE Data"
          version="1.0.6">
 
   <service name="latest" serviceType="Resolver" base=""/>
@@ -129,10 +129,10 @@
          <documentation type="summary">Centro de Previsao Tempo e Estudos Climaticos Brazil TIGGE data</documentation>
        </metadata>
 
-       <collection spec="/glade/p/rda/tigge/daily_output/sbjs/**/.*grib2$"
+       <collection spec="/glade/p/rda/tigge/daily_output/sbsj/**/.*grib2$"
                    name="TIGGE-Brazil"
                    timePartition="directory"
-                   dateFormatMark="#z_tigge_c_sbjs_#yyyyMMddHHmm"
+                   dateFormatMark="#z_tigge_c_sbsj_#yyyyMMddHHmm"
                    olderThan="5 min"/>
        <update startup="never" trigger="allow"/>
        <tdm rewrite="test" rescan="0 0 2 * * ? *" trigger="allow"/>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
          xmlns:xlink="http://www.w3.org/1999/xlink"
-         name="Unidata THREDDS Data Server"
+         name="NCAR DSS THREDDS Data Server"
          version="1.0.6">
 
   <dataset name="Realtime data from IDD">
-    <catalogRef xlink:href="idd.xml" xlink:title="Historical Unidata Internet Data Distribution (IDD) Gridded Model Data (ds335.0)" name="" />
+    <catalogRef xlink:href="reanal.xml" xlink:title="Reanalysis Datasets" name="" />
     <catalogRef xlink:href="tigge.xml" xlink:title="Near Real-time Online THORPEX Interactive Grand Global Ensemble (TIGGE) Data (ds330.2)" name="" />
+    <catalogRef xlink:href="idd.xml" xlink:title="Historical Unidata Internet Data Distribution (IDD) Gridded Model Data (ds335.0)" name="" />
   </dataset>
 </catalog>
