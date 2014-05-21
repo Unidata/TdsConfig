@@ -103,11 +103,8 @@
     <isoAllow>true</isoAllow>
   </NCISO>
 
-  <!-- added 11/13/2012 jcaron -->
-  <!-- updated path 2013-08-20 sarms -->
-  <!-- updated for lead 2014-03-20 jcaron -->
   <Netcdf4Clibrary>
-    <libraryPath>/opt/netcdf/lib</libraryPath>
+    <libraryPath>/usr/local/netcdf</libraryPath>
     <libraryName>netcdf</libraryName>
   </Netcdf4Clibrary>
 

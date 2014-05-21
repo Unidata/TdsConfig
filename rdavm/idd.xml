@@ -2,7 +2,7 @@
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
          xmlns:xlink="http://www.w3.org/1999/xlink"
-         name="Unidata THREDDS Data Server - NCEP models"
+         name="NCAR DSS THREDDS Data Server - NCEP models"
          version="1.0.6">
 
   <service name="latest" serviceType="Resolver" base=""/>
