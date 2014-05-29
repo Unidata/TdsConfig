@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS Radar Server"
+         version="1.0.1">
+  <service name="radarServer" serviceType="QueryCapability" base="/thredds/radarServer/"/>
+
+
+  <datasetScan name="NEXRAD Level II Radar for Case Study CCS039" collectionType="TimeSeries" ID="nexrad/level2/CCS039" path="nexrad/level2/CCS039"
+               location="/data/ldm/pub/casestudies/ccs039/images/radar/level2">
+    <metadata inherited="true">
+      <dataType>Radial</dataType>
+      <dataFormat>NEXRAD2</dataFormat>
+      <serviceName>radarServer</serviceName>
+      <documentation type="summary">NEXRAD Level II Radar WSR-88D for Case Study CCS039.</documentation>
+      <timeCoverage>
+        <start>1998-06-29T18:00:00</start>
+        <end>1998-06-29T23:00:00</end>
+      </timeCoverage>
+      <variables vocabulary="DIF">
+        <variable name="Reflectivity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="db"/>
+        <variable name="Velocity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="m/s"/>
+        <variable name="SpectrumWidth" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Spectrum Width" units="m/s"/>
+      </variables>
+      <documentation xlink:title="Available Stations" xlink:href="/thredds/radarServer/nexrad/level2/CCS039/stations.xml"/>
+      <documentation type="path">nexrad/level2/CCS039</documentation>
+      <geospatialCoverage>
+        <northsouth>
+          <start>20.0</start>
+          <size>40.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-135.0</start>
+          <size>70.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0.0</start>
+          <size>0.0</size>
+          <units>km</units>
+        </updown>
+      </geospatialCoverage>
+    </metadata>
+  </datasetScan>
+
+  <datasetScan name="NEXRAD Level III Radar for Case Study CCS039" collectionType="TimeSeries" ID="nexrad/level3/CCS039" path="nexrad/level3/CCS039"
+               location="/data/ldm/pub/casestudies/ccs039/images/radar/nids">
+    <metadata inherited="true">
+      <dataType>Radial</dataType>
+      <dataFormat>NIDS</dataFormat>
+      <serviceName>radarServer</serviceName>
+      <documentation type="summary">NEXRAD Level II Radar WSR-88D for Case Study CCS039.</documentation>
+      <documentation xlink:href="http://www.unidata.ucar.edu/data/radar.html" xlink:title="Unidata description of NOAAPORT radar data"/>
+      <documentation xlink:href="http://www.ncdc.noaa.gov/oa/radar/radarresources.html" xlink:title="NCDC Radar Resources"/>
+      <documentation xlink:href="http://lwf.ncdc.noaa.gov/oa/radar/radarproducts.html" xlink:title="Description of Radar Products (NCDC)"/>
+      <creator>
+        <name vocabulary="DIF">DOC/NOAA/NWS</name>
+        <contact url="http://www.roc.noaa.gov/" email="http://www.roc.noaa.gov/Feedback/"/>
+      </creator>
+      <geospatialCoverage>
+        <northsouth>
+          <start>20.0</start>
+          <size>40.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-135.0</start>
+          <size>70.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0.0</start>
+          <size>0.0</size>
+          <units>km</units>
+        </updown>
+      </geospatialCoverage>
+      <timeCoverage>
+        <start>1998-06-29T18:00:00</start>
+        <end>1998-06-29T23:00:00</end>
+      </timeCoverage>
+      <variables vocabulary="DIF">
+        <variable name="BREF1/BaseReflectivity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ"/>
+        <variable name="VEL1/BaseVelocity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots"/>
+      </variables>
+    </metadata>
+  </datasetScan>
+
+</catalog>
