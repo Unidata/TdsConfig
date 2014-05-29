@@ -9,6 +9,8 @@ def get_config_includes(path):
     # If we're given a directory, add filename
     if os.path.isdir(path):
         configfile = os.path.join(path, build_file)
+    else:
+        configfile = path
 
     # Return all lines in the file plus this path
     with open(configfile, 'r') as f:
