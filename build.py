@@ -57,7 +57,7 @@ if __name__ == '__main__':
     # If we're not given a directory, just look at all the dirs for a
     # config file.
     if not args.dirs:
-        args.dirs = [d for d in os.listdir()
+        args.dirs = [d for d in os.listdir('.')
                 if os.path.isdir(d) and os.path.exists(os.path.join(d, build_file))]
 
     for builddir in args.dirs:
