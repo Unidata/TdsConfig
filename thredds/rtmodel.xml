@@ -42,7 +42,7 @@
       <collection spec="/data/ldm/pub/rtmodel/#yyMMddHH#_nmm_alt1\.GrbF.*00"
                   timePartition="file"
                   olderThan="5 min"/>
-      <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
+      <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
     </featureCollection>
 
   </dataset>
