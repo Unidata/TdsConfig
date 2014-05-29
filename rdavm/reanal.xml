@@ -79,7 +79,6 @@
 
     <dataset name="NCEP Climate Forecast System Version 2 (CFSv2) Monthly Products (ds094.2)">
 
-
       <featureCollection name="NCEP Climate Forecast System Version 2 (CFSv2) Monthly Products (ds094.2)" featureType="GRIB2" harvest="true" path="grib/ds094.2/timeseries">
         <metadata inherited="true">
           <documentation type="summary">NCEP Climate Forecast System Version 2 (CFSv2) Monthly Products (ds094.2)</documentation>

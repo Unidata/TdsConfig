@@ -90,12 +90,12 @@
         </datasetScan>
       </dataset>
 
-      <datasetScan name="12.0" ID="SSEC/IDD-Satellite/12.0" path="satellite/12.0" location="/data/ldm/pub/native/satellite/12.0/" >
+      <!-- datasetScan name="12.0" ID="SSEC/IDD-Satellite/12.0" path="satellite/12.0" location="/data/ldm/pub/native/satellite/12.0/" >
           <filter>
             <include wildcard="*.gini"/>
           </filter>
           <addDatasetSize/>
-      </datasetScan>
+      </datasetScan -->
 
       <datasetScan name="13.3" ID="SSEC/IDD-Satellite/13.3" path="satellite/13.3" location="/data/ldm/pub/native/satellite/13.3/" >
          <filter>
