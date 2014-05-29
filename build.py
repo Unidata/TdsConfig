@@ -40,6 +40,8 @@ def write_script(scriptpath, configpath):
     'Create script for downloading this config file'
     with open(scriptpath, 'w') as f:
         f.write('#!/bin/sh\n')
+        # Fix any windows path separators
+        configpath = configpath.replace('\\', '/')
         f.write('wget https://raw.githubusercontent.com/Unidata/TdsConfig/master/%s\n' % configpath)
         f.write('jar xf %s\n' % os.path.split(configpath)[-1])
 
