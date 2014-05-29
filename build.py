@@ -72,11 +72,16 @@ if __name__ == '__main__':
             for fname,fullpath in get_files(d):
                 files[fname] = fullpath
 
-        # Write these into the zipfile
+        # Write wget script
         outpath = os.path.join(builddir, 'config.zip')
+        script = 'fetch.sh'
+        scriptpath = os.path.join(builddir, script)
+        write_script(scriptpath, outpath)
+
+        # Include the script in the zipfile
+        files[script] = scriptpath
+
+        # Write these into the zipfile
         with zipfile.ZipFile(outpath, 'w', zipfile.ZIP_DEFLATED) as outf:
             for f,fullpath in files.items():
                 outf.write(fullpath, f)
-
-        # Write wget script
-        write_script(os.path.join(builddir, 'fetch.sh'), outpath)
