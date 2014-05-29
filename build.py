@@ -50,7 +50,7 @@ if __name__ == '__main__':
     # Process directory on command line
     parser = argparse.ArgumentParser(
             description='Create THREDDS configuration sets.')
-    parser.add_argument('dirs', type=str, nargs='?',
+    parser.add_argument('dirs', type=str, nargs='*',
             help='Directories to create THREDDS configuration set')
     args = parser.parse_args()
 
