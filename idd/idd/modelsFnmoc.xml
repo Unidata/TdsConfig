@@ -192,52 +192,6 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="FNMOC-COAMPS-Central_America" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Central_America">
-        <metadata inherited="true">
-          <documentation type="summary">FNMOC COAMPS Central America Model : Global Lat/Lon grid.
-            Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 48 hours.
-            Horizontal= 161 by 301 points, resolution .2 degree, Lat/Lon projection.
-          </documentation>
-        </metadata>
-
-        <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Central_America/FNMOC_COAMPS_Central_America_#yyyyMMdd_HHmm#.grib1"
-                    name="FNMOC_COAMPS_Central_America"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <!-- tdm startup="true" rescan="0 5 * * * ? *" trigger="allow"/-->
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
-        <gribConfig datasetTypes="Best LatestFile Files">
-          <latestNamer name="Latest FNMOC COAMPS Central America 0.2 degree"/>
-          <bestNamer name="Best FNMOC COAMPS Central America 0.2 degree Time Series" />
-          <filesSort>
-            <lexigraphicByName increasing="false" />
-          </filesSort>
-        </gribConfig>
-      </featureCollection>
-
-      <featureCollection name="FNMOC-COAMPS-Eastern_Pacific" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Eastern_Pacific">
-        <metadata inherited="true">
-          <documentation type="summary">FNMOC COAMPS Eastern Pacific Model : Global Lat/Lon grid.
-            Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 48 hours.
-            Horizontal= 156 by 231 points, resolution .2 degree, Lat/Lon projection.
-          </documentation>
-        </metadata>
-
-        <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Eastern_Pacific/FNMOC_COAMPS_Eastern_Pacific_#yyyyMMdd_HHmm#.grib1"
-                    name="FNMOC_COAMPS_Eastern_Pacific"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <!-- tdm startup="true" rescan="0 6 * * * ? *" trigger="allow"/-->
-        <tdm startup="true" rescan="0 27 * * * ? *" trigger="allow"/>
-        <gribConfig datasetTypes="Best LatestFile Files">
-          <latestNamer name="Latest FNMOC COAMPS Eastern Pacific 0.2 degree"/>
-          <bestNamer name="Best FNMOC COAMPS Eastern Pacific 0.2 degree Time Series" />
-          <filesSort>
-            <lexigraphicByName increasing="false" />
-          </filesSort>
-        </gribConfig>
-      </featureCollection>
-
       <featureCollection name="FNMOC-COAMPS-Europe" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Europe">
         <metadata inherited="true">
           <documentation type="summary">FNMOC COAMPS Europe Model : Global Lat/Lon grid.
