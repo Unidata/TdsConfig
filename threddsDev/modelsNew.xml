@@ -73,15 +73,15 @@
 
         <featureCollection name="GFS-CONUS_40km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/CONUS_40km">
           <dataFormat>GRIB-2</dataFormat>
-          <metadata inherited="true">
-            <!-- documentation type="summary">NCEP GFS Model : AWIPS 212 (H) Grid. Regional - CONUS - Double 
+          <!-- metadata inherited="true">
+            <documentation type="summary">NCEP GFS Model : AWIPS 212 (H) Grid. Regional - CONUS - Double 
               Resolution (Lambert Conformal).
               Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 6 hours out 5 days.
               Horizontal = 129 by 85 points, resolution 40 km, Lambert Conformal projection.
               Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
               layers.
-            </documentation -->
-          </metadata>
+            </documentation>
+          </metadata -->
 
           <collection spec="/data/ldm/pub/native/grid/NCEP/GFS/CONUS_40km/GFS_CONUS_40km_#yyyyMMdd_HHmm#.grib2"
                       timePartition="file"
@@ -93,15 +93,15 @@
 
         <featureCollection name="GFS-CONUS_95km_grib2" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/CONUS_95km_grib2">
           <dataFormat>GRIB-2</dataFormat>
-          <metadata inherited="true">
-            <!-- documentation type="summary">NCEP GFS Model : AWIPS 213 (H) Grid. National - CONUS - Double Resolution (polar
+          <!-- metadata inherited="true">
+            <documentation type="summary">NCEP GFS Model : AWIPS 213 (H) Grid. National - CONUS - Double Resolution (polar
               stereographic).
               Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 6 hours out 5 days.
               Horizontal = 129 by 85 points, resolution 95.25 km, Polar Stereographic projection.
               Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
               layers.
-            </documentation -->
-          </metadata>
+            </documentation> 
+          </metadata -->
 
           <collection spec="/data/ldm/pub/native/grid/NCEP/GFS/CONUS_95km_grib2/GFS_CONUS_95km_#yyyyMMdd_HHmm#.grib2"
                       timePartition="file"
@@ -110,8 +110,8 @@
           <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" trigger="allow"/>
         </featureCollection>
 
-      </dataset><!-- end of GFS-->
-    </dataset><!-- end of NCEP-->
+      </dataset><!-- end of GFS -->
+    </dataset><!-- end of NCEP -->
 
     <dataset name="FNMOC Model Data">
 
@@ -150,12 +150,12 @@
 
 
         <featureCollection name="FNMOC-COAMPS-Equatorial_America" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Equatorial_America">
-          <metadata inherited="true">
-            <!-- documentation type="summary">FNMOC COAMPS Central America Model : Global Lat/Lon grid.
+          <!-- metadata inherited="true">
+            <documentation type="summary">FNMOC COAMPS Central America Model : Global Lat/Lon grid.
               Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 48 hours.
               Horizontal= 161 by 301 points, resolution .2 degree, Lat/Lon projection.
-            </documentation -->
-          </metadata>
+            </documentation>
+          </metadata -->
 
           <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_#yyyyMMdd_HHmm#.grib1"
                       name="FNMOC_COAMPS_Equatorial_America"
@@ -172,12 +172,12 @@
         </featureCollection>
 
         <featureCollection name="FNMOC-COAMPS-Northeast_Pacific" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Northeast_Pacific">
-          <metadata inherited="true">
-            <!-- documentation type="summary">FNMOC COAMPS Eastern Pacific Model : Global Lat/Lon grid.
+          <!-- metadata inherited="true">
+            <documentation type="summary">FNMOC COAMPS Eastern Pacific Model : Global Lat/Lon grid.
               Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 48 hours.
               Horizontal= 156 by 231 points, resolution .2 degree, Lat/Lon projection.
-            </documentation -->
-          </metadata>
+            </documentation>
+          </metadata -->
 
           <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Northeast_Pacific/FNMOC_COAMPS_Northeast_Pacific_#yyyyMMdd_HHmm#.grib1"
                       name="FNMOC_COAMPS_Northeast_Pacific"
@@ -194,12 +194,12 @@
         </featureCollection>
 
         <featureCollection name="FNMOC-COAMPS-Southern_California" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Southern_California">
-          <metadata inherited="true">
-            <!-- documentation type="summary">FNMOC COAMPS Southern California Model : Global Lat/Lon grid.
+          <!-- metadata inherited="true">
+            <documentation type="summary">FNMOC COAMPS Southern California Model : Global Lat/Lon grid.
               Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 48 hours.
               Horizontal= 156 by 231 points, resolution .2 degree, Lat/Lon projection.
-            </documentation -->
-          </metadata>
+            </documentation>
+          </metadata -->
 
           <collection spec="/data/ldm/pub/native/grid/FNMOC/COAMPS/Southern_California/FNMOC_COAMPS_Southern_California_#yyyyMMdd_HHmm#.grib1"
                       name="FNMOC_COAMPS_Southern_California"
