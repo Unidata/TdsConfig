@@ -33,7 +33,6 @@
   </DataRoots>
 
   <catalogRoot>topcatalog.xml</catalogRoot>
-  <catalogRoot>testCatalog.xml</catalogRoot>
 
   <catalogRoot>casestudies/catalog.xml</catalogRoot>
   <catalogRoot>casestudies/vgeeCatalog.xml</catalogRoot>
@@ -41,7 +40,7 @@
   <catalogRoot>casestudies/ccs039Catalog.xml</catalogRoot>
   <catalogRoot>casestudies/july18_2002cat.xml</catalogRoot>
 
-  <catalogRoot>servers/radarCollections.xml</catalogRoot>
+  <catalogRoot>radar/radarCollections.xml</catalogRoot>
 
   <!--
    * Setup for generated HTML pages.

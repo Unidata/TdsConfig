@@ -83,7 +83,7 @@
 
     </dataset>
 
-    <dataset name="NCAR Antarctic Mesoscale Prediction System (AMPS)">
+    <!-- dataset name="NCAR Antarctic Mesoscale Prediction System (AMPS)">
 
       <metadata inherited="true">
         <dataFormat>GRIB-1</dataFormat>
@@ -144,7 +144,7 @@
         <tdm rewrite="test" rescan="0 14,29,44,59 * * * ? *" trigger="allow"/>
       </featureCollection>
 
-    </dataset>
+    </dataset -->
 
   </dataset>
 
