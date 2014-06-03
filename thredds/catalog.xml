@@ -18,6 +18,7 @@
   <dataset name="Other Unidata Data">
     <catalogRef xlink:href="rtmodel.xml" xlink:title="Unidata Real-time Regional Model" name=""/>
     <catalogRef xlink:href="unidata.xml" xlink:title="NEXRAD National Composites From Unidata" name=""/>
+    <catalogRef xlink:href="casestudies/catalog.xml" xlink:title="Unidata case studies" name=""/>
   </dataset>
 </catalog>
 
