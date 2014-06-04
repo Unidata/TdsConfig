@@ -41,8 +41,10 @@ def write_script(scriptpath, configpath):
     with open(scriptpath, 'w') as f:
         f.write('#!/bin/sh\n')
         # Fix any windows path separators
+        configfile = os.path.split(configpath)[-1]
         configpath = configpath.replace('\\', '/')
-        f.write('wget https://raw.githubusercontent.com/Unidata/TdsConfig/master/%s\n' % configpath)
+        f.write('wget https://raw.githubusercontent.com/Unidata/TdsConfig/master/%s -O %s\n'
+                % (configpath, configfile))
         f.write('jar xf %s\n' % os.path.split(configpath)[-1])
 
 if __name__ == '__main__':
