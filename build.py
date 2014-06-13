@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+from __future__ import print_function
+
 import os
 import os.path
 
@@ -65,6 +67,8 @@ if __name__ == '__main__':
                 if os.path.isdir(d) and os.path.exists(os.path.join(d, build_file))]
 
     for builddir in args.dirs:
+        print('Processing {}: '.format(builddir), end='')
+
         # Assemble a map of the path in the zipfile to the corresponding
         # path on our filesystem. All filepaths are relative to the
         # containing directory so that files in included directories
@@ -87,3 +91,4 @@ if __name__ == '__main__':
         with zipfile.ZipFile(outpath, 'w', zipfile.ZIP_DEFLATED) as outf:
             for f,fullpath in files.items():
                 outf.write(fullpath, f)
+        print('wrote {}'.format(outpath))
