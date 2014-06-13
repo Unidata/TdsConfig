@@ -292,7 +292,7 @@
         <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" trigger="allow"/>
       </featureCollection>
 
-      <featureCollection name="GFS-CONUS_95km" featureType="GRIB1" harvest="true" path="grib/NCEP/GFS/CONUS_95km">
+      <!-- featureCollection name="GFS-CONUS_95km" featureType="GRIB1" harvest="true" path="grib/NCEP/GFS/CONUS_95km">
         <dataFormat>GRIB-1</dataFormat>
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 213 (H) Grid. National - CONUS - Double Resolution (polar
@@ -309,7 +309,7 @@
                     olderThan="5 min"/>
         <update startup="never" trigger="allow"/>
         <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" trigger="allow"/>
-      </featureCollection>
+      </featureCollection -->
 
     </dataset>
 
