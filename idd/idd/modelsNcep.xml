@@ -297,7 +297,7 @@
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 213 (H) Grid. National - CONUS - Double Resolution (polar
             stereographic).
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 6 hours out 5 days.
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 6 hours out 4 days.
             Horizontal = 129 by 85 points, resolution 95.25 km, Polar Stereographic projection.
             Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
             layers.
