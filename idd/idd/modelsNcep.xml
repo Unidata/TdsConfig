@@ -304,7 +304,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="/data/ldm/pub/native/grid/NCEP/GFS/CONUS_95km_grib2/GFS_CONUS_95km_#yyyyMMdd_HHmm#.grib2"
+        <collection spec="/data/ldm/pub/native/grid/NCEP/GFS/CONUS_95km/GFS_CONUS_95km_#yyyyMMdd_HHmm#.grib2"
                     timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow"/>
