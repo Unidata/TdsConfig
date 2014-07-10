@@ -24,6 +24,7 @@
   </serverInformation>
 
   <catalogRoot>radar/radarCollections.xml</catalogRoot>
+  <catalogRoot>waterml.xml</catalogRoot>
 
   <!--
    * Setup for generated HTML pages.
