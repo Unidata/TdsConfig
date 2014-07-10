@@ -6,7 +6,7 @@
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
   </service>
 
-  <datasetScan name="NCSS Point Data / Water ML examples" path="pointData/waterML/example" location="public/waterml">
+  <datasetScan name="NCSS Point Data / Water ML examples" path="pointData/waterML/example" location="/data/thredds/tds-test/content/thredds/public/waterml/">
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <authority>edu.ucar.unidata</authority>
