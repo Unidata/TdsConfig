@@ -19,6 +19,15 @@
         <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu" />
       </publisher>
     </metadata>
+
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+
   </datasetScan>
 
   <datasetScan name="CF 1.6 Discrete Sampling Geometry (DSG) appendix H examples" path="pointData/cf_doc_dsg/example" location="/data/thredds/tds-test/content/thredds/public/cfDocDsgExamples">
@@ -34,6 +43,15 @@
         <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu" />
       </publisher>
     </metadata>
+
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+
   </datasetScan>
 </catalog>
 
