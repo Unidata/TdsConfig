@@ -6,7 +6,7 @@
 
   <dataset name="Realtime data from IDD">
     <catalogRef xlink:href="idd/modelsNcep.xml" xlink:title="NCEP Model Data" name=""/>
-    <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/modelsHrrr.html" xlink:title="NOAA GSD Model Data" name="" />
+    <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/modelsHrrr.xml" xlink:title="NOAA GSD Model Data" name="" />
     <catalogRef xlink:href="idd/modelsFnmoc.xml" xlink:title="FNMOC Model Data" name=""/>
     <catalogRef xlink:href="modelsOther.xml" xlink:title="Other Model Data" name=""/>
     <catalogRef xlink:href="idd/radars.xml" xlink:title="Radar Data" name=""/>
