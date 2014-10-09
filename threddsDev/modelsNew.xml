@@ -85,7 +85,7 @@
                       timePartition="file"
                       olderThan="5 min"/>
           <update startup="never" trigger="allow"/>
-          <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" trigger="allow"/>
+          <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
         </featureCollection>
 
       </dataset><!-- end of HRRR -->
