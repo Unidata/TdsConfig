@@ -6,6 +6,7 @@
 
   <service name="all" serviceType="Compound" base="">
     <service name="odap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="dap4" serviceType="DAP4" base="/thredds/dap4/" />
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
     <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
@@ -35,6 +36,13 @@
   <datasetScan name="OPeNDAP Test Data" ID="testdods" path="testdods" location="/data/testdods/">
     <metadata inherited="true">
       <serviceName>odap</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+  </datasetScan>
+
+  <datasetScan name="DAP4 Test Data" ID="testdods4" path="testdods4" location="/data/testdods/">
+    <metadata inherited="true">
+      <serviceName>dap4</serviceName>
       <dataType>Grid</dataType>
     </metadata>
   </datasetScan>
