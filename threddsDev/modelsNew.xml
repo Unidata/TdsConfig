@@ -56,42 +56,39 @@
       </publisher>
       <timeCoverage>
         <end>present</end>
-        <duration>45 days</duration>
+        <duration>1 day</duration>
       </timeCoverage>
     </metadata>
     <dataset name="NCEP Model Data">
 
-      <dataset name="Global Forecast System (GFS)">
+      <dataset name="High Resolution Rapid Refresh (HRRR)">
 
         <metadata inherited="true">
-          <documentation type="summary">NCEP Global Forecast System Model, previously called AVN/MRF (Medium Range Forecast)</documentation>
-          <documentation xlink:href="http://meted.ucar.edu/nwp/pcu2/avintro.htm"
-                         xlink:title="COMET MetEd (Meteorology Education and Training) documentation"/>
-          <documentation xlink:href="http://www.nco.ncep.noaa.gov/pmb/products/gfs/"
+          <documentation type="summary">NCEP High Resolution Rapid Refresh</documentation>
+          <documentation xlink:href="http://www.nco.ncep.noaa.gov/pmb/products/hrrr/"
                          xlink:title="NCEP Model Notes"/>
         </metadata>
 
-        <featureCollection name="GFS-CONUS_40km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/CONUS_40km">
+        <featureCollection name="HRRR-CONUS_3km" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_3km">
           <dataFormat>GRIB-2</dataFormat>
-          <!-- metadata inherited="true">
-            <documentation type="summary">NCEP GFS Model : AWIPS 212 (H) Grid. Regional - CONUS - Double 
-              Resolution (Lambert Conformal).
-              Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 6 hours out 5 days.
-              Horizontal = 129 by 85 points, resolution 40 km, Lambert Conformal projection.
-              Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
+          <metadata inherited="true">
+            <documentation type="summary">NCEP HRRR Model : AWIPS 184 (C) Grid. 2.5 km NDFD grid over CONUS 
+              (Lambert Conformal).
+              Model runs are made hourly, with analysis and forecasts every hour out 15 hours.
+              Horizontal = 2145 by 1377 points, resolution 3 km, Lambert Conformal projection.
+              Vertical = 1000 to 500 hPa mandatory pressure levels (5 levels); surface, height above ground, pressure
               layers.
             </documentation>
-          </metadata -->
+          </metadata>
 
-          <collection spec="/data/ldm/pub/native/grid/NCEP/GFS/CONUS_40km/GFS_CONUS_40km_#yyyyMMdd_HHmm#.grib2"
+          <collection spec="/data/ldm/pub/native/grid/NCEP/HRRR/CONUS_3km/HRRR_CONUS_3km_#yyyyMMdd_HHmm#.grib2"
                       timePartition="file"
                       olderThan="5 min"/>
           <update startup="never" trigger="allow"/>
-          <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" trigger="allow"/>
+          <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
         </featureCollection>
 
-      </dataset><!-- end of GFS -->
+      </dataset><!-- end of HRRR -->
     </dataset><!-- end of NCEP -->
   </dataset><!-- end of test dataset -->
 </catalog>
-
