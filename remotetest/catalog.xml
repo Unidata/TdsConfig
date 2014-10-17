@@ -12,40 +12,41 @@
     <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/" />
   </service>
 
-  <datasetRoot path="test" location="content/testdata/" />
+  <datasetRoot path="testdata" location="content/testdata/" />
   <datasetRoot path="restrict" location="content/testdata/"/>
-
-  <dataset name="Test Single Dataset" ID="testDataset" serviceName="dap"  urlPath="test/testData.nc" dataType="Grid"/>
-
-  <dataset name="Test Single Dataset 2" ID="testDataset2" serviceName="odap" urlPath="test/testData2.grib2" dataType="Grid"/>
 
   <dataset name="Test Restricted Dataset" ID="testRestrictedDataset" urlPath="restrict/testData.nc" restrictAccess="tiggeData">
     <serviceName>all</serviceName>
     <dataType>Grid</dataType>
   </dataset>
 
-  <datasetScan name="Test all files in a directory" ID="testDatasetScan" path="testAll" location="content/testdata">
+  <datasetScan name="Standard Test Data" ID="testDatasetScan" path="testdata" location="content/testdata">
 
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <dataType>Grid</dataType>
     </metadata>
 
-    <filter>
-      <include wildcard="*eta_211.nc"/>
-      <include wildcard="testgrid*.nc"/>
-    </filter>
+    <!--filter-->
+     <!--include wildcard="*.nc"/-->
+     <!--include wildcard="*.ncx"/-->
+     <!--include wildcard="*.ncx2"/-->
+     <!--include wildcard="*.gbx9"/-->
+     <!--include wildcard="*eta_211.nc"/-->
+     <!--include wildcard="testgrid*.nc"/-->
+    <!--/filter-->
 
   </datasetScan>
 
   <datasetScan name="OPeNDAP Test Data" ID="testDods" path="testdods" location="content/testdods/">
     <metadata inherited="true">
       <serviceName>odap</serviceName>
+      <serviceName>dap4</serviceName>
       <dataType>Grid</dataType>
     </metadata>
-    <filter>
-      <include wildcard="*.nc"/>
-    </filter>
+    <!--filter-->
+      <!--include wildcard="*.nc"/-->
+    <!--/filter-->
   </datasetScan>
 
   <catalogRef xlink:title="Test Enhanced Catalog" xlink:href="enhancedCatalog.xml" name=""/>
