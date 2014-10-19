@@ -7,35 +7,23 @@
     <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
     <service name="dap4" serviceType="DAP4" base="/thredds/dap4/" />
     <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/" />
     <!--service name="wcs" serviceType="WCS" base="/thredds/wcs/" /-->
     <!--service name="wms" serviceType="WMS" base="/thredds/wms/" /-->
-    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/" />
   </service>
 
-  <datasetRoot path="testdata" location="content/testdata/" />
-  <datasetRoot path="restrict" location="content/testdata/"/>
+  <datasetRoot path="restrict" location="content/testdata/" />
 
   <dataset name="Test Restricted Dataset" ID="testRestrictedDataset" urlPath="restrict/testData.nc" restrictAccess="tiggeData">
     <serviceName>all</serviceName>
     <dataType>Grid</dataType>
   </dataset>
 
-  <datasetScan name="Standard Test Data" ID="testDatasetScan" path="testdata" location="content/testdata">
-
+  <datasetScan name="Standard Test Data" ID="testDatasetScan" path="testdata" location="content/testdata/">
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <dataType>Grid</dataType>
     </metadata>
-
-    <!--filter-->
-     <!--include wildcard="*.nc"/-->
-     <!--include wildcard="*.ncx"/-->
-     <!--include wildcard="*.ncx2"/-->
-     <!--include wildcard="*.gbx9"/-->
-     <!--include wildcard="*eta_211.nc"/-->
-     <!--include wildcard="testgrid*.nc"/-->
-    <!--/filter-->
-
   </datasetScan>
 
   <datasetScan name="OPeNDAP Test Data" ID="testDods" path="testdods" location="content/testdods/">
@@ -44,9 +32,6 @@
       <serviceName>dap4</serviceName>
       <dataType>Grid</dataType>
     </metadata>
-    <!--filter-->
-      <!--include wildcard="*.nc"/-->
-    <!--/filter-->
   </datasetScan>
 
   <catalogRef xlink:title="Test Enhanced Catalog" xlink:href="enhancedCatalog.xml" name=""/>
