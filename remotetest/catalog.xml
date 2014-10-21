@@ -28,8 +28,7 @@
 
   <datasetScan name="OPeNDAP Test Data" ID="testDods" path="testdods" location="content/testdods/">
     <metadata inherited="true">
-      <serviceName>odap</serviceName>
-      <serviceName>dap4</serviceName>
+      <serviceName>all</serviceName>
       <dataType>Grid</dataType>
     </metadata>
   </datasetScan>
