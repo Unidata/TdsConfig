@@ -69,19 +69,19 @@
                          xlink:title="NCEP Model Notes"/>
         </metadata>
 
-        <featureCollection name="HRRR-CONUS_3km" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_3km">
+        <featureCollection name="HRRR-CONUS_2p5km" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km">
           <dataFormat>GRIB-2</dataFormat>
           <metadata inherited="true">
             <documentation type="summary">NCEP HRRR Model : AWIPS 184 (C) Grid. 2.5 km NDFD grid over CONUS 
               (Lambert Conformal).
               Model runs are made hourly, with analysis and forecasts every hour out 15 hours.
-              Horizontal = 2145 by 1377 points, resolution 3 km, Lambert Conformal projection.
+              Horizontal = 2145 by 1377 points, resolution 2.5 km, Lambert Conformal projection.
               Vertical = 1000 to 500 hPa mandatory pressure levels (5 levels); surface, height above ground, pressure
               layers.
             </documentation>
           </metadata>
 
-          <collection spec="/data/ldm/pub/native/grid/NCEP/HRRR/CONUS_3km/HRRR_CONUS_3km_#yyyyMMdd_HHmm#.grib2"
+          <collection spec="/data/ldm/pub/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
                       timePartition="file"
                       olderThan="5 min"/>
           <update startup="never" trigger="allow"/>
