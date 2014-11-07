@@ -163,7 +163,7 @@ CONDUIT	^data/nccf/com/nam/prod/nam.(........)/nam.t(..)z.grbgrd.*grib2
 # NAM Fire Weather Nest
 #
 CONDUIT	^data/nccf/com/nam/prod/nam\.(........)/nam.t(..)z\.firewxnest
-	FILE    -close
+	FILE
 	data/pub/native/grid/NCEP/NAM/Firewxnest/NAM_Firewxnest_\1_\200.grib2
 #
 # ---------------------------------------------
@@ -179,13 +179,13 @@ NGRID	^[LM].U... KWBN ([0-3][0-9])([0-2][0-9])([0-6][0-9])
 # NDFD CONUS 5 km (FROM CONDUIT)
 #
 CONDUIT	grib2/nwstg/NWS_0/..../(........)(....)
-	FILE    -close
+	FILE
 	data/pub/native/grid/NCEP/NDFD/conduit/CONUS_5km/NDFD_CONUS_5km_conduit_\1_\2.grib2
 #
 # NDFD Fire Weather CONUS
 #
 CONDUIT	L.UZ9[78]_KWNS.*grib2/nwstg/NWS_0/..../(........)(....)
-	FILE    -close
+	FILE
 	data/pub/native/grid/NCEP/NDFD/Fireweather/CONUS/NDFD_Fireweather_CONUS_\1_\2.grib2
 #
 # ---------------------------------------

@@ -1,0 +1,33 @@
+#
+# Contains LDM pqacts for the Unidata NEXRAD Composites served by the TDS
+#   catalog unidata.xml
+#
+# ==============================================
+# = Unidata RADAR composites available via IDD =
+# ==============================================
+#
+# --------------------------------------
+# - Unidata Generated RADAR Composites -
+# --------------------------------------
+#
+# NEXRAD Level III radar composites in GINI format (png compressed)
+#
+FNEXRAD	^rad/NEXRCOMP/(...)/(...)_(........)_(....)
+	PIPE	-close
+	util/ldmfile.sh data/pub/native/radar/composite/gini/\2/\1/\3/Level3_Composite_\2_\1_\3_\4.gini
+#
+# UPC generated NEXRAD Level III radar composites in GRIB format
+#
+# | radar_mosaic_national !grib/unidata/UPC_1/#255/200705182038/F000/N0R/sfc! 000000
+#
+FNEXRAD	grib/unidata/UPC_1/#255/(........)(....)/F.../(...)
+	FILE
+	data/pub/native/radar/composite/grib1/\3/\1/Level3_Composite_\3_\1_\2.grib1
+#
+# UPC Generated NEXRAD ???
+#
+# | radar_mosaic_national !grib2/unidata/UPC_255/#000/200705182038F000/N0R/
+#
+FNEXRAD	grib2/unidata/UPC_255/#000/(........)(....)F.../(...)
+	FILE
+	data/pub/native/radar/composite/grib2/\3/\1/Level3_Composite_\3_\1_\2.grib2

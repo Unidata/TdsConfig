@@ -244,14 +244,15 @@
         </datasetScan>
       </dataset>
     </dataset>
-    <datasetScan name="Soundings Vertical Data" collectionType="TimeSeries" harvest="true" ID="NWS/Sounding/Vertical"
+    <datasetScan name="Wind Profile Data for KBOU (Any Frequency)" collectionType="TimeSeries" harvest="true" ID="NWS/Sounding/Vertical"
                  path="station/soundings" location="/data/ldm/pub/native/profiler/bufr/profiler3/">
 
       <metadata inherited="true">
         <serviceName>forBufr</serviceName>
-        <documentation type="summary">Vertical Soundings from a station</documentation>
-        <documentation xlink:href="http://metar.noaa.gov/" xlink:title="NWS/NOAA information"/>
+        <documentation type="summary">Vertical Wind Profiles from KBOU</documentation>
+        <documentation xlink:href="http://www.profiler.noaa.gov/bufr_format_docs/fileNameWmoFmt.html" xlink:title="NWS/NOAA information"/>
         <documentation>Vertical Soundings</documentation>
+        <dataFormat>BUFR</dataFormat>
         <keyword>soundings</keyword>
         <keyword>vertical soundings</keyword>
         <geospatialCoverage>
