@@ -1,0 +1,39 @@
+#
+# Contains LDM pqacts for the model output served by the TDS
+#   catalog newPointObs.xml
+#
+# ======================================
+# = Observation data available via IDD =
+# ======================================
+#
+# ----------------------------
+# - Decoded Observation Data -
+# ----------------------------
+#
+# Metar Station Data 
+#
+DDS|IDS	^S(A....|P....|XUS8.) .... ([0-3][0-9])
+	PIPE    decoders/metar2nc.new1.2
+	etc/cdl/metar.cdl.new1.2
+	data/pub/decoded/netcdf/surface/metar
+#
+# Surface Buoy Point Data
+#
+DDS|IDS	^S[IMNS].... .... ([0-3][0-9])
+	PIPE    decoders/buoy2nc
+	etc/cdl/buoy.cdl
+	data/pub/decoded/netcdf/surface/buoy
+#
+# Surface Synoptic Point Data
+#
+DDS|IDS	^SM.... .... ([0-3][0-9])
+	PIPE    decoders/syn2nc
+	etc/cdl/syn.cdl
+	data/pub/decoded/netcdf/surface/synoptic
+#
+# Upper Air Point Data
+#
+DDS|IDS	^U[ABDEFGHIJKLMPQRSTXZ].... .... ([0-3][0-9])
+	PIPE    decoders/ua2nc
+	etc/cdl/raob.cdl
+	data/pub/decoded/netcdf/upperair
