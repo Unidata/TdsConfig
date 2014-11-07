@@ -14,7 +14,7 @@
 #
 FNMOC	(^US058.{4}-GR1mdl\.0078_0200_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/NCODA/Global_Ocean/FNMOC_NCODA_Global_Ocean_\2\3\4_\500.grib1
+	[DATA_DIR]/native/grid/FNMOC/NCODA/Global_Ocean/FNMOC_NCODA_Global_Ocean_\2\3\4_\500.grib1
 #
 # --------------------------------------------
 # - NAVy Global Environmental Model (NAVGEM) -
@@ -24,7 +24,7 @@ FNMOC	(^US058.{4}-GR1mdl\.0078_0200_.{5}.{4})(.{4})(..)(..)(..)(.*)
 #
 FNMOC	(^US058.{4}-GR1mdl\.0018_0056_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/NAVGEM/Global_0p5deg/FNMOC_NAVGEM_Global_0p5deg_\2\3\4_\500.grib1
+	[DATA_DIR]/native/grid/FNMOC/NAVGEM/Global_0p5deg/FNMOC_NAVGEM_Global_0p5deg_\2\3\4_\500.grib1
 #
 # ------------------------------------------------------------
 # - Forecast of Aerosol Radiative Optical Properties (FAROP) -
@@ -34,7 +34,7 @@ FNMOC	(^US058.{4}-GR1mdl\.0018_0056_.{5}.{4})(.{4})(..)(..)(..)(.*)
 #
 FNMOC	(^US058.{4}-GR1mdl\.0135_0240_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_\2\3\4_\500.grib1
+	[DATA_DIR]/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_\2\3\4_\500.grib1
 #
 # -----------------------
 # - WAVEWATCH III (WW3) -
@@ -44,13 +44,13 @@ FNMOC	(^US058.{4}-GR1mdl\.0135_0240_.{5}.{4})(.{4})(..)(..)(..)(.*)
 #
 FNMOC	(^US058.{4}-GR1mdl\.0110_0240_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/WW3/Global_1p0deg/FNMOC_WW3_Global_1p0deg_\2\3\4_\500.grib1
+	[DATA_DIR]/native/grid/FNMOC/WW3/Global_1p0deg/FNMOC_WW3_Global_1p0deg_\2\3\4_\500.grib1
 #
 # WW3 Mediterranean 
 #
 FNMOC	(^US058.{4}-GR1mdl\.0111_0179_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/WW3/Mediterranean/FNMOC_WW3_Mediterranean_\2\3\4_\500.grib1
+	[DATA_DIR]/native/grid/FNMOC/WW3/Mediterranean/FNMOC_WW3_Mediterranean_\2\3\4_\500.grib1
 #
 # ------------------------------------------------------------------
 # - Coupled Ocean/Atmospheric Mesoscale Prediction System (COAMPS) -
@@ -60,28 +60,28 @@ FNMOC	(^US058.{4}-GR1mdl\.0111_0179_.{5}.{4})(.{4})(..)(..)(..)(.*)
 #
 FNMOC	(^US058.{4}-GR1mdl\.0063_0187_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/COAMPS/Western_Atlantic/FNMOC_COAMPS_Western_Atlantic_\2\3\4_\500.grib1
+	[DATA_DIR]/native/grid/FNMOC/COAMPS/Western_Atlantic/FNMOC_COAMPS_Western_Atlantic_\2\3\4_\500.grib1
 #
 # COAMPS Europe
 #
 FNMOC	(^US058.{4}-GR1mdl\.0022_0179_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_\2\3\4_\500.grib1
+	[DATA_DIR]/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_\2\3\4_\500.grib1
 #
 # COAMPS Equatorial America
 #
 FNMOC	^US058.{4}-GR1dyn\.COAMPS-EQAM_.{4}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_\1\2\3_\400.grib1
+	[DATA_DIR]/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_\1\2\3_\400.grib1
 #
 # COAMPS Northeast Pacific
 #
 FNMOC	^US058.{4}-GR1dyn\.COAMPS-NEPAC_.{5}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/COAMPS/Northeast_Pacific/FNMOC_COAMPS_Northeast_Pacific_\1\2\3_\400.grib1
+	[DATA_DIR]/native/grid/FNMOC/COAMPS/Northeast_Pacific/FNMOC_COAMPS_Northeast_Pacific_\1\2\3_\400.grib1
 #
 # COAMPS Southern California
 #
 FNMOC	^US058.{4}-GR1dyn\.COAMPS-SOCAL_.{5}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
 	FILE
-	data/pub/native/grid/FNMOC/COAMPS/Southern_California/FNMOC_COAMPS_Southern_California_\1\2\3_\400.grib1
+	[DATA_DIR]/native/grid/FNMOC/COAMPS/Southern_California/FNMOC_COAMPS_Southern_California_\1\2\3_\400.grib1

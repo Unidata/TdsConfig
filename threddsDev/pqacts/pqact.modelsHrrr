@@ -14,10 +14,10 @@
 #
 FSL2	^WRFPRS.*HRRR\.1905141_Lambert.*\.(..........)00.*
 	FILE
-	data/pub/native/grid/NOAA_GSD/HRRR/CONUS_3km/wrfprs/HRRR_CONUS_3km_wrfprs_\100.grib2
+	[DATA_DIR]/native/grid/NOAA_GSD/HRRR/CONUS_3km/wrfprs/HRRR_CONUS_3km_wrfprs_\100.grib2
 #
 # HRRR Surface grids
 #
 FSL2	^GRIB2.*HRRR\.1905141_Lambert.*\.(..........)00.*
 	FILE
-	data/pub/native/grid/NOAA_GSD/HRRR/CONUS_3km/surface/HRRR_CONUS_3km_surface_\100.grib2
+	[DATA_DIR]/native/grid/NOAA_GSD/HRRR/CONUS_3km/surface/HRRR_CONUS_3km_surface_\100.grib2
