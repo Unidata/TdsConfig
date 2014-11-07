@@ -1,0 +1,18 @@
+#
+# Contains LDM pqacts for the model output served by the TDS
+#   catalog modelsHrrrr.xml
+#
+# =============================================
+# = NCEP model data available via IDD - LARGE =
+# =============================================
+#
+# ----------------------------------------
+# - High Resolution Rapid Refresh (HRRR) -
+# ----------------------------------------
+#
+# High Resolution Radid Refresh (HRRR) grid output from NCEP
+# Based on http://www.nws.noaa.gov/os/notification/tin14-28hrrr-aac.htm
+#
+NGRID	^Y.C.* KWBY (..)(..).*F([0-9][0-9][0-9])
+	FILE
+	data/pub/native/grid/NCEP/HRRR/CONUS_3km/HRRR_CONUS_3km_(\1:yyyy)(\1:mm)\1_\200.grib2
