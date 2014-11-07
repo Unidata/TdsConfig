@@ -40,7 +40,7 @@
     </metadata>
 
     <datasetScan name="Metar Station Data" collectionType="TimeSeries" harvest="true" ID="NWS/METAR"
-                 path="station/metar" location="/data/ldm/pub/decoded/netcdf/surface/metar/">
+                 path="station/metar" location="[DATA_DIR]/decoded/netcdf/surface/metar/">
       <metadata inherited="true">
         <documentation type="summary">Metars: hourly surface weather observations</documentation>
         <documentation xlink:href="http://metar.noaa.gov/" xlink:title="NWS/NOAA information"/>
@@ -167,7 +167,7 @@
       </metadata>
       <dataset name="Wind Profilers">
         <datasetScan name="6 minute" collectionType="TimeSeries" harvest="true" ID="NWS/NPN/6min"
-                     path="station/profiler/wind/06min" location="/data/ldm/pub/native/profiler/wind/06min/">
+                     path="station/profiler/wind/06min" location="[DATA_DIR]/native/profiler/wind/06min/">
           <metadata inherited="true">
             <documentation type="summary">Six minute average data.</documentation>
           </metadata>
@@ -185,7 +185,7 @@
                   startTimeSubstitutionPattern="$1-$2-$3T$4:$5:00" duration="1 hour"/>
         </datasetScan>
         <datasetScan name="1 hour" collectionType="TimeSeries" harvest="true" ID="NWS/NPN/1hour"
-                     path="station/profiler/wind/1hr" location="/data/ldm/pub/native/profiler/wind/01hr/">
+                     path="station/profiler/wind/1hr" location="[DATA_DIR]/native/profiler/wind/01hr/">
           <documentation type="summary">Hourly average data</documentation>
           <filter>
             <include wildcard="*.nc" atomic="true" collection="false"/>
@@ -209,7 +209,7 @@
           </documentation>
         </metadata>
         <datasetScan name="6 minute" collectionType="TimeSeries" harvest="true" ID="NWS/RASS/6min"
-                     path="station/profiler/RASS/06min" location="/data/ldm/pub/native/profiler/RASS/06min/">
+                     path="station/profiler/RASS/06min" location="[DATA_DIR]/native/profiler/RASS/06min/">
           <metadata inherited="true">
             <documentation type="summary">Six minute average data.</documentation>
           </metadata>
@@ -227,7 +227,7 @@
                   startTimeSubstitutionPattern="$1-$2-$3T$4:$5:00" duration="1 hour"/>
         </datasetScan>
         <datasetScan name="1 hour" collectionType="TimeSeries" harvest="true" ID="NWS/RASS/1hour"
-                     path="station/profiler/RASS/1hr" location="/data/ldm/pub/native/profiler/RASS/01hr/">
+                     path="station/profiler/RASS/1hr" location="[DATA_DIR]/native/profiler/RASS/01hr/">
           <documentation type="summary">Hourly average data</documentation>
           <filter>
             <include wildcard="*.nc" atomic="true" collection="false"/>
@@ -245,7 +245,7 @@
       </dataset>
     </dataset>
     <datasetScan name="Wind Profile Data for KBOU (Any Frequency)" collectionType="TimeSeries" harvest="true" ID="NWS/Sounding/Vertical"
-                 path="station/soundings" location="/data/ldm/pub/native/profiler/bufr/profiler3/">
+                 path="station/soundings" location="[DATA_DIR]/native/profiler/bufr/profiler3/">
 
       <metadata inherited="true">
         <serviceName>forBufr</serviceName>

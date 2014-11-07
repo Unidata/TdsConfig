@@ -14,9 +14,9 @@
 # NMM Primary Domain 
 #
 SPARE	^(........_nmm.*\.GrbF.*)
-	FILE    -close  data/pub/rtmodel/\1
+	FILE    -close  [DATA_DIR]/rtmodel/\1
 #
 # NMM Secondary Domain
 #
 SPARE	^(........)\.(GrbF...)
-	FILE    -close  data/pub/rtmodel/\1_wseta.\2
+	FILE    -close  [DATA_DIR]/rtmodel/\1_wseta.\2

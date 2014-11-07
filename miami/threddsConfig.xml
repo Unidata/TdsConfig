@@ -27,7 +27,7 @@
     <contentRoot>idd</contentRoot>
   </contentRoots>
   <DataRoots>
-    <idd>/data/ldm/pub</idd>
+    <idd>[DATA_DIR]</idd>
   </DataRoots>
 
   <!--

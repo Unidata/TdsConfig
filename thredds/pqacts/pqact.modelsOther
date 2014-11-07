@@ -14,4 +14,4 @@
 #
 HRS	ZETA98 (....) ([0-3][0-9])([0-2][0-9]).*/m(.......)
 	FILE
-	data/pub/native/grid/NPVU/RFC/\1/NPVU_RFC_\1_\4_(\2:yyyy)(\2:mm)\2.grib1
+	[DATA_DIR]/native/grid/NPVU/RFC/\1/NPVU_RFC_\1_\4_(\2:yyyy)(\2:mm)\2.grib1

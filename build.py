@@ -63,6 +63,9 @@ if __name__ == '__main__':
             help='Directories to create THREDDS configuration set')
     args = parser.parse_args()
 
+    # Used to replace the [DATA_DIR] string in pqact and xml files
+    DATA_DIR = "/data/ldm/pub"
+
     # If we're not given a directory, just look at all the dirs for a
     # config file.
     if not args.dirs:
@@ -93,5 +96,13 @@ if __name__ == '__main__':
         # Write these into the zipfile
         with zipfile.ZipFile(outpath, 'w', zipfile.ZIP_DEFLATED) as outf:
             for f,fullpath in files.items():
-                outf.write(fullpath, f)
+                # look for files that could have the [DATA_DIR] macro and
+                # replace it with the correct value
+                if ("pqact" in f) or (f[-3:] == "xml"):
+                    with open(fullpath, "r") as template:
+                        data = template.read()
+                    data = data.replace("[DATA_DIR]", DATA_DIR)
+                    outf.writestr(f, data)
+                else:
+                    outf.write(fullpath, f)
         print('wrote {}'.format(outpath))

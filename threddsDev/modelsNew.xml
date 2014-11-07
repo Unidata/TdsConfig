@@ -81,7 +81,7 @@
             </documentation>
           </metadata>
 
-          <collection spec="/data/ldm/pub/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
+          <collection spec="[DATA_DIR]/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
                       timePartition="file"
                       olderThan="5 min"/>
           <update startup="never" trigger="allow"/>
