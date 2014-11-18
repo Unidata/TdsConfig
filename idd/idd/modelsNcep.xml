@@ -603,8 +603,8 @@
       <featureCollection name="NDFD-CONUS_5km" featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/CONUS_5km">
         <metadata inherited="true">
           <documentation type="summary">
-            CONUS, 1073 by 689 points, resolution 5 km. Results from 12Z and 18Z run. Forecasts every 6 hours from 90 to
-            180 hours.
+	    CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids from
+	    00Z and 12Z.
           </documentation>
         </metadata>
 
@@ -620,9 +620,9 @@
                          path="grib/NCEP/NDFD/CONUS_5km_conduit">
         <metadata inherited="true">
           <documentation type="summary">
-            CONUS, 1073 by 689 points, resolution 5 km. Models are run hourly. Forecasts every 3 hours from 2 to 74
-            hours and
-            every 6 hours from 74 to 170.
+	    CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids,
+	    updated hourly. Forecast intervals and duration vary with the
+	    time of forecast and the particular parameter.
           </documentation>
         </metadata>
 
@@ -634,13 +634,16 @@
         <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
         <gribConfig>
           <gdsHash from="-328645426" to="1821883766"/>
+          <gdsHash from="1383738030" to="-760700074"/>
         </gribConfig>
       </featureCollection>
 
       <featureCollection name="NDFD-CONUS-Fireweather" featureType="GRIB2" harvest="true"
                          path="grib/NCEP/NDFD/CONUS/Fireweather">
         <metadata inherited="true">
-          <documentation type="summary">??
+          <documentation type="summary">
+	    CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids
+	    for fire weather outlooks.
           </documentation>
         </metadata>
 
@@ -650,6 +653,10 @@
                     olderThan="5 min"/>
         <update startup="never" trigger="allow"/>
         <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
+        <gribConfig>
+          <gdsHash from="-328645426" to="1821883766"/>
+          <gdsHash from="1383738030" to="-760700074"/>
+        </gribConfig>
       </featureCollection>
 
     </dataset>
