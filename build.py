@@ -65,6 +65,7 @@ if __name__ == '__main__':
 
     # Used to replace the [DATA_DIR] string in pqact and xml files
     DATA_DIR = "/data/ldm/pub"
+    LDM_DIR = "/usr/local/ldm"
 
     # If we're not given a directory, just look at all the dirs for a
     # config file.
@@ -102,6 +103,7 @@ if __name__ == '__main__':
                     with open(fullpath, "r") as template:
                         data = template.read()
                     data = data.replace("[DATA_DIR]", DATA_DIR)
+                    data = data.replace("[LDM_DIR]", LDM_DIR)
                     outf.writestr(f, data)
                 else:
                     outf.write(fullpath, f)
