@@ -22,7 +22,7 @@ NGRID	^Y.C.* KWBY (..)(..).*F([0-9][0-9][0-9])
 #
 # NWS
 #
-NGRID	^[YZ].UZ9[78] KWBN ([0-3][0-9])([0-2][0-9][0-6][0-9])
+NGRID	^L.UZ9[78] KWBN ([0-3][0-9])([0-2][0-9][0-6][0-9])
 	FILE
 	[DATA_DIR]/native/grid/NCEP/NDFD/NWS/NDFD_CONUS_2p5_(\1:yyyy)(\1:mm)\1_\2.grib2
 #
@@ -45,7 +45,6 @@ NGRID	^[YZ][YX]UZ9[4-6] KWNC ([0-3][0-9])([0-2][0-9][0-6][0-9])
 	[DATA_DIR]/native/grid/NCEP/NDFD/CPC/NDFD_CONUS_2p5_(\1:yyyy)(\1:mm)\1_\2.grib2
 #
 # SPC - CONDUIT 
-#
 CONDUIT	L[FKLM]UZ9[78]_KWNS.*grib2/nwstg/NWS_0/..../(........)(....)
 	FILE
 	[DATA_DIR]/native/grid/NCEP/NDFD/SPC/NDFD_CONUS_2p5_\1_\2.grib2
