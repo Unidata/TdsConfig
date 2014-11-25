@@ -51,7 +51,7 @@ CONDUIT	L[FKLM]UZ9[78]_KWNS.*grib2/nwstg/NWS_0/..../(........)(....)
 #
 # CPC - CONDUIT 
 #
-CONDUIT	[ZY][XY]UZ96_KWNS.*grib2/nwstg/NWS_0/..../(........)(....)
+CONDUIT	[ZY][XY]UZ96_KWNC.*grib2/nwstg/NWS_0/..../(........)(....)
 	FILE
 	[DATA_DIR]/native/grid/NCEP/NDFD/CPC/NDFD_CONUS_2p5_\1_\2.grib2
 #
