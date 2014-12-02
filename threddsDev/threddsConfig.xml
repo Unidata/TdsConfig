@@ -47,22 +47,6 @@
     <allowRemote>true</allowRemote>
   </CatalogServices>
 
-  <NetcdfFileCache>
-    <minFiles>50</minFiles>
-    <maxFiles>100</maxFiles>
-    <scour>5 min</scour>
-  </NetcdfFileCache>
-  <GribCollection>
-    <minFiles>5</minFiles>
-    <maxFiles>10</maxFiles>
-    <scour>5 min</scour>
-  </GribCollection>
-  <TimePartition>
-    <minFiles>5</minFiles>
-    <maxFiles>10</maxFiles>
-    <scour>5 min</scour>
-  </TimePartition>
-
   <HTTPFileCache>
     <minFiles>5</minFiles>
     <maxFiles>20</maxFiles>
