@@ -897,8 +897,7 @@
                     dateFormatMark="#WW3_Global_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 4,19,34,49 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="WW3-Regional_Alaska" featureType="GRIB2" harvest="true"
@@ -914,8 +913,7 @@
                     dateFormatMark="#WW3_Regional_Alaska_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="nocheck" />
-        <tdm rewrite="test" rescan="0 4,19,34,49 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="WW3-Coastal_Alaska" featureType="GRIB2" harvest="true"
@@ -931,8 +929,10 @@
                     dateFormatMark="#WW3_Coastal_Alaska_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 4,19,34,49 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
+        <gribConfig>
+          <gdsHash from="-804803647" to="-804803709"/>
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="WW3-Regional_Eastern_Pacific" featureType="GRIB2" harvest="true"
@@ -949,7 +949,7 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <update startup="never" />
-        <tdm rewrite="test" rescan="0 4,19,34,49 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="WW3-Regional_US_East_Coast" featureType="GRIB2" harvest="true"
@@ -965,8 +965,7 @@
                     dateFormatMark="#WW3_Regional_US_East_Coast_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 4,19,34,49 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="WW3-Regional_US_West_Coast" featureType="GRIB2" harvest="true"
@@ -982,8 +981,7 @@
                     dateFormatMark="#WW3_Regional_US_West_Coast_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 4,19,34,49 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="WW3-Coastal_US_East_Coast" featureType="GRIB2" harvest="true"
@@ -999,8 +997,7 @@
                     dateFormatMark="#WW3_Coastal_US_East_Coast_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 4,19,34,49 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="WW3-Coastal_US_West_Coast" featureType="GRIB2" harvest="true"
@@ -1016,8 +1013,7 @@
                     dateFormatMark="#WW3_Coastal_US_West_Coast_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 4,19,34,49 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
       </featureCollection>
 
     </dataset>
