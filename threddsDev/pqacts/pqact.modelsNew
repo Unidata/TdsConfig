@@ -1,0 +1,62 @@
+#
+# Contains LDM pqacts for the model output served by the TDS
+#   catalog modelsHrrrr.xml
+#
+# =============================================
+# = NCEP model data available via IDD - LARGE =
+# =============================================
+#
+# ----------------------------------------
+# - High Resolution Rapid Refresh (HRRR) -
+# ----------------------------------------
+#
+# High Resolution Radid Refresh (HRRR) grid output from NCEP
+# Based on http://www.nws.noaa.gov/os/notification/tin14-28hrrr-aac.htm
+#
+NGRID	^Y.C.* KWBY (..)(..).*F([0-9][0-9][0-9])
+	FILE
+	[DATA_DIR]/native/grid/NCEP/HRRR/CONUS_3km/HRRR_CONUS_3km_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# NDFD CONUS 5 km (FROM NOAAPORT)
+#
+#
+# NWS
+#
+NGRID|HDS	^L[A-Z]U[A-HZ][019][0-9] KWBN ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE
+	[DATA_DIR]/native/grid/NCEP/NDFD/NWS/NDFD_CONUS_2p5_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# NHC 
+#
+NGRID	^L[A-F]UZ9[78] KNHC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE
+	[DATA_DIR]/native/grid/NCEP/NDFD/NHC/NDFD_CONUS_2p5_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# SPC 
+#
+NGRID	^L[E-R]UZ9[78] KWNS ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE
+	[DATA_DIR]/native/grid/NCEP/NDFD/SPC/NDFD_CONUS_2p5_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# CPC 
+#
+NGRID	^[YZ][YX]UZ9[4-6] KWNC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE
+	[DATA_DIR]/native/grid/NCEP/NDFD/CPC/NDFD_CONUS_2p5_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# SPC - CONDUIT 
+CONDUIT	L[FKLM]UZ9[78]_KWNS.*grib2/nwstg/NWS_0/..../(........)(....)
+	FILE
+	[DATA_DIR]/native/grid/NCEP/NDFD/SPC/NDFD_CONUS_2p5_\1_\2.grib2
+#
+# CPC - CONDUIT 
+#
+CONDUIT	[ZY][XY]UZ96_KWNC.*grib2/nwstg/NWS_0/..../(........)(....)
+	FILE
+	[DATA_DIR]/native/grid/NCEP/NDFD/CPC/NDFD_CONUS_2p5_\1_\2.grib2
+#
+# NWS - CONDUIT 
+#
+CONDUIT	Y[A-Z]UZ9[78]_KWBN.*grib2/nwstg/NWS_0/..../(........)(....)
+	FILE
+	[DATA_DIR]/native/grid/NCEP/NDFD/NWS/NDFD_CONUS_2p5_\1_\2.grib2
