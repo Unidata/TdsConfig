@@ -65,25 +65,27 @@
   </CatalogServices>
 
   <NetcdfFileCache>
-    <minFiles>50</minFiles>
+    <minFiles>42</minFiles>
     <maxFiles>100</maxFiles>
-    <scour>5 min</scour>
+    <scour>13 min</scour>
   </NetcdfFileCache>
+
   <GribCollection>
-    <minFiles>5</minFiles>
-    <maxFiles>10</maxFiles>
-    <scour>5 min</scour>
+    <minFiles>42</minFiles>
+    <maxFiles>100</maxFiles>
+    <scour>17 min</scour>
   </GribCollection>
+
   <TimePartition>
-    <minFiles>5</minFiles>
-    <maxFiles>10</maxFiles>
-    <scour>5 min</scour>
+    <minFiles>42</minFiles>
+    <maxFiles>100</maxFiles>
+    <scour>19 min</scour>
   </TimePartition>
 
   <HTTPFileCache>
-    <minFiles>5</minFiles>
-    <maxFiles>20</maxFiles>
-    <scour>10 min</scour>
+    <minFiles>0</minFiles>
+    <maxFiles>10</maxFiles>
+    <scour>31 min</scour>
   </HTTPFileCache>
 
   <NetcdfSubsetService>
