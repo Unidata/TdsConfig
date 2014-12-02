@@ -69,19 +69,19 @@
                          xlink:title="NCEP Model Notes"/>
         </metadata>
 
-        <featureCollection name="HRRR-CONUS_3km" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_3km">
+        <featureCollection name="HRRR-CONUS_2p5km" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km">
           <dataFormat>GRIB-2</dataFormat>
           <metadata inherited="true">
             <documentation type="summary">NCEP HRRR Model : AWIPS 184 (C) Grid. 2.5 km NDFD grid over CONUS 
               (Lambert Conformal).
               Model runs are made hourly, with analysis and forecasts every hour out 15 hours.
-              Horizontal = 2145 by 1377 points, resolution 3 km, Lambert Conformal projection.
+              Horizontal = 2145 by 1377 points, resolution 2.5 km, Lambert Conformal projection.
               Vertical = 1000 to 500 hPa mandatory pressure levels (5 levels); surface, height above ground, pressure
               layers.
             </documentation>
           </metadata>
 
-          <collection spec="/data/ldm/pub/native/grid/NCEP/HRRR/CONUS_3km/HRRR_CONUS_3km_#yyyyMMdd_HHmm#.grib2"
+          <collection spec="[DATA_DIR]/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
                       timePartition="file"
                       olderThan="5 min"/>
           <update startup="never" trigger="allow"/>
@@ -90,5 +90,53 @@
 
       </dataset><!-- end of HRRR -->
     </dataset><!-- end of NCEP -->
+
+    <dataset name="National Digital Forecast Database (NDFD) CONUS 2.5km">
+      <metadata inherited="true">
+        <documentation type="summary">National Digital Forecast Database (NDFD): US National Weather Service gridded
+          forecasts of sensible weather elements.
+        </documentation>
+        <documentation xlink:href="http://www.weather.gov/ndfd/" xlink:title="NWS/NDFD Website"/>
+        <documentation xlink:href="http://www.nws.noaa.gov/ndfd/definitions.htm"
+                       xlink:title="NDFD parameter descriptions"/>
+      </metadata>
+
+      <datasetScan name="NWS" featureType="GRIB2"
+	      id="NDFD-NWS-CONUS_2p5km"
+	      path="grib/NCEP/NDFD_CONUS_2p5km/NWS"
+	      location="[DATA_DIR]/native/grid/NCEP/NDFD/NWS/">
+	      <filter>
+		      <include wildcard="*.grib2" />
+	      </filter>
+      </datasetScan>
+
+      <datasetScan name="SPC" featureType="GRIB2"
+	      id="NDFD-SPC-CONUS_2p5km"
+	      path="grib/NCEP/NDFD_CONUS_2p5km/SPC"
+	      location="[DATA_DIR]/native/grid/NCEP/NDFD/SPC/">
+	      <filter>
+		      <include wildcard="*.grib2" />
+	      </filter>
+      </datasetScan>
+
+      <datasetScan name="NHC" featureType="GRIB2"
+	      id="NDFD-NHC-CONUS_2p5km"
+	      path="grib/NCEP/NDFD_CONUS_2p5km/NHC"
+	      location="[DATA_DIR]/native/grid/NCEP/NDFD/NHC/">
+	      <filter>
+		      <include wildcard="*.grib2" />
+	      </filter>
+      </datasetScan>
+
+      <datasetScan name="CPC" featureType="GRIB2"
+	      id="NDFD-CPC-CONUS_2p5km"
+	      path="grib/NCEP/NDFD_CONUS_2p5km/CPC"
+	      location="[DATA_DIR]/native/grid/NCEP/NDFD/CPC/">
+	      <filter>
+		      <include wildcard="*.grib2" />
+	      </filter>
+      </datasetScan>
+
+    </dataset><!-- end of NDFD -->
   </dataset><!-- end of test dataset -->
 </catalog>

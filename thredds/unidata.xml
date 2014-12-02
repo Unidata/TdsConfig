@@ -25,7 +25,7 @@
 
     <datasetScan name="Unidata NEXRAD Composites (GINI)" collectionType="TimeSeries" harvest="true"
                  ID="Unidata/NEXRAD/NationalComposite/GINI" path="nexrad/composite/gini"
-                 location="/data/ldm/pub/native/radar/composite/gini/">
+                 location="[DATA_DIR]/native/radar/composite/gini/">
       <metadata inherited="true">
         <serviceName>grids</serviceName>
         <dataType>Grid</dataType>
@@ -100,7 +100,7 @@
       </metadata>
 
       <collection name="NEXRAD_NWS_Reflectivity"
-                  spec="/data/ldm/pub/native/radar/10km_mosaic/**/.*grib1$"
+                  spec="[DATA_DIR]/native/radar/10km_mosaic/**/.*grib1$"
                   dateFormatMark="#RADAR_10km_mosaic_#yyyyMMdd_HHmm"
                   timePartition="file"
                   olderThan="1 min"/>
@@ -132,7 +132,7 @@
       </metadata>
 
       <collection name="NEXRAD_Unidata_Reflectivity"
-                  spec="/data/ldm/pub/native/radar/composite/grib2/N0R/**/.*grib2$"
+                  spec="[DATA_DIR]/native/radar/composite/grib2/N0R/**/.*grib2$"
                   dateFormatMark="#Level3_Composite_N0R_#yyyyMMdd_HHmm"
                   timePartition="file"
                   olderThan="1 min"/>

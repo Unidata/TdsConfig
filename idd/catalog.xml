@@ -7,7 +7,7 @@
   <service name="thisDODS" serviceType="OPENDAP" base="/thredds/dodsC/" />
   <datasetRoot path="restrict" location="content/" />
   <dataset name="Realtime data from IDD">
-    <catalogRef xlink:href="idd/modelsNcep.xml" xlink:title="NCEP Model Data" name="" />
+    <catalogRef xlink:href="idd/modelsNcep.xml" xlink:title="NCEP/NWS Models and Forecasts" name="" />
     <catalogRef xlink:href="idd/modelsFnmoc.xml" xlink:title="FNMOC Model Data" name="" />
     <catalogRef xlink:href="idd/radars.xml" xlink:title="Radar Data" name="" />
     <catalogRef xlink:href="idd/obsData.xml" xlink:title="Station Data" name="" />

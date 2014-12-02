@@ -29,7 +29,7 @@
   </contentRoots>
 
   <DataRoots>
-    <idd>/data/ldm/pub</idd>
+    <idd>[DATA_DIR]</idd>
   </DataRoots>
 
   <catalogRoot>topcatalog.xml</catalogRoot>

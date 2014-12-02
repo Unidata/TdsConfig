@@ -26,7 +26,7 @@
     </metadata>
 
     <datasetScan name="NEXRAD Level III Radar" collectionType="TimeSeries" harvest="true" ID="NWS/NEXRAD3"
-                 path="nexrad/level3" location="/data/ldm/pub/native/radar/level3/nexrad/">
+                 path="nexrad/level3" location="[DATA_DIR]/native/radar/level3/nexrad/">
 
       <documentation type="summary">The NIDS data feed from the IDD provides roughly 75 radar products sent every 5-10 minutes from 154 sites.
         These "derived" products include base reflectivity and velocity, composite reflectivity, precipitation estimates, echo tops and VAD winds.
@@ -171,7 +171,7 @@
     </datasetScan>
 
     <datasetScan name="TDWR Level III Radar" collectionType="TimeSeries" harvest="true" ID="NWS/TDWR3"
-                 path="terminal/level3" location="/data/ldm/pub/native/radar/level3/tdwr/">
+                 path="terminal/level3" location="[DATA_DIR]/native/radar/level3/tdwr/">
       <documentation type="summary">The TDWR data feed from the IDD provides radar products generated from the FAA Terminal Doppler Weather Radars (TDWR),
         which are separate from NEXRAD. These "derived" products include base reflectivity and velocity, echo tops, and precipitation amounts.
       </documentation>
@@ -247,7 +247,7 @@
     </datasetScan>
 
     <datasetScan name="NEXRAD Level II Radar WSR-88D" collectionType="TimeSeries" ID="NWS/NEXRAD2" path="nexrad/level2"
-                 location="/data/ldm/pub/native/radar/level2/">
+                 location="[DATA_DIR]/native/radar/level2/">
       <metadata inherited="true">
         <serviceName>radial</serviceName>
         <dataType>Radial</dataType>
