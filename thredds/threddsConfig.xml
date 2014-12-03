@@ -23,6 +23,10 @@
     </hostInstitution>
   </serverInformation>
 
+  <CORS>
+    <enabled>true</enabled>
+  </CORS>
+
   <contentRoots>
     <contentRoot>motherlode</contentRoot>
     <contentRoot>idd</contentRoot>

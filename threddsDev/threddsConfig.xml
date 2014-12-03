@@ -43,6 +43,10 @@
     <openDapCssUrl>tdsDap.css</openDapCssUrl>
   </htmlSetup>
 
+  <CORS>
+    <enabled>true</enabled>
+  </CORS>
+
   <CatalogServices>
     <allowRemote>true</allowRemote>
   </CatalogServices>
