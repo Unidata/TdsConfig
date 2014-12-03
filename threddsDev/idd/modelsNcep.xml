@@ -60,7 +60,7 @@
       </timeCoverage>
     </metadata>
 
-    <!-- dataset name="Downscaled GFS with Eta Extension (DGEX)">
+    <dataset name="Downscaled GFS with Eta Extension (DGEX)">
       <metadata inherited="true">
         <documentation type="summary">
           The NCEP DGEX Model is the Eta model extended to 8 days over smaller domains using the operational Eta model
@@ -75,8 +75,7 @@
       <featureCollection name="DGEX-CONUS_12km" featureType="GRIB2" harvest="true" path="grib/NCEP/DGEX/CONUS_12km">
         <metadata inherited="true">
           <documentation type="summary">
-            NCEP Model output Grid 185 (C) horizontal = 491 by 303 points, resolution 12 km, LambertConformal
-            projection.
+            NCEP Model output Grid 185 (C) horizontal = 491 by 303 points, resolution 12 km, LambertConformal projection.
             Model runs are made at 6 and 18Z, with forecasts starting at 84 hours, every 6 hours out to 192 hours
           </documentation>
         </metadata>
@@ -85,8 +84,7 @@
                      timePartition="file"
                      dateFormatMark="#DGEX_CONUS_12km_#yyyyMMdd_HHmm"
                      olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <tdm rewrite="test" rescan="0 1/15 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="DGEX-Alaska_12km" featureType="GRIB2" harvest="true" path="grib/NCEP/DGEX/Alaska_12km">
@@ -102,13 +100,12 @@
                      timePartition="file"
                     dateFormatMark="#DGEX_Alaska_12km_#yyyyMMdd_HHmm"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <tdm rewrite="test" rescan="0 1/15 * * * ? *" />
       </featureCollection>
 
     </dataset>
 
-    <dataset name="Global Ensemble Forecasting System (GEFS)">
+    <!-- dataset name="Global Ensemble Forecasting System (GEFS)">
 
       <metadata inherited="true">
         <documentation type="summary">NCEP Global Ensemble Forecasting System (GEFS)
@@ -152,7 +149,7 @@
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
       </featureCollection>
 
-    </dataset>
+    </dataset -->
 
     <dataset name="Global Forecast System (GFS)">
 
@@ -177,8 +174,7 @@
                     timePartition="file"
                     dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="GFS-Global_onedeg" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_onedeg">
@@ -195,8 +191,7 @@
                     dateFormatMark="#GFS_Global_onedeg_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="GFS-Global_2p5deg" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_2p5deg">
@@ -212,8 +207,7 @@
                     dateFormatMark="#GFS_Global_2p5deg_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="GFS-N_Hemisphere_381km" featureType="GRIB2" harvest="true"
@@ -232,8 +226,7 @@
             dateFormatMark="#GFS_N_Hemisphere_381km_#yyyyMMdd_HHmm"
             timePartition="file"
             olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="GFS-Pacific_40km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Pacific_40km">
@@ -251,8 +244,7 @@
             dateFormatMark="#GFS_Pacific_40km_#yyyyMMdd_HHmm"
             timePartition="file"
             olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="GFS-Puerto_Rico_0p5deg" featureType="GRIB2" harvest="true"
@@ -271,8 +263,7 @@
             timePartition="file"
             dateFormatMark="#GFS_Puerto_Rico_0p5deg_#yyyyMMdd_HHmm"
             olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="GFS-CONUS_80km" featureType="GRIB1" harvest="true" path="grib/NCEP/GFS/CONUS_80km">
@@ -288,8 +279,7 @@
         <collection spec="/data/ldm/pub/native/grid/NCEP/GFS/CONUS_80km/GFS_CONUS_80km_#yyyyMMdd_HHmm#.grib1"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="GFS-CONUS_95km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/CONUS_95km">
@@ -307,13 +297,12 @@
         <collection spec="/data/ldm/pub/native/grid/NCEP/GFS/CONUS_95km/GFS_CONUS_95km_#yyyyMMdd_HHmm#.grib2"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
     
-</dataset>
+    </dataset>
 
-    <dataset name="North American Model (NAM)">
+    <!-- dataset name="North American Model (NAM)">
 
       <metadata inherited="true">
         <documentation type="summary">NCEP Nonhydrostatic Mesoscale Model (NMM) and Gridpoint Statistical Interpolation
