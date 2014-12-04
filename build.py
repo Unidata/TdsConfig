@@ -43,15 +43,22 @@ def write_script(scriptpath, configpath):
     # Using binary mode to prevent writing \r on windows
     with open(scriptpath, 'wb') as f:
         f.write('#!/bin/sh\n')
+        # Enclosing script in '{}' forces it to be read into memory, dealing
+        # with the problem of the script being modified (via jar xf) while
+        # running.
+        f.write('{\n')
+
         # Fix any windows path separators
         configfile = os.path.split(configpath)[-1]
         configpath = configpath.replace('\\', '/')
-        f.write(('wget'
+        f.write(('\twget'
                 ' --no-check-certificate'
                 ' https://raw.githubusercontent.com/Unidata/TdsConfig/master/%s'
-                ' -O "%s"\n')
+                ' -O %s\n')
                 % (configpath, configfile))
-        f.write('jar xf "%s"\n' % os.path.split(configpath)[-1])
+        f.write('\tjar xf %s\n' % os.path.split(configpath)[-1])
+        f.write('\texit\n')
+        f.write('}\n')
 
 if __name__ == '__main__':
     import argparse
