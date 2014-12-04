@@ -48,9 +48,9 @@ def write_script(scriptpath, configpath):
         f.write(('wget'
                 ' --no-check-certificate'
                 ' https://raw.githubusercontent.com/Unidata/TdsConfig/master/%s'
-                ' -O %s\n')
+                ' -O "%s"\n')
                 % (configpath, configfile))
-        f.write('jar xf %s\n' % os.path.split(configpath)[-1])
+        f.write('jar xf "%s"\n' % os.path.split(configpath)[-1])
 
 if __name__ == '__main__':
     import argparse
