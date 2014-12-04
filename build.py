@@ -40,7 +40,8 @@ def get_files(path):
 
 def write_script(scriptpath, configpath):
     'Create script for downloading this config file'
-    with open(scriptpath, 'w') as f:
+    # Using binary mode to prevent writing \r on windows
+    with open(scriptpath, 'wb') as f:
         f.write('#!/bin/sh\n')
         # Fix any windows path separators
         configfile = os.path.split(configpath)[-1]
