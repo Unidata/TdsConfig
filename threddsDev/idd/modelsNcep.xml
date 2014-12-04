@@ -302,7 +302,7 @@
     
     </dataset>
 
-    <!-- dataset name="North American Model (NAM)">
+    <dataset name="North American Model (NAM)">
 
       <metadata inherited="true">
         <documentation type="summary">NCEP Nonhydrostatic Mesoscale Model (NMM) and Gridpoint Statistical Interpolation
@@ -327,7 +327,6 @@
                     timePartition="file"
                     dateFormatMark="#NAM_Alaska_11km_#yyyyMMdd_HHmm"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
@@ -347,7 +346,6 @@
         <collection spec="/data/ldm/pub/native/grid/NCEP/NAM/Alaska_22km/NAM_Alaska_22km_#yyyyMMdd_HHmm#.grib1"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
       </featureCollection>
 
@@ -366,7 +364,6 @@
             spec="/data/ldm/pub/native/grid/NCEP/NAM/Alaska_45km/noaaport/NAM_Alaska_45km_noaaport_#yyyyMMdd_HHmm#.grib1"
             timePartition="file"
             olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
       </featureCollection>
 
@@ -385,7 +382,6 @@
                     dateFormatMark="#NAM_Alaska_45km_conduit_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
@@ -405,7 +401,6 @@
         <collection spec="/data/ldm/pub/native/grid/NCEP/NAM/Alaska_95km/NAM_Alaska_95km_#yyyyMMdd_HHmm#.grib1"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
       </featureCollection>
 
@@ -425,7 +420,6 @@
                     timePartition="file"
                     dateFormatMark="#NAM_CONUS_12km_#yyyyMMdd_HHmm"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
@@ -451,7 +445,6 @@
             timePartition="file"
             dateFormatMark="#NAM_CONUS_12km_conduit_#yyyyMMdd_HHmm"
             olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
@@ -477,7 +470,6 @@
             spec="/data/ldm/pub/native/grid/NCEP/NAM/CONUS_20km/noaaport/NAM_CONUS_20km_noaaport_#yyyyMMdd_HHmm#.grib1"
             timePartition="file"
             olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
       </featureCollection>
 
@@ -496,7 +488,6 @@
                     dateFormatMark="#NAM_CONUS_40km_conduit_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
@@ -537,7 +528,6 @@
                     dateFormatMark="#NAM_Polar_90km_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
@@ -569,7 +559,6 @@
                     dateFormatMark="#NAM_Firewxnest_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
@@ -578,7 +567,7 @@
 
     </dataset>
 
-    <dataset name="National Digital Forecast Database (NDFD)">
+    <!-- dataset name="National Digital Forecast Database (NDFD)">
       <metadata inherited="true">
         <documentation type="summary">National Digital Forecast Database (NDFD): US National Weather Service gridded
           forecasts of sensible weather elements.
@@ -698,9 +687,9 @@
         </gribConfig>
       </featureCollection>
 
-    </dataset>
+    </dataset -->
 
-    <dataset name="Rapid Refresh (RAP)">
+    <!-- dataset name="Rapid Refresh (RAP)">
       <metadata inherited="true">
         <documentation type="summary">NCEP Rapid Refresh (RR / RAP)) Model: frequently updated short-range weather
           forecasts. Replaced the Rapid Update Cycle (RUC/RUC2) on 05 May 2012 12Z.
@@ -740,15 +729,14 @@
             dateFormatMark="#RR_CONUS_20km_#yyyyMMdd_HHmm"
             timePartition="file"
             olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
-        // <gribConfig>
+        <gribConfig>
           <intvFilter excludeZero="true"/>
           <intvFilter intvLength="1">
             <variable id="0-1-9"/>
             <variable id="0-1-10"/>
           </intvFilter>
-        </gribConfig> //
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="RAP-CONUS_40km" featureType="GRIB2" harvest="true" path="grib/NCEP/RAP/CONUS_40km">
@@ -764,10 +752,9 @@
             dateFormatMark="#RR_CONUS_40km_#yyyyMMdd_HHmm"
             timePartition="file"
             olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 9,24,39,53 * * * ? *" />
       </featureCollection>
-    </dataset>
+    </dataset -->
 
     <dataset name="Short Range Ensemble Forecasting (SREF)">
       <metadata inherited="true">
@@ -789,7 +776,6 @@
                     dateFormatMark="#SREF_CONUS_40km_ensprod_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
         <gribConfig>
           <intvFilter intvLength="12">
@@ -834,7 +820,6 @@
                     dateFormatMark="#SREF_Alaska_45km_ensprod_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
         <gribConfig>
           <intvFilter intvLength="3">
@@ -855,7 +840,6 @@
                     dateFormatMark="#SREF_PacificNE_0p4_ensprod_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
         <gribConfig>
           <intvFilter intvLength="3">
@@ -864,7 +848,7 @@
         </gribConfig>
       </featureCollection>
 
-    </dataset -->
+    </dataset>
 
     <dataset name="Wave Watch III (WW3)">
       <metadata inherited="true">
