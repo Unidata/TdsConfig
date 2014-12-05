@@ -33,8 +33,7 @@
                     timePartition="file"
                     dateFormatMark="#HRRR_CONUS_3km_wrfprs_#yyyyMMddHHmm"
                     olderThan="5 min"/>
-        <update startup="never" trigger="allow"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="HRRR-CONUS_3km_surface" featureType="GRIB2" harvest="true" path="grib/HRRR/CONUS_3km/surface">
@@ -43,8 +42,7 @@
                     timePartition="file"
                     dateFormatMark="#HRRR_CONUS_3km_surface_#yyyyMMddHHmm"
                     olderThan="5 min"/>
-        <update startup="never" trigger="allow"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
       </featureCollection>
     </dataset>
   </dataset>
