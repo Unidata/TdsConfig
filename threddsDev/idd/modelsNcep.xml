@@ -105,7 +105,7 @@
 
     </dataset>
 
-    <!-- dataset name="Global Ensemble Forecasting System (GEFS)">
+    <dataset name="Global Ensemble Forecasting System (GEFS)">
 
       <metadata inherited="true">
         <documentation type="summary">NCEP Global Ensemble Forecasting System (GEFS)
@@ -129,7 +129,6 @@
                     dateFormatMark="#GEFS_Global_1p0deg_Ensemble_#yyyyMMdd_HHmm"
                      timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
       </featureCollection>
 
@@ -145,11 +144,10 @@
                     dateFormatMark="#GEFS_Global_1p0deg_Ensemble_derived_#yyyyMMdd_HHmm"
                       timePartition="file"
                     olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
       </featureCollection>
 
-    </dataset -->
+    </dataset>
 
     <dataset name="Global Forecast System (GFS)">
 
@@ -629,7 +627,7 @@
         <tdm rewrite="true" rescan="0 0/15 * * * ? *" />
       </featureCollection>
 
-    </dataset>
+    </dataset -->
 
     <dataset name="Real Time Mesoscale Analysis (RTMA)">
       <metadata inherited="true">
@@ -656,7 +654,6 @@
             dateFormatMark="#RTMA_CONUS_2p5km_#yyyyMMdd_HHmm"
             timePartition="file"
             olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
         <gribConfig>
           <pdsHash>
@@ -678,7 +675,6 @@
             dateFormatMark="#RTMA_GUAM_2p5km_#yyyyMMdd_HHmm"
             timePartition="file"
             olderThan="5 min"/>
-        <update startup="never" />
         <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
         <gribConfig>
           <pdsHash>
@@ -687,7 +683,7 @@
         </gribConfig>
       </featureCollection>
 
-    </dataset -->
+    </dataset>
 
     <!-- dataset name="Rapid Refresh (RAP)">
       <metadata inherited="true">
