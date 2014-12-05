@@ -170,23 +170,29 @@ CONDUIT	^data/nccf/com/nam/prod/nam\.(........)/nam.t(..)z\.firewxnest
 # - National Digital Forecast Database (NDFD) -
 # ---------------------------------------------
 #
-# NDFD CONUS 5 km (FROM NOAAPORT)
+# NDFD CONUS 2.5 km NWS (FROM NOAAPORT)
 #
-NGRID	^[LM].U... KWBN ([0-3][0-9])([0-2][0-9])([0-6][0-9])
+NGRID|HDS	^L[A-Z]U[A-HZ][019][0-9] KWBN ([0-3][0-9])([0-2][0-9][0-6][0-9])
 	FILE
-	[DATA_DIR]/native/grid/NCEP/NDFD/CONUS_5km/NDFD_CONUS_5km_(\1:yyyy)(\1:mm)\1_\200.grib2
+	[DATA_DIR]/native/grid/NCEP/NDFD/NWS_noaaport/NDFD_NWS_CONUS_2p5km_(\1:yyyy)(\1:mm)\1_\2.grib2
 #
-# NDFD CONUS 5 km (FROM CONDUIT)
+# NDFD CONUS 2.5 km NWS (FROM CONDUIT)
 #
-CONDUIT	grib2/nwstg/NWS_0/..../(........)(....)
+CONDUIT	Y[A-Z]UZ9[78]_KWBN.*grib2/nwstg/NWS_0/..../(........)(....)
 	FILE
-	[DATA_DIR]/native/grid/NCEP/NDFD/conduit/CONUS_5km/NDFD_CONUS_5km_conduit_\1_\2.grib2
+	[DATA_DIR]/native/grid/NCEP/NDFD/NWS/NDFD_NWS_CONUS_2p5km_\1_\2.grib2
 #
-# NDFD Fire Weather CONUS
+# NDFD CONUS 2.5 km SPC (FROM CONDUIT)
 #
-CONDUIT	L.UZ9[78]_KWNS.*grib2/nwstg/NWS_0/..../(........)(....)
+CONDUIT	L[E-R]UZ9[78]_KWNS.*grib2/nwstg/NWS_0/..../(........)(....)
 	FILE
-	[DATA_DIR]/native/grid/NCEP/NDFD/Fireweather/CONUS/NDFD_Fireweather_CONUS_\1_\2.grib2
+	[DATA_DIR]/native/grid/NCEP/NDFD/SPC/NDFD_SPC_CONUS_2p5km_\1_\2.grib2
+#
+# NDFD CONUS 2.5 km CPC (FROM CONDUIT)
+#
+CONDUIT	[ZY][XY]UZ96_KWNC.*grib2/nwstg/NWS_0/..../(........)(....)
+	FILE
+	[DATA_DIR]/native/grid/NCEP/NDFD/CPC/NDFD_CPC_CONUS_2p5km_\1_\2.grib2
 #
 # ---------------------------------------
 # - Real Time Mesoscale Analysis (RTMA) -

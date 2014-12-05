@@ -600,7 +600,8 @@
                        xlink:title="NDFD parameter descriptions"/>
       </metadata>
 
-      <featureCollection name="NDFD-CONUS_5km" featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/CONUS_5km">
+      <featureCollection name="National Weather Service CONUS Forevast Grids (NOAAPORT)"
+		         featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/NWS/CONUS/NOAAPORT">
         <metadata inherited="true">
           <documentation type="summary">
 	    CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids from
@@ -608,16 +609,17 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/NCEP/NDFD/CONUS_5km/.*grib2$"
-                    dateFormatMark="#NDFD_CONUS_5km_#yyyyMMdd_HHmm"
+	<collection spec="[DATA_DIR]/native/grid/NCEP/NDFD/NWS_noaaport/.*grib2$"
+                    dateFormatMark="#5km_#yyyyMMdd_HHmm"
                     timePartition="file"
+		    name="NDFD_NWS_CONUS_NOAAPORT"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow"/>
         <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
       </featureCollection>
 
-      <featureCollection name="NDFD-CONUS_5km_conduit" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/NDFD/CONUS_5km_conduit">
+      <featureCollection name="National Weather Service CONUS Forecast Grids (CONDUIT)"
+		         featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/NWS/CONUS/CONDUIT">
         <metadata inherited="true">
           <documentation type="summary">
 	    CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids,
@@ -626,9 +628,10 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/NCEP/NDFD/conduit/CONUS_5km/.*grib2$"
-                    dateFormatMark="#NDFD_CONUS_5km_conduit_#yyyyMMdd_HHmm"
+        <collection spec="[DATA_DIR]/native/grid/NCEP/NDFD/NWS/.*grib2$"
+                    dateFormatMark="#5km_#yyyyMMdd_HHmm"
                     timePartition="file"
+		    name="NDFD_NWS_CONUS_CONDUIT"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow"/>
         <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
@@ -638,27 +641,41 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="NDFD-CONUS-Fireweather" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/NDFD/CONUS/Fireweather">
+      <featureCollection name="Storm Prediction Center CONUS Forecast Grids" featureType="GRIB2"
+		         harvest="true" path="grib/NCEP/NDFD/SPC/CONUS">
         <metadata inherited="true">
           <documentation type="summary">
 	    CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids
-	    for fire weather outlooks.
+	    for Storm Prediction Center outlooks.
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/NCEP/NDFD/Fireweather/CONUS/.*grib2$"
-                    dateFormatMark="#NDFD_Fireweather_CONUS_#yyyyMMdd_HHmm"
+        <collection spec="[DATA_DIR]/native/grid/NCEP/NDFD/SPC/.*grib2$"
+                    dateFormatMark="#NDFD_SPC_CONUS_2p5km_#yyyyMMdd_HHmm"
                     timePartition="file"
+		    name="NDFD_SPC_CONUS_CONDUIT"
                     olderThan="5 min"/>
         <update startup="never" trigger="allow"/>
         <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
-        <gribConfig>
-          <gdsHash from="-328645426" to="1821883766"/>
-          <gdsHash from="1383738030" to="-760700074"/>
-        </gribConfig>
       </featureCollection>
 
+      <featureCollection name="Climate Prediction Center CONUS Forecast Grids" featureType="GRIB2"
+		         harvest="true" path="grib/NCEP/NDFD/CPC/CONUS">
+        <metadata inherited="true">
+          <documentation type="summary">
+	    CONUS, 2145 by 1377 points, resolution 2.5 km. Grids
+	    for Climate Prediction Center extended forecasts.
+          </documentation>
+        </metadata>
+
+        <collection spec="[DATA_DIR]/native/grid/NCEP/NDFD/CPC/.*grib2$"
+                    dateFormatMark="#NDFD_CPC_CONUS_2p5km_#yyyyMMdd_HHmm"
+                    timePartition="file"
+		    name="NDFD_CPC_CONUS_CONDUIT"
+                    olderThan="5 min"/>
+        <update startup="never" trigger="allow"/>
+        <tdm startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
+      </featureCollection>
     </dataset>
 
     <dataset name="Real Time Mesoscale Analysis (RTMA)">
