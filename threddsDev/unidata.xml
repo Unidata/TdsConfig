@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
          xmlns:xlink="http://www.w3.org/1999/xlink"
-         name="Unidata THREDDS Data Server - Unidata Radar Data" version="1.0.6">
+         name="Unidata THREDDS Data Server - Unidata Radar Data" version="1.0.7">
 
   <service name="grids" serviceType="Compound" base="">
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
@@ -102,16 +102,14 @@
       <collection name="NEXRAD_NWS_Reflectivity"
                   spec="[DATA_DIR]/native/radar/10km_mosaic/**/.*grib1$"
                   dateFormatMark="#RADAR_10km_mosaic_#yyyyMMdd_HHmm"
-                  timePartition="file"
+                  timePartition="directory"
                   olderThan="1 min"/>
 
-      <update startup="never" trigger="allow"/>
-      <tdm rewrite="test" rescan="0 2/5 * * * ? *" trigger="allow"/>
+      <tdm rewrite="test" rescan="0 2/5 * * * ? *" />
 
       <gribConfig datasetTypes="Best LatestFile Files">
-        <filesSort>
-          <lexigraphicByName increasing="false"/>
-        </filesSort>
+        <option name="timeUnit" value="1 minute" />
+        <filesSort increasing="false" />
       </gribConfig>
 
     </featureCollection>
@@ -134,21 +132,17 @@
       <collection name="NEXRAD_Unidata_Reflectivity"
                   spec="[DATA_DIR]/native/radar/composite/grib2/N0R/**/.*grib2$"
                   dateFormatMark="#Level3_Composite_N0R_#yyyyMMdd_HHmm"
-                  timePartition="file"
+                  timePartition="directory"
                   olderThan="1 min"/>
 
-      <update startup="never" trigger="allow"/>
-      <tdm rewrite="test" rescan="0 1/5 * * * ? *" trigger="allow"/>
+      <tdm rewrite="test" rescan="0 1/5 * * * ? *" />
 
       <gribConfig datasetTypes="Best Latest">
-        <parameter name="timeUnit" value="minute"/>
-        <filesSort>
-          <lexigraphicByName increasing="false"/>
-        </filesSort>
+        <option name="timeUnit" value="1 minute" />
+        <filesSort increasing="false" />
       </gribConfig>
 
     </featureCollection>
 
   </dataset>
 </catalog>
-
