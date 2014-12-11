@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="THREDDS Data Server - CF Example point files" version="1.0.6">
+
+  <service name="all" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
+  </service>
+
+  <datasetScan name="CF 1.6 Discrete Sampling Geometry (DSG) point file examples" path="pointData/cf_dsg/example" location="/data/thredds/tds-test/content/thredds/public/cfDsgExamples">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <dataType>Point</dataType>
+      <authority>edu.ucar.unidata</authority>
+      <documentation type="rights">Freely available</documentation>
+      <publisher>
+        <name vocabulary="DIF">UCAR/UNIDATA</name>
+        <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu" />
+      </publisher>
+    </metadata>
+
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+
+  </datasetScan>
+
+  <datasetScan name="CF 1.6 Discrete Sampling Geometry (DSG) appendix H examples" path="pointData/cf_doc_dsg/example" location="/data/thredds/tds-test/content/thredds/public/cfDocDsgExamples">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <dataType>Point</dataType>
+      <authority>edu.ucar.unidata</authority>
+      <documentation xlink:href="http://cfconventions.org/Data/cf-convetions/cf-conventions-1.7/build/cf-conventions.html#appendix-examples-discrete-geometries"
+                     xlink:title="CF Appendix H (DSG examples)"/>
+      <documentation type="rights">Freely available</documentation>
+      <publisher>
+        <name vocabulary="DIF">UCAR/UNIDATA</name>
+        <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu" />
+      </publisher>
+    </metadata>
+
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+
+  </datasetScan>
+</catalog>
+
