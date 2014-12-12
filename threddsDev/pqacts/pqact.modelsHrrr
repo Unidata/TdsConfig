@@ -2,13 +2,13 @@
 # Contains LDM pqacts for the model output served by the TDS
 #   catalog modelsHrrrr.xml
 #
-# =========================================
-# = NOAA GSD model data available via IDD =
-# =========================================
+# =====================================
+# = HRRR model data available via IDD =
+# =====================================
 #
-# ----------------------------------------
-# - High Resolution Rapid Refresh (HRRR) -
-# ----------------------------------------
+# -------------------------------------------------
+# - NOAA GSD High Resolution Rapid Refresh (HRRR) -
+# -------------------------------------------------
 #
 # HRRR Pressure grids
 #
@@ -21,3 +21,14 @@ FSL2	^WRFPRS.*HRRR\.1905141_Lambert.*\.(..........)00.*
 FSL2	^GRIB2.*HRRR\.1905141_Lambert.*\.(..........)00.*
 	FILE
 	[DATA_DIR]/native/grid/NOAA_GSD/HRRR/CONUS_3km/surface/HRRR_CONUS_3km_surface_\100.grib2
+#
+# ---------------------------------------------
+# - NCEP High Resolution Rapid Refresh (HRRR) -
+# ---------------------------------------------
+#
+# High Resolution Radid Refresh (HRRR) grid output from NCEP
+# Based on http://www.nws.noaa.gov/os/notification/tin14-28hrrr-aac.htm
+#
+NGRID	^Y.C.* KWBY (..)(..).*F([0-9][0-9][0-9])
+	FILE
+	[DATA_DIR]/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_(\1:yyyy)(\1:mm)\1_\200.grib2
