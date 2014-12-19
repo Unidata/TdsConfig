@@ -24,9 +24,8 @@ on your setup):
 <LDM_HOME>/etc/TDS/pqact.satellite -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.satellite
 <LDM_HOME>/etc/TDS/pqact.modelsNcep -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsNcep
 <LDM_HOME>/etc/TDS/pqact.modelsFnmoc -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsFnmoc
-<LDM_HOME>/etc/TDS/sfmetar_sa.tbl -> <TDS_CONTENT_ROOT>/thredds/pqacts/sfmetar_sa.tbl
 <LDM_HOME>/etc/TDS/snstns.tbl-> <TDS_CONTENT_ROOT>/thredds/pqacts/snstns.tbl
-<LDM_HOME>/etc/TDS/snworld.tbl -> <TDS_CONTENT_ROOT>/thredds/pqacts/snworld.tbl
+<LDM_HOME>/etc/TDS/snstns.tbl-> <TDS_CONTENT_ROOT>/thredds/pqacts/snstns.tbl
 
 Remember, you will need to add the symlinked pqacts to the LDMs
 pqact.conf file. For example:
