@@ -13,7 +13,7 @@
 # Metar Station Data 
 #
 DDS|IDS	^S(A....|P....|XUS8.) .... ([0-3][0-9])
-	PIPE	etc/TDS/decoders/metar2nc.new1
+	PIPE	etc/TDS/decoders/metar2nc.new1.2
 	etc/TDS/cdl/metar.cdl.new1.2
 	[DATA_DIR]/decoded/netcdf/surface/metar
 #
