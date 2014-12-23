@@ -13,27 +13,27 @@
 # Metar Station Data 
 #
 DDS|IDS	^S(A....|P....|XUS8.) .... ([0-3][0-9])
-	PIPE	[LDM_DIR]/decoders/metar2nc.new1.2
-	[LDM_DIR]/etc/cdl/metar.cdl.new1.2
+	PIPE	perl etc/TDS/decoders/metar2nc.new1.2
+	etc/TDS/cdl/metar.cdl.new1.2
 	[DATA_DIR]/decoded/netcdf/surface/metar
 #
 # Surface Buoy Point Data
 #
 DDS|IDS	^S[IMNS].... .... ([0-3][0-9])
-	PIPE	[LDM_DIR]/decoders/buoy2nc
-	[LDM_DIR]/etc/cdl/buoy.cdl
+	PIPE	perl etc/TDS/decoders/buoy2nc
+	etc/TDS/cdl/buoy.cdl
 	[DATA_DIR]/decoded/netcdf/surface/buoy
 #
 # Surface Synoptic Point Data
 #
 DDS|IDS	^SM.... .... ([0-3][0-9])
-	PIPE	[LDM_DIR]/decoders/syn2nc
-	[LDM_DIR]/etc/cdl/syn.cdl
+	PIPE	perl etc/TDS/decoders/syn2nc
+	etc/TDS/cdl/syn.cdl
 	[DATA_DIR]/decoded/netcdf/surface/synoptic
 #
 # Upper Air Point Data
 #
 DDS|IDS	^U[ABDEFGHIJKLMPQRSTXZ].... .... ([0-3][0-9])
-	PIPE	[LDM_DIR]/decoders/ua2nc
-	[LDM_DIR]/etc/cdl/raob.cdl
+	PIPE	perl etc/TDS/decoders/ua2nc
+	etc/TDS/cdl/raob.cdl
 	[DATA_DIR]/decoded/netcdf/upperair

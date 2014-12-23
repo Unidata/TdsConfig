@@ -1,0 +1,1382 @@
+#!/usr/bin/perl
+#
+#  usage: buoy2nc [-h] [-n (old|new)] cdlfile [datadir] input from STDIN
+#
+#
+use NetCDF ;
+use Time::Local ;
+#no encoding;
+
+# process command line switches
+$buoyStr = "new";
+while ($_ = $ARGV[0], /^-/) {
+	 shift;
+       last if /^--$/;
+		/^(-v)/ && $verbose++;
+		/^(-h)/ && $hourly++; #create hourly files instead of daily
+		/^(-n)/ && ( $buoyStr = shift );
+		/^(-i)/ && $ignoreDate++;
+}
+# new netCDF file naming covention is default
+if( $buoyStr eq "new" ) {
+	if( $hourly ) {
+		$buoyStr = "00";
+	} else {
+		$buoyStr = "_0000";
+	}
+	$buoyPrefix = "Surface_Buoy_";
+} else {
+	$buoyStr = "_buoy";
+	$buoyPrefix = "";
+}
+# process input parameters
+if( $#ARGV == 0 ) {
+	$cdlfile = $ARGV[ 0 ] ;
+} elsif( $#ARGV == 1 ) {
+	$cdlfile = $ARGV[ 0 ] ;
+	if( $ARGV[ 1 ] =~ /^\d/ ) {
+		$yyyymm = $ARGV[ 1 ] ;
+	} else {
+		$datadir = $ARGV[ 1 ] ;
+	}
+} elsif( $#ARGV == 2 ) {
+	$cdlfile = $ARGV[ 0 ] ;
+	$datadir = $ARGV[ 1 ] ;
+	$yyyymm = $ARGV[ 2 ] ;
+} else {
+	die "Usage with input STDIN: buoy2nc [-v] [-h] [-n (old|new)] cdlfile [datadir] [yyyymm]\n";
+}
+
+# check for cdl and netCDF ncgen
+die "Missing cdlfile parameter: $!\n" unless  -e $cdlfile ;
+if( -e "util/ncgen" ) {
+	$ncgen = "util/ncgen" ;
+} elsif( -e "/usr/local/ldm/util/ncgen" ) {
+	$ncgen = "/usr/local/ldm/util/ncgen" ;
+} elsif( -e "/upc/netcdf/bin/ncgen" ) {
+	$ncgen = "/upc/netcdf/bin/ncgen" ;
+} elsif( -e "./ncgen" ) {
+	$ncgen = "./ncgen" ;
+} else {
+	open( NCGEN, "which ncgen |" ) ;
+	$ncgen = <NCGEN> ;
+	close( NCGEN ) ;
+
+	if( $ncgen =~ /no ncgen/ ) {
+		die "Can't find NetCDF utility 'ncgen' in PATH, util/ncgen
+/usr/local/ldm/util/ncgen, /upc/netcdf/bin/ncgen, or ./ncgen : $!\n" ;
+	} else {
+		$ncgen = "ncgen" ;
+	}
+}
+
+# the data directory 
+$datadir = "." if( ! $datadir ) ;
+system( "mkdir -p $datadir" ) if( ! -e $datadir ) ;
+if( -e "$datadir/buoyLog.log.2" ) {
+	`rm -f $datadir/buoyLog.log.3`;
+	`mv $datadir/buoyLog.log.2 $datadir/buoyLog.log.3`;
+}
+if( -e "$datadir/buoyLog.log.1" ) {
+	`mv $datadir/buoyLog.log.1 $datadir/buoyLog.log.2`;
+}
+if( -e "$datadir/buoyLog.log" ) {
+	`mv $datadir/buoyLog.log $datadir/buoyLog.log.1`;
+}
+# redirect STDOUT and STDERR
+open( STDOUT, ">$datadir/buoyLog.log" ) ||
+		die "could not open $datadir/buoyLog.log: $!\n" ;
+open( STDERR, ">&STDOUT" ) ||
+		die "could not dup stdout: $!\n" ;
+select( STDERR ) ; $| = 1 ;
+select( STDOUT ) ; $| = 1 ;
+
+# year and month
+if( ! $yyyymm ) {
+	$theyear = (gmtime())[ 5 ] ;
+	$theyear = ( $theyear < 100 ? $theyear : $theyear - 100 ) ;
+	$thedecade = sprintf( "%02d", $theyear ) ;
+	$theyear = "20" . sprintf( "%02d", $theyear ) ;
+	$themonth = (gmtime())[ 4 ] ;
+	$themonth++ ;
+	$themonth = sprintf( "%02d", $themonth ) ;
+	$yyyymm = "$theyear$themonth" ;
+} else {
+	die "yyyymm must be 6 in length: $!\n" if( length( $yyyymm ) != 6 ) ;
+	$theyear = substr( $yyyymm, 0, 4 ) ;
+	$themonth = substr( $yyyymm, 4 ) ;
+	$thedecade = substr( $yyyymm, 2, 2 ) ;
+}
+# set error handling to verbose only
+$status = NetCDF::opts( VERBOSE ) ;
+
+# set interrupt handler
+$SIG{ 'INT' }  = 'atexit' ;
+$SIG{ 'KILL' }  = 'atexit' ;
+$SIG{ 'TERM' }  = 'atexit' ;
+$SIG{ 'QUIT' }  = 'atexit' ;
+
+%CDL = (
+"rep_type", 0, "zone", 1, "buoy", 2, "time_obs", 3, "time_nominal", 4, "Lat", 5,
+"Lon", 6, "qPos", 7, "qTime", 8, "S1qCntrl", 9, "S1qPos", 10, "DIR", 11, 
+"SPD", 12, "T", 13, "humidity", 14, "TD", 15, "PRES", 16, 
+"SLP", 17, "char_Ptend", 18, "Ptend", 19, "S2qCntrl", 20, "S2qPos", 21, 
+"Tw", 22, "Pwa", 23, "Hwa", 24, "Pwa_tenths", 25, "Hwa_tenths", 26, 
+"S3qCntrl", 27, "S3qCurrent", 28, "salinityCntrl", 29, "Sdepth", 30, 
+"Stemp", 31, "Sparts", 32, "rmVelocityBy", 33, "duration", 34, "Cdepth", 35, 
+"Cdir", 36, "Cspd", 37, "Qp", 38, "Qh", 39, "Qtw", 40, "Qat", 41, "Qn", 42, 
+"Ql", 43, "time_position", 44, "Lat2", 45, "Lon2", 46, "driftdir", 47, 
+"driftspd", 48, "drogueType", 49, "cableLength", 50, "report", 51,
+"ship", 52, "stnType", 53, "meanWind", 54, "VIS", 55, "cloudCover", 56,
+"PRECIP_amt", 57, "PRECIP_period", 58, "WXpresent", 59, "WXpast", 60,
+"cloudLow", 61, "cloudMiddle", 62, "cloudHigh", 63, "shipTrueDIR", 64,
+"shipAvgSPD", 65, "swellDIR1", 66, "Ps1", 67, "Hs1", 68, "swellDIR2", 69,
+"Ps2", 70, "Hs2", 71, "iceType", 72, "iceThick", 73, "iceRate", 74, "Tb", 75,
+"ICE", 76, "iceConcen", 77, "iceStage", 78, "iceLand", 79, "iceEdge", 80,
+"iceSituation", 81, "Tmax", 82, "Tmin", 83, "groundState", 84, "snowDepth", 85,
+"PRECIP_amt24", 86, "cloudObsured", 87, "cloudGenus", 88, "cloudHeight", 89 ) ; 
+
+# set defaults
+$rep_type_len = 4 ;
+$ship_call_len = 5 ;
+$maxLevel = 10 ;
+$r_len = 256 ;
+
+# open cdl and get dimensions for variables
+open( CDL, "$cdlfile" ) || die "could not open $cdlfile: $!\n" ;
+while( <CDL> ) {
+	if( s#^\s*rep_type_len\s*=\s*(\d{1,5})## ) {
+		$rep_type_len = $1 ;
+	} elsif( s#^\s*ship_call_len\s*=\s*(\d{1,5})## ) {
+		$ship_call_len = $1 ;
+	} elsif( s#^\s*maxLevel\s*=\s*(\d{1,5})## ) {
+		$maxLevel = $1 ;
+	} elsif( s#^\s*r_len\s*=\s*(\d{1,5})## ) {
+		$r_len = $1 ;
+	} elsif( s#^\s*variables## ) {
+		last ;
+	}
+}
+$F = -99999 ;
+$A = \$F ;
+$SR = "\0" x $rep_type_len ;
+$ASR = \$SR ;
+$SC = "\0" x $ship_call_len ;
+$ASC = \$SC ;
+@ML = ( -99999 ) x ( $maxLevel ) ;
+$AML = \@ML ;
+$SRpt = "\0" x $r_len ;
+$ASRpt = \$SRpt ;
+
+# default netCDF record structure, contains all vars for the BUOY reports
+@defaultrec = ( $ASR, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, 
+ $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, 
+ $AML, $AML, $AML, $A, $A, $AML, $AML, $AML, $A, $A, $A, $A, $A, $A,
+ $A, $A, $A, $A, $A, $A, $A, $ASRpt, $ASC, $A, $A, $A, $A, $A, $A, $A, $A, $A, 
+ $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A, $A,
+ $A, $A, $A, $A, $A, $A, $A, $A, $A ) ;
+
+# two fold purpose array, if entry > 0, then var is requested and it's value
+# is the position in the record, except first entry
+@W = ( 0 ) x ( $#defaultrec +1 ) ;
+$W[ 0 ] = -1 ;
+
+# create record structure according to variables
+$i = 0 ;
+while( <CDL> ) {
+	if( s#^\s*(char|int|long|double|float) (\w{1,25})## ) {
+		( $number ) = $CDL{ $2 } ;
+		push( @rec, $defaultrec[ $number ] ) ;
+		$W[ $number ] = $i++ ;
+	}
+}
+close CDL ;
+undef( @defaultrec ) ;
+undef( %CDL ) ;
+
+# cloud base height
+@HGHT = ( 25, 75, 150, 250, 450, 800, 1250, 1750, 2250, 2500 ) ;
+# PRECIP period
+@tR = ( 0, 6, 12 ,18, 24, 1, 2, 3, 9, 15 ) ;
+
+# read in list of already processed reports if it exists
+# open buoy.lst, list of reports processed in the last 8 hours.
+if( -e "$datadir/buoy.lst" ) {
+	open( LST, "$datadir/buoy.lst" ) || 
+		die "could not open $datadir/buoy.lst: $!\n" ;
+	while( <LST> ) {
+		( $zone, $buoy, $yyyymmddhh, $rptlen ) = split ;
+		$rpt_hash{ "$zone $buoy $yyyymmddhh" }  = $rptlen ;
+	}
+	close LST ;
+}
+# Now begin parsing file and decoding observations breaking on cntrl C
+$/ = "\cC" ;
+
+# main loop   set select processing here from STDIN
+START:
+while( 1 ) {
+	open( STDIN, '-' ) ;
+	vec($rin,fileno(STDIN),1) = 1;
+	$timeout = 1200 ; # 20 minutes
+	$nfound = select( $rout = $rin, undef, undef, $timeout );
+	# timed out
+	if( ! $nfound ) {
+		print "Shut down, time out 20 minutes\n" ;
+		atexit() ;
+	}
+	atexit( "eof" ) if( eof( STDIN ) ) ;
+
+	# Process each line of buoy bulletins, header first
+	$_ = <STDIN> ;
+	s#\cC## ;
+	s#\cM##g ;
+	s#\cA\n## ;
+	s#\c^##g ;
+	# Eat header and check bulletin times
+	s#\d\d\d \n## ;
+	s#\w{4}\d{1,2} \w{4} (\d{2})(\d{2})(\d{2}).*\n## ;
+	$bday = $1 ;
+	$bhour = $2 ;
+	$bhour = "23" if( $bhour eq "24" ) ;
+	$bmin = $3 ;
+	next unless ( $bday && defined( $bhour ) && defined( $bmin ) ) ;
+	next if( $bmin > 59 || $bhour > 23 || $bday > 31 ) ;
+	# check for valid bulletin times against current time
+	$cday = (gmtime())[ 3 ] ;
+	$chour = (gmtime())[ 2 ] ;
+	if( $ignoreDate ) {
+		$cday = $bday;
+		$chour = $bhour;
+	}
+	# skip bulletins over 24 hours old or in the future
+	if( $bday == $cday ) {
+		next if( $bhour > $chour ) ;
+	} else { #  $bday != $cday, skip over day old reports
+ 		next if( $bday < $cday -1 ) ;
+ 		if( $bday > $cday ) {
+			next if( $cday != 1 || $bday < 28) ;
+		}
+ 		next if( $bhour < $chour ) ;
+	}
+	# reset year and month
+	$theyear = (gmtime())[ 5 ] ;
+	$theyear = ( $theyear < 100 ? $theyear : $theyear - 100 ) ;
+	$thedecade = sprintf( "%02d", $theyear ) ;
+	$theyear = "20" . sprintf( "%02d", $theyear ) ;
+	$themonth = (gmtime())[ 4 ] ;
+	$themonth++ ;
+	$themonth = sprintf( "%02d", $themonth ) ;
+	$yyyymm = "$theyear$themonth" ;
+	if( /ZZYY/ ) {
+		zzyy( $_ ) ;
+	} elsif( /BBXX/ ) {
+		bbxx( $_ ) ;
+	}
+	atexit( "eof" ) if( eof( STDIN ) ) ;
+} # end while( 1 )
+atexit( "eof" );
+exit( 0 ) ; #should never get here
+
+# BBXX reports
+sub bbxx {
+
+( $_ ) = @_ ;
+
+s#(BBXX)\s*\n## ;
+$rep_type = "BBXX" ;
+# Seperate bulletins into reports 
+if( /=\n/ ) {
+	s#=\s+\n#=\n#g ;
+} else {
+	s#\n# #g ;
+}
+@reports = split( /=\n/ ) ;
+for ( @reports ) { # Process each report in the bulletin
+	next if( /^\n/ ) ;
+	s#\n# #g ;
+	s# \s+# #g ;
+	s#-\s*##g ;
+	# save original report 
+	$report = "BBXX " . $_ ;
+	$rpt_length = length( $report );
+	$_ .=  " " ;
+
+	# decode Section 0 
+	if( s#^(\d\d)(\d{3}) ## ) {
+		$zone = $1 ;
+		$buoy = $2 ;
+		$stn = "$zone $buoy" ;
+	} else {
+		s#(\w{3,5}) ## ;
+		$ship = $1 ;
+		$stn = "ship $ship" ;
+	}
+	next unless( s#^(\d\d)(\d\d)(\d) 99(\d{3}) (\d)(\d{4}) ## ) ;
+	$rday = $1 ;
+	$rhour = $2 ;
+	$Windicator = $3 ;
+	( $Lat, $Lon ) = LatLon( $rep_type, $5, $4, $6 ) ;
+	$stn = "ship" . "$Lat" . "_" . "$Lon" . " $ship" if( defined( $ship ) ) ;
+	# check for valid times
+	next unless ($rday && defined( $rhour )) ;
+	next if( $rhour > 23 || $rday > 31 ) ;
+	# skip reports over 24 hours old
+	$tmpyyyymm = $yyyymm ;
+	if( $rday == $cday ) {
+		next if( $rhour > $chour ) ;
+	} else { #  $rday != $cday, skip over day old reports
+		next if( $rday < ( $cday -1 ) ) ;
+	 	if( $rday > $cday ) {
+			next if( $cday != 1 || $rday < 28) ;
+			# cday = 1, reset month and year
+			$tmpmonth = sprintf( "%02d", $themonth -1 ) ;
+			if( $tmpmonth == 0 ) {
+				$tmpmonth = "12" ;
+				$tmpyear = sprintf( "%04d", $theyear -1 );
+			} else {
+				$tmpyear = $theyear ;
+			}
+			$tmpyyyymm = $tmpyear .  $tmpmonth ;
+		}
+		next if( $rhour < $chour ) ;
+	}
+	$yyyymmddhh = $tmpyyyymm . sprintf( "%02d", $rday ) .
+		sprintf( "%02d", $rhour ) ;
+	$rmonth = substr( $yyyymmddhh, 4, 2 ) ;
+	$ryear = substr( $yyyymmddhh, 2, 2 ) ;
+
+	# decode Section 1 
+	next unless( s#^(\d)(\d)(\d|/)(\d\d|..) ## ) ;
+	$PRECIP_amt = 0 if( $1 == 3 ) ; # precipitation indicator
+	$stnType = $2 ;
+	$cloudHeight = $HGHT[ $3 ] if( $3 ne "/" ) ;
+	$tmp = $4 ;
+	if( $tmp =~ m#\d\d# ) {
+		if( $tmp < 51 ) {
+			$VIS = $tmp * 0.1 ;
+		} elsif( $tmp < 81 ) {
+			$VIS = $tmp -50 ;
+		} elsif( $tmp < 90 ) {
+			$VIS = (( $tmp -80 ) * 5 ) + 30 ;
+		} elsif( $tmp == 90 ) {
+			$VIS = 0.025 ;
+		} elsif( $tmp == 91 ) {
+			$VIS = 0.05 ;
+		} elsif( $tmp == 92 ) {
+			$VIS = 0.3 ;
+		} elsif( $tmp == 93 ) {
+			$VIS = 0.5 ;
+		} elsif( $tmp == 94 ) {
+			$VIS = 1 ;
+		} elsif( $tmp == 95 ) {
+			$VIS = 2 ;
+		} elsif( $tmp == 96 ) {
+			$VIS = 4 ;
+		} elsif( $tmp == 97 ) {
+			$VIS = 10 ;
+		} elsif( $tmp == 98 ) {
+			$VIS = 20 ;
+		} elsif( $tmp == 99 ) {
+			$VIS = 50 ;
+		}
+	}
+	next unless( s#^(\d|/)(\d\d|//)(\d\d|//) ## ) ;
+	$cloudCover = $1 if( $1  ne "/" ) ;
+	if( $2 ne "//" ) {
+		$DIR = $2 * 10 ;
+		$SPD = $3 ;
+		if( $SPD == 99 ) {
+			s#00(\d{3}) ## ;
+			$SPD = $1 ;
+		}
+		$SPD *= 0.5144 if( $Windicator > 2 ) ;
+	} 
+	s#00/// ## ; # eat SPD place holder if necessary
+	while( 1 ) {
+		if( s#^1((\d)(\d{3})|////) ## ) {
+			if( $1 ne "////" ) {
+				$T = $3 * 0.10 ;
+				$T *= -1.0 if( $2 == 1 ) ;
+			}
+		} 
+		if( s#^29(\d{3}|///) ## ) {
+			$humidity = $1 if( $1 ne "///" ) ;
+		} 
+		if( s#^2((0|1|9)(\d{2,3})(/)?|////) ## ) {
+			if( $1 ne "////" ) {
+				if( $4 ne "/" ) {
+					$TD = $3 * 0.10 ;
+				} else {
+					$TD = $3 ;
+				}
+				$TD *= -1.0 if( $2 == 1 ) ;
+			}
+		}
+		last if( m#^333|^444|^555# ) ; 
+		if( s#^3(\d{4}|////) ## ) {
+			if( $1 ne "////" ) {
+				$PRES = $1 * 0.10 ;
+				$PRES += 1000 if( $PRES < 100 ) ;
+			}
+		}
+		last if( m#^444|^555# ) ; 
+		if( s#^4(\d{4}|////) ## ) {
+			if( $1 ne "////" ) {
+				$SLP = $1 * 0.10 ;
+				$SLP += 1000 if( $SLP < 100 ) ;
+			}
+		}
+		last if( m#^555# ) ; 
+		if( s#^5(\d|/)(\d{3}|///) ## ) {
+			$char_Ptend = $1 if( $1 ne "/" ) ;
+			$Ptend = $2 * 0.10 if( $2 ne "///" ) ;
+		}
+		if( s#^6((\d{3})(\d)|////) ## ) {
+			if( $1 ne "////" ) {
+				if( $2 < 990 ) {
+					$PRECIP_amt = $2 ;
+				} else {
+					$PRECIP_amt = ( $2 -990 ) * 0.1 ;
+				}
+				$PRECIP_period = $tR[ $3 ] ;
+			}
+		}
+		if( s#^7(\d\d|//)(\d\d|//) ## ) {
+			$WXpresent = $1 if( $1 ne "//" ) ;
+			$WXpast = $2 if( $2 ne "//" ) ;
+		}
+		if( s#^8(\d|/)(\d|/)(\d|/)(\d|/) ## ) {
+			$cloudCover = $1 if( $1 ne "/" ) ;
+			$cloudLow = $2 if( $2 ne "/" ) ;
+			$cloudMiddle = $3 if( $3 ne "/" ) ;
+			$cloudHigh = $4 if( $4 ne "/" ) ;
+		}
+		if( s#^9((\d\d)(\d\d)|////) ## ) {
+			if( $1 ne "////" ) {
+				$rhour = $2 ;
+				$rmin = $3 ;
+				$time_obs = theTime( "obs" ) ;
+				$time_nominal = theTime( "nominal" ) ;
+			}
+		}
+		last ;
+	} # end Section 1
+
+	# decode Section 2 
+	while( ! m#^333|^444|^555# ) {
+		if( s#^222(.)(.) ## ) {
+			if( $1 ne "/" && $1 != 9 ) {
+				$shipTrueDIR = $1 * 45 ;
+				if( $2 != 0 ) {
+					$shipAvgSPD = (( $2 -1 ) * 5 ) +3 ;
+				} else {
+					$shipAvgSPD = 0 ;
+				}
+			}
+		} else { # section 2 header missing
+			last ;
+		}
+		if( s#^0(\d|/)(\d{3}|///) ## ) {
+			$Tw = $2 * 0.10 if( $2 ne "///" ) ; # Water temp
+			$Tw *= -1.0 if( $1 ne "/" && ( $1 % 2 ) == 1 ) ;
+		}
+		if( s#^1(\d\d|//)(\d\d|//) ## ) {
+			# Period of waves in secs by instrument
+			$Pwa = $1 if( $1 ne "//" ) ; 
+			# Height of waves in .5 meters units by instrument
+			$Hwa = $2 / 2.0 if( $2 ne "//" ) ; 
+		}
+		if( s#^2(\d\d|//)(\d\d|//) ## ) {
+			# Period of waves in secs
+			$Pwa = $1 if( $2 ne "//" ) ; 
+			# Height of waves in .5 meters units
+			$Hwa = $2 / 2.0 if( $2 ne "//" ) ; 
+		}
+		last if( m#^333|^444|^555# ) ;
+		if( s#^3(\d\d)(\d\d|//) ## ) {
+			$swellDIR1 = $1 * 10 if( $1 != 99 ) ;
+			$swellDIR2 = $2 * 10 if( $2 ne "//" && $2 != 99 ) ;
+			if( s#^4(\d\d|//)(\d\d|//) ## ) {
+				# Period of swell in secs
+				$Ps1 = $1 if( $1  ne "//" ) ; 
+				# Height of swell in .5 meters units
+				$Hs1 = $2 / 2.0 if( $2  ne "//" ) ; 
+			}
+			if( defined( $swellDIR2 ) && s#^5(\d\d)(\d\d) ## ) {
+				# Period of swell in secs
+				$Ps2 = $1 ; 
+				# Height of swell in .5 meters units
+				$Hs2 = $2 / 2.0 ; 
+			}
+		}
+		s#^5//// ## ;
+		if( s#^6(\d|/)(\d\d|//)(\d|/) ## ) {
+			# Type, Thickness, and Rate of ICE
+			$iceType = $1 if( $1 ne "/" ) ; 
+			$iceThick = $2 if( $2 ne "//" ) ; 
+			$iceRate = $3 if( $3 ne "/" ) ; 
+		}
+		if( s#^70(\d{3}|///) ## ) {
+			$Hwa_tenths = $1 * 0.10 if( $1 ne "///" ) ;
+		}
+		if( s#^8(\d|/)(\d{3}|///) ## ) {
+			$Tb = $2 * 0.10 if( $2 ne "///" ) ;
+			$Tb *= -1 if( $1 ne "/" && $1 != 0 && $1 != 5 ) ;
+		}
+		$ICE = 1 if( s#ICE ## ) ;
+		last if( m#^333|^444|^555# ) ;
+		if( s#^(\d|/)(\d|/)(\d|/)(\d|/)(\d|/) ## ) {
+			$iceConcen = $1 if( $1 ne "/" ) ;
+			$iceStage = $2 if( $2 ne "/" ) ;
+			$iceLand = $3 if( $3 ne "/" ) ;
+			$iceEdge = $4 if( $4 ne "/" ) ;
+			$iceSituation = $5 if( $5 ne "/" ) ;
+		}
+		last;
+	} # end Section 2
+
+	# decode Section 3 
+	while( ! m#^444|^555# ) {
+		last unless( s#^333 ## ) ;
+		s#^0.... ## ;
+		if( s#^1((0|1|9)(\d{3})|////) ## ) {
+			if( $1 ne "////" ) {
+				$Tmax = $3 * 0.10 ;
+				$Tmax *= -1.0 if( $2 == 1 ) ;
+			}
+		}
+		if( s#^2((0|1|9)(\d{3})|////) ## ) {
+			if( $1 ne "////" ) {
+				$Tmin = $3 * 0.10 ;
+				$Tmin *= -1.0 if( $2 == 1 ) ;
+			}
+		}
+		s#^3(\d)(\d{3}|///) ## ;
+		last if( m#^444|^555# ) ;
+		if( s#^4(\d)(\d{3}|///) ## ) {
+			$groundState = $1 ;
+			$snowDepth = $2 ;
+		}
+		last if( m#^555# ) ;
+		$count = 0 ;
+		while( ! m#^6|^7|^8|^9# ) {
+			s#^\d{5} ## ;
+			last if( $count++ > 10 || ! $_ ) ;
+		}
+		if( s#^6((\d{3})(\d)|////) ## ) {
+			if( $1 ne "////" ) {
+				if( $2 < 990 ) {
+					$PRECIP_amt = $2 ;
+				} else {
+					$PRECIP_amt = ( $2 -990 ) * 0.1 ;
+				}
+				$PRECIP_period = $tR[ $3 ] ;
+			}
+		}
+		if( s#^7(\d{4}|////) ## ) {
+			$PRECIP_amt24 = $1 * 0.1  if( $1 ne "////" ) ;
+		}
+		if( ! m#80000# && s#^8(\d)(\d)(\d\d) ## ) {
+			$cloudObsured = $1 ; 
+			$cloudGenus = $2 ; 
+			if( $3 < 51 ) {
+				$cloudHeight = $3 * 30 ;
+			} elsif( $3 < 81 ) {
+				$cloudHeight = ( $3 -50 ) * 300 ;
+			} elsif( $3 < 90 ) {
+				$cloudHeight = (( $3 -80 ) * 1500 ) + 9000 ;
+			} elsif( $3 == 90 ) {
+				$cloudHeight = 25 ;
+			} elsif( $3 == 91 ) {
+				$cloudHeight = 75 ;
+			} elsif( $3 == 92 ) {
+				$cloudHeight = 150 ;
+			} elsif( $3 == 93 ) {
+				$cloudHeight = 250 ;
+			} elsif( $3 == 94 ) {
+				$cloudHeight = 450 ;
+			} elsif( $3 == 95 ) {
+				$cloudHeight = 800 ;
+			} elsif( $3 == 96 ) {
+				$cloudHeight = 1250 ;
+			} elsif( $3 == 97 ) {
+				$cloudHeight = 1750 ;
+			} elsif( $3 == 98 ) {
+				$cloudHeight = 2250 ;
+			} elsif( $3 == 99 ) {
+				$cloudHeight = 2500 ;
+			}
+		}
+		if( s#^9(\d\d)(\d\d) ## ) {
+			if(  $1 == 12 ) { 
+				$meanWind = $2 ; 
+			} else {
+				print "Group 333 9$1$2 not decoded\n" ;
+			}
+		}
+		last ;
+	} # end Section 3
+
+	# Section 4 not decoded
+	#while( ! m#^555# ) {
+	#	s#^444 ## ;
+	#	s#(.....) ## ;
+	#	print "Group 444 $1 not decoded\n" ;
+	#	last ;
+	#} # end Section 4
+
+	# Section 5 not decoded
+
+	# output record
+	doOutput() ;
+} # end foreach report
+} # end bbxx report
+
+# ZZYY reports
+sub zzyy {
+
+( $_ ) = @_ ;
+
+# Seperate bulletins into reports 
+if( /=\n/ ) {
+	s#=\s+\n#=\n#g ;
+} else {
+	s#\n# #g ;
+}
+@reports = split( /=\n/ ) ;
+for ( @reports ) { # Process each report in the bulletin
+	next if( /^\n/ ) ;
+	s#\n# #g ;
+	s#\s+# #g ;
+	# save original report 
+	$report = $_ ;
+	$rpt_length = length( $report );
+	$_ .= " " ;
+	# decode Section 0 
+	next unless ( 
+s#(ZZYY) (\d\d)(\d{3}) (\d\d)(\d\d)(\d) (\d\d)(\d\d)(\d|/) (\d)(\d{5}) (\d{6}) ## ) ;
+	$rep_type = $1 ;
+	$zone = $2 ;
+	$buoy = $3 ;
+	$stn = "$zone $buoy" ;
+	$rday = $4 ;
+	$rmonth = $5 ;
+	$ryear = substr( $thedecade, 0, 1 ) . $6 ;
+	$rhour = $7 ;
+	$rmin = $8 ;
+	$Windicator = $9 ;
+	( $Lat, $Lon ) = LatLon( $rep_type, $10, $11, $12 ) ;
+	# check for valid times
+	next unless ($rday && defined( $rhour )) ;
+	next if( $rhour > 23 || $rday > 31 ) ;
+	# skip reports over 24 hours old
+	$tmpyyyymm = $yyyymm ;
+	if( $rday == $cday ) {
+		next if( $rhour > $chour ) ;
+	} else { #  $rday != $cday, skip over day old reports
+		next if( $rday < ( $cday -1 ) ) ;
+	 	if( $rday > $cday ) {
+			next if( $cday != 1 || $rday < 28) ;
+			# cday = 1, reset month and year
+			$tmpmonth = sprintf( "%02d", $themonth -1 ) ;
+			if( $tmpmonth == 0 ) {
+				$tmpmonth = "12" ;
+				$tmpyear = sprintf( "%04d", $theyear -1 );
+			} else {
+				$tmpyear = $theyear ;
+			}
+			$tmpyyyymm = $tmpyear .  $tmpmonth ;
+		}
+		next if( $rhour < $chour ) ;
+	}
+	$yyyymmddhh = $tmpyyyymm . sprintf( "%02d", $rday ) .
+		sprintf( "%02d", $rhour ) ;
+	$time_obs = theTime( "obs" ) ;
+	$time_nominal = theTime( "nominal" ) ;
+	if( s#^6(\d)(\d)(\d|/)(\d|/) ## ) {
+		$qPos = $1 ;
+		$qTime = $2 ;
+		$qSec = $3 ;
+		$qX = $4 ;
+	}
+	# decode Section 1 
+	$count = 0 ;
+	while( ! m#^222|^333|^444# ) {
+		if( s#^111(\d)(\d) ## ) {
+			$S1qCntrl = $1 ;
+			$S1qPos = $2 ;
+		} elsif( s#^0(\d\d|//)(\d\d|//) ## ) {
+			if( $1 ne "//" && $1 != 99 ) {
+				$DIR = $1 * 10 ;
+				$SPD = $2 ;
+				$SPD *= 0.5144 if( $Windicator > 2 ) ;
+			}
+		} elsif( s#^1((\d)(\d{3})|////) ## ) {
+			if( $1 ne "////" ) {
+				$T = $3 * 0.10 ;
+				$T *= -1.0 if( $2 == 1 ) ;
+			}
+		} elsif( s#^29(\d{3}|///) ## ) {
+			$humidity = $1 if( $1 ne "///" ) ;
+		} elsif( s#^2((\d)(\d{3})|////) ## ) {
+			if( $1 ne "////" ) {
+				$TD = $3 * 0.10 ;
+				$TD *= -1.0 if( $2 == 1 ) ;
+			}
+		} elsif( s#^3(\d{4}|////) ## ) {
+			if( $1 ne "////" ) {
+				$PRES = $1 * 0.10 ;
+				$PRES += 1000 if( $PRES < 100 ) ;
+			}
+		} elsif( s#^4(\d{4}|////) ## ) {
+			if( $1 ne "////" ) {
+				$SLP = $1 * 0.10 ;
+				$SLP += 1000 if( $SLP < 100 ) ;
+			}
+		} elsif( s#^5(\d|/)(\d{3}|///) ## ) {
+			$char_Ptend = $1 if( $1 ne "/" ) ;
+			$Ptend = $3 * 0.10 if( $2 ne "///" ) ;
+		}
+		last if( $count++ > 25 || ! $_ ) ;
+	} # end Section 1
+	# decode Section 2 
+	$count = 0 ;
+	while( ! m#^333|^444# ) {
+		if( s#^222(\d)(\d) ## ) {
+			$S2qCntrl = $1 ;
+			$S2qPos = $2 ;
+		} elsif( s#^0(\d|/)(\d{3}|///) ## ) {
+			$Tw = $2 * 0.10 if( $2 ne "///" ) ; # Water temp
+			$Tw *= -1.0 if( $1 == 1 ) ;
+		} elsif( s#^1(\d\d|//)(\d\d|//) ## ) {
+			# Period of waves in secs
+			$Pwa = $2 if( $2 ne "//" ) ; 
+			# Height of waves in .5 meters units
+			$Hwa = $3 / 2 if( $3 ne "//" ) ; 
+		} elsif( s#^20(\d{3}|///) ## ) {
+			$Pwa_tenths = $1 * 0.10 if( $1 ne "///" ) ;
+		} elsif( s#^21(\d{3}|///) ## ) {
+			$Hwa_tenths = $1 * 0.10 if( $1 ne "///" ) ;
+		}
+		last if( $count++ > 25 || ! $_ ) ;
+	} # end Section 2
+	# decode Section 3 
+	if( s#^333(\d)(\d) ## ) {
+		$S3qCntrl = $1 ;
+		$S3qCurrent = $2 ;
+		if( s#^8887(\d) ## ) {
+			$salinityCntrl = $1 ;
+			$count = 0 ;
+			while( ! m#^66|^444# ) {
+				if( s#^2(\d{4}) 3(\d{4}) 4(\d{4}) ## ) {
+					push( @Sdepth, $1 ) ;
+					if( $2 > 5000 ) {
+						$tmp = ($2 -5000) * -1 ;
+					} else {
+						$tmp = $2 ;
+					}
+					$tmp *= 0.01 ;
+					push( @Stemp, $tmp ) ;
+					push( @Sparts, $3 * 0.01 ) ;
+				} elsif( s#2(\d{4}) 3(\d{4}) ## ) {
+					push( @Sdepth, $1 ) ;
+					if( $2 > 5000 ) {
+						$tmp = ($2 -5000) * -1 ;
+					} else {
+						$tmp = $2 ;
+					}
+					$tmp *= 0.01 ;
+					push( @Stemp, $tmp ) ;
+				} elsif( s#^2(\d{4}) 4(\d{4}) ## ) {
+					push( @Sdepth, $1 ) ;
+					push( @Sparts, $2 * 0.01 ) ;
+				}
+				last if( $count++ > 25 || ! $_ ) ;
+			}
+			for( $i = $#Sdepth +1; $i < $maxLevel; $i++ ) {
+				push( @Sdepth, $F ) ;
+				push( @Stemp, $F ) if( defined( @Stemp ) ) ;
+				push( @Sparts, $F ) if( defined( @Sparts ) ) ;
+			}
+		}
+		if( s#^66(\d)9(\d) ## ) {
+			$rmVelocityBy = $1 ;
+			$duration = $2 ;
+			$count = 0 ;
+			while( ! m#^444# ) {
+				s#2(\d{4}) (\d{2})(\d{3}) ## ;
+				push( @Cdepth, $1 ) ;
+				if( $2 != 99 ) {
+					push( @Cdir, $2 * 10 ) ;
+				} else {
+					push( @Cdir, $F ) ;
+				}
+				push( @Cspd, $3 * 0.01 ) ;
+				last if( $count++ > 25 || ! $_ ) ;
+			}
+			for( $i = $#Cdepth +1; $i < $maxLevel; $i++ ) {
+				push( @Cdepth, $F ) ;
+				push( @Cdir, $F ) ;
+				push( @Cspd, $F ) ;
+			}
+		}
+	} # end Section 3
+	# decode Section 4 
+	if( s#^444 ## ) {
+		$count = 0 ;
+		while( $_ ) {
+			if( s#^1(\d)(\d)(\d)(\d) ## ) {
+				$Qp = $1 ; # quality of pres meas
+				$Qh = $2 ; # quality of current profile
+				$Qtw = $3 ; # quality of water temp
+				$Qat = $4 ; # quality of air temp
+			} elsif( s#^2(\d)(\d)// ## ) {
+				$Qn = $1 ; # quality of satellite trans
+				$Ql = $2 ; # quality of location
+				if( $Ql == 1 ) {
+					s#(\d\d)(\d\d)(\d) (\d\d)(\d\d)/ ## ;
+					$Pday = $1 ;
+					$Pmonth = $2 ;
+					$Pyear = substr($thedecade, 0, 1) . $3 ;
+					$Phour = $4 ;
+					$Pmin = $5 ;
+					$time_position = theTime( "pos" );
+				} elsif( $Ql == 2 ) {
+					s#(\d)(\d{5}) (\d{6}) ## ;
+					( $Lat2, $Lon2 ) = 
+						LatLon( $rep_type, $1, $2, $3 ) ;
+				}
+			} elsif( s#^7(\d{2})(\d{2}) ## ) {
+				$driftspd = $1 ;
+				$driftdir = $2 * 10 ;
+			} elsif( s#^8(\d{4}) ## ) {
+				# engineering status not decoded
+			} elsif( s#^9(\d|/)(\d{3}|///) ## ) {
+				$drogueType = $1 if( $1 ne "/" ) ;
+				$cableLength = $2 if( $2 ne "///" ) ;
+			}
+			last if( $count++ > 25 || ! $_ ) ;
+		}
+	} # end Section 4
+
+	# output report
+	doOutput() ;
+} # end foreach report
+} # end zzyy report
+
+# output a report
+sub doOutput {
+
+printvars() if( $verbose ) ;
+
+# we have a legal report, open or switch to a Netcdf file
+$status = doNet( ) ;
+
+if( $status ) { # OK to write data
+	# set variables into dataref
+	setvars() ;
+	# report already entered skip 
+	if( $rpt_hash{ "$stn $yyyymmddhh" } >= $rpt_length ) {
+		next;
+	} else { # new report, 
+		$rpt_hash{ "$stn $yyyymmddhh" } = $rpt_length ;
+	}
+	# enter report data into NetCDF file
+	$status = NetCDF::recput( $ncid, $recnum, \@dataref );
+	if( $status ) {
+		print "NetCDF::recput status = $status\n" ;
+		chop $report while( index( $report, "\0" ) != -1 ) ;
+		print "$ncfile\n$report\n" ;
+	} else {
+		$status = NetCDF::sync( $ncid ) ;
+		#print "Syncing $ncfile with ncid $ncid\n" ;
+		$recnum++ ;
+	}
+}
+# undefine vars
+undefinevars() ;
+}  # end doOutput
+
+# undefine all report vars
+sub undefinevars
+{
+# report vars
+undef( $report ) ;
+#undef( $rep_type ) ;
+undef( $zone ) ;
+undef( $buoy ) ;
+undef( $ship ) ;
+undef( $rday ) ;
+undef( $rmonth ) ;
+undef( $ryear ) ;
+undef( $rhour ) ;
+undef( $rmin ) ;
+undef( $time_obs ) ;
+undef( $time_nominal ) ;
+undef( $yyyymmddhh ) ;
+undef( $Windicator ) ;
+undef( $quadrant ) ;
+undef( $Lat ) ;
+undef( $Lon ) ;
+undef( $qPos ) ;
+undef( $qTime ) ;
+undef( $S1qCntrl ) ;
+undef( $S1qPos ) ;
+undef( $stnType ) ;
+undef( $meanWind ) ;
+undef( $VIS ) ;
+undef( $cloudCover ) ;
+undef( $DIR ) ;
+undef( $SPD ) ;
+undef( $T ) ;
+undef( $humidity ) ;
+undef( $TD ) ;
+undef( $PRES ) ;
+undef( $SLP ) ;
+undef( $char_Ptend ) ;
+undef( $Ptend ) ;
+undef( $PRECIP_amt ) ;
+undef( $PRECIP_period ) ;
+undef( $WXpresent ) ;
+undef( $WXpast ) ;
+undef( $cloudLow ) ;
+undef( $cloudMiddle ) ;
+undef( $cloudHigh ) ;
+undef( $S2qCntrl ) ;
+undef( $S2qPos ) ;
+undef( $shipTrueDIR ) ;
+undef( $shipAvgSPD ) ;
+undef( $Tw ) ;
+undef( $Pwa ) ;
+undef( $Hwa ) ;
+undef( $Pwa_tenths ) ;
+undef( $Hwa_tenths ) ;
+undef( $swellDIR1 ) ;
+undef( $Ps1 ) ;
+undef( $Hs1 ) ;
+undef( $swellDIR2 ) ;
+undef( $Ps2 ) ;
+undef( $Hs2 ) ;
+undef( $iceType ) ;
+undef( $iceThick ) ;
+undef( $iceRate ) ;
+undef( $Tb ) ;
+undef( $ICE ) ;
+undef( $iceConcen ) ;
+undef( $iceStage ) ;
+undef( $iceLand ) ;
+undef( $iceEdge ) ;
+undef( $iceSituation ) ;
+undef( $S3qCntrl ) ;
+undef( $S3qCurrent ) ;
+undef( $salinityCntrl ) ;
+undef( @Sdepth ) ;
+undef( @Stemp ) ;
+undef( @Sparts ) ;
+undef( $rmVelocityBy ) ;
+undef( $duration ) ;
+undef( @Cdepth ) ;
+undef( @Cdir ) ;
+undef( @Cspd ) ;
+undef( $Tmax ) ;
+undef( $Tmin ) ;
+undef( $groundState ) ;
+undef( $snowDepth ) ;
+undef( $PRECIP_amt24 ) ;
+undef( $cloudObsured ) ;
+undef( $cloudGenus ) ;
+undef( $cloudHeight ) ;
+undef( $Qp ) ;
+undef( $Qh ) ;
+undef( $Qtw ) ;
+undef( $Qat ) ;
+undef( $Qn ) ;
+undef( $Ql ) ;
+undef( $Pday ) ;
+undef( $Pmonth ) ;
+undef( $Pyear ) ;
+undef( $Phour ) ;
+undef( $Pmin ) ;
+undef( $time_position ) ;
+undef( $Lat2 ) ;
+undef( $Lon2 ) ;
+undef( $driftspd ) ;
+undef( $driftdir ) ;
+undef( $drogueType ) ;
+undef( $cableLength ) ;
+
+} # end of undefinevars
+
+# setvars into record
+sub setvars {
+
+$report = padstr( $report, $r_len ) ;
+$ship = padstr( $ship, $ship_call_len ) if( defined( $ship ) ) ;
+
+undef( @dataref ) ;
+
+@dataref = @rec ;
+
+# report vars
+$dataref[ $W[ 0 ] ] = \$rep_type if( $W[ 0 ] != -1 ) ;
+$dataref[ $W[ 1 ] ] = \$zone if( $W[ 1 ] && defined( $zone ) ) ;
+$dataref[ $W[ 2 ] ] = \$buoy if( $W[ 2 ] && defined( $buoy ) ) ;
+$dataref[ $W[ 3 ] ] = \$time_obs if( $W[ 3 ] && defined( $time_obs ) ) ;
+$dataref[ $W[ 4 ] ] = \$time_nominal if( $W[ 4 ] && defined( $time_nominal ) ) ;
+$dataref[ $W[ 5 ] ] = \$Lat if( $W[ 5 ] && defined( $Lat ) ) ;
+$dataref[ $W[ 6 ] ] = \$Lon if( $W[ 6 ] && defined( $Lon ) ) ;
+$dataref[ $W[ 7 ] ] = \$qPos if( $W[ 7 ] && defined( $qPos ) ) ;
+$dataref[ $W[ 8 ] ] = \$qTime if( $W[ 8 ] && defined( $qTime ) ) ;
+$dataref[ $W[ 9 ] ] = \$S1qCntrl if( $W[ 9 ] && defined( $S1qCntrl ) ) ;
+$dataref[ $W[ 10 ] ] = \$S1qPos if( $W[ 10 ] && defined( $S1qPos ));
+$dataref[ $W[ 11 ] ] = \$DIR if( $W[ 11 ] && defined( $DIR ) ) ;
+$dataref[ $W[ 12 ] ] = \$SPD if( $W[ 12 ] && defined( $SPD ) ) ;
+$dataref[ $W[ 13 ] ] = \$T if( $W[ 13 ] && defined( $T ) ) ;
+$dataref[ $W[ 14 ] ] = \$humidity if( $W[ 14 ] && defined( $humidity ) ) ;
+$dataref[ $W[ 15 ] ] = \$TD if( $W[ 15 ] && defined( $TD ) ) ;
+$dataref[ $W[ 16 ] ] = \$PRES if( $W[ 16 ] && defined( $PRES ) ) ;
+$dataref[ $W[ 17 ] ] = \$SLP if( $W[ 17 ] && defined( $SLP ) ) ;
+$dataref[ $W[ 18 ] ] = \$char_Ptend if( $W[ 18 ] && defined( $char_Ptend ) ) ;
+$dataref[ $W[ 19 ] ] = \$Ptend if( $W[ 19 ] && defined( $Ptend ) ) ;
+$dataref[ $W[ 20 ] ] = \$S2qCntrl if( $W[ 20 ] && defined( $S2qCntrl ) ) ;
+$dataref[ $W[ 21 ] ] = \$S2qPos if( $W[ 21 ] && defined( $S2qPos ) ) ;
+$dataref[ $W[ 22 ] ] = \$Tw if( $W[ 22 ] && defined( $Tw ) ) ;
+$dataref[ $W[ 23 ] ] = \$Pwa if( $W[ 23 ] && defined( $Pwa ) ) ;
+$dataref[ $W[ 24 ] ] = \$Hwa if( $W[ 24 ] && defined( $Hwa ) ) ;
+$dataref[ $W[ 25 ] ] = \$Pwa_tenths if( $W[ 25 ] && defined( $Pwa_tenths ) ) ;
+$dataref[ $W[ 26 ] ] = \$Hwa_tenths if( $W[ 26 ] && defined( $Hwa_tenths ) ) ;
+$dataref[ $W[ 27 ] ] = \$S3qCntrl if( $W[ 27 ] && defined( $S3qCntrl ) ) ;
+$dataref[ $W[ 28 ] ] = \$S3qCurrent if( $W[ 28 ] && defined( $S3qCurrent ) ) ;
+$dataref[ $W[ 29 ] ] = \$salinityCntrl if( $W[ 29 ] && defined( $salinityCntrl));
+$dataref[ $W[ 30 ] ] = \@Sdepth if( $W[ 30 ] && defined( @Sdepth ) ) ;
+$dataref[ $W[ 31 ] ] = \@Stemp if( $W[ 31 ] && defined( @Stemp ) ) ;
+$dataref[ $W[ 32 ] ] = \@Sparts if( $W[ 32 ] && defined( @Sparts ) ) ;
+$dataref[ $W[ 33 ] ] = \$rmVelocityBy if( $W[ 33 ] && defined( $rmVelocityBy )) ;
+$dataref[ $W[ 34 ] ] = \$duration if( $W[ 34 ] && defined( $duration ) ) ;
+$dataref[ $W[ 35 ] ] = \@Cdepth if( $W[ 35 ] && defined( @Cdepth ) ) ;
+$dataref[ $W[ 36 ] ] = \@Cdir if( $W[ 36 ] && defined( @Cdir ) ) ;
+$dataref[ $W[ 37 ] ] = \@Cspd if( $W[ 37 ] && defined( @Cspd ) ) ;
+$dataref[ $W[ 38 ] ] = \$Qp if( $W[ 38 ] && defined( $Qp ));
+$dataref[ $W[ 39 ] ] = \$Qh if( $W[ 39 ] && defined( $Qh ));
+$dataref[ $W[ 40 ] ] = \$Qtw if( $W[ 40 ] && defined( $Qtw ) ) ;
+$dataref[ $W[ 41 ] ] = \$Qat if( $W[ 41 ] && defined( $Qat ) ) ;
+$dataref[ $W[ 42 ] ] = \$Qn if( $W[ 42 ] && defined( $Qn ) ) ;
+$dataref[ $W[ 43 ] ] = \$Ql if( $W[ 43 ] && defined( $Ql ));
+$dataref[ $W[ 44 ] ] = \$time_position if( $W[ 44 ] && 
+	defined( $time_position ) ) ;
+$dataref[ $W[ 45 ] ] = \$Lat2 if( $W[ 45 ] && defined( $Lat2 ));
+$dataref[ $W[ 46 ] ] = \$Lon2 if( $W[ 46 ] && defined( $Lon2 ) ) ;
+$dataref[ $W[ 47 ] ] = \$driftdir if( $W[ 47 ] && defined( $driftdir ) ) ;
+$dataref[ $W[ 48 ] ] = \$driftspd if( $W[ 48 ] && defined( $driftspd ));
+$dataref[ $W[ 49 ] ] = \$drogueType if( $W[ 49 ] && defined( $drogueType ));
+$dataref[ $W[ 50 ] ] = \$cableLength if( $W[ 50 ] && defined( $cableLength ));
+$dataref[ $W[ 51 ] ] = \$report if( $W[ 51 ] && defined( $report ) ) ;
+$dataref[ $W[ 52 ] ] = \$ship if( $W[ 52 ] && defined( $ship ) ) ;
+$dataref[ $W[ 53 ] ] = \$stnType if( $W[ 53 ] && defined( $stnType ) ) ;
+$dataref[ $W[ 54 ] ] = \$meanWind if( $W[ 54 ] && defined( $meanWind ) ) ;
+$dataref[ $W[ 55 ] ] = \$VIS if( $W[ 55 ] && defined( $VIS ) ) ;
+$dataref[ $W[ 56 ] ] = \$cloudCover if( $W[ 56 ] && defined( $cloudCover ) ) ;
+$dataref[ $W[ 57 ] ] = \$PRECIP_amt if( $W[ 57 ] && defined( $PRECIP_amt ) ) ;
+$dataref[ $W[ 58 ] ] = \$PRECIP_period if( $W[ 58 ] && 
+	defined( $PRECIP_period ) ) ;
+$dataref[ $W[ 59 ] ] = \$WXpresent if( $W[ 59 ] && defined( $WXpresent ) ) ;
+$dataref[ $W[ 60 ] ] = \$WXpast if( $W[ 60 ] && defined( $WXpast ));
+$dataref[ $W[ 61 ] ] = \$cloudLow if( $W[ 61 ] && defined( $cloudLow ) ) ;
+$dataref[ $W[ 62 ] ] = \$cloudMiddle if( $W[ 62 ] && defined( $cloudMiddle ) ) ;
+$dataref[ $W[ 63 ] ] = \$cloudHigh if( $W[ 63 ] && defined( $cloudHigh ) ) ;
+$dataref[ $W[ 64 ] ] = \$shipTrueDIR if( $W[ 64 ] && defined( $shipTrueDIR ) ) ;
+$dataref[ $W[ 65 ] ] = \$shipAvgSPD if( $W[ 65 ] && defined( $shipAvgSPD ) ) ;
+$dataref[ $W[ 66 ] ] = \$swellDIR1 if( $W[ 66 ] && defined( $swellDIR1 ) ) ;
+$dataref[ $W[ 67 ] ] = \$Ps1 if( $W[ 67 ] && defined( $Ps1 ) ) ;
+$dataref[ $W[ 68 ] ] = \$Hs1 if( $W[ 68 ] && defined( $Hs1 ) ) ;
+$dataref[ $W[ 69 ] ] = \$swellDIR2 if( $W[ 69 ] && defined( $swellDIR2 ) ) ;
+$dataref[ $W[ 70 ] ] = \$Ps2 if( $W[ 70 ] && defined( $Ps2 ));
+$dataref[ $W[ 71 ] ] = \$Hs2 if( $W[ 71 ] && defined( $Hs2 ) ) ;
+$dataref[ $W[ 72 ] ] = \$iceType if( $W[ 72 ] && defined( $iceType ) ) ;
+$dataref[ $W[ 73 ] ] = \$iceThick if( $W[ 73 ] && defined( $iceThick ) ) ;
+$dataref[ $W[ 74 ] ] = \$iceRate if( $W[ 74 ] && defined( $iceRate ) ) ;
+$dataref[ $W[ 75 ] ] = \$Tb if( $W[ 75 ] && defined( $Tb ) ) ;
+$dataref[ $W[ 76 ] ] = \$ICE if( $W[ 76 ] && defined( $ICE ) ) ;
+$dataref[ $W[ 77 ] ] = \$iceConcen if( $W[ 77 ] && defined( $iceConcen ) ) ;
+$dataref[ $W[ 78 ] ] = \$iceStage if( $W[ 78 ] && defined( $iceStage ) ) ;
+$dataref[ $W[ 79 ] ] = \$iceLand if( $W[ 79 ] && defined( $iceLand ) ) ;
+$dataref[ $W[ 80 ] ] = \$iceEdge if( $W[ 80 ] && defined( $iceEdge ));
+$dataref[ $W[ 81 ] ] = \$iceSituation if( $W[ 81 ] && defined( $iceSituation ) );
+$dataref[ $W[ 82 ] ] = \$Tmax if( $W[ 82 ] && defined( $Tmax ) ) ;
+$dataref[ $W[ 83 ] ] = \$Tmin if( $W[ 83 ] && defined( $Tmin ) ) ;
+$dataref[ $W[ 84 ] ] = \$groundState if( $W[ 84 ] && defined( $groundState ) ) ;
+$dataref[ $W[ 85 ] ] = \$snowDepth if( $W[ 85 ] && defined( $snowDepth ) ) ;
+$dataref[ $W[ 86 ] ] = \$PRECIP_amt24 if( $W[ 86 ] && defined( $PRECIP_amt24 ) );
+$dataref[ $W[ 87 ] ] = \$cloudObsured if( $W[ 87 ] && defined( $cloudObsured ) );
+$dataref[ $W[ 88 ] ] = \$cloudGenus if( $W[ 88 ] && defined( $cloudGenus ) ) ;
+$dataref[ $W[ 89 ] ] = \$cloudHeight if( $W[ 89 ] && defined( $cloudHeight ) ) ;
+
+} # end setvars
+
+# create a netcdf file or reopen a existing one
+sub doNet {
+
+my( $Ncfile, $Id, $Num, $Time, $baseTime, $offset, $rpt, $Zone, $Buoy ) ;
+
+#$ncfile = $datadir . "/" . $yyyymmddhh . "_buoy.nc" ;
+$ncfile = $datadir . "/" . $buoyPrefix . substr( $yyyymmddhh, 0, 8 )
+	 . $buoyStr . ".nc" ;
+if( $hourly ) {
+	$ncfile = $datadir . "/" . $buoyPrefix . substr( $yyyymmddhh, 0, 8 ) . 
+		"_" . substr( $yyyymmddhh, 8, 10 ) . $buoyStr . ".nc" ;
+}
+# writing to same file
+return 1 if( $ncfile eq $lastNc ) ;
+
+# current time
+$thetime = time() ;
+# save current ncfile info
+$Nets{ $lastNc } = "$ncid $recnum $thetime" if( $lastNc ) ;
+
+# File is open, get ncfile id and recnum and reset the time 
+if( defined( $Nets{ $ncfile } ) ) { # already open for writes
+	( $ncid, $recnum, $ncTime ) = split( " ", $Nets{ $ncfile } ) ;
+	$ncTime = $thetime ;
+	$lastNc =  $ncfile ;
+	return 1 ;
+}
+# close files with no activity for 20 minutes
+foreach $Ncfile ( keys %Nets ) {
+	( $Id, $Num, $Time ) = split( " ", $Nets{ $Ncfile } ) ;
+	if( $thetime - $Time > 1200 ) {
+		print "Closing $Ncfile with ncid $Id, No write for > 20 Minutes\n" ;
+		$status = NetCDF::close( $Id ) ;
+		delete( $Nets{ $Ncfile } ) ;
+#	} elsif( $Ncfile eq $lastNc ) {
+#		print "Syncing $lastNc with ncid $ncid\n" ;
+#		$status = NetCDF::sync( $ncid ) ;
+	}
+}
+# remove rpt entries older than 24 hours
+$baseTime = $yyyymm . $cday . $chour ;
+foreach $rpt ( keys %rpt_hash ) {
+	( $Zone, $Buoy, $Time ) = split( " ", $rpt ) ;
+	$offset = $baseTime - $Time ;
+	next if( $offset < 100 ) ;  # same day ok & previous day ok > $chour
+	delete( $rpt_hash{ $rpt } ) ;
+}
+# open or create ncfiles
+if( -e $ncfile ) {
+	$ncid = NetCDF::open( "$ncfile", WRITE ) ;
+	return 0 if( $ncid == -1 ) ;
+	$recNum_id = NetCDF::dimid( $ncid, "recNum" ) ;
+	$name_id =  "xxxxxxxx"  ;
+	$recnum =  -1  ;
+	# get current value of recnum
+	NetCDF::diminq( $ncid, $recNum_id, $name_id, $recnum ) ;
+} else {
+	system( "$ncgen -o $ncfile $cdlfile" ) ;
+	$ncid = NetCDF::open( "$ncfile", WRITE ) ;
+	return 0 if( $ncid == -1 ) ;
+	# NetCDF record counter
+	$recnum = 0 ;
+}
+$Nets{ $ncfile } = "$ncid $recnum $thetime" ;
+$lastNc = $ncfile ;
+print "Opening $ncfile with ncid $ncid\n" ;
+return 1 ;
+} # end doNet
+
+# print vars
+sub printvars
+{
+
+# original report 
+print "report = $report \n" if( defined( $report ) ) ;
+print "\n" ;
+
+# report vars
+print "rep_type = $rep_type \n" if( defined( $rep_type ) ) ;
+print "zone = $zone \n" if( defined( $zone ) ) ;
+print "buoy = $buoy \n" if( defined( $buoy ) ) ;
+print "rday = $rday \n" if( defined( $rday ) ) ;
+print "rmonth = $rmonth \n" if( defined( $rmonth ) ) ;
+print "ryear = $ryear \n" if( defined( $ryear ) ) ;
+print "rhour = $rhour \n" if( defined( $rhour ) ) ;
+print "rmin = $rmin \n" if( defined( $rmin ) ) ;
+print "time_obs = $time_obs \n" if( defined( $time_obs ) ) ;
+print "time_nominal = $time_nominal \n" if( defined( $time_nominal ) ) ;
+print "yyyymmddhh = $yyyymmddhh \n" if( defined( $yyyymmddhh ) ) ;
+print "Windicator = $Windicator \n" if( defined( $Windicator ) ) ;
+print "quadrant = $quadrant \n" if( defined( $quadrant ) ) ;
+print "Lat = $Lat \n" if( defined( $Lat ) ) ;
+print "Lon = $Lon \n" if( defined( $Lon ) ) ;
+print "qPos = $qPos \n" if( defined( $qPos ) ) ;
+print "qTime = $qTime \n" if( defined( $qTime ) ) ;
+print "S1qCntrl = $S1qCntrl \n" if( defined( $S1qCntrl ) ) ;
+print "S1qPos = $S1qPos \n" if( defined( $S1qPos ) ) ;
+print "DIR = $DIR \n" if( defined( $DIR ) ) ;
+print "SPD = $SPD \n" if( defined( $SPD ) ) ;
+print "T = $T \n" if( defined( $T ) ) ;
+print "humidity = $humidity \n" if( defined( $humidity ) ) ;
+print "TD = $TD \n" if( defined( $TD ) ) ;
+print "PRES = $PRES \n" if( defined( $PRES ) ) ;
+print "SLP = $SLP \n" if( defined( $SLP ) ) ;
+print "char_Ptend = $char_Ptend \n" if( defined( $char_Ptend ) ) ;
+print "Ptend = $Ptend \n" if( defined( $Ptend ) ) ;
+print "S2qCntrl = $S2qCntrl \n" if( defined( $S2qCntrl ) ) ;
+print "S2qPos = $S2qPos \n" if( defined( $S2qPos ) ) ;
+print "Tw = $Tw \n" if( defined( $Tw ) ) ;
+print "Pwa = $Pwa \n" if( defined( $Pwa ) ) ;
+print "Hwa = $Hwa \n" if( defined( $Hwa ) ) ;
+print "Pwa_tenths = $Pwa_tenths \n" if( defined( $Pwa_tenths ) ) ;
+print "Hwa_tenths = $Hwa_tenths \n" if( defined( $Hwa_tenths ) ) ;
+print "S3qCntrl = $S3qCntrl \n" if( defined( $S3qCntrl ) ) ;
+print "S3qCurrent = $S3qCurrent \n" if( defined( $S3qCurrent ) ) ;
+print "salinityCntrl = $salinityCntrl \n" if( defined( $salinityCntrl ) ) ;
+print "Sdepth = @Sdepth \n" if( defined( @Sdepth ) ) ;
+print "Stemp = @Stemp \n" if( defined( @Stemp ) ) ;
+print "Sparts = @Sparts \n" if( defined( @Sparts ) ) ;
+print "rmVelocityBy = $rmVelocityBy \n" if( defined( $rmVelocityBy ) ) ;
+print "duration = $duration \n" if( defined( $duration ) ) ;
+print "Cdepth = @Cdepth \n" if( defined( @Cdepth ) ) ;
+print "Cdir = @Cdir \n" if( defined( @Cdir ) ) ;
+print "Cspd = @Cspd \n" if( defined( @Cspd ) ) ;
+print "Qp = $Qp \n" if( defined( $Qp ) ) ;
+print "Qh = $Qh \n" if( defined( $Qh ) ) ;
+print "Qtw = $Qtw \n" if( defined( $Qtw ) ) ;
+print "Qat = $Qat \n" if( defined( $Qat ) ) ;
+print "Ql = $Ql \n" if( defined( $Ql ) ) ;
+print "Qn = $Qn \n" if( defined( $Qn ) ) ;
+print "Pday = $Pday \n" if( defined( $Pday ) ) ;
+print "Pmonth = $Pmonth \n" if( defined( $Pmonth ) ) ;
+print "Pyear = $Pyear \n" if( defined( $Pyear ) ) ;
+print "Phour = $Phour \n" if( defined( $Phour ) ) ;
+print "Pmin = $Pmin \n" if( defined( $Pmin ) ) ;
+print "time_position = $time_position \n" if( defined( $time_position ) ) ;
+print "Lat2 = $Lat2 \n" if( defined( $Lat2 ) ) ;
+print "Lon2 = $Lon2 \n" if( defined( $Lon2 ) ) ;
+print "driftspd = $driftspd \n" if( defined( $driftspd ) ) ;
+print "driftdir = $driftdir \n" if( defined( $driftdir ) ) ;
+print "drogueType = $drogueType \n" if( defined( $drogueType ) ) ;
+print "cableLength = $cableLength \n" if( defined( $cableLength ) ) ;
+print "\n" ;
+} # end printvars
+
+# execute at exit
+sub atexit
+{
+local( $sig ) = @_ ;
+
+if( $sig eq "eof" ) {
+	print "eof on STDIN --shutting down\n" ;
+} elsif( defined( $sig )) {
+	print "Caught SIG$sig --shutting down\n" ;
+}
+# open buoy.lst, list of reports processed in the last 8 hours.
+open( LST, ">$datadir/buoy.lst" ) || 
+	die "could not open $datadir/buoy.lst: $!\n" ;
+select( LST ) ;
+# remove rpt entries older than 24 hours
+$yyyymmddhh = $yyyymm . $cday . $chour ;
+foreach $rpt ( keys %rpt_hash ) {
+	( $Zone, $Buoy, $Time ) = split( " ", $rpt ) ;
+	$offset = $yyyymmddhh - $Time ;
+	next unless( $offset < 100 ) ;  # same day ok & previous day ok > $chour
+	print "$rpt $rpt_hash{ $rpt }\n" ;
+}
+close LST ;
+foreach $file ( keys %Nets ) {
+	( $ncid, $recnum, $nctime ) = split( " ", $Nets{ $file } ) ;
+	print STDOUT "Closing $file with ncid $ncid\n" ;
+	$status = NetCDF::close( $ncid ) ;
+}
+close( STDOUT ) ;
+close( STDERR ) ;
+exit( 0 ) ;
+}
+# pad str to correct length
+sub padstr
+{
+( $str, $len ) = @_ ;
+
+local( $size, $i ) ;
+
+$size = length( $str ) ;
+
+for( $i = $size; $i < $len; $i++ ) {
+        $str .= "\0" ;
+}
+if( $size > $len ) {
+	print STDOUT "String length is over $len chars long:\n $str\n" 
+		if( $verbose ) ;
+	$str = substr( $str, 0, $len ) ;
+}
+return $str ;
+} # end padstr
+
+sub theTime
+{
+my( $when, $min, $hour, $mday, $mon, $year, $t_adj ) ;
+
+( $when ) = @_ ;
+
+$t_adj = 0;  # use to make nomial time
+$hour = $rhour ;
+$mday = $rday ;
+$mon = $rmonth ;
+$year = $ryear ;
+if( $when eq "obs" ) {
+	$min = $rmin ;
+} elsif( $when eq "pos" ) {
+	$min = $Pmin ;
+	$hour = $Phour ;
+	$mday = $Pday ;
+	$mon = $Pmonth ;
+	$year = $Pyear ;
+} elsif( $when eq "nominal" ) {
+	if( $rmin > 14 && $rmin < 45 ) {
+		$min = $rmin ;
+	} elsif( $rmin > 44 ) {
+		$min = 0 ;
+		$t_adj = 3600; #add 1 hour
+	} else {
+		$min = 0 ;
+	} 
+}
+
+$time = timegm(0, $min, $hour, $mday, $mon -1, $year, 0, 0, 0) + $t_adj;
+return $time ;
+
+} # end theTime
+
+sub LatLon
+{
+my( $rep_type, $quadrant, $Lat, $Lon ) ;
+
+( $rep_type, $quadrant, $Lat, $Lon ) = @_ ;
+
+if( $rep_type eq "BBXX" ) {
+	$Lat /= 10 ;
+	$Lon /= 10 ;
+} else { # ZZYY
+	if( $Lat =~ s#//## ) {
+		$Lat *= 0.1 ;
+		$Lon =~ s#//## ;
+		$Lon *= 0.1 ;
+	} elsif( $Lat =~ s#/## ) {
+		$Lat *= 0.01 ;
+		$Lon =~ s#/## ;
+		$Lon *= 0.01 ;
+	} else { #  $Lat =~ m#\d{5,6}#
+		$Lat *= 0.001 ;
+		$Lon *= 0.001 ;
+	}
+}
+if( $quadrant == 7 ) {
+	$Lon *= -1.0 ;
+} elsif( $quadrant == 5 ) {
+	$Lat *= -1.0 ;
+	$Lon *= -1.0 ;
+} elsif( $quadrant == 3 ) {
+	$Lat *= -1.0 ;
+}
+return $Lat, $Lon
+
+} # end LatLon
