@@ -79,4 +79,4 @@ CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5
 #  -put maintenance products in badLevel2/maintenance
 #
 CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5][0-9][0-9][0-9])/[0-9]*/([0-9]*)/E
-	EXEC	util/hhmmssRadarII.pl \1 \2 \3 \4
+	EXEC	perl etc/TDS/util/hhmmssRadarII.pl \1 \2 \3 \4

@@ -17,9 +17,7 @@
     <catalogRef xlink:href="cf_examples.xml" xlink:title="CF DSG (point data) examples" name=""/>
     <catalogRef xlink:href="unidata.xml" xlink:title="NEXRAD National Composites From Unidata" name=""/>
   </dataset>
-  <!--dataset name="Test Datasets">
-    <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Datasets" name="" />
-  </dataset-->
+
 
 </catalog>
 

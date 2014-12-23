@@ -1,3 +1,5 @@
 ../wmsConfig.xml
 ../idd
+../thredds/unidata.xml
+../thredds/pqacts/unidata.xml
 ../javaUtilPrefs
