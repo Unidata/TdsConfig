@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Server Catalog: NCAR Nested Regional Climate Model (NRCM)"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <!-- All-inclusive service group to be used for individual files -->
+  <service name="all" serviceType="Compound" base="">
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+  
+  <!-- Service group to be used for aggregations (includes all services except
+       HTTPServer) -->
+  <service name="agg_services" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+
+
+    <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+
+    <dataset name="ds601.0 NCAR RDA - NCAR Nested Regional Climate Model (NRCM)">
+        <metadata inherited="true">
+          <serviceName>agg_services</serviceName>
+          <dataFormat>NetCDF</dataFormat>
+          <dataType>GRID</dataType>
+          <documentation type="Rights">Freely Available</documentation>
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds601.0/index.html" xlink:title="NCAR RDA - NCAR Nested Regional Climate Model (NRCM) (ds601.0)" />
+          <documentation type="summary">
+This dataset contains climate model output data from the NCAR's Nested Regional Climate Model (NRCM). The NRCM combines the strengths of NCAR's Weather Research and Forecasting (WRF) model and NCAR's Community Climate System Model (CCSM) into an instrument that will allow for fundamental progress on the understanding and prediction of regional climate variability and change. In particular, embedding WRF within CCSM will allow scientists to resolve processes that occur at the regional scale, as well as the influence of those processes on the large-scale climate, thereby improving the fidelity of climate change simulations and their utility for local and regional planning.
+The output fields in this dataset consist of two- and three-dimensional arrays at three- and six-hourly intervals. A basic set of 3-D parameters is provided on model pressure levels: relative humidity, temperature, wind components, geopotential height, and potential vorticity. Additional 2-D parameters are provided at the model surface or near-surface level, and potential vorticity arrays are also provided on the 320 K and 345 K isentropic surfaces.
+
+Data are available as monthly time series files in NetCDF. The data currently provided are from the climate runs with regional model domain over the North Atlantic Ocean and USA. The simulation covers the periods 1995-2005, 2020-2030, and 2045-2055.
+          </documentation>
+          <documentation xlink:href="http://www.nrcm.ucar.edu/" xlink:title="NCAR Nested Regional Climate Model" />
+          <creator>
+            <name vocabulary="DIF">UCAR/NCAR/MMM</name>
+            <contact url="http://www.nrcm.ucar.edu/" email="gholland@ucar.edu" />
+          </creator>
+          <authority>edu.ucar.rda</authority>   
+          <publisher>   
+            <name vocabulary="DIF">NCAR/RDA</name>   
+            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />   
+          </publisher>   
+          <keyword>Numerical Weather Prediction</keyword>
+          <keyword>Climate</keyword>
+          <keyword>Regional Climate Model</keyword>
+
+
+        </metadata>
+
+
+      <!--  Files -->
+
+     <datasetScan name="ds601.0 Files" 
+                  path="files/g/ds601.0" 
+                  location="/glade/p/rda/data/ds601.0">
+         <metadata inherited="true">
+         <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+     <!-- Aggregations -->
+     <dataset name="ds601.0 Aggregations">
+
+     <!-- NRCM 1995-2005 simulation aggregation -->
+     <dataset name="NRCM 1995-2005 Simulation">
+       <dataset name="NRCM 1995-2005 Aggregation"
+         urlPath="aggregations/g/ds601.0/10/best"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation type="Union">
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/101/glw"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/102/graupel"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/103/olr"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/104/psfc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/105/pvo"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/106/pvoK"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/107/pw"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/108/q2"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/109/qfx"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/110/rainc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/111/rainnc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/112/rh"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/113/rh2"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/114/sfroff"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/115/slp"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/116/smois"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/117/snow"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/118/shnowh"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/119/snownc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/120/swdown"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/121/t2"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/122/tk"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/123/tsk"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/124/u"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/125/u10"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/126/udroff"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/127/v"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/128/v10"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/129/z"/>
+           </aggregation>
+         </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/glw)"
+         urlPath="internal/ds601.0/101/glw"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/glw/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+ 
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/graupel)"
+         urlPath="internal/ds601.0/102/graupel"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/graupel/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/olr)"
+         urlPath="internal/ds601.0/103/olr"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/olr/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/psfc)"
+         urlPath="internal/ds601.0/104/psfc"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/psfc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/pvo)"
+         urlPath="internal/ds601.0/105/pvo" 
+         harvest="true">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/pvo/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/pvoK)"
+         urlPath="internal/ds601.0/106/pvoK"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/pvoK/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/pw)"
+         urlPath="internal/ds601.0/107/pw"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/pw/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/q2)"
+         urlPath="internal/ds601.0/108/q2"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/q2/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/qfx)"
+         urlPath="internal/ds601.0/109/qfx"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/qfx/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/rainc)"
+         urlPath="internal/ds601.0/110/rainc"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/rainc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/rainnc)"
+         urlPath="internal/ds601.0/111/rainnc"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/rainnc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/rh)"
+         urlPath="internal/ds601.0/112/rh"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/rh/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/rh2)"
+         urlPath="internal/ds601.0/113/rh2"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/rh2/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/stroff)"
+         urlPath="internal/ds601.0/114/sfroff"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/sfroff/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/slp)"
+         urlPath="internal/ds601.0/115/slp"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/slp/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/smois)"
+         urlPath="internal/ds601.0/116/smois"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/smois/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/snow)"
+         urlPath="internal/ds601.0/117/snow"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/snow/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/snowh)"
+         urlPath="internal/ds601.0/118/shnowh"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/snowh/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/snownc)"
+         urlPath="internal/ds601.0/119/snownc"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/snownc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/swdown)"
+         urlPath="internal/ds601.0/120/swdown"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/swdown/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/t2)"
+         urlPath="internal/ds601.0/121/t2"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/t2/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/tk)"
+         urlPath="internal/ds601.0/122/tk"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/tk/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/tsk)"
+         urlPath="internal/ds601.0/123/tsk"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/tsk/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/u)"
+         urlPath="internal/ds601.0/124/u"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/u/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/u10)"
+         urlPath="internal/ds601.0/125/u10"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/u10/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/udroff)"
+         urlPath="internal/ds601.0/126/udroff"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/udroff/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/v)"
+         urlPath="internal/ds601.0/127/v"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/v/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/v10)"
+         urlPath="internal/ds601.0/128/v10"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/v10/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/1995_2005/z)"
+         urlPath="internal/ds601.0/129/z"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/1995_2005/z/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+        </netcdf>
+      </dataset>
+
+    </dataset>
+
+     <!-- NRCM 2020-2030 simulation aggregation -->
+     <dataset name="NRCM 2020-2030 Simulation">
+       <dataset name="NRCM 2020-2030 Aggregation"
+         urlPath="aggregations/g/ds601.0/20/best"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation type="Union">
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/201/glw"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/202/graupel"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/203/olr"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/204/psfc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/205/pvo"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/206/pvoK"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/207/pw"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/208/q2"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/209/qfx"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/210/rainc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/211/rainnc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/212/rh"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/213/rh2"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/214/sfroff"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/215/slp"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/216/smois"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/217/snow"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/218/shnowh"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/219/snownc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/220/swdown"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/221/t2"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/222/tk"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/223/tsk"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/224/u"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/225/u10"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/226/udroff"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/227/v"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/228/v10"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/229/z"/>
+           </aggregation>
+         </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/glw)"
+         urlPath="internal/ds601.0/201/glw"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/glw/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+ 
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/graupel)"
+         urlPath="internal/ds601.0/202/graupel"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/graupel/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/olr)"
+         urlPath="internal/ds601.0/203/olr"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/olr/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/psfc)"
+         urlPath="internal/ds601.0/204/psfc"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/psfc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/pvo)"
+         urlPath="internal/ds601.0/205/pvo"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/pvo/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/pvoK)"
+         urlPath="internal/ds601.0/206/pvoK"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/pvoK/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/pw)"
+         urlPath="internal/ds601.0/207/pw"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/pw/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/q2)"
+         urlPath="internal/ds601.0/208/q2"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/q2/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/qfx)"
+         urlPath="internal/ds601.0/209/qfx"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/qfx/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/rainc)"
+         urlPath="internal/ds601.0/210/rainc"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/rainc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/rainnc)"
+         urlPath="internal/ds601.0/211/rainnc"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/rainnc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/rh)"
+         urlPath="internal/ds601.0/212/rh"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/rh/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/rh2)"
+         urlPath="internal/ds601.0/213/rh2"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/rh2/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/stroff)"
+         urlPath="internal/ds601.0/214/sfroff"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/sfroff/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/slp)"
+         urlPath="internal/ds601.0/215/slp"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/slp/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/smois)"
+         urlPath="internal/ds601.0/216/smois"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/smois/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/snow)"
+         urlPath="internal/ds601.0/217/snow"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/snow/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/snowh)"
+         urlPath="internal/ds601.0/218/shnowh"
+         
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/snowh/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/snownc)"
+         urlPath="internal/ds601.0/219/snownc"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/snownc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/swdown)"
+         urlPath="internal/ds601.0/220/swdown"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/swdown/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/t2)"
+         urlPath="internal/ds601.0/221/t2"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/t2/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/tk)"
+         urlPath="internal/ds601.0/222/tk"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/tk/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/tsk)"
+         urlPath="internal/ds601.0/223/tsk"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/tsk/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/u)"
+         urlPath="internal/ds601.0/224/u"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/u/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/u10)"
+         urlPath="internal/ds601.0/225/u10"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/u10/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/udroff)"
+         urlPath="internal/ds601.0/226/udroff"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/udroff/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/v)"
+         urlPath="internal/ds601.0/227/v"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/v/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/v10)"
+         urlPath="internal/ds601.0/228/v10"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/v10/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2020_2030/z)"
+         urlPath="internal/ds601.0/229/z"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2020_2030/z/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+        </netcdf>
+      </dataset>
+
+    </dataset>
+
+     <!-- NRCM 2045-2055 simulation aggregation -->
+     <dataset name="NRCM 2045-2055 Simulation">
+       <dataset name="NRCM 2045-2055 Aggregation"
+         urlPath="aggregations/g/ds601.0/30/best"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation type="Union">
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/301/glw"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/302/graupel"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/303/olr"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/304/psfc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/305/pvo"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/306/pvoK"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/307/pw"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/308/q2"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/309/qfx"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/310/rainc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/311/rainnc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/312/rh"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/313/rh2"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/314/sfroff"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/315/slp"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/316/smois"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/317/snow"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/318/shnowh"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/319/snownc"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/320/swdown"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/321/t2"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/322/tk"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/323/tsk"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/324/u"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/325/u10"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/326/udroff"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/327/v"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/328/v10"/>
+               <netcdf location="dods://localhost:8080/thredds/dodsC/internal/ds601.0/329/z"/>
+           </aggregation>
+         </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/glw)"
+         urlPath="internal/ds601.0/301/glw"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/glw/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+ 
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/graupel)"
+         urlPath="internal/ds601.0/302/graupel"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/graupel/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/olr)"
+         urlPath="internal/ds601.0/303/olr"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/olr/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/psfc)"
+         urlPath="internal/ds601.0/304/psfc"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/psfc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/pvo)"
+         urlPath="internal/ds601.0/305/pvo"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/pvo/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/pvoK)"
+         urlPath="internal/ds601.0/306/pvoK"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/pvoK/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/pw)"
+         urlPath="internal/ds601.0/307/pw"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/pw/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/q2)"
+         urlPath="internal/ds601.0/308/q2"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/q2/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/qfx)"
+         urlPath="internal/ds601.0/309/qfx"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/qfx/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/rainc)"
+         urlPath="internal/ds601.0/310/rainc"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/rainc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/rainnc)"
+         urlPath="internal/ds601.0/311/rainnc"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/rainnc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/rh)"
+         urlPath="internal/ds601.0/312/rh"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/rh/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/rh2)"
+         urlPath="internal/ds601.0/313/rh2"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/rh2/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/stroff)"
+         urlPath="internal/ds601.0/314/sfroff"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/sfroff/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/slp)"
+         urlPath="internal/ds601.0/315/slp"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/slp/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/smois)"
+         urlPath="internal/ds601.0/316/smois"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/smois/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/snow)"
+         urlPath="internal/ds601.0/317/snow"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/snow/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/snowh)"
+         urlPath="internal/ds601.0/318/shnowh"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/snowh/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/snownc)"
+         urlPath="internal/ds601.0/319/snownc"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/snownc/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/swdown)"
+         urlPath="internal/ds601.0/320/swdown"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/swdown/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/t2)"
+         urlPath="internal/ds601.0/321/t2"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/t2/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/tk)"
+         urlPath="internal/ds601.0/322/tk"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/tk/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/tsk)"
+         urlPath="internal/ds601.0/323/tsk"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/tsk/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/u)"
+         urlPath="internal/ds601.0/324/u"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/u/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/u10)"
+         urlPath="internal/ds601.0/325/u10"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/u10/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/udroff)"
+         urlPath="internal/ds601.0/326/udroff"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/udroff/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/v)"
+         urlPath="internal/ds601.0/327/v"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/v/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/v10)"
+         urlPath="internal/ds601.0/328/v10"
+         harvest="true">
+         
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/v10/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+           </netcdf>
+       </dataset>
+
+       <dataset name="internal/ds601.0 Aggregation (RCPP/2045_2055/z)"
+         urlPath="internal/ds601.0/329/z"
+         harvest="true">
+         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="time" type="joinExisting">
+                <scan location="/glade/p/rda/data/ds601.0/RCPP/2045_2055/z/" suffix=".nc" subdirs="true"/>
+             </aggregation>
+        </netcdf>
+      </dataset>
+
+    </dataset>
+    </dataset>
+    </dataset>
+
+</catalog>

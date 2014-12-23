@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all" serviceType="Compound" base="">
+    
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+
+
+    <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+
+    <dataset name="ds628.1">
+        <metadata inherited="true">
+          <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>  
+          <dataType>GRID</dataType>   
+          <documentation type="Rights">Some Restrictions Apply</documentation>   
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds628.1/" 
+                         xlink:title="JRA-55: Japanese 55-year Reanalysis, Monthly Means and Variances"/>   
+          <documentation type="summary">  
+The Japan Meteorological Agency (JMA) conducted JRA-55, the second Japanese global atmospheric reanalysis project. It covers 55 years, extending back to 1958, coinciding with the establishment of the global radiosonde observing system. Compared to its predecessor, JRA-25, JRA-55 is based on a new data assimilation and prediction system (DA) that improves many deficiencies found in the first Japanese reanalysis. These improvements have come about by implementing higher spatial resolution (TL319L60), a new radiation scheme, four-dimensional variational data assimilation (4D-Var) with Variational Bias Correction (VarBC) for satellite radiances, and introduction of greenhouse gases with time varying concentrations. The entire JRA-55 production was completed in 2013, and thereafter will be continued on a real time basis.          
+          </documentation>
+          <documentation type="summary">
+Specific early results of quality assessment of JRA-55 indicate that a large temperature bias in the lower stratosphere has been significantly reduced compared to JRA-25 through a combination of the new radiation scheme and application of VarBC (which also reduces unrealistic temperature variations). In addition, a dry land surface anomaly in the Amazon basin has been mitigated, and overall forecast scores are much improved over JRA-25.
+          </documentation>
+          <documentation type="summary">
+Most of the observational data employed in JRA-55 are those used in JRA-25. Additionally, newly reprocessed METEOSAT and GMS data were supplied by EUMETSAT and MSC/JMA respectively. Snow depth data over the United States, Russia and Mongolia were supplied by UCAR, RIHMI and IMH respectively.
+          </documentation> 
+          <documentation type="summary">
+The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of JRA-55 with the RDA (Research Data Archive) archiving and metadata system. The model resolution data has also been acquired, archived and processed as well, including transformation of the TL319L60 grid to a regular latitude-longitude Gaussian grid (320 latitudes by 640 longitudes, nominally 0.5625 degree). All RDA JRA-55 data is available for internet download, including complete subsetting and data format conversion services.
+          </documentation>
+          <documentation xlink:href="http://jra.kishou.go.jp/JRA-55/index_en.html" xlink:title="JRA-55: Japanese 55-year Reanalysis" />
+          <documentation xlink:href="https://climatedataguide.ucar.edu/climate-data/jra-55" xlink:title="Description of JRA-55 at the NCAR Climate Data Guide" />
+          <creator>   
+            <name vocabulary="DIF">JP/JMA</name>   
+            <contact url="http://www.jma.go.jp/jma/index.html" email="jra@met.kishou.go.jp" />   
+          </creator>   
+          <authority>edu.ucar.rda</authority>   
+          <publisher>   
+            <name vocabulary="DIF">NCAR/RDA</name>   
+            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />   
+          </publisher>   
+          <keywords>Numerical Weather Prediction</keywords>   
+          <keywords>Model data</keywords>   
+          <keywords>Reanalysis</keywords>   
+        </metadata>
+
+
+     <!--  Files -->
+     <datasetScan name="ds628.1 Files" 
+                  path="files/JRA55/ds628.1" 
+                  location="/glade/p/rda/data/ds628.1">
+         <metadata inherited="true">
+             <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+             <exclude wildcard="*.htaccess"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+
+     <!-- Aggregations -->
+
+     <dataset name="ds628.1 Aggregations">
+
+         <dataset name="Analysis Fields">
+              
+             <featureCollection name="ds628.1_anl_column"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/1">
+           
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+           
+               <collection name="ds628.1_anl_column" 
+                           spec="/glade/p/rda/data/ds628.1/anl_column/**/anl_column\..*"
+                           olderThan="0 min"/>
+           
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+         
+             <!-- 
+             <featureCollection name="ds628.1_anl_column_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/2">
+                                
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_column_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_column_var/**/anl_column_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_column125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/3">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_column125" 
+                           spec="/glade/p/rda/data/ds628.1/anl_column125/**/anl_column125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_anl_column125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/4">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_column125_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_column125_var/**/anl_column125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->            
+ 
+             <featureCollection name="ds628.1_anl_isentrop"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/5">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_isentrop"
+                           spec="/glade/p/rda/data/ds628.1/anl_isentrop/**/anl_isentrop\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>  
+
+             <!--
+             <featureCollection name="ds628.1_anl_isentrop_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/6">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_isentrop_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_isentrop_var/**/anl_isentrop_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_isentrop125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/7">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_isentrop125"
+                           spec="/glade/p/rda/data/ds628.1/anl_isentrop125/**/anl_isentrop125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+            <!--
+            <featureCollection name="ds628.1_anl_isentrop125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/8">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_isentrop125_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_isentrop125_var/**/anl_isentrop125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_land"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/9">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>      
+
+               <collection name="ds628.1_anl_land"
+                           spec="/glade/p/rda/data/ds628.1/anl_land/**/anl_land\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_anl_land_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/10">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_land_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_land_var/**/anl_land_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_land125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/11">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_land125"
+                           spec="/glade/p/rda/data/ds628.1/anl_land125/**/anl_land125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_anl_land125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/12">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_land125_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_land125_var/**/anl_land125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_mdl"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/13">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_mdl"
+                           spec="/glade/p/rda/data/ds628.1/anl_mdl/**/anl_mdl\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+ 
+             <!--
+             <featureCollection name="ds628.1_anl_mdl_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/14">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_mdl_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_mdl_var/**/anl_mdl_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_p125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/15">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_p125"
+                           spec="/glade/p/rda/data/ds628.1/anl_p125/**/anl_p125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+            </featureCollection>
+
+            <!--
+            <featureCollection name="ds628.1_anl_p125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/16">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_p125_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_p125_var/**/anl_p125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_p25"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/17">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+             
+               <collection name="ds628.1_anl_p25"
+                           spec="/glade/p/rda/data/ds628.1/anl_p25/**/anl_p25\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_anl_p25_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/18">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_p25_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_p25_var/**/anl_p25_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_snow"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/19">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_snow"
+                           spec="/glade/p/rda/data/ds628.1/anl_snow/**/anl_snow\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_anl_snow_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/20">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_snow_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_snow_var/**/anl_snow_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_snow125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/21">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_snow125"
+                           spec="/glade/p/rda/data/ds628.1/anl_snow125/**/anl_snow125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_anl_snow125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/22">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_snow125_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_snow125_var/**/anl_snow125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_surf"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/23">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_surf"
+                           spec="/glade/p/rda/data/ds628.1/anl_surf/**/anl_surf\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_anl_surf_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/24">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_surf_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_surf_var/**/anl_surf_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_anl_surf125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/25">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_surf125"
+                           spec="/glade/p/rda/data/ds628.1/anl_surf125/**/anl_surf125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_anl_surf125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/26">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_anl_surf125_var"
+                           spec="/glade/p/rda/data/ds628.1/anl_surf125_var/**/anl_surf125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+         </dataset>
+
+         <dataset name="Forecast Fields">
+      
+             <featureCollection name="ds628.1_fcst_column"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/27">
+           
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+           
+               <collection name="ds628.1_fcst_column" 
+                           spec="/glade/p/rda/data/ds628.1/fcst_column/**/fcst_column\..*"
+                           olderThan="0 min"/>
+           
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_fcst_column_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/28">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_column_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_column_var/**/fcst_column_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_fcst_column125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/29">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_column125"
+                           spec="/glade/p/rda/data/ds628.1/fcst_column125/**/fcst_column125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_fcst_column125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/30">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_column125_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_column125_var/**/fcst_column125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->            
+ 
+             <featureCollection name="ds628.1_fcst_land"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/31">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_land"
+                           spec="/glade/p/rda/data/ds628.1/fcst_land/**/fcst_land\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_fcst_land_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/32">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_land_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_land_var/**/fcst_land_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_fcst_land125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/33">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_land125"
+                           spec="/glade/p/rda/data/ds628.1/fcst_land125/**/fcst_land125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_fcst_land125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/34">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_land125_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_land125_var/**/fcst_land125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_fcst_mdl"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/35">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_mdl"
+                           spec="/glade/p/rda/data/ds628.1/fcst_mdl/**/fcst_mdl\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_fcst_mdl_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/36">
+                                
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+               
+               <collection name="ds628.1_fcst_mdl_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_mdl_var/**/fcst_mdl_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_fcst_p125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/37">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds628.1_fcst_p125"
+                           spec="/glade/p/rda/data/ds628.1/fcst_p125/**/fcst_p125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_fcst_p125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/38">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds628.1_fcst_p125_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_p125_var/**/fcst_p125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_fcst_p25"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/39">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_p25"
+                           spec="/glade/p/rda/data/ds628.1/fcst_p25/**/fcst_p25\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_fcst_p25_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/40">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_p25_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_p25_var/**/fcst_p25_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+
+         </dataset>
+
+         <dataset name="Diagnostic Fields">
+             <!--
+             <featureCollection name="ds628.1_fcst_phy2m"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/41">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phy2m"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phy2m/**/fcst_phy2m\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             --> 
+             <!--
+             <featureCollection name="ds628.1_fcst_phy2m_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/42">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phy2m_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phy2m_var/**/fcst_phy2m_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+             <!--
+             <featureCollection name="ds628.1_fcst_phy2m125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/43">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phy2m125"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phy2m125/**/fcst_phy2m125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <!--
+             <featureCollection name="ds628.1_fcst_phy2m125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/44">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phy2m125_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phy2m125_var/**/fcst_phy2m125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <!--
+             <featureCollection name="ds628.1_fcst_phy3m"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/45">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phy3m"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phy3m/**/fcst_phy3m\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+             <!--
+             <featureCollection name="ds628.1_fcst_phy3m_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/46">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phy3m_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phy3m_var/**/fcst_phy3m_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+             <!--
+             <featureCollection name="ds628.1_fcst_phy3m125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/47">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phy3m125"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phy3m125/**/fcst_phy3m125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+             <!--
+             <featureCollection name="ds628.1_fcst_phy3m125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/48">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phy3m125_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phy3m125_var/**/fcst_phy3m125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+             <!--
+             <featureCollection name="ds628.1_fcst_phyland"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/49">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phyland"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phyland/**/fcst_phyland\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+             <!--
+             <featureCollection name="ds628.1_fcst_phyland_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/50">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phyland_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phyland_var/**/fcst_phyland_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+             <!--
+             <featureCollection name="ds628.1_fcst_phyland125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/51">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phyland125"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phyland125/**/fcst_phyland125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+             <!--
+             <featureCollection name="ds628.1_fcst_phyland125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/52">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_phyland125_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_phyland125_var/**/fcst_phyland125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_fcst_surf"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/53">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_surf"
+                           spec="/glade/p/rda/data/ds628.1/fcst_surf/**/fcst_surf\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_fcst_surf_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/54">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_surf_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_surf_var/**/fcst_surf_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_fcst_surf125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/55">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_surf125"
+                           spec="/glade/p/rda/data/ds628.1/fcst_surf125/**/fcst_surf125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_fcst_surf125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/56">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_fcst_surf125_var"
+                           spec="/glade/p/rda/data/ds628.1/fcst_surf125_var/**/fcst_surf125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_ice"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/57">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_ice"
+                           spec="/glade/p/rda/data/ds628.1/ice/**/ice\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_ice_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/58">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_ice_var"
+                           spec="/glade/p/rda/data/ds628.1/ice_var/**/ice_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+             <featureCollection name="ds628.1_ice125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/59">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_ice125"
+                           spec="/glade/p/rda/data/ds628.1/ice125/**/ice125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <!--
+             <featureCollection name="ds628.1_ice125_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/60">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_ice125_var"
+                           spec="/glade/p/rda/data/ds628.1/ice125_var/**/ice125_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+ 
+             <!--
+             <featureCollection name="ds628.1_minmax_surf"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/61">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_minmax_surf"
+                           spec="/glade/p/rda/data/ds628.1/minmax_surf/**/minmax_surf\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>     
+
+             <featureCollection name="ds628.1_minmax_surf_var"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/62">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_minmax_surf_var"
+                           spec="/glade/p/rda/data/ds628.1/minmax_surf_var/**/minmax_surf_var\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+             -->
+
+         </dataset>
+
+         <dataset name="Constant Fields">
+
+
+             <featureCollection name="ds628.1_ll125"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/63">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_ll125"
+                           spec="/glade/p/rda/data/ds628.1/ll125/**/ll125\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <featureCollection name="ds628.1_ll25"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/64">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_ll25"
+                           spec="/glade/p/rda/data/ds628.1/ll25/**/ll25\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+
+             <featureCollection name="ds628.1_tl319"
+                                featureType="GRIB"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.1/65">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="ds628.1_tl319"
+                           spec="/glade/p/rda/data/ds628.1/tl319/**/tl319\..*"
+                           olderThan="0 min"/>
+
+                  <gribConfig datasetTypes="Best">
+                    <bestNamer name="Timeseries Aggregation"/>
+                    <pdsHash>
+                      <useTableVersion>false</useTableVersion>
+                    </pdsHash>
+                  </gribConfig>
+                  <update startup="false" trigger="allow"/>
+             </featureCollection>
+ 
+         </dataset>
+       
+      </dataset>
+       
+  </dataset>
+
+</catalog>

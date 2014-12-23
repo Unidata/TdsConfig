@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <threddsConfig>
-  
+
+  <!-- all options are commented out in standard install - meaning use default values -->
+  <!-- see http://www.unidata.ucar.edu/projects/THREDDS/tech/reference/ThreddsConfigXMLFile.html -->
   <serverInformation>
-    <name>THREDDS Data Server</name>
-    <logoUrl>/thredds/unidataLogo.jpg</logoUrl>
-    <logoAltText>TDS</logoAltText>
+    <name>NCAR RDA TDS Installation</name>
+    <!--<logoUrl>/thredds/threddsIcon.gif</logoUrl>-->
+    <!--logoUrl>/thredds/newlogo_trans_small.png</logoUrl-->
+    <logoAltText>NCAR RDA TDS Installation</logoAltText>
 
     <abstract>Scientific Data</abstract>
     <keywords>meteorology, atmosphere, climate, ocean, earth science</keywords>
     
     <contact>
-      <name>THREDDS Support</name>
-      <organization>NCAR DSS</organization>
-      <email>support-thredds@unidata.ucar.edu</email>
+      <name>Support</name>
+      <organization>NCAR RDA</organization>
+      <email>tcram@ucar.edu</email>
       <!--phone></phone-->
     </contact>
     <hostInstitution>
-      <name>NCAR</name>
-      <webSite>http://www.unidata.ucar.edu/</webSite>
-      <logoUrl>unidataIcon.gif</logoUrl>
-      <logoAltText>Unidata</logoAltText>
+      <name>National Center for Atmospheric Research - Research Data Archive</name>
+      <webSite>http://rda.ucar.edu</webSite>
+      <logoUrl>http://rda.ucar.edu/images/newbanner.jpg</logoUrl>
+      <logoAltText>National Center for Atmospheric Research - Research Data Archive</logoAltText>
     </hostInstitution>
   </serverInformation>
+
+  <!--
+  The <catalogRoot> element:
+  For catalogs you don't want visible from the /thredds/catalog.xml chain
+  of catalogs, you can use catalogRoot elements. Each catalog root config
+  catalog is crawled and used in configuring the TDS.
+
+  <catalogRoot>myExtraCatalog.xml</catalogRoot>
+  <catalogRoot>myOtherExtraCatalog.xml</catalogRoot>
+  -->
 
   <!--
    * Setup for generated HTML pages.
    *
    * NOTE: URLs may be absolute or relative, relative URLs must be relative
    * to the webapp URL, i.e., http://server:port/thredds/.
-   * -->
+    -->
   <htmlSetup>
     <!--
      * CSS documents used in generated HTML pages.
@@ -39,48 +52,111 @@
     <standardCssUrl>tds.css</standardCssUrl>
     <catalogCssUrl>tdsCat.css</catalogCssUrl>
     <openDapCssUrl>tdsDap.css</openDapCssUrl>
+
+    <!--
+     * The Google Analytics Tracking code you would like to use for the
+     * webpages associated with THREDDS. This will not track WMS or DAP
+     * requests for data, only browsing the catalog.
+    -->
+    <googleTrackingCode></googleTrackingCode>
+
   </htmlSetup>
 
+  <!--
+   The <CatalogServices> element:
+   - Services on local TDS served catalogs are always on.
+   - Services on remote catalogs are set with the allowRemote element
+   below. They are off by default (recommended).
+   -->
   <CatalogServices>
-    <allowRemote>true</allowRemote>
+    <allowRemote>false</allowRemote>
   </CatalogServices>
 
+  <!--
+  Configuring the CDM (netcdf-java library)
+  see http://www.unidata.ucar.edu/software/netcdf-java/reference/RuntimeLoading.html
+
+  <nj22Config>
+    <ioServiceProvider class="edu.univ.ny.stuff.FooFiles"/>
+    <coordSysBuilder convention="foo" class="test.Foo"/>
+    <coordTransBuilder name="atmos_ln_sigma_coordinates" type="vertical" class="my.stuff.atmosSigmaLog"/>
+    <typedDatasetFactory datatype="Point" class="gov.noaa.obscure.file.Flabulate"/>
+  </nj22Config>
+  -->
+
+  <DiskCache>
+    <alwaysUse>false</alwaysUse>
+    <scour>1 hour</scour>
+    <maxSize>1 Gb</maxSize>
+  </DiskCache>
+
+  <!--
+  Caching open NetcdfFile objects.
+  default is to allow 50 - 100 open files, cleanup every 11 minutes
+  -->
   <NetcdfFileCache>
     <minFiles>50</minFiles>
     <maxFiles>100</maxFiles>
-    <scour>5 min</scour>
+    <scour>11 min</scour>
   </NetcdfFileCache>
+
   <GribCollection>
-    <minFiles>5</minFiles>
-    <maxFiles>10</maxFiles>
+    <minFiles>9500</minFiles>
+    <maxFiles>10000</maxFiles>
     <scour>5 min</scour>
   </GribCollection>
   <TimePartition>
-    <minFiles>5</minFiles>
-    <maxFiles>10</maxFiles>
+    <minFiles>9500</minFiles>
+    <maxFiles>10000</maxFiles>
     <scour>5 min</scour>
   </TimePartition>
 
-  <HTTPFileCache>
-    <minFiles>5</minFiles>
-    <maxFiles>20</maxFiles>
-    <scour>10 min</scour>
-  </HTTPFileCache>
 
+  <!--
+  The <HTTPFileCache> element:
+  allow 10 - 20 open datasets, cleanup every 17 minutes
+  used by HTTP Range requests.
+  -->
+  <HTTPFileCache>
+    <minFiles>10</minFiles>
+    <maxFiles>20</maxFiles>
+    <scour>17 min</scour>
+  </HTTPFileCache>
+ 
+
+  <!--
+  Writing GRIB indexes.
+  -->
+  <GribIndex>
+    <dir>/rdavm/TdsIndexFiles/</dir>
+    <alwaysUse>true</alwaysUse>
+    <policy>nestedDirectory</policy>
+    <scour>0 hours</scour> 
+  </GribIndex>
+
+
+  <!--
+  The Netcdf Subset Service is off by default.
+  -->
   <NetcdfSubsetService>
     <allow>true</allow>
-    <scour>15 min</scour>
-    <maxAge>30 min</maxAge>
-    <maxFileDownloadSize>2 GB</maxFileDownloadSize>
+    <scour>30 min</scour>
+    <maxAge>-1 min</maxAge>
   </NetcdfSubsetService>
 
    <FeatureCollection>
      <RollingFileAppender>
        <MaxFileSize>10 MB</MaxFileSize>
        <MaxBackups>50</MaxBackups>
+       <Level>DEBUG</Level>
      </RollingFileAppender>
   </FeatureCollection>
 
+
+  <!--
+  The WCS Service is off by default.
+  Also, off by default (and encouraged) is operating on a remote dataset.
+  -->
   <WCS>
     <allow>true</allow>
     <allowRemote>false</allowRemote>
@@ -88,12 +164,13 @@
     <maxAge>30 min</maxAge>
   </WCS>
 
+
   <WMS>
     <allow>true</allow>
     <allowRemote>false</allowRemote>
     <allowFeatureInfo>true</allowFeatureInfo>
-    <maxImageWidth>5000</maxImageWidth>
-    <maxImageHeight>5000</maxImageHeight>
+    <maxImageWidth>2048</maxImageWidth>
+    <maxImageHeight>2048</maxImageHeight>
   </WMS>
 
   <NCISO>
@@ -103,28 +180,20 @@
   </NCISO>
 
   <Netcdf4Clibrary>
-    <libraryPath>/usr/local/netcdf</libraryPath>
+    <libraryPath>/usr/local/lib</libraryPath>
     <libraryName>netcdf</libraryName>
   </Netcdf4Clibrary>
 
-  <!-- nj22Config
-    <ioServiceProvider class="edu.univ.ny.stuff.FooFiles"/>
-    <coordSysBuilder convention="foo" class="test.Foo"/>
-    <coordTransBuilder name="atmos_ln_sigma_coordinates" type="vertical" class="my.stuff.atmosSigmaLog"/>
-    <typedDatasetFactory datatype="Point" class="gov.noaa.obscure.file.Flabulate"/>
-  </nj22Config -->
 
-  <DiskCache>
-    <alwaysUse>false</alwaysUse>
-    <scour>1 hour</scour>
-    <maxSize>1 Gb</maxSize>
-  </DiskCache>
+  <!--
+   Link to a Viewer application on the HTML page:
+   <Viewer>thredds.server.wms.Godiva2Viewer</Viewer>
+  -->
 
-   <GribIndex>
-     <alwaysUse>true</alwaysUse>
-     <dir>/rdavm/TdsIndexFiles</dir>
-     <policy>nestedDirectory</policy>
-     <scour>0 hours</scour>
-   </GribIndex>
+   <!--
+   Add a DataSource - essentially an IOSP with access to Servlet request parameters
+   <datasetSource>my.package.DatsetSourceImpl</datasetSource>
+   -->
+
 
 </threddsConfig>

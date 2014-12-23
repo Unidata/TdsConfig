@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all" serviceType="Compound" base="">
+    
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+
+
+    <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+
+    <dataset name="ds629.5 NCAR RDA - WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Surface Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid">
+        <metadata inherited="true">
+            <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>
+          <dataType>GRID</dataType>
+          <documentation type="Rights">Some Restrictions Apply</documentation>
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds629.5/" 
+                         xlink:title="NCAR RDA - WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Surface Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid (ds629.5)"/>
+          <documentation type="summary">
+The realistic representation of tropical convection in our global atmospheric models is a long-standing grand challenge for numerical weather forecasts and global climate predictions. Our lack of fundamental knowledge and practical capabilities in this area leaves us disadvantaged in modeling and predicting prominent phenomena of the tropical atmosphere such as the ITCZ, ENSO, TBO, monsoons and their active/break periods, the MJO, subtropical stratus decks, near-surface ocean properties, easterly waves, tropical cyclones, bulk budgets of cloud microphysical quantities, and even the diurnal cycle. Furthermore, tropical weather/climate disturbances strongly influence stratospheric-tropospheric exchange as well as the extratropics, with the later mediated via poleward migration of synoptic systems or through initiating Rossby wave trains that can involve a range of processes and time scales.
+To address the challenge of tropical convection, WCRP and WWRP/THORPEX propose a Year of coordinated observing, modeling and forecasting of organized tropical convection and its influences on predictability as a contribution to the United Nations Year of Planet Earth to complement the International Polar Year (IPY). This effort is intended to exploit the vast amounts of existing and emerging observations, the expanding computational resources and the development of new, high-resolution modeling frameworks, with the objective of advancing the characterization, diagnosis, modeling, parameterization and prediction of multi-scale convective/dynamic interactions, including the two-way interaction between tropical and extra-tropical weather/climate. This activity and its ultimate success will be based on the coordination of a wide range of ongoing and planned international programmatic activities (e.g., GEWEX/CEOP/GCSS, AMY, EOS, GOOS), strong collaboration among the operational prediction, research laboratory and academic communities, and the construction of a comprehensive data base consisting of satellite data, in-situ data sets and global/high-resolution forecast and simulation model outputs relevant to tropical convection. The proposed timing, focus year approach and integrated framework of this effort is intended to leverage the most benefit from recent investments in Earth Science infrastructure as well as entrain a new generation of young scientists into tackling the outstanding problems in the field of weather and climate prediction.
+          </documentation>
+          <documentation type="summary">
+ds629.5 represents a transformed version of the raw ECMWF YOTC archive (ds629.0) by the Data Support Section. The transformed versions are archived on an N400 1600x800 regular Gaussian grid, starting from high resolution reduced Gaussian grids and spectral coefficients.
+          </documentation>
+          <documentation xlink:href="http://yotc.ucar.edu/" xlink:title="YOTC (Year of Tropical Convection) A joint project of the WWRP-THORPEX and the WCRP" />
+          <creator>
+            <name vocabulary="DIF">ECMWF</name>
+            <contact url="http://yotc.ucar.edu/" email="moncrief@ucar.edu" />
+          </creator>
+          <authority>edu.ucar.rda</authority>
+          <publisher>
+            <name vocabulary="DIF">NCAR/RDA</name>
+            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />
+          </publisher>
+          <keyword>Numerical Weather Prediction</keyword>
+          <keyword>Tropical</keyword>
+          <keyword>Model data</keyword>
+          <keyword>Convection</keyword>
+          <keyword>YOTC</keyword>
+
+        </metadata>
+
+
+      <!--  Files -->
+
+     <datasetScan name="ds629.5 Files" 
+                  path="files/g/ds629.5" 
+                  location="/glade/p/rda/data/ds629.5">
+         <metadata inherited="true">
+             <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+     <!-- Aggregations -->
+
+   
+     <dataset name="ds629.5 Aggregations">
+   
+         <featureCollection name="629.5 - Single Parameter 3-Hourly Surface Forecast Time Series"
+                            featureType="GRIB1"
+                            harvest="true"
+                            path="aggregations/g/ds629.5/0">
+       
+           <metadata inherited="true">
+                <serviceName>all</serviceName>
+           </metadata>
+       
+           <collection name="ds629.5_fc_sfc" 
+                       spec="/glade/p/rda/data/ds629.5/yt.oper.fc.sfc/**/yt\.oper\.fc\.sfc\..*"
+                       dateFormatMark="#yt.oper.fc.sfc/#yyyy" />
+      
+           <tdm rewrite="test"/> 
+         </featureCollection>
+
+     </dataset>
+
+  </dataset>
+
+</catalog>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all" serviceType="Compound" base="">
+    
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+
+
+    <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+
+    <dataset name="ds131.1 NCAR RDA - NOAA-CIRES Twentieth Century Global Reanalysis Version II">
+        <metadata inherited="true">
+            <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>
+          <dataType>GRID</dataType>
+          <documentation type="Rights">Freely Available</documentation>
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds131.1/" xlink:title="NCAR RDA - NOAA-CIRES Twentieth Century Global Reanalysis Version II (ds131.1)" />
+          <documentation type="summary">The Twentieth Century Reanalysis Project, supported by the Earth System Research Laboratory Physical Sciences Division from NOAA and the University of Colorado CIRES/Climate Diagnostics Center, is an effort to produce a global reanalysis dataset spanning a portion of the nineteenth century and the entire twentieth century (1871 - near present), assimilating only surface observations of synoptic pressure, monthly sea surface temperature and sea ice distribution. Products include 6-hourly ensemble mean and spread analysis fields on a 2x2 degree global lat/lon grid, and 3 and 6-hourly ensemble mean and spread forecast (first guess) fields on a global Gaussian T-62 grid. Fields are accessible in yearly time series (1 file/parameter) and monthly synoptic time (all parameters/synoptic hour) files. Ensemble grids, spectral coefficients, and other information will available by offline request in the future.
+          </documentation>
+          <documentation xlink:href="http://www.cdc.noaa.gov/data/20thC_Rean/" xlink:title="NOAA ESRL 20th Century Reanalysis Project Homepage" />
+          <contributor role="computation">National Energy Research Scientific Computing Center managed by Lawrence Berkeley National Laboratory and of the Oak Ridge Leadership Computing Facility at Oak Ridge National Laboratory
+          </contributor>
+          <creator>
+            <name vocabulary="DIF">DOC/NOAA/ESRL</name>
+            <contact url="http://www.esrl.noaa.gov/psd/data/20thC_Rean/" email="esrl.psd.data@noaa.gov" />
+          </creator>
+          <publisher>
+            <name vocabulary="DIF">NCAR/RDA</name>
+            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />
+          </publisher>
+          <keyword>Numerical Weather Prediction</keyword>
+          <keyword>NCEP</keyword>
+          <keyword>Model data</keyword>
+          <keyword>Reanalysis</keyword>
+          <keyword>Twentieth Century</keyword>
+
+
+        </metadata>
+
+
+      <!--  Files -->
+
+
+     <datasetScan name="ds131.1 Files" 
+                  path="files/g/ds131.1" 
+                  location="/glade/p/rda/data/ds131.1">
+         <metadata inherited="true">
+         <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+             <exclude wildcard="timeseries" atomic="false" collection="true"/>
+             <exclude wildcard="data" atomic="false" collection="true"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+     <!-- Aggregations -->
+
+     <dataset name="ds131.1 Aggregations">
+
+         <dataset name="Synoptic Analysis Fields">
+               <metadata inherited="true">
+                <serviceName>all</serviceName>
+               </metadata>
+       
+             <featureCollection name="ds131.1_synop_anl_mean"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/g/ds131.1/3/mean">
+               <metadata inherited="true">
+                 <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds131.1_synop_anl_mean"
+                           spec="/glade/p/rda/data/ds131.1/synop/pgrbanl_mean_.*\.grib$"
+                           dateFormatMark="#pgrbanl_mean_#yyyyMM_HH"
+                           timePartition="file"
+                           olderThan="0 min"/>
+               
+               <tdm startup="always"/> 
+               <gribConfig datasetTypes="Best">
+                 <pdsHash>
+                   <useTableVersion>false</useTableVersion>
+                 </pdsHash> 
+               </gribConfig>
+             </featureCollection>
+           
+             <featureCollection name="ds131.1_synop_anl_sprd"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/g/ds131.1/3/spread">
+               <metadata inherited="true">
+                 <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds131.1_synop_anl_sprd"
+                           spec="/glade/p/rda/data/ds131.1/synop/pgrbanl_sprd_.*\.grib$"
+                           dateFormatMark="#pgrbanl_sprd_#yyyyMM_HH"
+                           timePartition="file"
+                           olderThan="0 min"/>
+               
+               <tdm startup="always"/> 
+               <gribConfig datasetTypes="Best">
+                 <pdsHash>
+                   <useTableVersion>false</useTableVersion>
+                 </pdsHash>
+               </gribConfig>
+             </featureCollection>
+           
+         </dataset>
+       
+         <dataset name="Synoptic First Guess Forecast Fields">
+               <metadata inherited="true">
+                <serviceName>all</serviceName>
+               </metadata>
+       
+       
+             <featureCollection name="ds131.1_synop_fgff_mean"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/g/ds131.1/4/mean">
+               <metadata inherited="true">
+                 <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds131.1_synop_fgff_mean"
+                           spec="/glade/p/rda/data/ds131.1/synop/sflxgrbfg_mean_.*\.grib$"
+                           dateFormatMark="#sflxgrbfg_mean_#yyyyMM_HH"
+                           timePartition="file"          
+                           olderThan="0 min"/>
+ 
+               <tdm startup="always"/>       
+               <gribConfig datasetTypes="Best">
+                 <pdsHash>
+                   <useTableVersion>false</useTableVersion>
+                 </pdsHash> 
+               </gribConfig>
+             </featureCollection>
+           
+             <featureCollection name="ds131.1_synop_fgff_sprd"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/g/ds131.1/4/spread">
+               <metadata inherited="true">
+                 <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds131.1_synop_fgff_sprd"
+                           spec="/glade/p/rda/data/ds131.1/synop/sflxgrbfg_sprd_.*\.grib$"
+                           dateFormatMark="#sflxgrbfg_sprd_#yyyyMM_HH"
+                           timePartition="file"
+                           olderThan="0 min"/>
+          
+               <tdm startup="always"/> 
+               <gribConfig datasetTypes="Best">
+                 <pdsHash>
+                   <useTableVersion>false</useTableVersion>
+                 </pdsHash>
+               </gribConfig>
+             </featureCollection>
+           
+         </dataset>
+       
+     </dataset>
+
+  </dataset>
+
+</catalog>
