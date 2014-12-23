@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         name="NCAR DSS THREDDS Data Server"
-         version="1.0.6">
+<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
 
-  <dataset name="Realtime data from IDD">
-    <catalogRef xlink:href="reanal.xml" xlink:title="Reanalysis Datasets" name="" />
-    <catalogRef xlink:href="tigge.xml" xlink:title="Near Real-time Online THORPEX Interactive Grand Global Ensemble (TIGGE) Data (ds330.2)" name="" />
-    <catalogRef xlink:href="idd.xml" xlink:title="Historical Unidata Internet Data Distribution (IDD) Gridded Model Data (ds335.0)" name="" />
-  </dataset>
+    <catalogRef xlink:href="catalog_ds083.2.xml" xlink:title="ds083.2  NCEP FNL Operational Model Global Tropospheric Analyses" name=" NCEP FNL Operational Model Global Tropospheric Analyses" />
+
+    <!-- catalogRef xlink:href="catalog_ds131.1.xml" xlink:title="ds131.1  NOAA-CIRES Twentieth Century Global Reanalysis Version II" name=" NOAA-CIRES Twentieth Century Global Reanalysis Version II" / --> 
+
+    <catalogRef xlink:href="catalog_ds277.6.xml" xlink:title="ds277.6  NCEP Global Ocean Data Assimilation System (GODAS)" name=" NCEP Global Ocean Data Assimilation System (GODAS)" />
+    <catalogRef xlink:href="catalog_ds285.3.xml" xlink:title="ds285.3  Subsurface Temperature And Salinity Analyses by Ishii et al." name=" Subsurface Temperature And Salinity Analyses by Ishii et al." />
+
+    <!-- catalogRef xlink:href="catalog_ds298.0.xml" xlink:title="ds298.0  Standardized Precipitation Index (SPI) for Global Land Surface (1949-2012)" name=" Standardized Precipitation Index (SPI) for Global Land Surface (1949-2012)" />
+    <catalogRef xlink:href="catalog_ds316.0.xml" xlink:title="ds316.0  NCAR Community Earth System Model, EaSM Project Dataset" name=" NCAR Community Earth System Model, EaSM Project Dataset" />
+    <catalogRef xlink:href="catalog_ds502.0.xml" xlink:title="ds502.0  NOAA CPC Morphing Technique (CMORPH) Global Precipitation Analyses" name=" NOAA CPC Morphing Technique (CMORPH) Global Precipitation Analyses" />
+    <catalogRef xlink:href="catalog_ds601.0.xml" xlink:title="ds601.0  NCAR Nested Regional Climate Model (NRCM)" name=" NCAR Nested Regional Climate Model (NRCM)" / --> 
+
+    <catalogRef xlink:href="catalog_ds626.0.xml" xlink:title="ds626.0 ECMWF Atmospheric Reanalysis of the 20th Century" name="" />
+    <catalogRef xlink:href="catalog_ds627.0.xml" xlink:title="ds627.0 ERA-Interim Project" name="ERA-Interim Project" />
+    <catalogRef xlink:href="catalog_ds627.1.xml" xlink:title="ds627.1 ERA-Interim Project, Monthly Means" name="ERA-Interim Project, Monthly Means" />
+    <catalogRef xlink:href="catalog_ds629.1.xml" xlink:title="ds629.1  WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Surface Analysis and Surface Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" name=" WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Surface Analysis and Surface Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" />
+    <catalogRef xlink:href="catalog_ds629.2.xml" xlink:title="ds629.2  WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Pressure Level Analysis Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" name=" WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Pressure Level Analysis Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" />
+    <catalogRef xlink:href="catalog_ds629.3.xml" xlink:title="ds629.3  WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Pressure Level Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" name=" WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Pressure Level Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" />
+    <catalogRef xlink:href="catalog_ds629.5.xml" xlink:title="ds629.5  WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Surface Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" name=" WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Surface Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" />
+    <catalogRef xlink:href="catalog_ds629.6.xml" xlink:title="ds629.6  WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Pressure Level Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid, Dynamical Parameters Only" name=" WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Pressure Level Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid, Dynamical Parameters Only" />
+
+    <!--catalogRef xlink:href="catalog_ds631.0.xml" xlink:title="ds631.0 Arctic System Reanalysis (ASR) Project" name="Arctic System Reanalysis (ASR) Project" / -->
+
 </catalog>

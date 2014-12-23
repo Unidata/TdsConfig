@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ECMWF Atmospheric Reanalysis of the 20th Century"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all" serviceType="Compound" base="">
+    
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+
+
+    <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+
+    <dataset name="ds626.0 NCAR RDA - ECMWF Atmospheric Reanalysis of the 20th Century">
+        <metadata inherited="true">
+            <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>
+          <dataType>GRID</dataType>
+          <documentation type="Rights">Freely Available</documentation>
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds083.2/"
+                         xlink:title="NCAR RDA - NCEP FNL Operational Model Global Tropospheric Analyses (ds083.2)"/>
+          <documentation type="summary">
+TDB
+          </documentation>
+          <documentation xlink:href="http://www.emc.ncep.noaa.gov/modelinfo/index.html" xlink:title="NCEP Model documentation" />
+          <creator>
+            <name vocabulary="DIF">DOC/NOAA/NWS/NCEP</name>
+            <contact url="http://www.ncep.noaa.gov/" email="http://www.ncep.noaa.gov/mail_liaison.shtml" />
+          </creator>
+          <authority>edu.ucar.rda</authority>
+          <publisher>
+            <name vocabulary="DIF">NCAR/RDA</name>
+            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />
+          </publisher>
+          <keyword>Numerical Weather Prediction</keyword>
+          <keyword>NCEP</keyword>
+          <keyword>Model data</keyword>
+          <keyword>GFS</keyword>
+          <keyword>GDAS</keyword>
+          <keyword>FNL</keyword>
+        </metadata>
+
+
+      <!--  Files  -->
+
+
+      <datasetScan name="ds626.0 Files"
+                  path="files/g/ds626.0"
+                  location="/glade/p/rda/data/ds626.0">
+         <metadata inherited="true">
+          <serviceName>all</serviceName>
+        </metadata>
+        <filter>
+            <exclude wildcard="*.html"/>
+            <exclude wildcard="grib2" atomic="false" collection="true"/>
+        </filter>
+        <addDatasetSize/>
+     </datasetScan>
+
+     <!--  Aggregations  -->
+
+    <dataset name="ds626.0 Aggregation">
+
+
+      <featureCollection name="ds626.0 3D Variables - 3 hour"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/g/ds626.0/1">
+          <metadata inherited="true">
+           <serviceName>all</serviceName>
+         </metadata>
+
+          <collection name = "ds626.0.pl.3hr" spec="/glade/p/rda/data/ds626.0/e20c.oper.an.pl.3hr/**/.*grb$" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+      <featureCollection name="ds626.0 Surface Variables - 3 hour"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/g/ds626.0/2">
+          <metadata inherited="true">
+           <serviceName>all</serviceName>
+         </metadata>
+
+          <collection name = "ds626.0.sfc.3hr" spec="/glade/p/rda/data/ds626.0/e20c.oper.an.sfc.3hr/**/.*grb$" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+      <featureCollection name="ds626.0 Surface Variables - 6 hour"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/g/ds626.0/3">
+          <metadata inherited="true">
+           <serviceName>all</serviceName>
+         </metadata>
+
+          <collection name = "ds626.0.sfc.6hr" spec="/glade/p/rda/data/ds626.0/e20c.oper.an.sfc.6hr/**/.*grb$" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+      <featureCollection name="ds626.0 Invariants"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/g/ds626.0/4">
+          <metadata inherited="true">
+           <serviceName>all</serviceName>
+         </metadata>
+
+          <collection name = "ds626.0.invariants" spec="/glade/p/rda/data/ds626.0/e20c.oper.invariant/1900_2010/.*grb$" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+    </dataset>
+
+  </dataset>
+
+</catalog>
