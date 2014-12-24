@@ -3,12 +3,10 @@
         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
         xmlns:xlink="http://www.w3.org/1999/xlink">
 
-    <catalogRef xlink:href="catalog_ds083.2.xml" xlink:title="ds083.2  NCEP FNL Operational Model Global Tropospheric Analyses" name=" NCEP FNL Operational Model Global Tropospheric Analyses" />
-
-    <!-- catalogRef xlink:href="catalog_ds131.1.xml" xlink:title="ds131.1  NOAA-CIRES Twentieth Century Global Reanalysis Version II" name=" NOAA-CIRES Twentieth Century Global Reanalysis Version II" / --> 
-
-    <catalogRef xlink:href="catalog_ds277.6.xml" xlink:title="ds277.6  NCEP Global Ocean Data Assimilation System (GODAS)" name=" NCEP Global Ocean Data Assimilation System (GODAS)" />
-    <catalogRef xlink:href="catalog_ds285.3.xml" xlink:title="ds285.3  Subsurface Temperature And Salinity Analyses by Ishii et al." name=" Subsurface Temperature And Salinity Analyses by Ishii et al." />
+    <catalogRef xlink:href="catalog_ds083.2.xml" xlink:title="ds083.2  NCEP FNL Operational Model Global Tropospheric Analyses" name="" />
+    <catalogRef xlink:href="catalog_ds131.1.xml" xlink:title="ds131.1  NOAA-CIRES Twentieth Century Global Reanalysis Version II" name="" />
+    <catalogRef xlink:href="catalog_ds277.6.xml" xlink:title="ds277.6  NCEP Global Ocean Data Assimilation System (GODAS)" name="" />
+    <catalogRef xlink:href="catalog_ds285.3.xml" xlink:title="ds285.3  Subsurface Temperature And Salinity Analyses by Ishii et al." name="" />
 
     <!-- catalogRef xlink:href="catalog_ds298.0.xml" xlink:title="ds298.0  Standardized Precipitation Index (SPI) for Global Land Surface (1949-2012)" name=" Standardized Precipitation Index (SPI) for Global Land Surface (1949-2012)" />
     <catalogRef xlink:href="catalog_ds316.0.xml" xlink:title="ds316.0  NCAR Community Earth System Model, EaSM Project Dataset" name=" NCAR Community Earth System Model, EaSM Project Dataset" />

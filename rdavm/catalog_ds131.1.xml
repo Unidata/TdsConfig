@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+<catalog name="ds131.1  NOAA-CIRES Twentieth Century Global Reanalysis Version II"
         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
         xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -23,7 +23,7 @@
 
     <dataset name="ds131.1 NCAR RDA - NOAA-CIRES Twentieth Century Global Reanalysis Version II">
         <metadata inherited="true">
-            <serviceName>all</serviceName>
+          <serviceName>all</serviceName>
           <dataFormat>GRIB-1</dataFormat>
           <dataType>GRID</dataType>
           <documentation type="Rights">Freely Available</documentation>
@@ -87,15 +87,9 @@
                <collection name="ds131.1_synop_anl_mean"
                            spec="/glade/p/rda/data/ds131.1/synop/pgrbanl_mean_.*\.grib$"
                            dateFormatMark="#pgrbanl_mean_#yyyyMM_HH"
-                           timePartition="file"
-                           olderThan="0 min"/>
-               
-               <tdm startup="always"/> 
-               <gribConfig datasetTypes="Best">
-                 <pdsHash>
-                   <useTableVersion>false</useTableVersion>
-                 </pdsHash> 
-               </gribConfig>
+                           timePartition="year" />
+
+               <tdm rewrite="test" />
              </featureCollection>
            
              <featureCollection name="ds131.1_synop_anl_sprd"
@@ -108,15 +102,9 @@
                <collection name="ds131.1_synop_anl_sprd"
                            spec="/glade/p/rda/data/ds131.1/synop/pgrbanl_sprd_.*\.grib$"
                            dateFormatMark="#pgrbanl_sprd_#yyyyMM_HH"
-                           timePartition="file"
-                           olderThan="0 min"/>
-               
-               <tdm startup="always"/> 
-               <gribConfig datasetTypes="Best">
-                 <pdsHash>
-                   <useTableVersion>false</useTableVersion>
-                 </pdsHash>
-               </gribConfig>
+                           timePartition="year" />
+
+               <tdm rewrite="test" />
              </featureCollection>
            
          </dataset>
@@ -137,15 +125,9 @@
                <collection name="ds131.1_synop_fgff_mean"
                            spec="/glade/p/rda/data/ds131.1/synop/sflxgrbfg_mean_.*\.grib$"
                            dateFormatMark="#sflxgrbfg_mean_#yyyyMM_HH"
-                           timePartition="file"          
-                           olderThan="0 min"/>
- 
-               <tdm startup="always"/>       
-               <gribConfig datasetTypes="Best">
-                 <pdsHash>
-                   <useTableVersion>false</useTableVersion>
-                 </pdsHash> 
-               </gribConfig>
+                           timePartition="year" />
+
+               <tdm rewrite="test" />
              </featureCollection>
            
              <featureCollection name="ds131.1_synop_fgff_sprd"
@@ -158,15 +140,9 @@
                <collection name="ds131.1_synop_fgff_sprd"
                            spec="/glade/p/rda/data/ds131.1/synop/sflxgrbfg_sprd_.*\.grib$"
                            dateFormatMark="#sflxgrbfg_sprd_#yyyyMM_HH"
-                           timePartition="file"
-                           olderThan="0 min"/>
-          
-               <tdm startup="always"/> 
-               <gribConfig datasetTypes="Best">
-                 <pdsHash>
-                   <useTableVersion>false</useTableVersion>
-                 </pdsHash>
-               </gribConfig>
+                           timePartition="year" />
+
+               <tdm rewrite="test" />
              </featureCollection>
            
          </dataset>
