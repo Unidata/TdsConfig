@@ -53,9 +53,9 @@ In 2006, JMA started real-time operation of the JMA Climate Data Assimilation Sy
             <name vocabulary="DIF">NCAR/RDA</name>   
             <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />   
           </publisher>   
-          <keywords>Numerical Weather Prediction</keywords>   
-          <keywords>Model data</keywords>   
-          <keywords>Reanalysis</keywords>   
+          <keyword>Numerical Weather Prediction</keyword>
+          <keyword>Model data</keyword>
+          <keyword>Reanalysis</keyword>
         </metadata>
 
 
@@ -95,9 +95,6 @@ In 2006, JMA started real-time operation of the JMA Climate Data Assimilation Sy
            
                   <gribConfig datasetTypes="Best">
                     <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
                   </gribConfig>
                   <update startup="false" trigger="allow"/>
              </featureCollection>
@@ -105,7 +102,7 @@ In 2006, JMA started real-time operation of the JMA Climate Data Assimilation Sy
              <featureCollection name="ds625.1_anl_chipsi25"
                                 featureType="GRIB"
                                 harvest="true"
-                                path="aggregations/jra25/ds625.1/2">
+                                path="aggregations/jra25/ds625.1/2"/>
 
                <metadata inherited="true">
                     <serviceName>all</serviceName>
