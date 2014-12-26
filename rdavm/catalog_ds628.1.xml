@@ -52,9 +52,9 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
             <name vocabulary="DIF">NCAR/RDA</name>   
             <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />   
           </publisher>   
-          <keywords>Numerical Weather Prediction</keywords>   
-          <keywords>Model data</keywords>   
-          <keywords>Reanalysis</keywords>   
+          <keyword>Numerical Weather Prediction</keyword>   
+          <keyword>Model data</keyword>   
+          <keyword>Reanalysis</keyword>   
         </metadata>
 
 
@@ -80,7 +80,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
          <dataset name="Analysis Fields">
               
              <featureCollection name="ds628.1_anl_column"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/1">
            
@@ -103,7 +103,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
          
              <!-- 
              <featureCollection name="ds628.1_anl_column_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/2">
                                 
@@ -126,7 +126,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_column125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/3">
 
@@ -149,7 +149,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_anl_column125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/4">
 
@@ -172,7 +172,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->            
  
              <featureCollection name="ds628.1_anl_isentrop"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/5">
 
@@ -195,7 +195,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_anl_isentrop_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/6">
 
@@ -218,7 +218,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_isentrop125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/7">
 
@@ -241,7 +241,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
             <!--
             <featureCollection name="ds628.1_anl_isentrop125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/8">
 
@@ -264,7 +264,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_land"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/9">
          
@@ -287,7 +287,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_anl_land_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/10">
 
@@ -310,7 +310,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_land125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/11">
 
@@ -333,7 +333,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_anl_land125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/12">
 
@@ -356,7 +356,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_mdl"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/13">
          
@@ -379,7 +379,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
  
              <!--
              <featureCollection name="ds628.1_anl_mdl_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/14">
 
@@ -402,7 +402,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_p125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/15">
 
@@ -425,7 +425,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
             <!--
             <featureCollection name="ds628.1_anl_p125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/16">
 
@@ -448,7 +448,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_p25"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/17">
          
@@ -471,7 +471,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_anl_p25_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/18">
 
@@ -494,7 +494,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_snow"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/19">
          
@@ -517,7 +517,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_anl_snow_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/20">
 
@@ -540,7 +540,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_snow125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/21">
 
@@ -563,7 +563,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_anl_snow125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/22">
 
@@ -586,7 +586,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_surf"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/23">
          
@@ -609,7 +609,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_anl_surf_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/24">
 
@@ -632,7 +632,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_anl_surf125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/25">
 
@@ -655,7 +655,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_anl_surf125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/26">
 
@@ -682,7 +682,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
          <dataset name="Forecast Fields">
       
              <featureCollection name="ds628.1_fcst_column"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/27">
            
@@ -705,7 +705,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_column_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/28">
 
@@ -728,7 +728,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_fcst_column125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/29">
 
@@ -751,7 +751,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_column125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/30">
 
@@ -774,7 +774,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->            
  
              <featureCollection name="ds628.1_fcst_land"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/31">
          
@@ -797,7 +797,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_land_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/32">
 
@@ -820,7 +820,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_fcst_land125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/33">
 
@@ -843,7 +843,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_land125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/34">
 
@@ -866,7 +866,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_fcst_mdl"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/35">
 
@@ -889,7 +889,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_mdl_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/36">
                                 
@@ -912,7 +912,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_fcst_p125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/37">
 
@@ -934,7 +934,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_p125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/38">
 
@@ -956,7 +956,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_fcst_p25"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/39">
 
@@ -979,7 +979,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_p25_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/40">
 
@@ -1007,7 +1007,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
          <dataset name="Diagnostic Fields">
              <!--
              <featureCollection name="ds628.1_fcst_phy2m"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/41">
          
@@ -1030,7 +1030,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              --> 
              <!--
              <featureCollection name="ds628.1_fcst_phy2m_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/42">
 
@@ -1053,7 +1053,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
              <!--
              <featureCollection name="ds628.1_fcst_phy2m125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/43">
          
@@ -1077,7 +1077,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_phy2m125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/44">
 
@@ -1101,7 +1101,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_phy3m"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/45">
 
@@ -1124,7 +1124,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
              <!--
              <featureCollection name="ds628.1_fcst_phy3m_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/46">
 
@@ -1147,7 +1147,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
              <!--
              <featureCollection name="ds628.1_fcst_phy3m125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/47">
          
@@ -1170,7 +1170,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
              <!--
              <featureCollection name="ds628.1_fcst_phy3m125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/48">
 
@@ -1193,7 +1193,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
              <!--
              <featureCollection name="ds628.1_fcst_phyland"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/49">
 
@@ -1216,7 +1216,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
              <!--
              <featureCollection name="ds628.1_fcst_phyland_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/50">
 
@@ -1239,7 +1239,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
              <!--
              <featureCollection name="ds628.1_fcst_phyland125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/51">
 
@@ -1262,7 +1262,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
              <!--
              <featureCollection name="ds628.1_fcst_phyland125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/52">
 
@@ -1285,7 +1285,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_fcst_surf"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/53">
 
@@ -1308,7 +1308,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_surf_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/54">
 
@@ -1331,7 +1331,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_fcst_surf125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/55">
 
@@ -1354,7 +1354,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_fcst_surf125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/56">
 
@@ -1377,7 +1377,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_ice"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/57">
 
@@ -1400,7 +1400,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_ice_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/58">
 
@@ -1423,7 +1423,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              -->
 
              <featureCollection name="ds628.1_ice125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/59">
 
@@ -1446,7 +1446,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              <!--
              <featureCollection name="ds628.1_ice125_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/60">
 
@@ -1470,7 +1470,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
  
              <!--
              <featureCollection name="ds628.1_minmax_surf"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/61">
 
@@ -1492,7 +1492,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              </featureCollection>     
 
              <featureCollection name="ds628.1_minmax_surf_var"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/62">
 
@@ -1520,7 +1520,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
 
              <featureCollection name="ds628.1_ll125"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/63">
 
@@ -1542,7 +1542,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              </featureCollection>
 
              <featureCollection name="ds628.1_ll25"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/64">
 
@@ -1564,7 +1564,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
              </featureCollection>
 
              <featureCollection name="ds628.1_tl319"
-                                featureType="GRIB"
+                                featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.1/65">
 

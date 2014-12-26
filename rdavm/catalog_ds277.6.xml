@@ -1,92 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
-        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
 
   <service name="all" serviceType="Compound" base="">
-    
+
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
     <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
     <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
-    
+
     <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
     <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
-    
+
     <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
   </service>
 
 
-   <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+  <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
 
-   <dataset name="ds277.6 NCAR RDA - NCEP Global Ocean Data Assimilation System (GODAS)">
-        <metadata inherited="true">
-            <serviceName>all</serviceName>
-            <dataFormat>GRIB-1</dataFormat>
-          <dataType>GRID</dataType> 
-          <documentation type="Rights">Freely Available</documentation> 
-          <documentation xlink:href="http://rda.ucar.edu/datasets/ds277.6/" 
-                         xlink:title="NCAR RDA - NCEP Global Ocean Data Assimilation System (GODAS) (ds277.6)"/> 
-          <documentation type="summary"> 
-The National Centers for Environmental Prediction (NCEP) uses a Global Ocean Data Assimilation System (GODAS) to routinely produce monthly and pentad (5-day) mean global ocean gridded data. The analysis system, that was originally applied only to the tropical pacific, has evolved to use GFDL MOM.v3 model and give near global coverage. Briefly, the model domain specifications are 65N to 75S, 1 degree resolution with 1/3 degree resolution within 10 degree of the equator, 40 levels and 10 meter resolution in the upper 200 meters. These data are a valuable community asset for monitoring different aspects of ocean climate variability.
-          </documentation> 
-          <documentation xlink:href="http://www.cpc.ncep.noaa.gov/products/GODAS/" xlink:title="NCEP Global Ocean Data Assimilation System (GODAS)" /> 
-          <creator> 
-            <name vocabulary="DIF">DOC/NOAA/NWS/NCEP</name> 
-            <contact url="http://www.cpc.ncep.noaa.gov/products/GODAS/" email="Yan.Xue@noaa.gov" /> 
-          </creator> 
-          <authority>edu.ucar.rda</authority> 
-          <publisher> 
-            <name vocabulary="DIF">NCAR/RDA</name> 
-            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" /> 
-          </publisher> 
-          <keyword>NCEP Global Ocean Data Assimilation System</keyword> 
-          <keyword>NCEP</keyword> 
-          <keyword>GODAS</keyword> 
-          <keyword>Ocean</keyword> 
-        </metadata>
+  <dataset name="ds277.6 NCAR RDA - NCEP Global Ocean Data Assimilation System (GODAS)">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <dataFormat>GRIB-1</dataFormat>
+      <dataType>GRID</dataType>
+      <documentation type="Rights">Freely Available</documentation>
+      <documentation xlink:href="http://rda.ucar.edu/datasets/ds277.6/"
+                     xlink:title="NCAR RDA - NCEP Global Ocean Data Assimilation System (GODAS) (ds277.6)"/>
+      <documentation type="summary">
+        The National Centers for Environmental Prediction (NCEP) uses a Global Ocean Data Assimilation System (GODAS) to routinely produce monthly and pentad
+        (5-day) mean global ocean gridded data. The analysis system, that was originally applied only to the tropical pacific, has evolved to use GFDL MOM.v3
+        model and give near global coverage. Briefly, the model domain specifications are 65N to 75S, 1 degree resolution with 1/3 degree resolution within 10
+        degree of the equator, 40 levels and 10 meter resolution in the upper 200 meters. These data are a valuable community asset for monitoring different
+        aspects of ocean climate variability.
+      </documentation>
+      <documentation xlink:href="http://www.cpc.ncep.noaa.gov/products/GODAS/" xlink:title="NCEP Global Ocean Data Assimilation System (GODAS)"/>
+      <creator>
+        <name vocabulary="DIF">DOC/NOAA/NWS/NCEP</name>
+        <contact url="http://www.cpc.ncep.noaa.gov/products/GODAS/" email="Yan.Xue@noaa.gov"/>
+      </creator>
+      <authority>edu.ucar.rda</authority>
+      <publisher>
+        <name vocabulary="DIF">NCAR/RDA</name>
+        <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu"/>
+      </publisher>
+      <keyword>NCEP Global Ocean Data Assimilation System</keyword>
+      <keyword>NCEP</keyword>
+      <keyword>GODAS</keyword>
+      <keyword>Ocean</keyword>
+    </metadata>
 
 
-      <!--  Files -->
+    <!--  Files -->
 
 
-     <datasetScan name="ds277.6 Files" 
-                  path="files/g/ds277.6" 
-                  location="/glade/p/rda/data/ds277.6">
-         <metadata inherited="true">
-             <serviceName>all</serviceName>
-         </metadata>
-         <filter>
-             <exclude wildcard="*.html"/>
-         </filter>
-         <addDatasetSize/>
-     </datasetScan>
-  
-     <!-- Aggregations -->
+    <datasetScan name="ds277.6 Files"
+                 path="files/g/ds277.6"
+                 location="/glade/p/rda/data/ds277.6">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+      </metadata>
+      <filter>
+        <exclude wildcard="*.html"/>
+      </filter>
+      <addDatasetSize/>
+    </datasetScan>
 
-     <featureCollection name="ds277.6 Aggregations"
-                        featureType="GRIB1"
-                        harvest="true"
-                        path="aggregations/g/ds277.6/1">
-   
-         <metadata inherited="true">
-            <serviceName>all</serviceName>
-         </metadata>
-   
-         <collection name="ds277.6" 
-                     spec="/glade/p/rda/data/ds277.6/monthly/godas\.M\..*\.grb$"
-                     dateFormatMark="#godas.M.#yyyyMM"
-                     timePartition="directory" />
-       />
-   
-     <tdm rewrite="test"/>     
-     <gribConfig datasetTypes="Best">
-         <gdsName hash='-1530353004' groupName='Potential Temperature, Salinity, Sea Surface Height'/>
-         <gdsName hash='283749012' groupName='Ocean Current or Surface Momentum Flux'/>
-     </gribConfig>
-     </featureCollection>
-   
-   </dataset>
+    <!-- Aggregations -->
+
+    <featureCollection name="ds277.6 Aggregations"
+                       featureType="GRIB1"
+                       harvest="true"
+                       path="aggregations/g/ds277.6/1">
+
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+      </metadata>
+
+      <collection name="ds277.6"
+                  spec="/glade/p/rda/data/ds277.6/monthly/godas\.M\..*\.grb$"
+                  dateFormatMark="#godas.M.#yyyyMM"
+                  timePartition="directory"/>
+
+      <tdm rewrite="test"/>
+      <gribConfig datasetTypes="Best">
+        <gdsName hash='-1530353004' groupName='Potential Temperature, Salinity, Sea Surface Height'/>
+        <gdsName hash='283749012' groupName='Ocean Current or Surface Momentum Flux'/>
+      </gribConfig>
+    </featureCollection>
+
+  </dataset>
 </catalog>
