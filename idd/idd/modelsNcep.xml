@@ -600,7 +600,7 @@
                        xlink:title="NDFD parameter descriptions"/>
       </metadata>
 
-      <featureCollection name="National Weather Service CONUS Forevast Grids (NOAAPORT)"
+      <featureCollection name="National Weather Service CONUS Forecast Grids (NOAAPORT)"
 		         featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/NWS/CONUS/NOAAPORT">
         <metadata inherited="true">
           <documentation type="summary">
