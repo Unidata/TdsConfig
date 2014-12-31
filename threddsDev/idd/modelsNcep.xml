@@ -924,9 +924,6 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
-        <gribConfig>
-          <gdsHash from="-804803647" to="-804803709"/>
-        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Wave Watch III Regional Eastern Pacific" featureType="GRIB2" harvest="true"
