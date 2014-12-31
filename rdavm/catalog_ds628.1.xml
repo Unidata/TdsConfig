@@ -89,16 +89,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
            
                <collection name="ds628.1_anl_column" 
-                           spec="/glade/p/rda/data/ds628.1/anl_column/**/anl_column\..*"
-                           olderThan="0 min"/>
-           
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_column/**/anl_column\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
          
              <!-- 
@@ -135,16 +127,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_column125" 
-                           spec="/glade/p/rda/data/ds628.1/anl_column125/**/anl_column125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_column125/**/anl_column125\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -181,17 +165,9 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_isentrop"
-                           spec="/glade/p/rda/data/ds628.1/anl_isentrop/**/anl_isentrop\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
-             </featureCollection>  
+                           spec="/glade/p/rda/data/ds628.1/anl_isentrop/**/anl_isentrop\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
 
              <!--
              <featureCollection name="ds628.1_anl_isentrop_var"
@@ -227,16 +203,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_isentrop125"
-                           spec="/glade/p/rda/data/ds628.1/anl_isentrop125/**/anl_isentrop125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_isentrop125/**/anl_isentrop125\..*"  />
+               <tdm rewrite="test"/>
              </featureCollection>
 
             <!--
@@ -273,16 +241,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>      
 
                <collection name="ds628.1_anl_land"
-                           spec="/glade/p/rda/data/ds628.1/anl_land/**/anl_land\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_land/**/anl_land\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -319,16 +279,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_land125"
-                           spec="/glade/p/rda/data/ds628.1/anl_land125/**/anl_land125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_land125/**/anl_land125\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -365,16 +317,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_mdl"
-                           spec="/glade/p/rda/data/ds628.1/anl_mdl/**/anl_mdl\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_mdl/**/anl_mdl\..*"  />
+               <tdm rewrite="test"/>
              </featureCollection>
  
              <!--
@@ -411,16 +355,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_p125"
-                           spec="/glade/p/rda/data/ds628.1/anl_p125/**/anl_p125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_p125/**/anl_p125\..*" />
+               <tdm rewrite="test"/>
             </featureCollection>
 
             <!--
@@ -457,16 +393,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
              
                <collection name="ds628.1_anl_p25"
-                           spec="/glade/p/rda/data/ds628.1/anl_p25/**/anl_p25\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_p25/**/anl_p25\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -503,16 +431,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_snow"
-                           spec="/glade/p/rda/data/ds628.1/anl_snow/**/anl_snow\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_snow/**/anl_snow\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -549,16 +469,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_snow125"
-                           spec="/glade/p/rda/data/ds628.1/anl_snow125/**/anl_snow125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_snow125/**/anl_snow125\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -595,16 +507,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_surf"
-                           spec="/glade/p/rda/data/ds628.1/anl_surf/**/anl_surf\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_surf/**/anl_surf\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -641,16 +545,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_anl_surf125"
-                           spec="/glade/p/rda/data/ds628.1/anl_surf125/**/anl_surf125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/anl_surf125/**/anl_surf125\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -691,16 +587,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
            
                <collection name="ds628.1_fcst_column" 
-                           spec="/glade/p/rda/data/ds628.1/fcst_column/**/fcst_column\..*"
-                           olderThan="0 min"/>
-           
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/fcst_column/**/fcst_column\..*"  />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -737,16 +625,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_fcst_column125"
-                           spec="/glade/p/rda/data/ds628.1/fcst_column125/**/fcst_column125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/fcst_column125/**/fcst_column125\..*"  />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -783,16 +663,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_fcst_land"
-                           spec="/glade/p/rda/data/ds628.1/fcst_land/**/fcst_land\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/fcst_land/**/fcst_land\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -829,16 +701,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_fcst_land125"
-                           spec="/glade/p/rda/data/ds628.1/fcst_land125/**/fcst_land125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/fcst_land125/**/fcst_land125\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -875,16 +739,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_fcst_mdl"
-                           spec="/glade/p/rda/data/ds628.1/fcst_mdl/**/fcst_mdl\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/fcst_mdl/**/fcst_mdl\..*"  />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -920,16 +776,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
                <collection name="ds628.1_fcst_p125"
-                           spec="/glade/p/rda/data/ds628.1/fcst_p125/**/fcst_p125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/fcst_p125/**/fcst_p125\..*"  />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -965,16 +813,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_fcst_p25"
-                           spec="/glade/p/rda/data/ds628.1/fcst_p25/**/fcst_p25\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/fcst_p25/**/fcst_p25\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -1294,16 +1134,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_fcst_surf"
-                           spec="/glade/p/rda/data/ds628.1/fcst_surf/**/fcst_surf\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/fcst_surf/**/fcst_surf\..*"  />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -1340,16 +1172,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_fcst_surf125"
-                           spec="/glade/p/rda/data/ds628.1/fcst_surf125/**/fcst_surf125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/fcst_surf125/**/fcst_surf125\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -1386,16 +1210,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_ice"
-                           spec="/glade/p/rda/data/ds628.1/ice/**/ice\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/ice/**/ice\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -1432,16 +1248,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_ice125"
-                           spec="/glade/p/rda/data/ds628.1/ice125/**/ice125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/ice125/**/ice125\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <!--
@@ -1529,16 +1337,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_ll125"
-                           spec="/glade/p/rda/data/ds628.1/ll125/**/ll125\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/ll125/**/ll125\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <featureCollection name="ds628.1_ll25"
@@ -1551,16 +1351,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_ll25"
-                           spec="/glade/p/rda/data/ds628.1/ll25/**/ll25\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/ll25/**/ll25\..*"  />
+               <tdm rewrite="test"/>
              </featureCollection>
 
              <featureCollection name="ds628.1_tl319"
@@ -1573,16 +1365,8 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                </metadata>
 
                <collection name="ds628.1_tl319"
-                           spec="/glade/p/rda/data/ds628.1/tl319/**/tl319\..*"
-                           olderThan="0 min"/>
-
-                  <gribConfig datasetTypes="Best">
-                    <bestNamer name="Timeseries Aggregation"/>
-                    <pdsHash>
-                      <useTableVersion>false</useTableVersion>
-                    </pdsHash>
-                  </gribConfig>
-                  <update startup="false" trigger="allow"/>
+                           spec="/glade/p/rda/data/ds628.1/tl319/**/tl319\..*" />
+               <tdm rewrite="test"/>
              </featureCollection>
  
          </dataset>
