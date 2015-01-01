@@ -89,7 +89,7 @@
         <pdsHash>
           <useGenType>true</useGenType>
         </pdsHash>
-        <option name="runtimeCoordinate" value="union"/>
+        <!-- option name="runtimeCoordinate" value="union"/ -->
       </gribConfig>
 
     </featureCollection>
