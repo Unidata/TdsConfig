@@ -72,7 +72,7 @@ The archive time series is continuously extended to a near-current date. It is n
 
      <!--  Aggregations  -->
 
-     <featureCollection name="ds083.2_Aggregation"
+     <featureCollection name="ds083.2 Aggregation"
                      featureType="GRIB1"
                      harvest="true"
                      path="aggregations/g/ds083.2/1">
@@ -80,14 +80,11 @@ The archive time series is continuously extended to a near-current date. It is n
           <serviceName>all</serviceName>
         </metadata>
 
-         <collection name = "ds083.2"
-		spec="/glade/p/rda/data/ds083.2/grib1/**/.*grib1$"
-                timePartition="directory"
-                dateFormatMark="#fnl_#yyyyMMdd_HH_mm" />
+         <collection name = "ds083.2" spec="/glade/p/rda/data/ds083.2/grib1/**/.*grib1$" />
     
          <tdm rewrite="test" rescan="0 10 1 * * ? *" />
-        <gribConfig>
-          <option name="runtimeCoordinate" value="union" />
+         <gribConfig>
+           <option name="runtimeCoordinate" value="union" />
         </gribConfig>
      </featureCollection>
 
