@@ -81,9 +81,9 @@
                     timePartition="file"
                     dateFormatMark="#GFS_Global_0p25deg_#yyyyMMdd_HHmm"
                     olderThan="5 min"/>
-        <update startup="never" trigger="allow"/>
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" trigger="allow"/>
+        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *"/>
       </featureCollection>
+
     </dataset><!-- end of NCEP -->
   </dataset><!-- end of test dataset -->
 </catalog>
