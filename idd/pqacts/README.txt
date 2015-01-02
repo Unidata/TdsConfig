@@ -7,25 +7,27 @@ and table files are included in this repository.
 Some files in this directory should be symlinked to the LDM etc/ directory.
 Unidata has the following directory layout:
 
-<LDM_HOME>/etc/TDS:
- - symlinks to the pqacts in this directory
- - symlinks to the .tbl files in this directory
-
-For example (may have more or less pqact files, depending 
-on your setup):
-
 -----------------------------------------
 - symlinks in the LDM etc/TDS directory -
 -----------------------------------------
 
-<LDM_HOME>/etc/TDS/pqact.obsData -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.obsData
-<LDM_HOME>/etc/TDS/pqact.radars -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.radars
-<LDM_HOME>/etc/TDS/pqact.newPointObs -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.newPointObs
-<LDM_HOME>/etc/TDS/pqact.satellite -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.satellite
-<LDM_HOME>/etc/TDS/pqact.modelsNcep -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsNcep
-<LDM_HOME>/etc/TDS/pqact.modelsFnmoc -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsFnmoc
-<LDM_HOME>/etc/TDS/snstns.tbl-> <TDS_CONTENT_ROOT>/thredds/pqacts/snstns.tbl
-<LDM_HOME>/etc/TDS/snstns.tbl-> <TDS_CONTENT_ROOT>/thredds/pqacts/snstns.tbl
+* make symlinks to the pqacts files, for example:
+    <LDM_HOME>/etc/TDS/pqact.obsData -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.obsData
+    <LDM_HOME>/etc/TDS/pqact.radars -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.radars
+    <LDM_HOME>/etc/TDS/pqact.newPointObs -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.newPointObs
+    <LDM_HOME>/etc/TDS/pqact.satellite -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.satellite
+    <LDM_HOME>/etc/TDS/pqact.modelsNcep -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsNcep
+    <LDM_HOME>/etc/TDS/pqact.modelsFnmoc -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsFnmoc
+
+* make symlinks to util, decoders, and cdl directories
+    <LDM_HOME>/etc/TDS/decoders -> /data/tds/tds-live/content/thredds/pqacts/decoders
+    <LDM_HOME>/etc/TDS/cdl -> /data/tds/tds-live/content/thredds/pqacts/cdl
+    <LDM_HOME>/etc/TDS/util -> /data/tds/tds-live/content/thredds/pqacts/util
+
+<LDM_HOME>/etc.
+* make symlinks to the .tbl files tables directory
+    <LDM_HOME>/etc/snstns.tbl-> <TDS_CONTENT_ROOT>/thredds/pqacts/snstns.tbl
+    <LDM_HOME>/etc/snstns.tbl-> <TDS_CONTENT_ROOT>/thredds/pqacts/snstns.tbl
 
 Remember, you will need to add the symlinked pqacts to the LDMs
 pqact.conf file. For example:
