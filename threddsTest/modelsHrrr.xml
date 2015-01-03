@@ -46,6 +46,9 @@
                     dateFormatMark="#HRRR_CONUS_3km_surface_#yyyyMMddHHmm"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+        <gribConfig>
+          <option name="timeUnit" value="1 minute" />
+        </gribConfig>
       </featureCollection>
     </dataset>
 
