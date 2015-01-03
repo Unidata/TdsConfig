@@ -20,13 +20,13 @@
       </filter>
     </datasetScan>
 
-    <datasetScan name="NCEP GFS Global half degree model data" path="galeon/global/testdata" location="[DATA_DIR]/native/grid/NCEP/GFS/Global_0p5deg/" >
+    <datasetScan name="NCEP GFS Global half degree model data" path="galeon/global/testdata" location="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg/" >
       <filter>
         <include wildcard="*.grib2"/>
       </filter>
     </datasetScan>
 
-    <datasetScan name="NWS NDFD CONUS 5 km data" path="galeon/ndfd/testdata" location="[DATA_DIR]/native/grid/NCEP/NDFD/CONUS_5km/" >
+    <datasetScan name="NWS NDFD CONUS 5 km data" path="galeon/ndfd/testdata" location="${DATA_DIR}/native/grid/NCEP/NDFD/CONUS_5km/" >
       <filter>
         <include wildcard="*.grib2"/>
       </filter>

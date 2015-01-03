@@ -55,28 +55,28 @@
       <property name="raw" value="report"/>
       <property name="resolution" value="20 min"/>
 
-      <collection spec="[DATA_DIR]/decoded/netcdf/surface/metar/Surface_METAR_#yyyyMMdd_HHmm#.nc$" />
+      <collection spec="${DATA_DIR}/decoded/netcdf/surface/metar/Surface_METAR_#yyyyMMdd_HHmm#.nc$" />
       <update startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
       <protoDataset choice="Penultimate" />
       <pointConfig datasetTypes="cdmrFeature Files"/>
     </featureCollection>
 
     <featureCollection name="Surface Buoy Point Data" harvest="true" featureType="Point" path="nws/buoy/ncdecoded">
-      <collection spec="[DATA_DIR]/decoded/netcdf/surface/buoy/Surface_Buoy_#yyyyMMdd_HHmm#.nc$" />
+      <collection spec="${DATA_DIR}/decoded/netcdf/surface/buoy/Surface_Buoy_#yyyyMMdd_HHmm#.nc$" />
       <update startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
       <protoDataset choice="Penultimate" />
       <pointConfig datasetTypes="cdmrFeature Files"/>
     </featureCollection>
 
     <featureCollection name="Surface Synoptic Point Data" harvest="true" featureType="Point" path="nws/synoptic/ncdecoded">
-      <collection spec="[DATA_DIR]/decoded/netcdf/surface/synoptic/Surface_Synoptic_#yyyyMMdd_HHmm#.nc$" />
+      <collection spec="${DATA_DIR}/decoded/netcdf/surface/synoptic/Surface_Synoptic_#yyyyMMdd_HHmm#.nc$" />
       <update startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
       <protoDataset choice="Penultimate" />
       <pointConfig datasetTypes="cdmrFeature Files"/>
     </featureCollection>
 
     <!-- featureCollection name="Upper Air Point Data" harvest="true" featureType="Point" path="nws/upperair/ncdecoded">
-      <collection spec="[DATA_DIR]/decoded/netcdf/upperair/Upperair_#yyyyMMdd_HHmm#.nc$" />  
+      <collection spec="${DATA_DIR}/decoded/netcdf/upperair/Upperair_#yyyyMMdd_HHmm#.nc$" />
       <update startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/>
       <protoDataset choice="Penultimate" />
       <pointConfig datasetTypes="cdmrFeature Files"/>

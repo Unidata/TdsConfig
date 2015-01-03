@@ -77,7 +77,7 @@
           </documentation>
         </metadata-->
 
-        <collection spec="[DATA_DIR]/native/grid/NCEP/GFS/Global_0p25deg/.*grib2$"
+        <collection spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#GFS_Global_0p25deg_#yyyyMMdd_HHmm"
                     olderThan="5 min"/>

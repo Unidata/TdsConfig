@@ -33,7 +33,7 @@
   </contentRoots>
 
   <DataRoots>
-    <idd>[DATA_DIR]</idd>
+    <idd>${DATA_DIR}</idd>
   </DataRoots>
 
   <catalogRoot>topcatalog.xml</catalogRoot>
