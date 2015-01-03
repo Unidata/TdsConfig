@@ -5,7 +5,7 @@
 
 
   <datasetScan name="NEXRAD Level II Radar for Case Study CCS039" collectionType="TimeSeries" ID="nexrad/level2/CCS039" path="nexrad/level2/CCS039"
-               location="[DATA_DIR]/casestudies/ccs039/images/radar/level2">
+               location="${DATA_DIR}/casestudies/ccs039/images/radar/level2">
     <metadata inherited="true">
       <dataType>Radial</dataType>
       <dataFormat>NEXRAD2</dataFormat>
@@ -43,7 +43,7 @@
   </datasetScan>
 
   <datasetScan name="NEXRAD Level III Radar for Case Study CCS039" collectionType="TimeSeries" ID="nexrad/level3/CCS039" path="nexrad/level3/CCS039"
-               location="[DATA_DIR]/casestudies/ccs039/images/radar/nids">
+               location="${DATA_DIR}/casestudies/ccs039/images/radar/nids">
     <metadata inherited="true">
       <dataType>Radial</dataType>
       <dataFormat>NIDS</dataFormat>

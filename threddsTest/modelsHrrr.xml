@@ -31,7 +31,7 @@
 
       <featureCollection name="GSD HRRR CONUS 3km wrfprs" featureType="GRIB2" harvest="true" path="grib/HRRR/CONUS_3km/wrfprs">
         <collection name="GSD_HRRR_CONUS_3km_wrfprs"
-                    spec="[DATA_DIR]/native/grid/NOAA_GSD/HRRR/CONUS_3km/wrfprs/.*grib2$"
+                    spec="${DATA_DIR}/native/grid/NOAA_GSD/HRRR/CONUS_3km/wrfprs/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#HRRR_CONUS_3km_wrfprs_#yyyyMMddHHmm"
                     olderThan="5 min"/>
@@ -41,7 +41,7 @@
       <featureCollection name="GSD HRRR CONUS 3km surface" featureType="GRIB2" harvest="true" path="grib/HRRR/CONUS_3km/surface">
 
         <collection name="GSD_HRRR_CONUS_3km_surface"
-                    spec="[DATA_DIR]/native/grid/NOAA_GSD/HRRR/CONUS_3km/surface/.*grib2$"
+                    spec="${DATA_DIR}/native/grid/NOAA_GSD/HRRR/CONUS_3km/surface/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#HRRR_CONUS_3km_surface_#yyyyMMddHHmm"
                     olderThan="5 min"/>
@@ -71,7 +71,7 @@
         </metadata>
 
         <collection name="NCEP_HRRR_CONUS_2p5km"
-                    spec="[DATA_DIR]/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
+                    spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>

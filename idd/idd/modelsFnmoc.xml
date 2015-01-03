@@ -59,7 +59,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/NAVGEM/Global_0p5deg/FNMOC_NAVGEM_Global_0p5deg_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/NAVGEM/Global_0p5deg/FNMOC_NAVGEM_Global_0p5deg_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_NAVGEM_Global_0p5deg"
                     timePartition="file"
                     olderThan="5 min"/>
@@ -90,7 +90,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/WW3/Global_1p0deg/FNMOC_WW3_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/WW3/Global_1p0deg/FNMOC_WW3_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_WW3_Global_1p0deg"
                     timePartition="file"
                     olderThan="5 min"/>
@@ -113,7 +113,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/WW3/Mediterranean/FNMOC_WW3_Mediterranean_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/WW3/Mediterranean/FNMOC_WW3_Mediterranean_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_WW3_Mediterranean"
                     timePartition="file"
                     olderThan="5 min"/>
@@ -144,7 +144,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_FAROP_Global_1p0deg"
                     timePartition="file"
                     olderThan="5 min"/>
@@ -177,7 +177,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/COAMPS/Western_Atlantic/FNMOC_COAMPS_Western_Atlantic_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/COAMPS/Western_Atlantic/FNMOC_COAMPS_Western_Atlantic_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Western_Atlantic"
                     timePartition="file"
                     olderThan="5 min"/>
@@ -200,7 +200,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Europe"
                     timePartition="file"
                     olderThan="5 min"/>
@@ -222,7 +222,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Equatorial_America"
                     timePartition="file"
                     olderThan="5 min"/>
@@ -244,7 +244,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/COAMPS/Northeast_Pacific/FNMOC_COAMPS_Northeast_Pacific_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/COAMPS/Northeast_Pacific/FNMOC_COAMPS_Northeast_Pacific_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Northeast_Pacific"
                     timePartition="file"
                     olderThan="5 min"/>
@@ -265,7 +265,7 @@
             Horizontal= 141 by 128 points, resolution .15 degree, Lat/Lon projection.
           </documentation>
         </metadata>
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/COAMPS/Southern_California/FNMOC_COAMPS_Southern_California_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/COAMPS/Southern_California/FNMOC_COAMPS_Southern_California_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Southern_California"
                     timePartition="file"
                     olderThan="5 min"/>
@@ -295,7 +295,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="[DATA_DIR]/native/grid/FNMOC/NCODA/Global_Ocean/FNMOC_NCODA_Global_Ocean_#yyyyMMdd_HHmm#.grib1"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/NCODA/Global_Ocean/FNMOC_NCODA_Global_Ocean_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_NCODA_Global_Ocean"
                     timePartition="file"
                     olderThan="5 min"/>

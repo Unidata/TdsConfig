@@ -32,14 +32,14 @@
     </metadata>
 
     <featureCollection name="NMM_Primary_Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Primary">
-      <collection spec="[DATA_DIR]/rtmodel/#yyMMddHH#_nmm.GrbF.*00"
+      <collection spec="${DATA_DIR}/rtmodel/#yyMMddHH#_nmm.GrbF.*00"
                   timePartition="file"
                   olderThan="5 min"/>
       <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
     </featureCollection>
 
     <featureCollection name="NMM_Secondary_Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Secondary">
-      <collection spec="[DATA_DIR]/rtmodel/#yyMMddHH#_nmm_alt1\.GrbF.*00"
+      <collection spec="${DATA_DIR}/rtmodel/#yyMMddHH#_nmm_alt1\.GrbF.*00"
                   timePartition="file"
                   olderThan="5 min"/>
       <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
