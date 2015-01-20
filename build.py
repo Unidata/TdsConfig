@@ -71,6 +71,7 @@ def write_script(scriptpath, configpath):
 
 if __name__ == '__main__':
     import argparse
+    import time
     import zipfile
 
     # Process directory on command line
@@ -119,7 +120,16 @@ if __name__ == '__main__':
                     with open(fullpath, "r") as template:
                         data = template.read()
                     data = data.replace("${DATA_DIR}", DATA_DIR)
-                    outf.writestr(f, data)
+
+                    # Set the stats to match the source file. This should
+                    # Keep the zipfile contents from changing unnecessarily
+                    fattr = os.stat(fullpath)
+                    mtime = time.localtime(fattr.st_mtime)[:6]
+                    zinfo = zipfile.ZipInfo(f, mtime)
+                    zinfo.external_attr = (fattr[0] & 0xFFFF) << 16L
+                    zinfo.compress_type = outf.compression
+
+                    outf.writestr(zinfo, data)
                 else:
                     outf.write(fullpath, f)
         print('wrote {}'.format(outpath))
