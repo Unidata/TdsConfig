@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from __future__ import print_function
+from io import open
 
 import os
 import os.path
@@ -132,7 +133,7 @@ if __name__ == '__main__':
                     '--format=%ct', fullpath])
                 mtime = time.localtime(int(unix_time))[:6]
                 zinfo = zipfile.ZipInfo(f, mtime)
-                zinfo.external_attr = 0644 << 16L
+                zinfo.external_attr = 0o644 << 16
                 zinfo.compress_type = outf.compression
 
                 outf.writestr(zinfo, data)
