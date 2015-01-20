@@ -71,6 +71,7 @@ def write_script(scriptpath, configpath):
 
 if __name__ == '__main__':
     import argparse
+    import subprocess
     import time
     import zipfile
 
@@ -114,22 +115,25 @@ if __name__ == '__main__':
         # Write these into the zipfile
         with zipfile.ZipFile(outpath, 'w', zipfile.ZIP_DEFLATED) as outf:
             for f,fullpath in files.items():
+                # Read the content from the file. We need to write the data
+                # as a string to the zipfile so we can control file time
+                # and eliminate spurious zip changes
+                with open(fullpath, 'rb') as sourceFile:
+                    data = sourceFile.read()
+
                 # look for files that could have the [DATA_DIR] macro and
                 # replace it with the correct value
-                if ("pqact" in f) or (f[-3:] == "xml"):
-                    with open(fullpath, "r") as template:
-                        data = template.read()
-                    data = data.replace("${DATA_DIR}", DATA_DIR)
+                if ('pqact' in f) or (f[-3:] == 'xml'):
+                    data = data.replace('${DATA_DIR}', DATA_DIR)
 
-                    # Set the stats to match the source file. This should
-                    # Keep the zipfile contents from changing unnecessarily
-                    fattr = os.stat(fullpath)
-                    mtime = time.localtime(fattr.st_mtime)[:6]
-                    zinfo = zipfile.ZipInfo(f, mtime)
-                    zinfo.external_attr = (fattr[0] & 0xFFFF) << 16L
-                    zinfo.compress_type = outf.compression
+                # Set the modification time based on the last time the file
+                # was committed in git
+                unix_time = subprocess.check_output(['git', 'log', '-1',
+                    '--format=%ct', fullpath])
+                mtime = time.localtime(int(unix_time))[:6]
+                zinfo = zipfile.ZipInfo(f, mtime)
+                zinfo.external_attr = 0644 << 16L
+                zinfo.compress_type = outf.compression
 
-                    outf.writestr(zinfo, data)
-                else:
-                    outf.write(fullpath, f)
+                outf.writestr(zinfo, data)
         print('wrote {}'.format(outpath))
