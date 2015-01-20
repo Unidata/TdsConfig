@@ -40,25 +40,34 @@ def get_files(path):
 
 def write_script(scriptpath, configpath):
     'Create script for downloading this config file'
-    # Using binary mode to prevent writing \r on windows
-    with open(scriptpath, 'wb') as f:
-        f.write('#!/bin/sh\n')
-        # Enclosing script in '{}' forces it to be read into memory, dealing
-        # with the problem of the script being modified (via jar xf) while
-        # running.
-        f.write('{\n')
+    lines = ['#!/bin/sh']
 
-        # Fix any windows path separators
-        configfile = os.path.split(configpath)[-1]
-        configpath = configpath.replace('\\', '/')
-        f.write(('\twget'
-                ' --no-check-certificate'
-                ' https://raw.githubusercontent.com/Unidata/TdsConfig/master/%s'
-                ' -O %s\n')
-                % (configpath, configfile))
-        f.write('\tjar xf %s\n' % os.path.split(configpath)[-1])
-        f.write('\texit\n')
-        f.write('}\n')
+    # Enclosing script in '{}' forces it to be read into memory, dealing
+    # with the problem of the script being modified (via jar xf) while
+    # running.
+    lines.append('{')
+
+    # Fix any windows path separators
+    configfile = os.path.split(configpath)[-1]
+    configpath = configpath.replace('\\', '/')
+    lines.append(('\twget'
+                  ' --no-check-certificate'
+                  ' https://raw.githubusercontent.com/Unidata/TdsConfig/master/%s'
+                  ' -O %s')
+                  % (configpath, configfile))
+    lines.append('\tjar xf %s' % os.path.split(configpath)[-1])
+    lines.append('\texit')
+    lines.append('}\n')
+    script = '\n'.join(lines)
+
+    # Using binary mode to prevent writing \r on windows
+    if os.path.exists(scriptpath):
+        with open(scriptpath, 'rb') as f:
+            if f.read() == script:
+                return
+
+    with open(scriptpath, 'wb') as f:
+        f.write(script)
 
 if __name__ == '__main__':
     import argparse
