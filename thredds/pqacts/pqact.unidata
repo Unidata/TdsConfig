@@ -14,7 +14,7 @@
 #
 FNEXRAD	^rad/NEXRCOMP/(...)/(...)_(........)_(....)
 	PIPE	-close
-	etc/TDS/util/ldmfile.sh ${DATA_DIR}/native/radar/composite/gini/\2/\1/\3/Level3_Composite_\2_\1_\3_\4.gini
+	sh etc/TDS/util/ldmfile.sh ${DATA_DIR}/native/radar/composite/gini/\2/\1/\3/Level3_Composite_\2_\1_\3_\4.gini
 #
 # UPC generated NEXRAD Level III radar composites in GRIB format
 #
