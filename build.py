@@ -115,7 +115,7 @@ if __name__ == '__main__':
 
         # Write these into the zipfile
         with zipfile.ZipFile(outpath, 'w', zipfile.ZIP_DEFLATED) as outf:
-            for f,fullpath in files.items():
+            for f,fullpath in sorted(files.items()):
                 # Read the content from the file. We need to write the data
                 # as a string to the zipfile so we can control file time
                 # and eliminate spurious zip changes
