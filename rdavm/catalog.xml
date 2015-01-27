@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+<catalog name="THREDDS Data Server for CISL Research Data Archive"
         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
         xmlns:xlink="http://www.w3.org/1999/xlink">
 
     <catalogRef xlink:href="catalog_ds083.2.xml" xlink:title="ds083.2 NCEP FNL Operational Model Global Tropospheric Analyses" name="" />
+    <catalogRef xlink:href="catalog_ds084.1.xml" xlink:title="ds084.1 NCEP GFS 0.25 Degree Global Forecast Grids" name="" />
     <catalogRef xlink:href="catalog_ds093.1.xml" xlink:title="ds093.1 NCEP Climate Forecast System Reanalysis (CFSR) Selected Hourly Time-Series Products, January 1979 to December 2010" name="" />
     <catalogRef xlink:href="catalog_ds094.1.xml" xlink:title="ds094.1 NCEP Climate Forecast System Version 2 (CFSv2) Selected Hourly Time-Series Products" name="" />
     <catalogRef xlink:href="catalog_ds131.1.xml" xlink:title="ds131.1 NOAA-CIRES Twentieth Century Global Reanalysis Version II" name="" />

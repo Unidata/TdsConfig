@@ -86,7 +86,13 @@ ds629.3 represents a transformed version of the raw ECMWF YOTC archive (ds629.0)
                        spec="/glade/p/rda/data/ds629.3/yt.oper.fc.pl/**/yt\.oper\.fc\.pl\..*" 
                        dateFormatMark="#yt.oper.fc.pl/#yyyyMM" />
       
-           <tdm rewrite="test"/> 
+           <tdm rewrite="test"/>
+           <gribConfig>
+             <pdsHash>
+              <useTableVersion>true</useTableVersion>
+             </pdsHash>
+           </gribConfig>
+
          </featureCollection>
    
      </dataset>
