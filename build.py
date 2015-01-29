@@ -134,7 +134,12 @@ if __name__ == '__main__':
                 # was committed in git
                 unix_time = subprocess.check_output(['git', 'log', '-1',
                     '--format=%ct', fullpath])
-                mtime = time.localtime(int(unix_time))[:6]
+                if unix_time:
+                    unix_time = int(unix_time)
+                else: # File hasn't been added to git yet
+                    unix_time = int(os.stat('build.py').st_mtime)
+                mtime = time.localtime(unix_time)[:6]
+
                 zinfo = zipfile.ZipInfo(f, mtime)
                 zinfo.external_attr = 0o644 << 16
                 zinfo.compress_type = outf.compression
