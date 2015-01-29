@@ -15,11 +15,14 @@ def get_config_includes(path):
     else:
         configfile = path
 
-    # Return all lines in the file plus this path
-    with open(configfile, 'r') as f:
-        return [os.path.join(path, l.strip()) for l in f] + [path] 
+    # Return all lines in the file, if it exists, plus this path
+    ret = [path]
+    if os.path.exists(configfile):
+        with open(configfile, 'r') as f:
+            ret.extend(os.path.join(path, l.strip()) for l in f)
+    return ret
 
-exclude = {'build.info', 'fetch.sh', 'config.zip'}
+exclude = {build_file, 'fetch.sh', 'config.zip'}
 def get_files(path):
     '''
     Get relative and full paths for the files to be included.
