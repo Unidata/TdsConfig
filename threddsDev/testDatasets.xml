@@ -85,6 +85,22 @@
       </featureCollection>
 
     </dataset><!-- end of NCEP -->
+    <dataset name="Multi-Radar Multi-Sensor (MRMS) Analysis">
+      <metadata inherited="true">
+        <documentation type="summary">Multi-radar multi-sensor analysis produced by the National Severe Storms Laboratory</documentation>
+	<documentation xlink:href="http://www.nssl.noaa.gov/projects/mrms/"
+                       xlink:title="MRMS Documentation"/>
+      </metadata>
+
+      <featureCollection name="MRMS" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/">
+        <collection spec="${DATA_DIR}/native/grid/NCEP/MRMS/.*grib2$"
+                    timePartition="file"
+                    dateFormatMark="#MRMS_#yyyyMMdd_HHmm"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 * * * * ? *"/>
+      </featureCollection>
+
+    </dataset><!-- end of MRMS -->
   </dataset><!-- end of test dataset -->
 </catalog>
 
