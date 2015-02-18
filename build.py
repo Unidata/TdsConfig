@@ -16,10 +16,11 @@ def get_config_includes(path):
         configfile = path
 
     # Return all lines in the file, if it exists, plus this path
-    ret = [path]
+    ret = []
     if os.path.exists(configfile):
         with open(configfile, 'r') as f:
             ret.extend(os.path.join(path, l.strip()) for l in f)
+    ret.append(path)
     return ret
 
 exclude = {build_file, 'fetch.sh', 'config.zip'}
