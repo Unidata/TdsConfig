@@ -15,9 +15,48 @@
 CONDUIT	^data/nccf/com/gfs/para/gfs\.(........)(..).*pgrb2\.0p25\. 
 	FILE
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg/GFS_Global_0p25deg_\1_\200.grib2
+# ----------------------------------------------------
+# - Multi-Radar, Multi-Sensor (MRMS) System products -
+# ----------------------------------------------------
 #
-# Multi-Radar, Multi-Sensor (MRMS) System products
+# MRMS Precipitation Products
 #
-NGRID	YAU[A-Z][0-9][0-9] KWNR (..)(....)
+NGRID	^YAU[DP][0-9][0-9] KWNR (..)(....)
 	FILE
-	${DATA_DIR}/native/grid/NCEP/MRMS/MRMS_(\1:yyyy)(\1:mm)\1_\2.grib2
+	${DATA_DIR}/native/grid/NCEP/MRMS/Precip/MRMS_Precip_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# MRMS Probability of Warm Rain (on different grid)
+#
+NGRID	^YAUM[0-9][0-9] KWNR (..)(....)
+	FILE
+	${DATA_DIR}/native/grid/NCEP/MRMS/WarmRain/MRMS_ProbWarmRain_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# MRMS Lightning Products from NLDN
+#
+NGRID	^YAUL[0-9][0-9] KWNR (..)(....)
+	FILE
+	${DATA_DIR}/native/grid/NCEP/MRMS/NLDN/MRMS_NLDN_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# MRMS Rotation Track Products (on different grid)
+#
+NGRID	^YAUS0[0-9] KWNR (..)(....)
+	FILE
+	${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrack/MRMS_RotationTrack_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# MRMS Merged Base Reflectivity
+#
+NGRID	^YAUQ[0-9][0-9] KWNR (..)(....)
+	FILE
+	${DATA_DIR}/native/grid/NCEP/MRMS/BaseRef/MRMS_BaseReflectivity_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# MRMS Radar Products
+#
+NGRID	^YAU(C[0-9]|S[1-9])[0-9] KWNR (..)(....)
+	FILE
+	${DATA_DIR}/native/grid/NCEP/MRMS/Radar/MRMS_Radar_(\2:yyyy)(\2:mm)\2_\3.grib2
+#
+# MRMS Anything else (mainly future proofing)
+#
+NGRID	^YAU([ABE-KNORT-Z][0-9][0-9]) KWNR (..)(....)
+	FILE
+	${DATA_DIR}/native/grid/NCEP/MRMS/Other/MRMS_Other_(\1:yyyy)(\1:mm)\1_\2.grib2
