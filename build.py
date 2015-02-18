@@ -85,6 +85,8 @@ if __name__ == '__main__':
             description='Create THREDDS configuration sets.')
     parser.add_argument('dirs', type=str, nargs='*',
             help='Directories to create THREDDS configuration set')
+    parser.add_argument('--verbose', '-v', action='store_true',
+            help='Verbose output')
     args = parser.parse_args()
 
     # Used to replace the [DATA_DIR] string in pqact and xml files
@@ -105,7 +107,9 @@ if __name__ == '__main__':
         # can be overridden by those later in the list
         files = dict()
         for d in get_config_includes(builddir):
+            if args.verbose: print("Adding directory:", d)
             for fname,fullpath in get_files(d):
+                if args.verbose: print("Adding file:", fname, "->", fullpath)
                 files[fname] = fullpath
 
         # Write wget script
