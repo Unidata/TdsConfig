@@ -16,6 +16,9 @@
 #                       KEEP number of files are saved
 #          20111214 - changed 'tail' option '+{KEEP}' to '--lines=+{KEEP}'
 #                       to work under Linux
+#          20150224 - added logic to check if system is SunOS or Linux,
+#                       based on feedback and suggestions from Tom Y.
+#                       ~ sarms
 #
 #--------------------------------------------------------------------------
 
