@@ -18,18 +18,6 @@
 # - NOAA Profiler Network -
 # -------------------------
 #
-# Wind Profilers - 6 minute and 1 hour data
-#
-FSL2	^FSL\.NetCDF\.NOAAnet\.windprofiler\.(01hr|06min)\.(....)(...)(..)(..)
-	FILE
-	${DATA_DIR}/native/profiler/wind/\1/\2%m%d/PROFILER_wind_\1_\2%m%d_\4\5.nc
-#
-# RASS - 6 minute and 1 hour data
-#
-FSL2	^FSL\.NetCDF\.NOAAnet\.RASS\.(01hr|06min)\.(....)(...)(..)(..)
-	FILE
-	${DATA_DIR}/native/profiler/RASS/\1/\2%m%d/PROFILER_RASS_\1_\2%m%d_\4\5.nc
-#
 # Soundings Vertical Data for KBOU 
 # All Wind Data profiles at any frequency
 #
