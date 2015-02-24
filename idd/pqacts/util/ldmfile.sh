@@ -66,8 +66,15 @@ ln $pathname $curdir/$fname
 cd $curdir
 KEEP=`expr $KEEP + 1`
 
-#files=`ls -r | tail +${KEEP}`
-files=`ls -r | tail --lines=+${KEEP}`
+case `uname -s` in
+SunOS)
+  files=`ls -r | tail +${KEEP}`
+  ;;
+*)
+  files=`ls -r | tail --lines=+${KEEP}`
+  ;;
+esac
+
 if [ ! -z "$files" ]; then
   #echo rm -f $files
   rm -f $files
