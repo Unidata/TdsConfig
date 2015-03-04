@@ -1,0 +1,197 @@
+netcdf raob {
+
+dimensions:
+        recNum     = UNLIMITED ;
+        manLevel   = 22 ;
+        sigTLevel  = 150 ;
+        sigWLevel  = 76 ;
+        mWndNum    = 4 ;
+        mTropNum   = 4 ;
+        staNameLen = 6 ;
+        
+variables:
+        long wmoStaNum (recNum) ;
+                wmoStaNum:long_name = "WMO Station Number" ;
+                wmoStaNum:reference = "Volume A of WMO publication 9" ;
+                wmoStaNum:_FillValue = 99999 ;
+                
+        char staName (recNum, staNameLen) ;
+                staName:long_name = "Station Identifier" ;
+                
+        float staLat (recNum) ;
+                staLat:long_name = "Station Latitude" ;
+                staLat:valid_range = 0.f, 90.f ;
+                staLat:_FillValue = 99999.f ;
+                staLat:units = "degrees_north" ;
+                
+        float staLon (recNum) ;
+                staLon:long_name = "Station Longitude" ;
+                staLon:valid_range = -180.f, -50.f ;
+                staLon:_FillValue = 99999.f ;
+                staLon:units = "degrees_east" ;
+                
+        float staElev (recNum) ;
+                staElev:long_name = "Station Elevation" ;
+                staElev:valid_range = -100.f, 3500.f ;
+                staElev:_FillValue = 99999.f ;
+                staElev:units = "meter" ;
+                
+        double synTime (recNum) ;
+                synTime:long_name = "Synoptic Time" ;
+                synTime:units = "seconds since (1970-1-1 00:00:0.0)" ;
+                
+        long numMand (recNum) ;
+                numMand:long_name = "Number of Mandatory Levels" ;
+                numMand:valid_range = 0, 22 ;
+                
+        long numSigT(recNum) ;
+                numSigT:long_name = "Number of Significant Levels wrt T" ;
+                numSigT:valid_range = 0, 150 ;
+                
+        long numSigW(recNum) ;
+                numSigW:long_name = "Number of Significant Levels wrt W" ;
+                numSigW:valid_range = 0, 76 ;
+                
+        long numMwnd(recNum) ;
+                numMwnd:long_name = "Number of Maximum Wind Levels" ;
+                numMwnd:valid_range = 0, 4 ;
+                
+        long numTrop(recNum) ;
+                numTrop:long_name = "Number of Tropopause Levels" ;
+                numTrop:valid_range = 0, 4 ;
+                
+        double relTime(recNum) ;
+                relTime:long_name = "Sounding Release Time" ;
+                relTime:_FillValue = -1.0e+38d;
+                relTime:units = "seconds since (1970-1-1 00:00:0.0)" ;
+                
+        long sondTyp(recNum) ;
+                sondTyp:long_name = "Instrument Type" ;
+                sondTyp:reference = "Federal Meteorological Handbook No. 4" ;
+                sondTyp:_FillValue = 99999 ;
+                
+        float prMan(recNum, manLevel) ;
+                prMan:long_name = "Pressure - Mandatory level" ;
+                prMan:valid_range = 1.f, 1500.f ;
+                prMan:_FillValue = 99999.f ;
+                prMan:units = "hectopascal" ;
+                
+        float htMan(recNum, manLevel) ;
+                htMan:long_name = "Geopotential - Mandatory level" ;
+                htMan:valid_range = -250.f, 60000.f ;
+                htMan:_FillValue = 99999.f ;
+                htMan:units = "meter" ;
+                
+        float tpMan(recNum, manLevel) ;
+                tpMan:long_name = "Temperature - Mandatory level" ;
+                tpMan:valid_range = 173.f, 373.f ;
+                tpMan:_FillValue = 99999.f ;
+                tpMan:units = "kelvin" ;
+                
+        float tdMan(recNum, manLevel) ;
+                tdMan:long_name = "Dew Point Depression - Mandatory level" ;
+                tdMan:valid_range = 0.f, 60.f ;
+                tdMan:_FillValue = 99999.f ;
+                tdMan:units = "kelvin" ;
+                
+        float wdMan(recNum, manLevel) ;
+                wdMan:long_name = "Wind Direction - Mandatory level" ;
+                wdMan:valid_range = 0.f, 360.f ;
+                wdMan:_FillValue = 99999.f ;
+                wdMan:units = "degree_true" ;
+                
+        float wsMan(recNum, manLevel) ;
+                wsMan:long_name = "Wind Speed - Mandatory level" ;
+                wsMan:valid_range = 0.f, 300.f ;
+                wsMan:_FillValue = 99999.f ;
+                wsMan:units = "meter/sec" ;
+                
+        float prSigT(recNum, sigTLevel) ;
+                prSigT:long_name = "Pressure - Significant level wrt T" ;
+                prSigT:valid_range = 1.f, 1500.f ;
+                prSigT:_FillValue = 99999.f ;
+                prSigT:units = "hectopascal" ;
+                
+        float tpSigT(recNum, sigTLevel) ;
+                tpSigT:long_name = "Temperature - Significant level wrt T" ;
+                tpSigT:valid_range = 173.f, 373.f ;
+                tpSigT:_FillValue = 99999.f ;
+                tpSigT:units = "kelvin" ;
+                
+        float tdSigT(recNum, sigTLevel) ;
+                tdSigT:long_name = "Dew Point Depression - Significant level wrt T" ;
+                tdSigT:valid_range = 0.f, 60.f ;
+                tdSigT:_FillValue = 99999.f ;
+                tdSigT:units = "kelvin" ;
+                
+        float htSigW(recNum, sigWLevel) ;
+                htSigW:long_name = "Geopotential - Significant level wrt W" ;
+                htSigW:valid_range = -250.f, 60000.f ;
+                htSigW:_FillValue = 99999.f ;
+                htSigW:units = "meter" ;
+                
+        float wdSigW(recNum, sigWLevel) ;
+                wdSigW:long_name = "Wind Direction - Significant level wrt W" ;
+                wdSigW:valid_range = 0.f, 360.f ;
+                wdSigW:_FillValue = 99999.f ;
+                wdSigW:units = "degree_true" ;
+                
+        float wsSigW(recNum, sigWLevel) ;
+                wsSigW:long_name = "Wind Speed - Significant level wrt W" ;
+                wsSigW:valid_range = 0.f, 300.f ;
+                wsSigW:_FillValue = 99999.f ;
+                wsSigW:units = "meter/sec" ;
+                
+        float prTrop(recNum, mTropNum) ;
+                prTrop:long_name = "Pressure - Tropopause level" ;
+                prTrop:valid_range = 1.f, 1500.f ;
+                prTrop:_FillValue = 99999.f ;
+                prTrop:units = "hectopascal" ;
+                
+        float tpTrop(recNum, mTropNum) ;
+                tpTrop:long_name = "Temperature - Tropopause level" ;
+                tpTrop:valid_range = 173.f, 373.f ;
+                tpTrop:_FillValue = 99999.f ;
+                tpTrop:units = "kelvin" ;
+                
+        float tdTrop(recNum, mTropNum) ;
+                tdTrop:long_name = "Dew Point Depression - Tropopause level" ;
+                tdTrop:valid_range = 0.f, 60.f ;
+                tdTrop:_FillValue = 99999.f ;
+                tdTrop:units = "kelvin" ;
+                
+        float wdTrop(recNum, mTropNum) ;
+                wdTrop:long_name = "Wind Direction - Tropopause level" ;
+                wdTrop:valid_range = 0.f, 360.f ;
+                wdTrop:_FillValue = 99999.f ;
+                wdTrop:units = "degree_true" ;
+                
+        float wsTrop(recNum, mTropNum) ;
+                wsTrop:long_name = "Wind Speed - Tropopause level" ;
+                wsTrop:valid_range = 0.f, 300.f ;
+                wsTrop:_FillValue = 99999.f ;
+                wsTrop:units = "meter/sec" ;
+                
+        float prMaxW(recNum, mWndNum) ;
+                prMaxW:long_name = "Pressure - Maximum wind level" ;
+                prMaxW:valid_range = 1.f, 1500.f ;
+                prMaxW:_FillValue = 99999.f ;
+                prMaxW:units = "hectopascal" ;
+                
+        float wdMaxW(recNum, mWndNum) ;
+                wdMaxW:long_name = "Wind Direction - Maximum wind level" ;
+                wdMaxW:valid_range = 0.f, 360.f ;
+                wdMaxW:_FillValue = 99999.f ;
+                wdMaxW:units = "degree_true" ;
+                
+        float wsMaxW(recNum, mWndNum) ;
+                wsMaxW:long_name = "Wind Speed - Maximum wind level" ;
+                wsMaxW:valid_range = 0.f, 300.f ;
+                wsMaxW:_FillValue = 99999.f ;
+                wsMaxW:units = "meter/sec" ;
+
+// global attributes:
+                :comment0 = "First mandatory level is surface level" ;
+                :version = "Forecast Systems Lab 1.4" ;
+}
+                
