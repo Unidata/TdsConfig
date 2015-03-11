@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="Unidata THREDDS Data Server - NCEP models"
+         version="1.0.7">
+
+  <service name="latest" serviceType="Resolver" base=""/>
+
+  <service name="fullServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+
+  <dataset name="NCEP Analyses">
+
+    <metadata inherited="true">
+      <serviceName>fullServices</serviceName>
+      <authority>edu.ucar.unidata</authority>
+      <dataType>GRID</dataType>
+      <dataFormat>GRIB-2</dataFormat>
+      <documentation xlink:href="http://www.emc.ncep.noaa.gov/modelinfo/index.html"
+                     xlink:title="NCEP Model documentation"/>
+      <documentation type="rights">Freely available</documentation>
+      <documentation type="processing_level">Transmitted through Unidata Internet Data Distribution.</documentation>
+      <documentation type="processing_level">Read by CDM Grib Collection.</documentation>
+      <documentation xlink:href="http://www.nco.ncep.noaa.gov/pmb/nwprod/analysis/"
+                     xlink:title="NCEP/NWS Model Analyses and Forecasts page"/>
+      <documentation xlink:href="http://www.unidata.ucar.edu/data/index.html#model"
+                     xlink:title="Unidata IDD Model Data page"/>
+
+      <creator>
+        <name vocabulary="DIF">DOC/NOAA/NWS/NCEP</name>
+        <contact url="http://www.ncep.noaa.gov/" email="http://www.ncep.noaa.gov/mail_liaison.shtml"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">UCAR/UNIDATA</name>
+        <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
+      </publisher>
+      <creator>
+        <name vocabulary="ADN">National Oceanic and Atmospheric Administration (NOAA)/National Weather Service (NWS)
+          National Center for Environmental Prediction (NCEP)
+        </name>
+        <contact url="http://www.ncep.noaa.gov/" email="http://www.ncep.noaa.gov/mail_liaison.shtml"/>
+      </creator>
+      <publisher>
+        <name vocabulary="ADN">University Corporation for Atmospheric Research (UCAR)/Unidata</name>
+        <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
+      </publisher>
+      <timeCoverage>
+        <end>present</end>
+        <duration>45 days</duration>
+      </timeCoverage>
+    </metadata>
+
+    <dataset name="National Digital Forecast Database (NDFD)">
+      <metadata inherited="true">
+        <documentation type="summary">National Digital Forecast Database (NDFD): US National Weather Service gridded
+          forecasts of sensible weather elements.
+        </documentation>
+        <documentation xlink:href="http://www.weather.gov/ndfd/" xlink:title="NWS/NDFD Website"/>
+        <documentation xlink:href="http://www.nws.noaa.gov/ndfd/definitions.htm"
+                       xlink:title="NDFD parameter descriptions"/>
+      </metadata>
+
+      <featureCollection name="National Weather Service CONUS Forecast Grids (NOAAPORT)"
+                         featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/NWS/CONUS/NOAAPORT">
+        <metadata inherited="true">
+          <documentation type="summary">
+            CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids from
+            00Z and 12Z.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NDFD/NWS_noaaport/.*grib2$"
+                    dateFormatMark="#5km_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NDFD_NWS_CONUS_NOAAPORT"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+
+      <featureCollection name="National Weather Service CONUS Forecast Grids (CONDUIT)"
+                         featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/NWS/CONUS/CONDUIT">
+        <metadata inherited="true">
+          <documentation type="summary">
+            CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids,
+            updated hourly. Forecast intervals and duration vary with the
+            time of forecast and the particular parameter.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NDFD/NWS/.*grib2$"
+                    dateFormatMark="#5km_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NDFD_NWS_CONUS_CONDUIT"
+                    olderThan="5 min"/>
+
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <gdsHash from="-328645426" to="1821883766"/>
+          <gdsHash from="1383738030" to="-760700074"/>
+        </gribConfig>
+      </featureCollection>
+
+      <featureCollection name="Storm Prediction Center CONUS Forecast Grids" featureType="GRIB2"
+                         harvest="true" path="grib/NCEP/NDFD/SPC/CONUS">
+        <metadata inherited="true">
+          <documentation type="summary">
+            CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids
+            for Storm Prediction Center outlooks.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NDFD/SPC/.*grib2$"
+                    dateFormatMark="#NDFD_SPC_CONUS_2p5km_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NDFD_SPC_CONUS_CONDUIT"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+
+      <featureCollection name="Climate Prediction Center CONUS Forecast Grids" featureType="GRIB2"
+                         harvest="true" path="grib/NCEP/NDFD/CPC/CONUS">
+        <metadata inherited="true">
+          <documentation type="summary">
+            CONUS, 2145 by 1377 points, resolution 2.5 km. Grids
+            for Climate Prediction Center extended forecasts.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NDFD/CPC/.*grib2$"
+                    dateFormatMark="#NDFD_CPC_CONUS_2p5km_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NDFD_CPC_CONUS_CONDUIT"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+    </dataset>
+
+    <dataset name="Real Time Mesoscale Analysis (RTMA)">
+      <metadata inherited="true">
+        <documentation type="summary">
+          The NCEP RTMA Model is Real Time Mesoscale Analysis models.
+        </documentation>
+        <documentation xlink:href="http://www.weather.gov/infoservicechanges/tin08-56_rtma.txt"
+                       xlink:title="RTMA TIN"/>
+        <documentation xlink:href="http://www.coaps.fsu.edu/~dvandyke/wrfarw/rtma.html"
+                       xlink:title="COAPS FSU"/>
+      </metadata>
+
+      <featureCollection name="Real Time Mesoscale Analysis 2.5 km" featureType="GRIB2" harvest="true"
+                         path="grib/NCEP/RTMA/CONUS_2p5km">
+        <metadata inherited="true">
+          <documentation type="summary">
+            NCEP Model horizontal = 1377 by 2145 points, resolution 2.5 km, LambertConformal projection.
+            Model runs are made hourly, with 0 hour forecast
+          </documentation>
+        </metadata>
+
+        <collection name="RTMA-CONUS_2p5km"
+            spec="${DATA_DIR}/native/grid/NCEP/RTMA/CONUS_2p5km/.*grib2$"
+            dateFormatMark="#RTMA_CONUS_2p5km_#yyyyMMdd_HHmm"
+            timePartition="file"
+            olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
+        <gribConfig>
+          <pdsHash>
+            <useGenType>true</useGenType>
+          </pdsHash>
+        </gribConfig>
+      </featureCollection>
+
+      <featureCollection name="Real Time Mesoscale Analysis GUAM 2.5 km" featureType="GRIB2" harvest="true" path="grib/NCEP/RTMA/GUAM_2p5km">
+        <metadata inherited="true">
+          <documentation type="summary">
+            NCEP Model horizontal = 193 by 193 points, resolution 2.5 km, Mercator projection.
+            Model runs are made every 3 hours at 0, 3, ... with 0 hour forecasts.
+          </documentation>
+        </metadata>
+
+        <collection  name="RTMA-GUAM_2p5km"
+            spec="${DATA_DIR}/native/grid/NCEP/RTMA/GUAM_2p5km/.*grib2$"
+            dateFormatMark="#RTMA_GUAM_2p5km_#yyyyMMdd_HHmm"
+            timePartition="file"
+            olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
+        <gribConfig>
+          <pdsHash>
+            <useGenType>true</useGenType>
+          </pdsHash>
+        </gribConfig>
+      </featureCollection>
+
+    </dataset>
+
+  </dataset> <!-- end of NCEP Analyses -->
+
+</catalog>
