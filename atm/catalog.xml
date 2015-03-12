@@ -5,7 +5,7 @@
          version="1.0.6">
 
   <dataset name="Realtime data from IDD">
-    <catalogRef xlink:href="idd/forecastModels.xml.xml" xlink:title="Forecast Model Data" name=""/>
+    <catalogRef xlink:href="idd/forecastModels.xml" xlink:title="Forecast Model Data" name=""/>
     <catalogRef xlink:href="idd/analysis.xml" xlink:title="Analyses" name="" />
     <catalogRef xlink:href="idd/radars.xml" xlink:title="Radar Data" name=""/>
     <catalogRef xlink:href="idd/obsData.xml" xlink:title="Station Data" name=""/>

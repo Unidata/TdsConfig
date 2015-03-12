@@ -12,7 +12,7 @@
     <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
   </service>
 
- <service name="grids" serviceType="Compound" base="">
+  <service name="grids" serviceType="Compound" base="">
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
     <service name="wcsServer" serviceType="WCS" base="/thredds/wcs/"/>
@@ -343,7 +343,7 @@
           <end>present</end>
           <duration>7 days</duration>
         </timeCoverage>
-        <variables vocabulary="DIF">
+
         <variables vocabulary="DIF">
           <variable name="BaseReflectivity"
                     vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity"
