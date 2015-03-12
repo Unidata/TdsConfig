@@ -1226,8 +1226,10 @@
         <tdm rewrite="test" rescan="0 27 * * * ? *" />
       </featureCollection>
 
-    </dataset> <!-- end of FNMOC forecast models -->
- <dataset name="Unidata Real-Time Regional Model" ID="Unidata-Regional-Model">
+    </dataset>
+  </dataset> <!-- end of FNMOC forecast models -->
+
+  <dataset name="Unidata Real-Time Regional Model" ID="Unidata-Regional-Model">
 
     <metadata inherited="true">
       <serviceName>fullServices</serviceName>
@@ -1261,5 +1263,6 @@
     </featureCollection>
 
   </dataset> <!-- end of Unidata Real-Time Regional Model -->
+
 </catalog>
 

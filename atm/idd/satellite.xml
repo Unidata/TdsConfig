@@ -23,6 +23,7 @@
     <service name="cdmremote2" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
   </service>
   <service name="latest" serviceType="Resolver" base="" />
+  
   <dataset name="Satellite Data">
     <metadata inherited="true">
       <serviceName>all</serviceName>
