@@ -10,6 +10,7 @@
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
     <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
   </service>
   <service name="all2" serviceType="Compound" base="">
     <service name="ncdods2" serviceType="OPENDAP" base="/thredds/dodsC/" />
@@ -19,8 +20,10 @@
     <service name="ncml2" serviceType="NCML" base="/thredds/ncml/"/>
     <service name="uddc2" serviceType="UDDC" base="/thredds/uddc/"/>
     <service name="iso2" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="cdmremote2" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
   </service>
   <service name="latest" serviceType="Resolver" base="" />
+  
   <dataset name="Satellite Data">
     <metadata inherited="true">
       <serviceName>all</serviceName>
