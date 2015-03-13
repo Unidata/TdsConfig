@@ -27,6 +27,6 @@
     <catalogRef xlink:href="catalog_ds629.5.xml" xlink:title="ds629.5 WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Surface Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" name="" />
     <catalogRef xlink:href="catalog_ds629.6.xml" xlink:title="ds629.6 WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Pressure Level Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid, Dynamical Parameters Only" name="" />
 
-    <catalogRef xlink:href="catalog_ds631.0.xml" xlink:title="ds631.0 Arctic System Reanalysis (ASR) Project" name="Arctic System Reanalysis (ASR) Project" />
+    <!-- catalogRef xlink:href="catalog_ds631.0.xml" xlink:title="ds631.0 Arctic System Reanalysis (ASR) Project" name="Arctic System Reanalysis (ASR) Project" / -->
 
 </catalog>
