@@ -727,7 +727,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                <tdm rewrite="test"/>
 
              </featureCollection>
-             -->
+
  
              <featureCollection name="ds628.1_fcst_phy2m_var"
                                 featureType="GRIB1"
@@ -744,7 +744,6 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              </featureCollection>
 
-           <!--
              <featureCollection name="ds628.1_fcst_phy2m125"
                                 featureType="GRIB1"
                                 harvest="true"
@@ -759,7 +758,6 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                <tdm rewrite="test"/>
 
              </featureCollection>
-             -->
 
              <featureCollection name="ds628.1_fcst_phy2m125_var"
                                 featureType="GRIB1"
@@ -776,7 +774,6 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
 
              </featureCollection>
 
-           <!--
              <featureCollection name="ds628.1_fcst_phy3m"
                                 featureType="GRIB1"
                                 harvest="true"
@@ -1018,7 +1015,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                <tdm rewrite="test"/>
 
              </featureCollection>
-             -->
+
  
              <featureCollection name="ds628.1_minmax_surf"
                                 featureType="GRIB1"
@@ -1049,6 +1046,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                <tdm rewrite="test"/>
 
              </featureCollection>
+             -->
 
          </dataset>
 
