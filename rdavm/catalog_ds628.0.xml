@@ -24,7 +24,7 @@
     <dataset name="ds628.0">
         <metadata inherited="true">
           <serviceName>all</serviceName>
-          <dataFormat>GRIB1-1</dataFormat>  
+          <dataFormat>GRIB-1</dataFormat>
           <dataType>GRID</dataType>   
           <documentation type="Rights">Some Restrictions Apply</documentation>   
           <documentation xlink:href="http://rda.ucar.edu/datasets/ds628.0/" 
