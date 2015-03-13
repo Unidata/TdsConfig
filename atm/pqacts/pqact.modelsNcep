@@ -44,34 +44,18 @@ CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge(avg|spr)
 #
 # GFS Global 0.5 degree
 #
-# discontinued 01/14/2015
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2f
-	FILE
-	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg/GFS_Global_0p5deg_\1_\200.grib2
-# new
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.0p50\.(........)(..).*pgrb2f
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p50\.f
 	FILE
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg/GFS_Global_0p5deg_\1_\200.grib2
 #
 # GFS Global 1.0 degree
 #
-# discontinued 01/14/2015
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrbf(..|1..)\.grib2
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.1p00\.f
 	FILE
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg/GFS_Global_onedeg_\1_\200.grib2
-# new
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.1p00\.(........)(..).*pgrbf(..|1..)\.grib2
-	FILE
-	${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg/GFS_Global_onedeg_\1_\200.grib2
-#
 # GFS Global 2.5 degree
 #
-# discontinued 01/14/2015
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrbf([2-9]..)\.grib2
-	FILE
-	${DATA_DIR}/native/grid/NCEP/GFS/Global_2p5deg/GFS_Global_2p5deg_\1_\200.grib2
-# new
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.2p50\.(........)(..).*pgrbf([2-9]..)\.grib2
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.2p50\.f
 	FILE
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_2p5deg/GFS_Global_2p5deg_\1_\200.grib2
 #
