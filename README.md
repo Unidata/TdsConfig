@@ -26,6 +26,7 @@ Configuration files
 
 - to make changes to config files:
  - edit thredds/TdsConfig/*
+ - commit your changes, so that the timestamps get updated in the zip file
  - run build.py
  - copy and unzip config.zip to (root)/content/thredds (or)
  - commit to github, then use the fetch.sh (wget) that is also generated, from the target machine
