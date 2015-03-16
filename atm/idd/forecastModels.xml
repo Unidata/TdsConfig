@@ -118,7 +118,23 @@
         </documentation>
       </metadata>
 
-      <featureCollection name="GEFS Global One Degree_Ensemble members" featureType="GRIB2" harvest="true"
+      <featureCollection name="GEFS Members - Analysis" featureType="GRIB2" harvest="true"
+                         path="grib/NCEP/GEFS/Global_1p0deg_Ensemble/members-analysis">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Ensemble members - Analysis grids only.
+          </documentation>
+        </metadata>
+
+        <collection name="GEFS-Global_1p0deg_Ensemble-members-analysis"
+                    spec="${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member_analysis/.*grib2$"
+                    dateFormatMark="#GEFS_Global_1p0deg_Ensemble_ana_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+
+      <featureCollection name="GEFS Members - Forecasts" featureType="GRIB2" harvest="true"
                          path="grib/NCEP/GEFS/Global_1p0deg_Ensemble/members">
         <metadata inherited="true">
           <documentation type="summary">
@@ -134,11 +150,11 @@
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
       </featureCollection>
 
-      <featureCollection name="GEFS Global One Degree_Ensemble derived_products" featureType="GRIB2" harvest="true"
+      <featureCollection name="GEFS Derived Forecast Products" featureType="GRIB2" harvest="true"
                          path="grib/NCEP/GEFS/Global_1p0deg_Ensemble/derived">
         <metadata inherited="true">
           <documentation type="summary">
-            Derived Products: mean, spread, and probability products.
+            Ensemble derived products: mean, spread, and probabilities.
           </documentation>
         </metadata>
 
@@ -151,7 +167,6 @@
       </featureCollection>
 
     </dataset>
-
     <dataset name="Global Forecast System (GFS)">
 
       <metadata inherited="true">
@@ -162,40 +177,84 @@
                        xlink:title="NCEP Model Notes"/>
       </metadata>
 
-      <featureCollection name="GFS Global Half Degree" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_0p5deg">
-        <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
-            Model runs at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out to 10 days, then 12 hour forecasts for days 10-16.
-            Horizontal= 361 by 720 points, resolution 0.5 degree, Lat/Lon projection.
-            Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
-          </documentation>
-        </metadata>
+      <dataset name="GFS Half Degree - Global Coverage">
+          <metadata inherited="true">
+            <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
+              Model runs at 0, 6, 12, and 18Z.
+              Horizontal= 361 by 720 points, resolution 0.5 degree, Lat/Lon projection.
+              Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
+            </documentation>
+          </metadata>
+        <featureCollection name="GFS Half Degree Analysis" featureType="GRIB2" harvest="true"
+                           path="grib/NCEP/GFS/Global_0p5deg_ana">
+          <metadata inherited="true">
+            <documentation type="summary">Analysis grids only.</documentation>
+          </metadata>
 
-        <collection name="GFS-Global_0p5deg"
-                    spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
-      </featureCollection>
+          <collection name="GFS-Global_0p5deg_ana"
+                      spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg_ana/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#GFS_Global_0p5deg_ana_#yyyyMMdd_HHmm"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        </featureCollection>
 
-      <featureCollection name="GFS Global One Degree" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_onedeg">
-        <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : AWIPS 229 (F) Grid. Global Lat/Lon grid.
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out to 192 hours (8 days).
-            Horizontal = 181 by 360 points, resolution 1 degree, Lat/Lon projection.
-            Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
-            layers.
-          </documentation>
-        </metadata>
+        <featureCollection name="GFS Half Degree Forecast" featureType="GRIB2" harvest="true"
+                           path="grib/NCEP/GFS/Global_0p5deg">
+          <metadata inherited="true">
+            <documentation type="summary">Forecasts grids starting from the 0 hour forecast every 3 hours out to 10 days,
+              then 12 hour forecasts for days 10-16.
+            </documentation>
+          </metadata>
 
-        <collection name="GFS-Global_onedeg"
-                    spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg/.*grib2$"
-                    dateFormatMark="#GFS_Global_onedeg_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
-      </featureCollection>
+          <collection name="GFS-Global_0p5deg"
+                      spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        </featureCollection>
+      </dataset>
+
+      <dataset name="GFS One Degree - Global Coverage">
+          <metadata inherited="true">
+            <documentation type="summary">NCEP GFS Model : AWIPS 229 (F) Grid. Global Lat/Lon grid.
+              Model runs are made at 0, 6, 12, and 18Z.
+              Horizontal = 181 by 360 points, resolution 1 degree, Lat/Lon projection.
+              Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
+              layers.
+            </documentation>
+          </metadata>
+        <featureCollection name="GFS One Degree Analysis" featureType="GRIB2" harvest="true"
+                           path="grib/NCEP/GFS/Global_onedeg_ana">
+          <metadata inherited="true">
+            <documentation type="summary">Analysis grids only.</documentation>
+          </metadata>
+
+          <collection name="GFS-Global_onedeg_ana"
+                      spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg_ana/.*grib2$"
+                      dateFormatMark="#GFS_Global_onedeg_ana_#yyyyMMdd_HHmm"
+                      timePartition="file"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        </featureCollection>
+
+        <featureCollection name="GFS One Degree Forecast" featureType="GRIB2" harvest="true"
+                           path="grib/NCEP/GFS/Global_onedeg">
+          <metadata inherited="true">
+            <documentation type="summary">Forecasts grids starting from the 0 hour forecast every 3 hours out to
+            192 hours (8 days).
+            </documentation>
+          </metadata>
+
+          <collection name="GFS-Global_onedeg"
+                      spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg/.*grib2$"
+                      dateFormatMark="#GFS_Global_onedeg_#yyyyMMdd_HHmm"
+                      timePartition="file"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        </featureCollection>
+      </dataset>
 
       <featureCollection name="GFS Global 2.5 Degree" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_2p5deg">
         <metadata inherited="true">
@@ -576,123 +635,6 @@
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
-        </gribConfig>
-      </featureCollection>
-
-    </dataset>
-
-    <!-- dataset name="National Digital Forecast Database (NDFD)">
-      <metadata inherited="true">
-        <documentation type="summary">National Digital Forecast Database (NDFD): US National Weather Service gridded
-          forecasts of sensible weather elements.
-        </documentation>
-        <documentation xlink:href="http://www.weather.gov/ndfd/" xlink:title="NWS/NDFD Website"/>
-        <documentation xlink:href="http://www.nws.noaa.gov/ndfd/definitions.htm"
-                       xlink:title="NDFD parameter descriptions"/>
-      </metadata>
-
-      <featureCollection name="NDFD-CONUS_5km" featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/CONUS_5km">
-        <metadata inherited="true">
-          <documentation type="summary">
-            CONUS, 1073 by 689 points, resolution 5 km. Results from 12Z and 18Z run. Forecasts every 6 hours from 90 to
-            180 hours.
-          </documentation>
-        </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/NCEP/NDFD/CONUS_5km/.*grib2$"
-                    dateFormatMark="#NDFD_CONUS_5km_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
-      </featureCollection>
-
-      <featureCollection name="NDFD-CONUS_5km_conduit" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/NDFD/CONUS_5km_conduit">
-        <metadata inherited="true">
-          <documentation type="summary">
-            CONUS, 1073 by 689 points, resolution 5 km. Models are run hourly. Forecasts every 3 hours from 2 to 74
-            hours and
-            every 6 hours from 74 to 170.
-          </documentation>
-        </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/NCEP/NDFD/conduit/CONUS_5km/.*grib2$"
-                    dateFormatMark="#NDFD_CONUS_5km_conduit_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
-        <gribConfig>
-          <gdsHash from="-328645426" to="1821883766"/>
-        </gribConfig>
-      </featureCollection>
-
-      <featureCollection name="NDFD-CONUS-Fireweather" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/NDFD/CONUS/Fireweather">
-        <metadata inherited="true">
-          <documentation type="summary">??
-          </documentation>
-        </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/NCEP/NDFD/Fireweather/CONUS/.*grib2$"
-                    dateFormatMark="#NDFD_Fireweather_CONUS_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
-      </featureCollection>
-
-    </dataset -->
-
-    <dataset name="Real Time Mesoscale Analysis (RTMA)">
-      <metadata inherited="true">
-        <documentation type="summary">
-          The NCEP RTMA Model is Real Time Mesoscale Analysis models.
-        </documentation>
-        <documentation xlink:href="http://www.weather.gov/infoservicechanges/tin08-56_rtma.txt"
-                       xlink:title="RTMA TIN"/>
-        <documentation xlink:href="http://www.coaps.fsu.edu/~dvandyke/wrfarw/rtma.html"
-                       xlink:title="COAPS FSU"/>
-      </metadata>
-
-      <featureCollection name="Real Time Mesoscale Analysis 2.5 km" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/RTMA/CONUS_2p5km">
-        <metadata inherited="true">
-          <documentation type="summary">
-            NCEP Model horizontal = 1377 by 2145 points, resolution 2.5 km, LambertConformal projection.
-            Model runs are made hourly, with 0 hour forecast
-          </documentation>
-        </metadata>
-
-        <collection name="RTMA-CONUS_2p5km"
-            spec="${DATA_DIR}/native/grid/NCEP/RTMA/CONUS_2p5km/.*grib2$"
-            dateFormatMark="#RTMA_CONUS_2p5km_#yyyyMMdd_HHmm"
-            timePartition="file"
-            olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
-        <gribConfig>
-          <pdsHash>
-            <useGenType>true</useGenType>
-          </pdsHash>
-        </gribConfig>
-      </featureCollection>
-
-      <featureCollection name="Real Time Mesoscale Analysis GUAM 2.5 km" featureType="GRIB2" harvest="true" path="grib/NCEP/RTMA/GUAM_2p5km">
-        <metadata inherited="true">
-          <documentation type="summary">
-            NCEP Model horizontal = 193 by 193 points, resolution 2.5 km, Mercator projection.
-            Model runs are made every 3 hours at 0, 3, ... with 0 hour forecasts.
-          </documentation>
-        </metadata>
-
-        <collection  name="RTMA-GUAM_2p5km"
-            spec="${DATA_DIR}/native/grid/NCEP/RTMA/GUAM_2p5km/.*grib2$"
-            dateFormatMark="#RTMA_GUAM_2p5km_#yyyyMMdd_HHmm"
-            timePartition="file"
-            olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
-        <gribConfig>
-          <pdsHash>
-            <useGenType>true</useGenType>
-          </pdsHash>
         </gribConfig>
       </featureCollection>
 
@@ -1248,14 +1190,14 @@
       </publisher>
     </metadata>
 
-    <featureCollection name="NMM_Primary_Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Primary">
+    <featureCollection name="NMM Primary Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Primary">
       <collection spec="${DATA_DIR}/rtmodel/#yyMMddHH#_nmm.GrbF.*00"
                   timePartition="file"
                   olderThan="5 min"/>
       <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
     </featureCollection>
 
-    <featureCollection name="NMM_Secondary_Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Secondary">
+    <featureCollection name="NMM Secondary Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Secondary">
       <collection spec="${DATA_DIR}/rtmodel/#yyMMddHH#_nmm_alt1\.GrbF.*00"
                   timePartition="file"
                   olderThan="5 min"/>
