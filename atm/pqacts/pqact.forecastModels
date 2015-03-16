@@ -38,7 +38,7 @@ CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge[cp].*pgrb2af
 #
 CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge[cp].*pgrb2aanl
 	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member_analysis/GEFS_Global_1p0deg_Ensemble_member_ana_\1_\200.grib2
+	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member_analysis/GEFS_Global_1p0deg_Ensemble_ana_\1_\200.grib2
 #
 # GEFS 1.0 degree Ensemble Statistics (Average and Spread)
 #
