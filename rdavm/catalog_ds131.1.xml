@@ -128,9 +128,9 @@
                            timePartition="year" />
 
                <tdm rewrite="test" />
-               <gribConfig>
+               <gribConfig datasetTypes="Best Files">
                  <pdsHash>
-                  <useTableVersion>true</useTableVersion>
+                   <useTableVersion>true</useTableVersion>
                  </pdsHash>
                </gribConfig>
              </featureCollection>
@@ -148,7 +148,7 @@
                            timePartition="year" />
 
                <tdm rewrite="test" />
-               <gribConfig>
+               <gribConfig datasetTypes="Best Files">
                  <pdsHash>
                   <useTableVersion>true</useTableVersion>
                  </pdsHash>
