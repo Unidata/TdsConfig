@@ -118,11 +118,13 @@
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
       </featureCollection>
-    </dataset><!-- end of NCEP -->
-    <dataset name="Multi-Radar Multi-Sensor (MRMS) Analysis">
+    </dataset>
+    <!-- end of NCEP -->
+
+    <!-- dataset name="Multi-Radar Multi-Sensor (MRMS) Analysis">
       <metadata inherited="true">
         <documentation type="summary">Multi-radar multi-sensor analysis produced by the National Severe Storms Laboratory</documentation>
-	<documentation xlink:href="http://www.nssl.noaa.gov/projects/mrms/"
+        <documentation xlink:href="http://www.nssl.noaa.gov/projects/mrms/"
                        xlink:title="MRMS Documentation"/>
       </metadata>
 
@@ -134,7 +136,19 @@
         <tdm rewrite="test" rescan="0 * * * * ? *"/>
       </featureCollection>
 
-    </dataset><!-- end of MRMS -->
-  </dataset><!-- end of test dataset -->
+    </dataset -->
+    <!-- end of MRMS -->
+
+    <dataset name="Do not use">
+
+      <featureCollection name="TestFmrc" featureType="FMRC" harvest="true" path="fmrc/ecmwf/global_2p5/" serviceName="fullServices">
+        <collection name="ecmwf_global_2p5" spec="${DATA_DIR}/decoded/netcdf/grid/ECMWF/Global_2p5.*.nc$" dateFormatMark="#ECMWF_Global_2p5_#yyyyMMdd_HHmm"/>
+        <update startup="true" rescan="0 * * * * ? *" trigger="allow"/>
+      </featureCollection>
+
+    </dataset>
+
+  </dataset>
+  <!-- end of test dataset -->
 </catalog>
 
