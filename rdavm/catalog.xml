@@ -12,6 +12,7 @@
     <catalogRef xlink:href="catalog_ds277.6.xml" xlink:title="ds277.6 NCEP Global Ocean Data Assimilation System (GODAS)" name="" />
     <catalogRef xlink:href="catalog_ds285.3.xml" xlink:title="ds285.3 Subsurface Temperature And Salinity Analyses by Ishii et al." name="" />
 
+  <!-- netcdf -->
     <!--  catalogRef xlink:href="catalog_ds298.0.xml" xlink:title="ds298.0  Standardized Precipitation Index (SPI) for Global Land Surface (1949-2012)" name=" Standardized Precipitation Index (SPI) for Global Land Surface (1949-2012)" />
     <catalogRef xlink:href="catalog_ds316.0.xml" xlink:title="ds316.0  NCAR Community Earth System Model, EaSM Project Dataset" name=" NCAR Community Earth System Model, EaSM Project Dataset" />
     <catalogRef xlink:href="catalog_ds502.0.xml" xlink:title="ds502.0  NOAA CPC Morphing Technique (CMORPH) Global Precipitation Analyses" name=" NOAA CPC Morphing Technique (CMORPH) Global Precipitation Analyses" />
@@ -27,6 +28,7 @@
     <catalogRef xlink:href="catalog_ds629.5.xml" xlink:title="ds629.5 WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Surface Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" name="" />
     <catalogRef xlink:href="catalog_ds629.6.xml" xlink:title="ds629.6 WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 3-Hourly Pressure Level Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid, Dynamical Parameters Only" name="" />
 
+  <!-- netcdf -->
     <!-- catalogRef xlink:href="catalog_ds631.0.xml" xlink:title="ds631.0 Arctic System Reanalysis (ASR) Project" name="Arctic System Reanalysis (ASR) Project" / -->
 
 </catalog>
