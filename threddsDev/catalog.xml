@@ -5,21 +5,18 @@
          version="1.0.6">
 
   <dataset name="Realtime data from IDD">
-    <catalogRef xlink:href="idd/modelsNcep.xml" xlink:title="NCEP Model Data" name=""/>
-    <catalogRef xlink:href="idd/modelsFnmoc.xml" xlink:title="FNMOC Model Data" name=""/>
-    <catalogRef xlink:href="modelsHrrr.xml" xlink:title="HRRR Model Data" name="" />
+    <catalogRef xlink:href="idd/forecastModels.xml" xlink:title="Forecast Model Data" name=""/>
+    <catalogRef xlink:href="idd/forecastProdsAndAna.xml" xlink:title="Forecast Products and Analyses" name="" />
+    <catalogRef xlink:href="idd/obsData.xml" xlink:title="Observation Data" name=""/>
     <catalogRef xlink:href="idd/radars.xml" xlink:title="Radar Data" name=""/>
-    <catalogRef xlink:href="idd/obsData.xml" xlink:title="Station Data" name=""/>
-    <catalogRef xlink:href="idd/newPointObs.xml" xlink:title="Point Feature Collections" name=""/>
     <catalogRef xlink:href="idd/satellite.xml" xlink:title="Satellite Data" name=""/>
   </dataset>
-  <dataset name="Other data">
-    <catalogRef xlink:href="cf_examples.xml" xlink:title="CF DSG (point data) examples" name=""/>
-    <catalogRef xlink:href="unidata.xml" xlink:title="NEXRAD National Composites From Unidata" name=""/>
+
+  <dataset name="Other Unidata Data">
+    <catalogRef xlink:href="casestudies/catalog.xml" xlink:title="Unidata case studies" name=""/>
   </dataset>
   <dataset name="Test Datasets">
-    <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Datasets" name="" />
+    <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Datasets" name=""/>
   </dataset>
-
 </catalog>
 
