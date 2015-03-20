@@ -141,9 +141,9 @@
 
     <dataset name="Do not use">
 
-      <featureCollection name="TestFmrc" featureType="FMRC" harvest="true" path="fmrc/ecmwf/global_2p5/" serviceName="fullServices">
-        <collection name="ecmwf_global_2p5" spec="${DATA_DIR}/decoded/netcdf/grid/ECMWF/Global_2p5.*.nc$" dateFormatMark="#ECMWF_Global_2p5_#yyyyMMdd_HHmm"/>
-        <update startup="true" rescan="0 * * * * ? *" trigger="allow"/>
+      <featureCollection name="TestFmrc" featureType="FMRC" harvest="true" path="fmrc/ecmwf/global_2p5" serviceName="fullServices">
+        <collection name="ecmwf_global_2p5" spec="${DATA_DIR}/decoded/netcdf/grid/ECMWF/Global_2p5/.*.nc$" dateFormatMark="#ECMWF_Global_2p5_#yyyyMMdd_HHmm"/>
+        <update startup="true" rescan="0 0/30 * * * ? *" trigger="allow"/>
       </featureCollection>
 
     </dataset>
