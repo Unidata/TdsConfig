@@ -393,17 +393,3 @@ FNMOC	^US058.{4}-GR1dyn\.COAMPS-SOCAL_.{5}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
 HRS	ZETA98 (....) ([0-3][0-9])([0-2][0-9]).*/m(.......)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NPVU/RFC/\1/NPVU_RFC_\1_\4_(\2:yyyy)(\2:mm)\2.grib1
-#
-# ====================
-# = ECMWF model data =
-# ====================
-#
-# --------------------
-# - ECMWF Model Grid -
-# --------------------
-#
-# ECMWF grid on global 2.5 x 2.5 degree grid
-#
-HRS     ^H.([A-L])... ECMF (..)(..)
-        FILE    -metadata
-        /data/ldm/pub/native/grid/ECMWF/Global_2p5/ECMWF_Global_2p5_\1_(\2:yyyy)(\2:mm)\2_\300.grib1
