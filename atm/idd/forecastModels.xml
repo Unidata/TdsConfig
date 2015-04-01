@@ -1198,40 +1198,5 @@
     </dataset>
   </dataset> <!-- end of FNMOC forecast models -->
 
-  <dataset name="Unidata Real-Time Regional Model" ID="Unidata-Regional-Model">
-
-    <metadata inherited="true">
-      <serviceName>fullServices</serviceName>
-      <authority>edu.ucar.unidata</authority>
-      <dataType>Grid</dataType>
-      <dataFormat>GRIB-1</dataFormat>
-      <documentation xlink:href="http://www.unidata.ucar.edu/software/gempak/rtmodel/" xlink:title="Unidata documentation" />
-      <documentation type="rights">Freely available</documentation>
-      <creator>
-        <name vocabulary="DIF">UCAR/UNIDATA</name>
-        <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu" />
-      </creator>
-      <publisher>
-        <name vocabulary="DIF">UCAR/UNIDATA</name>
-        <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu" />
-      </publisher>
-    </metadata>
-
-    <featureCollection name="NMM Primary Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Primary">
-      <collection spec="${DATA_DIR}/rtmodel/#yyMMddHH#_nmm.GrbF.*00"
-                  timePartition="file"
-                  olderThan="5 min"/>
-      <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
-    </featureCollection>
-
-    <featureCollection name="NMM Secondary Domain" featureType="GRIB1" harvest="true" path="grib/Unidata/NMM/Secondary">
-      <collection spec="${DATA_DIR}/rtmodel/#yyMMddHH#_nmm_alt1\.GrbF.*00"
-                  timePartition="file"
-                  olderThan="5 min"/>
-      <tdm rewrite="test" rescan="0 0/15 * * * ? *" trigger="allow"/>
-    </featureCollection>
-
-  </dataset> <!-- end of Unidata Real-Time Regional Model -->
-
 </catalog>
 
