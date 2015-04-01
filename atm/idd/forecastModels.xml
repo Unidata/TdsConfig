@@ -367,6 +367,33 @@
     
     </dataset>
 
+    <dataset name="High Resolution Rapid Refresh (HRRR)">
+      <metadata inherited="true">
+        <serviceName>fullServices</serviceName>
+        <authority>edu.ucar.unidata</authority>
+        <dataType>GRID</dataType>
+        <dataFormat>GRIB-2</dataFormat>
+      </metadata>
+
+      <dataset name="HRRR from NOAA/GSD">
+        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/HRRR/CONUS_3km/surface/catalog.xml"
+                    xlink:title="GSD HRRR CONUS 3km surface" name=""
+                    useRemoteCatalogService="false" />
+        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/HRRR/CONUS_3km/wrfprs/catalog.xml"
+                    xlink:title="GSD HRRR CONUS 3km wrfprs" name=""
+                    useRemoteCatalogService="false" />
+      </dataset>
+
+      <dataset name="HRRR from NCEP">
+        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/NCEP/HRRR/CONUS_2p5km_ANA/catalog.xml"
+                    xlink:title="NCEP HRRR CONUS 2.5km Analysis" name=""
+                    useRemoteCatalogService="false" />
+        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/NCEP/HRRR/CONUS_2p5km/catalog.xml"
+                    xlink:title="NCEP HRRR CONUS 2.5km" name=""
+                    useRemoteCatalogService="false" />
+      </dataset>
+    </dataset>
+
     <dataset name="North American Model (NAM)">
 
       <metadata inherited="true">
@@ -947,7 +974,7 @@
       </featureCollection>
 
     </dataset>
-    <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/modelsHrrr.xml" xlink:title="HRRR Forecast Model" name="" />
+
   </dataset> <!-- end of NCEP Analysis and Forecast Models -->
 
   <dataset name="FNMOC Forecast Models">
