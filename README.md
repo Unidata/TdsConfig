@@ -13,7 +13,7 @@ Configuration files
   - idd : common to all idd servers
   - rdavm : at CISL/DSS
   - remotetest : opendap/netcdf C test server
-  - thredds : mlode
+  - thredds : mlode (idd + casestudies)
   - threddsDev : lead (both test and dev at this point)
 
 - to build the config:

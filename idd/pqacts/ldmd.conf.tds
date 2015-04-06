@@ -1,8 +1,0 @@
-#
-# THREDDS processing
-EXEC	"pqact -f NIMAGE etc/TDS/pqact.satellite"
-EXEC	"pqact -f NNEXRAD|CRAFT etc/TDS/pqact.radars"
-EXEC	"pqact -f FNMOC etc/TDS/pqact.modelsFnmoc"
-EXEC	"pqact -f NGRID|CONDUIT|HRS etc/TDS/pqact.modelsNcep"
-EXEC	"pqact -f DDS|IDS etc/TDS/pqact.newPointObs"
-EXEC	"pqact -f FSL2|HRS etc/TDS/pqact.obsData"
