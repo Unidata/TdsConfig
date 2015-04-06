@@ -108,6 +108,7 @@
       <tdm rewrite="test" rescan="0 2/5 * * * ? *" />
 
       <gribConfig datasetTypes="Best LatestFile Files">
+        <intvFilter excludeZero="false"/>
         <option name="timeUnit" value="1 minute" />
         <filesSort increasing="false" />
       </gribConfig>

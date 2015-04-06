@@ -386,7 +386,6 @@
       <collection name="NEXRAD_NWS_Reflectivity"
                   spec="${DATA_DIR}/native/radar/10km_mosaic/**/.*grib1$"
                   dateFormatMark="#RADAR_10km_mosaic_#yyyyMMdd_HHmm"
-                  timePartition="file"
                   olderThan="1 min"/>
 
       <tdm rewrite="test" rescan="0 2/5 * * * ? *" />

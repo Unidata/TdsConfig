@@ -75,7 +75,7 @@
     <featureCollection name="ds094.1 Aggregation"
                        featureType="GRIB2"
                        harvest="true"
-                       path="aggregations/g/ds094.1/">
+                       path="aggregations/g/ds094.1">
 
       <metadata inherited="true">
         <serviceName>all</serviceName>
