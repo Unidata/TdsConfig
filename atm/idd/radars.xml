@@ -388,6 +388,10 @@
                   dateFormatMark="#RADAR_10km_mosaic_#yyyyMMdd_HHmm"
                   olderThan="1 min"/>
 
+      <gribConfig>
+        <option name="timeUnit" value="1 minute" />
+      </gribConfig>
+
       <tdm rewrite="test" rescan="0 2/5 * * * ? *" />
     </featureCollection>
 
@@ -408,6 +412,10 @@
                   dateFormatMark="#Level3_Composite_N0R_#yyyyMMdd_HHmm"
                   timePartition="file"
                   olderThan="1 min"/>
+
+      <gribConfig>
+        <option name="timeUnit" value="1 minute" />
+      </gribConfig>
 
       <tdm rewrite="test" rescan="0 1/5 * * * ? *" />
     </featureCollection>
