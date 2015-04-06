@@ -24,6 +24,7 @@
   </serverInformation>
 
   <catalogRoot>radar/radarCollections.xml</catalogRoot>
+  <catalogRoot>modelsHrrr.xml</catalogRoot>
 
   <!--
    * Setup for generated HTML pages.
@@ -91,6 +92,10 @@
     <uddcAllow>true</uddcAllow>
     <isoAllow>true</isoAllow>
   </NCISO>
+
+  <RadarServer>
+    <allow>true</allow>
+  </RadarServer>
 
   <CatalogGen>
     <allow>false</allow>

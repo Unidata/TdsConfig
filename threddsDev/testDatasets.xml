@@ -84,40 +84,6 @@
         <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *"/>
       </featureCollection>
 
-      <featureCollection name="NCEP GFS Global 0.5 Degree Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_0p5deg_ana">
-        <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
-            Model runs at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours from 96 to 180 hours (4 to 7.5 days).
-            Horizontal= 361 by 720 points, resolution 0.5 degree, Lat/Lon projection.
-            Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
-            Analysis grids only.
-          </documentation>
-        </metadata>
-        <collection spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg_Analysis/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#GFS_Global_0p5deg_ana_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
-        <update startup="never" trigger="allow"/>
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *" trigger="allow"/>
-      </featureCollection>
-
-      <featureCollection name="NCEP HRRR CONUS 2.5km Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km_ANA">
-        <dataFormat>GRIB-2</dataFormat>
-        <metadata inherited="true">
-          <documentation type="summary">NCEP HRRR Model : AWIPS 184 (C) Grid. 2.5 km NDFD grid over CONUS (Lambert Conformal).
-            Model runs are made hourly, with analysis and forecasts every hour out 15 hours.
-            Horizontal = 2145 by 1377 points, resolution 2.5 km, Lambert Conformal projection.
-            Vertical = 1000 to 500 hPa mandatory pressure levels (5 levels); surface, height above ground, pressure layers.
-            This collection contains analysis grids only.
-          </documentation>
-        </metadata>
-
-        <collection name="NCEP_HRRR_CONUS_2p5km_Analysis"
-                    spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km_Analysis/HRRR_CONUS_2p5km_ana_#yyyyMMdd_HHmm#.grib2"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
-      </featureCollection>
     </dataset>
     <!-- end of NCEP -->
 

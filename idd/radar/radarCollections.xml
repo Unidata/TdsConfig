@@ -17,6 +17,7 @@
           <variable name="Velocity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="m/s" />
           <variable name="SpectrumWidth" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Spectrum Width" units="m/s" />
         </variables>
+        <stationFile path="radar/RadarL2Stations.xml" />
         <documentation xlink:title="Available Stations" xlink:href="/thredds/radarServer/nexrad/level2/IDD/stations.xml"/>
         <documentation type="path">nexrad/level2/IDD</documentation>
       <geospatialCoverage>
@@ -53,6 +54,7 @@
           <variable name="Velocity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="m/s" />
           <variable name="SpectrumWidth" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Spectrum Width" units="m/s" />
         </variables>
+        <stationFile path="radar/RadarL2Stations.xml" />
         <documentation xlink:title="Available Stations" xlink:href="/thredds/radarServer/nexrad/level2/CCS039/stations.xml"/>
         <documentation type="path">nexrad/level2/CCS039</documentation>
       <geospatialCoverage>
@@ -79,6 +81,7 @@
         <dataType>Radial</dataType>
         <dataFormat>NIDS</dataFormat>
         <serviceName>radarServer</serviceName>
+        <stationFile path="radar/RadarNexradStations.xml" />
       <documentation type="summary">The NIDS data feed provides roughly 20 radar products sent every 5-10 minutes from 154 sites over NOAAPORT broadcast. These "derived" products include base reflectivity and velocity, composite reflectivity, precipitation estimates, echo tops and VAD winds</documentation>
       <documentation xlink:href="http://www.unidata.ucar.edu/data/radar.html" xlink:title="Unidata description of NOAAPORT radar data" />
       <documentation xlink:href="http://www.ncdc.noaa.gov/oa/radar/radarresources.html" xlink:title="NCDC Radar Resources" />
@@ -163,6 +166,7 @@
         <dataType>Radial</dataType>
         <dataFormat>NIDS</dataFormat>
         <serviceName>radarServer</serviceName>
+        <stationFile path="radar/RadarNexradStations.xml" />
         <documentation type="summary">NEXRAD Level II Radar WSR-88D for Case Study CCS039. </documentation>
       <documentation xlink:href="http://www.unidata.ucar.edu/data/radar.html" xlink:title="Unidata description of NOAAPORT radar data" />
       <documentation xlink:href="http://www.ncdc.noaa.gov/oa/radar/radarresources.html" xlink:title="NCDC Radar Resources" />
@@ -203,6 +207,7 @@
         <dataType>Radial</dataType>
         <dataFormat>NIDS</dataFormat>
         <serviceName>radarServer</serviceName>
+        <stationFile path="radar/RadarTerminalStations.xml" />
       <documentation type="summary">The TDWR data feed provides roughly 20 radar products sent every 5-10 minutes from 154 sites over NOAAPORT broadcast. These "derived" products include base reflectivity and velocity</documentation>
       <documentation xlink:href="http://www.unidata.ucar.edu/data/radar.html" xlink:title="Unidata description of NOAAPORT radar data" />
       <documentation xlink:href="http://www.ncdc.noaa.gov/oa/radar/radarresources.html" xlink:title="NCDC Radar Resources" />
