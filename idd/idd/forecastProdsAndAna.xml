@@ -84,6 +84,9 @@
                     name="NDFD_NWS_CONUS_NOAAPORT"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+	<gribConfig>
+	  <gdsHash from='-1506003048' to='-1505079527'/>
+	</gribConfig>
       </featureCollection>
 
       <featureCollection name="National Weather Service CONUS Forecast Grids (CONDUIT)"
