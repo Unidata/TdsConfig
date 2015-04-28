@@ -568,6 +568,18 @@
             timePartition="file"
             olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
+        <gribConfig>
+          <intvFilter excludeZero="true"/>
+          <intvFilter intvLength="3">
+            <variable id="7-0-2-60"/>
+            <variable id="7-0-2-61"/>
+            <variable id="7-0-2-63"/>
+            <variable id="7-0-2-66"/>
+            <variable id="7-0-2-193"/>
+            <variable id="7-0-2-194"/>
+            <variable id="7-0-2-195"/>
+          </intvFilter>
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="NAM CONUS 40km" featureType="GRIB2" harvest="true"
@@ -691,6 +703,13 @@
             timePartition="file"
             olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <intvFilter excludeZero="true"/>
+          <intvFilter intvLength="1">
+            <variable id="0-1-9"/>
+            <variable id="0-1-10"/>
+          </intvFilter>
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Rapid Refresh CONUS 20km" featureType="GRIB2" harvest="true"
@@ -730,6 +749,13 @@
             timePartition="file"
             olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9,24,39,53 * * * ? *" />
+        <gribConfig>
+          <intvFilter excludeZero="true"/>
+          <intvFilter intvLength="1">
+            <variable id="0-1-9"/>
+            <variable id="0-1-10"/>
+          </intvFilter>
+        </gribConfig>
       </featureCollection>
     </dataset>
 
