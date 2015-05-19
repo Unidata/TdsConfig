@@ -3,6 +3,7 @@
   <service name="radarServer" serviceType="QueryCapability" base="/thredds/radarServer/" />
   <dataset name="Radar Data">
     <datasetScan name="NEXRAD Level II Radar from IDD" collectionType="TimeSeries" ID="nexrad/level2/IDD" path="nexrad/level2/IDD" location="${DATA_DIR}/native/radar/level2">
+      <radarCollection layout="STATION/yyyyMMdd" dateRegex="(\d{8}_\d{4})\.ar2v$" dateFormat="yyyyMMdd_HHmm" />
       <metadata inherited="true">
         <dataType>Radial</dataType>
         <dataFormat>NEXRAD2</dataFormat>
@@ -40,6 +41,7 @@
       </metadata>
     </datasetScan>
     <datasetScan name="NEXRAD Level II Radar for Case Study CCS039" collectionType="TimeSeries" ID="nexrad/level2/CCS039" path="nexrad/level2/CCS039" location="${DATA_DIR}/casestudies/ccs039/images/radar/level2">
+      <radarCollection layout="STATION/yyyyMMdd" dateRegex="(\d{8}_\d{6})$" dateFormat="yyyyMMdd_HHmmss" />
       <metadata inherited="true">
         <dataType>Radial</dataType>
         <dataFormat>NEXRAD2</dataFormat>
@@ -54,29 +56,30 @@
           <variable name="Velocity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="m/s" />
           <variable name="SpectrumWidth" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Spectrum Width" units="m/s" />
         </variables>
-        <stationFile path="radar/RadarL2Stations.xml" />
+	<stationFile path="radar/CS039_L2_stations.xml" />
         <documentation xlink:title="Available Stations" xlink:href="/thredds/radarServer/nexrad/level2/CCS039/stations.xml"/>
         <documentation type="path">nexrad/level2/CCS039</documentation>
       <geospatialCoverage>
         <northsouth>
-          <start>20.0</start>
-          <size>40.0</size>
+          <start>37.0</start>
+          <size>9.0</size>
           <units>degrees_north</units>
         </northsouth>
         <eastwest>
-          <start>-135.0</start>
-          <size>70.0</size>
+          <start>-100.0</start>
+          <size>16.0</size>
           <units>degrees_east</units>
         </eastwest>
         <updown>
           <start>0.0</start>
-          <size>0.0</size>
+          <size>21.0</size>
           <units>km</units>
         </updown>
       </geospatialCoverage>
       </metadata>
     </datasetScan>
     <datasetScan name="NEXRAD Level III Radar from IDD" collectionType="TimeSeries" ID="nexrad/level3/IDD" path="nexrad/level3/IDD" location="${DATA_DIR}/native/radar/level3/nexrad/">
+      <radarCollection layout="VARIABLE/STATION/yyyyMMdd" dateRegex="(\d{8}_\d{4})\.nids$" dateFormat="yyyyMMdd_HHmm" />
       <metadata inherited="true">
         <dataType>Radial</dataType>
         <dataFormat>NIDS</dataFormat>
@@ -162,11 +165,12 @@
       </metadata>
     </datasetScan>
     <datasetScan name="NEXRAD Level III Radar for Case Study CCS039" collectionType="TimeSeries" ID="nexrad/level3/CCS039" path="nexrad/level3/CCS039" location="${DATA_DIR}/casestudies/ccs039/images/radar/nids">
+      <radarCollection layout="STATION/VARIABLE" dateRegex="(\d{6}_\d{4})$" dateFormat="yyMMdd_HHmm" />
       <metadata inherited="true">
         <dataType>Radial</dataType>
         <dataFormat>NIDS</dataFormat>
         <serviceName>radarServer</serviceName>
-        <stationFile path="radar/RadarNexradStations.xml" />
+	<stationFile path="radar/CS039_stations.xml" />
         <documentation type="summary">NEXRAD Level II Radar WSR-88D for Case Study CCS039. </documentation>
       <documentation xlink:href="http://www.unidata.ucar.edu/data/radar.html" xlink:title="Unidata description of NOAAPORT radar data" />
       <documentation xlink:href="http://www.ncdc.noaa.gov/oa/radar/radarresources.html" xlink:title="NCDC Radar Resources" />
@@ -177,18 +181,18 @@
       </creator>
       <geospatialCoverage>
         <northsouth>
-          <start>20.0</start>
-          <size>40.0</size>
+          <start>37.0</start>
+          <size>9.0</size>
           <units>degrees_north</units>
         </northsouth>
         <eastwest>
-          <start>-135.0</start>
-          <size>70.0</size>
+          <start>-100.0</start>
+          <size>16.0</size>
           <units>degrees_east</units>
         </eastwest>
         <updown>
           <start>0.0</start>
-          <size>0.0</size>
+          <size>21.0</size>
           <units>km</units>
         </updown>
       </geospatialCoverage>
@@ -203,6 +207,7 @@
       </metadata>
     </datasetScan>
     <datasetScan name="TDWR Level III Radar from IDD" collectionType="TimeSeries" ID="terminal/level3/IDD" path="terminal/level3/IDD" location="${DATA_DIR}/native/radar/level3/tdwr/">
+      <radarCollection layout="VARIABLE/STATION/yyyyMMdd" dateRegex="(\d{8}_\d{4})\.nids$" dateFormat="yyyyMMdd_HHmm" />
       <metadata inherited="true">
         <dataType>Radial</dataType>
         <dataFormat>NIDS</dataFormat>
