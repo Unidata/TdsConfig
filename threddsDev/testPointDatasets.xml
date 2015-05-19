@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-IDD OPeNDAP Data Server - Station Data"
+         version="1.0.6">
+
+  <service name="all" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <service name="basic" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+  <service name="latest" serviceType="Resolver" base=""/>
+  
+  <dataset name="National Flood Interoperability Experiment (NFIE) Data for Testing">
+  
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <authority>edu.ucar.unidata</authority>
+      <documentation type="rights">Freely available</documentation>
+      <documentation>The academic community, coordinated by CUAHSI, is being
+        invited by the National Weather Service and its partner federal agencies
+        to participate in a National Flood Interoperability Experiment (NFIE) to
+        help build a new high resolution, near real-time hydrologic simulation
+        and forecasting model for the United States. This opportunity is created
+        through the opening of a new National Water Center on the Tuscaloosa
+        campus of the University of Alabama, which is to become the national
+        center for river flow forecasting.  The intent is to establish a 
+        research partnership with the academic community that will sustain
+        innovation into the future.
+      </documentation>
+      <documentation xlink:href="https://www.cuahsi.org/NFIE" xlink:title="CUAHSI NFIE Information"/>   
+      <publisher>
+        <name vocabulary="DIF">UCAR/UNIDATA</name>
+        <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
+      </publisher>
+      <geospatialCoverage>
+        <name vocabulary="Thredds">global</name>
+      </geospatialCoverage>
+    </metadata>
+    <datasetScan name="NFIE" path="cuahsi/nfie" location="/data/ldm/pub/native/timeseries/nfie_hydro/" >
+      <metadata inherited="true">
+        <serviceName>basic</serviceName>
+      </metadata>
+    </datasetScan>
+    <!-- featureCollection name="NFIE" harvest="true" featureType="Point" path="cuahsi/nfie">
+      <metadata inherited="true">
+        <dataType>Station</dataType>
+      </metadata>
+      <collection spec="/data/ldm/pub/native/timeseries/nfie_hydro/nfie_hydro_region_num_01_#yyyy-MM-dd#.nc$" / -->
+      <!--update startup="true" rescan="0 0/15 * * * ? *" trigger="allow"/ -->
+      <!-- protoDataset choice="Penultimate" />
+      <pointConfig datasetTypes="cdmrFeature Files"/>
+    </featureCollection -->
+  </dataset>
+</catalog>
+
