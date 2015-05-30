@@ -81,3 +81,9 @@ HRS	^H.[A-L]... ECMF (..)(..)
 EXP	(nfie_hydro_region_num_(..)_(....)-(..)-(..).nc)
 	FILE	-close
 	/data/ldm/nfie_hydro/\3\4\5/\1
+#
+# WW3 Europe
+#
+FNMOC	(^US058.{4}-GR1dyn\.WW3-EURO_EURO-..-.._.{5}.{4})(.{4})(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/WW3/Europe/FNMOC_WW3_Europe_\2\3\4_\500.grib1
