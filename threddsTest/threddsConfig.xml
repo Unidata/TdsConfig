@@ -93,6 +93,10 @@
     <isoAllow>true</isoAllow>
   </NCISO>
 
+  <RadarServer>
+    <allow>true</allow>
+  </RadarServer>
+
   <CatalogGen>
     <allow>false</allow>
   </CatalogGen>
