@@ -10,11 +10,15 @@ Configuration files
 - kept in git repo thredds/TdsConfig
 
 - each machine has their own subdirectory:
-  - idd : common to all idd servers
+  - idd : common to all (4.6) idd servers
+  - miami: brian mapes machine
+  - ou: ?
   - rdavm : at CISL/DSS
-  - remotetest : opendap/netcdf C test server
-  - thredds : mlode (idd + casestudies)
-  - threddsDev : lead (both test and dev at this point)
+  - remotetest : where? opendap/netcdf C test server
+  - startup: ?
+  - thredds : motherlode (/opt/tds-live) (idd + casestudies)
+  - threddsDev : lead (/opt/tds-dev). now for 5.0
+  - threddsTest : lead (/opt/tds-test)
 
 - to build the config:
    ./build.py [remotetest thredds]
