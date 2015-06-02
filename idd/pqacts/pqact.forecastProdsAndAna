@@ -21,7 +21,7 @@ NGRID|HDS	^L[A-Z]U[A-HZ][019][0-9] KWBN ([0-3][0-9])([0-2][0-9][0-6][0-9])
 #
 CONDUIT	Y[A-Z]UZ9[78]_KWBN.*grib2/nwstg/NWS_0/..../(........)(....)
 	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/NDFD/NWS/NDFD_NWS_CONUS_2p5km_\1_\2.grib2
+	${DATA_DIR}/native/grid/NCEP/NDFD/NWS/NDFD_NWS_CONUS_conduit_2p5km_\1_\2.grib2
 #
 # NDFD CONUS 2.5 km SPC (FROM CONDUIT)
 #
