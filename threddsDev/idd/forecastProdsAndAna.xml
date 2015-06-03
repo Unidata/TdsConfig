@@ -8,7 +8,6 @@
 
     <metadata inherited="true">
       <authority>edu.ucar.unidata</authority>
-      <dataFormat>GRIB-2</dataFormat>
       <documentation xlink:href="http://www.emc.ncep.noaa.gov/modelinfo/index.html" xlink:title="NCEP Model documentation"/>
       <documentation type="rights">Freely available</documentation>
       <documentation type="processing_level">Transmitted through Unidata Internet Data Distribution.</documentation>
