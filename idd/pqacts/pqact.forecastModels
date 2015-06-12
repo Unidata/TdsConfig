@@ -340,11 +340,11 @@ FNMOC	(^US058.{4}-GR1mdl\.0110_0240_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/FNMOC/WW3/Global_1p0deg/FNMOC_WW3_Global_1p0deg_\2\3\4_\500.grib1
 #
-# WW3 Mediterranean 
+# WW3 Europe
 #
-FNMOC	(^US058.{4}-GR1mdl\.0111_0179_.{5}.{4})(.{4})(..)(..)(..)(.*)
+FNMOC	(^US058.{4}-GR1dyn\.WW3-EURO_EURO-..-.._.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE	-metadata
-	${DATA_DIR}/native/grid/FNMOC/WW3/Mediterranean/FNMOC_WW3_Mediterranean_\2\3\4_\500.grib1
+	${DATA_DIR}/native/grid/FNMOC/WW3/Europe/FNMOC_WW3_Europe_\2\3\4_\500.grib1
 #
 # ------------------------------------------------------------------
 # - Coupled Ocean/Atmospheric Mesoscale Prediction System (COAMPS) -

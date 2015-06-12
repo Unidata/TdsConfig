@@ -1059,21 +1059,19 @@
         <tdm rewrite="test" rescan="0 27 * * * ? *" />
       </featureCollection>
 
-      <featureCollection name="FNMOC WW3 Mediterranean" featureType="GRIB1" harvest="true" path="grib/FNMOC/WW3/Mediterranean">
+      <featureCollection name="FNMOC WW3 Europe" featureType="GRIB1" harvest="true" path="grib/FNMOC/WW3/Europe">
         <metadata inherited="true">
-          <documentation type="summary">FNMOC WW3 Mediterranean Model : Global Lat/Lon grid.
+          <documentation type="summary">FNMOC WW3 Europe Model : Global Lat/Lon grid.
             Model runs are made at 0, and 12Z, with analysis and forecasts every 6 hours out 72 hours.
-            Horizontal= 186 by 301 points, resolution .2 degree, Lat/Lon projection.
+            Horizontal= 188 by 301 points, resolution .2 degree, Lat/Lon projection.
           </documentation>
         </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/FNMOC/WW3/Mediterranean/FNMOC_WW3_Mediterranean_#yyyyMMdd_HHmm#.grib1"
-                    name="FNMOC_WW3_Mediterranean"
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/WW3/Europe/FNMOC_WW3_Europe_#yyyyMMdd_HHmm#.grib1"
+                    name="FNMOC_WW3_Europe"
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 27 * * * ? *" />
       </featureCollection>
-
     </dataset>
 
     <dataset name="Forecast of Aerosol Radiative Optical Properties (FAROP) Model">
