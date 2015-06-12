@@ -87,6 +87,22 @@
     </dataset>
     <!-- end of NCEP -->
 
+    <dataset name="FNMOC Wave Watch 3 (WW3) Model">
+      <metadata inherited="true">
+        <documentation xlink:href="https://www.fnmoc.navy.mil/ww3_cgi/index.html"
+                       xlink:title="FNMOC WW3 documentation"/>
+      </metadata>
+
+      <featureCollection name="FNMOC WW3 Europe" featureType="GRIB1" harvest="true" path="grib/FNMOC/WW3/Europe">
+        <collection spec="${DATA_DIR}/native/grid/FNMOC/WW3/Europe/FNMOC_WW3_Europe_#yyyyMMdd_HHmm#.grib1"
+                    name="FNMOC_WW3_Europe"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 27 * * * ? *" />
+      </featureCollection>
+    </dataset>
+    <!-- end of FNMOC -->
+
     <!-- dataset name="Multi-Radar Multi-Sensor (MRMS) Analysis">
       <metadata inherited="true">
         <documentation type="summary">Multi-radar multi-sensor analysis produced by the National Severe Storms Laboratory</documentation>
