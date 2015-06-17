@@ -121,7 +121,7 @@
   </nj22Config -->
 
   <Netcdf4Clibrary>
-     <libraryPath>/opt/netcdf/lib</libraryPath>
+     <libraryPath>/opt/netcdf-tds/lib</libraryPath>
      <libraryName>netcdf</libraryName>
    </Netcdf4Clibrary>
 
