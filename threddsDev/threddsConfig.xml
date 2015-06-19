@@ -3,7 +3,7 @@
   
   <serverInformation>
     <name>THREDDS Data Server</name>
-    <logoUrl>/thredds/unidataLogo.jpg</logoUrl>
+    <logoUrl>/thredds/threddsIcon.png</logoUrl>
     <logoAltText>TDS</logoAltText>
 
     <abstract>Scientific Data</abstract>
@@ -18,7 +18,7 @@
     <hostInstitution>
       <name>Unidata</name>
       <webSite>http://www.unidata.ucar.edu/</webSite>
-      <logoUrl>unidataIcon.gif</logoUrl>
+      <logoUrl>/thredds/unidataLogo.jpg</logoUrl>
       <logoAltText>Unidata</logoAltText>
     </hostInstitution>
   </serverInformation>
