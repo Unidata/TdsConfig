@@ -2,22 +2,24 @@
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          name="Unidata THREDDS Data Server"
-         version="1.0.6">
+         version="1.0.8">
 
-  <dataset name="Realtime data from IDD">
+  <catalogScan name="Realtime data from IDD" path="idd" location="idd" watch="true" />
+  <catalogScan name="Unidata case Studies" path="casestudies" location="casestudies" watch="true" />
+
+  <!-- dataset name="Realtime data from IDD">
     <catalogRef xlink:href="idd/forecastModels.xml" xlink:title="Forecast Model Data" name=""/>
     <catalogRef xlink:href="idd/forecastProdsAndAna.xml" xlink:title="Forecast Products and Analyses" name="" />
     <catalogRef xlink:href="idd/obsData.xml" xlink:title="Observation Data" name=""/>
     <catalogRef xlink:href="idd/radars.xml" xlink:title="Radar Data" name=""/>
     <catalogRef xlink:href="idd/satellite.xml" xlink:title="Satellite Data" name=""/>
-  </dataset>
+  </dataset -->
 
-  <dataset name="Other Unidata Data">
-    <catalogRef xlink:href="casestudies/catalog.xml" xlink:title="Unidata case studies" name=""/>
-  </dataset>
   <dataset name="Test Datasets">
+    <catalogRef xlink:href="modelsHrrr.xml" xlink:title="HRRR" name=""/>
     <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Grid Datasets" name=""/>
     <catalogRef xlink:href="testPointDatasets.xml" xlink:title="Test Point Datasets" name=""/>
   </dataset>
+
 </catalog>
 

@@ -23,9 +23,6 @@
     </hostInstitution>
   </serverInformation>
 
-  <catalogRoot>radar/radarCollections.xml</catalogRoot>
-  <catalogRoot>modelsHrrr.xml</catalogRoot>
-
   <!--
    * Setup for generated HTML pages.
    *
@@ -96,10 +93,6 @@
   <RadarServer>
     <allow>true</allow>
   </RadarServer>
-
-  <CatalogGen>
-    <allow>false</allow>
-  </CatalogGen>
 
   <!-- Enable DLwriter service but disable on remote catalogs. -->
   <DLwriter>
