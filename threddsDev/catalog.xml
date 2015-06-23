@@ -2,7 +2,7 @@
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          name="Unidata THREDDS Data Server"
-         version="1.0.8">
+         version="1.2">
 
   <catalogScan name="Realtime data from IDD" path="idd" location="idd" watch="true" />
   <catalogScan name="Unidata case Studies" path="casestudies" location="casestudies" watch="true" />
