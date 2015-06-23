@@ -128,4 +128,10 @@
      <neverUse>true</neverUse>
    </GribIndex>
 
+  <ESGF>
+    <allow>true</allow>
+    <reread>check</reread>
+    <maxDatasets>10000</maxDatasets>
+  </ESGF>
+
 </threddsConfig>
