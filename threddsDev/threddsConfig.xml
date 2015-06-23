@@ -100,12 +100,6 @@
     <allowRemote>false</allowRemote>
   </DLwriter>
 
-  <!-- Enable DqcService.
-   -->
-  <DqcService>
-    <allow>true</allow>
-  </DqcService>
-
   <!-- updated for lead 2014-03-20 jcaron -->
   <Netcdf4Clibrary>
     <libraryPath>/opt/netcdf-tds/lib</libraryPath>
