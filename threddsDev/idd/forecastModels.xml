@@ -36,10 +36,6 @@
         <name vocabulary="ADN">University Corporation for Atmospheric Research (UCAR)/Unidata</name>
         <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
       </publisher>
-      <timeCoverage>
-        <end>present</end>
-        <duration>45 days</duration>
-      </timeCoverage>
     </metadata>
 
     <dataset name="Downscaled GFS with Eta Extension (DGEX)">
@@ -351,12 +347,6 @@
     </dataset>
 
     <dataset name="High Resolution Rapid Refresh (HRRR)">
-      <metadata inherited="true">
-        <serviceName>fullServices</serviceName>
-        <authority>edu.ucar.unidata</authority>
-        <dataType>GRID</dataType>
-        <dataFormat>GRIB-2</dataFormat>
-      </metadata>
 
       <dataset name="HRRR from NOAA/GSD">
         <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/HRRR/CONUS_3km/surface/catalog.xml"
@@ -989,29 +979,20 @@
   <dataset name="FNMOC Forecast Models">
 
     <metadata inherited="true">
-      <serviceName>fullServices</serviceName>
       <authority>edu.ucar.unidata</authority>
-      <dataType>Grid</dataType>
-      <dataFormat>GRIB-1</dataFormat>
-      <documentation xlink:href="http://www.usno.navy.mil/FNMOC/"
-                     xlink:title="FNMOC Home page"/>
+      <documentation xlink:href="http://www.usno.navy.mil/FNMOC/" xlink:title="FNMOC Home page"/>
       <documentation type="rights">Freely available</documentation>
       <documentation type="processing_level">Transmitted through Unidata Internet Data Distribution.</documentation>
       <documentation type="processing_level">Read by CDM Grib Collection.</documentation>
 
       <creator>
-        <name vocabulary="DIF">Fleet Numerical Meteorology and Oceanography Center(FNMOC)
-        </name>
+        <name vocabulary="DIF">Fleet Numerical Meteorology and Oceanography Center(FNMOC)</name>
         <contact url="http://gcmd.nasa.gov/Aboutus/software_docs/help_guide.html" email="http://gcmd.nasa.gov/MailComments/MailComments.jsf?rcpt=gcmduso"/>
       </creator>
       <publisher>
         <name vocabulary="ADN">University Corporation for Atmospheric Research (UCAR)/Unidata</name>
         <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
       </publisher>
-      <timeCoverage>
-        <end>present</end>
-        <duration>45 days</duration>
-      </timeCoverage>
     </metadata>
 
     <dataset name=" NAVy Global Environmental Model (NAVGEM) Model">

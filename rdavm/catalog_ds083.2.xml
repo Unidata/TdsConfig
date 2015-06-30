@@ -54,8 +54,6 @@ The archive time series is continuously extended to a near-current date. It is n
 
 
       <!--  Files  -->
-
-
       <datasetScan name="ds083.2 Files" 
                   path="files/g/ds083.2" 
                   location="/glade/p/rda/data/ds083.2">
