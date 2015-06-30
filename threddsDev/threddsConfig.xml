@@ -128,10 +128,9 @@
      <neverUse>true</neverUse>
    </GribIndex>
 
-  <ESGF>
-    <allow>true</allow>
+  <ConfigCatalog>
     <reread>check</reread>
-    <maxDatasets>10000</maxDatasets>
-  </ESGF>
+    <maxDatasets>1000</maxDatasets>
+  </ConfigCatalog>
 
 </threddsConfig>
