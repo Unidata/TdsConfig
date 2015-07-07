@@ -17,6 +17,7 @@
 
   <dataset name="Test Datasets">
     <catalogRef xlink:href="modelsHrrr.xml" xlink:title="HRRR" name=""/>
+    <catalogRef xlink:href="gfs0p25.xml" xlink:title="GFS 0.25 Degree Global" name=""/>
     <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Grid Datasets" name=""/>
     <catalogRef xlink:href="testPointDatasets.xml" xlink:title="Test Point Datasets" name=""/>
   </dataset>
