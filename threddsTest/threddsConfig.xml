@@ -25,6 +25,7 @@
 
   <catalogRoot>radar/radarCollections.xml</catalogRoot>
   <catalogRoot>modelsHrrr.xml</catalogRoot>
+  <catalogRoot>gfs0p25.xml</catalogRoot>
 
   <!--
    * Setup for generated HTML pages.
