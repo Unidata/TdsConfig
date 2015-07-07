@@ -6,15 +6,6 @@
 # = NCEP model data available via IDD - LARGE =
 # =============================================
 #
-# -----------------------------------
-# - Global Forecasting System (GFS) -
-# -----------------------------------
-#
-# GFS Global 0.25 degree
-#
-CONDUIT	^data/nccf/com/gfs/para/gfs\.(........)(..).*pgrb2\.0p25\. 
-	FILE
-	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg/GFS_Global_0p25deg_\1_\200.grib2
 # ----------------------------------------------------
 # - Multi-Radar, Multi-Sensor (MRMS) System products -
 # ----------------------------------------------------
