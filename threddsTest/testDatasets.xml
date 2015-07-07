@@ -59,7 +59,7 @@
         <duration>1 day</duration>
       </timeCoverage>
     </metadata>
-    <dataset name="NCEP Model Data">
+    <!--dataset name="NCEP Model Data">
       <metadata inherited="true">
         <documentation type="summary">NCEP Global Forecast System Model, previously called AVN/MRF (Medium Range Forecast)</documentation>
         <documentation xlink:href="http://meted.ucar.edu/nwp/pcu2/avintro.htm"
@@ -69,13 +69,13 @@
       </metadata>
 
       <featureCollection name="GFS-Global_0p25deg" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_0p25deg">
-        <!--metadata inherited="true">
+        <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
             Model runs at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours from 96 to 180 hours (4 to 7.5 days).
             Horizontal= 361 by 720 points, resolution 0.5 degree, Lat/Lon projection.
             Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
           </documentation>
-        </metadata-->
+        </metadata>
 
         <collection spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg/.*grib2$"
                     timePartition="file"
@@ -84,7 +84,7 @@
         <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *"/>
       </featureCollection>
 
-    </dataset>
+    </dataset -->
     <!-- end of NCEP -->
 
     <!-- dataset name="Multi-Radar Multi-Sensor (MRMS) Analysis">
