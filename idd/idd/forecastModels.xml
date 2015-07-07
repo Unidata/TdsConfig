@@ -177,6 +177,16 @@
                        xlink:title="NCEP Model Notes"/>
       </metadata>
 
+      <dataset name="GFS Quarter Degree - Global Coverage">
+        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/NCEP/GFS/Global_0p25deg_ana/catalog.xml"
+                    xlink:title="GFS Quarter Degree Analysis" name=""
+                    useRemoteCatalogService="false" />
+
+        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/NCEP/GFS/Global_0p25deg/catalog.xml"
+                    xlink:title="GFS Quarter Degree Forecast" name=""
+                    useRemoteCatalogService="false" />
+      </dataset>
+
       <dataset name="GFS Half Degree - Global Coverage">
           <metadata inherited="true">
             <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
