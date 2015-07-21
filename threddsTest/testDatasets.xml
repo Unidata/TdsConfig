@@ -170,7 +170,7 @@
 	<metadata inherited="true">
           <documentation type="summary">MRMS Mid-level Rotation Tracks</documentation>
 	</metadata>
-        <collection name="MRMS-RotationTracks"
+        <collection name="MRMS-RotationTracksML"
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrackML/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_RotationTrackML_#yyyyMMdd_HHmm"
