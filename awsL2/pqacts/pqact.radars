@@ -6,57 +6,6 @@
 # = RADAR data available via IDD =
 # ======================================
 #
-# ------------------------
-# - TDWR LEVEL III RADAR -
-# ------------------------
-#
-#
-# | Use this action to FILE 45 TDWR sites' Level 3 radar products
-#
-NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(ADW|ATL|BNA|BOS|BWI|CLT|CMH|CVG|DAL|DAY|DCA|DEN|DFW|DTW|EWR|FLL|HOU|IAD|IAH|ICH|IDS|JFK|LAS|LVE|MCI|MCO|MDW|MEM|MIA|MKE|MSP|MSY|OKC|ORD|PBI|PHL|PHX|PIT|RDU|SDF|SJU|SLC|STL|TPA|TUL)
-	FILE	-overwrite	-close
-	${DATA_DIR}/native/radar/level3/tdwr/\4/\5/(\1:yyyy)(\1:mm)\1/Level3_\5_\4_(\1:yyyy)(\1:mm)\1_\2\3.nids
-#
-# --------------------------
-# - NEXRAD LEVEL III RADAR -
-# --------------------------
-#
-# NEXRAD Level III Radar 
-#
-# | Use these actions to file all NEXRAD level 3 radar products
-# | NB: actions are split into fourths due to line length limitations for lines
-# |     in pattern-action files
-#
-# | NEXRAD LEVEL III, Part 1
-#
-NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(ABC|ABR|ABX|ACG|AEC|AHG|AIH|AKC|AKQ|AMA|AMX|APD|APX|ARX|ATX|BBX|BGM|BHX|BIS|BLX|BMX|BOX|BRO|BUF|BYX|CAE|CBW|CBX|CCX|CLE|CLX|CRP|CXX|CYS|DAX|DDC|DFX|DGX|DIX|DLH|DMX|DOX|DTX|DVN|DYX|EAX)
-	FILE	-overwrite	-close
-	${DATA_DIR}/native/radar/level3/nexrad/\4/\5/(\1:yyyy)(\1:mm)\1/Level3_\5_\4_(\1:yyyy)(\1:mm)\1_\2\3.nids
-#
-# | NEXRAD LEVEL III, Part 2
-#
-NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(EMX|ENX|EOX|EPZ|ESX|EVX|EWX|EYX|FCX|FDR|FDX|FFC|FSD|FSX|FTG|FWS|GGW|GJX|GLD|GRB|GRK|GRR|GSP|GUA|GWX|GYX|HDX|HGX|HKI|HKM|HMO|HNX|HPX|HTX|HWA|ICT|ICX|ILN|ILX|IND|INX|IWA|IWX|JAX|JGX|JKL|JUA)
-	FILE	-overwrit	-close
-	${DATA_DIR}/native/radar/level3/nexrad/\4/\5/(\1:yyyy)(\1:mm)\1/Level3_\5_\4_(\1:yyyy)(\1:mm)\1_\2\3.nids
-#
-# | NEXRAD LEVEL III, Part 3
-#
-NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(LBB|LCH|LGX|LIX|LNX|LOT|LRX|LSX|LTX|LVX|LWX|LZK|MAF|MAX|MBX|MHX|MKX|MLB|MOB|MPX|MQT|MRX|MSX|MTX|MUX|MVX|MXX|NKX|NQA|OAX|OHX|OKX|OTX|PAH|PBZ|PDT|POE|PUX|RAX|RGX|RIW|RLX|RTX|SFX)
-	FILE	-overwrite	-close
-	${DATA_DIR}/native/radar/level3/nexrad/\4/\5/(\1:yyyy)(\1:mm)\1/Level3_\5_\4_(\1:yyyy)(\1:mm)\1_\2\3.nids
-#
-# | NEXRAD LEVEL III, Part 4
-#
-NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(SGF|SHV|SJT|SOX|SRX|TBW|TFX|TLH|TLX|TWX|TYX|UDX|UEX|VAX|VBX|VNX|VTX|VWX|YUX)
-	FILE	-overwrite	-close
-	${DATA_DIR}/native/radar/level3/nexrad/\4/\5/(\1:yyyy)(\1:mm)\1/Level3_\5_\4_(\1:yyyy)(\1:mm)\1_\2\3.nids
-#
-# | All LEVEL III stations not processed by the NEXRAD or TDWR patterns above
-#
-NEXRAD3	^_ELSE_$
-	FILE	-overwrite	-close
-	${DATA_DIR}/native/radar/level3/other/level3_%Y%m%d_%H%M
-#
 # ---------------------------------
 # - NEXRAD Level II Radar WSR-88D -
 # ---------------------------------
@@ -80,39 +29,3 @@ CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5
 #
 CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5][0-9][0-9][0-9])/[0-9]*/([0-9]*)/E
 	EXEC	perl etc/TDS/util/hhmmssRadarII.pl \1 \2 \3 \4
-#
-# ==============================================
-# = Unidata RADAR composites available via IDD =
-# ==============================================
-#
-# --------------------------------------
-# - Unidata Generated RADAR Composites -
-# --------------------------------------
-#
-# NEXRAD Level III radar composites in GINI format (png compressed)
-#
-FNEXRAD	^rad/NEXRCOMP/(...)/(...)_(........)_(....)
-	PIPE	-close
-	sh etc/TDS/util/ldmfile.sh ${DATA_DIR}/native/radar/composite/gini/\2/\1/\3/Level3_Composite_\2_\1_\3_\4.gini
-#
-# UPC generated NEXRAD Level III radar composites in GRIB format
-#
-# | radar_mosaic_national !grib/unidata/UPC_1/#255/200705182038/F000/N0R/sfc! 000000
-#
-FNEXRAD	grib/unidata/UPC_1/#255/(........)(....)/F.../(...)
-	FILE	-metadata
-	${DATA_DIR}/native/radar/composite/grib1/\3/\1/Level3_Composite_\3_\1_\2.grib1
-#
-# UPC Generated NEXRAD ???
-#
-# | radar_mosaic_national !grib2/unidata/UPC_255/#000/200705182038F000/N0R/
-#
-FNEXRAD	grib2/unidata/UPC_255/#000/(........)(....)F.../(...)
-	FILE	-metadata
-	${DATA_DIR}/native/radar/composite/grib2/\3/\1/Level3_Composite_\3_\1_\2.grib2
-#
-# UPC generated VIP 10 km composite
-#
-HRS	^HAXA00 K... ([0-3][0-9])([0-2][0-9])([0-9][0-9])
-	FILE	-metadata
-	data/pub/native/radar/10km_mosaic/(\1:yyyy)(\1:mm)\1/RADAR_10km_mosaic_(\1:yyyy)(\1:mm)\1_\2\3.grib1
