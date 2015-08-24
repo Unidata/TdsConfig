@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="Unidata THREDDS Data Server - Radar Data" version="1.0.6">
+
+  <service name="radial" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+
+  <service name="grids" serviceType="Compound" base="">
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcsServer" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wmsServer" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+
+  <service name="latest" serviceType="Resolver" base=""/>
+
+  <dataset name="IDD Radar Data">
+    <metadata inherited="true">
+      <authority>edu.ucar.unidata</authority>
+      <documentation xlink:href="http://www.unidata.ucar.edu/data/#radar"
+                     xlink:title="Unidata radar data page"/>
+      <documentation type="rights">Freely available</documentation>
+      <publisher>
+        <name vocabulary="DIF">UCAR/UNIDATA</name>
+        <contact url="http://www.unidata.ucar.edu/" 
+                 email="support@unidata.ucar.edu"/>
+      </publisher>
+    </metadata>
+
+
+    <datasetScan name="NEXRAD Level II Radar WSR-88D"
+                 collectionType="TimeSeries"
+                 ID="NWS/NEXRAD2" 
+                 path="nexrad/level2"
+                 location="${DATA_DIR}/native/radar/level2/">
+      <metadata inherited="true">
+        <serviceName>radial</serviceName>
+        <dataType>Radial</dataType>
+        <dataFormat>NEXRAD-2</dataFormat>
+        <documentation type="summary">
+          The NEXRAD Level II feed from the IDD provides raw radar volume 
+          data collected from the NWS WSR-88Ds. Data are available 
+          approximately every 5 minutes in precipitation mode, and ten 
+          minutes in clear air mode
+        </documentation>
+        <creator>
+          <name vocabulary="DIF">DOC/NOAA/NWS</name>
+          <contact url="http://www.roc.noaa.gov/" 
+                   email="http://www.roc.noaa.gov/Feedback/"/>
+        </creator>
+        <timeCoverage>
+          <end>present</end>
+          <duration>7 days</duration>
+        </timeCoverage>
+        <variables vocabulary="DIF">
+           <variable name="Reflectivity" 
+                     vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" 
+                     units="dbZ" />
+           <variable name="Velocity"
+                     vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" 
+                     units="m/s" />
+           <variable name="SpectrumWidth" 
+                     vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Spectrum Width"
+                     units="m/s" />
+           <variable name="DifferentialReflectivity"
+                     vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" 
+                     units="db" />
+           <variable name="DifferentialPhase" 
+                     vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" 
+                     units="deg" />
+ 	   <variable name="CorrelationCoefficient" 
+                     vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" 
+                     units="dimensionless"/>
+        </variables>
+
+      </metadata>
+      <filter>
+        <include wildcard="Level2*.ar2v" atomic="true" collection="false"/>
+        <exclude wildcard=".*" atomic="false" collection="true"/>
+      </filter>
+      <addID/>
+      <sort>
+        <lexigraphicByName increasing="false"/>
+      </sort>
+      <addLatest/>
+      <addDatasetSize/>
+      <addTimeCoverage
+          datasetNameMatchPattern="Level2_([A-Z]{4})_([0-9]{4})([0-9]{2})([0-9]{2})_([0-9]{2})([0-9]{2}).bzip2$"
+          startTimeSubstitutionPattern="$1-$2-$3T$4:$5:00" duration="5 minutes"/>
+    </datasetScan>
+
+  </dataset> <!-- end of IDD Radar Data -->
+</catalog>
