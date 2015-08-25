@@ -1,4 +1,4 @@
-FROM unidata/tds:v4.6.2
+FROM unidata/tds:v4.6.3-SNAPSHOT
 MAINTAINER Sean Arms <sarms@ucar.edu>
 #
 # Install netcdf and some basic command line tools
@@ -10,8 +10,8 @@ MAINTAINER Sean Arms <sarms@ucar.edu>
 
 USER root
 
-RUN mkdir /usr/local/tomcat/content
-RUN mkdir /usr/local/tomcat/content/thredds
+RUN mkdir -p /usr/local/tomcat/content/thredds
+COPY config.zip /usr/local/tomcat/content/thredds/config.zip
 RUN chown -R tomcat:tomcat /usr/local/tomcat/content/thredds
 
 #
@@ -19,5 +19,4 @@ RUN chown -R tomcat:tomcat /usr/local/tomcat/content/thredds
 #
 USER tomcat
 
-COPY conf/config.zip /usr/local/tomcat/content/thredds/config.zip
 RUN cd /usr/local/tomcat/content/thredds/ && unzip config.zip
