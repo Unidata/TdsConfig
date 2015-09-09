@@ -81,6 +81,12 @@ CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5
 CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5][0-9][0-9][0-9])/[0-9]*/([0-9]*)/E
 	EXEC	perl etc/TDS/util/hhmmssRadarII.pl \1 \2 \3 \4
 #
+# File Model Data Message packets separately, since they are on a different
+# time schedule
+#
+CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5][0-9][0-9][0-9])/[0-9]*/([0-9]*)/5
+	FILE	-close	${DATA_DIR}/native/radar/level2_model/\1/\2/Level2MDM_\1_\2_\3.ar2v
+#
 # ==============================================
 # = Unidata RADAR composites available via IDD =
 # ==============================================
