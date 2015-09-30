@@ -4,8 +4,15 @@
          name="Unidata THREDDS Data Server"
          version="1.0.6">
 
-  <dataset name="Realtime data from IDD">
-    <catalogRef xlink:href="idd/radars.xml" xlink:title="Radar Data" name=""/>
-  </dataset>
+  <service name="radar" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
+    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+  </service>
+	 
+  <datasetScan name="S3 NEXRAD Level II" collectionType="TimeSeries" ID="nexrad/level2/S3"
+	  path="nexrad/level2/S3" location="s3://unidata-nexrad-level2" serviceName="radar">
+    <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+  </datasetScan>
 
 </catalog>
