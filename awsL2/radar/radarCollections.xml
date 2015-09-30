@@ -1,51 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS Radar Server" version="1.0.1">
-  <service name="radarServer" serviceType="QueryCapability"
-           base="/thredds/radarServer/" />
+  <service name="radarServer" serviceType="QueryCapability" base="/thredds/radarServer/" />
   <dataset name="Radar Data">
-    <datasetScan name="NEXRAD Level II Radar from IDD"
-                 collectionType="TimeSeries" 
-                 ID="nexrad/level2/IDD" 
-                 path="nexrad/level2/IDD" 
-                 location="${DATA_DIR}/native/radar/level2">
-      <radarCollection layout="STATION/yyyyMMdd"
-                       dateRegex="(\d{8}_\d{4})\.ar2v$"
-                       dateFormat="yyyyMMdd_HHmm" />
+  <datasetScan name="S3 NEXRAD Level II" collectionType="TimeSeries" ID="nexrad/level2/S3" path="nexrad/level2/S3" location="s3:///unidata-nexrad-level2/">
+    <radarCollection layout="yyyy/MM/dd/STATION" dateRegex="(\d{8}_\d{6})_V\d{2}\.gz$" dateFormat="yyyyMMdd_HHmmss" crawlItems="1"/>
       <metadata inherited="true">
         <dataType>Radial</dataType>
         <dataFormat>NEXRAD2</dataFormat>
         <serviceName>radarServer</serviceName>
-        <documentation type="summary">
-          NEXRAD Level II Radar WSR-88D from IDD. 
-          Sent every 5 minutes.
-        </documentation>
+        <documentation type="summary">NEXRAD Level II Radar WSR-88D from IDD. Sent every 5 minutes.</documentation>
         <timeCoverage>
           <end>present</end>
-          <duration>1 day</duration>
+          <duration>14 days</duration>
         </timeCoverage>
         <variables vocabulary="DIF">
-          <variable name="Reflectivity" 
-                    vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" 
-                    units="dBZ" />
-          <variable name="Velocity" 
-                    vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity"
-                    units="m/s" />
-          <variable name="SpectrumWidth"
-                    vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Spectrum Width"
-                    units="m/s" />
-          <variable name="DifferentialReflectivity" 
-                    vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" 
-                    units="dB" />
-          <variable name="DifferentialPhase"
-                    vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" 
-                    units="deg" />
-          <variable name="CorrelationCoefficient"
-                    vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" 
-                    units="dimensionless" />
+          <variable name="Reflectivity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="db" />
+          <variable name="Velocity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="m/s" />
+          <variable name="SpectrumWidth" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Spectrum Width" units="m/s" />
         </variables>
-        <stationFile path="radar/RadarL2Stations.xml" />
-        <documentation xlink:title="Available Stations"
-                       xlink:href="/thredds/radarServer/nexrad/level2/IDD/stations.xml"/>
+	<stationFile path="radar/RadarL2Stations.xml" />
+        <documentation xlink:title="Available Stations" xlink:href="/thredds/radarServer/nexrad/level2/S3/stations.xml"/>
         <documentation type="path">nexrad/level2/IDD</documentation>
       <geospatialCoverage>
         <northsouth>
@@ -65,7 +39,7 @@
         </updown>
       </geospatialCoverage>
       </metadata>
-    </datasetScan>
+  </datasetScan>
   </dataset>
 </catalog>
 
