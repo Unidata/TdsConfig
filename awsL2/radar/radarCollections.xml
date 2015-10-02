@@ -40,7 +40,7 @@
       </geospatialCoverage>
       </metadata>
   </datasetScan>
-  <datasetScan name="Unidata S3 NEXRAD Level II" collectionType="TimeSeries" ID="nexrad/level2/S3" path="nexrad/level2/S3" location="s3:///unidata-nexrad-level2/">
+  <datasetScan name="Unidata S3 NEXRAD Level II" collectionType="TimeSeries" ID="nexrad/level2/UnidataS3" path="nexrad/level2/UnidataS3" location="s3:///unidata-nexrad-level2/">
     <radarCollection layout="yyyy/MM/dd/STATION" dateRegex="(\d{8}_\d{6})_V\d{2}\.gz$" dateFormat="yyyyMMdd_HHmmss" crawlItems="1"/>
       <metadata inherited="true">
         <dataType>Radial</dataType>
