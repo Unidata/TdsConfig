@@ -14,13 +14,6 @@ RUN mkdir -p /usr/local/tomcat/content/thredds
 COPY config.zip /usr/local/tomcat/content/thredds/config.zip
 RUN chown -R tomcat:tomcat /usr/local/tomcat/content/thredds
 
-# Copy in AWS credentials for AWS SDK
-COPY aws/ /usr/local/tomcat/.aws
-RUN chown -R tomcat:tomcat /usr/local/tomcat/.aws
-# Copy in setenv (with credentials in environment) for s3fs
-COPY setenv.sh /usr/local/tomcat/bin/setenv.sh
-RUN chown -R tomcat:tomcat /usr/local/tomcat/bin/setenv.sh
-
 #
 # Copy over TDS config files and unzip
 #
