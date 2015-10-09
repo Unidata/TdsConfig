@@ -1,0 +1,7 @@
+tds-aws:
+  build: .
+  dockerfile: Dockerfile
+  container_name: tds-aws
+  ports:
+   - "443:8443"
+   - "80:8080"
