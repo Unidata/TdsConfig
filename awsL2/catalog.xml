@@ -15,9 +15,4 @@
     <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
   </datasetScan>
 
-  <datasetScan name="Unidata S3 NEXRAD Level II" collectionType="TimeSeries" ID="nexrad/level2/UnidataS3"
-	  path="nexrad/level2/UnidataS3" location="s3://unidata-nexrad-level2" serviceName="radar">
-    <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
-  </datasetScan>
-
 </catalog>
