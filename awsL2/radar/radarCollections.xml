@@ -17,6 +17,9 @@
           <variable name="Reflectivity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="db" />
           <variable name="Velocity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="m/s" />
           <variable name="SpectrumWidth" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Spectrum Width" units="m/s" />
+          <variable name="DifferentialReflectivity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dB" />
+          <variable name="DifferentialPhase" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg" />
+          <variable name="CorrelationCoefficient" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
         </variables>
 	<stationFile path="radar/RadarL2Stations.xml" />
         <documentation xlink:title="Available Stations" xlink:href="/thredds/radarServer/nexrad/level2/S3/stations.xml"/>
