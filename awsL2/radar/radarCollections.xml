@@ -10,8 +10,8 @@
         <serviceName>radarServer</serviceName>
         <documentation type="summary">NEXRAD Level II Radar WSR-88D from IDD. Sent every 5 minutes.</documentation>
         <timeCoverage>
+	  <start>1991-01-01T00:00:00</start>
           <end>present</end>
-          <duration>14 days</duration>
         </timeCoverage>
         <variables vocabulary="DIF">
           <variable name="Reflectivity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="db" />
