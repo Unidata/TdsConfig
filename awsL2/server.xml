@@ -89,7 +89,7 @@
                clientAuth="false" sslProtocol="TLS" />
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" enableLooksup="true"/>
+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" enableLookups="true"/>
 
 
     <!-- An Engine represents the entry point (within Catalina) that processes
@@ -139,6 +139,12 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                prefix="access" suffix=".log"
                pattern="%h %l %u %t &quot;%r&quot; %s %b &quot;%{Referer}i&quot; &quot;%{User-Agent}i&quot; %D" />
+
+        <!--
+	131.156.*.* - NIU
+	-->
+	<!--<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+	       allow="128\.117\.153\.\d+" /> -->
 
         <Valve className="org.apache.catalina.valves.RemoteHostValve"
                allow=".*\.edu" />
