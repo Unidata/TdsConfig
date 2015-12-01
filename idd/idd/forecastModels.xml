@@ -423,7 +423,7 @@
                     useRemoteCatalogService="false" />
       </dataset>
 
-      <dataset taset name="HRRR from NCEP">
+      <dataset name="HRRR from NCEP">
 
         <metadata inherited="true">
           <documentation type="summary">NCEP High Resolution Rapid Refresh</documentation>
