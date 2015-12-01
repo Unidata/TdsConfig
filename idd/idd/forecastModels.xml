@@ -178,15 +178,43 @@
       </metadata>
 
       <dataset name="GFS Quarter Degree - Global Coverage">
-        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/NCEP/GFS/Global_0p25deg_ana/catalog.xml"
-                    xlink:title="GFS Quarter Degree Analysis" name=""
-                    useRemoteCatalogService="false" />
+        <metadata inherited="true">
+          <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
+            Model runs at 0, 6, 12, and 18Z.
+            Horizontal= 721 by 14400 points, resolution 0.25 degree, Lat/Lon projection.
+            Vertical= 1000 to 100 hPa mandatory pressure levels (26 levels); surface, height above ground, pressure layers.
+          </documentation>
+        </metadata>
 
-        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/NCEP/GFS/Global_0p25deg/catalog.xml"
-                    xlink:title="GFS Quarter Degree Forecast" name=""
-                    useRemoteCatalogService="false" />
+        <featureCollection name="GFS Quarter Degree Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_0p25deg_ana">
+          <metadata inherited="true">
+            <documentation type="summary">Analysis grids only.</documentation>
+          </metadata>
+
+          <collection name="GFS-Global_0p25deg_ana"
+                      spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg_ana/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#GFS_Global_0p25deg_ana_#yyyyMMdd_HHmm"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="GFS Quarter Degree Forecast" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_0p25deg">
+          <metadata inherited="true">
+            <documentation type="summary">Forecasts grids starting from the 0 hour forecast every 3 hours out to 10 days,
+            then 12 hour forecasts for days 10-16.
+            </documentation>
+          </metadata>
+
+          <collection name="GFS-Global_0p25deg"
+                      spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#GFS_Global_0p25deg_#yyyyMMdd_HHmm"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *"/>
+        </featureCollection>
       </dataset>
-
+ 
       <dataset name="GFS Half Degree - Global Coverage">
           <metadata inherited="true">
             <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
@@ -378,6 +406,7 @@
     </dataset>
 
     <dataset name="High Resolution Rapid Refresh (HRRR)">
+
       <metadata inherited="true">
         <serviceName>fullServices</serviceName>
         <authority>edu.ucar.unidata</authority>
@@ -394,15 +423,45 @@
                     useRemoteCatalogService="false" />
       </dataset>
 
-      <dataset name="HRRR from NCEP">
-        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/NCEP/HRRR/CONUS_2p5km_ANA/catalog.xml"
-                    xlink:title="NCEP HRRR CONUS 2.5km Analysis" name=""
-                    useRemoteCatalogService="false" />
-        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/NCEP/HRRR/CONUS_2p5km/catalog.xml"
-                    xlink:title="NCEP HRRR CONUS 2.5km" name=""
-                    useRemoteCatalogService="false" />
-      </dataset>
-    </dataset>
+      <dataset taset name="HRRR from NCEP">
+
+        <metadata inherited="true">
+          <documentation type="summary">NCEP High Resolution Rapid Refresh</documentation>
+          <documentation xlink:href="http://www.nco.ncep.noaa.gov/pmb/products/hrrr/"
+                         xlink:title="NCEP Model Notes"/>
+          <documentation type="summary">NCEP HRRR Model : AWIPS 184 (C) Grid. 2.5 km NDFD grid over CONUS (Lambert Conformal).
+            Model runs are made hourly. Horizontal = 2145 by 1377 points, resolution 2.5 km, Lambert Conformal projection.
+            Vertical = 1000 to 500 hPa mandatory pressure levels (5 levels); surface, height above ground, pressure layers.
+          </documentation>
+        </metadata>
+
+        <featureCollection name="NCEP HRRR CONUS 2.5km Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km_ANA">
+          <dataFormat>GRIB-2</dataFormat>
+          <metadata inherited="true">
+            <documentation type="summary">This collection contains analysis grids only.</documentation>
+          </metadata>
+
+          <collection name="NCEP_HRRR_CONUS_2p5km_Analysis"
+                      spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km_Analysis/HRRR_CONUS_2p5km_ana_#yyyyMMdd_HHmm#.grib2"
+                      timePartition="file"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="NCEP HRRR CONUS 2.5km" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km">
+          <dataFormat>GRIB-2</dataFormat>
+          <metadata inherited="true">
+            <documentation type="summary">Forecasts grids every hour out 15 hours.</documentation>
+          </metadata>
+
+          <collection name="NCEP_HRRR_CONUS_2p5km"
+                      spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
+                      timePartition="file"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+        </featureCollection>
+      </dataset>   
+  </dataset>
 
     <dataset name="North American Model (NAM)">
 
