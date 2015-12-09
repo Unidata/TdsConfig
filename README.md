@@ -15,7 +15,7 @@ Configuration files
   - ou: ?
   - rdavm : at CISL/DSS
   - remotetest : where? opendap/netcdf C test server
-  - startup: ?
+  - startup: this should be the minimal configuration for running a thredds server
   - thredds : motherlode (/opt/tds-live) (idd + casestudies)
   - threddsDev : lead (/opt/tds-dev). now for 5.0
   - threddsTest : lead (/opt/tds-test)
