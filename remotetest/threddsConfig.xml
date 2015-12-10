@@ -213,14 +213,13 @@
 
   <!--
    set FeatureCollection logging
+  -->
   <FeatureCollection>
      <RollingFileAppender>
-       <MaxFileSize>1 MB</MaxFileSize>
-       <MaxBackups>5</MaxBackups>
-       <Level>INFO</Level>
+       <MaxFileSize>10 MB</MaxFileSize>
+       <MaxBackups>50</MaxBackups>
      </RollingFileAppender>
   </FeatureCollection>
-  -->
 
 
 </threddsConfig>
