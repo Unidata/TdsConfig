@@ -388,15 +388,15 @@ FNMOC	(^US058.{4}-GR1dyn\.WW3-EURO_EURO-..-.._.{5}.{4})(.{4})(..)(..)(..)(.*)
 #
 # COAMPS Western Atlantic
 #
-FNMOC	(^US058.{4}-GR1mdl\.0063_0187_.{5}.{4})(.{4})(..)(..)(..)(.*)
+FNMOC	^US058.{4}-GR1dyn\.COAMPS-NWATL_.{5}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
 	FILE	-metadata
-	${DATA_DIR}/native/grid/FNMOC/COAMPS/Western_Atlantic/FNMOC_COAMPS_Western_Atlantic_\2\3\4_\500.grib1
+	${DATA_DIR}/native/grid/FNMOC/COAMPS/Western_Atlantic/FNMOC_COAMPS_Western_Atlantic_\1\2\3_\400.grib1
 #
 # COAMPS Europe
 #
-FNMOC	(^US058.{4}-GR1mdl\.0022_0179_.{5}.{4})(.{4})(..)(..)(..)(.*)
+FNMOC	^US058.{4}-GR1dyn\.COAMPS-EURO_.{4}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
 	FILE	-metadata
-	${DATA_DIR}/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_\2\3\4_\500.grib1
+	${DATA_DIR}/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_\1\2\3_\400.grib1
 #
 # COAMPS Equatorial America
 #
