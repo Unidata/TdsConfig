@@ -2,16 +2,21 @@ When installing a new thredds server on
 remotetest.unidata.ucar.edu, the process is as follows.
 This overrides any other instructions.
 
-1. Edit threddsConfig.xml and catalog.xml as needed.
+For purposes of this process, it is assumed that the content and logs
+directories are in /opt/remotetest.
+
+0. Enter the directory TdsConfig/remotetest.
+1. Edit as needed the following files:
+   * thredds/threddsConfig.xml
+   * thredds/catalog.xml
 2. Run the shell script 'content.sh' to construct the file
    'content.tar'
 3. Copy content.tar to the remotetest.unidata.ucar.edu machine.
 4. Stop the tomcat server.
-5. Move into the designated directory on that machine
-   (probably /opt/remotetest/content).
-   Untar content.tar
-6. Restart the tomcat server.
-
+5. Move to the directory /opt/remotetest/content.
+6. Untar content.tar
+7. rm /opt/remotetest/logs/*
+8. Restart the tomcat server.
 
 Notes:
 
@@ -20,14 +25,15 @@ Notes:
    catalog.xml, the changes to threddsConfig.xml are mostly just setting
    the host information.
 
-2. Verify that all the datasets referenced in catalog.xml are in place
-   in /opt/remotetest/content. Note that the "locations" in catalog.xml
-   are not actual paths.
+2. Verify that all the datasets referenced in catalog.xml
+   are in place in /opt/remotetest/content/thredds/public.
+   Note that the "locations" in catalog.xml are not actual paths:
+   effectively the "content/" part refers to
+	/opt/remotetest/content/thredds/public
 
-3. If you plan to modify remotetest:/opt/remotetest/content, make sure
+3. If you plan to modify /opt/remotetest/content, make sure
    you keep a backup copy.
 
-4. When you start the Apache Tomcat server, do not forget to set the
-   following environment variable in setenv.sh
-   CONTENT_ROOT="-Dtds.content.root.path=/opt/remotetest/content"
-   (or whereever the content directory is located).
+4. Make sure that the following environment variable in setenv.sh is set:
+     CONTENT_ROOT="-Dtds.content.root.path=/opt/remotetest/content"
+  

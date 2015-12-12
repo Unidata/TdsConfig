@@ -7,26 +7,34 @@
     <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
     <service name="dap4" serviceType="DAP4" base="/thredds/dap4/" />
     <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
-    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/" />
     <!--service name="wcs" serviceType="WCS" base="/thredds/wcs/" /-->
     <!--service name="wms" serviceType="WMS" base="/thredds/wms/" /-->
+    <!--service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" /-->
   </service>
 
-  <datasetRoot path="restrict" location="content/testdata/" />
+  <service name="dap" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
+    <service name="dap4" serviceType="DAP4" base="/thredds/dap4/" />
+  </service>
 
-  <dataset name="Test Restricted Dataset" ID="testRestrictedDataset" urlPath="restrict/testData.nc" restrictAccess="tiggeData">
-    <serviceName>all</serviceName>
-    <dataType>Grid</dataType>
-  </dataset>
+  <datasetRoot path="test" location="content/testdata/" />
+  <datasetRoot path="testdods" location="content/testdods/" />
 
-  <datasetScan name="Standard Test Data" ID="testDatasetScan" path="testdata" location="content/testdata/">
+  <datasetScan name="XXX Standard Test Data" ID="testDatasetScan" path="testdata" location="content/testdata/">
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <dataType>Grid</dataType>
     </metadata>
   </datasetScan>
 
-  <datasetScan name="OPeNDAP Test Data" ID="testDods" path="testdods" location="content/testdods/">
+  <datasetScan name="OPeNDAP 1" ID="testDodsScan" path="testdods" location="content/testdata">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+  </datasetScan>
+
+  <datasetScan name="OPeNDAP 2" ID="testDods" path="testdods" location="content/testdods/">
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <dataType>Grid</dataType>
