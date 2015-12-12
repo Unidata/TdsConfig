@@ -1,29 +1,33 @@
 When installing a new thredds server on
-remotetest.unidata.ucar.edu, the process is as follows.
-This overrides any other instructions.
+remotetest.unidata.ucar.edu, the process
+is as follows. This overrides any other instructions.
 
 For purposes of this process, it is assumed that the content and logs
-directories are in /opt/remotetest.
+directories are in /opt/remotetest on the machine remotetest.unidata.ucar.edu.
 
-0. Enter the directory TdsConfig/remotetest.
-1. Edit as needed the following files:
+1. Enter the directory TdsConfig/remotetest.
+2. Edit as needed the following files:
    * thredds/threddsConfig.xml
    * thredds/catalog.xml
-2. Run the shell script 'content.sh' to construct the file
+3. Run the shell script 'content.sh' to construct the file
    'content.tar'
-3. Copy content.tar to the remotetest.unidata.ucar.edu machine.
-4. Stop the tomcat server.
-5. Move to the directory /opt/remotetest/content.
-6. Untar content.tar
-7. rm /opt/remotetest/logs/*
-8. Restart the tomcat server.
+4. Copy content.tar to the remotetest.unidata.ucar.edu machine.
+5. Stop the tomcat server.
+6. Move to the directory /opt/remotetest/content.
+7. Untar content.tar
+8. rm /opt/remotetest/logs/*
+9. Restart the tomcat server (optionally deleting old logs).
 
 Notes:
 
-1. This configuration directory will, as a rule, be the same as ../startup,
-   except for catalog.xml and threddsConfig.xml. The critical one is
-   catalog.xml, the changes to threddsConfig.xml are mostly just setting
-   the host information.
+1. Since access to a restricted dataset is used here, you need to ensure
+   that tomcat_users.xml contains something like the following lines:
+     <role rolename="restrictedDatasetUser"/>
+     <role rolename="tiggeData"/>
+     <user username="tiggeUser" password="tigge" roles="restrictedDatasetUser,tiggeData"/>
+   Depending on your tomcat installation, the tiggeUser password may
+   need to be encrypted. You will also need to ensure that 'https:'
+   access is enabled either in tomcat or apache httpd.
 
 2. Verify that all the datasets referenced in catalog.xml
    are in place in /opt/remotetest/content/thredds/public.
