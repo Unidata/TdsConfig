@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+<catalog name="CISL Research Data Archive Dataset ds627.0"
         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
         xmlns:xlink="http://www.w3.org/1999/xlink">
 
     <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
 
-    <dataset name="ds627.0 ERA-Interim Project">
+    <dataset name="ds627.0 NCAR RDA - ERA-Interim Project">
         <metadata inherited="true">
           <serviceName>all</serviceName>
           <dataFormat>GRIB-1</dataFormat>  
@@ -35,7 +35,7 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
           <authority>edu.ucar.rda</authority>   
           <publisher>   
             <name vocabulary="DIF">NCAR/RDA</name>   
-            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />   
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
           </publisher>   
           <keyword>Numerical Weather Prediction</keyword>   
           <keyword>Model data</keyword>   
@@ -63,16 +63,12 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
 
          <dataset name="Analysis">
        
-             <featureCollection name="ds627.0_an_ml"
+             <featureCollection name="ERA Interim atmospheric model analysis on model levels"
                                 featureType="GRIB1"
                                 harvest="true" 
                                 path="aggregations/e/ds627.0/5">
            
-               <metadata inherited="true">
-                    <serviceName>all</serviceName>
-               </metadata>
-           
-               <collection name="ds627.0_an_ml" 
+               <collection name="ds627.0_an_ml"
                            spec="/glade/p/rda/data/ds627.0/ei.oper.an.ml/**/ei\.oper\.an\.ml\..*"
                            dateFormatMark="#ei.oper.an.ml/#yyyyMM"
                            timePartition="directory" /> 
@@ -80,16 +76,12 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
                   <tdm rewrite="test"/> 
              </featureCollection>
              
-             <featureCollection name="ds627.0_an_pl"
+             <featureCollection name="ERA Interim atmospheric model analysis interpolated to pressure levels"
                                 featureType="GRIB1"
                                 harvest="true" 
                                 path="aggregations/e/ds627.0/6">
 
-               <metadata inherited="true">
-                    <serviceName>all</serviceName>
-               </metadata>
-
-               <collection name="ds627.0_an_pl" 
+               <collection name="ds627.0_an_pl"
                            spec="/glade/p/rda/data/ds627.0/ei.oper.an.pl/**/ei\.oper\.an\.pl\..*"
                            dateFormatMark="#ei.oper.an.pl/#yyyyMM"
                            timePartition="directory" />
@@ -97,16 +89,12 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
                   <tdm rewrite="test"/>
              </featureCollection>
           
-             <featureCollection name="ds627.0_an_pt"
+             <featureCollection name="ERA Interim atmospheric model analysis interpolated to isentropic levels"
                                 featureType="GRIB1"
                                 harvest="true" 
                                 path="aggregations/e/ds627.0/7">
 
-               <metadata inherited="true">
-                    <serviceName>all</serviceName>
-               </metadata>
-
-               <collection name="ds627.0_an_pt"
+                <collection name="ds627.0_an_pt"
                            spec="/glade/p/rda/data/ds627.0/ei.oper.an.pt/**/ei\.oper\.an\.pt\..*"
                            dateFormatMark="#ei.oper.an.pt/#yyyyMM"
                            timePartition="directory" />
@@ -114,14 +102,10 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
                   <tdm rewrite="test"/>
              </featureCollection>  
    
-             <featureCollection name="ds627.0_an_pv"
+             <featureCollection name="ERA Interim atmospheric model analysis interpolated to 2 pvu level"
                                 featureType="GRIB1"
                                 harvest="true" 
                                 path="aggregations/e/ds627.0/8">
-
-               <metadata inherited="true">
-                    <serviceName>all</serviceName>
-               </metadata>
 
                <collection name="ds627.0_an_pv"
                            spec="/glade/p/rda/data/ds627.0/ei.oper.an.pv/**/ei\.oper\.an\.pv\..*"
@@ -131,15 +115,11 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
                   <tdm rewrite="test"/>
              </featureCollection>
 
-             <featureCollection name="ds627.0_an_sfc"
+             <featureCollection name="ERA Interim atmospheric model analysis for surface"
                                 featureType="GRIB1"
                                 harvest="true" 
                                 path="aggregations/e/ds627.0/9">
          
-               <metadata inherited="true">
-                    <serviceName>all</serviceName>
-               </metadata>      
-
                <collection name="ds627.0_an_sfc"
                            spec="/glade/p/rda/data/ds627.0/ei.oper.an.sfc/**/ei\.oper\.an\.sfc\..*"
                            dateFormatMark="#ei.oper.an.sfc/#yyyyMM"
@@ -150,16 +130,12 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
          </dataset>
 
          <dataset name="Forecast">
-             <featureCollection name="ds627.0_fc_sfc"
+             <featureCollection name="ERA Interim atmospheric model forecast for surface"
                                 featureType="GRIB1"
 		                harvest="true" 
                                 path="aggregations/e/ds627.0/15">
            
-               <metadata inherited="true">
-                    <serviceName>all</serviceName>
-               </metadata>
-           
-               <collection name="ds627.0_fc_sfc" 
+               <collection name="ds627.0_fc_sfc"
                            spec="/glade/p/rda/data/ds627.0/ei.oper.fc.sfc/**/ei\.oper\.fc\.sfc\..*"
                            dateFormatMark="#ei.oper.fc.sfc/#yyyyMM"
                            timePartition="directory" />

@@ -30,7 +30,7 @@
       <authority>edu.ucar.rda</authority>
       <publisher>
         <name vocabulary="DIF">NCAR/RDA</name>
-        <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu"/>
+        <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu"/>
       </publisher>
       <keyword>Numerical Weather Prediction</keyword>
       <keyword>NCEP</keyword>
@@ -74,7 +74,6 @@
         <pdsHash>
           <useGenType>true</useGenType>
         </pdsHash>
-        <!-- option name="runtimeCoordinate" value="union"/ -->
       </gribConfig>
 
     </featureCollection>

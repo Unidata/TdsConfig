@@ -3,33 +3,38 @@
         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
         xmlns:xlink="http://www.w3.org/1999/xlink">
 
-    <dataset name="ds626.0 NCAR RDA - ECMWF Atmospheric Reanalysis of the 20th Century">
+    <dataset name="ds626.0 NCAR RDA - ERA-20C Project (ECMWF Atmospheric Reanalysis of the 20th Century)">
         <metadata inherited="true">
             <serviceName>all</serviceName>
           <dataFormat>GRIB-1</dataFormat>
           <dataType>GRID</dataType>
-          <documentation type="Rights">Freely Available</documentation>
-          <documentation xlink:href="http://rda.ucar.edu/datasets/ds083.2/"
-                         xlink:title="NCAR RDA - NCEP FNL Operational Model Global Tropospheric Analyses (ds083.2)"/>
+          <documentation type="Rights">Some Restrictions Apply</documentation>
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds626.0/"
+                         xlink:title="ERA-20C Project (ECMWF Atmospheric Reanalysis of the 20th Century) (ds626.0)"/>
           <documentation type="summary">
-TDB
+          ERA-20C is ECMWF's first atmospheric reanalysis of the 20th century, from 1900-2010. It assimilates observations of surface pressure and surface marine winds only. It is an outcome of the ERA-CLIM project. ERA-20C was produced with IFS version CY38r1 and the same surface and atmospheric forcings as the final version of the atmospheric model integration ERA-20CM. A coupled atmosphere land surface and ocean wave model is used to reanalyze the weather, by assimilating surface observations. The ERA-20C products describe the spatial-temporal evolution of the atmosphere (on 91 vertical levels, between the surface and 0.01 hPa), the land-surface (on 4 soil layers), and the ocean waves (on 25 frequencies and 12 directions).
+The horizontal resolution is approximately 125 km (spectral truncation T159). Note that atmospheric data are not only available on the native 91 model levels, but also on 37 pressure levels (as in ERA-Interim), 16 potential temperature levels, and the 2 potential vorticity unit level. NCAR's Data Support Section (DSS) is performing and supplying a grid transformed version of ERA-20C, in which variables originally represented as spectral coefficients or archived on a reduced Gaussian grid are transformed to a regular 320 longitude by 160 latitude N80 Gaussian grid. In addition, DSS is also computing horizontal winds (u-component, v-component) from spectral vorticity and divergence where these are available. The data is being organized into single parameter time series.
+The assimilation methodology is 24-hour 4D-Var analysis, with variational bias correction of surface pressure observations. Analysis increments are at T95 horizontal resolution (approximately 210 km). The analyses provide the initial conditions for subsequent forecasts that serve as backgrounds to the next analyses. The spatial temporal evolution of background errors was provided by a 10-member ensemble produced a priori.
+The observations assimilated in ERA-20C include surface and mean sea level pressures from ISPD v3.2.6 and ICOADS v2.5.1, and surface marine winds from ICOADS v2.5.1. The observation feedback from ERA-20C, including, for example, departures before and after assimilation and usage flags, will be released at a later stage.
+ERA-20C was produced in 2014 in about 6 weeks on ECMWF's IBM POWER7 high-performance computer. This production employed 22 parallel streams: January 1899-December 1904, January 1904-December 1909, etc. The first year of each stream was only used for spin-up and discarded; the final product is made of the last years of each stream.
+The temporal resolution of the daily products is usually 3-hourly. Exceptions are in the analysis products, where the following surface parameters are only available 6-hourly: Sea-ice cover, Snow density, Sea surface temperature, Volumetric soil water layer 1, Volumetric soil water layer 2, Volumetric soil water layer 3, Volumetric soil water layer 4, Soil temperature level 1, Snow depth, 2 meter temperature, 2 meter dew point temperature, Soil temperature level 2, Soil temperature level 3, Temperature of snow layer.
           </documentation>
-          <documentation xlink:href="http://www.emc.ncep.noaa.gov/modelinfo/index.html" xlink:title="NCEP Model documentation" />
+          <documentation xlink:href="http://www.ecmwf.int/en/research/climate-reanalysis/era-20c" xlink:title="ECMWF ERA-20C Home Page" />
+          <documentation xlink:href="http://apps.ecmwf.int/datasets/data/era20c_daily/" xlink:title="ECMWF ERA-20C Data Server" />
+          <documentation xlink:href="https://climatedataguide.ucar.edu/climate-data/era-20c-ecmwfs-first-atmospheric-reanalysis-20th-century-1900-2010" xlink:title="Description of ERA-20C at the NCAR Climate Data Guide" />
+          <documentation xlink:href="http://www.era-clim.eu/" xlink:title="ECMWF ERA-CLIM Home Page" />
           <creator>
-            <name vocabulary="DIF">DOC/NOAA/NWS/NCEP</name>
-            <contact url="http://www.ncep.noaa.gov/" email="http://www.ncep.noaa.gov/mail_liaison.shtml" />
+            <name vocabulary="DIF">ECMWF</name>
+            <contact url="http://www.ecmwf.int/" email="http://www.ecmwf.int/en/about/contact-us" />
           </creator>
           <authority>edu.ucar.rda</authority>
           <publisher>
             <name vocabulary="DIF">NCAR/RDA</name>
-            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
           </publisher>
           <keyword>Numerical Weather Prediction</keyword>
-          <keyword>NCEP</keyword>
           <keyword>Model data</keyword>
-          <keyword>GFS</keyword>
-          <keyword>GDAS</keyword>
-          <keyword>FNL</keyword>
+          <keyword>Reanalysis</keyword>
         </metadata>
 
 
@@ -37,13 +42,14 @@ TDB
 
 
       <datasetScan name="ds626.0 Files"
-                  path="files/g/ds626.0"
+                  path="files/e/ds626.0"
                   location="/glade/p/rda/data/ds626.0">
          <metadata inherited="true">
           <serviceName>all</serviceName>
         </metadata>
         <filter>
             <exclude wildcard="*.html"/>
+            <exclude wildcard="*.htaccess"/>
             <exclude wildcard="grib2" atomic="false" collection="true"/>
         </filter>
         <addDatasetSize/>
@@ -53,60 +59,154 @@ TDB
 
     <dataset name="ds626.0 Aggregation">
 
-
-      <featureCollection name="ds626.0 3D Variables - 3 hour"
-                      featureType="GRIB1"
+      <featureCollection name="ERA 20th Century 3 hourly atmospheric model analysis"
+                      featureType="GRIB2"
                       harvest="true"
-                      path="aggregations/g/ds626.0/1">
-          <metadata inherited="true">
-           <serviceName>all</serviceName>
-         </metadata>
+                      path="aggregations/e/ds626.0/5">
 
-          <collection name = "ds626.0.pl.3hr" spec="/glade/p/rda/data/ds626.0/e20c.oper.an.pl.3hr/**/.*grb$"
+          <collection name = "ds626.0.an.ml.3hr"
+                      spec="/glade/p/rda/data/ds626.0/e20c.oper.an.ml.3hr/**/.*grib2$"
                       dateFormatMark="#regn80#...yyyyMMddHH"
                       timePartition="year" />
           <tdm rewrite="test" />
       </featureCollection>
 
-      <featureCollection name="ds626.0 Surface Variables - 3 hour"
+      <featureCollection name="ERA 20th Century 3 hourly atmospheric isobaric analysis"
                       featureType="GRIB1"
                       harvest="true"
-                      path="aggregations/g/ds626.0/2">
-          <metadata inherited="true">
-           <serviceName>all</serviceName>
-         </metadata>
+                      path="aggregations/e/ds626.0/6">
 
-          <collection name = "ds626.0.sfc.3hr" spec="/glade/p/rda/data/ds626.0/e20c.oper.an.sfc.3hr/**/.*grb$"
+          <collection name = "ds626.0.an.pl.3hr"
+                      spec="/glade/p/rda/data/ds626.0/e20c.oper.an.pl.3hr/**/.*grb$"
+                      dateFormatMark="#regn80#...yyyyMMddHH"
+                      timePartition="year" />
+          <tdm rewrite="test" />
+      </featureCollection>
+
+      <featureCollection name="ERA 20th Century 3 hourly atmospheric isentropic analysis"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/e/ds626.0/7">
+
+          <collection name = "ds626.0.an.pt.3hr"
+                      spec="/glade/p/rda/data/ds626.0/e20c.oper.an.pt.3hr/**/.*grb$"
                       dateFormatMark="#regn80#...yyyyMMddHH"
                       timePartition="year" />
           <tdm rewrite="test"  />
       </featureCollection>
 
-      <featureCollection name="ds626.0 Surface Variables - 6 hour"
+      <featureCollection name="ERA 20th Century 3 hourly atmospheric 2 pvu analysis"
                       featureType="GRIB1"
                       harvest="true"
-                      path="aggregations/g/ds626.0/3">
-          <metadata inherited="true">
-           <serviceName>all</serviceName>
-         </metadata>
+                      path="aggregations/e/ds626.0/8">
 
-          <collection name = "ds626.0.sfc.6hr" spec="/glade/p/rda/data/ds626.0/e20c.oper.an.sfc.6hr/**/.*grb$"
+          <collection name = "ds626.0.an.pv.3hr"
+                      spec="/glade/p/rda/data/ds626.0/e20c.oper.an.pv.3hr/**/.*grb$"
                       dateFormatMark="#regn80#...yyyyMMddHH"
                       timePartition="year" />
           <tdm rewrite="test"  />
       </featureCollection>
 
-      <featureCollection name="ds626.0 Invariants"
+      <featureCollection name="ERA 20th Century 3 hourly atmospheric surface analysis"
                       featureType="GRIB1"
                       harvest="true"
-                      path="aggregations/g/ds626.0/4">
+                      path="aggregations/e/ds626.0/9">
+
+          <collection name = "ds626.0.an.sfc.3hr"
+                      spec="/glade/p/rda/data/ds626.0/e20c.oper.an.sfc.3hr/**/.*grb$"
+                      dateFormatMark="#regn80#...yyyyMMddHH"
+                      timePartition="year" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+      <featureCollection name="ERA 20th Century 6 hourly atmospheric surface analysis"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/e/ds626.0/10">
+
+          <collection name = "ds626.0.an.sfc.6hr"
+                      spec="/glade/p/rda/data/ds626.0/e20c.oper.an.sfc.6hr/**/.*grb$"
+                      dateFormatMark="#regn80#...yyyyMMddHH"
+                      timePartition="year" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+<!--
+      <featureCollection name="ERA 20th Century 3 hourly atmospheric model forecast"
+                      featureType="GRIB2"
+                      harvest="true"
+                      path="aggregations/e/ds626.0/13">
           <metadata inherited="true">
            <serviceName>all</serviceName>
          </metadata>
 
-          <collection name = "ds626.0.invariants" spec="/glade/p/rda/data/ds626.0/e20c.oper.invariant/1900_2010/.*grb$" timePartition="directory" />
+          <collection name = "ERA 20th Century 3 hourly atmospheric model forecast" spec="/glade/p/rda/data/ds626.0/e20c.oper.fc.ml.3hr/**/.*grib2$"
+                      dateFormatMark="#regn80#...yyyyMMddHH"
+                      timePartition="year" />
           <tdm rewrite="test"  />
       </featureCollection>
+-->
+      <featureCollection name="ERA 20th Century 3 hourly atmospheric isobaric forecast"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/e/ds626.0/14">
+
+          <collection name = "ds626.0.fc.pl.3hr"
+                      spec="/glade/p/rda/data/ds626.0/e20c.oper.fc.pl.3hr/**/.*grb$"
+                      dateFormatMark="#regn80#...yyyyMMddHH"
+                      timePartition="year" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+      <featureCollection name="ERA 20th Century 3 hourly atmospheric surface forecast"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/e/ds626.0/15">
+
+          <collection name = "ds626.0.fc.sfc.3hr"
+                      spec="/glade/p/rda/data/ds626.0/e20c.oper.fc.sfc.3hr/**/.*grb$"
+                      dateFormatMark="#regn80#...yyyyMMddHH"
+                      timePartition="year" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+
+      <featureCollection name="ERA 20th Century atmospheric invariant fields"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/e/ds626.0/16">
+
+          <collection name = "ds626.0.invariant"
+                      spec="/glade/p/rda/data/ds626.0/e20c.oper.invariant/1900_2010/.*grb$" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+<!--
+      <featureCollection name="ERA 20th Century 3 hourly ocean wave analysis"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/e/ds626.0/17">
+          <metadata inherited="true">
+           <serviceName>all</serviceName>
+         </metadata>
+
+          <collection name = "ERA 20th Century 3 hourly ocean wave analysis" spec="/glade/p/rda/data/ds626.0/e20c.owav.an.sfc.3hr/**/.*grb$"
+                      dateFormatMark="#regn80#...yyyyMMddHH"
+                      timePartition="year" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+      <featureCollection name="ERA 20th Century ocean wave invariant fields"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/e/ds626.0/18">
+          <metadata inherited="true">
+           <serviceName>all</serviceName>
+         </metadata>
+
+          <collection name = "ERA 20th Century ocean wave invariant fields" spec="/glade/p/rda/data/ds626.0/e20c.owav.invariant/1900_2010/.*grb$" timePartition="directory" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+-->
 
     </dataset>
 

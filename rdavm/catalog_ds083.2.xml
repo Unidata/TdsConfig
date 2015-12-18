@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog name="CISL Research Data Archive Dataset ds083.2"
-        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
     <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
@@ -9,44 +9,53 @@
     <dataset name="ds083.2 NCAR RDA - NCEP FNL Operational Model Global Tropospheric Analyses">
         <metadata inherited="true">
             <serviceName>all</serviceName>
-          <dataFormat>GRIB-1</dataFormat>
-          <dataType>GRID</dataType>
-          <documentation type="Rights">Freely Available</documentation>
-          <documentation xlink:href="http://rda.ucar.edu/datasets/ds083.2/"
-                         xlink:title="NCAR RDA - NCEP FNL Operational Model Global Tropospheric Analyses (ds083.2)"/>
-          <documentation type="summary">
-NCEP FNL (Final) Operational Global Analysis data are on 1.0x1.0 degree grids prepared operationally every six hours.
+            <dataFormat>GRIB-1</dataFormat>
+            <dataType>GRID</dataType>
+            <documentation type="Rights">Freely Available</documentation>
+            <documentation xlink:href="http://rda.ucar.edu/datasets/ds083.2/"
+                           xlink:title="NCAR RDA - NCEP FNL Operational Model Global Tropospheric Analyses (ds083.2)"/>
+            <documentation type="summary">
+                NCEP FNL (Final) Operational Global Analysis data are on 1.0x1.0 degree grids prepared operationally
+                every six hours.
 
-This product is from the Global Data Assimilation System (GDAS), which continuously collects observational data from the Global Telecommunications System (GTS),
-and other sources, for many analyses. The FNLs are made with the same model which NCEP uses in the Global Forecast System (GFS),
-but the FNLs are prepared about an hour or so after the GFS is initialized. The FNLs are delayed so that more observational data can be used.
-The GFS is run earlier in support of time critical forecast needs, and uses the FNL from the previous 6 hour cycle as part of its initialization.
-The analyses are available on the surface, at 26 mandatory (and other pressure) levels from 1000mb to 10mb, in the surface boundary layer and at some sigma layers,
-the tropopause and a few others. Parameters include surface pressure, sea level pressure, geopotential height, temperature, sea surface temperature,
-soil values, ice cover, relative humidity, u- and v- winds, vertical motion, vorticity and ozone.
+                This product is from the Global Data Assimilation System (GDAS), which continuously collects
+                observational data from the Global Telecommunications System (GTS),
+                and other sources, for many analyses. The FNLs are made with the same model which NCEP uses in the
+                Global Forecast System (GFS),
+                but the FNLs are prepared about an hour or so after the GFS is initialized. The FNLs are delayed so that
+                more observational data can be used.
+                The GFS is run earlier in support of time critical forecast needs, and uses the FNL from the previous 6
+                hour cycle as part of its initialization.
+                The analyses are available on the surface, at 26 mandatory (and other pressure) levels from 1000mb to
+                10mb, in the surface boundary layer and at some sigma layers,
+                the tropopause and a few others. Parameters include surface pressure, sea level pressure, geopotential
+                height, temperature, sea surface temperature,
+                soil values, ice cover, relative humidity, u- and v- winds, vertical motion, vorticity and ozone.
 
-The archive time series is continuously extended to a near-current date. It is not maintained in real-time.
-          </documentation>
-          <documentation xlink:href="http://www.emc.ncep.noaa.gov/modelinfo/index.html" xlink:title="NCEP Model documentation" />
-          <creator>
-            <name vocabulary="DIF">DOC/NOAA/NWS/NCEP</name>
-            <contact url="http://www.ncep.noaa.gov/" email="http://www.ncep.noaa.gov/mail_liaison.shtml" />
-          </creator>
-          <authority>edu.ucar.rda</authority>
-          <publisher>
-            <name vocabulary="DIF">NCAR/RDA</name>
-            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />
-          </publisher>
-          <keyword>Numerical Weather Prediction</keyword>
-          <keyword>NCEP</keyword>
-          <keyword>Model data</keyword>
-          <keyword>GFS</keyword>
-          <keyword>GDAS</keyword>
-          <keyword>FNL</keyword>
+                The archive time series is continuously extended to a near-current date. It is not maintained in
+                real-time.
+            </documentation>
+            <documentation xlink:href="http://www.emc.ncep.noaa.gov/modelinfo/index.html"
+                           xlink:title="NCEP Model documentation"/>
+            <creator>
+                <name vocabulary="DIF">DOC/NOAA/NWS/NCEP</name>
+                <contact url="http://www.ncep.noaa.gov/" email="http://www.ncep.noaa.gov/mail_liaison.shtml"/>
+            </creator>
+            <authority>edu.ucar.rda</authority>
+            <publisher>
+                <name vocabulary="DIF">NCAR/RDA</name>
+                <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu"/>
+            </publisher>
+            <keyword>Numerical Weather Prediction</keyword>
+            <keyword>NCEP</keyword>
+            <keyword>Model data</keyword>
+            <keyword>GFS</keyword>
+            <keyword>GDAS</keyword>
+            <keyword>FNL</keyword>
         </metadata>
 
 
-      <!--  Files  -->
+        <!--  Files  -->
         <datasetScan name="ds083.2 Files"
                      path="files/g/ds083.2"
                      location="/glade/p/rda/data/ds083.2">
@@ -67,35 +76,23 @@ The archive time series is continuously extended to a near-current date. It is n
                            featureType="GRIB1"
                            harvest="true"
                            path="aggregations/g/ds083.2/1">
-            <metadata inherited="true">
-                <serviceName>all</serviceName>
-            </metadata>
 
-            <collection name = "ds083.2 Grib1" spec="/glade/p/rda/data/ds083.2/grib1/**/fnl_.*grib1$"
+            <collection name="ds083.2 Grib1" spec="/glade/p/rda/data/ds083.2/grib1/**/fnl_.*grib1$"
                         dateFormatMark="#fnl_#yyyy"
-                        timePartition="year" />
+                        timePartition="year"/>
 
-            <tdm rewrite="test" rescan="0 10 1 * * ? *" />
-            <gribConfig>
-                <option name="runtimeCoordinate" value="union" />
-            </gribConfig>
+            <tdm rewrite="test" rescan="0 10 1 * * ? *"/>
         </featureCollection>
 
         <featureCollection name="ds083.2 Aggregation Dec 2007 to Current"
                            featureType="GRIB2"
                            harvest="true"
                            path="aggregations/g/ds083.2/2">
-            <metadata inherited="true">
-                <serviceName>all</serviceName>
-            </metadata>
 
-            <collection name = "ds083.2 Grib2" spec="/glade/p/rda/data/ds083.2/grib2/**/fnl_.*grib2$"
+            <collection name="ds083.2 Grib2" spec="/glade/p/rda/data/ds083.2/grib2/**/fnl_.*grib2$"
                         dateFormatMark="#fnl_#yyyy"
-                        timePartition="year" />
-            <tdm rewrite="test" rescan="0 10 1 * * ? *" />
-            <gribConfig>
-                <option name="runtimeCoordinate" value="union" />
-            </gribConfig>
+                        timePartition="year"/>
+            <tdm rewrite="test" rescan="0 10 1 * * ? *"/>
         </featureCollection>
 
 

@@ -54,19 +54,19 @@ The Twentieth Century Reanalysis Project version 2c used resources of the Nation
 
      <dataset name="ds131.2 Aggregations">
 
-         <dataset name="Synoptic Analysis Fields">
+         <dataset name="Analysis Fields (2x2 degree Lat/Lon)">
                <metadata inherited="true">
                 <serviceName>all</serviceName>
                </metadata>
        
-             <featureCollection name="ds131.2_pgrbanl_mean"
+             <featureCollection name="ds131.2_pgrbanl_ensemble_mean"
                                 featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/g/ds131.2/1/mean">
                <metadata inherited="true">
                  <serviceName>all</serviceName>
                </metadata>
-               <collection name="ds131.2_pgrbanl_mean"
+               <collection name="ds131.2_pgrbanl_ensemble_mean"
                            spec="/glade/p/rda/data/ds131.2/pgrbanl/pgrbanl_mean_.*.grib$"
                            dateFormatMark="#pgrbanl_mean_#yyyy"
                            timePartition="year" />
@@ -74,14 +74,14 @@ The Twentieth Century Reanalysis Project version 2c used resources of the Nation
                <tdm rewrite="test" />
              </featureCollection>
            
-             <featureCollection name="ds131.2_pgrbanl_sprd"
+             <featureCollection name="ds131.2_pgrbanl_ensemble_sprd"
                                 featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/g/ds131.2/1/spread">
                <metadata inherited="true">
                  <serviceName>all</serviceName>
                </metadata>
-               <collection name="ds131.2_pgrbanl_sprd"
+               <collection name="ds131.2_pgrbanl_ensemble_sprd"
                            spec="/glade/p/rda/data/ds131.2/pgrbanl/pgrbanl_sprd_.*.grib$"
                            dateFormatMark="#pgrbanl_sprd_#yyyy"
                            timePartition="year" />
@@ -91,20 +91,20 @@ The Twentieth Century Reanalysis Project version 2c used resources of the Nation
            
          </dataset>
        
-         <dataset name="Synoptic First Guess Forecast Fields">
+         <dataset name="First Guess Forecast Fields (Gaussian T-62)">
                <metadata inherited="true">
                 <serviceName>all</serviceName>
                </metadata>
        
        
-             <featureCollection name="ds131.2_sflxgrbfg_mean"
+             <featureCollection name="ds131.2_sflxgrbfg_ensemble_mean"
                                 featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/g/ds131.2/2/mean">
                <metadata inherited="true">
                  <serviceName>all</serviceName>
                </metadata>
-               <collection name="ds131.2_sflxgrbfg_mean"
+               <collection name="ds131.2_sflxgrbfg_ensemble_mean"
                            spec="/glade/p/rda/data/ds131.2/sflxgrbfg/sflxgrbfg_mean_.*.grib$"
                            dateFormatMark="#sflxgrbfg_mean_#yyyy"
                            timePartition="year" />
@@ -117,14 +117,14 @@ The Twentieth Century Reanalysis Project version 2c used resources of the Nation
                </gribConfig>
              </featureCollection>
            
-             <featureCollection name="ds131.2_sflxgrbfg_sprd"
+             <featureCollection name="ds131.2_sflxgrbfg_ensemble_sprd"
                                 featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/g/ds131.2/2/spread">
                <metadata inherited="true">
                  <serviceName>all</serviceName>
                </metadata>
-               <collection name="ds131.2_sflxgrbfg_sprd"
+               <collection name="ds131.2_sflxgrbfg_ensemble_sprd"
                            spec="/glade/p/rda/data/ds131.2/sflxgrbfg/sflxgrbfg_sprd_.*.grib$"
                            dateFormatMark="#sflxgrbfg_sprd_#yyyy"
                            timePartition="year" />

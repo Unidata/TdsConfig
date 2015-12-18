@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+<catalog name="CISL Research Data Archive Dataset ds629.5"
         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
         xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -26,7 +26,7 @@ ds629.5 represents a transformed version of the raw ECMWF YOTC archive (ds629.0)
           <authority>edu.ucar.rda</authority>
           <publisher>
             <name vocabulary="DIF">NCAR/RDA</name>
-            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
           </publisher>
           <keyword>Numerical Weather Prediction</keyword>
           <keyword>Tropical</keyword>
@@ -40,13 +40,14 @@ ds629.5 represents a transformed version of the raw ECMWF YOTC archive (ds629.0)
       <!--  Files -->
 
      <datasetScan name="ds629.5 Files" 
-                  path="files/g/ds629.5" 
+                  path="files/e/ds629.5"
                   location="/glade/p/rda/data/ds629.5">
          <metadata inherited="true">
              <serviceName>all</serviceName>
          </metadata>
          <filter>
              <exclude wildcard="*.html"/>
+             <exclude wildcard="*.htaccess"/>
          </filter>
          <addDatasetSize/>
      </datasetScan>
@@ -56,14 +57,10 @@ ds629.5 represents a transformed version of the raw ECMWF YOTC archive (ds629.0)
    
      <dataset name="ds629.5 Aggregations">
    
-         <featureCollection name="629.5 - Single Parameter 3-Hourly Surface Forecast Time Series"
+         <featureCollection name="YOTC atmospheric model forecast for surface, single parameter 3-hourly time series"
                             featureType="GRIB1"
                             harvest="true"
-                            path="aggregations/g/ds629.5/0">
-       
-           <metadata inherited="true">
-                <serviceName>all</serviceName>
-           </metadata>
+                            path="aggregations/e/ds629.5/0">
        
            <collection name="ds629.5_fc_sfc" 
                        spec="/glade/p/rda/data/ds629.5/yt.oper.fc.sfc/**/yt\.oper\.fc\.sfc\..*"

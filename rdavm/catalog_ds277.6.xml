@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+<catalog name="CISL Research Data Archive Dataset ds277.6"
          xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
          xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -26,7 +26,7 @@
       <authority>edu.ucar.rda</authority>
       <publisher>
         <name vocabulary="DIF">NCAR/RDA</name>
-        <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu"/>
+        <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu"/>
       </publisher>
       <keyword>NCEP Global Ocean Data Assimilation System</keyword>
       <keyword>NCEP</keyword>
