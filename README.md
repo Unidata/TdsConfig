@@ -13,7 +13,7 @@ Configuration files
   - idd : common to all (4.6) idd servers
   - miami: brian mapes machine
   - ou: ?
-  - rdavm : at CISL/DSS
+  - rdavm : at CISL/RDA
   - remotetest : where? opendap/netcdf C test server
   - startup: this should be the minimal configuration for running a thredds server
   - thredds : motherlode (/opt/tds-live) (idd + casestudies)
