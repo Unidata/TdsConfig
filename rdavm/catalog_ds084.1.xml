@@ -25,13 +25,30 @@
           <authority>edu.ucar.rda</authority>
           <publisher>
             <name vocabulary="DIF">NCAR/RDA</name>
-            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
           </publisher>
           <keyword>Numerical Weather Prediction</keyword>
           <keyword>NCEP</keyword>
           <keyword>Model data</keyword>
           <keyword>GFS</keyword>
         </metadata>
+
+      <!--  Files  -->
+
+
+      <datasetScan name="ds084.1 Files"
+                  path="files/g/ds084.1"
+                  location="/glade/p/rda/data/ds084.1">
+         <metadata inherited="true">
+          <serviceName>all</serviceName>
+        </metadata>
+        <filter>
+            <exclude wildcard="*.html"/>
+        </filter>
+        <addDatasetSize/>
+     </datasetScan>
+
+     <!--  Aggregations  -->
 
      <featureCollection name="ds084.1 Aggregation"
                      featureType="GRIB2"
@@ -43,9 +60,6 @@
 
          <collection name = "ds084.1" spec="/glade/p/rda/data/ds084.1/**/.*grib2$" />
          <tdm rewrite="test" rescan="0 10 1 * * ? *" />
-         <gribConfig>
-           <option name="runtimeCoordinate" value="union" />
-        </gribConfig>
      </featureCollection>
 
   </dataset>
