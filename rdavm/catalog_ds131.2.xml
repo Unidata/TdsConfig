@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ds131.2  NOAA-CIRES Twentieth Century Global Reanalysis Version IIc"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <dataset name="ds131.2 NOAA-CIRES Twentieth Century Global Reanalysis Version 2c">
+        <metadata inherited="true">
+          <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>
+          <dataType>GRID</dataType>
+          <documentation type="Rights">Freely Available</documentation>
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds131.2/" xlink:title="NOAA/CIRES Twentieth Century Global Reanalysis Version 2c (ds131.2)" />
+          <documentation type="summary">
+The Twentieth Century Reanalysis Project, produced by the Earth System Research Laboratory Physical Sciences Division from NOAA and the University of Colorado Cooperative Institute for Research in Environmental Sciences, is an effort to produce a global reanalysis dataset spanning a portion of the nineteenth century and the entire twentieth century (1851 - near present), assimilating only surface observations of synoptic pressure. Boundary conditions of pentad sea surface temperature and monthly sea ice concentration and time-varying solar, volcanic, and carbon dioxide radiative forcings are prescribed. Products include 6-hourly ensemble mean and spread analysis fields on a 2 by 2 degree global latitude-longitude grid, and 3 and 6-hourly ensemble mean and spread forecast (first guess) fields on a global Gaussian T62 grid. Fields are accessible in yearly time series (1 file per parameter) and monthly synoptic time (all parameters per synoptic hour) files.
+20th Century Reanalysis Version 2c uses the same model as version 2 with new sea ice boundary conditions from the COBE-SST2 (Hirahara et al. 2014), new pentad Simple Ocean Data Assimilation with sparse input (SODAsi.2, Giese et al. 2015) sea surface temperature fields, and additional observations from ISPD version 3.2.9.
+
+The Twentieth Century Reanalysis Project version 2c used resources of the National Energy Research Scientific Computing Center managed by Lawrence Berkeley National Laboratory, which is supported by the Office of Science of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231. Version 2c is a contribution to the international Atmospheric Circulation Reconstructions over the Earth initiative. Support for the Twentieth Century Reanalysis Project is provided by the U.S. Department of Energy Office of Science (BER) and the NOAA Climate Program Office MAPP program.
+          </documentation>
+          <documentation xlink:href="http://www.cdc.noaa.gov/data/20thC_Rean/" xlink:title="NOAA ESRL 20th Century Reanalysis Project Homepage" />
+          <contributor role="computation">National Energy Research Scientific Computing Center managed by Lawrence Berkeley National Laboratory and of the Oak Ridge Leadership Computing Facility at Oak Ridge National Laboratory
+          </contributor>
+          <creator>
+            <name vocabulary="DIF">DOC/NOAA/ESRL</name>
+            <contact url="http://www.esrl.noaa.gov/psd/data/20thC_Rean/" email="esrl.psd.data@noaa.gov" />
+          </creator>
+          <publisher>
+            <name vocabulary="DIF">NCAR/RDA</name>
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
+          </publisher>
+          <keyword>Numerical Weather Prediction</keyword>
+          <keyword>NCEP</keyword>
+          <keyword>Model data</keyword>
+          <keyword>Reanalysis</keyword>
+          <keyword>Twentieth Century</keyword>
+        </metadata>
+
+
+      <!--  Files -->
+
+
+     <datasetScan name="ds131.2 Files" 
+                  path="files/g/ds131.2" 
+                  location="/glade/p/rda/data/ds131.2">
+         <metadata inherited="true">
+         <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+     <!-- Aggregations -->
+
+     <dataset name="ds131.2 Aggregations">
+
+         <dataset name="Synoptic Analysis Fields">
+               <metadata inherited="true">
+                <serviceName>all</serviceName>
+               </metadata>
+       
+             <featureCollection name="ds131.2_pgrbanl_mean"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/g/ds131.2/1/mean">
+               <metadata inherited="true">
+                 <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds131.2_pgrbanl_mean"
+                           spec="/glade/p/rda/data/ds131.2/pgrbanl/pgrbanl_mean_.*.grib$"
+                           dateFormatMark="#pgrbanl_mean_#yyyy"
+                           timePartition="year" />
+
+               <tdm rewrite="test" />
+             </featureCollection>
+           
+             <featureCollection name="ds131.2_pgrbanl_sprd"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/g/ds131.2/1/spread">
+               <metadata inherited="true">
+                 <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds131.2_pgrbanl_sprd"
+                           spec="/glade/p/rda/data/ds131.2/pgrbanl/pgrbanl_sprd_.*.grib$"
+                           dateFormatMark="#pgrbanl_sprd_#yyyy"
+                           timePartition="year" />
+
+               <tdm rewrite="test" />
+             </featureCollection>
+           
+         </dataset>
+       
+         <dataset name="Synoptic First Guess Forecast Fields">
+               <metadata inherited="true">
+                <serviceName>all</serviceName>
+               </metadata>
+       
+       
+             <featureCollection name="ds131.2_sflxgrbfg_mean"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/g/ds131.2/2/mean">
+               <metadata inherited="true">
+                 <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds131.2_sflxgrbfg_mean"
+                           spec="/glade/p/rda/data/ds131.2/sflxgrbfg/sflxgrbfg_mean_.*.grib$"
+                           dateFormatMark="#sflxgrbfg_mean_#yyyy"
+                           timePartition="year" />
+
+               <tdm rewrite="test" />
+               <gribConfig>
+                 <pdsHash>
+                  <useTableVersion>true</useTableVersion>
+                 </pdsHash>
+               </gribConfig>
+             </featureCollection>
+           
+             <featureCollection name="ds131.2_sflxgrbfg_sprd"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/g/ds131.2/2/spread">
+               <metadata inherited="true">
+                 <serviceName>all</serviceName>
+               </metadata>
+               <collection name="ds131.2_sflxgrbfg_sprd"
+                           spec="/glade/p/rda/data/ds131.2/sflxgrbfg/sflxgrbfg_sprd_.*.grib$"
+                           dateFormatMark="#sflxgrbfg_sprd_#yyyy"
+                           timePartition="year" />
+
+               <tdm rewrite="test" />
+               <gribConfig>
+                 <pdsHash>
+                  <useTableVersion>true</useTableVersion>
+                 </pdsHash>
+               </gribConfig>
+             </featureCollection>
+           
+         </dataset>
+       
+     </dataset>
+
+  </dataset>
+
+</catalog>
