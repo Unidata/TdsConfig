@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ds628.3 JRA-55C: Monthly Means and Variances"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <dataset name="ds628.3 NCAR RDA - JRA-55C: Monthly Means and Variances">
+        <metadata inherited="true">
+          <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>  
+          <dataType>GRID</dataType>   
+          <documentation type="Rights">Some Restrictions Apply</documentation>   
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds628.3/" 
+                         xlink:title="JRA-55C: Monthly Means and Variances"/>   
+          <documentation type="summary">  
+As a subset of the Japanese 55-year Reanalysis (JRA-55) project, the Meteorological Research Institute of the Japan Meteorological Agency has conducted a global atmospheric reanalysis that assimilates only conventional surface and upper air observations, with no use of satellite observations, using the same data assimilation system as the JRA-55. The project, named the JRA-55C Conventional (JRA-55C), aims to produce a more homogeneous dataset over a long period, unaffected by changes in historical satellite observing systems. The dataset is intended to be suitable for studies of climate change or multidecadal variability. The reanalysis period of JRA-55C is from November 1972 to December 2012. The JMA recommends the use of JRA-55C to extend JRA-55C back to January 1958.
+          </documentation>
+          <documentation type="summary">
+The Data Support Section at NCAR has downloaded all JRA-55C data. The entire archive has been reorganized into single parameter time series, and model resolution data has been transformed to a regular Gaussian grid. The JRA-55C products are currently being made accessible to RDA registered users of JRA-55, and will appear incrementally via the Data Access tab.
+          </documentation>
+          <documentation xlink:href="http://jra.kishou.go.jp/JRA-55/index_en.html" xlink:title="JRA-55: Japanese 55-year Reanalysis" />
+          <documentation xlink:href="https://climatedataguide.ucar.edu/climate-data/jra-55" xlink:title="Description of JRA-55C at the NCAR Climate Data Guide" />
+          <creator>   
+            <name vocabulary="DIF">JP/JMA</name>   
+            <contact url="http://www.jma.go.jp/jma/index.html" email="jra@met.kishou.go.jp" />   
+          </creator>   
+          <authority>edu.ucar.rda</authority>   
+          <publisher>   
+            <name vocabulary="DIF">NCAR/RDA</name>   
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />   
+          </publisher>   
+          <keyword>Numerical Weather Prediction</keyword>   
+          <keyword>Model data</keyword>   
+          <keyword>Reanalysis</keyword>   
+        </metadata>
+
+
+     <!--  Files -->
+     <datasetScan name="ds628.3 Files" 
+                  path="files/JRA55/ds628.3" 
+                  location="/glade/p/rda/data/ds628.3">
+         <metadata inherited="true">
+             <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+             <exclude wildcard="*.htaccess"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+
+     <!-- Aggregations -->
+
+     <dataset name="ds628.3 Aggregations">
+
+         <dataset name="Analysis Fields">
+              
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Total Column Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/1">
+           
+               <collection name="ds628.3.anl_column"
+                           spec="/glade/p/rda/data/ds628.3/anl_column/**/anl_column\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+         
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Total Column Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/2">
+                                
+               <collection name="ds628.3.anl_column_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_column_var/**/anl_column_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Total Column Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/3">
+
+               <collection name="ds628.3.anl_column125"
+                           spec="/glade/p/rda/data/ds628.3/anl_column125/**/anl_column125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Total Column Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/4">
+
+               <collection name="ds628.3.anl_column125_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_column125_var/**/anl_column125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Isentropic Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/5">
+
+               <collection name="ds628.3.anl_isentrop"
+                           spec="/glade/p/rda/data/ds628.3/anl_isentrop/**/anl_isentrop\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Isentropic Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/6">
+
+               <collection name="ds628.3.anl_isentrop_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_isentrop_var/**/anl_isentrop_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Isentropic Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/7">
+
+               <collection name="ds628.3.anl_isentrop125"
+                           spec="/glade/p/rda/data/ds628.3/anl_isentrop125/**/anl_isentrop125\..*"  />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+            <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Isentropic Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/8">
+
+               <collection name="ds628.3.anl_isentrop125var"
+                           spec="/glade/p/rda/data/ds628.3/anl_isentrop125_var/**/anl_isentrop125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Land Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/9">
+         
+               <collection name="ds628.3.anl_land"
+                           spec="/glade/p/rda/data/ds628.3/anl_land/**/anl_land\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Land Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/10">
+
+               <collection name="ds628.3.anl_land_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_land_var/**/anl_land_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Land Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/11">
+
+               <collection name="ds628.3.anl_land125"
+                           spec="/glade/p/rda/data/ds628.3/anl_land125/**/anl_land125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Land Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/12">
+
+               <collection name="ds628.3.anl_land125_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_land125_var/**/anl_land125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Model Level Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/13">
+         
+               <collection name="ds628.3.anl_mdl"
+                           spec="/glade/p/rda/data/ds628.3/anl_mdl/**/anl_mdl\..*"  />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Model Level Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/14">
+
+               <collection name="ds628.3.anl_mdl_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_mdl_var/**/anl_mdl_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Isobaric Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/15">
+
+               <collection name="ds628.3.anl_p125"
+                           spec="/glade/p/rda/data/ds628.3/anl_p125/**/anl_p125\..*" />
+               <tdm rewrite="test"/>
+            </featureCollection>
+
+            <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Isobaric Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/16">
+
+               <collection name="ds628.3.anl_p125_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_p125_var/**/anl_p125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 2.5 Degree Isobaric Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/17">
+         
+               <collection name="ds628.3.anl_p25"
+                           spec="/glade/p/rda/data/ds628.3/anl_p25/**/anl_p25\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 2.5 Degree Isobaric Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/18">
+
+               <collection name="ds628.3.anl_p25_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_p25_var/**/anl_p25_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Snow Depth Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/19">
+         
+               <collection name="ds628.3.anl_snow"
+                           spec="/glade/p/rda/data/ds628.3/anl_snow/**/anl_snow\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Snow Depth Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/20">
+
+               <collection name="ds628.3.anl_snow_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_snow_var/**/anl_snow_var\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Snow Depth Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/21">
+
+               <collection name="ds628.3.anl_snow125"
+                           spec="/glade/p/rda/data/ds628.3/anl_snow125/**/anl_snow125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Snow Depth Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/22">
+
+               <collection name="ds628.3.anl_snow125_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_snow125_var/**/anl_snow125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/23">
+         
+               <collection name="ds628.3.anl_surf"
+                           spec="/glade/p/rda/data/ds628.3/anl_surf/**/anl_surf\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/24">
+
+               <collection name="ds628.3.anl_surf_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_surf_var/**/anl_surf_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/25">
+
+               <collection name="ds628.3.anl_surf125"
+                           spec="/glade/p/rda/data/ds628.3/anl_surf125/**/anl_surf125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/26">
+
+               <collection name="ds628.3.anl_surf125_var"
+                           spec="/glade/p/rda/data/ds628.3/anl_surf125_var/**/anl_surf125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+         </dataset>
+
+         <dataset name="Forecast Fields">
+      
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/27">
+           
+               <collection name="ds628.3.fcst_column"
+                           spec="/glade/p/rda/data/ds628.3/fcst_column/**/fcst_column\..*"  />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/28">
+
+               <collection name="ds628.3.fcst_column_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_column_var/**/fcst_column_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/29">
+
+               <collection name="ds628.3.fcst_column125"
+                           spec="/glade/p/rda/data/ds628.3/fcst_column125/**/fcst_column125\..*"  />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/30">
+
+               <collection name="ds628.3.fcst_column125_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_column125_var/**/fcst_column125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+ 
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/31">
+         
+               <collection name="ds628.3.fcst_land"
+                           spec="/glade/p/rda/data/ds628.3/fcst_land/**/fcst_land\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/32">
+
+               <collection name="ds628.3.fcst_land_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_land_var/**/fcst_land_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/33">
+
+               <collection name="ds628.3.fcst_land125"
+                           spec="/glade/p/rda/data/ds628.3/fcst_land125/**/fcst_land125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/34">
+
+               <collection name="ds628.3.fcst_land125_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_land125_var/**/fcst_land125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Model Level Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/35">
+
+               <collection name="ds628.3.fcst_mdl"
+                           spec="/glade/p/rda/data/ds628.3/fcst_mdl/**/fcst_mdl\..*"  />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Model Level Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/36">
+
+               <collection name="ds628.3.fcst_mdl_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_mdl_var/**/fcst_mdl_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/37">
+
+               <collection name="ds628.3.fcst_p125"
+                           spec="/glade/p/rda/data/ds628.3/fcst_p125/**/fcst_p125\..*"  />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/38">
+
+               <collection name="ds628.3.fcst_p125_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_p125_var/**/fcst_p125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 2.5 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/39">
+
+               <collection name="ds628.3.fcst_p25"
+                           spec="/glade/p/rda/data/ds628.3/fcst_p25/**/fcst_p25\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 2.5 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/40">
+
+               <collection name="ds628.3.fcst_p25_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_p25_var/**/fcst_p25_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+
+         </dataset>
+
+         <dataset name="Diagnostic Fields">
+
+<!-- TDS issue PDS: Unknown Time Range Indicator 130
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/41">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Mean Model Resolution 2-Dimensional Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phy2m/**/fcst_phy2m\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+-->
+<!-- 
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/42">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Variance of Model Resolution 2-Dimensional Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phy2m_var/**/fcst_phy2m_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+-->
+<!-- TDS issue PDS: Unknown Time Range Indicator 130
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/43">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Mean 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phy2m125/**/fcst_phy2m125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+-->
+
+<!--
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/44">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Variance of 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phy2m125_var/**/fcst_phy2m125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+-->
+
+<!-- TDS issue PDS: Unknown Time Range Indicator 130
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Model Level Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/45">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+
+               <collection name="JRA-55C Monthly Mean Model Resolution Model Level Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phy3m/**/fcst_phy3m\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+-->
+
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Model Level Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/46">
+
+               <collection name="ds628.3.fcst_phy3m_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phy3m_var/**/fcst_phy3m_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+<!-- TDS issue PDS: Unknown Time Range Indicator 130
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Isobaric Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/47">
+         
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Mean 1.25 Degree Isobaric Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phy3m125/**/fcst_phy3m125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+-->
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Isobaric Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/48">
+
+               <collection name="ds628.3.fcst_phy3m125_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phy3m125_var/**/fcst_phy3m125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+<!-- TDS issue PDS: Unknown Time Range Indicator 130
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/49">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Mean Model Resolution Land Surface Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phyland/**/fcst_phyland\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+-->
+
+<!--
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/50">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Variance of Model Resolution Land Surface Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phyland_var/**/fcst_phyland_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+-->
+
+<!-- TDS issue PDS: Unknown Time Range Indicator 130
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/51">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Mean 1.25 Degree Land Surface Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phyland125/**/fcst_phyland125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+-->
+<!--
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/52">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Variance of 1.25 Degree Land Surface Average Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/fcst_phyland125_var/**/fcst_phyland125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+-->
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/53">
+
+               <collection name="ds628.3.fcst_surf"
+                           spec="/glade/p/rda/data/ds628.3/fcst_surf/**/fcst_surf\..*"  />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/54">
+
+               <collection name="ds628.3.fcst_surf_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_surf_var/**/fcst_surf_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/55">
+
+               <collection name="ds628.3.fcst_surf125"
+                           spec="/glade/p/rda/data/ds628.3/fcst_surf125/**/fcst_surf125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/56">
+
+               <collection name="ds628.3.fcst_surf125_var"
+                           spec="/glade/p/rda/data/ds628.3/fcst_surf125_var/**/fcst_surf125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution Sea Ice Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/57">
+
+               <collection name="ds628.3.ice"
+                           spec="/glade/p/rda/data/ds628.3/ice/**/ice\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution Sea Ice Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/58">
+
+               <collection name="ds628.3.ice_var"
+                           spec="/glade/p/rda/data/ds628.3/ice_var/**/ice_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Mean 1.25 Degree Sea Ice Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/59">
+
+               <collection name="ds628.3.ice125"
+                           spec="/glade/p/rda/data/ds628.3/ice125/**/ice125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Sea Ice Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/60">
+
+               <collection name="ds628.3.ice125_var"
+                           spec="/glade/p/rda/data/ds628.3/ice125_var/**/ice125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+<!-- 
+             <featureCollection name="JRA-55C Monthly Mean Model Resolution 2-Dimensional Minimum-Maximum Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/61">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Mean Model Resolution 2-Dimensional Minimum-Maximum Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/minmax_surf/**/minmax_surf\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>     
+
+             <featureCollection name="JRA-55C Monthly Variance of Model Resolution 2-Dimensional Minimum-Maximum Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.3/62">
+
+               <metadata inherited="true">
+                    <serviceName>all</serviceName>
+               </metadata>
+
+               <collection name="JRA-55C Monthly Variance of Model Resolution 2-Dimensional Minimum-Maximum Diagnostic Fields"
+                           spec="/glade/p/rda/data/ds628.3/minmax_surf_var/**/minmax_surf_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+-->
+
+         </dataset>
+
+      </dataset>
+       
+  </dataset>
+
+</catalog>

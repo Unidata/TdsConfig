@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ds193.0 Global Hourly 0.5-degree Land Surface Air Temperature Datasets"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+
+    <dataset name="ds193.0 Global Hourly 0.5-degree Land Surface Air Temperature Datasets">
+        <metadata inherited="true">
+          <serviceName>all</serviceName>
+          <dataFormat>NetCDF</dataFormat>
+          <dataType>GRID</dataType>
+          <documentation type="Rights">Freely Available</documentation>
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds193.0/" xlink:title="Global Hourly 0.5-degree Land Surface Air Temperature Datasets (ds193.0)" />
+          <documentation type="summary">
+Global hourly 0.5-degree Surface Air Temperature (SAT) datasets were developed based on four reanalysis products [Modern-Era Retrospective Analysis for Research and Applications (MERRA for 1979-2009), 40-year ECMWF Re-Analysis (ERA-40 for 1958-2001), ECMWF Interim Re-Analysis (ERA-Interim for 1979-2009), and NCEP/NCAR reanalysis for 1948-2009)] and the Climate Research Unit Time Series version 3.10 (CRU TS3.10) for 1948-2009. The three-step adjustments included the spatial downscaling to 0.5-degree grid cells, the temporal interpolation from 6-hourly (in ERA-40 and NCEP/NCAR reanalysis) to hourly using the MERRA hourly SAT climatology for each day (and the linear interpolation from 3-hourly in ERA-Interim to hourly), and the bias correction in both monthly-mean maximum (Tmax) and minimum (Tmin) SAT using the CRU data.
+The final products have exactly the same monthly Tmax and Tmin as the CRU data, and perform well in comparison with in-situ hourly measurements over six sites and with a regional daily SAT dataset over Europe. They agree with each other much better than the original reanalyses, and the spurious SAT jumps of reanalyses over some regions are also substantially eliminated. One of the uncertainties in the final products can be quantified by the differences in the true monthly mean (using 24-hourly values) and the monthly averaged diurnal cycle from different final products.
+          </documentation>
+          <creator>
+            <name vocabulary="DIF">CN/CAS/IAP/NZC</name>
+            <contact url="http://nzc.iap.ac.cn/en/index.php?" email="nzc_iap@mail.iap.ac.cn" />
+          </creator>
+          <creator>
+            <name vocabulary="DIF">UAZ/ATMO</name>
+            <contact url="http://www.atmo.arizona.edu/" email="atmosci@atmo.arizona.edu" />
+          </creator>
+          <publisher>
+            <name vocabulary="DIF">NCAR/RDA</name>
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
+          </publisher>
+          <keyword>Numerical Weather Prediction</keyword>
+          <keyword>Model data</keyword>
+          <keyword>Reanalysis</keyword>
+
+
+        </metadata>
+
+
+      <!--  Files -->
+
+
+     <datasetScan name="ds193.0 Files" 
+                  path="files/g/ds193.0" 
+                  location="/glade/p/rda/data/ds193.0">
+         <metadata inherited="true">
+         <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+<!-- Remove NCML based aggregations from service
+
+     <dataset name="ds193.0 Aggregations">
+          <dataset name="2-meter temperature derived from MERRA reanalysis products (1979-2009)"
+                 urlPath="aggregations/g/ds193.0/1/best"
+                 ID="aggregations/g/ds193.0/1/best"
+                 harvest="true">
+             <metadata inherited="true">
+                 <serviceName>all</serviceName>
+             </metadata> 
+           <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation dimName="time" type="joinExisting">
+            <scan location="/glade/p/rda/data/ds193.0/MERRA" suffix=".nc" subdirs="false"/>
+           </aggregation>
+           <variable name="T2M" type="float">
+             <attribute name="long_name" value="2 meter air temperature"/>
+              <attribute name="units" value="K" />
+           </variable>
+           </netcdf>
+         </dataset>
+
+          <dataset name="2-meter temperature derived from ERA-Interim reanalysis products (1979-2009)"
+                 urlPath="aggregations/g/ds193.0/2/best"
+                 ID="aggregations/g/ds193.0/2/best"
+                 harvest="true">
+             <metadata inherited="true">
+                 <serviceName>all</serviceName>
+             </metadata>
+           <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation dimName="time" type="joinExisting">
+            <scan location="/glade/p/rda/data/ds193.0/ERAInt" suffix=".nc" subdirs="false"/>
+           </aggregation>
+           <variable name="T2M" type="float">
+             <attribute name="long_name" value="2 meter air temperature"/>
+              <attribute name="units" value="K" />
+           </variable>
+           </netcdf>
+         </dataset>
+
+          <dataset name="2-meter temperature derived from ERA-40 reanalysis products (1985-2001)"
+                 urlPath="aggregations/g/ds193.0/3/best"
+                 ID="aggregations/g/ds193.0/3/best"
+                 harvest="true">
+             <metadata inherited="true">
+                 <serviceName>all</serviceName>
+             </metadata>
+           <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation dimName="time" type="joinExisting">
+            <scan location="/glade/p/rda/data/ds193.0/ERA40" suffix=".nc" subdirs="false"/>
+           </aggregation>
+           <variable name="T2M" type="float">
+             <attribute name="long_name" value="2 meter air temperature"/>
+              <attribute name="units" value="K" />
+           </variable>
+           </netcdf>
+         </dataset>
+
+          <dataset name="2-meter temperature derived from NCEP/NCAR reanalysis products (1948-2009)"
+                 urlPath="aggregations/g/ds193.0/4/best"
+                 ID="aggregations/g/ds193.0/4/best"
+                 harvest="true">
+             <metadata inherited="true">
+                 <serviceName>all</serviceName>
+             </metadata>
+           <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation dimName="time" type="joinExisting">
+            <scan location="/glade/p/rda/data/ds193.0/NRA" suffix=".nc" subdirs="false"/>
+           </aggregation>
+           <variable name="T2M" type="float">
+             <attribute name="long_name" value="2 meter air temperature"/>
+              <attribute name="units" value="K" />
+           </variable>           
+          </netcdf>
+         </dataset>
+    </dataset>
+
+-->
+
+  </dataset>
+
+</catalog>
