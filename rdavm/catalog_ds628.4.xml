@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ds628.4 JRA-55AMIP: The Japanese 55-year Reanalysis AMIP-type Simulation"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+
+    <dataset name="ds628.4 NCAR RDA - JRA-55AMIP: The Japanese 55-year Reanalysis AMIP-type Simulation">
+        <metadata inherited="true">
+          <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>
+          <dataType>GRID</dataType>   
+          <documentation type="Rights">Some Restrictions Apply</documentation>   
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds628.4/" 
+                         xlink:title="JRA-55AMIP: The Japanese 55-year Reanalysis AMIP-type Simulation"/>   
+          <documentation type="summary">  
+As a subset of the Japanese 55-year Reanalysis (JRA-55) project, an experiment using the global atmospheric model of the JRA-55 was conducted by the Meteorological Research Institute of the Japan Meteorological Agency. The experiment, named the JRA-55AMIP, has been carried out by prescribing the same boundary conditions and radiative forcing of JRA-55, including the historical observed sea surface temperature, sea ice concentration, greenhouse gases, etc., with no use of atmospheric observational data. This project is intended to assess systematic errors of the model.
+          </documentation>
+          <documentation xlink:href="http://jra.kishou.go.jp/JRA-55/index_en.html" xlink:title="JRA-55: Japanese 55-year Reanalysis" />
+          <documentation xlink:href="https://climatedataguide.ucar.edu/climate-data/jra-55" xlink:title="Description of JRA-55C at the NCAR Climate Data Guide" />
+          <creator>   
+            <name vocabulary="DIF">JP/JMA</name>   
+            <contact url="http://www.jma.go.jp/jma/index.html" email="jra@met.kishou.go.jp" />   
+          </creator>   
+          <authority>edu.ucar.rda</authority>   
+          <publisher>   
+            <name vocabulary="DIF">NCAR/RDA</name>   
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />   
+          </publisher>   
+          <keyword>Numerical Weather Prediction</keyword>   
+          <keyword>Model data</keyword>   
+          <keyword>Reanalysis</keyword>   
+        </metadata>
+
+
+     <!--  Files -->
+     <datasetScan name="ds628.4 Files" 
+                  path="files/JRA55/ds628.4" 
+                  location="/glade/p/rda/data/ds628.4">
+         <metadata inherited="true">
+             <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+             <exclude wildcard="*.htaccess"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+
+     <!-- Aggregations -->
+
+     <dataset name="ds628.4 Aggregations">
+
+             <featureCollection name="JRA-55AMIP 3-Hourly 1.25 Degree Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.4/15">
+
+               <collection name="ds628.4.fcst_column125"
+                           spec="/glade/p/rda/data/ds628.4/fcst_column125/**/fcst_column125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP 3-Hourly 1.25 Degree Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.4/17">
+
+               <collection name="ds628.4.fcst_land125"
+                           spec="/glade/p/rda/data/ds628.4/fcst_land125/**/fcst_land125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP 6-Hourly 1.25 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.4/19">
+
+               <collection name="ds628.4.fcst_p125"
+                           spec="/glade/p/rda/data/ds628.4/fcst_p125/**/fcst_p125\..*" />
+               <tdm rewrite="test"/> 
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP 6-Hourly 2.5 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.4/20">
+
+               <collection name="ds628.4.fcst_p25"
+                           spec="/glade/p/rda/data/ds628.4/fcst_p25/**/fcst_p25\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP 3-Hourly 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.4/22">
+
+               <collection name="ds628.4.fcst_phy2m125"
+                           spec="/glade/p/rda/data/ds628.4/fcst_phy2m125/**/fcst_phy2m125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP 3-Hourly 1.25 Degree Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.4/26">
+
+               <collection name="ds628.4.fcst_phyland125"
+                           spec="/glade/p/rda/data/ds628.4/fcst_phyland125/**/fcst_phyland125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+
+             <featureCollection name="JRA-55AMIP 3-Hourly 1.25 Degree 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.4/28">
+
+               <collection name="ds628.4.fcst_surf125"
+                           spec="/glade/p/rda/data/ds628.4/fcst_surf125/**/fcst_surf125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP 1.25 Degree Constant Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.4/32">
+
+               <collection name="ds628.4.const125"
+                           spec="/glade/p/rda/data/ds628.4/ll125/**/ll125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP 2.5 Degree Constant Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.4/33">
+
+               <collection name="ds628.4.const25"
+                           spec="/glade/p/rda/data/ds628.4/ll25/**/ll25\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+
+      </dataset>
+
+  </dataset>
+
+</catalog>

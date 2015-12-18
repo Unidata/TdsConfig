@@ -18,11 +18,17 @@
     </service>
 
     <catalogRef xlink:href="catalog_ds083.2.xml" xlink:title="ds083.2 NCEP FNL Operational Model Global Tropospheric Analyses" name="" />
+    <catalogRef xlink:href="catalog_ds083.3.xml" xlink:title="ds083.3 NCEP GDAS/FNL 0.25 Degree Global Tropospheric Analyses and Forecast Grids" name="" />
     <catalogRef xlink:href="catalog_ds084.1.xml" xlink:title="ds084.1 NCEP GFS 0.25 Degree Global Forecast Grids" name="" />
+    <catalogRef xlink:href="catalog_ds084.3.xml" xlink:title="ds084.3 NCEP GFS 0.25 Degree Global Forecast Auxiliary Grids Historical Archive" name="" />
+    <catalogRef xlink:href="catalog_ds084.4.xml" xlink:title="ds084.4 NCEP GDAS/FNL Surface Flux Grids" name="" />
     <catalogRef xlink:href="catalog_ds093.1.xml" xlink:title="ds093.1 NCEP Climate Forecast System Reanalysis (CFSR) Selected Hourly Time-Series Products, January 1979 to December 2010" name="" />
     <catalogRef xlink:href="catalog_ds094.1.xml" xlink:title="ds094.1 NCEP Climate Forecast System Version 2 (CFSv2) Selected Hourly Time-Series Products" name="" />
-    <!-- catalogRef xlink:href="catalog_ds131.1.xml" xlink:title="ds131.1 NOAA-CIRES Twentieth Century Global Reanalysis Version II" name="" / -->
-    <catalogRef xlink:href="catalog_ds131.2.xml" xlink:title="ds131.2 NOAA-CIRES Twentieth Century Global Reanalysis Version IIc" name="" />
+    <catalogRef xlink:href="catalog_ds094.2.xml" xlink:title="ds094.2 NCEP Climate Forecast System Version 2 (CFSv2) Monthly Products" name="" />
+    <catalogRef xlink:href="catalog_ds113.0.xml" xlink:title="ds113.0 ECMWF's Operational Model Analysis, starting in 2011" name="" />
+    <catalogRef xlink:href="catalog_ds131.2.xml" xlink:title="ds131.2 NOAA/CIRES Twentieth Century Global Reanalysis Version 2c" name="" />
+    <catalogRef xlink:href="catalog_ds193.0.xml" xlink:title="ds193.0 Global Hourly 0.5-degree Land Surface Air Temperature Datasets" name="" />
+    <catalogRef xlink:href="catalog_ds260.4.xml" xlink:title="ds260.4 SAMOS Air-Sea Fluxes: 2005-2014" name="" />
     <catalogRef xlink:href="catalog_ds277.6.xml" xlink:title="ds277.6 NCEP Global Ocean Data Assimilation System (GODAS)" name="" />
     <catalogRef xlink:href="catalog_ds285.3.xml" xlink:title="ds285.3 Subsurface Temperature And Salinity Analyses by Ishii et al." name="" />
 
@@ -34,9 +40,14 @@
 
     <catalogRef xlink:href="catalog_ds626.0.xml" xlink:title="ds626.0 ERA-20C Project (ECMWF Atmospheric Reanalysis of the 20th Century)" name="" />
     <catalogRef xlink:href="catalog_ds627.0.xml" xlink:title="ds627.0 ERA-Interim Project" name="" />
-    <catalogRef xlink:href="catalog_ds627.1.xml" xlink:title="ds627.0 ERA-Interim Project, Monthly Means" name="" />
+    <catalogRef xlink:href="catalog_ds627.1.xml" xlink:title="ds627.1 ERA-Interim Project, Monthly Means" name="" />
+    <catalogRef xlink:href="catalog_ds627.2.xml" xlink:title="ds627.2 ERA-Interim Project, Single Parameter 6-Hourly Surface Analysis and Surface Forecast Time Series" name="" />
     <catalogRef xlink:href="catalog_ds628.0.xml" xlink:title="ds628.0 Japanese 55-year Reanalysis, Daily 3-Hourly and 6-Hourly Data" name="" />
     <catalogRef xlink:href="catalog_ds628.1.xml" xlink:title="ds628.1 Japanese 55-year Reanalysis, Monthly Means and Variances" name="" />
+    <catalogRef xlink:href="catalog_ds628.2.xml" xlink:title="ds628.2 JRA-55C: The Japanese 55-year Reanalysis Using Conventional Data Only" name="" />
+    <catalogRef xlink:href="catalog_ds628.3.xml" xlink:title="ds628.3 JRA-55C: Monthly Means and Variances" name="" />
+    <catalogRef xlink:href="catalog_ds628.4.xml" xlink:title="ds628.4 JRA-55AMIP: The Japanese 55-year Reanalysis AMIP-type Simulation" name="" />
+    <catalogRef xlink:href="catalog_ds628.5.xml" xlink:title="ds628.5 JRA-55AMIP: Monthly Means and Variances Including Diurnal Statistics" name="" />
     <catalogRef xlink:href="catalog_ds629.1.xml" xlink:title="ds629.1 WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Surface Analysis and Surface Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" name="" />
     <catalogRef xlink:href="catalog_ds629.2.xml" xlink:title="ds629.2 WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Pressure Level Analysis Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" name="" />
     <catalogRef xlink:href="catalog_ds629.3.xml" xlink:title="ds629.3 WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Pressure Level Forecast Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid" name="" />
