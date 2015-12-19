@@ -59,7 +59,7 @@
         </metadata>
 
          <collection name = "ds084.1" spec="/glade/p/rda/data/ds084.1/**/.*grib2$" />
-         <tdm rewrite="test" rescan="0 10 1 * * ? *" />
+         <tdm rewrite="test" rescan="0 4 1 * * ? *" />
      </featureCollection>
 
   </dataset>

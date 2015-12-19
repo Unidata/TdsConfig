@@ -242,7 +242,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                <tdm rewrite="test"/>
              </featureCollection>
 
-             <featureCollection name="JRA-55C 6-Hourly Model Resolution Model Level Forecast Fields"
+             <!-- featureCollection name="JRA-55C 6-Hourly Model Resolution Model Level Forecast Fields"
                                 featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.2/18">
@@ -250,7 +250,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                <collection name="ds628.2.fcst_mdl"
                            spec="/glade/p/rda/data/ds628.2/fcst_mdl/**/fcst_mdl\..*" />
                <tdm rewrite="test"/>
-             </featureCollection>
+             </featureCollection -->
               
 
              <featureCollection name="JRA-55C 6-Hourly 1.25 Degree Isobaric Forecast Fields"
@@ -299,7 +299,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                <tdm rewrite="test"/>
              </featureCollection>
 
-             <featureCollection name="JRA-55C 6-Hourly Model Resolution Model Level Average Diagnostic Fields"
+             <!-- featureCollection name="JRA-55C 6-Hourly Model Resolution Model Level Average Diagnostic Fields"
                                 featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.2/23">
@@ -319,7 +319,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                            spec="/glade/p/rda/data/ds628.2/fcst_phy3m125/**/fcst_phy3m125\..*" />
                <tdm rewrite="test"/>
 
-             </featureCollection>
+             </featureCollection -->
 
              <featureCollection name="JRA-55C 3-Hourly Model Resolution Land Surface Average Diagnostic Fields"
                                 featureType="GRIB1"

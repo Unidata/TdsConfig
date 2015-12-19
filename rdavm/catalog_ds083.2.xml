@@ -80,7 +80,7 @@
             <collection name="ds083.2 Grib1" spec="/glade/p/rda/data/ds083.2/grib1/**/fnl_.*grib1$"
                         dateFormatMark="#fnl_#yyyy" />
 
-            <tdm rewrite="test" rescan="0 10 1 * * ? *"/>
+            <tdm rewrite="nocheck" />
         </featureCollection>
 
         <featureCollection name="ds083.2 Aggregation Dec 2007 to Current"
@@ -90,7 +90,7 @@
 
             <collection name="ds083.2 Grib2" spec="/glade/p/rda/data/ds083.2/grib2/**/fnl_.*grib2$"
                         dateFormatMark="#fnl_#yyyy" />
-            <tdm rewrite="test" rescan="0 10 1 * * ? *"/>
+            <tdm rewrite="test" rescan="0 0 1 * * ? *"/>
         </featureCollection>
 
 

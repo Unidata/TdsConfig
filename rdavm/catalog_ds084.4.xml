@@ -54,7 +54,7 @@ The NCEP operational Global Data Assimilation System surface flux grids are on a
 
          <collection name = "ds084.4" spec="/glade/p/rda/data/ds084.4/**/.*grib2$" 
          dateFormatMark="yyyyMM#/gdas1.sflux#" />
-         <tdm rewrite="test" rescan="0 10 1 * * ? *" />
+         <tdm rewrite="test" rescan="0 8 1 * * ? *" />
      </featureCollection>
 
   </dataset>
