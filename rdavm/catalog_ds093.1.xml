@@ -66,8 +66,7 @@
       </metadata>
 
       <collection name="ds093.1" spec="/glade/p/rda/data/ds093.1/**/.*.grb2$"
-                      dateFormatMark="yyyyMM#.grb2#"
-                      timePartition="year" />
+                      dateFormatMark="yyyyMM#.grb2#" />
       <tdm rewrite="test"/>
 
       <gribConfig>
