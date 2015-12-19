@@ -601,7 +601,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
              </featureCollection>
 -->
 
-             <featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Isobaric Average Diagnostic Fields"
+             <!-- featureCollection name="JRA-55C Monthly Variance of 1.25 Degree Isobaric Average Diagnostic Fields"
                                 featureType="GRIB1"
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.3/48">
@@ -610,7 +610,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                            spec="/glade/p/rda/data/ds628.3/fcst_phy3m125_var/**/fcst_phy3m125_var\..*" />
                <tdm rewrite="test"/>
 
-             </featureCollection>
+             </featureCollection -->
 
 <!-- TDS issue PDS: Unknown Time Range Indicator 130
 

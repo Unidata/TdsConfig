@@ -60,7 +60,7 @@ The archive time series is continuously extended to a near-current date. It is n
 
          <collection name = "ds083.3" spec="/glade/p/rda/data/ds083.3/**/.*grib2$"
          dateFormatMark="yyyyMM#/gdas1.fnl0p25#" />
-         <tdm rewrite="test" rescan="0 10 1 * * ? *" />
+         <tdm rewrite="test" rescan="0 2 1 * * ? *" />
      </featureCollection>
 
   </dataset>

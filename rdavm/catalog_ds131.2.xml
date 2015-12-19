@@ -92,7 +92,7 @@
                                 dateFormatMark="#pgrbanl_mean_#yyyy"
                                 timePartition="year"/>
 
-                    <tdm rewrite="test"/>
+                    <tdm rewrite="nocheck"/>
                 </featureCollection>
 
                 <featureCollection name="ds131.2_pgrbanl_ensemble_sprd"
@@ -107,7 +107,7 @@
                                 dateFormatMark="#pgrbanl_sprd_#yyyy"
                                 timePartition="year"/>
 
-                    <tdm rewrite="test"/>
+                    <tdm rewrite="nocheck"/>
                 </featureCollection>
 
             </dataset>
@@ -130,7 +130,7 @@
                                 dateFormatMark="#sflxgrbfg_mean_#yyyy"
                                 timePartition="year"/>
 
-                    <tdm rewrite="test"/>
+                    <tdm rewrite="nocheck"/>
                     <gribConfig>
                         <gdsHash from='1417904230' to='1417903548'/>
                         <pdsHash>
@@ -151,7 +151,7 @@
                                 dateFormatMark="#sflxgrbfg_sprd_#yyyy"
                                 timePartition="year"/>
 
-                    <tdm rewrite="test"/>
+                    <tdm rewrite="nocheck"/>
                     <gribConfig>
                         <gdsHash from='1417904230' to='1417903548'/>
                         <pdsHash>

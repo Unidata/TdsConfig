@@ -58,7 +58,7 @@
 
             <collection name="ds084.3" spec="/glade/p/rda/data/ds084.3/**/.*grib2$"
                         dateFormatMark="yyyyMMdd#/gfs.0p25b#"/>
-            <tdm rewrite="test" rescan="0 10 1 * * ? *"/>
+            <tdm rewrite="test" rescan="0 6 1 * * ? *"/>
         </featureCollection>
 
     </dataset>

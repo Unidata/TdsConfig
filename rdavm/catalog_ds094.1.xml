@@ -67,7 +67,7 @@
 
       <collection name="ds094.1" spec="/glade/p/rda/data/ds094.1/**/.*.grb2$"
                       dateFormatMark="yyyyMM#.grb2#" />
-      <tdm rewrite="test"/>
+      <tdm rewrite="test" rescan="0 10 1 * * ? *" />
 
       <gribConfig>
         <pdsHash>
