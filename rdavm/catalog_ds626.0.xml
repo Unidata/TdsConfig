@@ -59,7 +59,7 @@ The temporal resolution of the daily products is usually 3-hourly. Exceptions ar
 
     <dataset name="ds626.0 Aggregation">
 
-      <featureCollection name="ERA 20th Century 3 hourly atmospheric model analysis"
+      <!-- featureCollection name="ERA 20th Century 3 hourly atmospheric model analysis"
                       featureType="GRIB2"
                       harvest="true"
                       path="aggregations/e/ds626.0/5">
@@ -68,7 +68,7 @@ The temporal resolution of the daily products is usually 3-hourly. Exceptions ar
                       spec="/glade/p/rda/data/ds626.0/e20c.oper.an.ml.3hr/**/.*grib2$"
                       dateFormatMark="#regn80#...yyyyMMddHH" />
           <tdm rewrite="test" />
-      </featureCollection>
+      </featureCollection -->
 
       <featureCollection name="ERA 20th Century 3 hourly atmospheric isobaric analysis"
                       featureType="GRIB1"
