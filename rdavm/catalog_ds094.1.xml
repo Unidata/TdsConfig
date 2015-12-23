@@ -70,6 +70,7 @@
       <tdm rewrite="test" rescan="0 10 1 * * ? *" />
 
       <gribConfig>
+        <gdsHash from='341801380' to='342723940'/>
         <pdsHash>
           <useGenType>true</useGenType>
         </pdsHash>
