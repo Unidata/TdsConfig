@@ -60,6 +60,7 @@ The National Centers for Environmental Prediction (NCEP) Climate Forecast System
       <tdm rewrite="test"/>
 
       <gribConfig>
+          <gdsHash from='341801380' to='342723940'/>
         <pdsHash>
           <useGenType>true</useGenType>
         </pdsHash>
