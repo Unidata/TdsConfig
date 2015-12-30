@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+<catalog name="CISL Research Data Archive Dataset ds629.1"
         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
         xmlns:xlink="http://www.w3.org/1999/xlink">
-
-  <service name="all" serviceType="Compound" base="">
-    
-    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
-    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
-    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
-    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
-    
-    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
-    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
-    
-    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
-    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
-    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
-  </service>
-
-
-    <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
 
     <dataset name="ds629.2 NCAR RDA - WCRP and WWRP-THORPEX YOTC (Year of Tropical Convection) Project, Single Parameter 6-Hourly Pressure Level Analysis Time Series, Transformed to a Regular 1600x800 (N400) Gaussian Grid">
         <metadata inherited="true">
@@ -44,7 +26,7 @@ ds629.2 represents a transformed version of the raw ECMWF YOTC archive (ds629.0)
           <authority>edu.ucar.rda</authority>
           <publisher>
             <name vocabulary="DIF">NCAR/RDA</name>
-            <contact url="http://rda.ucar.edu/" email="dssweb@ucar.edu" />
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
           </publisher>
           <keyword>Numerical Weather Prediction</keyword>
           <keyword>Tropical</keyword>
@@ -58,13 +40,14 @@ ds629.2 represents a transformed version of the raw ECMWF YOTC archive (ds629.0)
       <!--  Files -->
 
      <datasetScan name="ds629.2 Files" 
-                  path="files/g/ds629.2" 
+                  path="files/e/ds629.2"
                   location="/glade/p/rda/data/ds629.2">
          <metadata inherited="true">
              <serviceName>all</serviceName>
          </metadata>
          <filter>
              <exclude wildcard="*.html"/>
+             <exclude wildcard="*.htaccess"/>
          </filter>
          <addDatasetSize/>
      </datasetScan>
@@ -73,15 +56,11 @@ ds629.2 represents a transformed version of the raw ECMWF YOTC archive (ds629.0)
 
      <dataset name="ds629.2 Aggregations">
 
-         <featureCollection name="629.2 - Single Parameter 6-Hourly Pressure Level Analysis Time Series"
+         <featureCollection name="YOTC atmospheric model analysis interpolated to pressure levels, single parameter 6-hourly time series"
                             featureType="GRIB1"
                             harvest="true"
-                            path="aggregations/g/ds629.2/0">
-       
-           <metadata inherited="true">
-                <serviceName>all</serviceName>
-           </metadata>
-       
+                            path="aggregations/e/ds629.2/0">
+
            <collection name="ds629.2_an_pl" 
                        spec="/glade/p/rda/data/ds629.2/yt.oper.an.pl/**/yt\.oper\.an\.pl\..*"
                        dateFormatMark="#yt.oper.an.pl/#yyyy" />

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ds113.0 ECMWF's Operational Model Analysis, starting in 2011"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+
+    <dataset name="ds113.0 ECMWF's Operational Model Analysis, starting in 2011">
+        <metadata inherited="true">
+            <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>
+          <dataType>GRID</dataType>
+          <documentation type="Rights">Some Restrictions Apply</documentation>
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds113.0/"
+                         xlink:title="ECMWF's Operational Model Analysis, starting in 2011 (ds113.0)"/>
+          <documentation type="summary">
+European Center for Medium-Range Weather Forecasts (ECMWF) atmospheric operational model analyses and products derived from short-term forecasts.
+These data are archived at the highest resolution of the data assimilation and forecast system. The free atmospheric data are on constant pressure surfaces and there are many surface fields, single level integrated fields, and boundary layer fields.
+
+This dataset is an extension of the older and lower resolution ECMWF operational output datasets in the NCAR Research Data Archive.
+          </documentation>
+          <creator>
+            <name vocabulary="DIF">ECMWF</name>   
+            <contact url="http://www.ecmwf.int/" email="http://www.ecmwf.int/en/about/contact-us" />
+          </creator>
+          <authority>edu.ucar.rda</authority>
+          <publisher>
+            <name vocabulary="DIF">NCAR/RDA</name>
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
+          </publisher>
+          <keyword>Numerical Weather Prediction</keyword>   
+          <keyword>Model data</keyword>   
+        </metadata>
+
+
+      <!--  Files  -->
+
+
+      <datasetScan name="ds113.0 Files"
+                  path="files/ecoper/ds113.0"
+                  location="/glade/p/rda/data/ds113.0">
+         <metadata inherited="true">
+          <serviceName>all</serviceName>
+        </metadata>
+        <filter>
+            <exclude wildcard="*.html"/>
+            <exclude wildcard="*.htaccess"/>
+        </filter>
+        <addDatasetSize/>
+     </datasetScan>
+
+     <!--  Aggregations  -->
+
+    <dataset name="ds113.0 Aggregation">
+
+
+      <featureCollection name="ds113.0 Surface"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/ecoper/ds113.0/1">
+          <collection name = "ds113.0.surface" spec="/glade/p/rda/data/ds113.0/surface/od_oper_an_sfc_.*grb$"
+                      dateFormatMark="#od_oper_an_sfc_#yyyyMMdd"
+                      timePartition="year" />
+          <tdm rewrite="test" />
+      </featureCollection>
+
+      <featureCollection name="ds113.0 Pressure Level"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/ecoper/ds113.0/2">
+
+          <collection name = "ds113.0.pressure.level" spec="/glade/p/rda/data/ds113.0/plev/od_oper_an_pl_.*grb$"
+                      dateFormatMark="#od_oper_an_pl_#yyyyMMddHH"
+                      timePartition="year" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+      <featureCollection name="ds113.0 Supplementary Fields"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/ecoper/ds113.0/3">
+
+          <collection name = "ds113.0.supp" spec="/glade/p/rda/data/ds113.0/supl/od_oper_fc_sfc_.*grb$"
+                      dateFormatMark="#od_oper_fc_sfc_#yyyyMMddHH"
+                      timePartition="year" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+      <featureCollection name="ds113.0 Extension"
+                      featureType="GRIB1"
+                      harvest="true"
+                      path="aggregations/ecoper/ds113.0/4">
+
+          <collection name = "ds113.0.extension" spec="/glade/p/rda/data/ds113.0/extension/od_toga_fc_sfc_.*grb$" 
+                      dateFormatMark="#od_toga_fc_sfc_#yyyyMMdd" 
+                      timePartition="year" />
+          <tdm rewrite="test"  />
+      </featureCollection>
+
+    </dataset>
+
+  </dataset>
+
+</catalog>
