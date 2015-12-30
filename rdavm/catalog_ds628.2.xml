@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ds628.2 JRA-55C: The Japanese 55-year Reanalysis Using Conventional Data Only"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <dataset name="ds628.2 NCAR RDA - JRA-55C: The Japanese 55-year Reanalysis Using Conventional Data Only">
+        <metadata inherited="true">
+          <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>
+          <dataType>GRID</dataType>   
+          <documentation type="Rights">Some Restrictions Apply</documentation>   
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds628.2/" 
+                         xlink:title="JRA-55C: The Japanese 55-year Reanalysis Using Conventional Data Only"/>   
+          <documentation type="summary">  
+As a subset of the Japanese 55-year Reanalysis (JRA-55) project, the Meteorological Research Institute of the Japan Meteorological Agency has conducted a global atmospheric reanalysis that assimilates only conventional surface and upper air observations, with no use of satellite observations, using the same data assimilation system as the JRA-55. The project, named the JRA-55C Conventional (JRA-55C), aims to produce a more homogeneous dataset over a long period, unaffected by changes in historical satellite observing systems. The dataset is intended to be suitable for studies of climate change or multidecadal variability. The reanalysis period of JRA-55C is from November 1972 to December 2012. The JMA recommends the use of JRA-55C to extend JRA-55C back to January 1958.
+          </documentation>
+          <documentation type="summary">
+The Data Support Section at NCAR has downloaded all JRA-55C data. The entire archive has been reorganized into single parameter time series, and model resolution data has been transformed to a regular Gaussian grid. The JRA-55C products are currently being made accessible to RDA registered users of JRA-55, and will appear incrementally via the Data Access tab.
+          </documentation>
+          <documentation xlink:href="http://jra.kishou.go.jp/JRA-55/index_en.html" xlink:title="JRA-55: Japanese 55-year Reanalysis" />
+          <documentation xlink:href="https://climatedataguide.ucar.edu/climate-data/jra-55" xlink:title="Description of JRA-55C at the NCAR Climate Data Guide" />
+          <creator>   
+            <name vocabulary="DIF">JP/JMA</name>   
+            <contact url="http://www.jma.go.jp/jma/index.html" email="jra@met.kishou.go.jp" />   
+          </creator>   
+          <authority>edu.ucar.rda</authority>   
+          <publisher>   
+            <name vocabulary="DIF">NCAR/RDA</name>   
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />   
+          </publisher>   
+          <keyword>Numerical Weather Prediction</keyword>   
+          <keyword>Model data</keyword>   
+          <keyword>Reanalysis</keyword>   
+        </metadata>
+
+
+     <!--  Files -->
+     <datasetScan name="ds628.2 Files" 
+                  path="files/JRA55/ds628.2" 
+                  location="/glade/p/rda/data/ds628.2">
+         <metadata inherited="true">
+             <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+             <exclude wildcard="*.htaccess"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+
+     <!-- Aggregations -->
+
+     <dataset name="ds628.2 Aggregations">
+
+         <dataset name="Analysis Fields">
+              
+             <featureCollection name="JRA-55C 6-Hourly Model Resolution Total Column Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/1">
+
+               <collection name="ds628.2.anl_column"
+                           spec="/glade/p/rda/data/ds628.2/anl_column/**/anl_column\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly 1.25 Degree Total Column Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/2">
+
+               <collection name="ds628.2.anl_column125"
+                           spec="/glade/p/rda/data/ds628.2/anl_column125/**/anl_column125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly Model Resolution Isentropic Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/3">
+
+               <collection name="ds628.2.anl_isentrop"
+                           spec="/glade/p/rda/data/ds628.2/anl_isentrop/**/anl_isentrop\..*" />
+               <tdm rewrite="test"/> 
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly 1.25 Degree Isentropic Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/4">
+
+               <collection name="ds628.2.anl_isentrop125"
+                           spec="/glade/p/rda/data/ds628.2/anl_isentrop125/**/anl_isentrop125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly Model Resolution Land Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/5">
+
+               <collection name="ds628.2.anl_land"
+                           spec="/glade/p/rda/data/ds628.2/anl_land/**/anl_land\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly 1.25 Degree Land Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/6">
+
+               <collection name="ds628.2.anl_land125"
+                           spec="/glade/p/rda/data/ds628.2/anl_land125/**/anl_land125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+
+             <featureCollection name="JRA-55C 6-Hourly Model Resolution Model Level Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/7">
+
+               <collection name="ds628.2.anl_mdl"
+                           spec="/glade/p/rda/data/ds628.2/anl_mdl/**/anl_mdl\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly 1.25 Degree Isobaric Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/8">
+
+               <collection name="ds628.2.anl_p125"
+                           spec="/glade/p/rda/data/ds628.2/anl_p125/**/anl_p125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly 2.5 Degree Isobaric Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/9">
+
+               <collection name="ds628.2.anl_p25"
+                           spec="/glade/p/rda/data/ds628.2/anl_p25/**/anl_p25\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly Model Resolution Snow Depth Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/10">
+
+               <collection name="ds628.2.anl_snow"
+                           spec="/glade/p/rda/data/ds628.2/anl_snow/**/anl_snow\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly 1.25 Degree Snow Depth Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/11">
+
+               <collection name="ds628.2.anl_snow125"
+                           spec="/glade/p/rda/data/ds628.2/anl_snow125/**/anl_snow125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly Model Resolution Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/12">
+
+               <collection name="ds628.2.anl_surf"
+                           spec="/glade/p/rda/data/ds628.2/anl_surf/**/anl_surf\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly 1.25 Degree Surface Analysis Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/13">
+
+               <collection name="ds628.2.anl_surf125"
+                           spec="/glade/p/rda/data/ds628.2/anl_surf125/**/anl_surf125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+         </dataset>
+
+         <dataset name="Forecast Fields">
+
+             <featureCollection name="JRA-55C 3-Hourly Model Resolution Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/14">
+
+               <collection name="ds628.2.fcst_column"
+                           spec="/glade/p/rda/data/ds628.2/fcst_column/**/fcst_column\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly 1.25 Degree Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/15">
+
+               <collection name="ds628.2.fcst_column125"
+                           spec="/glade/p/rda/data/ds628.2/fcst_column125/**/fcst_column125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly Model Resolution Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/16">
+
+               <collection name="ds628.2.fcst_land"
+                           spec="/glade/p/rda/data/ds628.2/fcst_land/**/fcst_land\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly 1.25 Degree Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/17">
+
+               <collection name="ds628.2.fcst_land125"
+                           spec="/glade/p/rda/data/ds628.2/fcst_land125/**/fcst_land125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <!-- featureCollection name="JRA-55C 6-Hourly Model Resolution Model Level Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/18">
+
+               <collection name="ds628.2.fcst_mdl"
+                           spec="/glade/p/rda/data/ds628.2/fcst_mdl/**/fcst_mdl\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection -->
+              
+
+             <featureCollection name="JRA-55C 6-Hourly 1.25 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/19">
+
+               <collection name="ds628.2.fcst_p125"
+                           spec="/glade/p/rda/data/ds628.2/fcst_p125/**/fcst_p125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly 2.5 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/20">
+
+               <collection name="ds628.2.fcst_p25"
+                           spec="/glade/p/rda/data/ds628.2/fcst_p25/**/fcst_p25\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+         </dataset>
+
+         <dataset name="Diagnostic Fields">
+
+             <featureCollection name="JRA-55C 3-Hourly Model Resolution 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/21">
+
+               <collection name="ds628.2.fcst_phy2m"
+                           spec="/glade/p/rda/data/ds628.2/fcst_phy2m/**/fcst_phy2m\..*"  />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/22">
+
+               <collection name="ds628.2.fcst_phy2m125"
+                           spec="/glade/p/rda/data/ds628.2/fcst_phy2m125/**/fcst_phy2m125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <!-- featureCollection name="JRA-55C 6-Hourly Model Resolution Model Level Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/23">
+
+               <collection name="ds628.2.fcst_phy3m"
+                           spec="/glade/p/rda/data/ds628.2/fcst_phy3m/**/fcst_phy3m\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 6-Hourly 1.25 Degree Isobaric Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/24">
+
+               <collection name="ds628.2.fcst_phy3m125"
+                           spec="/glade/p/rda/data/ds628.2/fcst_phy3m125/**/fcst_phy3m125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection -->
+
+             <featureCollection name="JRA-55C 3-Hourly Model Resolution Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/25">
+
+               <collection name="ds628.2.fcst_phyland"
+                           spec="/glade/p/rda/data/ds628.2/fcst_phyland/**/fcst_phyland\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly 1.25 Degree Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/26">
+
+               <collection name="ds628.2.fcst_phyland125"
+                           spec="/glade/p/rda/data/ds628.2/fcst_phyland125/**/fcst_phyland125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly Model Resolution 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/27">
+
+               <collection name="ds628.2.fcst_surf"
+                           spec="/glade/p/rda/data/ds628.2/fcst_surf/**/fcst_surf\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly 1.25 Degree 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/28">
+
+               <collection name="ds628.2.fcst_surf125"
+                           spec="/glade/p/rda/data/ds628.2/fcst_surf125/**/fcst_surf125\..*"  />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly Model Resolution Sea Ice Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/29">
+
+               <collection name="ds628.2.ice"
+                           spec="/glade/p/rda/data/ds628.2/ice/**/ice\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly 1.25 Degree Sea Ice Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/30">
+
+               <collection name="ds628.2.ice125"
+                           spec="/glade/p/rda/data/ds628.2/ice125/**/ice125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55C 3-Hourly Model Resolution 2-Dimensional Minimum-Maximum Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.2/31">
+
+               <collection name="ds628.2.minmax_surf"
+                           spec="/glade/p/rda/data/ds628.2/minmax_surf/**/minmax_surf\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+         </dataset>
+
+
+      </dataset>
+
+  </dataset>
+
+</catalog>

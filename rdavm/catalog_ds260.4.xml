@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ds260.4 SAMOS Air-Sea Fluxes: 2005-2014"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <dataset name="ds260.4 NCAR RDA - SAMOS Air-Sea Fluxes: 2005-2014">
+        <metadata inherited="true">
+          <dataFormat>NetCDF</dataFormat>
+          <dataType>GRID</dataType>   
+          <documentation type="Rights">Freely Available</documentation>   
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds260.4/" 
+                         xlink:title="NCAR RDA - SAMOS Air-Sea Fluxes: 2005-2014 (ds260.4)"/>   
+          <documentation type="summary">   
+Bulk turbulent heat and momentum fluxes derived using one-minute interval data collected by the Shipboard Automated Meteorological and Oceanographic System (SAMOS) initiative. The fluxes are provided as three products derived using three widely accepted air-sea flux algorithms (Smith 1988, COARE 3.5, and a variant of Bourassa 2006). Each product is grouped by the years the data are collected. The dataset uses SAMOS data from 19 research vessels with observations spanning 2005-2014. Data coverage is the global oceans, but is concentrated around North America. Data include heat and momentum fluxes along with state variables adjusted to 10 meters.
+          </documentation> 
+          <documentation type="summary"> 
+The dataset was developed under base support for the SAMOS project which is provided by a grant from the Climate Observing Division of the National Oceanographic and Atmospheric Administration via the Northern Gulf of Mexico Cooperative Institute administered by the Mississippi State University. Additional support for SAMOS is provided by Oceanographic and Technical Services Program of the National Science Foundation (grant OCE #1447797), the Office of Naval Research (via NSF), and the Schmidt Ocean Institute.
+	  </documentation>       
+          <creator>   
+            <name vocabulary="DIF">FSU/COAPS</name>   
+            <contact url="https://coaps.fsu.edu/" email="contact@coaps.fsu.edu" />   
+          </creator>   
+          <authority>edu.ucar.rda</authority>   
+          <publisher>   
+            <name vocabulary="DIF">NCAR/RDA</name>   
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />   
+          </publisher>   
+          <keyword>OCEAN</keyword>   
+          <keyword>Heat Flux</keyword>   
+
+        </metadata>
+
+      <!--  Files -->
+
+     <datasetScan name="ds260.4 Files" 
+                  path="files/g/ds260.4" 
+                  location="/glade/p/rda/data/ds260.4">
+         <metadata inherited="true">
+             <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+ </dataset>
+</catalog>

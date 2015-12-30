@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="CISL Research Data Archive Dataset ds627.1"
+<catalog name="ds627.2 ERA-Interim Project, Single Parameter 6-Hourly Surface Analysis and Surface Forecast Time Series"
         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
         xmlns:xlink="http://www.w3.org/1999/xlink">
 
-    <dataset name="ds627.1 ERA-Interim Project, Monthly Means">
+    <dataset name="ds627.2 NCAR RDA - ERA-Interim Project, Single Parameter 6-Hourly Surface Analysis and Surface Forecast Time Series">
         <metadata inherited="true">
           <serviceName>all</serviceName>
           <dataFormat>GRIB-1</dataFormat>  
           <dataType>GRID</dataType>   
           <documentation type="Rights">Some Restrictions Apply</documentation>   
-          <documentation xlink:href="http://rda.ucar.edu/datasets/ds627.1/" 
-                         xlink:title="ERA-Interim Project, Monthly Means"/>   
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds627.2/" 
+                         xlink:title="ERA-Interim Project, Single Parameter 6-Hourly Surface Analysis and Surface Forecast Time Series"/>   
           <documentation type="summary">  
 ERA-Interim represents a major undertaking by ECMWF (European Centre for Medium-Range Weather Forecasts) to produce a reanalysis with an improved atmospheric model and assimilation system which replaces those used in ERA-40, particularly for the data-rich 1990s and 2000s, and to be continued as an ECMWF Climate Data Assimilation System (ECDAS) until superseded by a new extended reanalysis. Preliminary runs indicated that several of the inaccuracies exhibited by ERA-40 such as too-strong precipitation over oceans from the early 1990s onwards and a too-strong Brewer-Dobson circulation in the stratosphere, were eliminated or significantly reduced. Production of ERA-Interim, from 1989 onwards, began in summer of 2006. (The period 1979-1988 was prepended in 2011.)
 Through systematic increases of computing power, 4-dimensional variational assimilation (4D-Var) became feasible and part of ECMWF operations since 1997, paving the way to base ERA-Interim on 4D-Var (rather than 3D-Var as in ERA-40). Enhanced computing power also allowed horizontal resolution to be increased from T159 (N80, nominally 1.125 degrees for ERA-40) to T255 (N128, nominally 0.703125 degrees), and the latest cycle of the atmospheric model (IFS CY31r1 and CY31r2) to be used, taking advantage of improved model physics. ERA-interim retains the same 60 model levels used for ERA-40 with the highest level being 0.1 hectopascal. In addition, data assimilation of ERA-Interim also benefits from quality control that draws on experience from ERA-40 and JRA-25, variational bias correction of satellite radiance data, and more extensive use of radiances with an improved fast radiative transfer model.
@@ -33,7 +33,7 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
           <authority>edu.ucar.rda</authority>   
           <publisher>   
             <name vocabulary="DIF">NCAR/RDA</name>   
-            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />   
           </publisher>   
           <keyword>Numerical Weather Prediction</keyword>   
           <keyword>Model data</keyword>   
@@ -42,10 +42,9 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
 
 
       <!--  Files -->
-
-     <datasetScan name="ds627.1 Files" 
-                  path="files/e/ds627.1" 
-                  location="/glade/p/rda/data/ds627.1">
+     <datasetScan name="ds627.2 Files" 
+                  path="files/e/ds627.2" 
+                  location="/glade/p/rda/data/ds627.2">
          <metadata inherited="true">
              <serviceName>all</serviceName>
          </metadata>
@@ -56,88 +55,6 @@ NCAR's Data Support Section (DSS) is performing and supplying a grid transformed
          <addDatasetSize/>
      </datasetScan>
 
-     <!-- Aggregations -->
-
-     <dataset name="ds627.1 Aggregations">
-
-         <dataset name="Analysis">
-       
-             <featureCollection name="Monthly Mean ERA Interim atmospheric model analysis on model levels"
-                                featureType="GRIB1"
-                                harvest="true"
-                                path="aggregations/e/ds627.1/5">
-
-               <collection name="ds627.1_an_ml" 
-                           spec="/glade/p/rda/data/ds627.1/ei.moda.an.ml/ei\.moda\.an\.ml\..*" />
-                  
-                  <tdm rewrite="test"/> 
-             </featureCollection>
-          
-             <featureCollection name="Monthly Mean ERA Interim atmospheric model analysis interpolated to pressure levels"
-                                featureType="GRIB1"
-                                harvest="true"
-                                path="aggregations/e/ds627.1/6">
-
-               <collection name="ds627.1_an_pl" 
-                           spec="/glade/p/rda/data/ds627.1/ei.moda.an.pl/ei\.moda\.an\.pl\..*" />
-                
-               <tdm rewrite="test"/>
-             </featureCollection>
-          
-             <featureCollection name="Monthly Mean ERA Interim atmospheric model analysis interpolated to isentropic levels"
-                                featureType="GRIB1"
-                                harvest="true"
-                                path="aggregations/e/ds627.1/7">
-
-                <collection name="ds627.1_an_pt"
-                           spec="/glade/p/rda/data/ds627.1/ei.moda.an.pt/ei\.moda\.an\.pt\..*"
-                           olderThan="0 min"/>
-             
-                  <tdm rewrite="test"/>
-             </featureCollection>  
-   
-             <featureCollection name="Monthly Mean ERA Interim atmospheric model analysis interpolated to 2 pvu level"
-                                featureType="GRIB1"
-                                harvest="true"
-                                path="aggregations/e/ds627.1/8">
-
-               <collection name="ds627.1_an_pv"
-                           spec="/glade/p/rda/data/ds627.1/ei.moda.an.pv/ei\.moda\.an\.pv\.regn128sc\..*"
-                           dateFormatMark="#ei.moda.an.pv.regn128sc.#yyyyMMddHH" />
-   
-                  <tdm rewrite="test"/>
-             </featureCollection>
-
-             <featureCollection name="Monthly Mean ERA Interim atmospheric model analysis for surface"
-                                featureType="GRIB1"
-                                harvest="true"
-                                path="aggregations/e/ds627.1/9">
-
-               <collection name="ds627.1_an_sfc"
-                           spec="/glade/p/rda/data/ds627.1/ei.moda.an.sfc/ei\.moda\.an\.sfc\.regn128sc\..*"
-                           dateFormatMark="#ei.moda.an.sfc.regn128sc.#yyyyMMddHH" />
-
-                  <tdm rewrite="test"/>
-             </featureCollection>
-
-         </dataset>
-         <dataset name="Forecast">
-
-             <featureCollection name="Monthly Mean ERA Interim atmospheric model forecast for surface (at 12 hours)"
-                                featureType="GRIB1"
-                                harvest="true"
-                                path="aggregations/e/ds627.1/15">
-
-               <collection name="ds627.1_fc_sfc" 
-                           spec="/glade/p/rda/data/ds627.1/ei.mdfa.fc12hr.sfc/ei\.mdfa\.fc12hr\.sfc\.regn128sc\..*"
-                           dateFormatMark="#ei.mdfa.fc12hr.sfc.regn128sc.#yyyyMMddHH" />
-          
-                  <tdm rewrite="test"/> 
-             </featureCollection>
-              
-         </dataset>
-      </dataset>
-       
   </dataset>
 
 </catalog>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ds628.5 JRA-55AMIP: Monthly Means and Variances Including Diurnal Statistics"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <dataset name="ds628.5 NCAR RDA - JRA-55AMIP: Monthly Means and Variances Including Diurnal Statistics">
+        <metadata inherited="true">
+          <serviceName>all</serviceName>
+          <dataFormat>GRIB-1</dataFormat>
+          <dataType>GRID</dataType>   
+          <documentation type="Rights">Some Restrictions Apply</documentation>   
+          <documentation xlink:href="http://rda.ucar.edu/datasets/ds628.5/" 
+                         xlink:title="JRA-55AMIP: Monthly Means and Variances Including Diurnal Statistics"/>   
+          <documentation type="summary">  
+As a subset of the Japanese 55-year Reanalysis (JRA-55) project, an experiment using the global atmospheric model of the JRA-55 was conducted by the Meteorological Research Institute of the Japan Meteorological Agency. The experiment, named the JRA-55AMIP, has been carried out by prescribing the same boundary conditions and radiative forcing of JRA-55, including the historical observed sea surface temperature, sea ice concentration, greenhouse gases, etc., with no use of atmospheric observational data. This project is intended to assess systematic errors of the model.
+          </documentation>
+          <documentation xlink:href="http://jra.kishou.go.jp/JRA-55/index_en.html" xlink:title="JRA-55: Japanese 55-year Reanalysis" />
+          <documentation xlink:href="https://climatedataguide.ucar.edu/climate-data/jra-55" xlink:title="Description of JRA-55C at the NCAR Climate Data Guide" />
+          <creator>   
+            <name vocabulary="DIF">JP/JMA</name>   
+            <contact url="http://www.jma.go.jp/jma/index.html" email="jra@met.kishou.go.jp" />   
+          </creator>   
+          <authority>edu.ucar.rda</authority>   
+          <publisher>   
+            <name vocabulary="DIF">NCAR/RDA</name>   
+            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />   
+          </publisher>   
+          <keyword>Numerical Weather Prediction</keyword>   
+          <keyword>Model data</keyword>   
+          <keyword>Reanalysis</keyword>   
+        </metadata>
+
+
+     <!--  Files -->
+     <datasetScan name="ds628.5 Files" 
+                  path="files/JRA55/ds628.5" 
+                  location="/glade/p/rda/data/ds628.5">
+         <metadata inherited="true">
+             <serviceName>all</serviceName>
+         </metadata>
+         <filter>
+             <exclude wildcard="*.html"/>
+             <exclude wildcard="*.htaccess"/>
+         </filter>
+         <addDatasetSize/>
+     </datasetScan>
+
+
+     <!-- Aggregations -->
+     <dataset name="ds628.5 Aggregations">
+
+              
+             <featureCollection name="JRA-55AMIP Monthly Mean 1.25 Degree Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/57">
+
+               <collection name="ds628.5.fcst_column125"
+                           spec="/glade/p/rda/data/ds628.5/fcst_column125/**/fcst_column125\..*" />
+               <tdm rewrite="test"/>
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Mean 1.25 Degree Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/58">
+
+               <collection name="ds628.5.fcst_column125_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_column125_diurnal/**/fcst_column125_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Variance of 1.25 Degree Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/59">
+
+               <collection name="ds628.5.fcst_column125_var"
+                           spec="/glade/p/rda/data/ds628.5/fcst_column125_var/**/fcst_column125_var\..*" />
+               <tdm rewrite="test"/> 
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Variance of 1.25 Degree Total Column Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/60">
+
+               <collection name="ds628.5.fcst_column125_var_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_column125_var_diurnal/**/fcst_column125_var_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+
+             <featureCollection name="JRA-55AMIP Monthly Mean 1.25 Degree Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/65">
+
+               <collection name="ds628.5.fcst_land125"
+                           spec="/glade/p/rda/data/ds628.5/fcst_land125/**/fcst_land125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Mean 1.25 Degree Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/66">
+
+               <collection name="ds628.5.fcst_land125_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_land125_diurnal/**/fcst_land125_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Variance of 1.25 Degree Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/67">
+
+               <collection name="ds628.5.fcst_land125_var"
+                           spec="/glade/p/rda/data/ds628.5/fcst_land125_var/**/fcst_land125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Variance of 1.25 Degree Land Surface Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/68">
+
+               <collection name="ds628.5.fcst_land125_var_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_land125_var_diurnal/**/fcst_land125_var_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Mean 1.25 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/73">
+
+               <collection name="ds628.5.fcst_p125"
+                           spec="/glade/p/rda/data/ds628.5/fcst_p125/**/fcst_p125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Mean 1.25 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/74">
+      
+               <collection name="ds628.5.fcst_p125_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_p125_diurnal/**/fcst_p125_diurnal\..*" />
+               <tdm rewrite="test"/>
+   
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Variance of 1.25 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/75">
+      
+               <collection name="ds628.5.fcst_p125_var"
+                           spec="/glade/p/rda/data/ds628.5/fcst_p125_var/**/fcst_p125_var\..*" />
+               <tdm rewrite="test"/>
+  
+             </featureCollection>
+  
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Variance of 1.25 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/76">
+      
+               <collection name="ds628.5.fcst_p125_var_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_p125_var_diurnal/**/fcst_p125_var_diurnal\..*" />
+               <tdm rewrite="test"/>
+ 
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Mean 2.5 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/77">
+      
+               <collection name="ds628.5.fcst_p25"
+                           spec="/glade/p/rda/data/ds628.5/fcst_p25/**/fcst_p25\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Mean 2.5 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/78">
+      
+               <collection name="ds628.5.fcst_p25_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_p25_diurnal/**/fcst_p25_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Variance of 2.5 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/79">
+
+               <collection name="ds628.5.fcst_p25_var"
+                           spec="/glade/p/rda/data/ds628.5/fcst_p25_var/**/fcst_p25_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+  
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Variance of 2.5 Degree Isobaric Forecast Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/80">
+      
+               <collection name="ds628.5.fcst_p25_var_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_p25_var_diurnal/**/fcst_p25_var_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+
+             <featureCollection name="JRA-55AMIP Monthly Mean 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/85">
+      
+               <collection name="ds628.5.fcst_phy2m125"
+                           spec="/glade/p/rda/data/ds628.5/fcst_phy2m125/**/fcst_phy2m125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+   
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Mean 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/86">
+ 
+               <collection name="ds628.5.fcst_phy2m125_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_phy2m125_diurnal/**/fcst_phy2m125_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection> 
+
+             <featureCollection name="JRA-55AMIP Monthly Variance of 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/87">
+ 
+               <collection name="ds628.5.fcst_phy2m125_var"
+                           spec="/glade/p/rda/data/ds628.5/fcst_phy2m125_var/**/fcst_phy2m125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Variance of 1.25 Degree 2-Dimensional Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/88">
+
+               <collection name="ds628.5.fcst_phy2m125_var_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_phy2m125_var_diurnal/**/fcst_phy2m125_var_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Mean 1.25 Degree Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/101">
+
+               <collection name="ds628.5.fcst_phyland125"
+                           spec="/glade/p/rda/data/ds628.5/fcst_phyland125/**/fcst_phyland125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+  
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Mean 1.25 Degree Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/102">
+
+               <collection name="ds628.5.fcst_phyland125_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_phyland125_diurnal/**/fcst_phyland125_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Variance of 1.25 Degree Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/103">
+
+               <collection name="ds628.5.fcst_phyland125_var"
+                           spec="/glade/p/rda/data/ds628.5/fcst_phyland125_var/**/fcst_phyland125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Variance of 1.25 Degree Land Surface Average Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/104">
+
+               <collection name="ds628.5.fcst_phyland125_var_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_phyland125_var_diurnal/**/fcst_phyland125_var_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Mean 1.25 Degree 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/109">
+
+               <collection name="ds628.5.fcst_surf125"
+                           spec="/glade/p/rda/data/ds628.5/fcst_surf125/**/fcst_surf125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Mean 1.25 Degree 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/110">
+
+               <collection name="ds628.5.fcst_surf125_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_surf125_diurnal/**/fcst_surf125_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Variance of 1.25 Degree 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/111">
+
+               <collection name="ds628.5.fcst_surf125_var"
+                           spec="/glade/p/rda/data/ds628.5/fcst_surf125_var/**/fcst_surf125_var\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP Monthly Diurnal Variance of 1.25 Degree 2-Dimensional Instantaneous Diagnostic Fields"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/112">
+
+               <collection name="ds628.5.fcst_surf125_var_diurnal"
+                           spec="/glade/p/rda/data/ds628.5/fcst_surf125_var_diurnal/**/fcst_surf125_var_diurnal\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP 1.25 Degree Constant Fields 628.5"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/125">
+
+               <collection name="ds628.5.const125"
+                           spec="/glade/p/rda/data/ds628.5/ll125/**/ll125\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+
+             <featureCollection name="JRA-55AMIP 2.5 Degree Constant Fields 628.5"
+                                featureType="GRIB1"
+                                harvest="true"
+                                path="aggregations/JRA55/ds628.5/126">
+
+               <collection name="ds628.5.const25"
+                           spec="/glade/p/rda/data/ds628.5/ll25/**/ll25\..*" />
+               <tdm rewrite="test"/>
+
+             </featureCollection>
+             
+
+      </dataset>
+ 
+  </dataset>
+
+</catalog>
