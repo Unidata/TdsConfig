@@ -12,16 +12,26 @@
           <documentation xlink:href="http://rda.ucar.edu/datasets/ds628.0/" 
                          xlink:title="JRA-55: Japanese 55-year Reanalysis, Daily 3-Hourly and 6-Hourly Data"/>   
           <documentation type="summary">  
-The Japan Meteorological Agency (JMA) conducted JRA-55, the second Japanese global atmospheric reanalysis project. It covers 55 years, extending back to 1958, coinciding with the establishment of the global radiosonde observing system. Compared to its predecessor, JRA-25, JRA-55 is based on a new data assimilation and prediction system (DA) that improves many deficiencies found in the first Japanese reanalysis. These improvements have come about by implementing higher spatial resolution (TL319L60), a new radiation scheme, four-dimensional variational data assimilation (4D-Var) with Variational Bias Correction (VarBC) for satellite radiances, and introduction of greenhouse gases with time varying concentrations. The entire JRA-55 production was completed in 2013, and thereafter will be continued on a real time basis.          
+The Japan Meteorological Agency (JMA) conducted JRA-55, the second Japanese global atmospheric reanalysis project.
+              It covers 55 years, extending back to 1958, coinciding with the establishment of the global radiosonde observing system.
+              Compared to its predecessor, JRA-25, JRA-55 is based on a new data assimilation and prediction system (DA) that improves many deficiencies found in the first Japanese reanalysis.
+              These improvements have come about by implementing higher spatial resolution (TL319L60), a new radiation scheme, four-dimensional variational
+              data assimilation (4D-Var) with Variational Bias Correction (VarBC) for satellite radiances, and introduction of greenhouse gases with time varying
+              concentrations. The entire JRA-55 production was completed in 2013, and thereafter will be continued on a real time basis.
           </documentation>
           <documentation type="summary">
 Specific early results of quality assessment of JRA-55 indicate that a large temperature bias in the lower stratosphere has been significantly reduced compared to JRA-25 through a combination of the new radiation scheme and application of VarBC (which also reduces unrealistic temperature variations). In addition, a dry land surface anomaly in the Amazon basin has been mitigated, and overall forecast scores are much improved over JRA-25.
           </documentation>
           <documentation type="summary">
-Most of the observational data employed in JRA-55 are those used in JRA-25. Additionally, newly reprocessed METEOSAT and GMS data were supplied by EUMETSAT and MSC/JMA respectively. Snow depth data over the United States, Russia and Mongolia were supplied by UCAR, RIHMI and IMH respectively.
+Most of the observational data employed in JRA-55 are those used in JRA-25.
+              Additionally, newly reprocessed METEOSAT and GMS data were supplied by EUMETSAT and MSC/JMA respectively.
+              Snow depth data over the United States, Russia and Mongolia were supplied by UCAR, RIHMI and IMH respectively.
           </documentation> 
           <documentation type="summary">
-The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of JRA-55 with the RDA (Research Data Archive) archiving and metadata system. The model resolution data has also been acquired, archived and processed as well, including transformation of the TL319L60 grid to a regular latitude-longitude Gaussian grid (320 latitudes by 640 longitudes, nominally 0.5625 degree). All RDA JRA-55 data is available for internet download, including complete subsetting and data format conversion services.
+The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of JRA-55 with the RDA (Research Data Archive) archiving and metadata system.
+              The model resolution data has also been acquired, archived and processed as well, including transformation of the TL319L60 grid to a
+              regular latitude-longitude Gaussian grid (320 latitudes by 640 longitudes, nominally 0.5625 degree).
+              All RDA JRA-55 data is available for internet download, including complete subsetting and data format conversion services.
           </documentation>
           <documentation xlink:href="http://jra.kishou.go.jp/JRA-55/index_en.html" xlink:title="JRA-55: Japanese 55-year Reanalysis" />
           <documentation xlink:href="https://climatedataguide.ucar.edu/climate-data/jra-55" xlink:title="Description of JRA-55 at the NCAR Climate Data Guide" />
