@@ -60,6 +60,9 @@
 
          <collection name = "ds084.1" spec="/glade/p/rda/data/ds084.1/**/.*grib2$" />
          <tdm rewrite="test" rescan="0 4 1 * * ? *" />
+         <gribConfig>
+             <intvFilter interval="225,228" />
+         </gribConfig>
      </featureCollection>
 
   </dataset>
