@@ -87,6 +87,34 @@
 
     </dataset -->
     <!-- end of NCEP -->
+    <dataset name="NCEP National Blend of Models">
+      <metadata inherited="true">
+        <documentation type="summary">The National Blend of Models (NBM) is a
+	    nationally consistent and skillful suite of calibrated forecast
+	    guidance based on a blend of both NWS and non-NWS numerical
+	    weather prediction model data and post-processed model guidance.
+        </documentation>
+	<documentation xlink:href="http://w2.weather.gov/mdl/blend" xlink:title="MDL NBM Website"/>
+      </metadata>
+
+      <featureCollection name="National Blend Forecast Grids"
+                         featureType="GRIB2" harvest="true" path="grib/NCEP/NBM/CONUS">
+        <metadata inherited="true">
+          <documentation type="summary">
+            CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids from
+            00Z and 12Z.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NBM/.*grib2$"
+                    dateFormatMark="#Blend_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NCEP_MODEL_BLEND"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+    </dataset>
+    <!-- end of National model blend -->
 
     <dataset name="Do not use">
 
