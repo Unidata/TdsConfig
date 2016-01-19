@@ -24,7 +24,7 @@ HRS	^H.[A-L]... ECMF (..)(..)
 # NCEP's blend of models (for seeding NDFD grids for forecasters)
 #
 NGRID	^L[A-Z]AZ9. KWEA (..)(..)
-	FILE -close
+	FILE	-close
 	${DATA_DIR}/native/grid/NCEP/NBM/National_Blend_(\1:yyyy)(\1:mm)\1_\200.grib2
 #
 # --------
