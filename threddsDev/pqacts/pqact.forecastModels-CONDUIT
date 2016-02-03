@@ -1,0 +1,145 @@
+#
+# Contains LDM pqacts for the model output served by the TDS
+#   catalog forecastModels.xml
+#
+# ===============================
+# = NCEP data available via IDD =
+# ===============================
+#
+# ------------------------------------------
+# - Global Ensemble Forecast System (GEFS) -
+# ------------------------------------------
+#
+# http://www.nco.ncep.noaa.gov/pmb/products/gens/
+#
+# GEFS 1.0 degree Ensemble Members
+#
+CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge[cp].*pgrb2af
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member/GEFS_Global_1p0deg_Ensemble_\1_\200.grib2
+#
+# GEFS 1.0 degree Ensemble Members Analysis
+#
+CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge[cp].*pgrb2aanl
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member_analysis/GEFS_Global_1p0deg_Ensemble_ana_\1_\200.grib2
+#
+# GEFS 1.0 degree Ensemble Statistics (Average and Spread)
+#
+CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge(avg|spr)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/derived/GEFS_Global_1p0deg_Ensemble_derived_\1_\200.grib2
+#
+# --------------------------------
+# - Global Forecast System (GFS) -
+# --------------------------------
+#
+# GFS Global 0.25 degree analysis only
+#
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p25\.a
+	FILE
+	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg_ana/GFS_Global_0p25deg_ana_\1_\200.grib2
+#
+# GFS Global 0.25 degree forecast only
+#
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p25\.f
+	FILE
+	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg/GFS_Global_0p25deg_\1_\200.grib2
+#
+# http://www.nco.ncep.noaa.gov/pmb/products/gfs/
+#
+# GFS Global 0.5 Degree
+#
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p50\.f
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg/GFS_Global_0p5deg_\1_\200.grib2
+#
+# GFS Global 0.5 Degree Analysis
+#
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p50\.a
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg_ana/GFS_Global_0p5deg_ana_\1_\200.grib2
+#
+# GFS Global 1.0 Degree
+#
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.1p00\.f
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg/GFS_Global_onedeg_\1_\200.grib2
+#
+# GFS Global 1.0 Degree Analysis
+#
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.1p00\.a
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg_ana/GFS_Global_onedeg_ana_\1_\200.grib2
+#
+# GFS Global 2.5 degree
+#
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.2p50\.
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Global_2p5deg/GFS_Global_2p5deg_\1_\200.grib2
+#
+# --------------------------------------------------
+# - North American Mesoscale Forecast System (NAM) -
+# --------------------------------------------------
+#
+# NAM Alaska 45 km (FROM CONDUIT)
+#
+CONDUIT	^data/nccf/com/nam/prod/nam.(........)/nam.t(..)z.awipak.*grib2
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/NAM/Alaska_45km/conduit/NAM_Alaska_45km_conduit_\1_\200.grib2
+#
+# NAM CONUS 12 km (FROM CONDUIT)
+#
+CONDUIT	^data/nccf/com/nam/prod/nam.(........)/nam.t(..)z.awip12.*grib2
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/NAM/CONUS_12km_conduit/NAM_CONUS_12km_conduit_\1_\200.grib2
+#
+# NAM CONUS 40 km (FROM CONDUIT)
+#
+CONDUIT	^data/nccf/com/nam/prod/nam.(........)/nam.t(..)z.awip3d..\.tm00\.grib2
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/NAM/CONUS_40km/conduit/NAM_CONUS_40km_conduit_\1_\200.grib2
+#
+# NAM Polar 90 km
+#
+CONDUIT	^data/nccf/com/nam/prod/nam.(........)/nam.t(..)z.grbgrd.*grib2
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/NAM/Polar_90km/NAM_Polar_90km_\1_\200.grib2
+#
+# NAM Fire Weather Nest
+#
+CONDUIT	^data/nccf/com/nam/prod/nam\.(........)/nam.t(..)z\.firewxnest
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/NAM/Firewxnest/NAM_Firewxnest_\1_\200.grib2
+#
+# -----------------------
+# - Rapid Refresh (RAP) -
+# -----------------------
+#
+# RAP CONUS 20 km
+#
+CONDUIT	^data/nccf/com/rap/prod/rap.(........)/rap.t(..)z.awp252pgrb
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/RR/CONUS_20km/RR_CONUS_20km_\1_\200.grib2
+#
+# RAP CONUS 40 km
+#
+CONDUIT	^data/nccf/com/rap/prod/rap.(........)/rap.t(..)z.awp236pgrb
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/RR/CONUS_40km/RR_CONUS_40km_\1_\200.grib2
+#
+# ------------------------------------------------
+# - Short Range Ensemble Forecasts System (SREF) -
+# ------------------------------------------------
+#
+# SREF CONUS 40 km Bias Corrected Ensemble Derived Products
+#
+CONDUIT	^data/nccf/com/sref/prod/sref\.(........)/(..)/(ensprod_biasc)/.*pgrb212
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/SREF/CONUS_40km/\3/SREF_CONUS_40km_\3_\1_\200.grib2
+#
+# SREF CONUS 40 km Bias Corrected Ensemble Members
+#
+CONDUIT	^data/nccf/com/sref/prod/sref\.(........)/(..)/(pgrb_biasc)/sref_(.*)\.pgrb212\.(.*)\.
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/SREF/CONUS_40km/\3/SREF_CONUS_40km_\3_\4_\5_\1_\200.grib2
