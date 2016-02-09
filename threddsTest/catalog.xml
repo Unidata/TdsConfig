@@ -19,5 +19,9 @@
     <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Datasets" name=""/>
     <catalogRef xlink:href="testPointDatasets.xml" xlink:title="Test Point Datasets" name=""/>
   </dataset>
+  
+  <dataset name="For GRIB Indexing Purposes">
+    <catalogRef xlink:href="modelsHrrr.xml" xlink:title="Test Point Datasets" name=""/>
+  </dataset>
 </catalog>
 
