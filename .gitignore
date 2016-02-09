@@ -1,2 +1,24 @@
-*.swp
+# Ignore unwanted IntelliJ IDEA project files
+/intelliJ/
+/intellij/
+*.ipr
+*.iml
+*.iws
+.idea/
+atlassian-ide-plugin.xml
+
+# Ignore eclipse project files
+.classpath
 .project
+.settings/
+bin/
+*~
+
+# OS generated files 
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+*.swp
+*.*~
+*.swp
+._*
