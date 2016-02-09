@@ -386,7 +386,7 @@
         <option name="timeUnit" value="1 minute" />
       </gribConfig>
 
-      <tdm rewrite="test" rescan="0 1/5 * * * ? *" />
+      <tdm rewrite="test" rescan="0 6/5 * * * ? *" />
     </featureCollection>
   </dataset> <!-- NEXRAD National Composites From Unidata -->
 

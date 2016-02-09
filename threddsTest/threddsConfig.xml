@@ -2,7 +2,7 @@
 <threddsConfig>
   
   <serverInformation>
-    <name>THREDDS Data Server</name>
+    <name>THREDDS-TEST Data Server</name>
     <logoUrl>/thredds/unidataLogo.jpg</logoUrl>
     <logoAltText>TDS</logoAltText>
 
@@ -25,7 +25,6 @@
 
   <catalogRoot>radar/radarCollections.xml</catalogRoot>
   <catalogRoot>modelsHrrr.xml</catalogRoot>
-  <catalogRoot>gfs0p25.xml</catalogRoot>
 
   <!--
    * Setup for generated HTML pages.
