@@ -50,46 +50,7 @@
           <option name="timeUnit" value="1 minute" />
         </gribConfig>
       </featureCollection>
-    </dataset>
-
-    <dataset name="HRRR from NCEP">
-
-      <metadata inherited="true">
-        <documentation type="summary">NCEP High Resolution Rapid Refresh</documentation>
-        <documentation xlink:href="http://www.nco.ncep.noaa.gov/pmb/products/hrrr/"
-                       xlink:title="NCEP Model Notes"/>
-        <documentation type="summary">NCEP HRRR Model : AWIPS 184 (C) Grid. 2.5 km NDFD grid over CONUS (Lambert Conformal).
-          Model runs are made hourly. Horizontal = 2145 by 1377 points, resolution 2.5 km, Lambert Conformal projection.
-          Vertical = 1000 to 500 hPa mandatory pressure levels (5 levels); surface, height above ground, pressure layers.
-        </documentation>
-      </metadata>
-
-      <featureCollection name="NCEP HRRR CONUS 2.5km Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km_ANA">
-        <dataFormat>GRIB-2</dataFormat>
-        <metadata inherited="true">
-          <documentation type="summary">This collection contains analysis grids only.</documentation>
-        </metadata>
-
-        <collection name="NCEP_HRRR_CONUS_2p5km_Analysis"
-                    spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km_Analysis/HRRR_CONUS_2p5km_ana_#yyyyMMdd_HHmm#.grib2"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
-      </featureCollection>
-
-      <featureCollection name="NCEP HRRR CONUS 2.5km" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km">
-        <dataFormat>GRIB-2</dataFormat>
-        <metadata inherited="true">
-          <documentation type="summary">Forecasts grids every hour out 15 hours.</documentation>
-        </metadata>
-
-        <collection name="NCEP_HRRR_CONUS_2p5km"
-                    spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
-      </featureCollection>
-    </dataset>
+    </dataset> <!-- End of NOAA GSD HRRR Datasets -->
   </dataset> <!-- End of HRRR Datasets -->
   
 </catalog>
