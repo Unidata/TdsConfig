@@ -2,7 +2,7 @@
 <threddsConfig>
   
   <serverInformation>
-    <name>THREDDS Data Server</name>
+    <name>THREDDS-DEV Data Server</name>
     <logoUrl>/thredds/threddsIcon.png</logoUrl>
     <logoAltText>TDS</logoAltText>
 
