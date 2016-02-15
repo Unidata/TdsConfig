@@ -349,7 +349,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.1_anl_snow" partition="none"
+               <collection name="ds628.1_anl_snow" timePartition="none"
                            spec="/glade/p/rda/data/ds628.1/anl_snow/**/anl_snow\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -379,7 +379,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.1_anl_snow125" partition="none"
+               <collection name="ds628.1_anl_snow125" timePartition="none"
                            spec="/glade/p/rda/data/ds628.1/anl_snow125/**/anl_snow125\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -946,7 +946,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.1_ice" partition="none"
+               <collection name="ds628.1_ice" timePartition="none"
                            spec="/glade/p/rda/data/ds628.1/ice/**/ice\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -977,7 +977,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.1_ice125" partition="none"
+               <collection name="ds628.1_ice125" timePartition="none"
                            spec="/glade/p/rda/data/ds628.1/ice125/**/ice125\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -1044,7 +1044,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.1_ll125" partition="none"
+               <collection name="ds628.1_ll125" timePartition="none"
                            spec="/glade/p/rda/data/ds628.1/ll125/**/ll125\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -1058,7 +1058,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.1_ll25" partition="none"
+               <collection name="ds628.1_ll25" timePartition="none"
                            spec="/glade/p/rda/data/ds628.1/ll25/**/ll25\..*"  />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -1072,7 +1072,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.1_tl319" partition="none"
+               <collection name="ds628.1_tl319" timePartition="none"
                            spec="/glade/p/rda/data/ds628.1/tl319/**/tl319\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
