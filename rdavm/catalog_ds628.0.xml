@@ -638,7 +638,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.0_ll125" partition="none"
+               <collection name="ds628.0_ll125" timePartition="none"
                            spec="/glade/p/rda/data/ds628.0/ll125/**/ll125\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -652,7 +652,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.0_ll25" partition="none"
+               <collection name="ds628.0_ll25" timePartition="none"
                            spec="/glade/p/rda/data/ds628.0/ll25/**/ll25\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -666,7 +666,7 @@ The Data Support Section (DSS) at NCAR has processed the 1.25 degree version of 
                     <serviceName>all</serviceName>
                </metadata>
 
-               <collection name="ds628.0_tl319" partition="none"
+               <collection name="ds628.0_tl319" timePartition="none"
                            spec="/glade/p/rda/data/ds628.0/tl319/**/tl319\..*" />
                <tdm rewrite="test"/>
              </featureCollection>

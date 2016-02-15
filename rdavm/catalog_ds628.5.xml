@@ -356,7 +356,7 @@ As a subset of the Japanese 55-year Reanalysis (JRA-55) project, an experiment u
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.5/125">
 
-               <collection name="ds628.5.const125" partition="none"
+               <collection name="ds628.5.const125" timePartition="none"
                            spec="/glade/p/rda/data/ds628.5/ll125/**/ll125\..*" />
                <tdm rewrite="test"/>
 
@@ -367,7 +367,7 @@ As a subset of the Japanese 55-year Reanalysis (JRA-55) project, an experiment u
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.5/126">
 
-               <collection name="ds628.5.const25" partition="none"
+               <collection name="ds628.5.const25" timePartition="none"
                            spec="/glade/p/rda/data/ds628.5/ll25/**/ll25\..*" />
                <tdm rewrite="test"/>
 
