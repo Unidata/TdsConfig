@@ -249,7 +249,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.3/19">
          
-               <collection name="ds628.3.anl_snow"
+               <collection name="ds628.3.anl_snow" partition="none"
                            spec="/glade/p/rda/data/ds628.3/anl_snow/**/anl_snow\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -259,7 +259,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.3/20">
 
-               <collection name="ds628.3.anl_snow_var"
+               <collection name="ds628.3.anl_snow_var" partition="none"
                            spec="/glade/p/rda/data/ds628.3/anl_snow_var/**/anl_snow_var\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -269,7 +269,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.3/21">
 
-               <collection name="ds628.3.anl_snow125"
+               <collection name="ds628.3.anl_snow125" partition="none"
                            spec="/glade/p/rda/data/ds628.3/anl_snow125/**/anl_snow125\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -279,7 +279,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.3/22">
 
-               <collection name="ds628.3.anl_snow125_var"
+               <collection name="ds628.3.anl_snow125_var" partition="none"
                            spec="/glade/p/rda/data/ds628.3/anl_snow125_var/**/anl_snow125_var\..*" />
                <tdm rewrite="test"/>
 
@@ -730,7 +730,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.3/57">
 
-               <collection name="ds628.3.ice"
+               <collection name="ds628.3.ice" partition="none"
                            spec="/glade/p/rda/data/ds628.3/ice/**/ice\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -740,7 +740,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.3/58">
 
-               <collection name="ds628.3.ice_var"
+               <collection name="ds628.3.ice_var" partition="none"
                            spec="/glade/p/rda/data/ds628.3/ice_var/**/ice_var\..*" />
                <tdm rewrite="test"/>
 
@@ -751,7 +751,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.3/59">
 
-               <collection name="ds628.3.ice125"
+               <collection name="ds628.3.ice125" partition="none"
                            spec="/glade/p/rda/data/ds628.3/ice125/**/ice125\..*" />
                <tdm rewrite="test"/>
              </featureCollection>
@@ -761,7 +761,7 @@ The Data Support Section at NCAR has downloaded all JRA-55C data. The entire arc
                                 harvest="true"
                                 path="aggregations/JRA55/ds628.3/60">
 
-               <collection name="ds628.3.ice125_var"
+               <collection name="ds628.3.ice125_var" partition="none"
                            spec="/glade/p/rda/data/ds628.3/ice125_var/**/ice125_var\..*" />
                <tdm rewrite="test"/>
 
