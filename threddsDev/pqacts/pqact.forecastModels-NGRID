@@ -1,0 +1,177 @@
+#
+# Contains LDM pqacts for the model output served by the TDS
+#   catalog forecastModels.xml
+#
+# ===============================
+# = NCEP data available via IDD =
+# ===============================
+#
+# --------------------------------------------
+# - Downscaled GFS with Eta Extension (DGEX) -
+# --------------------------------------------
+#
+# NCEP DGEX CONUS 12km
+#
+NGRID	^[LM].E... KWBD ([0-3][0-9])([0-2][0-9])([0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/DGEX/CONUS_12km/DGEX_CONUS_12km_(\1:yyyy)(\1:mm)\1_\2\3.grib2
+#
+# NCEP DGEX Alaska 12km
+#
+NGRID	^[LM].F... KWBD ([0-3][0-9])([0-2][0-9])([0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/DGEX/Alaska_12km/DGEX_Alaska_12km_(\1:yyyy)(\1:mm)\1_\2\3.grib2
+#
+# --------------------------------
+# - Global Forecast System (GFS) -
+# --------------------------------
+#
+# http://www.nco.ncep.noaa.gov/pmb/products/gfs/
+#
+# GFS Northern Hemisphere 381km 
+#
+NGRID	^[LM].A... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/N_Hemisphere_381km_grib2/GFS_N_Hemisphere_381km_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# GFS Pacific 40 km
+#
+NGRID	^[LM].O... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Pacific_40km/GFS_Pacific_40km_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# GFS Puerto Rico 0.5 degree
+#
+NGRID	^[LM].T... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Puerto_Rico_0p5deg/GFS_Puerto_Rico_0p5deg_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# GFS CONUS 95 km
+#
+NGRID	^[LM].H... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/CONUS_95km/GFS_CONUS_95km_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# --------------------------------------------------
+# - North American Mesoscale Forecast System (NAM) -
+# --------------------------------------------------
+#
+# NAM Alaska 11 km
+#
+NGRID	^[LM].S... KWBE ([0-3][0-9])([0-2][0-9]).*NAM_84/#242
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/NAM/Alaska_11km/NAM_Alaska_11km_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# NAM CONUS 12 km (FROM NOAAPORT)
+#
+NGRID	^[LM].B... KWBE ([0-3][0-9])([0-2][0-9]).*NAM_84/#218
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/NAM/CONUS_12km/NAM_CONUS_12km_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# -----------------------
+# - Rapid Refresh (RAP) -
+# -----------------------
+#
+# RAP CONUS 13 km
+#
+NGRID	^[LM].D... KWBG ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/RR/CONUS_13km/RR_CONUS_13km_(\1:yyyy)(\1:mm)\1_\2.grib2
+# =====================================
+# = HRRR model data available via IDD =
+# =====================================
+#
+# ---------------------------------------------
+# - NCEP High Resolution Rapid Refresh (HRRR) -
+# ---------------------------------------------
+#
+# High Resolution Radid Refresh (HRRR) grid output from NCEP
+# Based on http://www.nws.noaa.gov/os/notification/tin14-28hrrr-aac.htm
+#
+# Forecast Grids
+#
+NGRID	^Y.C.* KWBY (..)(..).*F([0-9][0-9][0-9])
+	FILE
+	${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+#  http://www.nco.ncep.noaa.gov/pmb/docs/on388/appendixa.html
+#
+# Analysis Grids
+# 
+NGRID	^Y.CA.* KWBY (..)(..)
+	FILE
+	${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km_Analysis/HRRR_CONUS_2p5km_ana_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# ------------------------------------------------
+# - Short Range Ensemble Forecasts System (SREF) -
+# ------------------------------------------------
+#
+# SREF CONUS 40 km Ensemble Derived Products
+#
+NGRID	^[LM].R... KWBL ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/SREF/CONUS_40km/ensprod/SREF_CONUS_40km_ensprod_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# SREF Alaska 45 km Ensemble Derived Products
+#
+NGRID	^[LM].V... KWBL ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/SREF/Alaska_45km/ensprod/SREF_Alaska_45km_ensprod_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# SREF Pacific Northeast 0.4 degree Ensemble Derived Products
+#
+NGRID	^[LM].X... KWBL ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/SREF/PacificNE_0p4/ensprod/SREF_PacificNE_0p4_ensprod_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# -----------------------
+# - WAVEWATCH III (WW3) -
+# -----------------------
+#
+# WW3 Global
+#
+NGRID	E.A.88 KWBJ (..)(..)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/WW3/Global/WW3_Global_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# WW3 Regional Alaska
+#
+NGRID	E.E.88 KWBJ (..)(..)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/WW3/Regional_Alaska/WW3_Regional_Alaska_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# WW3 Coastal Alaska
+#
+NGRID	E.F.88 KWBJ (..)(..)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/WW3/Coastal_Alaska/WW3_Coastal_Alaska_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# WW3 Eastern Pacific (Regional)
+#
+NGRID	E.D.88 KWBJ (..)(..)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/WW3/Regional_Eastern_Pacific/WW3_Regional_Eastern_Pacific_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# WW3 US East Coast (Regional)
+#
+NGRID	E.B.88 KWBJ (..)(..)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/WW3/Regional_US_East_Coast/WW3_Regional_US_East_Coast_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# WW3 US East Coast (Coastal)
+#
+NGRID	E.H.88 KWBJ (..)(..)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/WW3/Coastal_US_East_Coast/WW3_Coastal_US_East_Coast_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# WW3 US West Coast (Regional)
+#
+NGRID	E.C.88 KWBJ (..)(..)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/WW3/Regional_US_West_Coast/WW3_Regional_US_West_Coast_(\1:yyyy)(\1:mm)\1_\200.grib2
+#
+# WW3 US West Coast (Coastal)
+#
+NGRID	E.G.88 KWBJ (..)(..)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/WW3/Coastal_US_West_Coast/WW3_Coastal_US_West_Coast_(\1:yyyy)(\1:mm)\1_\200.grib2

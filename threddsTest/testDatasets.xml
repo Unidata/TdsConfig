@@ -87,99 +87,34 @@
 
     </dataset -->
     <!-- end of NCEP -->
-
-    <dataset name="Multi-Radar Multi-Sensor (MRMS) Analysis">
+    <dataset name="NCEP National Blend of Models">
       <metadata inherited="true">
-        <documentation type="summary">Multi-radar multi-sensor analysis produced by the National Severe Storms Laboratory</documentation>
-        <documentation xlink:href="http://www.nssl.noaa.gov/projects/mrms/"
-                       xlink:title="MRMS Documentation"/>
+        <documentation type="summary">The National Blend of Models (NBM) is a
+	    nationally consistent and skillful suite of calibrated forecast
+	    guidance based on a blend of both NWS and non-NWS numerical
+	    weather prediction model data and post-processed model guidance.
+        </documentation>
+	<documentation xlink:href="http://w2.weather.gov/mdl/blend" xlink:title="MDL NBM Website"/>
       </metadata>
 
-      <featureCollection name="MRMS Base Reflectivity" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/BaseRef">
-	<metadata inherited="true">
-          <documentation type="summary">Base Reflectivity Fields</documentation>
-	</metadata>
-        <collection name="MRMS-BaseRef"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/BaseRef/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#MRMS_BaseReflectivity_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
-      </featureCollection>
+      <featureCollection name="National Blend Forecast Grids"
+                         featureType="GRIB2" harvest="true" path="grib/NCEP/NBM/CONUS">
+        <metadata inherited="true">
+          <documentation type="summary">
+            CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids from
+            00Z and 12Z.
+          </documentation>
+        </metadata>
 
-      <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/Model">
-	<metadata inherited="true">
-          <documentation type="summary">MRMS Model-derived fields</documentation>
-	</metadata>
-        <collection name="MRMS-Model"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/Model/.*grib2$"
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NBM/.*grib2$"
+                    dateFormatMark="#Blend_#yyyyMMdd_HHmm"
                     timePartition="file"
-                    dateFormatMark="#MRMS_Model_#yyyyMMdd"
-                    olderThan="15 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
-      </featureCollection>
-
-      <featureCollection name="MRMS NLDN Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/NLDN">
-	<metadata inherited="true">
-          <documentation type="summary">MRMS NLDN (lightning) fields</documentation>
-	</metadata>
-        <collection name="MRMS-NLDN"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/NLDN/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#MRMS_NLDN_#yyyyMMdd_HHmm"
+                    name="NCEP_MODEL_BLEND"
                     olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
-      </featureCollection>
-
-      <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/Precip">
-	<metadata inherited="true">
-          <documentation type="summary">MRMS Precipitation fields</documentation>
-	</metadata>
-        <collection name="MRMS-Precip"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/Precip/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#MRMS_Precip_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
-      </featureCollection>
-
-      <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/Radar">
-	<metadata inherited="true">
-          <documentation type="summary">MRMS Radar fields</documentation>
-	</metadata>
-        <collection name="MRMS-Radar"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/Radar/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#MRMS_Radar_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
-      </featureCollection>
-
-      <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/RotationTrack">
-	<metadata inherited="true">
-          <documentation type="summary">MRMS Low-level Rotation Tracks</documentation>
-	</metadata>
-        <collection name="MRMS-RotationTracks"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrack/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#MRMS_RotationTrack_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
-      </featureCollection>
-
-      <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/RotationTrackML">
-	<metadata inherited="true">
-          <documentation type="summary">MRMS Mid-level Rotation Tracks</documentation>
-	</metadata>
-        <collection name="MRMS-RotationTracksML"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrackML/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#MRMS_RotationTrackML_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
       </featureCollection>
     </dataset>
-    <!-- end of MRMS -->
+    <!-- end of National model blend -->
 
     <dataset name="Do not use">
 

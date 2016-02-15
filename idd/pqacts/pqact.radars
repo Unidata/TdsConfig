@@ -36,7 +36,7 @@ NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(ABC|ABR
 # | NEXRAD LEVEL III, Part 2
 #
 NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(EMX|ENX|EOX|EPZ|ESX|EVX|EWX|EYX|FCX|FDR|FDX|FFC|FSD|FSX|FTG|FWS|GGW|GJX|GLD|GRB|GRK|GRR|GSP|GUA|GWX|GYX|HDX|HGX|HKI|HKM|HMO|HNX|HPX|HTX|HWA|ICT|ICX|ILN|ILX|IND|INX|IWA|IWX|JAX|JGX|JKL|JUA)
-	FILE	-overwrit	-close
+	FILE	-overwrite	-close
 	${DATA_DIR}/native/radar/level3/nexrad/\4/\5/(\1:yyyy)(\1:mm)\1/Level3_\5_\4_(\1:yyyy)(\1:mm)\1_\2\3.nids
 #
 # | NEXRAD LEVEL III, Part 3
@@ -71,7 +71,7 @@ CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5
 # ie L2-BZIP2/KFTG/20091021190220/88/70/E/V03/0
 #
 CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5][0-9][0-9][0-9])/[0-9]*/([0-9]*)/(I|E)
-	FILE	-flush	${DATA_DIR}/native/radar/level2/\1/\2/.tmp/\1_\2_\3
+	FILE	-close	${DATA_DIR}/native/radar/level2/\1/\2/.tmp/\1_\2_\3
 #
 # execute script hhmmssRadarII.pl
 #  -put good products in live directory
@@ -84,7 +84,7 @@ CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5
 # File Model Data Message packets separately, since they are on a different
 # time schedule
 #
-CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5][0-9][0-9][0-9])/[0-9]*/([0-9]*)/5
+CRAFT	^L2-BZIP2/(....)/([0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9])([0-2][0-9][0-5][0-9][0-9][0-9])/[0-9]*/([0-9]*)/M
 	FILE	-close	${DATA_DIR}/native/radar/level2_model/\1/\2/Level2MDM_\1_\2_\3.ar2v
 #
 # ==============================================

@@ -1,0 +1,88 @@
+#
+# Contains LDM pqacts for the model output served by the TDS
+#   catalog forecastModels.xml
+#
+#
+# ================================
+# = FNMOC data available via IDD =
+# ================================
+#
+# ------------------------------------------------
+# - Navy Coupled Ocean Data Assimilation (NCODA) -
+# ------------------------------------------------
+#
+# NCODA Global 0.25 degree
+#
+FNMOC	(^US058.{4}-GR1mdl\.0078_0200_.{5}.{4})(.{4})(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/NCODA/Global_Ocean/FNMOC_NCODA_Global_Ocean_\2\3\4_\500.grib1
+#
+# --------------------------------------------
+# - NAVy Global Environmental Model (NAVGEM) -
+# --------------------------------------------
+#
+# NAVGEM Global 0.5 degree
+#
+FNMOC	(^US058.{4}-GR1mdl\.0018_0056_.{5}.{4})(.{4})(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/NAVGEM/Global_0p5deg/FNMOC_NAVGEM_Global_0p5deg_\2\3\4_\500.grib1
+#
+# ------------------------------------------------------------
+# - Forecast of Aerosol Radiative Optical Properties (FAROP) -
+# ------------------------------------------------------------
+#
+# FAROP Global 1.0 degree
+#
+FNMOC	(^US058.{4}-GR1mdl\.0135_0240_.{5}.{4})(.{4})(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_\2\3\4_\500.grib1
+#
+# -----------------------
+# - WAVEWATCH III (WW3) -
+# -----------------------
+#
+# WW3 Global 1.0 degree
+#
+FNMOC	(^US058.{4}-GR1mdl\.0110_0240_.{5}.{4})(.{4})(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/WW3/Global_1p0deg/FNMOC_WW3_Global_1p0deg_\2\3\4_\500.grib1
+#
+# WW3 Europe
+#
+FNMOC	(^US058.{4}-GR1dyn\.WW3-EURO_EURO-..-.._.{5}.{4})(.{4})(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/WW3/Europe/FNMOC_WW3_Europe_\2\3\4_\500.grib1
+#
+# ------------------------------------------------------------------
+# - Coupled Ocean/Atmospheric Mesoscale Prediction System (COAMPS) -
+# ------------------------------------------------------------------
+#
+# COAMPS Western Atlantic
+#
+FNMOC	^US058.{4}-GR1dyn\.COAMPS-NWATL_.{5}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/COAMPS/Western_Atlantic/FNMOC_COAMPS_Western_Atlantic_\1\2\3_\400.grib1
+#
+# COAMPS Europe
+#
+FNMOC	^US058.{4}-GR1dyn\.COAMPS-EURO_.{4}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_\1\2\3_\400.grib1
+#
+# COAMPS Equatorial America
+#
+FNMOC	^US058.{4}-GR1dyn\.COAMPS-EQAM_.{4}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_\1\2\3_\400.grib1
+#
+# COAMPS Northeast Pacific
+#
+FNMOC	^US058.{4}-GR1dyn\.COAMPS-NEPAC_.{5}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/COAMPS/Northeast_Pacific/FNMOC_COAMPS_Northeast_Pacific_\1\2\3_\400.grib1
+#
+# COAMPS Southern California
+#
+FNMOC	^US058.{4}-GR1dyn\.COAMPS-SOCAL_.{5}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
+	FILE	-metadata
+	${DATA_DIR}/native/grid/FNMOC/COAMPS/Southern_California/FNMOC_COAMPS_Southern_California_\1\2\3_\400.grib1

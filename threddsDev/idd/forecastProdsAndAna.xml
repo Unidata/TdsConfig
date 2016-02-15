@@ -61,7 +61,7 @@
                     timePartition="file"
                     name="NDFD_NWS_CONUS_NOAAPORT"
                     olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
         <gribConfig>
           <gdsHash from='-1506003048' to='-1505079527'/>
         </gribConfig>
@@ -83,7 +83,7 @@
                     name="NDFD_NWS_CONUS_CONDUIT"
                     olderThan="5 min"/>
 
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
         <!-- gribConfig>
           <gdsHash from="-328645426" to="1821883766"/>
           <gdsHash from="1383738030" to="-760700074"/>
@@ -104,7 +104,7 @@
                     timePartition="file"
                     name="NDFD_SPC_CONUS_CONDUIT"
                     olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="Climate Prediction Center CONUS Forecast Grids" featureType="GRIB2"
@@ -121,7 +121,7 @@
                     timePartition="file"
                     name="NDFD_CPC_CONUS_CONDUIT"
                     olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
       </featureCollection>
     </dataset>
 
@@ -150,7 +150,7 @@
             dateFormatMark="#RTMA_CONUS_2p5km_#yyyyMMdd_HHmm"
             timePartition="file"
             olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2/15 * * * ? *" />
         <gribConfig>
           <pdsHash>
             <useGenType>true</useGenType>
@@ -171,7 +171,7 @@
             dateFormatMark="#RTMA_GUAM_2p5km_#yyyyMMdd_HHmm"
             timePartition="file"
             olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
+        <tdm rewrite="test" rescan="0 2/15 * * * ? *" />
         <gribConfig>
           <pdsHash>
             <useGenType>true</useGenType>
