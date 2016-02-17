@@ -1,0 +1,104 @@
+#
+# Contains LDM pqacts for the model output served by the TDS
+#   catalog satellite.xml
+#
+# | Note - all enteries are controlled by one single pqact
+#
+# ======================================
+# = Satellite data available via IDD =
+# ======================================
+#
+# -------------------------
+# - Satellite Imager Data -
+# -------------------------
+#
+# Shortwave IR (3.9 um)
+#
+#    location="/data/ldm/pub/native/satellite/3.9/WEST-CONUS_4km/">
+#    location="/data/ldm/pub/native/satellite/3.9/PR-REGIONAL_4km/">
+#    location="/data/ldm/pub/native/satellite/3.9/EAST-CONUS_4km/" >
+#    location="/data/ldm/pub/native/satellite/3.9/AK-REGIONAL_8km/">
+#
+# Imager 6.7/6.5 um IR (WV)
+#
+#    location="/data/ldm/pub/native/satellite/WV/">
+#
+# IR (11 um)
+#
+#    location="/data/ldm/pub/native/satellite/IR/">
+#
+# Dirty Window (12.0 um)
+#
+#    location="/data/ldm/pub/native/satellite/12.0/" >
+#
+# CO2 (13.3 um)
+#
+#    location="/data/ldm/pub/native/satellite/13.3/" >
+#
+# Imager Visible
+#
+#    location="/data/ldm/pub/native/satellite/VIS/">
+#
+# --------------------------
+# - Satellite Sounder Data -
+# --------------------------
+#
+# Sounder Based Derived Lifted Index
+#
+#    location="/data/ldm/pub/native/satellite/LI/">
+#
+# Sounder Based Derived Precipitable Water PW
+#
+#    location="/data/ldm/pub/native/satellite/PW/" >
+#
+# Satellite Product Sounder Image
+#
+#    location="/data/ldm/pub/native/satellite/SOUND-3.98/" >
+#    location="/data/ldm/pub/native/satellite/SOUND-4.45/" >
+#    location="/data/ldm/pub/native/satellite/SOUND-6.51/" >
+#    location="/data/ldm/pub/native/satellite/SOUND-7.02/" >
+#    location="/data/ldm/pub/native/satellite/SOUND-7.43/" >
+#    location="/data/ldm/pub/native/satellite/SOUND-11.03/" >
+#    location="/data/ldm/pub/native/satellite/SOUND-14.06/" >
+#    location="/data/ldm/pub/native/satellite/SOUND-VIS/" >
+#
+# Sounder Based Derived Surface Skin Temperature
+#
+#    location="/data/ldm/pub/native/satellite/SFC-T/SUPER-NATIONAL_1km/" >
+#
+# Sounder Based Derived Cloud Top Pressure
+#
+#    location="/data/ldm/pub/native/satellite/CTP/">
+# ------------------------
+# - NOAAPORT GINI Images -
+# ------------------------
+#
+# Zlib compressed NOAAPORT GOES-East/West GINI Images
+#
+NIMAGE	^satz/ch[0-9]/.*/(.*)/([12][0-9][0-9][0-9][01][0-9][0-3][0-9]) ([0-2][0-9])([0-5][0-9])/(.*)/(.*km)/
+	PIPE	-close
+	sh etc/TDS/util/ldmfile.sh ${DATA_DIR}/native/satellite/\1/\5_\6/\2/\5_\6_\1_\2_\3\4.gini
+#
+# ----------------------------------
+# - NOAAPORT NPP netCDF4 Soundings -
+# ----------------------------------
+#
+HRS	^IUTN(..) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+	PIPE	-close
+	ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/NPP/NUCAPS/\1/NUCAPS_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
+#
+# -----------------------------------
+# - NOAAPORT NPP netCDF4 Swath Data -
+# -----------------------------------
+#
+NOTHER	^TIP(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+        PIPE    -close
+        decoders/strip_header.py ${DATA_DIR}/native/satellite/NPP/\1/NPP_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
+#
+# -------------------------------------
+# - NOAAPORT Test GOES-R netCDF4 Data -
+# -------------------------------------
+#
+NOTHER	^TI[RS](...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+        PIPE    -close
+        decoders/strip_header.py ${DATA_DIR}/native/satellite/GOES-R/\1/GOESR_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
