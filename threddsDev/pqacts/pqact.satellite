@@ -92,13 +92,13 @@ HRS	^IUTN(..) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 # -----------------------------------
 #
 NOTHER	^TIP(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
-        PIPE    -close
-        decoders/strip_header.py ${DATA_DIR}/native/satellite/NPP/\1/NPP_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
+	PIPE	-close
+	ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/NPP/\1/NPP_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
 #
 # -------------------------------------
 # - NOAAPORT Test GOES-R netCDF4 Data -
 # -------------------------------------
 #
 NOTHER	^TI[RS](...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
-        PIPE    -close
-        decoders/strip_header.py ${DATA_DIR}/native/satellite/GOES-R/\1/GOESR_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
+	PIPE	-close
+	ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/GOES-R/\1/GOESR_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
