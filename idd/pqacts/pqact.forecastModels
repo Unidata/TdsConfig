@@ -94,6 +94,12 @@ CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.2p50\.
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_2p5deg/GFS_Global_2p5deg_\1_\200.grib2
 #
+# GFS Global 1.0 Degree (NOAAPORT)
+#
+NGRID	^[YZ].P... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg_noaaport/GFS_Global_onedeg_noaaport_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
 # GFS Northern Hemisphere 381km 
 #
 NGRID	^[LM].A... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
@@ -106,11 +112,23 @@ NGRID	^[LM].O... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Pacific_40km/GFS_Pacific_40km_(\1:yyyy)(\1:mm)\1_\2.grib2
 #
+# GFS Pacific 20 km
+#
+NGRID	^[YZ].F... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Pacific_20km/GFS_Pacific_20km_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
 # GFS Puerto Rico 0.5 degree
 #
 NGRID	^[LM].T... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Puerto_Rico_0p5deg/GFS_Puerto_Rico_0p5deg_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# GFS Puerto Rico 0.25 degree
+#
+NGRID	^[YZ].E... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Puerto_Rico_0p25deg/GFS_Puerto_Rico_0p25deg_(\1:yyyy)(\1:mm)\1_\2.grib2
 #
 # GFS CONUS 80 km
 #
@@ -118,11 +136,23 @@ HRS	^[YZ].Q... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/CONUS_80km/GFS_CONUS_80km_(\1:yyyy)(\1:mm)\1_\2.grib1
 #
-# GFS CONUS 95 km
+# GFS CONUS 20 km
+#
+NGRID	^[YZ].N... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/CONUS_20km/GFS_CONUS_20km_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# GFS Alaska 95 km (was misnamed)
 #
 NGRID	^[LM].H... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/CONUS_95km/GFS_CONUS_95km_(\1:yyyy)(\1:mm)\1_\2.grib2
+#
+# GFS Alaska 20 km
+#
+NGRID	^[YZ].B... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
+	FILE	-metadata
+	${DATA_DIR}/native/grid/NCEP/GFS/Alaska_20km/GFS_Alaska_20km_(\1:yyyy)(\1:mm)\1_\2.grib2
 #
 # --------------------------------------------------
 # - North American Mesoscale Forecast System (NAM) -
