@@ -58,7 +58,7 @@
                        harvest="true"
                        path="aggregations/g/ds094.2_dt">
 
-      <collection name="ds094.2_dt" spec="/glade/p/rda/data/ds094.2/diurnal_timeseries/.*.grb2$" />
+      <collection name="ds094.2_dt" spec="/glade/p/rda/data/ds094.2/diurnal/.*.tar$" />
       <tdm rewrite="test"/>
 
       <gribConfig>
@@ -75,7 +75,7 @@
                        harvest="true"
                        path="aggregations/g/ds094.2_t">
 
-      <collection name="ds094.2_t" spec="/glade/p/rda/data/ds094.2/timeseries/.*.grb2$" />
+      <collection name="ds094.2_t" spec="/glade/p/rda/data/ds094.2/regular/.*.tar$" />
       <tdm rewrite="test"/>
 
       <gribConfig>
