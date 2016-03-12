@@ -21,7 +21,7 @@
   </dataset>
 
   <dataset name="For GRIB Indexing Purposes">
-    <catalogRef xlink:href="modelsHrrr.xml" xlink:title="Test Point Datasets" name=""/>
+    <catalogRef xlink:href="modelsHrrr.xml" xlink:title="GSD HRRR Datasets" name=""/>
   </dataset>
 
 </catalog>
