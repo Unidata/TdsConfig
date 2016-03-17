@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog name="CISL Research Data Archive Dataset ds084.4"
-        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
 
     <dataset name="ds084.4 NCEP GDAS/FNL Surface Flux Grids">
         <metadata inherited="true">
-          <serviceName>all</serviceName>
-          <dataFormat>GRIB-2</dataFormat>
-          <dataType>GRID</dataType>
-          <documentation type="Rights">Freely Available</documentation>
-          <documentation xlink:href="http://rda.ucar.edu/datasets/ds084.4/"
-                         xlink:title="NCEP GDAS/FNL Surface Flux Grids (ds084.4)"/>
-          <documentation type="summary">
-The NCEP operational Global Data Assimilation System surface flux grids are on a T574 Gaussian global grid. Grids include analysis and forecast time steps at a 3 hourly interval from 0 to 9 hours. Model runs occur at 00, 06, 12, and 18 UTC daily. For real-time data access please use the NCEP data server.
-          </documentation>
-          <documentation xlink:href="http://www.emc.ncep.noaa.gov/modelinfo/index.html" xlink:title="NCEP Model documentation" />
-          <creator>
-            <name vocabulary="DIF">DOC/NOAA/NWS/NCEP</name>
-            <contact url="http://www.ncep.noaa.gov/" email="http://www.ncep.noaa.gov/mail_liaison.shtml" />
-          </creator>
-          <authority>edu.ucar.rda</authority>
-          <publisher>
-            <name vocabulary="DIF">NCAR/RDA</name>
-            <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu" />
-          </publisher>
-          <keyword>Numerical Weather Prediction</keyword>
-          <keyword>NCEP</keyword>
-          <keyword>Model data</keyword>
-          <keyword>GFS</keyword>
+            <serviceName>all</serviceName>
+            <dataFormat>GRIB-2</dataFormat>
+            <dataType>GRID</dataType>
+            <documentation type="Rights">Freely Available</documentation>
+            <documentation xlink:href="http://rda.ucar.edu/datasets/ds084.4/"
+                           xlink:title="NCEP GDAS/FNL Surface Flux Grids (ds084.4)"/>
+            <documentation type="summary">
+                The NCEP operational Global Data Assimilation System surface flux grids are on a T574 Gaussian global
+                grid. Grids include analysis and forecast time steps at a 3 hourly interval from 0 to 9 hours. Model
+                runs occur at 00, 06, 12, and 18 UTC daily. For real-time data access please use the NCEP data server.
+            </documentation>
+            <documentation xlink:href="http://www.emc.ncep.noaa.gov/modelinfo/index.html"
+                           xlink:title="NCEP Model documentation"/>
+            <creator>
+                <name vocabulary="DIF">DOC/NOAA/NWS/NCEP</name>
+                <contact url="http://www.ncep.noaa.gov/" email="http://www.ncep.noaa.gov/mail_liaison.shtml"/>
+            </creator>
+            <authority>edu.ucar.rda</authority>
+            <publisher>
+                <name vocabulary="DIF">NCAR/RDA</name>
+                <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu"/>
+            </publisher>
+            <keyword>Numerical Weather Prediction</keyword>
+            <keyword>NCEP</keyword>
+            <keyword>Model data</keyword>
+            <keyword>GFS</keyword>
         </metadata>
 
-      <!--  Files  -->
+        <!--  Files  -->
+        <datasetScan name="ds084.4 Files"
+                     path="files/g/ds084.4"
+                     location="/glade/p/rda/data/ds084.4">
+            <metadata inherited="true">
+                <serviceName>all</serviceName>
+            </metadata>
+            <filter>
+                <exclude wildcard="*.html"/>
+            </filter>
+            <addDatasetSize/>
+        </datasetScan>
 
+        <!--  Aggregations  -->
+        <featureCollection name="ds084.4 Aggregation"
+                           featureType="GRIB2"
+                           harvest="true"
+                           path="aggregations/g/ds084.4/1">
 
-      <datasetScan name="ds084.4 Files"
-                  path="files/g/ds084.4"
-                  location="/glade/p/rda/data/ds084.4">
-         <metadata inherited="true">
-          <serviceName>all</serviceName>
-        </metadata>
-        <filter>
-            <exclude wildcard="*.html"/>
-        </filter>
-        <addDatasetSize/>
-     </datasetScan>
+            <collection name="ds084.4" spec="/glade/p/rda/data/ds084.4/**/.*grib2$"
+                        dateFormatMark="yyyyMM#/gdas1.sflux#"/>
+            <tdm rewrite="test" rescan="0 8 1 * * ? *"/>
+        </featureCollection>
 
-     <!--  Aggregations  -->
-
-     <featureCollection name="ds084.4 Aggregation"
-                     featureType="GRIB2"
-                     harvest="true"
-                     path="aggregations/g/ds084.4/1">
-
-         <collection name = "ds084.4" spec="/glade/p/rda/data/ds084.4/**/.*grib2$" 
-         dateFormatMark="yyyyMM#/gdas1.sflux#" />
-         <tdm rewrite="test" rescan="0 8 1 * * ? *" />
-     </featureCollection>
-
-  </dataset>
+    </dataset>
 
 </catalog>

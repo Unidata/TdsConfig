@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ds093.0 NCEP Climate Forecast System Reanalysis (CFSR) 6-hourly Products, January 1979 to December 2010"
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <!-- Top level dataset: Needed to set metadata for Files & Aggregations -->
+
+  <dataset name="ds093.0 NCEP Climate Forecast System Reanalysis (CFSR) 6-hourly Products, January 1979 to December 2010">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <dataFormat>GRIB-2</dataFormat>
+      <dataType>GRID</dataType>
+      <documentation type="Rights">Freely Available</documentation>
+      <documentation xlink:href="http://rda.ucar.edu/datasets/ds093.0/"
+                     xlink:title="NCEP Climate Forecast System Reanalysis (CFSR) 6-hourly Products, January 1979 to December 2010 (ds093.0)"/>
+      <documentation type="summary">
+      The National Centers for Environmental Prediction (NCEP) Climate Forecast System Reanalysis (CFSR) was initially completed over the 31-year period from 1979 to 2009 and has been extended to March 2011. CFSR was initialized 4 times per day (0000, 0600, 1200, and 1800 UTC), and the 6-hourly atmospheric, oceanic and land surface analyzed products are available at 0.3, 0.5, 1.0, 1.9, and 2.5 degree horizontal resolutions, along with forecast hours 1 through 6. However, not all parameters are available at all resolutions and some parameters are not analyzed (e.g. 2 meter temperature, 10 meter winds), so please consult the detailed metadata for exact descriptions of what is available.
+      </documentation>
+      <documentation xlink:href="http://cfs.ncep.noaa.gov/cfsr/" xlink:title="CFSR Home"/>
+      <documentation xlink:href="https://climatedataguide.ucar.edu/climate-data/climate-forecast-system-reanalysis-cfsr"
+                     xlink:title="Description of CFSR at the NCAR Climate Data Guide"/>
+      <documentation xlink:href="http://rda.ucar.edu/#!pub/cfsr.html" xlink:title="More information about CFSR"/>
+      <creator>
+        <name vocabulary="DIF">DOC/NOAA/NWS/NCEP/EMC</name>
+        <contact url="http://cfs.ncep.noaa.gov/cfsr/" email="cfs@noaa.gov"/>
+      </creator>
+      <authority>edu.ucar.rda</authority>
+      <publisher>
+        <name vocabulary="DIF">NCAR/RDA</name>
+        <contact url="http://rda.ucar.edu/" email="rdahelp@ucar.edu"/>
+      </publisher>
+
+      <keyword>Numerical Weather Prediction</keyword>
+      <keyword>NCEP</keyword>
+      <keyword>CFS</keyword>
+      <keyword>CFSR</keyword>
+      <keyword>Reanalysis</keyword>
+    </metadata>
+
+
+    <!--  Files -->
+    <datasetScan name="ds093.0 Files"
+                 path="files/g/ds093.0"
+                 location="/glade/p/rda/data/ds093.0">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+      </metadata>
+      <filter>
+        <exclude wildcard="*.html"/>
+      </filter>
+      <addDatasetSize/>
+    </datasetScan>
+
+    <!-- Aggregations -->
+
+
+    <featureCollection name="ds093.0 Aggregations"
+                       featureType="GRIB2"
+                       harvest="true"
+                       path="aggregations/g/ds093.0/">
+
+      <collection name="ds093.0" spec="/glade/p/rda/data/ds093.0/**/.*.tar$"
+                      dateFormatMark="yyyyMMdd#.tar#"
+                      timePartition="year" />
+      <tdm rewrite="test"/>
+
+    </featureCollection>
+  </dataset>
+
+</catalog>
