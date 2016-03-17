@@ -23,7 +23,10 @@
     <catalogRef xlink:href="catalog_ds084.1.xml" xlink:title="ds084.1 NCEP GFS 0.25 Degree Global Forecast Grids" name="" />
     <catalogRef xlink:href="catalog_ds084.3.xml" xlink:title="ds084.3 NCEP GFS 0.25 Degree Global Forecast Auxiliary Grids Historical Archive" name="" />
     <catalogRef xlink:href="catalog_ds084.4.xml" xlink:title="ds084.4 NCEP GDAS/FNL Surface Flux Grids" name="" />
+    <catalogRef xlink:href="catalog_ds093.0.xml" xlink:title="ds093.0 NCEP Climate Forecast System Reanalysis (CFSR) 6-hourly Products, January 1979 to December 2010" name="" />
     <catalogRef xlink:href="catalog_ds093.1.xml" xlink:title="ds093.1 NCEP Climate Forecast System Reanalysis (CFSR) Selected Hourly Time-Series Products, January 1979 to December 2010" name="" />
+    <catalogRef xlink:href="catalog_ds093.2.xml" xlink:title="ds093.2 NCEP Climate Forecast System Reanalysis (CFSR) Monthly Products, January 1979 to December 2010" name="" />
+    <catalogRef xlink:href="catalog_ds094.0.xml" xlink:title="ds094.0 NCEP Climate Forecast System Version 2 (CFSv2) 6-hourly Products" name="" />
     <catalogRef xlink:href="catalog_ds094.1.xml" xlink:title="ds094.1 NCEP Climate Forecast System Version 2 (CFSv2) Selected Hourly Time-Series Products" name="" />
     <catalogRef xlink:href="catalog_ds094.2.xml" xlink:title="ds094.2 NCEP Climate Forecast System Version 2 (CFSv2) Monthly Products" name="" />
     <catalogRef xlink:href="catalog_ds113.0.xml" xlink:title="ds113.0 ECMWF's Operational Model Analysis, starting in 2011" name="" />
