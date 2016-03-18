@@ -58,7 +58,8 @@ The National Centers for Environmental Prediction (NCEP) Climate Forecast System
                        harvest="true"
                        path="aggregations/g/ds093.2_dt">
 
-      <collection name="ds093.2_dt" spec="/glade/p/rda/data/ds093.2/diurnal/.*.tar$" />
+      <collection name="ds093.2_dt" spec="/glade/p/rda/data/ds093.2/diurnal/.*.tar$"
+                  timePartition="year" />
       <tdm rewrite="test"/>
     </featureCollection>
 
@@ -67,8 +68,10 @@ The National Centers for Environmental Prediction (NCEP) Climate Forecast System
                        harvest="true"
                        path="aggregations/g/ds093.2_t">
 
-      <collection name="ds093.2_t" spec="/glade/p/rda/data/ds093.2/regular/.*.tar$" />
-      <tdm rewrite="test"/>
+      <collection name="ds093.2_t" spec="/glade/p/rda/data/ds093.2/regular/.*.tar$"
+                  timePartition="year" />
+
+        <tdm rewrite="test"/>
 
     </featureCollection>
 
