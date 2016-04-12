@@ -78,7 +78,7 @@ def write_script(scriptpath, configpath):
                 return
 
     with open(scriptpath, 'wb') as f:
-        f.write(script)
+        f.write(script.encode('utf-8'))
 
 if __name__ == '__main__':
     import argparse
@@ -96,7 +96,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Used to replace the [DATA_DIR] string in pqact and xml files
-    DATA_DIR = "/data/ldm/pub"
+    DATA_DIR = b"/data/ldm/pub"
 
     # If we're not given a directory, just look at all the dirs for a
     # config file.
@@ -139,7 +139,7 @@ if __name__ == '__main__':
                 # look for files that could have the [DATA_DIR] macro and
                 # replace it with the correct value
                 if ('pqact' in f) or (f[-3:] == 'xml'):
-                    data = data.replace('${DATA_DIR}', DATA_DIR)
+                    data = data.replace(b'${DATA_DIR}', DATA_DIR)
 
                 # Set the modification time based on the last time the file
                 # was committed in git
