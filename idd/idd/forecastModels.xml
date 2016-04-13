@@ -926,6 +926,32 @@
         <documentation xlink:href="http://w1.spc.woc.noaa.gov/exper/sref/" xlink:title="NCEP/SREF Website"/>
       </metadata>
 
+      <!--featureCollection name="SREF CONUS 40km Bias Corrected Ensemble Members" featureType="GRIB2" harvest="true"
+                         path="grib/NCEP/SREF/CONUS_40km/members/biasc/">
+        <metadata inherited="true">
+          <documentation type="summary">
+            NCEP Short Range Ensemble Forecast (SREF) 40km bias corrected members
+            over CONUS with 185 by 129 points, resolution 40 km.
+            Models are run daily at 3,9,15,and 21Z. Forecasts every 3 hours from 3 to 87 hours.
+          </documentation>
+        </metadata>
+
+        <collection name="SREF-CONUS_40km_Ensemble-biasc_members"
+                    spec="${DATA_DIR}/native/grid/NCEP/SREF/CONUS_40km/pgrb_biasc/.*grib2$"
+                    dateFormatMark="#SREF_CONUS_40km_pgrb_biasc_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
+        <gribConfig>
+          <intvFilter intvLength="12">
+            <variable id="0-1-8" prob="50800"/>
+          </intvFilter>
+          <intvFilter intvLength="3">
+            <variable id="0-1-8"/>
+          </intvFilter>
+        </gribConfig-->
+
+      </featureCollection>
       <featureCollection name="SREF CONUS 40km Ensemble Derived Products" featureType="GRIB2" harvest="true"
                          path="grib/NCEP/SREF/CONUS_40km/ensprod">
         <metadata inherited="true">
