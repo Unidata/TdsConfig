@@ -294,9 +294,9 @@ CONDUIT	^data/nccf/com/sref/prod/sref\.(........)/(..)/(ensprod_biasc)/.*pgrb212
 #
 # SREF CONUS 40 km Bias Corrected Ensemble Members
 #
-CONDUIT	^data/nccf/com/sref/prod/sref\.(........)/(..)/(pgrb_biasc)/sref_.*\.pgrb212\.*
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/SREF/CONUS_40km/\3/SREF_CONUS_40km_\3_\1_\200.grib2
+#CONDUIT	^data/nccf/com/sref/prod/sref\.(........)/(..)/(pgrb_biasc)/sref_.*\.pgrb212\.*
+#	FILE	-metadata
+#	${DATA_DIR}/native/grid/NCEP/SREF/CONUS_40km/\3/SREF_CONUS_40km_\3_\1_\200.grib2
 #
 # SREF Alaska 45 km Ensemble Derived Products
 #
