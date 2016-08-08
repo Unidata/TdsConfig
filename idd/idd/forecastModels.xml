@@ -677,7 +677,7 @@
                     spec="${DATA_DIR}/native/grid/NCEP/NAM/CONUS_12km/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#NAM_CONUS_12km_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
+                    olderThan="8 min"/>
         <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
