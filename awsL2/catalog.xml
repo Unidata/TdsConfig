@@ -14,7 +14,7 @@
 	  path="nexrad/level2/S3" location="s3://noaa-nexrad-level2" serviceName="radar">
     <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
     <filter>
-      <include wildcard="*.gz"/>
+      <include regExp="\w{4}\d{8}_\d{6}(_V\d{2})?(\.gz)?$" />
     </filter>
   </datasetScan>
 

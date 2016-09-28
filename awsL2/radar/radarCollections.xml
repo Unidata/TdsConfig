@@ -3,7 +3,7 @@
   <service name="radarServer" serviceType="QueryCapability" base="/thredds/radarServer/" />
   <dataset name="Radar Data">
   <datasetScan name="S3 NEXRAD Level II" collectionType="TimeSeries" ID="nexrad/level2/S3" path="nexrad/level2/S3" location="s3://noaa-nexrad-level2">
-    <radarCollection layout="yyyy/MM/dd/STATION" dateRegex="(\d{8}_\d{6})_V\d{2}\.gz$" dateFormat="yyyyMMdd_HHmmss" crawlItems="1"/>
+    <radarCollection layout="yyyy/MM/dd/STATION" dateRegex="(\d{8}_\d{6})(_V\d{2})?(\.gz)?$" dateFormat="yyyyMMdd_HHmmss" crawlItems="1"/>
       <metadata inherited="true">
         <dataType>Radial</dataType>
         <dataFormat>NEXRAD2</dataFormat>
