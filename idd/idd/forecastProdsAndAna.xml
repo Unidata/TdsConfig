@@ -218,7 +218,7 @@
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/BaseRef/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_BaseReflectivity_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
+                    olderThan="1 min"/>
         <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
       </featureCollection>
 
@@ -230,7 +230,7 @@
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/Model/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_Model_#yyyyMMdd"
-                    olderThan="15 min"/>
+                    olderThan="10 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
       </featureCollection>
 
@@ -242,7 +242,7 @@
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/NLDN/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_NLDN_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
+                    olderThan="1 min"/>
         <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
       </featureCollection>
 
@@ -254,7 +254,7 @@
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/Precip/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_Precip_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
+                    olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
       </featureCollection>
 
@@ -266,7 +266,7 @@
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/Radar/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_Radar_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
+                    olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
       </featureCollection>
 
@@ -278,7 +278,7 @@
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrack/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_RotationTrack_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
+                    olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
       </featureCollection>
 
@@ -290,7 +290,7 @@
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrackML/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_RotationTrackML_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
+                    olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
       </featureCollection>
     </dataset>
