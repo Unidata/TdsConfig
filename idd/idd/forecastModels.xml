@@ -328,25 +328,6 @@
         <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
 
-      <featureCollection name="GFS Northern Hemisphere 381km" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/GFS/N_Hemisphere_381km">
-        <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : AWIPS 201 (A) Grid. Northern Hemisphere (polar stereographic).
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 6 hours out 10 days.
-            Horizontal = 65 by 65 points, resolution 381.0 km, Polar Stereographic projection.
-            Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
-            layers.
-          </documentation>
-        </metadata>
-
-        <collection name="GFS-N_Hemisphere_381km"
-            spec="${DATA_DIR}/native/grid/NCEP/GFS/N_Hemisphere_381km_grib2/.*grib2$"
-            dateFormatMark="#GFS_N_Hemisphere_381km_#yyyyMMdd_HHmm"
-            timePartition="file"
-            olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
-      </featureCollection>
-
       <featureCollection name="GFS Pacific 40km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Pacific_40km">
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : Mercator Grid over most of the Pacific. longitude 110 W to 110 E.
