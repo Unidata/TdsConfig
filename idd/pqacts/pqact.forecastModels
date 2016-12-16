@@ -100,12 +100,6 @@ NGRID	^[YZ].P... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg_noaaport/GFS_Global_onedeg_noaaport_(\1:yyyy)(\1:mm)\1_\2.grib2
 #
-# GFS Northern Hemisphere 381km 
-#
-NGRID	^[LM].A... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GFS/N_Hemisphere_381km_grib2/GFS_N_Hemisphere_381km_(\1:yyyy)(\1:mm)\1_\2.grib2
-#
 # GFS Pacific 40 km
 #
 NGRID	^[LM].O... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
