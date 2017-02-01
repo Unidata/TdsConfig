@@ -5,6 +5,8 @@ from io import open
 import os
 import os.path
 
+import shutil
+
 build_file = 'build.info'
 
 def get_config_includes(path):
@@ -63,7 +65,7 @@ def write_script(scriptpath, configpath):
     configpath = configpath.replace('\\', '/')
     lines.append(('\twget'
                   ' --no-check-certificate'
-                  ' https://raw.githubusercontent.com/Unidata/TdsConfig/master/%s'
+                  ' https://s3.amazonaws.com/unidata-tds/tdsConfig/%s'
                   ' -O %s')
                   % (configpath, configfile))
     lines.append('\tjar xf %s' % os.path.split(configpath)[-1])
@@ -118,6 +120,10 @@ if __name__ == '__main__':
                 if args.verbose: print("Adding file:", fname, "->", fullpath)
                 files[fname] = fullpath
 
+        # Create config subdirectories for output
+        if not os.path.exists(builddir):
+            os.makedirs(builddir)
+
         # Write wget script
         outpath = os.path.join(builddir, 'config.zip')
         script = 'fetch.sh'
@@ -157,3 +163,6 @@ if __name__ == '__main__':
 
                 outf.writestr(zinfo, data)
         print('wrote {}'.format(outpath))
+
+        # Delete the fetch script
+        os.remove(scriptpath)

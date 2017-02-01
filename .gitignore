@@ -22,3 +22,7 @@ Thumbs.db
 *.*~
 *.swp
 ._*
+
+# Build artifacts
+config.zip
+fetch.sh

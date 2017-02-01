@@ -28,6 +28,10 @@ Configuration files
    This script runs on Python 2.7 as well as >= 3.2.
    Note <subdir>/build.info is used for this script.
 
+   Build is automatically performed by Travis for this repo.
+
+- config.zip hosted on [S3](http://unidata-tds.s3-website-us-east-1.amazonaws.com)
+
 - to make changes to config files:
  - edit thredds/TdsConfig/*
  - commit your changes, so that the timestamps get updated in the zip file
