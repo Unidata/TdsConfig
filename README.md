@@ -21,20 +21,20 @@ Configuration files
   - threddsTest : lead (/opt/tds-test)
 
 - to build the config:
-   ./build.py [remotetest thredds]
+   `./build.py [machine]` machine is optional e.g. remotetest
 
    This will build config.zip files (and wget scripts) for all of the subdirectories.
    You can optionally pass one or more subdirectories to only build for them.
    This script runs on Python 2.7 as well as >= 3.2.
-   Note <subdir>/build.info is used for this script.
+   Note `<machine>/build.info` is used for this script.
 
-   Build is automatically performed by Travis for this repo.
+   The build and upload of config.zip files is automatically performed by Travis for
+   all changes committed to the repository.
 
 - config.zip hosted on [S3](http://unidata-tds.s3-website-us-east-1.amazonaws.com)
 
 - to make changes to config files:
- - edit thredds/TdsConfig/*
- - commit your changes, so that the timestamps get updated in the zip file
- - run build.py
- - copy and unzip config.zip to (root)/content/thredds (or)
- - commit to github, then use the fetch.sh (wget) that is also generated, from the target machine
+ - Edit files, e.g. `thredds/*`
+ - Commit your changes
+ - Push to GitHub
+ - Use the fetch.sh (wget) that is also generated, from the target machine
