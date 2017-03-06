@@ -96,7 +96,8 @@
     <allow>true</allow>
     <scour>15 min</scour>
     <maxAge>30 min</maxAge>
-    <!--maxFileDownloadSize>52428800</maxFileDownloadSize-->
+    <!-- 52428800 bytes, 50 MB -->
+    <maxFileDownloadSize>52428800</maxFileDownloadSize>
   </NetcdfSubsetService>
 
    <FeatureCollection>
