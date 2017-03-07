@@ -20,6 +20,24 @@
     <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
   </service>
 
+  <dataset name="GOES-R NOAAPORT Products">
+    <metadata inherited="true">
+      <documentation>NOAA's GOES-16 satellite has not been declared operational and its data
+are preliminary and undergoing testing. Users receiving these data through
+any dissemination means  (including, but not limited to, PDA and
+GRB) assume all risk related to their use of GOES-16 data and NOAA
+disclaims any and all warranties, whether express or implied, including
+(without limitation) any implied warranties of merchantability or fitness
+for a particular purpose.</documentation>
+    </metadata>
+    <datasetScan name="GOES-R Products" ID="noaaport-goes-r" path="satellite/goesr" location="${DATA_DIR}/native/satellite/GOES-R" >
+      <filter>
+	<include wildcard="*.nc4"/>
+      </filter>
+      <addDatasetSize/>
+    </datasetScan>
+  </dataset>
+
   <dataset name="New Model Data for Testing">
 
     <metadata inherited="true">
