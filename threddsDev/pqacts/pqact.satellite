@@ -96,9 +96,13 @@ NOTHER	^TIP(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/NPP/\1/NPP_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
 #
 # -------------------------------------
-# - NOAAPORT Test GOES-R netCDF4 Data -
+# - NOAAPORT GOES-16 netCDF4 Data -
 # -------------------------------------
 #
-NOTHER	^TI[RS](...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+NOTHER	^TIR(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9]) (...)
 	PIPE	-close
-	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/GOES-R/\1/GOESR_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
+	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/GOES16/LargeScale/\1/(\2:yyyy)(\2:mm)\2/GOES16_\1_(\2:yyyy)(\2:mm)\2_\3_\4.nc4
+
+NOTHER	^TIS(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9]) (...)
+	PIPE	-close
+	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/GOES16/Mesoscale/\1/(\2:yyyy)(\2:mm)\2/GOES16_\1_(\2:yyyy)(\2:mm)\2_\3_\4.nc4
