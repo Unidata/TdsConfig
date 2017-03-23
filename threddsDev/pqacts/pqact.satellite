@@ -99,10 +99,6 @@ NOTHER	^TIP(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 # - NOAAPORT GOES-16 netCDF4 Data -
 # -------------------------------------
 #
-NOTHER	^TIR(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9]) (...)
-	PIPE	-close
-	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/GOES16/LargeScale/\1/(\2:yyyy)(\2:mm)\2/GOES16_\1_(\2:yyyy)(\2:mm)\2_\3_\4.nc4
-
-NOTHER	^TIS(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9]) (...)
-	PIPE	-close
-	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/GOES16/Mesoscale/\1/(\2:yyyy)(\2:mm)\2/GOES16_\1_(\2:yyyy)(\2:mm)\2_\3_\4.nc4
+NOTHER  (^TI....) KNES ([0-9][0-9][0-9][0-9][0-9][0-9]) ...
+        PIPE    -metadata
+        etc/TDS/ldm-alchemy/goes-restitch.py -v -d /data/ldm/pub/native/satellite/GOES -t 30 -l goes-restitch/\1.log \1 \2

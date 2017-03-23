@@ -31,7 +31,7 @@ disclaims any and all warranties, whether express or implied, including
 for a particular purpose.</documentation>
       <dataType>GRID</dataType>
     </metadata>
-    <datasetScan name="GOES-16 Products" ID="noaaport-goes16" path="satellite/goes16" location="${DATA_DIR}/native/satellite/GOES16" >
+    <datasetScan name="GOES-16 Products" ID="noaaport-goes16" path="satellite/goes16" location="${DATA_DIR}/native/satellite/GOES" >
       <filter>
 	<include wildcard="*.nc4"/>
       </filter>
