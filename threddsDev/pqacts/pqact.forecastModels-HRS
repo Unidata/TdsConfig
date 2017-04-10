@@ -24,12 +24,6 @@ HRS	^[YZ].Q... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
 # - North American Mesoscale Forecast System (NAM) -
 # --------------------------------------------------
 #
-# NAM Alaska 22 km
-#
-HRS	^[YZ].(Y)... KWB. ([0-3][0-9])([0-2][0-9]).*/m(ETA|NAM)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/NAM/Alaska_22km/NAM_Alaska_22km_(\2:yyyy)(\2:mm)\2_\300.grib1
-#
 # NAM Alaska 45 km (FROM NOAAPORT)
 #
 HRS	^[YZ].(V)... KWB. ([0-3][0-9])([0-2][0-9]).*/m(ETA|NAM)
