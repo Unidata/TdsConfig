@@ -46,6 +46,8 @@
 
   <catalogRoot>radar/radarCollections.xml</catalogRoot>
 
+  <catalogRoot>galeon/catalog.xml</catalogRoot>
+
   <!--
    * Setup for generated HTML pages.
    *
