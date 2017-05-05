@@ -59,53 +59,6 @@
       </timeCoverage>
     </metadata>
 
-    <dataset name="Downscaled GFS with Eta Extension (DGEX)">
-      <metadata inherited="true">
-        <documentation type="summary">
-          The NCEP DGEX Model is the Eta model extended to 8 days over smaller domains using the operational Eta model
-          78 hour forecast and GFS boundary conditions.
-        </documentation>
-        <documentation xlink:href="http://meted.ucar.edu/nwp/pcu2/etintro.htm"
-                       xlink:title="COMET MetEd (Meteorology Education and Training) documentation"/>
-        <documentation xlink:href="http://www.nws.noaa.gov/ost/ifps_sst/DGEX_combined.pdf"
-                       xlink:title="NCEP presentation (ppt)"/>
-      </metadata>
-
-      <featureCollection name="DGEX CONUS 12km" featureType="GRIB2" harvest="true" path="grib/NCEP/DGEX/CONUS_12km">
-        <metadata inherited="true">
-          <documentation type="summary">
-            NCEP Model output Grid 185 (C) horizontal = 491 by 303 points, resolution 12 km, LambertConformal projection.
-            Model runs are made at 6 and 18Z, with forecasts starting at 84 hours, every 6 hours out to 192 hours
-          </documentation>
-        </metadata>
-
-        <collection name="DGEX-CONUS_12km"
-                    spec="${DATA_DIR}/native/grid/NCEP/DGEX/CONUS_12km/.*grib2$"
-                     timePartition="file"
-                     dateFormatMark="#DGEX_CONUS_12km_#yyyyMMdd_HHmm"
-                     olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 1/15 * * * ? *" />
-      </featureCollection>
-
-      <featureCollection name="DGEX Alaska 12km" featureType="GRIB2" harvest="true" path="grib/NCEP/DGEX/Alaska_12km">
-        <metadata inherited="true">
-          <documentation type="summary">
-            NCEP Model output AWIPS Grid 186 (C) horizontal = 377 by 237 points, resolution 12 km, Polar Stereographic
-            projection.
-            Model runs are made at 0 and 12Z, with forecasts starting at 84 hours, every 6 hours out to 192 hours
-          </documentation>
-        </metadata>
-
-        <collection name="DGEX-Alaska_12km"
-                    spec="${DATA_DIR}/native/grid/NCEP/DGEX/Alaska_12km/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#DGEX_Alaska_12km_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 1/15 * * * ? *" />
-      </featureCollection>
-
-    </dataset>
-
     <dataset name="Global Ensemble Forecasting System (GEFS)">
 
       <metadata inherited="true">
@@ -566,23 +519,6 @@
         <gribConfig>
           <intvFilter excludeZero="true"/>
         </gribConfig>
-      </featureCollection>
-
-      <featureCollection name="NAM Alaska 22km" featureType="GRIB1" harvest="true" path="grib/NCEP/NAM/Alaska_22km">
-        <metadata inherited="true">
-          <dataFormat>GRIB-1</dataFormat>
-          <documentation type="summary">NCEP North American Model: AWIPS 217 (Y) Grid over Alaska - Double Resolution.
-            Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out to 60 hours.
-            Horizontal = 277 by 213 points, resolution 22.5 km, Polar Stereographic projection.
-            Vertical = surface, height above ground, pressure layer (2D levels only)
-          </documentation>
-        </metadata>
-
-        <collection name="NAM-Alaska_22km"
-                    spec="${DATA_DIR}/native/grid/NCEP/NAM/Alaska_22km/NAM_Alaska_22km_#yyyyMMdd_HHmm#.grib1"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 6,21,36,51 * * * ? *" />
       </featureCollection>
 
       <featureCollection name="NAM Alaska 45km from NOAAPORT" featureType="GRIB1" harvest="true"
