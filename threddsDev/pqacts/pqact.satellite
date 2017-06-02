@@ -109,4 +109,4 @@ NOTHER	(^TI..).. KNES ([0-9][0-9][0-9][0-9][0-9][0-9]) ...
 #
 NOTHER|HDS	^IXT(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 	PIPE	-close
-	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/GOES/GOES16/(\2:yyyy)(\2:mm)\2/Products/\1/GOES16_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
+	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/GOES/GOES16/Products/\1/(\2:yyyy)(\2:mm)\2/GOES16_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
