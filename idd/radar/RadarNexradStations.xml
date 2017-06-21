@@ -477,5 +477,14 @@
     <station name="San_Juan/Puerta_Rico" value="JUA" state="PR" country="US">
        <location3D latitude="18.12" longitude="-66.08" elevation="931" />
     </station>
+    <station name="JAPAN/Kadena AFB" value="ODN" state="JP" country="JP">
+       <location3D latitude="26.308" longitude="127.903" elevation="412" />
+    </station>
+    <station name="KOREA/Camp Humphreys" value="KSG" state="KR" country="KR">
+       <location3D latitude="37.207" longitude="127.285" elevation="1521" />
+    </station>
+    <station name="KOREA/Kunsan AFB" value="KJK" state="KR" country="KR">
+       <location3D latitude="35.924" longitude="126.622" elevation="191" />
+    </station>
 
 </stationList>
