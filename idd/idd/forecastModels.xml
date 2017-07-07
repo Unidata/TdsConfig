@@ -264,7 +264,7 @@
         <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
 
-      <featureCollection name="GFS Global 1.0 Degree (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_onedeg">
+      <featureCollection name="GFS Global 1.0 Degree (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_onedegree_noaaport">
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 003 (A) Grid. Global Lat/Lon grid.
             Model runs are made at 0, 6, 12, and 18Z, with forecasts every 6 hours from 0 to 240 hours (0 to 10 days).
