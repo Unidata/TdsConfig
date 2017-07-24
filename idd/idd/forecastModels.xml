@@ -167,7 +167,7 @@
           <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *"/>
         </featureCollection>
       </dataset>
- 
+
       <dataset name="GFS Half Degree - Global Coverage">
           <metadata inherited="true">
             <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
@@ -410,7 +410,7 @@
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
       </featureCollection>
-    
+
       <featureCollection name="GFS Alaska 20km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Alaska_20km">
         <dataFormat>GRIB-2</dataFormat>
         <metadata inherited="true">
@@ -486,7 +486,7 @@
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
         </featureCollection>
-      </dataset>   
+      </dataset>
   </dataset>
 
     <dataset name="North American Model (NAM)">
@@ -1109,7 +1109,7 @@
       </timeCoverage>
     </metadata>
 
-    <dataset name=" NAVy Global Environmental Model (NAVGEM) Model">
+    <dataset name="NAVy Global Environmental Model (NAVGEM) Model">
       <!--metadata inherited="true">
         <documentation xlink:href="http://www.nrlmry.navy.mil/nogaps_his.htm"
                        xlink:title="NOGAPS home page"/>
@@ -1302,4 +1302,3 @@
   </dataset> <!-- end of FNMOC forecast models -->
 
 </catalog>
-
