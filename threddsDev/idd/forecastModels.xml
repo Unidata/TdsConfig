@@ -490,7 +490,8 @@
                          path="grib/NCEP/NAM/CONUS_12km/conduit">
         <metadata inherited="true">
           <documentation type="summary">NCEP North American Model : AWIPS 218 (B) grid over the continental United States.
-            Model runs are made at 06Z, 12Z, 18Z and 00Z, with analysis and forecasts every 3 hours out to 84 hours (3.5 days).
+            Model runs are made at 06Z, 12Z, 18Z and 00Z, with analysis and forecasts every hour, out to 36 hours, and then
+            every three hours out to 84 hours (3.5 days).
             Horizontal = 614 by 428 points, resolution 12.19 km, LambertConformal projection.
             Vertical = small number of mandatory pressure levels, lots of surface fields.
           </documentation>
