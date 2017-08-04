@@ -126,19 +126,82 @@ for a particular purpose.</documentation>
 	<documentation xlink:href="http://w2.weather.gov/mdl/blend" xlink:title="MDL NBM Website"/>
       </metadata>
 
-      <featureCollection name="National Blend Forecast Grids"
+      <featureCollection name="National Model Blend CONUS Grids"
                          featureType="GRIB2" harvest="true" path="grib/NCEP/NBM/CONUS">
         <metadata inherited="true">
           <documentation type="summary">
-            CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids from
-            00Z and 12Z.
+            CONUS, 2345 by 1597 points, Lambert Conformal grid, resolution 2.5 km.
           </documentation>
         </metadata>
 
-        <collection spec="${DATA_DIR}/native/grid/NCEP/NBM/.*grib2$"
-                    dateFormatMark="#Blend_#yyyyMMdd_HHmm"
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NBM/CONUS/.*grib2$"
+                    dateFormatMark="#CONUS_#yyyyMMdd_HHmm"
                     timePartition="file"
-                    name="NCEP_MODEL_BLEND"
+                    name="NCEP_CONUS_MODEL_BLEND"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+
+      <featureCollection name="National Model Blend Oceanic Grids"
+                         featureType="GRIB2" harvest="true" path="grib/NCEP/NBM/Ocean">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Oceanic grids, 2517 by 1817 points, Mercator grid, resolution 10 km.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NBM/Ocean/.*grib2$"
+                    dateFormatMark="#Ocean_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NCEP_OCEAN_MODEL_BLEND"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+
+      <featureCollection name="National Model Blend Alaska Grids"
+                         featureType="GRIB2" harvest="true" path="grib/NCEP/NBM/Alaska">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Alaska grids, 1649 by 1105 points, Polar Stereographic grid, resolution 3 km.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NBM/Alaska/.*grib2$"
+                    dateFormatMark="#Alaska_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NCEP_ALASKA_MODEL_BLEND"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+
+      <featureCollection name="National Model Blend Hawaii Grids"
+                         featureType="GRIB2" harvest="true" path="grib/NCEP/NBM/Hawaii">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Hawaii grids, 625 by 561 points, Mercator grid, resolution 2.5 km.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NBM/Hawaii/.*grib2$"
+                    dateFormatMark="#Hawaii_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NCEP_HAWAII_MODEL_BLEND"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+
+      <featureCollection name="National Model Blend Puerto Rico Grids"
+                         featureType="GRIB2" harvest="true" path="grib/NCEP/NBM/PuertoRico">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Puerto Rico grids, 353 by 257 points, Mercator grid, resolution 1.25 km.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NBM/PuertoRico/.*grib2$"
+                    dateFormatMark="#PuertoRico_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NCEP_PUERTORICO_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
       </featureCollection>
@@ -157,4 +220,3 @@ for a particular purpose.</documentation>
   </dataset>
   <!-- end of test dataset -->
 </catalog>
-
