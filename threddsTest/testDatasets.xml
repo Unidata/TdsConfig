@@ -53,6 +53,13 @@ for a particular purpose.</documentation>
     </dataset>
   </dataset>
 
+  <datasetScan name="NOAAPORT Text Products" ID="noaaport-text" path="noaaport/text" location="${DATA_DIR}/native/text" >
+    <filter>
+      <include wildcard="*.txt"/>
+    </filter>
+    <addDatasetSize/>
+  </datasetScan>
+
   <dataset name="New Model Data for Testing">
 
     <metadata inherited="true">
