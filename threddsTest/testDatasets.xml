@@ -55,6 +55,9 @@ for a particular purpose.</documentation>
   </dataset>
 
   <datasetScan name="NOAAPORT Text Products" ID="noaaport-text" path="noaaport/text" location="${DATA_DIR}/native/text" >
+    <metadata inherited="true">
+      <serviceName>HTTPServer</serviceName>
+    </metadata>
     <filter>
       <include wildcard="*.txt"/>
     </filter>
