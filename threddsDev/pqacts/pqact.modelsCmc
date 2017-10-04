@@ -1,0 +1,12 @@
+#
+# Contains LDM pqacts for the model output served by the TDS
+#   catalog modelsCmc.xml
+#
+# ====================================
+# = CMC model data available via IDD =
+# ====================================
+#
+# Regional Deterministic Prediction System (RDPS)
+#
+CMC	^CMC_reg_.*_(ps..km)_(........)(..)
+	FILE	/data/ldm/pub/native/grid/CMC/RDPS/NA_15km/CMC_RDPS_\1_\2_\300.grib2
