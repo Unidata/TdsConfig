@@ -226,24 +226,6 @@
         </featureCollection>
       </dataset>
 
-      <featureCollection name="GFS Global 2.5 Degree" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_2p5deg">
-        <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : AWIPS 228 (A) Grid. Global Lat/Lon grid.
-            Model runs every 12 hours from 204 to 384 hours (8 to 16 days).
-            Horizontal= 73 by 144 points, resolution 2.5 degree, Lat/Lon projection.
-            Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
-          </documentation>
-        </metadata>
-
-        <collection name="GFS-Global_2p5deg"
-                    spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_2p5deg/.*grib2$"
-                    dateFormatMark="#GFS_Global_2p5deg_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
-      </featureCollection>
-
-
       <featureCollection name="GFS Pacific 40km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Pacific_40km">
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : Mercator Grid over most of the Pacific. longitude 110 W to 110 E.
