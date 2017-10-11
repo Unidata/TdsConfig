@@ -72,12 +72,6 @@ CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.1p00\.a
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg_ana/GFS_Global_onedeg_ana_\1_\200.grib2
 #
-# GFS Global 2.5 degree
-#
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.2p50\.
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GFS/Global_2p5deg/GFS_Global_2p5deg_\1_\200.grib2
-#
 # GFS Global 1.0 Degree (NOAAPORT)
 #
 NGRID	^[YZ].P... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
