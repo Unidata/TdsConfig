@@ -600,7 +600,7 @@
         </metadata>
 
         <collection name="NAM-CONUS_12km-conduit"
-            spec="${DATA_DIR}/native:/grid/NCEP/NAM/CONUS_12km_conduit/.*grib2$"
+            spec="${DATA_DIR}/native/grid/NCEP/NAM/CONUS_12km_conduit/.*grib2$"
             timePartition="file"
             dateFormatMark="#NAM_CONUS_12km_conduit_#yyyyMMdd_HHmm"
             olderThan="5 min"/>
