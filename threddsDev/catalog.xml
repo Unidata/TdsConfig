@@ -18,6 +18,7 @@
   <dataset name="Test Datasets">
     <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Grid Datasets" name=""/>
     <catalogRef xlink:href="testPointDatasets.xml" xlink:title="Test Point Datasets" name=""/>
+    <catalogRef xlink:href="authTest.xml" xlink:title="Test Restricted Datasets" name=""/>
   </dataset>
 
   <dataset name="For GRIB Indexing Purposes">
