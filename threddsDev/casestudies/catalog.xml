@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink" >
+
+  <service name="BasicRemote" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+  </service>
+
+  <dataset name="Hurricane Harvey">
+      <datasetScan name="GOES-16 Imagery" ID="casestudies/harvey/goes16"
+                   path="casestudies/harvey/goes16" location="${DATA_DIR}../harvey/goes16">
+        <metadata inherited="true">
+          <serviceName>BasicRemote</serviceName>
+        </metadata>
+        <filter>
+          <include wildcard="*.nc" />
+          <include wildcard="*.nc4" />
+        </filter>
+      </datasetScan>
+
+      <datasetScan name="Text Products" ID="casestudies/harvey/text"
+                   path="casestudies/harvey/text" location="${DATA_DIR}../harvey/text">
+        <metadata inherited="true">
+          <serviceName>HTTPServer</serviceName>
+        </metadata>
+        <filter>
+          <include wildcard="*.txt" />
+        </filter>
+      </datasetScan>
+
+      <datasetScan name="NEXRAD Level 2" ID="casestudies/harvey/nexrad"
+                   path="casestudies/harvey/nexrad" location="${DATA_DIR}../harvey/radar">
+        <metadata inherited="true">
+          <serviceName>BasicRemote</serviceName>
+        </metadata>
+        <filter>
+          <include wildcard="*.ar2v" />
+        </filter>
+      </datasetScan>
+
+        <dataset name="GFS Half Degree">
+            <metadata inherited="true">
+              <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
+                Model runs at 0, 6, 12, and 18Z.
+                Horizontal= 361 by 720 points, resolution 0.5 degree, Lat/Lon projection.
+                Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
+              </documentation>
+            </metadata>
+          <featureCollection name="GFS Half Degree Analysis" featureType="GRIB2" harvest="true"
+                             path="casestudies/harvey/model/gfs_ana">
+            <metadata inherited="true">
+              <documentation type="summary">Analysis grids only.</documentation>
+            </metadata>
+
+            <collection name="harvey-GFS-Global_0p5deg_ana"
+                        spec="${DATA_DIR}../harvey/model/GFS_ana/.*grib2$"
+                        timePartition="file"
+                        dateFormatMark="#GFS_Global_0p5deg_ana_#yyyyMMdd_HHmm"
+                        olderThan="5 min"/>
+            <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+          </featureCollection>
+
+          <featureCollection name="GFS Half Degree Forecast" featureType="GRIB2" harvest="true"
+                             path="casestudies/harvey/model/gfs">
+            <metadata inherited="true">
+              <documentation type="summary">Forecasts grids starting from the 0 hour forecast every 3 hours out to 10 days,
+                then 12 hour forecasts for days 10-16.
+              </documentation>
+            </metadata>
+
+            <collection name="harvey-GFS-Global_0p5deg"
+                        spec="${DATA_DIR}../harvey/model/GFS/.*grib2$"
+                        timePartition="file"
+                        dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
+                        olderThan="5 min"/>
+            <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+          </featureCollection>
+        </dataset>
+  </dataset>
+
+  <dataset name="Hurricane Irma">
+    <datasetScan name="GOES-16 Imagery" ID="casestudies/irma/goes16"
+                 path="casestudies/irma/goes16" location="${DATA_DIR}../irma/goes16">
+      <metadata inherited="true">
+        <serviceName>BasicRemote</serviceName>
+      </metadata>
+      <filter>
+        <include wildcard="*.nc" />
+        <include wildcard="*.nc4" />
+      </filter>
+    </datasetScan>
+
+    <datasetScan name="Text Products" ID="casestudies/irma/text"
+                 path="casestudies/irma/text" location="${DATA_DIR}../irma/text">
+      <metadata inherited="true">
+        <serviceName>HTTPServer</serviceName>
+      </metadata>
+      <filter>
+        <include wildcard="*.txt" />
+      </filter>
+    </datasetScan>
+
+    <datasetScan name="NEXRAD Level 2" ID="casestudies/irma/nexrad"
+                 path="casestudies/irma/nexrad" location="${DATA_DIR}../irma/radar">
+      <metadata inherited="true">
+        <serviceName>BasicRemote</serviceName>
+      </metadata>
+      <filter>
+        <include wildcard="*.ar2v" />
+      </filter>
+    </datasetScan>
+
+      <dataset name="GFS Half Degree">
+          <metadata inherited="true">
+            <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
+              Model runs at 0, 6, 12, and 18Z.
+              Horizontal= 361 by 720 points, resolution 0.5 degree, Lat/Lon projection.
+              Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
+            </documentation>
+          </metadata>
+        <featureCollection name="GFS Half Degree Analysis" featureType="GRIB2" harvest="true"
+                           path="casestudies/irma/model/gfs_ana">
+          <metadata inherited="true">
+            <documentation type="summary">Analysis grids only.</documentation>
+          </metadata>
+
+          <collection name="irma-GFS-Global_0p5deg_ana"
+                      spec="${DATA_DIR}../irma/model/GFS_ana/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#GFS_Global_0p5deg_ana_#yyyyMMdd_HHmm"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        </featureCollection>
+
+        <featureCollection name="GFS Half Degree Forecast" featureType="GRIB2" harvest="true"
+                           path="casestudies/irma/model/gfs">
+          <metadata inherited="true">
+            <documentation type="summary">Forecasts grids starting from the 0 hour forecast every 3 hours out to 10 days,
+              then 12 hour forecasts for days 10-16.
+            </documentation>
+          </metadata>
+
+          <collection name="irma-GFS-Global_0p5deg"
+                      spec="${DATA_DIR}../irma/model/GFS/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
+                      olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        </featureCollection>
+      </dataset>
+    </dataset>
+
+</catalog>
