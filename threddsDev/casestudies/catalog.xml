@@ -10,7 +10,7 @@
 
   <dataset name="Hurricane Harvey">
       <datasetScan name="GOES-16 Imagery" ID="casestudies/harvey/goes16"
-                   path="casestudies/harvey/goes16" location="${DATA_DIR}../harvey/goes16">
+                   path="casestudies/harvey/goes16" location="${DATA_DIR}/../harvey/goes16">
         <metadata inherited="true">
           <serviceName>BasicRemote</serviceName>
         </metadata>
@@ -21,7 +21,7 @@
       </datasetScan>
 
       <datasetScan name="Text Products" ID="casestudies/harvey/text"
-                   path="casestudies/harvey/text" location="${DATA_DIR}../harvey/text">
+                   path="casestudies/harvey/text" location="${DATA_DIR}/../harvey/text">
         <metadata inherited="true">
           <serviceName>HTTPServer</serviceName>
         </metadata>
@@ -31,7 +31,7 @@
       </datasetScan>
 
       <datasetScan name="NEXRAD Level 2" ID="casestudies/harvey/nexrad"
-                   path="casestudies/harvey/nexrad" location="${DATA_DIR}../harvey/radar">
+                   path="casestudies/harvey/nexrad" location="${DATA_DIR}/../harvey/radar">
         <metadata inherited="true">
           <serviceName>BasicRemote</serviceName>
         </metadata>
@@ -55,7 +55,7 @@
             </metadata>
 
             <collection name="harvey-GFS-Global_0p5deg_ana"
-                        spec="${DATA_DIR}../harvey/model/GFS_ana/.*grib2$"
+                        spec="${DATA_DIR}/../harvey/model/GFS_ana/.*grib2$"
                         timePartition="file"
                         dateFormatMark="#GFS_Global_0p5deg_ana_#yyyyMMdd_HHmm"
                         olderThan="5 min"/>
@@ -71,7 +71,7 @@
             </metadata>
 
             <collection name="harvey-GFS-Global_0p5deg"
-                        spec="${DATA_DIR}../harvey/model/GFS/.*grib2$"
+                        spec="${DATA_DIR}/../harvey/model/GFS/.*grib2$"
                         timePartition="file"
                         dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
                         olderThan="5 min"/>
@@ -82,7 +82,7 @@
 
   <dataset name="Hurricane Irma">
     <datasetScan name="GOES-16 Imagery" ID="casestudies/irma/goes16"
-                 path="casestudies/irma/goes16" location="${DATA_DIR}../irma/goes16">
+                 path="casestudies/irma/goes16" location="${DATA_DIR}/../irma/goes16">
       <metadata inherited="true">
         <serviceName>BasicRemote</serviceName>
       </metadata>
@@ -93,7 +93,7 @@
     </datasetScan>
 
     <datasetScan name="Text Products" ID="casestudies/irma/text"
-                 path="casestudies/irma/text" location="${DATA_DIR}../irma/text">
+                 path="casestudies/irma/text" location="${DATA_DIR}/../irma/text">
       <metadata inherited="true">
         <serviceName>HTTPServer</serviceName>
       </metadata>
@@ -103,7 +103,7 @@
     </datasetScan>
 
     <datasetScan name="NEXRAD Level 2" ID="casestudies/irma/nexrad"
-                 path="casestudies/irma/nexrad" location="${DATA_DIR}../irma/radar">
+                 path="casestudies/irma/nexrad" location="${DATA_DIR}/../irma/radar">
       <metadata inherited="true">
         <serviceName>BasicRemote</serviceName>
       </metadata>
@@ -127,7 +127,7 @@
           </metadata>
 
           <collection name="irma-GFS-Global_0p5deg_ana"
-                      spec="${DATA_DIR}../irma/model/GFS_ana/.*grib2$"
+                      spec="${DATA_DIR}/../irma/model/GFS_ana/.*grib2$"
                       timePartition="file"
                       dateFormatMark="#GFS_Global_0p5deg_ana_#yyyyMMdd_HHmm"
                       olderThan="5 min"/>
@@ -143,7 +143,7 @@
           </metadata>
 
           <collection name="irma-GFS-Global_0p5deg"
-                      spec="${DATA_DIR}../irma/model/GFS/.*grib2$"
+                      spec="${DATA_DIR}/../irma/model/GFS/.*grib2$"
                       timePartition="file"
                       dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
                       olderThan="5 min"/>
