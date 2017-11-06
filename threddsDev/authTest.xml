@@ -6,10 +6,29 @@
          xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0
            http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.6.xsd">
 
-  <datasetRoot path="test" location="content/testdata/" />
+  <datasetRoot path="test1" location="content/testdata/" />
+  <datasetRoot path="test2" location="content/testdata/" />
+  <datasetRoot path="test3" location="content/testdata/" />
 
-  <datasetScan name="Test Digest Authentication Dataset" ID="testDigestAuthDataset"
-               path="testDigestAuthDataset" location="content/testdata" restrictAccess="authTesterUser">
+  <dataset name="Test No Authentication Dataset"
+           ID="testNoAuthDataset"
+           urlPath="test1/testData.nc"
+           dataType="Grid" /> 
+
+  <dataset name="Test Digest Authentication Dataset (authTesterUser)"
+           ID="testDigestAuthDatasetATU"
+           urlPath="test2/testData.nc"
+           dataType="Grid"
+           restrictAccess="authTesterUser" />
+
+  <dataset name="Test Digest Authentication Dataset (restrictedDatasetUser)"
+           ID="testDigestAuthDatasetRDU"
+           urlPath="test3/testData.nc"
+           dataType="Grid"
+           restrictAccess="restrictedDatasetUser" />
+
+  <datasetScan name="Test Digest Authentication datasetScan (authTesterUser)" ID="testDigestAuthDatasetScanATU"
+               path="testDigestAuthDatasetScanATU" location="content/testdata" restrictAccess="authTesterUser">
     <metadata inherited="true">
       <dataType>Grid</dataType>
     </metadata>
