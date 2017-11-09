@@ -78,6 +78,50 @@
             <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
           </featureCollection>
         </dataset>
+        <dataset name="Surface Observations">
+
+          <metadata inherited="true">
+            <authority>edu.ucar.unidata</authority>
+            <dataType>Station</dataType>
+            <documentation type="rights">Freely available</documentation>
+            <creator>
+              <name vocabulary="DIF">DOC/NOAA/NWS</name>
+              <contact url="http://www.noaa.gov/" email="answers@noaa.gov"/>
+            </creator>
+            <publisher>
+              <name vocabulary="DIF">UCAR/UNIDATA</name>
+              <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
+            </publisher>
+
+            <geospatialCoverage>
+              <name vocabulary="Thredds">global</name>
+            </geospatialCoverage>
+          </metadata>
+
+          <featureCollection name="Metar Station Data - Test" harvest="true" featureType="Station" path="nws/metar/ncdecoded-test">
+            <metadata inherited="true">
+              <dataType>Station</dataType>
+              <documentation type="summary">Metars: hourly surface weather observations</documentation>
+              <documentation xlink:href="http://metar.noaa.gov/" xlink:title="NWS/NOAA information"/>
+              <documentation>In the U.S., METAR reports are taken once an hour between 50 minutes past the hour and the top of
+                the (next) hour. All the observations taken within this time are considered to be for the same cycle. For
+                example, observations taken between 1150Z and 1200Z are all considered to be 12Z observations. In reality,
+                observations may be taken a little earlier or a little later. In addition, observations taken due to changing
+                conditions, known as SPECI reports, are also considered to occur for a given cycle. Our rule of thumb is that
+                all reports taken between (hh-1)45Z to hh44Z are considered to be for the hh cycle.
+              </documentation>
+              <keyword>metar</keyword>
+              <keyword>surface observations</keyword>
+            </metadata>
+
+            <property name="raw" value="report"/>
+            <property name="resolution" value="20 min"/>
+
+            <collection spec="/data/ldm/irma/sfc/METAR_#yyyyMMdd_HHmm#.nc$" />
+            <protoDataset choice="Penultimate" />
+            <pointConfig datasetTypes="cdmrFeature Files"/>
+          </featureCollection>
+        </dataset>
   </dataset>
 
   <dataset name="Hurricane Irma">
@@ -148,6 +192,51 @@
                       dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        </featureCollection>
+      </dataset>
+
+      <dataset name="Surface Observations">
+
+        <metadata inherited="true">
+          <authority>edu.ucar.unidata</authority>
+          <dataType>Station</dataType>
+          <documentation type="rights">Freely available</documentation>
+          <creator>
+            <name vocabulary="DIF">DOC/NOAA/NWS</name>
+            <contact url="http://www.noaa.gov/" email="answers@noaa.gov"/>
+          </creator>
+          <publisher>
+            <name vocabulary="DIF">UCAR/UNIDATA</name>
+            <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
+          </publisher>
+
+          <geospatialCoverage>
+            <name vocabulary="Thredds">global</name>
+          </geospatialCoverage>
+        </metadata>
+
+        <featureCollection name="Metar Station Data - Test" harvest="true" featureType="Station" path="nws/metar/ncdecoded-test">
+          <metadata inherited="true">
+            <dataType>Station</dataType>
+            <documentation type="summary">Metars: hourly surface weather observations</documentation>
+            <documentation xlink:href="http://metar.noaa.gov/" xlink:title="NWS/NOAA information"/>
+            <documentation>In the U.S., METAR reports are taken once an hour between 50 minutes past the hour and the top of
+              the (next) hour. All the observations taken within this time are considered to be for the same cycle. For
+              example, observations taken between 1150Z and 1200Z are all considered to be 12Z observations. In reality,
+              observations may be taken a little earlier or a little later. In addition, observations taken due to changing
+              conditions, known as SPECI reports, are also considered to occur for a given cycle. Our rule of thumb is that
+              all reports taken between (hh-1)45Z to hh44Z are considered to be for the hh cycle.
+            </documentation>
+            <keyword>metar</keyword>
+            <keyword>surface observations</keyword>
+          </metadata>
+
+          <property name="raw" value="report"/>
+          <property name="resolution" value="20 min"/>
+
+          <collection spec="/data/ldm/harvey/sfc/METAR_#yyyyMMdd_HHmm#.nc$" />
+          <protoDataset choice="Penultimate" />
+          <pointConfig datasetTypes="cdmrFeature Files"/>
         </featureCollection>
       </dataset>
     </dataset>
