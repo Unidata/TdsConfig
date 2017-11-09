@@ -117,7 +117,7 @@
             <property name="raw" value="report"/>
             <property name="resolution" value="20 min"/>
 
-            <collection spec="/data/ldm/irma/sfc/METAR_#yyyyMMdd_HHmm#.nc$" />
+            <collection spec="/data/ldm/harvey/sfc/METAR_#yyyyMMdd_HHmm#.nc$" />
             <protoDataset choice="Penultimate" />
             <pointConfig datasetTypes="cdmrFeature Files"/>
           </featureCollection>
@@ -234,7 +234,7 @@
           <property name="raw" value="report"/>
           <property name="resolution" value="20 min"/>
 
-          <collection spec="/data/ldm/harvey/sfc/METAR_#yyyyMMdd_HHmm#.nc$" />
+          <collection spec="/data/ldm/irma/sfc/METAR_#yyyyMMdd_HHmm#.nc$" />
           <protoDataset choice="Penultimate" />
           <pointConfig datasetTypes="cdmrFeature Files"/>
         </featureCollection>
