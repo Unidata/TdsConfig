@@ -98,7 +98,7 @@
             </geospatialCoverage>
           </metadata>
 
-          <featureCollection name="Metar Station Data" harvest="true" featureType="Station" path="harvey/metar">
+          <featureCollection name="Metar Station Data - Harvey" harvest="true" featureType="Station" path="harvey/metar">
             <metadata inherited="true">
               <dataType>Station</dataType>
               <documentation type="summary">Metars: hourly surface weather observations</documentation>
@@ -215,7 +215,7 @@
           </geospatialCoverage>
         </metadata>
 
-        <featureCollection name="Metar Station Data" harvest="true" featureType="Station" path="irma/metar">
+        <featureCollection name="Metar Station Data - Irma" harvest="true" featureType="Station" path="irma/metar">
           <metadata inherited="true">
             <dataType>Station</dataType>
             <documentation type="summary">Metars: hourly surface weather observations</documentation>
