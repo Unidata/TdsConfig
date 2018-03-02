@@ -1,0 +1,163 @@
+# LDM/IDD feed of GOES-R/GOES-R/S ABI imagery, GLM L2 products, and
+# space weather products
+
+# Example 1: FILE all images and products into the CSPP GEO hierarchy
+#
+#       Example Product IDs:
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C01_G16_s20172571747189_e20172571749562_c20172571750006.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadF-M3C01_G16_s20172571745382_e20172571756148_c20172571756196.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadM1-M3C01_G16_s20172571758268_e20172571758325_c20172571758368.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadM2-M3C01_G16_s20172571758568_e20172571759025_c20172571759068.nc
+#       /data/cspp-geo/GRB-R/OR_GLM-L2-LCFA_G16_s20172571751400_e20172571752000_c20172571752029.nc
+#       /data/cspp-geo/GRB-R/OR_EXIS-L1b-SFEU_G16_s20172571742596_e20172571743296_c20172571743301.nc
+#       /data/cspp-geo/GRB-R/OR_MAG-L1b-GEOF_G16_s20172571742000_e20172571742599_c20172571743001.nc
+#       /data/cspp-geo/GRB-R/OR_SEIS-L1b-MPSH_G16_s20172571740300_e20172571740590_c20172571741072.nc
+#       /data/cspp-geo/GRB-R/OR_SUVI-L1b-Fe131_G16_s20172561945225_e20172561945235_c20172561945370.nc
+#
+
+# DIFAX	(/data/cspp-geo/GRB-R/.*)
+# 	FILE	-close	-overwrite \1
+
+
+# Example 2: use grbfile.sh to fine CONUS images into daily directories
+#
+# GOES-R/S ABI CONUS all wavelength channels
+#
+#       Example Product IDs for CONUS images:
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C01_G16_s20172571747189_e20172571749562_c20172571750006.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C02_G16_s20172571747189_e20172571749562_c20172571749596.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C03_G16_s20172571747189_e20172571749562_c20172571750005.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C04_G16_s20172571747189_e20172571749562_c20172571750001.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C05_G16_s20172571747189_e20172571749562_c20172571750010.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C06_G16_s20172571747189_e20172571749567_c20172571750001.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C07_G16_s20172571747189_e20172571749573_c20172571750005.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C08_G16_s20172571747189_e20172571749562_c20172571750006.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C09_G16_s20172571747189_e20172571749568_c20172571750006.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C10_G16_s20172571747189_e20172571749573_c20172571750005.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C11_G16_s20172571747189_e20172571749562_c20172571750005.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C12_G16_s20172571747189_e20172571749568_c20172571750006.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C13_G16_s20172571747189_e20172571749574_c20172571750007.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C14_G16_s20172571747189_e20172571749562_c20172571750007.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C15_G16_s20172571747189_e20172571749567_c20172571750007.nc
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadC-M3C16_G16_s20172571747189_e20172571749573_c20172571750008.nc
+#
+
+DIFAX	(OR_(ABI)-L1b-RadC-M3C(..)_G(..)_s(....)(...).*)
+	PIPE	-close
+	sh etc/TDS/util/grbfile.sh /data/ldm/pub/native/satellite/GOES/GRB\4/\2/CONUS \1 \2 \3 \5 \6 576 var/logs/grb\4.log
+
+# Example 3: use grbfile.sh to fine Full Disk images into daily directories
+#
+# GOES-R/S ABI Full Disk all wavelength channels
+#
+
+#       Example Product ID for Full Disk images:
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadF-M3C01_G16_s20172571745382_e20172571756148_c20172571756196.nc
+#
+
+DIFAX	(OR_(ABI)-L1b-RadF-M[34]C(..)_G(..)_s(....)(...).*)
+	PIPE	-close
+	sh etc/TDS/util/grbfile.sh /data/ldm/pub/native/satellite/GOES/GRB\4/\2/FullDisk \1 \2 \3 \5 \6 192 var/logs/grb\4.log
+
+# Example 4: use grbfile.sh to fine Mesoscale-1 images into daily directories
+#
+# GOES-R/S ABI Mesoscale-1 all wavelength channels
+#
+
+#       Example Product ID for Mesoscale-1 images:
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadM1-M3C01_G16_s20172571758268_e20172571758325_c20172571758368.nc
+#
+
+DIFAX	(OR_(ABI)-L1b-RadM1-M3C(..)_G(..)_s(....)(...).*)
+	PIPE	-close
+	sh etc/TDS/util/grbfile.sh /data/ldm/pub/native/satellite/GOES/GRB\4/\2/Mesoscale-1 \1 \2 \3 \5 \6 720 var/logs/grb\4.log
+
+# Example 5: use grbfile.sh to fine Mesoscale-2 images into daily directories
+#
+# GOES-R/S ABI Mesoscale-2 all wavelength channels
+#
+
+#       Example Product ID for Mesoscale-2 images:
+#       /data/cspp-geo/GRB-R/OR_ABI-L1b-RadM2-M3C01_G16_s20172571758568_e20172571759025_c20172571759068.nc
+#
+
+DIFAX	(OR_(ABI)-L1b-RadM2-M3C(..)_G(..)_s(....)(...).*)
+	PIPE	-close
+	sh etc/TDS/util/grbfile.sh /data/ldm/pub/native/satellite/GOES/GRB\4/\2/Mesoscale-2 \1 \2 \3 \5 \6 720 var/logs/grb\4.log
+
+# Example 6: use grbfile.sh to fine GLM products into daily directories
+#
+# GOES-R/S ABI Mesoscale-2 all wavelength channels
+# GOES-R/S GLM
+#
+
+#       Example Product IDs for GLM products:
+#       /data/cspp-geo/GRB-R/OR_GLM-L2-LCFA_G16_s20172571751400_e20172571752000_c20172571752029.nc
+#       /data/cspp-geo/GRB-R/OR_GLM-L2-LCFA_G16_s20172571752000_e20172571752200_c20172571752224.nc
+#       /data/cspp-geo/GRB-R/OR_GLM-L2-LCFA_G16_s20172571752200_e20172571752400_c20172571752424.nc
+#
+
+DIFAX	(OR_(GLM)-L2-(....)_G(..)_s(....)(...).*)
+	PIPE	-close
+	sh etc/TDS/util/grbfile.sh /data/ldm/pub/native/satellite/GOES/GRB\4/\2 \1 \2 \3 \5 \6 2160 var/logs/grb\4.log
+
+# Example 7: use grbfile.sh to fine EXIS products into daily directories
+#
+# GOES-R/S EXIS
+#
+
+#       Example Product IDs for EXIS products:
+#       /data/cspp-geo/GRB-R/OR_EXIS-L1b-SFEU_G16_s20172571742596_e20172571743296_c20172571743301.nc
+#       /data/cspp-geo/GRB-R/OR_EXIS-L1b-SFXR_G16_s20172571743000_e20172571743294_c20172571743297.nc
+#
+
+DIFAX	(OR_(EXIS)-L1b-(....)_G(..)_s(....)(...).*)
+	PIPE	-close
+	sh etc/TDS/util/grbfile.sh /data/ldm/pub/native/satellite/GOES/GRB\4/\2 \1 \2 \3 \5 \6 720 var/logs/grb\4.log
+
+# Example 8: use grbfile.sh to fine MAG products into daily directories
+#
+# GOES-R/S MAG
+#
+
+#       Example Product IDs for MAG products:
+#       /data/cspp-geo/GRB-R/OR_MAG-L1b-GEOF_G16_s20172571742000_e20172571742599_c20172571743001.nc
+#       /data/cspp-geo/GRB-R/OR_MAG-L1b-GEOF_G16_s20172571743000_e20172571743599_c20172571744001.nc
+#
+
+DIFAX	(OR_(MAG)-L1b-(....)_G(..)_s(....)(...).*)
+	PIPE	-close
+	sh etc/TDS/util/grbfile.sh /data/ldm/pub/native/satellite/GOES/GRB\4/\2 \1 \2 \3 \5 \6 720 var/logs/grb\4.log
+
+# Example 9: use grbfile.sh to fine SEIS products into daily directories
+#
+# GOES-R/S SEIS
+#
+
+#       Example Product IDs for SEIS products:
+#       /data/cspp-geo/GRB-R/OR_SEIS-L1b-MPSH_G16_s20172571740300_e20172571740590_c20172571741072.nc
+#       /data/cspp-geo/GRB-R/OR_SEIS-L1b-MPSL_G16_s20172571741000_e20172571741290_c20172571741302.nc
+#       /data/cspp-geo/GRB-R/OR_SEIS-L1b-SGPS_G16_s20172571740000_e20172571740590_c20172571741002.nc
+#
+
+DIFAX	(OR_(SEIS)-L1b-(....)_G(..)_s(....)(...).*)
+	PIPE	-close
+	sh etc/TDS/util/grbfile.sh /data/ldm/pub/native/satellite/GOES/GRB\4/\2 \1 \2 \3 \5 \6 720 var/logs/grb\4.log
+
+# Example 10: use grbfile.sh to fine SUVI products into daily directories
+#
+# GOES-R/S SUVI
+#
+
+#       Example Product IDs for SUVI products:
+#       /data/cspp-geo/GRB-R/OR_SUVI-L1b-Fe171_G16_s20172571742445_e20172571742455_c20172571742591.nc
+#       /data/cspp-geo/GRB-R/OR_SUVI-L1b-Fe171_G16_s20172571742535_e20172571742535_c20172571743088.nc
+#       /data/cspp-geo/GRB-R/OR_SUVI-L1b-Fe195_G16_s20172571743045_e20172571743055_c20172571743190.nc
+#       /data/cspp-geo/GRB-R/OR_SUVI-L1b-Fe284_G16_s20172571743145_e20172571743155_c20172571743291.nc
+#       /data/cspp-geo/GRB-R/OR_SUVI-L1b-Fe284_G16_s20172571743235_e20172571743235_c20172571743389.nc
+#       /data/cspp-geo/GRB-R/OR_SUVI-L1b-He303_G16_s20172571743345_e20172571743355_c20172571743490.nc
+#
+
+DIFAX	(OR_(SUVI)-L1b-(.....)_G(..)_s(....)(...).*)
+	PIPE	-close
+	sh etc/TDS/util/grbfile.sh /data/ldm/pub/native/satellite/GOES/GRB\4/\2 \1 \2 \3 \5 \6 720 var/logs/grb\4.log
