@@ -17,9 +17,9 @@
   </service>
 
   <service name="latest" serviceType="Resolver" base=""/>
-  
+
   <dataset name="National Flood Interoperability Experiment (NFIE) Data for Testing">
-  
+
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <authority>edu.ucar.unidata</authority>
@@ -31,11 +31,11 @@
         and forecasting model for the United States. This opportunity is created
         through the opening of a new National Water Center on the Tuscaloosa
         campus of the University of Alabama, which is to become the national
-        center for river flow forecasting.  The intent is to establish a 
+        center for river flow forecasting.  The intent is to establish a
         research partnership with the academic community that will sustain
         innovation into the future.
       </documentation>
-      <documentation xlink:href="https://www.cuahsi.org/NFIE" xlink:title="CUAHSI NFIE Information"/>   
+      <documentation xlink:href="https://www.cuahsi.org/NFIE" xlink:title="CUAHSI NFIE Information"/>
       <publisher>
         <name vocabulary="DIF">UCAR/UNIDATA</name>
         <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
@@ -105,5 +105,8 @@
     </featureCollection>
   </dataset>
 
-</catalog>
+  <datasetScan name="NWC test data" path="NWC-test" location="/data/thredds/tds-test/content/nwc_test_data/" >
+    <serviceName>basic</serviceName>
+  </datasetScan>
 
+</catalog>
