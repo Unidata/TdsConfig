@@ -173,7 +173,6 @@
         <include wildcard="Level3*.nids" atomic="true" collection="false"/>
         <exclude wildcard=".*" atomic="false" collection="true"/>
       </filter>
-      <addID/>
       <sort>
         <lexigraphicByName increasing="false"/>
       </sort>
@@ -249,7 +248,6 @@
         <include wildcard="Level3*.nids" atomic="true" collection="false"/>
         <exclude wildcard=".*" atomic="false" collection="true"/>
       </filter>
-      <addID/>
       <sort>
         <lexigraphicByName increasing="false"/>
       </sort>
@@ -289,7 +287,6 @@
         <include wildcard="Level2*.ar2v" atomic="true" collection="false"/>
         <exclude wildcard=".*" atomic="false" collection="true"/>
       </filter>
-      <addID/>
       <sort>
         <lexigraphicByName increasing="false"/>
       </sort>
@@ -361,7 +358,6 @@
         <exclude wildcard="current" atomic="false" collection="true"/>
         <exclude wildcard=".*" atomic="false" collection="true"/>
       </filter>
-      <addID/>
       <sort>
         <lexigraphicByName increasing="false"/>
       </sort>
@@ -422,4 +418,3 @@
   </dataset> <!-- NEXRAD National Composites From Unidata -->
 
 </catalog>
-

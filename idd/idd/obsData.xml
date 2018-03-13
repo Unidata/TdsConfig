@@ -17,13 +17,13 @@
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
-    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>    
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
   </service>
-  
+
   <service name="latest" serviceType="Resolver" base=""/>
-  
+
   <dataset name="Surface Observations">
-  
+
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <authority>edu.ucar.unidata</authority>
@@ -92,7 +92,7 @@
   </dataset> <!-- End of Surface Observations -->
 
   <dataset name="Wind Profiler Observations">
-  
+
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <authority>edu.ucar.unidata</authority>
@@ -138,11 +138,10 @@
         </timeCoverage>
         <variables vocabulary="CF-1"/>
       </metadata>
-      
+
       <filter>
         <include wildcard="*.bufr" atomic="true" collection="false"/>
       </filter>
-      <addID/>
       <sort>
         <lexigraphicByName increasing="false"/>
       </sort>
@@ -154,4 +153,3 @@
 
   </dataset> <!-- End Wind Profiler Observations -->
 </catalog>
-
