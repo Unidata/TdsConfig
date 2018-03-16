@@ -101,7 +101,7 @@ NOTHER	^TIP(...) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 #
 NOTHER	(^TI..).. KNES ([0-9][0-9][0-9][0-9][0-9][0-9]) ...
 	PIPE	-metadata
-	etc/TDS/ldm-alchemy/goes-restitch.py -v -d /data/ldm/pub/native/satellite/GOES -t 30 -l goes-restitch/\1.log \1 \2
+	etc/TDS/ldm-alchemy/goes-restitch.py -v -d /data/ldm/pub/native/satellite/GOES -t 120 -l goes-restitch/\1.log \1 \2
 #
 # -------------------------------------
 # - NOAAPORT GOES-16 netCDF4 Producs -
