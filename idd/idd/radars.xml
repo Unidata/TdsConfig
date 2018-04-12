@@ -366,31 +366,6 @@
                        startTimeSubstitutionPattern="$1-$2-$3T$4:$5:00" duration="5 minutes"/>
     </datasetScan>
 
-    <featureCollection name="NWS NEXRAD Composite VIP 10 km" featureType="GRIB1" harvest="true"
-                       path="grib/nexrad/composite/nws">
-      <metadata inherited="true">
-        <dataFormat>GRIB-1</dataFormat>
-        <documentation type="summary">10 km mosaic of NEXRAD Radar VIP. Contours of echo reflectivity,
-          also known as "VIP levels" (for Video Integrator and Processor). Generated every 30 minutes
-          by NWS, covers continental US.
-        </documentation>
-        <creator>
-          <name vocabulary="DIF">DOC/NOAA/NWS</name>
-          <contact url="http://www.roc.noaa.gov/" email="http://www.roc.noaa.gov/Feedback/"/>
-        </creator>
-      </metadata>
-      <collection name="NEXRAD_NWS_Reflectivity"
-                  spec="${DATA_DIR}/native/radar/10km_mosaic/**/.*grib1$"
-                  dateFormatMark="#RADAR_10km_mosaic_#yyyyMMdd_HHmm"
-                  olderThan="1 min"/>
-
-      <gribConfig>
-        <option name="timeUnit" value="1 minute" />
-      </gribConfig>
-
-      <tdm rewrite="test" rescan="0 2/5 * * * ? *" />
-    </featureCollection>
-
     <featureCollection name="Unidata NEXRAD Composite Reflectivity" featureType="GRIB2" harvest="true"
                        path="grib/nexrad/composite/unidata">
       <metadata inherited="true">
