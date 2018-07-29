@@ -7,21 +7,31 @@
   <catalogScan name="Realtime data from IDD" path="idd" location="idd" watch="true" />
   <catalogScan name="Unidata case Studies" path="casestudies" location="casestudies" watch="true" />
 
-  <!-- dataset name="Realtime data from IDD">
-    <catalogRef xlink:href="idd/forecastModels.xml" xlink:title="Forecast Model Data" name=""/>
+  <!-- Even though we have a catalogScan above, this will keep the TDM working as the TDM does not
+    look for GRIB featureCollections under catalogScan's yet. -->
+  <dataset name="Realtime data from IDD">
+    <catalogRef xlink:href="forecastModels.xml" xlink:title="Forecast Model Data" name=""/>
     <catalogRef xlink:href="idd/forecastProdsAndAna.xml" xlink:title="Forecast Products and Analyses" name="" />
     <catalogRef xlink:href="idd/obsData.xml" xlink:title="Observation Data" name=""/>
     <catalogRef xlink:href="idd/radars.xml" xlink:title="Radar Data" name=""/>
     <catalogRef xlink:href="idd/satellite.xml" xlink:title="Satellite Data" name=""/>
-  </dataset--> 
+  </dataset>
+
+  <dataset name="Case Studies">
+    <catalogRef xlink:href="casestudies/catalog.xml" xlink:title="Unidata case studies" name=""/>
+  </dataset>
 
   <dataset name="Test Datasets">
-    <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Grid Datasets" name=""/>
+    <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Datasets" name=""/>
     <catalogRef xlink:href="testPointDatasets.xml" xlink:title="Test Point Datasets" name=""/>
+    <catalogRef xlink:href="cf_examples.xml" xlink:title="CF DSG Example Datasets" name=""/>
     <catalogRef xlink:href="authTest.xml" xlink:title="Test Restricted Datasets" name=""/>
   </dataset>
 
-  <dataset name="For GRIB Indexing Purposes">
+  <!-- to access the GSD HRRR, we reference thredds-jumbo, so that thredds-test and thredds-dev do not
+    end up in scripts. Because of this, we need the follwing entry to make sure the grib files are
+    indexed properly -->
+  <dataset name="For GRIB Indexing Purposes - Not Intended for Data Access">
     <catalogRef xlink:href="modelsHrrr.xml" xlink:title="GSD HRRR Datasets" name=""/>
   </dataset>
 
