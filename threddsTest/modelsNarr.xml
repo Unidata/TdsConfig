@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="Unidata THREDDS Data Server - NOAA GSD models"
+         version="1.0.5">
+
+  <dataset name="NCEP North American Regional Reanalysis (NARR)">
+    <metadata inherited="true">
+      <authority>edu.ucar.unidata</authority>
+      <dataType>GRID</dataType>
+      <dataFormat>GRIB-2</dataFormat>
+    </metadata>
+
+    <dataset name="NARR from NCEP">
+
+      <featureCollection name="NARR test" featureType="GRIB2" harvest="true" path="grib/NARR/test">
+        <collection name="NARR"
+                    spec="/data/ldm/pub/test/NCEP/NARR/.*grb2$"
+                    timePartition="file"
+                    dateFormatMark="#narr.#yyyymmddHH"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+
+    </dataset> <!-- End of NARR Test Dataset -->
+  </dataset> <!-- End of NCEP NARR Datasets -->
+  
+</catalog>
