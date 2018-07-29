@@ -5,7 +5,7 @@
          version="1.0.6">
 
   <dataset name="Realtime data from IDD">
-    <catalogRef xlink:href="forecastModels.xml" xlink:title="Forecast Model Data" name=""/>
+    <catalogRef xlink:href="idd/forecastModels.xml" xlink:title="Forecast Model Data" name=""/>
     <catalogRef xlink:href="idd/forecastProdsAndAna.xml" xlink:title="Forecast Products and Analyses" name="" />
     <catalogRef xlink:href="idd/obsData.xml" xlink:title="Observation Data" name=""/>
     <catalogRef xlink:href="idd/radars.xml" xlink:title="Radar Data" name=""/>
@@ -21,8 +21,5 @@
     <catalogRef xlink:href="cf_examples.xml" xlink:title="CF DSG Example Datasets" name=""/>
   </dataset>
   
-  <dataset name="For GRIB Indexing Purposes">
-    <catalogRef xlink:href="modelsHrrr.xml" xlink:title="Test Point Datasets" name=""/>
-  </dataset>
 </catalog>
 
