@@ -14,115 +14,115 @@
 #
 DDS|IDS	^S[AP].... .... ([0-3][0-9])([0-2][0-9])
 #	FILE	-metadata	-close
-#	/data/ldm/pub/native/test/metar_(\1:yyyy)(\1:mm)\1_\200.dat
+#	${DATA_DIR}/native/test/metar_(\1:yyyy)(\1:mm)\1_\200.dat
 	PIPE	-metadata
-	etc/TDS/ldm-alchemy/metar2nc.py -o /data/ldm/pub/decoded/netcdf/surface/metar-test
+	etc/TDS/ldm-alchemy/metar2nc.py -o ${DATA_DIR}/decoded/netcdf/surface/metar-test
 #
 # Surface Buoy Point Data
 #
 DDS|IDS	^S[IMNS].... .... ([0-3][0-9])([0-2][0-9])
 	FILE
-	/data/ldm/pub/native/text/buoy/buoy_(\1:yyyy)(\1:mm)\1_\200.txt
+	${DATA_DIR}/native/text/buoy/buoy_(\1:yyyy)(\1:mm)\1_\200.txt
 #
 # Surface Synoptic Point Data
 #
 DDS|IDS	^SM.... .... ([0-3][0-9])([0-2][0-9])
 	FILE
-	/data/ldm/pub/native/text/syn/synoptic_(\1:yyyy)(\1:mm)\1_\200.txt
+	${DATA_DIR}/native/text/syn/synoptic_(\1:yyyy)(\1:mm)\1_\200.txt
 #
 # Upper Air Point Data
 #
 DDS|IDS	^U[EFGHIKLMPQSYZ].... .... ([0-3][0-9])([0-2][0-9])
 	FILE
-	/data/ldm/pub/native/text/upper_air/upper_air_(\1:yyyy)(\1:mm)\1_\200.txt
+	${DATA_DIR}/native/text/upper_air/upper_air_(\1:yyyy)(\1:mm)\1_\200.txt
 DDS|IDS	^U[^EFGHIKLMPQSYZ].... .... ([0-3][0-9])([0-2][0-9])
 	FILE
-	/data/ldm/pub/native/text/upper_air_other/upper_air_other_(\1:yyyy)(\1:mm)\1_\200.txt
+	${DATA_DIR}/native/text/upper_air_other/upper_air_other_(\1:yyyy)(\1:mm)\1_\200.txt
 #
 # BUFR
 #
 HRS	(^IS....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/bufr/obs/surface/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+	${DATA_DIR}/native/bufr/obs/surface/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
 
 HRS	(IU....) ([^K]...) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+	${DATA_DIR}/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
 
 HRS	(IU.[^N]..) (K[^A]..) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+	${DATA_DIR}/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
 
 HRS	(^I[^SUX]....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/bufr/obs/other/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+	${DATA_DIR}/native/bufr/obs/other/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
 
 HRS	(^JU....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/bufr/forecast/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+	${DATA_DIR}/native/bufr/forecast/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
 
 HRS	(^J[^U]....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/bufr/forecast/other/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+	${DATA_DIR}/native/bufr/forecast/other/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
 #
 # Text Front Products
 #
 DDS|IDS	^ASUS01 (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/fronts/Fronts_\1_(\2:yyyy)(\2:mm)\2_\300.txt
+	${DATA_DIR}/native/text/fronts/Fronts_\1_(\2:yyyy)(\2:mm)\2_\300.txt
 DDS|IDS	^ASUS02 (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/fronts/Fronts_highres_\1_(\2:yyyy)(\2:mm)\2_\300.txt
+	${DATA_DIR}/native/text/fronts/Fronts_highres_\1_(\2:yyyy)(\2:mm)\2_\300.txt
 #
 # Tropical Weather Products
 #
 # Recco for non-tasked mission
 DDS|IDS	^URNT10 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/atlantic/recco_non_trop/Recco_non_tropical_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/atlantic/recco_non_trop/Recco_non_tropical_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^URPN10 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/epac/recco_non_trop/Recco_non_tropical_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/epac/recco_non_trop/Recco_non_tropical_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^URPA10 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/cpac/recco_non_trop/Recco_non_tropical_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/cpac/recco_non_trop/Recco_non_tropical_(\1:yyyy)(\1:mm)\1.txt
 # Recco
 DDS|IDS	^URNT11 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/atlantic/recco/Recco_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/atlantic/recco/Recco_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^URPN11 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/epac/recco/Recco_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/epac/recco/Recco_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^URPA11 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/cpac/recco/Recco_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/cpac/recco/Recco_(\1:yyyy)(\1:mm)\1.txt
 # Vortex data messages
 DDS|IDS	^URNT12 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/atlantic/vortex/Vortex_data_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/atlantic/vortex/Vortex_data_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^URPN12 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/epac/vortex/Vortex_data_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/epac/vortex/Vortex_data_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^URPA12 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/cpac/vortex/Vortex_data_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/cpac/vortex/Vortex_data_(\1:yyyy)(\1:mm)\1.txt
 # TEMP DROP data
 DDS|IDS	^UZNT13 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/atlantic/drop/Dropsonde_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/atlantic/drop/Dropsonde_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^UZPN13 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/epac/drop/Dropsonde_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/epac/drop/Dropsonde_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^UZPA13 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/cpac/drop/Dropsonde_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/cpac/drop/Dropsonde_(\1:yyyy)(\1:mm)\1.txt
 # High-density observations
 DDS|IDS	^URNT15 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/atlantic/hdob/High_density_obs_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/atlantic/hdob/High_density_obs_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^URPN15 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/epac/hdob/High_density_obs_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/epac/hdob/High_density_obs_(\1:yyyy)(\1:mm)\1.txt
 DDS|IDS	^URPA15 .... ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
-	/data/ldm/pub/native/text/tropical/cpac/hdob/High_density_obs_(\1:yyyy)(\1:mm)\1.txt
+	${DATA_DIR}/native/text/tropical/cpac/hdob/High_density_obs_(\1:yyyy)(\1:mm)\1.txt
