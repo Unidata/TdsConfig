@@ -1,0 +1,9 @@
+#
+# ------------------------------------------
+# - Global Data Assimilation System (GDAS) -
+# ------------------------------------------
+#
+# GDAS 1.0 degree analysis only
+#
+CONDUIT ^data/nccf/com/gfs/prod/gdas\.(........)/gdas\.t(..)z\.pgrb2\.1p00\.anl
+        FILE    ${DATA_DIR}/native/grid/NCEP/GFS/GDAS_1p0deg_ana/GDAS_1p0deg_ana_\1_\200.grib2
