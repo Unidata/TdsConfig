@@ -981,8 +981,8 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <gribConfig>
-          <gdsName hash='1771702596' groupName='Model Fields'/>
-          <gdsName hash='866121648' groupName='Derived Fields'/>
+          <gdsName hash='-1788043676' groupName='Model Fields'/>
+          <gdsName hash='925211856' groupName='Derived Fields'/>
         </gribConfig>
         <tdm rewrite="test" rescan="0 40 * * * ? *" />
       </featureCollection>
