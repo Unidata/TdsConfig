@@ -20,18 +20,18 @@
     <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
   </service>
 
-  <dataset name="GOES-16 NOAAPORT Products">
+  <dataset name="GOES NOAAPORT Products">
     <metadata inherited="true">
-      <documentation>NOAA's GOES-16 satellite has not been declared operational and its data
+      <documentation>NOAA's GOES-17 satellite has not been declared operational and its data
 are preliminary and undergoing testing. Users receiving these data through
 any dissemination means  (including, but not limited to, PDA and
-GRB) assume all risk related to their use of GOES-16 data and NOAA
+GRB) assume all risk related to their use of GOES-17 data and NOAA
 disclaims any and all warranties, whether express or implied, including
 (without limitation) any implied warranties of merchantability or fitness
 for a particular purpose.</documentation>
       <dataType>GRID</dataType>
     </metadata>
-    <datasetScan name="GOES-16 Products" ID="noaaport-goes16" path="satellite/goes16" location="${DATA_DIR}/native/satellite/GOES" >
+    <datasetScan name="GOES Products" ID="noaaport-goes16" path="satellite/goes16" location="${DATA_DIR}/native/satellite/GOES" >
       <filter>
 	<include wildcard="*.nc4"/>
 	<include wildcard="*.nc"/>
