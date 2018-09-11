@@ -95,10 +95,9 @@ if __name__ == '__main__':
             help='Directories to create THREDDS configuration set')
     parser.add_argument('--verbose', '-v', action='store_true',
             help='Verbose output')
-    args = parser.parse_args()
-
     # Used to replace the [DATA_DIR] string in pqact and xml files
-    DATA_DIR = b"/data/ldm/pub"
+    parser.add_argument('--datadir', '-d', type=bytes, default=b'/data/ldm/pub')
+    args = parser.parse_args()
 
     # If we're not given a directory, just look at all the dirs for a
     # config file.
@@ -145,7 +144,7 @@ if __name__ == '__main__':
                 # look for files that could have the [DATA_DIR] macro and
                 # replace it with the correct value
                 if ('pqact' in f) or (f[-3:] == 'xml'):
-                    data = data.replace(b'${DATA_DIR}', DATA_DIR)
+                    data = data.replace(b'${DATA_DIR}', args.datadir)
 
                 # Set the modification time based on the last time the file
                 # was committed in git
