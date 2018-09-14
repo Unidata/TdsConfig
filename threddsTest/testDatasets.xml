@@ -172,33 +172,7 @@ ellite/goes16/agg/conus/tpw">
         <duration>1 day</duration>
       </timeCoverage>
     </metadata>
-    <!--dataset name="NCEP Model Data">
-      <metadata inherited="true">
-        <documentation type="summary">NCEP Global Forecast System Model, previously called AVN/MRF (Medium Range Forecast)</documentation>
-        <documentation xlink:href="http://meted.ucar.edu/nwp/pcu2/avintro.htm"
-                       xlink:title="COMET MetEd (Meteorology Education and Training) documentation"/>
-        <documentation xlink:href="http://www.nco.ncep.noaa.gov/pmb/products/gfs/"
-                       xlink:title="NCEP Model Notes"/>
-      </metadata>
 
-      <featureCollection name="GFS-Global_0p25deg" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_0p25deg">
-        <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
-            Model runs at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours from 96 to 180 hours (4 to 7.5 days).
-            Horizontal= 361 by 720 points, resolution 0.5 degree, Lat/Lon projection.
-            Vertical= 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure layers.
-          </documentation>
-        </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg/.*grib2$"
-                    timePartition="file"
-                    dateFormatMark="#GFS_Global_0p25deg_#yyyyMMdd_HHmm"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 8,23,38,53 * * * ? *"/>
-      </featureCollection>
-
-    </dataset -->
-    <!-- end of NCEP -->
     <dataset name="NCEP National Blend of Models">
       <metadata inherited="true">
         <documentation type="summary">The National Blend of Models (NBM) is a
@@ -290,15 +264,6 @@ ellite/goes16/agg/conus/tpw">
       </featureCollection>
     </dataset>
     <!-- end of National model blend -->
-
-    <dataset name="Do not use">
-
-      <featureCollection name="TestFmrc" featureType="FMRC" harvest="true" path="fmrc/ecmwf/global_2p5" serviceName="fullServices">
-        <collection name="ecmwf_global_2p5" spec="${DATA_DIR}/decoded/netcdf/grid/ECMWF/Global_2p5/.*.nc$" dateFormatMark="#ECMWF_Global_2p5_#yyyyMMdd_HHmm"/>
-        <update startup="true" rescan="0 0/30 * * * ? *" trigger="allow"/>
-      </featureCollection>
-
-    </dataset>
 
   </dataset>
   <!-- end of test dataset -->
