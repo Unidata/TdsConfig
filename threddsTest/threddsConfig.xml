@@ -2,8 +2,8 @@
 <threddsConfig>
   
   <serverInformation>
-    <name>THREDDS-TEST Data Server</name>
-    <logoUrl>/thredds/unidataLogo.jpg</logoUrl>
+    <name>Test THREDDS Data Server</name>
+    <logoUrl>/thredds/threddsIcon.png</logoUrl>
     <logoAltText>TDS</logoAltText>
 
     <abstract>Scientific Data</abstract>
