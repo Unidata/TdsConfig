@@ -304,10 +304,10 @@
     <dataset name="High Resolution Rapid Refresh (HRRR)">
 
       <dataset name="HRRR from NOAA/GSD">
-        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/HRRR/CONUS_3km/surface/catalog.xml"
+        <catalogRef xlink:href="https://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/HRRR/CONUS_3km/surface/catalog.xml"
                     xlink:title="GSD HRRR CONUS 3km surface" name=""
                     useRemoteCatalogService="false" />
-        <catalogRef xlink:href="http://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/HRRR/CONUS_3km/wrfprs/catalog.xml"
+        <catalogRef xlink:href="https://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/HRRR/CONUS_3km/wrfprs/catalog.xml"
                     xlink:title="GSD HRRR CONUS 3km wrfprs" name=""
                     useRemoteCatalogService="false" />
       </dataset>
