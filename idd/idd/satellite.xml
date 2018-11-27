@@ -48,7 +48,7 @@
         </creator>
         <timeCoverage>
           <end>present</end>
-          <duration>7 days</duration>
+          <duration>13 days</duration>
         </timeCoverage>
       </metadata>
       <!--
@@ -56,6 +56,39 @@
          Satellite Imager Data 
 
       -->
+      <dataset name="GOES 16/17 Datasets">
+        <metadata inherited="true">
+          <dataType>GRID</dataType>
+          <dataFormat>NetCDF-4</dataFormat>
+        </metadata>
+        <datasetScan name="GOES16" ID="noaaport-goes16" path="satellite/goes16/GOES16" location="${DATA_DIR}/native/satellite/GOES/GOES16" >
+          <filter>
+            <include wildcard="*.nc4"/>
+            <include wildcard="*.nc"/>
+          </filter>
+          <addDatasetSize/>
+        </datasetScan>
+        <datasetScan name="GOES16 GRB" ID="noaaport-goes16-grb" path="satellite/goes16/GRB16" location="${DATA_DIR}/native/satellite/GOES/GRB16" >
+          <filter>
+            <include wildcard="*.nc4"/>
+            <include wildcard="*.nc"/>
+          </filter>
+          <addDatasetSize/>
+        </datasetScan>
+        <datasetScan name="GOES17" ID="noaaport-goes17" path="satellite/goes17/GOES17" location="${DATA_DIR}/native/satellite/GOES/GOES17" >
+        <metadata inherited="true">
+          <documentation>NOAA's GOES-17 satellite has not been declared operational and its data are preliminary and undergoing testing.
+          Users receiving these data through any dissemination means (including, but not limited to, PDA and GRB) assume all risk related to their use of GOES-17 data and NOAA disclaims any and all warranties, whether express or implied, including
+(without limitation) any implied warranties of merchantability or fitness for a particular purpose.
+          </documentation>
+        </metadata>
+          <filter>
+            <include wildcard="*.nc4"/>
+            <include wildcard="*.nc"/>
+          </filter>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset>
       <dataset name="Imager Data">
         <dataset name="Shortwave IR (3.9um)">
           <datasetScan name="West CONUS 4km" ID="SSEC/IDD-Satellite/3.9/WEST-CONUS_4km" path="satellite/3.9/WEST-CONUS_4km" location="${DATA_DIR}/native/satellite/3.9/WEST-CONUS_4km/">
