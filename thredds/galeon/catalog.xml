@@ -14,7 +14,7 @@
       <dataType>Grid</dataType>
     </metadata>
 
-    <datasetScan name="GALEON Test Data" path="galeon/testdata" location="/data/thredds/galeon/" >
+    <datasetScan name="GALEON Test Data" path="galeon/testdata" location="${DATA_DIR}/galeon/galeon/" >
       <filter>
         <include wildcard="*.nc"/>
       </filter>
@@ -26,7 +26,7 @@
       </filter>
     </datasetScan>
 
-    <datasetScan name="NWS NDFD CONUS 5 km data" path="galeon/ndfd/testdata" location="${DATA_DIR}/native/grid/NCEP/NDFD/CONUS_5km/" >
+    <datasetScan name="NWS NDFD CONUS data" path="galeon/ndfd/testdata" location="${DATA_DIR}/native/grid/NCEP/NDFD/NWS_noaaport/" >
       <filter>
         <include wildcard="*.grib2"/>
       </filter>
@@ -36,4 +36,3 @@
 
   </dataset>
 </catalog>
-
