@@ -88,6 +88,19 @@
           </filter>
           <addDatasetSize/>
         </datasetScan>
+        <datasetScan name="GOES17 GRB" ID="noaaport-goes17-grb" path="satellite/goes17/GRB17" location="${DATA_DIR}/native/satellite/GOES/GRB17" >
+        <metadata inherited="true">
+          <documentation>NOAA's GOES-17 satellite has not been declared operational and its data are preliminary and undergoing testing.
+          Users receiving these data through any dissemination means (including, but not limited to, PDA and GRB) assume all risk related to their use of GOES-17 data and NOAA disclaims any and all warranties, whether express or implied, including
+(without limitation) any implied warranties of merchantability or fitness for a particular purpose.
+          </documentation>
+        </metadata>
+          <filter>
+            <include wildcard="*.nc4"/>
+            <include wildcard="*.nc"/>
+          </filter>
+          <addDatasetSize/>
+        </datasetScan>
       </dataset>
       <dataset name="Imager Data">
         <dataset name="Shortwave IR (3.9um)">
@@ -105,20 +118,8 @@
               </aggregation>
             </netcdf>
           </dataset>
-          <datasetScan name="Puerto Rico 4km" ID="SSEC/IDD-Satellite/3.9/PR-REGIONAL_4km" path="satellite/3.9/PR-REGIONAL_4km" location="${DATA_DIR}/native/satellite/3.9/PR-REGIONAL_4km/">
-             <filter>
-              <include wildcard="*.gini"/>
-            </filter>
-            <addDatasetSize/>
-          </datasetScan>
           <datasetScan name="Hawaii 4km" ID="SSEC/IDD-Satellite/3.9/HI-REGIONAL_4km" path="satellite/3.9/HI-REGIONAL_4km" location="${DATA_DIR}/native/satellite/3.9/HI-REGIONAL_4km/">
              <filter>
-              <include wildcard="*.gini"/>
-            </filter>
-            <addDatasetSize/>
-          </datasetScan>
-          <datasetScan name="East CONUS 4km" ID="SSEC/IDD-Satellite/3.9/EAST-CONUS_4km" path="satellite/3.9/EAST-CONUS_4km" location="${DATA_DIR}/native/satellite/3.9/EAST-CONUS_4km/" >
-            <filter>
               <include wildcard="*.gini"/>
             </filter>
             <addDatasetSize/>
@@ -281,6 +282,11 @@
             <addDatasetSize/>
           </datasetScan>
         </dataset>
+        <!--
+
+         Sounder Derived Products 
+
+        -->
         <dataset name="Sounder Derived Products">
           <datasetScan name="Lifted Index" ID="SSEC/IDD-Satellite/LI" path="satellite/LI" location="${DATA_DIR}/native/satellite/LI/">
             <metadata inherited="true">

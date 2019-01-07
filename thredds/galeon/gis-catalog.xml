@@ -8,7 +8,7 @@
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
   </service>
 
-  <datasetScan name="GIS Test Data" path="gis/test" location="/data/thredds/gis/" >
+  <datasetScan name="GIS Test Data" path="gis/test" location="${DATA_DIR}/galeon/gis/" >
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <authority>unidata.ucar.edu:</authority>
@@ -27,4 +27,3 @@
   </datasetScan>
 
 </catalog>
-
