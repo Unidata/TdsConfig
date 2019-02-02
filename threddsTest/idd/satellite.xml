@@ -390,6 +390,36 @@
         </dataset><!-- End of Sounder Derived Products -->
       </dataset><!-- End of Satellite Sounder Data -->
     </dataset><!-- End of NESDIS GOES Satellite Data -->
+    <dataset name="NESDIS S-NPP Satellite Data">
+      <metadata inherited="true">
+        <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
+        <documentation xlink:href="http://www.nesdis.noaa.gov/satellites.html" xlink:title="NESDIS Satellite page" />
+        <documentation type="summary">National Environmental Satellite, Data, And Information Service (NESDIS) Suomi-National Polar-Orbiting Partnership (S-NPP) data consist of swath imagery and remotely-sensed atmospheric soundings.</documentation>
+        <dataFormat>NetCDF-4</dataFormat>
+        <creator>
+          <name>NOAA/NESDIS</name>
+          <contact url="http://www.nesdis.noaa.gov/satellites.html" email="http://www.nesdis.noaa.gov/contact.html" />
+        </creator>
+        <timeCoverage>
+          <end>present</end>
+          <duration>14 days</duration>
+        </timeCoverage>
+      </metadata>
+      <datasetScan name="S-NPP VIIRS Swath Imagery" ID="snpp-viirs" path="satellite/snpp/viirs" location="${DATA_DIR}/native/satellite/NPP/VIIRS" >
+        <filter>
+          <include wildcard="*.nc4"/>
+          <include wildcard="*.nc"/>
+        </filter>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="S-NPP NUCAPS Soundings" ID="snpp-nucaps" path="satellite/snpp/nucaps" location="${DATA_DIR}/native/satellite/NPP/NUCAPS" >
+        <filter>
+          <include wildcard="*.nc4"/>
+          <include wildcard="*.nc"/>
+        </filter>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset><!-- End of NESDIS S-NPP data -->
   </dataset><!-- End of Satellite Data -->
 </catalog>
 
