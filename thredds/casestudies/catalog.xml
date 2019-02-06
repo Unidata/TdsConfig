@@ -321,6 +321,16 @@
       </dataset>
     </dataset>
 
+    <datasetScan name="Python Gallery Sample Data" ID="casestudies/python-gallery"
+                 path="casestudies/python-gallery" location="${DATA_DIR}/casestudies/python-gallery">
+      <metadata inherited="true">
+        <serviceName>BasicRemote</serviceName>
+      </metadata>
+      <filter>
+        <include wildcard="*.nc" />
+        <include wildcard="*.nc4" />
+      </filter>
+    </datasetScan>
 
   </dataset>
 </catalog>
