@@ -86,7 +86,19 @@
     </dataset>
 
 
-
+  <dataset name="2019 March Plains Blizzard">
+    <datasetScan name="GOES Imagery" ID="casestudies/2019blizzard/goes"
+                 path="casestudies/2019blizzard/goes"
+                 location="${DATA_DIR}/casestudies/2019blizzard/satellite/GOES">
+      <metadata inherited="true">
+        <serviceName>BasicRemote</serviceName>
+      </metadata>
+      <filter>
+        <include wildcard="*.nc" />
+        <include wildcard="*.nc4" />
+      </filter>
+    </datasetScan>
+  </dataset>
 
   <dataset name="Hurricane Harvey">
       <datasetScan name="GOES-16 Imagery" ID="casestudies/harvey/goes16"
