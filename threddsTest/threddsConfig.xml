@@ -42,6 +42,7 @@
     <standardCssUrl>tds.css</standardCssUrl>
     <catalogCssUrl>tdsCat.css</catalogCssUrl>
     <openDapCssUrl>tdsDap.css</openDapCssUrl>
+    <generateDatasetJsonLD>true</generateDatasetJsonLD>
   </htmlSetup>
 
   <CORS>
