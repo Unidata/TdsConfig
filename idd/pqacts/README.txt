@@ -17,6 +17,7 @@ Unidata has the following directory layout:
     <LDM_HOME>/etc/TDS/pqact.obsData -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.obsData
     <LDM_HOME>/etc/TDS/pqact.radars -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.radars
     <LDM_HOME>/etc/TDS/pqact.satellite -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.satellite
+    <LDM_HOME>/etc/TDS/pqact.modelsCmc -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsCmc
 
 * make symlinks to util, decoders, and cdl directories
     <LDM_HOME>/etc/TDS/decoders -> <TDS_CONTENT_ROOT>/thredds/pqacts/decoders
@@ -43,3 +44,4 @@ EXEC    "pqact -f NGRID|CONDUIT etc/TDS/pqact.forecastProdsAndAna"
 EXEC    "pqact -f NIMAGE etc/TDS/pqact.satellite"
 EXEC    "pqact -f HRS|FNEXRAD|NNEXRAD|CRAFT etc/TDS/pqact.radars"
 EXEC    "pqact -f HRS etc/TDS/pqact.obsData"
+EXEC    "pqact -f CMC etc/TDS/pqact.modelsCmc"

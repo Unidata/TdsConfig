@@ -15,6 +15,7 @@ Unidata has the following directory layout:
     <LDM_HOME>/etc/TDS/pqact.modelsHrrr -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsHrrr
     <LDM_HOME>/etc/TDS/pqact.testDatasets -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.testDatasets
     <LDM_HOME>/etc/TDS/pqact.modelsCmc -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsCmc
+    <LDM_HOME>/etc/TDS/pqact.modelsGdas -> <TDS_CONTENT_ROOT>/thredds/pqacts/pqact.modelsGdas
 
 Remember, you will need to add the symlinked pqacts to the LDMs
 pqact.conf file. For example:
@@ -33,3 +34,4 @@ EXEC    "pqact -f HRS|FNEXRAD|NNEXRAD|CRAFT etc/TDS/pqact.radars"
 EXEC    "pqact -f NGRID|FSL2 etc/TDS/pqact.modelsHrrr"
 EXEC    "pqact -f HRS|NGRID|CONDUIT etc/TDS/pqact.testDatasets"
 EXEC    "pqact -f CMC etc/TDS/pqact.modelsCmc"
+EXEC    "pqact -f CONDUIT etc/TDS/pqact.modelsGdas"
