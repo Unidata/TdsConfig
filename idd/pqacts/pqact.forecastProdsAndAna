@@ -102,3 +102,29 @@ NGRID	^YAU(C[0-9]|S[1-9])[0-9] KWNR (..)(..)..
 NGRID	^YAU([ABE-KNORT-Z][0-9][0-9]) KWNR (..)(..)..
 	FILE
 	${DATA_DIR}/native/grid/NCEP/MRMS/Other/MRMS_Other_(\1:yyyy)(\1:mm)\1_\200.grib2
+
+# -----------------------------
+# - NCEP National Model Blend -
+# -----------------------------
+#
+# NCEP's blend of models (for seeding NDFD grids for forecasters)
+#
+NGRID	^Y[A-Z]A... KWE[AB] (..)(..)
+	FILE	-close
+	${DATA_DIR}/native/grid/NCEP/NBM/CONUS/National_Blend_CONUS_(\1:yyyy)(\1:mm)\1_\200.grib2
+
+NGRID	^O[BC][A-Z]... KWE[AB] (..)(..)
+	FILE	-close
+	${DATA_DIR}/native/grid/NCEP/NBM/Ocean/National_Blend_Ocean_(\1:yyyy)(\1:mm)\1_\200.grib2
+
+NGRID	^Y[A-Z]A... KWE[CD] (..)(..)
+	FILE	-close
+	${DATA_DIR}/native/grid/NCEP/NBM/Alaska/National_Blend_Alaska_(\1:yyyy)(\1:mm)\1_\200.grib2
+
+NGRID	^Y[A-Z]A... KWE[EF] (..)(..)
+	FILE	-close
+	${DATA_DIR}/native/grid/NCEP/NBM/Hawaii/National_Blend_Hawaii_(\1:yyyy)(\1:mm)\1_\200.grib2
+
+NGRID	^Y[A-Z]A... KWE[GH] (..)(..)
+	FILE	-close
+	${DATA_DIR}/native/grid/NCEP/NBM/PuertoRico/National_Blend_PuertoRico_(\1:yyyy)(\1:mm)\1_\200.grib2
