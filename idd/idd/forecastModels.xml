@@ -1065,6 +1065,52 @@
 
   </dataset> <!-- end of NCEP Analysis and Forecast Models -->
 
+  <dataset name="CMC Forecast Models">
+    <metadata inherited="true">
+      <authority>edu.ucar.unidata</authority>
+      <documentation xlink:href="https://www.canada.ca/en/environment-climate-change/services/science-technology/centres/quebec.html#cmc" xlink:title="CMC Home page"/>
+      <documentation type="rights">Freely available</documentation>
+      <documentation type="processing_level">Transmitted through Unidata Internet Data Distribution.</documentation>
+      <documentation type="processing_level">Read by CDM Grib Collection.</documentation>
+
+      <creator>
+        <name vocabulary="DIF">Environment Canada (EC) / Canadian Meteorological Centre (CMC)</name>
+        <contact url="http://gcmd.nasa.gov/Aboutus/software_docs/help_guide.html" email="http://gcmd.nasa.gov/MailComments/MailComments.jsf?rcpt=gcmduso"/>
+      </creator>
+      <publisher>
+        <name vocabulary="ADN">University Corporation for Atmospheric Research (UCAR)/Unidata</name>
+        <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
+      </publisher>
+    </metadata>
+    <dataset name="Regional Deterministic Prediction System (RDPS)">
+      <metadata inherited="true">
+        <documentation xlink:href="https://weather.gc.ca/model_forecast/index_e.html"
+                       xlink:title="RDPS home page"/>
+      </metadata>
+
+      <featureCollection name="RDPS North America 15km" featureType="GRIB2" harvest="true" path="grib/CMC/RDPS/NA_15km">
+        <metadata inherited="true">
+          <documentation type="summary">Environment Canada (EC) / Canadian 
+            Meteorological Centre (CMC) Regional Deterministic Prediction System
+            (RDPS) North America 15 km domain.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/CMC/RDPS/NA_15km/CMC_RDPS_ps15km_#yyyyMMdd_HHmm#.grib2"
+                    name="CMC_RDPS_NA_15km"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <gribConfig>
+          <gdsName hash='866121648' groupName='Model Fields'/>
+          <gdsName hash='1771702596' groupName='Derived Fields'/>
+        </gribConfig>
+        <tdm rewrite="test" rescan="0 40 * * * ? *" />
+      </featureCollection>
+
+    </dataset>
+
+  </dataset> <!-- end of CMC forecast models -->
+
   <dataset name="FNMOC Forecast Models">
 
     <metadata inherited="true">
