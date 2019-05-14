@@ -64,6 +64,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="GEFS Members - Forecasts" featureType="GRIB2" harvest="true"
@@ -80,6 +83,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="GEFS Derived Forecast Products" featureType="GRIB2" harvest="true"
@@ -96,6 +102,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
     </dataset>
@@ -129,6 +138,9 @@
                       dateFormatMark="#GFS_Global_0p25deg_ana_#yyyyMMdd_HHmm"
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 16/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="GFS Quarter Degree Forecast" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_0p25deg">
@@ -144,6 +156,9 @@
                       dateFormatMark="#GFS_Global_0p25deg_#yyyyMMdd_HHmm"
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 16/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
       </dataset>
 
@@ -167,6 +182,9 @@
                       dateFormatMark="#GFS_Global_0p5deg_ana_#yyyyMMdd_HHmm"
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="GFS Half Degree Forecast" featureType="GRIB2" harvest="true"
@@ -183,6 +201,9 @@
                       dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
       </dataset>
 
@@ -207,6 +228,9 @@
                       timePartition="file"
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="GFS One Degree Forecast" featureType="GRIB2" harvest="true"
@@ -223,6 +247,9 @@
                       timePartition="file"
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
       </dataset>
 
@@ -242,6 +269,9 @@
             timePartition="file"
             olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="GFS Puerto Rico Half Degree" featureType="GRIB2" harvest="true"
@@ -261,6 +291,9 @@
             dateFormatMark="#GFS_Puerto_Rico_0p5deg_#yyyyMMdd_HHmm"
             olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="GFS CONUS 80km" featureType="GRIB1" harvest="true" path="grib/NCEP/GFS/CONUS_80km">
@@ -278,6 +311,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="GFS CONUS 95km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/CONUS_95km">
@@ -297,6 +333,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
     
     </dataset>
@@ -334,6 +373,9 @@
                       timePartition="file"
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 7/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="NCEP HRRR CONUS 2.5km" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km">
@@ -347,6 +389,9 @@
                       timePartition="file"
                       olderThan="5 min"/>
           <tdm rewrite="test" rescan="0 7/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
       </dataset>
@@ -381,6 +426,7 @@
         <tdm rewrite="test" rescan="0 13/15 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -400,6 +446,9 @@
             timePartition="file"
             olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 13/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="NAM Alaska 45km from CONDUIT" featureType="GRIB2" harvest="true"
@@ -421,6 +470,7 @@
         <tdm rewrite="test" rescan="0 13/15 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -439,6 +489,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 13/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="NAM CONUS 12km from NOAAPORT" featureType="GRIB2" harvest="true"
@@ -465,6 +518,7 @@
             <variable id="0-1-8"/>
             <variable id="0-1-10"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -491,6 +545,7 @@
             <variable id="0-1-8"/>
             <variable id="0-1-10"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -521,6 +576,7 @@
             <variable id="7-0-2-194"/>
             <variable id="7-0-2-195"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -547,6 +603,7 @@
             <variable id="0-1-8"/>
             <variable id="0-1-10"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -565,6 +622,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 13/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="NAM Polar 90km" featureType="GRIB2" harvest="true" path="grib/NCEP/NAM/Polar_90km">
@@ -584,6 +644,7 @@
         <tdm rewrite="test" rescan="0 13/15 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -616,6 +677,7 @@
         <tdm rewrite="test" rescan="0 13/15 * * * ? *" />
         <gribConfig>
           <intvFilter excludeZero="true"/>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -651,6 +713,7 @@
             <variable id="0-1-9"/>
             <variable id="0-1-10"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -674,6 +737,7 @@
             <variable id="0-1-9"/>
             <variable id="0-1-10"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -697,6 +761,7 @@
             <variable id="0-1-9"/>
             <variable id="0-1-10"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
     </dataset>
@@ -730,6 +795,7 @@
           <intvFilter intvLength="3">
             <variable id="0-1-8"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
 
       </featureCollection>
@@ -752,6 +818,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="SREF Alaska 45km Ensemble Derived Products" featureType="GRIB2" harvest="true"
@@ -772,6 +841,7 @@
           <intvFilter intvLength="3">
             <variable id="0-1-8"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -793,6 +863,7 @@
           <intvFilter intvLength="3">
             <variable id="0-1-8"/>
           </intvFilter>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -820,6 +891,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Wave Watch III Regional Alaska" featureType="GRIB2" harvest="true"
@@ -837,6 +911,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Wave Watch III Coastal Alaska" featureType="GRIB2" harvest="true"
@@ -854,6 +931,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Wave Watch III Regional Eastern Pacific" featureType="GRIB2" harvest="true"
@@ -871,6 +951,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Wave Watch III Regional US East Coast" featureType="GRIB2" harvest="true"
@@ -888,6 +971,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Wave Watch III Regional US West Coast" featureType="GRIB2" harvest="true"
@@ -905,6 +991,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Wave Watch III Coastal US East Coast" featureType="GRIB2" harvest="true"
@@ -922,6 +1011,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Wave Watch III Coastal US West Coast" featureType="GRIB2" harvest="true"
@@ -939,6 +1031,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
     </dataset>
@@ -983,6 +1078,7 @@
         <gribConfig>
           <gdsName hash='-1788043676' groupName='Model Fields'/>
           <gdsName hash='925211856' groupName='Derived Fields'/>
+          <filesSort increasing="false" />
         </gribConfig>
         <tdm rewrite="test" rescan="0 40 * * * ? *" />
       </featureCollection>
@@ -1030,6 +1126,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
     </dataset>
@@ -1053,6 +1152,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="FNMOC WW3 Europe" featureType="GRIB1" harvest="true" path="grib/FNMOC/WW3/Europe">
@@ -1067,6 +1169,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
     </dataset>
 
@@ -1089,6 +1194,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
     </dataset>
@@ -1114,6 +1222,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="FNMOC COAMPS Europe" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Europe">
@@ -1129,6 +1240,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="FNMOC COAMPS Equatorial America" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Equatorial_America">
@@ -1144,6 +1258,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="FNMOC COAMPS Northeast Pacific" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Northeast_Pacific">
@@ -1159,6 +1276,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="FNMOC COAMPS Southern California" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Southern_California">
@@ -1173,6 +1293,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
     </dataset>
@@ -1196,6 +1319,9 @@
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 34 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
     </dataset>

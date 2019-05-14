@@ -71,6 +71,7 @@
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
         <gribConfig>
           <gdsHash from='-1506003048' to='-1505079527'/>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -91,10 +92,9 @@
                     olderThan="5 min"/>
 
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
-        <!-- gribConfig>
-          <gdsHash from="-328645426" to="1821883766"/>
-          <gdsHash from="1383738030" to="-760700074"/>
-        </gribConfig -->
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Storm Prediction Center CONUS Forecast Grids" featureType="GRIB2"
@@ -112,6 +112,9 @@
                     name="NDFD_SPC_CONUS_CONDUIT"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Climate Prediction Center CONUS Forecast Grids" featureType="GRIB2"
@@ -129,6 +132,9 @@
                     name="NDFD_CPC_CONUS_CONDUIT"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
     </dataset>
 
@@ -162,6 +168,7 @@
           <pdsHash>
             <useGenType>true</useGenType>
           </pdsHash>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -183,6 +190,7 @@
           <pdsHash>
             <useGenType>true</useGenType>
           </pdsHash>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -196,87 +204,108 @@
       </metadata>
 
       <featureCollection name="MRMS Base Reflectivity" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/BaseRef">
-	<metadata inherited="true">
+        <metadata inherited="true">
           <documentation type="summary">Base Reflectivity Fields</documentation>
-	</metadata>
+        </metadata>
         <collection name="MRMS-BaseRef"
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/BaseRef/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_BaseReflectivity_#yyyyMMdd_HHmm"
                     olderThan="1 min"/>
         <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/Model">
-	<metadata inherited="true">
+        <metadata inherited="true">
           <documentation type="summary">MRMS Model-derived fields</documentation>
-	</metadata>
+        </metadata>
         <collection name="MRMS-Model"
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/Model/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_Model_#yyyyMMdd"
                     olderThan="10 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="MRMS NLDN Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/NLDN">
-	<metadata inherited="true">
+        <metadata inherited="true">
           <documentation type="summary">MRMS NLDN (lightning) fields</documentation>
-	</metadata>
+        </metadata>
         <collection name="MRMS-NLDN"
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/NLDN/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_NLDN_#yyyyMMdd_HHmm"
                     olderThan="1 min"/>
         <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/Precip">
-	<metadata inherited="true">
+        <metadata inherited="true">
           <documentation type="summary">MRMS Precipitation fields</documentation>
-	</metadata>
+        </metadata>
         <collection name="MRMS-Precip"
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/Precip/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_Precip_#yyyyMMdd_HHmm"
                     olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/Radar">
-	<metadata inherited="true">
+        <metadata inherited="true">
           <documentation type="summary">MRMS Radar fields</documentation>
-	</metadata>
+        </metadata>
         <collection name="MRMS-Radar"
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/Radar/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_Radar_#yyyyMMdd_HHmm"
                     olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/RotationTrack">
-	<metadata inherited="true">
+        <metadata inherited="true">
           <documentation type="summary">MRMS Low-level Rotation Tracks</documentation>
-	</metadata>
+        </metadata>
         <collection name="MRMS-RotationTracks"
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrack/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_RotationTrack_#yyyyMMdd_HHmm"
                     olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/RotationTrackML">
-	<metadata inherited="true">
+        <metadata inherited="true">
           <documentation type="summary">MRMS Mid-level Rotation Tracks</documentation>
-	</metadata>
+        </metadata>
         <collection name="MRMS-RotationTracksML"
                     spec="${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrackML/.*grib2$"
                     timePartition="file"
                     dateFormatMark="#MRMS_RotationTrackML_#yyyyMMdd_HHmm"
                     olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
     </dataset>
     <!-- end of MRMS -->
@@ -306,6 +335,9 @@
                     name="NCEP_CONUS_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="National Model Blend Oceanic Grids"
@@ -322,6 +354,9 @@
                     name="NCEP_OCEAN_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="National Model Blend Alaska Grids"
@@ -338,6 +373,9 @@
                     name="NCEP_ALASKA_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="National Model Blend Hawaii Grids"
@@ -354,6 +392,9 @@
                     name="NCEP_HAWAII_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="National Model Blend Puerto Rico Grids"
@@ -370,6 +411,9 @@
                     name="NCEP_PUERTORICO_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
     </dataset>
     <!-- end of National model blend -->
