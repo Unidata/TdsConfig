@@ -21,6 +21,9 @@
                     dateFormatMark="#HRRR_CONUS_3km_wrfprs_#yyyyMMddHHmm"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="GSD HRRR CONUS 3km surface" featureType="GRIB2" harvest="true" path="grib/HRRR/CONUS_3km/surface">
@@ -32,6 +35,7 @@
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
         <gribConfig>
+          <filesSort increasing="false" />
           <option name="timeUnit" value="1 minute" />
         </gribConfig>
       </featureCollection>
