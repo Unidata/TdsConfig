@@ -1,0 +1,25 @@
+#!/bin/bash
+
+LDM_PQACT_DIR="/opt/ldm/etc/TDS"
+TDS_PQACT_DIR="/opt/tds-test/content/thredds/pqacts"
+
+
+declare -a PqactFiles=("pqact.forecastModels" \
+                       "pqact.forecastProdsAndAna" \
+                       "pqact.modelsCmc" \
+                       "pqact.modelsHrrr" \
+                       "pqact.radars" \
+                       "pqact.satellite" \
+                       "pqact.modelsGdas" \
+                       "pqact.ryan-test" \
+                       "pqact.testDatasets")
+
+# make sure we are in the correct directory
+echo "Change directory to ${LDM_PQACT_DIR}" 
+eval cd ${LDM_PQACT_DIR}
+
+echo "Checking diffs"
+for pqact in ${PqactFiles[@]}; do
+    echo "diff for ${pqact} ..."
+    eval diff ./$pqact ${TDS_PQACT_DIR}/${pqact}
+done
