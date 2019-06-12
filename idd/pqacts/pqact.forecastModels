@@ -36,13 +36,13 @@ CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge(avg|spr)
 #
 # GFS Global 0.25 degree analysis only
 #
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p25\.a
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)/(..).*pgrb2\.0p25\.a
 	FILE
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg_ana/GFS_Global_0p25deg_ana_\1_\200.grib2
 #
 # GFS Global 0.25 degree forecast only
 #
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p25\.f
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)/(..).*pgrb2\.0p25\.f
 	FILE
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg/GFS_Global_0p25deg_\1_\200.grib2
 #
@@ -50,25 +50,25 @@ CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p25\.f
 #
 # GFS Global 0.5 Degree
 #
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p50\.f
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)/(..).*pgrb2\.0p50\.f
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg/GFS_Global_0p5deg_\1_\200.grib2
 #
 # GFS Global 0.5 Degree Analysis
 #
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.0p50\.a
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)/(..).*pgrb2\.0p50\.a
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_0p5deg_ana/GFS_Global_0p5deg_ana_\1_\200.grib2
 #
 # GFS Global 1.0 Degree
 #
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.1p00\.f
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)/(..).*pgrb2\.1p00\.f
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg/GFS_Global_onedeg_\1_\200.grib2
 #
 # GFS Global 1.0 Degree Analysis
 #
-CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)(..).*pgrb2\.1p00\.a
+CONDUIT	^data/nccf/com/gfs/prod/gfs\.(........)/(..).*pgrb2\.1p00\.a
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg_ana/GFS_Global_onedeg_ana_\1_\200.grib2
 #
