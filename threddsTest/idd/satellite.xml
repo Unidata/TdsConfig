@@ -417,7 +417,7 @@
         </dataset><!-- End of Sounder Derived Products -->
       </dataset><!-- End of Satellite Sounder Data -->
     </dataset><!-- End of NESDIS GOES Satellite Data -->
-    <dataset name="NESDIS S-NPP Satellite Data">
+    <dataset name="NESDIS NOAA-20 Satellite Data">
       <metadata inherited="true">
         <serviceName>nongrid</serviceName>
         <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
@@ -433,14 +433,14 @@
           <duration>14 days</duration>
         </timeCoverage>
       </metadata>
-      <datasetScan name="S-NPP VIIRS Swath Imagery" ID="snpp-viirs" path="satellite/snpp/viirs" location="${DATA_DIR}/native/satellite/NPP/VIIRS" >
+      <datasetScan name="NOAA-20 VIIRS NCC Swath Imagery" ID="noaa20-viirs" path="satellite/snpp/viirs" location="${DATA_DIR}/native/satellite/NOAA20/VIIRS" >
         <filter>
           <include wildcard="*.nc4"/>
           <include wildcard="*.nc"/>
         </filter>
         <addDatasetSize/>
       </datasetScan>
-      <datasetScan name="S-NPP NUCAPS Soundings" ID="snpp-nucaps" path="satellite/snpp/nucaps" location="${DATA_DIR}/native/satellite/NPP/NUCAPS" >
+      <datasetScan name="NOAA-20 NUCAPS Soundings" ID="noaa20-nucaps" path="satellite/snpp/nucaps" location="${DATA_DIR}/native/satellite/NOAA20/NUCAPS" >
         <filter>
           <include wildcard="*.nc4"/>
           <include wildcard="*.nc"/>

@@ -80,7 +80,7 @@ NIMAGE	^satz/ch[0-9]/.*/(.*)/([12][0-9][0-9][0-9][01][0-9][0-3][0-9]) ([0-2][0-9
 	etc/TDS/util/ldmfile.sh ${DATA_DIR}/native/satellite/\1/\5_\6/\2/\5_\6_\1_\2_\3\4.gini
 #
 # ----------------------------------
-# - NOAAPORT NPP netCDF4 Soundings -
+# - NOAAPORT NOAA-20 NUCAPS netCDF4 Soundings -
 # ----------------------------------
 #
 HRS	^IUTN(..) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
@@ -88,7 +88,7 @@ HRS	^IUTN(..) KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/NPP/NUCAPS/\1/NUCAPS_\1_(\2:yyyy)(\2:mm)\2_\3.nc4
 #
 # -----------------------------------
-# - NOAAPORT NPP netCDF4 Swath Data -
+# - NOAAPORT NOAA-20 netCDF4 Swath Data -
 # -----------------------------------
 #
 NOTHER	^TIPB01 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
@@ -103,13 +103,13 @@ NOTHER	^TIPB05 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 NOTHER	^TIPB10 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 	PIPE	-close
 	etc/TDS/ldm-alchemy/strip_header.py -d ${DATA_DIR}/native/satellite/NPP/VIIRS/Alaska/ConstantContrast/VIIRS_Alaska_ConstantContrast_(\1:yyyy)(\1:mm)\1_\2.nc4
-NOTHER	^TIPC10 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+NOTHER	^TIPD10 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 	PIPE	-close
 	etc/TDS/ldm-alchemy/strip_header.py -d ${DATA_DIR}/native/satellite/NPP/VIIRS/CONUS/ConstantContrast/VIIRS_CONUS_ConstantContrast_(\1:yyyy)(\1:mm)\1_\2.nc4
-NOTHER	^TIPI10 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+NOTHER	^TIPH10 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 	PIPE	-close
 	etc/TDS/ldm-alchemy/strip_header.py -d ${DATA_DIR}/native/satellite/NPP/VIIRS/Pacific/ConstantContrast/VIIRS_Pacific_ConstantContrast_(\1:yyyy)(\1:mm)\1_\2.nc4
-NOTHER	^TIPQ10 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+NOTHER	^TIPP10 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 	PIPE	-close
 	etc/TDS/ldm-alchemy/strip_header.py -d ${DATA_DIR}/native/satellite/NPP/VIIRS/PuertoRico/ConstantContrast/VIIRS_PuertoRico_ConstantContrast_(\1:yyyy)(\1:mm)\1_\2.nc4
 #
