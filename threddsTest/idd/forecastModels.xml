@@ -334,6 +334,27 @@
           <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
+
+      <featureCollection name="GFS CONUS 20km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/CONUS_20km">
+        <dataFormat>GRIB-1</dataFormat>
+        <metadata inherited="true">
+          <documentation type="summary">NCEP GFS Model : AWIPS 215 (Q) Grid. Regional - CONUS (Lambert Conformal).
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours
+            out to 84 hours, and every 6 hours out to 10 days.
+            Horizontal = 372 by 260 points, resolution 20 km, LambertConformal projection.
+            Vertical = 1000 to 100 hPa pressure levels (29 levels); surface, height above ground, pressure layers.
+          </documentation>
+        </metadata>
+
+        <collection name="GFS-CONUS_20km"
+                    spec="${DATA_DIR}/native/grid/NCEP/GFS/CONUS_20km/GFS_CONUS_20km_#yyyyMMdd_HHmm#.grib2"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
     </dataset>
 
     <dataset name="High Resolution Rapid Refresh (HRRR)">
