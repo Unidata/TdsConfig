@@ -274,6 +274,29 @@
         </gribConfig>
       </featureCollection>
 
+      <featureCollection name="GFS Puerto Rico Quarter Degree" featureType="GRIB2" harvest="true"
+                         path="grib/NCEP/GFS/Puerto_Rico_0p25deg">
+        <metadata inherited="true">
+          <documentation type="summary">NCEP GFS Model : Puerto_Rico 0.25 degree Lat/Lon grid.
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours
+            out to 84 hours, and every 6 hours out to 10 days.
+            Horizontal = 204 by 213 points, resolution 0.25 degree, Lat/Lon projection.
+            Vertical = 1000 to 100 hPa mandatory pressure levels (29 levels); surface, height above ground, pressure
+            layers.
+          </documentation>
+        </metadata>
+
+        <collection  name="GFS-Puerto_Rico_0p25deg"
+            spec="${DATA_DIR}/native/grid/NCEP/GFS/Puerto_Rico_0p25deg/.*grib2$"
+            timePartition="file"
+            dateFormatMark="#GFS_Puerto_Rico_0p25deg_#yyyyMMdd_HHmm"
+            olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
+
       <featureCollection name="GFS CONUS 80km" featureType="GRIB1" harvest="true" path="grib/NCEP/GFS/CONUS_80km">
         <dataFormat>GRIB-1</dataFormat>
         <metadata inherited="true">
