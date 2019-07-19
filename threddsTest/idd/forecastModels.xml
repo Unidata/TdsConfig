@@ -355,6 +355,28 @@
           <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
+
+      <featureCollection name="GFS Alaska 20km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Alaska_20km">
+        <dataFormat>GRIB-2</dataFormat>
+        <metadata inherited="true">
+          <documentation type="summary">NCEP GFS Model : AWIPS 217 (H) Grid. National - Alaska - Double Resolution (polar
+            stereographic).
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours
+            out to 84 hours, and every 6 hours out to 10 days.
+            Horizontal = 520 by 340 points, resolution 20 km, Polar Stereographic projection.
+            Vertical = 1000 to 100 hPa pressure levels (29 levels); surface, height above ground, pressure layers.
+          </documentation>
+        </metadata>
+
+        <collection name="GFS-Alaska_20km"
+                    spec="${DATA_DIR}/native/grid/NCEP/GFS/Alaska_20km/GFS_Alaska_20km_#yyyyMMdd_HHmm#.grib2"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
     </dataset>
 
     <dataset name="High Resolution Rapid Refresh (HRRR)">
