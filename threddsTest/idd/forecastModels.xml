@@ -316,29 +316,6 @@
           <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
-
-      <featureCollection name="GFS CONUS 95km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/CONUS_95km">
-        <dataFormat>GRIB-2</dataFormat>
-        <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : AWIPS 213 (H) Grid. National - CONUS - Double Resolution (polar
-            stereographic).
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 6 hours out 4 days.
-            Horizontal = 129 by 85 points, resolution 95.25 km, Polar Stereographic projection.
-            Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
-            layers.
-          </documentation>
-        </metadata>
-
-        <collection name="GFS-CONUS_95km"
-                    spec="${DATA_DIR}/native/grid/NCEP/GFS/CONUS_95km/GFS_CONUS_95km_#yyyyMMdd_HHmm#.grib2"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
-        <gribConfig>
-          <filesSort increasing="false" />
-        </gribConfig>
-      </featureCollection>
-    
     </dataset>
 
     <dataset name="High Resolution Rapid Refresh (HRRR)">
