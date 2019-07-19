@@ -90,12 +90,6 @@ NGRID	^[YZ].E... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/GFS/Pacific_20km/GFS_Pacific_20km_(\1:yyyy)(\1:mm)\1_\2.grib2
 #
-# GFS Puerto Rico 0.5 degree
-#
-NGRID	^[LM].T... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GFS/Puerto_Rico_0p5deg/GFS_Puerto_Rico_0p5deg_(\1:yyyy)(\1:mm)\1_\2.grib2
-#
 # GFS Puerto Rico 0.25 degree
 #
 NGRID	^[YZ].F... KWBC ([0-3][0-9])([0-2][0-9][0-6][0-9])
