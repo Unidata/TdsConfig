@@ -253,44 +253,63 @@
         </featureCollection>
       </dataset>
 
-      <featureCollection name="GFS Pacific 40km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Pacific_40km">
+      <featureCollection name="GFS Global 1.0 Degree (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_onedegree_noaaport">
         <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : Mercator Grid over most of the Pacific. longitude 110 W to 110 E.
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 6 hours out 10 days.
-            Horizontal = 300 by 369 points, resolution 40 km, Mercator projection.
-            Vertical = 1000 to 100 hPa mandatory pressure levels (29 levels); surface, height above ground, pressure
-            layers.
+          <documentation type="summary">NCEP GFS Model : AWIPS 003 (A) Grid. Global Lat/Lon grid.
+            Model runs are made at 0, 6, 12, and 18Z, with forecasts every 6 hours from 0 to 240 hours (0 to 10 days).
+            Horizontal= 181 by 360 points, resolution 1.0 degree, Lat/Lon projection.
+            Vertical = 1000 to 70 hPa mandatory pressure levels (12 levels); surface, height above ground, pressure layers.
           </documentation>
         </metadata>
 
-        <collection name="GFS-Pacific_40km"
-            spec="${DATA_DIR}/native/grid/NCEP/GFS/Pacific_40km/.*grib2$"
-            dateFormatMark="#GFS_Pacific_40km_#yyyyMMdd_HHmm"
-            timePartition="file"
-            olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+        <collection name="GFS-Global_onedegree_noaaport"
+                    spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg_noaaport/.*grib2$"
+                    dateFormatMark="#GFS_Global_onedeg_noaaport_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
         <gribConfig>
           <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="GFS Puerto Rico Half Degree" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/GFS/Puerto_Rico_0p5deg">
+      <featureCollection name="GFS Pacific 20km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Pacific_20km">
         <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : Puerto_Rico 0.5 degree Lat/Lon grid.
-            Model runs are made at 0, 6, 12, 18 hours out to 10 days.
-            Horizontal = 102 by 107 points, resolution .5 degree, Lat/Lon projection.
+          <documentation type="summary">NCEP GFS Model : Mercator Grid over most of the Pacific; longitude 110 W to 110 E.
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out
+            to 84 hours, and every 6 hours out to 10 days.
+            Horizontal = 600 by 737 points, resolution 20 km, Mercator projection.
             Vertical = 1000 to 100 hPa mandatory pressure levels (29 levels); surface, height above ground, pressure
             layers.
           </documentation>
         </metadata>
 
-        <collection  name="GFS-Puerto_Rico_0p5deg"
-            spec="${DATA_DIR}/native/grid/NCEP/GFS/Puerto_Rico_0p5deg/.*grib2$"
+        <collection name="GFS-Pacific_20km"
+            spec="${DATA_DIR}/native/grid/NCEP/GFS/Pacific_20km/.*grib2$"
+            dateFormatMark="#GFS_Pacific_20km_#yyyyMMdd_HHmm"
             timePartition="file"
-            dateFormatMark="#GFS_Puerto_Rico_0p5deg_#yyyyMMdd_HHmm"
             olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+      </featureCollection>
+
+      <featureCollection name="GFS Puerto Rico Quarter Degree" featureType="GRIB2" harvest="true"
+                         path="grib/NCEP/GFS/Puerto_Rico_0p25deg">
+        <metadata inherited="true">
+          <documentation type="summary">NCEP GFS Model : Puerto_Rico 0.25 degree Lat/Lon grid.
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours
+            out to 84 hours, and every 6 hours out to 10 days.
+            Horizontal = 204 by 213 points, resolution 0.25 degree, Lat/Lon projection.
+            Vertical = 1000 to 100 hPa mandatory pressure levels (29 levels); surface, height above ground, pressure
+            layers.
+          </documentation>
+        </metadata>
+
+        <collection  name="GFS-Puerto_Rico_0p25deg"
+            spec="${DATA_DIR}/native/grid/NCEP/GFS/Puerto_Rico_0p25deg/.*grib2$"
+            timePartition="file"
+            dateFormatMark="#GFS_Puerto_Rico_0p25deg_#yyyyMMdd_HHmm"
+            olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
         <gribConfig>
           <filesSort increasing="false" />
         </gribConfig>
@@ -316,28 +335,48 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="GFS CONUS 95km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/CONUS_95km">
-        <dataFormat>GRIB-2</dataFormat>
+      <featureCollection name="GFS CONUS 20km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/CONUS_20km">
+        <dataFormat>GRIB-1</dataFormat>
         <metadata inherited="true">
-          <documentation type="summary">NCEP GFS Model : AWIPS 213 (H) Grid. National - CONUS - Double Resolution (polar
-            stereographic).
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 6 hours out 4 days.
-            Horizontal = 129 by 85 points, resolution 95.25 km, Polar Stereographic projection.
-            Vertical = 1000 to 100 hPa mandatory pressure levels (10 levels); surface, height above ground, pressure
-            layers.
+          <documentation type="summary">NCEP GFS Model : AWIPS 215 (Q) Grid. Regional - CONUS (Lambert Conformal).
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours
+            out to 84 hours, and every 6 hours out to 10 days.
+            Horizontal = 372 by 260 points, resolution 20 km, LambertConformal projection.
+            Vertical = 1000 to 100 hPa pressure levels (29 levels); surface, height above ground, pressure layers.
           </documentation>
         </metadata>
 
-        <collection name="GFS-CONUS_95km"
-                    spec="${DATA_DIR}/native/grid/NCEP/GFS/CONUS_95km/GFS_CONUS_95km_#yyyyMMdd_HHmm#.grib2"
+        <collection name="GFS-CONUS_20km"
+                    spec="${DATA_DIR}/native/grid/NCEP/GFS/CONUS_20km/GFS_CONUS_20km_#yyyyMMdd_HHmm#.grib2"
                     timePartition="file"
                     olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 12/15 * * * ? *" />
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
         <gribConfig>
           <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
-    
+
+      <featureCollection name="GFS Alaska 20km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Alaska_20km">
+        <dataFormat>GRIB-2</dataFormat>
+        <metadata inherited="true">
+          <documentation type="summary">NCEP GFS Model : AWIPS 217 (H) Grid. National - Alaska - Double Resolution (polar
+            stereographic).
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours
+            out to 84 hours, and every 6 hours out to 10 days.
+            Horizontal = 520 by 340 points, resolution 20 km, Polar Stereographic projection.
+            Vertical = 1000 to 100 hPa pressure levels (29 levels); surface, height above ground, pressure layers.
+          </documentation>
+        </metadata>
+
+        <collection name="GFS-Alaska_20km"
+                    spec="${DATA_DIR}/native/grid/NCEP/GFS/Alaska_20km/GFS_Alaska_20km_#yyyyMMdd_HHmm#.grib2"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
     </dataset>
 
     <dataset name="High Resolution Rapid Refresh (HRRR)">
