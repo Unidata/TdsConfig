@@ -273,6 +273,25 @@
         </gribConfig>
       </featureCollection>
 
+      <featureCollection name="GFS Pacific 20km" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Pacific_20km">
+        <metadata inherited="true">
+          <documentation type="summary">NCEP GFS Model : Mercator Grid over most of the Pacific; longitude 110 W to 110 E.
+            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out
+            to 84 hours, and every 6 hours out to 10 days.
+            Horizontal = 600 by 737 points, resolution 20 km, Mercator projection.
+            Vertical = 1000 to 100 hPa mandatory pressure levels (29 levels); surface, height above ground, pressure
+            layers.
+          </documentation>
+        </metadata>
+
+        <collection name="GFS-Pacific_20km"
+            spec="${DATA_DIR}/native/grid/NCEP/GFS/Pacific_20km/.*grib2$"
+            dateFormatMark="#GFS_Pacific_20km_#yyyyMMdd_HHmm"
+            timePartition="file"
+            olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+      </featureCollection>
+
       <featureCollection name="GFS Puerto Rico Quarter Degree" featureType="GRIB2" harvest="true"
                          path="grib/NCEP/GFS/Puerto_Rico_0p25deg">
         <metadata inherited="true">
