@@ -19,6 +19,8 @@ echo "Change directory to ${LDM_PQACT_DIR}"
 eval cd ${LDM_PQACT_DIR}
 
 echo "Checking diffs"
+echo "< Production (${LDM_PQACT_DIR})"
+echo "> TdsConfig (${TDS_PQACT_DIR})"
 for pqact in ${PqactFiles[@]}; do
     echo "diff for ${pqact} ..."
     eval diff ./$pqact ${TDS_PQACT_DIR}/${pqact}
