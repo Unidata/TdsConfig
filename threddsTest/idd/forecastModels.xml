@@ -253,6 +253,26 @@
         </featureCollection>
       </dataset>
 
+      <featureCollection name="GFS Global 1.0 Degree (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/GFS/Global_onedegree_noaaport">
+        <metadata inherited="true">
+          <documentation type="summary">NCEP GFS Model : AWIPS 003 (A) Grid. Global Lat/Lon grid.
+            Model runs are made at 0, 6, 12, and 18Z, with forecasts every 6 hours from 0 to 240 hours (0 to 10 days).
+            Horizontal= 181 by 360 points, resolution 1.0 degree, Lat/Lon projection.
+            Vertical = 1000 to 70 hPa mandatory pressure levels (12 levels); surface, height above ground, pressure layers.
+          </documentation>
+        </metadata>
+
+        <collection name="GFS-Global_onedegree_noaaport"
+                    spec="${DATA_DIR}/native/grid/NCEP/GFS/Global_onedeg_noaaport/.*grib2$"
+                    dateFormatMark="#GFS_Global_onedeg_noaaport_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
+
       <featureCollection name="GFS Puerto Rico Quarter Degree" featureType="GRIB2" harvest="true"
                          path="grib/NCEP/GFS/Puerto_Rico_0p25deg">
         <metadata inherited="true">
