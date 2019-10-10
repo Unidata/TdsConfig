@@ -47,7 +47,7 @@ HRS	(IU....) ([^K]...) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
 	${DATA_DIR}/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
 
-HRS	(IU.[^N]..) (K[^A]..) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
+HRS	(IU....) (K...) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
 	FILE
 	${DATA_DIR}/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
 
