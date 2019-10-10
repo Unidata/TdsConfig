@@ -13,8 +13,8 @@
 # Metar Station Data 
 #
 DDS|IDS	^S[AP].... .... ([0-3][0-9])([0-2][0-9])
-	FILE	-metadata	-close
-	${DATA_DIR}/native/test/metar_(\1:yyyy)(\1:mm)\1_\200.dat
+	FILE
+	${DATA_DIR}/native/text/metar/metar_(\1:yyyy)(\1:mm)\1_\200.txt
 #
 # Surface Buoy Point Data
 #
