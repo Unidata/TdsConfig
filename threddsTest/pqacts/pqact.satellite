@@ -112,4 +112,17 @@ NOTHER	^TIPH10 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 NOTHER	^TIPP10 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 	PIPE	-close
 	etc/TDS/ldm-alchemy/strip_header.py -d ${DATA_DIR}/native/satellite/NOAA20/VIIRS/PuertoRico/ConstantContrast/VIIRS_PuertoRico_ConstantContrast_(\1:yyyy)(\1:mm)\1_\2.nc4
-
+#
+# -----------------------------------
+# - NOAAPORT Global Blended Hydrology Products -
+# -----------------------------------
+#
+NOTHER	^TITX38 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+	FILE	-close
+	etc/TDS/ldm-alchemy/strip_header.py -d ${DATA_DIR}/native/satellite/Blended/TPW/Blended_Global_TPW_(\1:yyyy)(\1:mm)\1_\2.he4
+NOTHER	^TITX39 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+	FILE	-close
+	etc/TDS/ldm-alchemy/strip_header.py -d ${DATA_DIR}/native/satellite/Blended/RR/Blended_Global_RR_(\1:yyyy)(\1:mm)\1_\2.he4
+NOTHER	^TICX70 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
+	FILE	-close
+	etc/TDS/ldm-alchemy/strip_header.py -d ${DATA_DIR}/native/satellite/Blended/PercentTPW/Blended_Global_PercentTPW_(\1:yyyy)(\1:mm)\1_\2.he4
