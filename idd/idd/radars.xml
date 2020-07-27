@@ -229,9 +229,9 @@
         <variable name="NVL/Vertical Integrated Liquid" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Liquid Water Equivalent" units="kg/m2" />
         <variable name="NVW/Velocity Azimuth Display Wind Profile" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Atmospheric Winds &gt; Wind Profiles" units="knots" />
 
-        <variable name="TR0/Base Reflectivity Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ" />
-        <variable name="TR1/Base Reflectivity Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ" />
-        <variable name="TR2/Base Reflectivity Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ" />
+        <variable name="TZ0/Base Reflectivity Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ" />
+        <variable name="TZ1/Base Reflectivity Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ" />
+        <variable name="TZ2/Base Reflectivity Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ" />
 
         <variable name="TV0/Base Radial Velocity Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
         <variable name="TV1/Base Radial Velocity Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
