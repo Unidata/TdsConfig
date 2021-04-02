@@ -24,7 +24,6 @@
     <catalogRef xlink:href="testDatasets.xml" xlink:title="Test Datasets" name=""/>
     <catalogRef xlink:href="testPointDatasets.xml" xlink:title="Test Point Datasets" name=""/>
     <catalogRef xlink:href="cf_examples.xml" xlink:title="CF DSG Example Datasets" name=""/>
-    <catalogRef xlink:href="authTest.xml" xlink:title="Test Restricted Datasets" name=""/>
   </dataset>
 
   <!-- to access the GSD HRRR, we reference thredds-jumbo, so that thredds-test and thredds-dev do not
