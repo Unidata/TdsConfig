@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="TDS Authentication/Authorization Capabilities"
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0
+           http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.6.xsd">
+
+  <service name="fullServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+
+  <datasetRoot path="test1" location="content/capabilities/grid/" />
+  <datasetRoot path="test2" location="content/capabilities/grid/" />
+  <datasetRoot path="test3" location="content/capabilities/grid/" />
+
+  <dataset name="Test No Authentication Dataset"
+           ID="testNoAuthDataset"
+           urlPath="test1/testData.nc"
+           serviceName="fullServices"
+           dataType="Grid" /> 
+
+  <dataset name="Authentication/Authorization Required">
+    <metadata inherited="true">
+      <documentation xlink:href="https://www.unidata.ucar.edu/software/tds/current/reference/RestrictedAccess.html"
+        xlink:title="Restricting Access to Datasets in the TDS"/>
+      <serviceName>fullServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <dataset name="Test Digest Authentication Dataset (authTesterUser role)"
+             ID="testDigestAuthDatasetATU"
+             urlPath="test2/testData.nc"
+             restrictAccess="authTesterUser" />
+
+    <dataset name="Test Digest Authentication Dataset (restrictedDatasetUser role)"
+             ID="testDigestAuthDatasetRDU"
+             urlPath="test3/testData.nc"
+             restrictAccess="restrictedDatasetUser" />
+
+    <datasetScan name="Test Digest Authentication datasetScan (authTesterUser role)"
+                 ID="testDigestAuthDatasetScanATU"
+                 path="testDigestAuthDatasetScanATU"
+                 location="content/capabilities/grid/"
+                 restrictAccess="authTesterUser">
+      <filter>
+        <include wildcard="*.nc"/>
+      </filter>
+    </datasetScan>
+  </dataset>
+</catalog>

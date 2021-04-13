@@ -48,6 +48,8 @@
 
   <catalogRoot>galeon/catalog.xml</catalogRoot>
 
+  <catalogRoot>tdscapabilities/capabilities.xml</catalogRoot>
+
   <!--
    * Setup for generated HTML pages.
    *

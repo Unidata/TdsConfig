@@ -25,6 +25,7 @@
 
   <catalogRoot>radar/radarCollections.xml</catalogRoot>
   <catalogRoot>modelsHrrr.xml</catalogRoot>
+  <catalogRoot>tdscapabilities/capabilities.xml</catalogRoot>
 
   <!--
    * Setup for generated HTML pages.
