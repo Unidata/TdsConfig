@@ -861,23 +861,6 @@
         <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
       </featureCollection>
 
-      <featureCollection name="Wave Watch III Coastal US West Coast" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/WW3/Coastal_US_West_Coast">
-        <metadata inherited="true">
-          <documentation type="summary">
-            736 by 526 points, resolution 4 minute. Models are run daily at 0Z, 6Z, 12Z and 18Z.
-            Forecasts every 3 hours from 0 to 72, every 6 hours from 72 to 180 hours.
-          </documentation>
-        </metadata>
-
-        <collection name="WW3-Coastal_US_West_Coast"
-                    spec="${DATA_DIR}/native/grid/NCEP/WW3/Coastal_US_West_Coast/.*grib2$"
-                    dateFormatMark="#WW3_Coastal_US_West_Coast_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
-      </featureCollection>
-
     </dataset>
 
   </dataset> <!-- end of NCEP Analysis and Forecast Models -->
