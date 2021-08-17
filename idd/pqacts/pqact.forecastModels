@@ -318,12 +318,6 @@ FNMOC	^US058.{4}-GR1dyn\.COAMPS-EURO_.{4}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_\1\2\3_\400.grib1
 #
-# COAMPS Equatorial America
-#
-FNMOC	^US058.{4}-GR1dyn\.COAMPS-EQAM_.{4}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_\1\2\3_\400.grib1
-#
 # COAMPS Northeast Pacific
 #
 FNMOC	^US058.{4}-GR1dyn\.COAMPS-NEPAC_.{5}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)

@@ -1038,21 +1038,6 @@
         <tdm rewrite="test" rescan="0 27 * * * ? *" />
       </featureCollection>
 
-      <featureCollection name="FNMOC COAMPS Equatorial America" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Equatorial_America">
-        <metadata inherited="true">
-          <documentation type="summary">FNMOC COAMPS Equatorial America Model : Global Lat/Lon grid.
-             Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 48 hours.
-             Horizontal= 298 by 461 points, resolution 0.15 degree, Lat/Lon projection.
-          </documentation>
-        </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_#yyyyMMdd_HHmm#.grib1"
-                    name="FNMOC_COAMPS_Equatorial_America"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 27 * * * ? *" />
-      </featureCollection>
-
       <featureCollection name="FNMOC COAMPS Northeast Pacific" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Northeast_Pacific">
         <metadata inherited="true">
           <documentation type="summary">FNMOC COAMPS Northeastern Pacific Model : Global Lat/Lon grid.
