@@ -7,7 +7,6 @@ TDS_PQACT_DIR="/opt/tds-test/content/thredds/pqacts"
 declare -a PqactFiles=("pqact.forecastModels" \
                        "pqact.forecastProdsAndAna" \
                        "pqact.modelsCmc" \
-                       "pqact.modelsHrrr" \
                        "pqact.radars" \
                        "pqact.satellite" \
                        "pqact.modelsGdas" \
