@@ -110,13 +110,6 @@
 
       <dataset name="Imager Data (GINI)">
         <dataset name="Shortwave IR (3.9um)">
-          <datasetScan name="Alaska 8km" ID="SSEC/IDD-Satellite/3.9/AK-REGIONAL_8km" path="satellite/3.9/AK-REGIONAL_8km" location="${DATA_DIR}/native/satellite/3.9/AK-REGIONAL_8km/">
-            <filter>
-              <include wildcard="*.gini"/>
-            </filter>
-            <addDatasetSize/>
-          </datasetScan>
-        </dataset>
         <datasetScan name="Water Vapor (6.5 / 5.7 um)" ID="SSEC/IDD-Satellite/WV" path="satellite/WV" location="${DATA_DIR}/native/satellite/WV/">
           <metadata inherited="true">
             <geospatialCoverage>
