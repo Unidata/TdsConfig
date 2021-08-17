@@ -6,30 +6,6 @@
 # = NCEP data available via IDD =
 # ===============================
 #
-# ------------------------------------------
-# - Global Ensemble Forecast System (GEFS) -
-# ------------------------------------------
-#
-# http://www.nco.ncep.noaa.gov/pmb/products/gens/
-#
-# GEFS 1.0 degree Ensemble Members
-#
-CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge[cp].*pgrb2af
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member/GEFS_Global_1p0deg_Ensemble_\1_\200.grib2
-#
-# GEFS 1.0 degree Ensemble Members Analysis
-#
-CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge[cp].*pgrb2aanl
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member_analysis/GEFS_Global_1p0deg_Ensemble_ana_\1_\200.grib2
-#
-# GEFS 1.0 degree Ensemble Statistics (Average and Spread)
-#
-CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge(avg|spr)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/derived/GEFS_Global_1p0deg_Ensemble_derived_\1_\200.grib2
-#
 # --------------------------------
 # - Global Forecast System (GFS) -
 # --------------------------------
