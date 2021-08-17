@@ -1000,29 +1000,6 @@
 
     </dataset>
 
-    <dataset name="Forecast of Aerosol Radiative Optical Properties (FAROP) Model">
-      <metadata inherited="true">
-        <documentation xlink:href="http://www.bsc.es/wmo/files/Westphal_presentation.pdf"
-                       xlink:title="FAROP documentation(pdf)"/>
-      </metadata>
-
-      <featureCollection name="FNMOC FAROP Global 1.0 Degree" featureType="GRIB1" harvest="true" path="grib/FNMOC/FAROP/Global_1p0deg">
-        <metadata inherited="true">
-          <documentation type="summary">FNMOC FAROP Global_1p0deg Model : Global Lat/Lon grid.
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out 9 hours.
-            Horizontal= 181 by 360 points, resolution 1 degree, Lat/Lon projection.
-          </documentation>
-        </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
-                    name="FNMOC_FAROP_Global_1p0deg"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 27 * * * ? *" />
-      </featureCollection>
-
-    </dataset>
-
     <dataset name="Coupled Ocean / Atmosphere Mesoscale Prediction System (COAMPS) Model">
       <metadata inherited="true">
         <documentation xlink:href="http://www.nrlmry.navy.mil/coamps-web/web/home"

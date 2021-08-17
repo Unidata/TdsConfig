@@ -286,16 +286,6 @@ FNMOC	(^US058.{4}-GR1mdl\.0018_0056_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/FNMOC/NAVGEM/Global_0p5deg/FNMOC_NAVGEM_Global_0p5deg_\2\3\4_\500.grib1
 #
-# ------------------------------------------------------------
-# - Forecast of Aerosol Radiative Optical Properties (FAROP) -
-# ------------------------------------------------------------
-#
-# FAROP Global 1.0 degree
-#
-FNMOC	(^US058.{4}-GR1mdl\.0135_0240_.{5}.{4})(.{4})(..)(..)(..)(.*)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_\2\3\4_\500.grib1
-#
 # -----------------------
 # - WAVEWATCH III (WW3) -
 # -----------------------
