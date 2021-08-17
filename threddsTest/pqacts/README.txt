@@ -31,7 +31,7 @@ For example:
 #                     EXEC and "pqact...")
 #
 EXEC    "pqact -f NGRID|CONDUIT|HRS|FNMOC etc/TDS/pqact.forecastModels"
-EXEC    "pqact -f NGRID|CONDUIT etc/TDS/pqact.forecastProdsAndAna"
+EXEC    "pqact -f NGRID|CONDUIT|HDS etc/TDS/pqact.forecastProdsAndAna"
 EXEC    "pqact -f HRS|NIMAGE|NOTHER etc/TDS/pqact.satellite"
 EXEC    "pqact -f HRS|FNEXRAD|NNEXRAD|CRAFT etc/TDS/pqact.radars"
 EXEC    "pqact -f WMO|HRS|NGRID|CONDUIT|EXP etc/TDS/pqact.testDatasets"
