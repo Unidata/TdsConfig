@@ -45,17 +45,6 @@
 #
 #    location="/data/ldm/pub/native/satellite/PW/" >
 #
-# Satellite Product Sounder Image
-#
-#    location="/data/ldm/pub/native/satellite/SOUND-3.98/" >
-#    location="/data/ldm/pub/native/satellite/SOUND-4.45/" >
-#    location="/data/ldm/pub/native/satellite/SOUND-6.51/" >
-#    location="/data/ldm/pub/native/satellite/SOUND-7.02/" >
-#    location="/data/ldm/pub/native/satellite/SOUND-7.43/" >
-#    location="/data/ldm/pub/native/satellite/SOUND-11.03/" >
-#    location="/data/ldm/pub/native/satellite/SOUND-14.06/" >
-#    location="/data/ldm/pub/native/satellite/SOUND-VIS/" >
-#
 # Sounder Based Derived Surface Skin Temperature
 #
 #    location="/data/ldm/pub/native/satellite/SFC-T/SUPER-NATIONAL_1km/" >
