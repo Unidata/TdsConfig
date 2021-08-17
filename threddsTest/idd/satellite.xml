@@ -110,12 +110,6 @@
 
       <dataset name="Imager Data (GINI)">
         <dataset name="Shortwave IR (3.9um)">
-          <datasetScan name="Hawaii 4km" ID="SSEC/IDD-Satellite/3.9/HI-REGIONAL_4km" path="satellite/3.9/HI-REGIONAL_4km" location="${DATA_DIR}/native/satellite/3.9/HI-REGIONAL_4km/">
-             <filter>
-              <include wildcard="*.gini"/>
-            </filter>
-            <addDatasetSize/>
-          </datasetScan>
           <datasetScan name="Alaska 8km" ID="SSEC/IDD-Satellite/3.9/AK-REGIONAL_8km" path="satellite/3.9/AK-REGIONAL_8km" location="${DATA_DIR}/native/satellite/3.9/AK-REGIONAL_8km/">
             <filter>
               <include wildcard="*.gini"/>
