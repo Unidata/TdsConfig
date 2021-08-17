@@ -244,12 +244,6 @@ NGRID	E.A.88 KWBJ (..)(..)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/WW3/Global/WW3_Global_(\1:yyyy)(\1:mm)\1_\200.grib2
 #
-# WW3 Regional Alaska
-#
-NGRID	E.E.88 KWBJ (..)(..)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/WW3/Regional_Alaska/WW3_Regional_Alaska_(\1:yyyy)(\1:mm)\1_\200.grib2
-#
 # WW3 Coastal Alaska
 #
 NGRID	E.F.88 KWBJ (..)(..)
