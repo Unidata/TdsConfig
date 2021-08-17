@@ -43,7 +43,6 @@ pqact.conf file. For example:
 #
 # THREDDS processing
 #
-EXEC    "pqact -f FSL2 etc/TDS/pqact.modelsHrrr"
 EXEC    "pqact -f NGRID|CONDUIT|HRS|FNMOC etc/TDS/pqact.forecastModels"
 EXEC    "pqact -f NGRID|CONDUIT etc/TDS/pqact.forecastProdsAndAna"
 EXEC    "pqact -f HRS|NIMAGE|NOTHER etc/TDS/pqact.satellite"

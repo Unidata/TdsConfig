@@ -59,67 +59,6 @@
       </timeCoverage>
     </metadata>
 
-    <dataset name="Global Ensemble Forecasting System (GEFS)">
-
-      <metadata inherited="true">
-        <documentation type="summary">NCEP Global Ensemble Forecasting System (GEFS)
-          Global one degree Lat/Lon grid.
-          Model runs are made at 0, 6, 12, 18 ... hours out to 378 hours (16 days).
-          Horizontal = 181 by 360 points, resolution 1 degree, Lat/Lon projection.
-          Vertical = 2000 to 1000 hPa mandatory pressure levels (7 levels); pressure, height above ground,
-          pressure_difference_layers.
-        </documentation>
-      </metadata>
-
-      <featureCollection name="GEFS Members - Analysis" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/GEFS/Global_1p0deg_Ensemble/members-analysis">
-        <metadata inherited="true">
-          <documentation type="summary">
-            Ensemble members - Analysis grids only.
-          </documentation>
-        </metadata>
-
-        <collection name="GEFS-Global_1p0deg_Ensemble-members-analysis"
-                    spec="${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member_analysis/.*grib2$"
-                    dateFormatMark="#GEFS_Global_1p0deg_Ensemble_ana_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
-      </featureCollection>
-
-      <featureCollection name="GEFS Members - Forecasts" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/GEFS/Global_1p0deg_Ensemble/members">
-        <metadata inherited="true">
-          <documentation type="summary">
-            Ensemble members.
-          </documentation>
-        </metadata>
-
-        <collection name="GEFS-Global_1p0deg_Ensemble-members"
-                    spec="${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member/.*grib2$"
-                    dateFormatMark="#GEFS_Global_1p0deg_Ensemble_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
-      </featureCollection>
-
-      <featureCollection name="GEFS Derived Forecast Products" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/GEFS/Global_1p0deg_Ensemble/derived">
-        <metadata inherited="true">
-          <documentation type="summary">
-            Ensemble derived products: mean, spread, and probabilities.
-          </documentation>
-        </metadata>
-
-        <collection name="GEFS-Global_1p0deg_Ensemble-derived_products"
-                    spec="${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/derived/.*grib2$"
-                    dateFormatMark="#GEFS_Global_1p0deg_Ensemble_derived_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
-      </featureCollection>
-
-    </dataset>
     <dataset name="Global Forecast System (GFS)">
 
       <metadata inherited="true">
@@ -365,56 +304,41 @@
         <authority>edu.ucar.unidata</authority>
         <dataType>GRID</dataType>
         <dataFormat>GRIB-2</dataFormat>
+        <documentation type="summary">NCEP High Resolution Rapid Refresh</documentation>
+        <documentation xlink:href="http://www.nco.ncep.noaa.gov/pmb/products/hrrr/"
+                       xlink:title="NCEP Model Notes"/>
+        <documentation type="summary">NCEP HRRR Model : AWIPS 184 (C) Grid. 2.5 km NDFD grid over CONUS (Lambert Conformal).
+          Model runs are made hourly. Horizontal = 2145 by 1377 points, resolution 2.5 km, Lambert Conformal projection.
+          Vertical = 1000 to 500 hPa mandatory pressure levels (5 levels); surface, height above ground, pressure layers.
+        </documentation>
       </metadata>
 
-      <dataset name="HRRR from NOAA/GSD">
-        <catalogRef xlink:href="https://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/HRRR/CONUS_3km/surface/catalog.xml"
-                    xlink:title="GSD HRRR CONUS 3km surface" name=""
-                    useRemoteCatalogService="false" />
-        <catalogRef xlink:href="https://thredds-jumbo.unidata.ucar.edu/thredds/catalog/grib/HRRR/CONUS_3km/wrfprs/catalog.xml"
-                    xlink:title="GSD HRRR CONUS 3km wrfprs" name=""
-                    useRemoteCatalogService="false" />
-      </dataset>
-
-      <dataset name="HRRR from NCEP">
-
+      <featureCollection name="HRRR CONUS 2.5km Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km_ANA">
+        <dataFormat>GRIB-2</dataFormat>
         <metadata inherited="true">
-          <documentation type="summary">NCEP High Resolution Rapid Refresh</documentation>
-          <documentation xlink:href="http://www.nco.ncep.noaa.gov/pmb/products/hrrr/"
-                         xlink:title="NCEP Model Notes"/>
-          <documentation type="summary">NCEP HRRR Model : AWIPS 184 (C) Grid. 2.5 km NDFD grid over CONUS (Lambert Conformal).
-            Model runs are made hourly. Horizontal = 2145 by 1377 points, resolution 2.5 km, Lambert Conformal projection.
-            Vertical = 1000 to 500 hPa mandatory pressure levels (5 levels); surface, height above ground, pressure layers.
-          </documentation>
+          <documentation type="summary">This collection contains analysis grids only.</documentation>
         </metadata>
 
-        <featureCollection name="NCEP HRRR CONUS 2.5km Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km_ANA">
-          <dataFormat>GRIB-2</dataFormat>
-          <metadata inherited="true">
-            <documentation type="summary">This collection contains analysis grids only.</documentation>
-          </metadata>
+        <collection name="NCEP_HRRR_CONUS_2p5km_Analysis"
+                    spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km_Analysis/HRRR_CONUS_2p5km_ana_#yyyyMMdd_HHmm#.grib2"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+      </featureCollection>
 
-          <collection name="NCEP_HRRR_CONUS_2p5km_Analysis"
-                      spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km_Analysis/HRRR_CONUS_2p5km_ana_#yyyyMMdd_HHmm#.grib2"
-                      timePartition="file"
-                      olderThan="5 min"/>
-          <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
-        </featureCollection>
+      <featureCollection name="HRRR CONUS 2.5km Forecasts" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km">
+        <dataFormat>GRIB-2</dataFormat>
+        <metadata inherited="true">
+          <documentation type="summary">Forecasts grids every hour out 15 hours.</documentation>
+        </metadata>
 
-        <featureCollection name="NCEP HRRR CONUS 2.5km" featureType="GRIB2" harvest="true" path="grib/NCEP/HRRR/CONUS_2p5km">
-          <dataFormat>GRIB-2</dataFormat>
-          <metadata inherited="true">
-            <documentation type="summary">Forecasts grids every hour out 15 hours.</documentation>
-          </metadata>
-
-          <collection name="NCEP_HRRR_CONUS_2p5km"
-                      spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
-                      timePartition="file"
-                      olderThan="5 min"/>
-          <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
-        </featureCollection>
-      </dataset>
-  </dataset>
+        <collection name="NCEP_HRRR_CONUS_2p5km"
+                    spec="${DATA_DIR}/native/grid/NCEP/HRRR/CONUS_2p5km/HRRR_CONUS_2p5km_#yyyyMMdd_HHmm#.grib2"
+                    timePartition="file"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+      </featureCollection>
+    </dataset>
 
     <dataset name="North American Model (NAM)">
 
@@ -886,40 +810,6 @@
         <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
       </featureCollection>
 
-      <featureCollection name="Wave Watch III Regional Alaska" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/WW3/Regional_Alaska">
-        <metadata inherited="true">
-          <documentation type="summary">
-            401 by 187 points, resolution 10 minute. Models are run daily at 0Z, 6Z, 12Z and 18Z.
-            Forecasts every 3 hours from 0 to 72, every 6 hours from 72 to 180 hours.
-          </documentation>
-        </metadata>
-
-        <collection name="WW3-Regional_Alaska"
-                    spec="${DATA_DIR}/native/grid/NCEP/WW3/Regional_Alaska/.*grib2$"
-                    dateFormatMark="#WW3_Regional_Alaska_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
-      </featureCollection>
-
-      <featureCollection name="Wave Watch III Coastal Alaska" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/WW3/Coastal_Alaska">
-        <metadata inherited="true">
-          <documentation type="summary">
-            548 by 391 points, resolution 4 minute. Models are run daily at 0Z, 6Z, 12Z and 18Z.
-            Forecasts every 3 hours from 0 to 72, every 6 hours from 72 to 180 hours.
-          </documentation>
-        </metadata>
-
-        <collection name="WW3-Coastal_Alaska"
-                    spec="${DATA_DIR}/native/grid/NCEP/WW3/Coastal_Alaska/.*grib2$"
-                    dateFormatMark="#WW3_Coastal_Alaska_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
-      </featureCollection>
-
       <featureCollection name="Wave Watch III Regional Eastern Pacific" featureType="GRIB2" harvest="true"
                          path="grib/NCEP/WW3/Regional_Eastern_Pacific">
         <metadata inherited="true">
@@ -966,40 +856,6 @@
         <collection name="WW3-Regional_US_West_Coast"
                     spec="${DATA_DIR}/native/grid/NCEP/WW3/Regional_US_West_Coast/.*grib2$"
                     dateFormatMark="#WW3_Regional_US_West_Coast_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
-      </featureCollection>
-
-      <featureCollection name="Wave Watch III Coastal US East Coast" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/WW3/Coastal_US_East_Coast">
-        <metadata inherited="true">
-          <documentation type="summary">
-            586 by 481 points, resolution 4 minute. Models are run daily at 0Z, 6Z, 12Z and 18Z.
-            Forecasts every 3 hours from 0 to 72, every 6 hours from 72 to 180 hours.
-          </documentation>
-        </metadata>
-
-        <collection name="WW3-Coastal_US_East_Coast"
-                    spec="${DATA_DIR}/native/grid/NCEP/WW3/Coastal_US_East_Coast/.*grib2$"
-                    dateFormatMark="#WW3_Coastal_US_East_Coast_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
-      </featureCollection>
-
-      <featureCollection name="Wave Watch III Coastal US West Coast" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/WW3/Coastal_US_West_Coast">
-        <metadata inherited="true">
-          <documentation type="summary">
-            736 by 526 points, resolution 4 minute. Models are run daily at 0Z, 6Z, 12Z and 18Z.
-            Forecasts every 3 hours from 0 to 72, every 6 hours from 72 to 180 hours.
-          </documentation>
-        </metadata>
-
-        <collection name="WW3-Coastal_US_West_Coast"
-                    spec="${DATA_DIR}/native/grid/NCEP/WW3/Coastal_US_West_Coast/.*grib2$"
-                    dateFormatMark="#WW3_Coastal_US_West_Coast_#yyyyMMdd_HHmm"
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 2,17,32,47 * * * ? *" />
@@ -1144,29 +1000,6 @@
 
     </dataset>
 
-    <dataset name="Forecast of Aerosol Radiative Optical Properties (FAROP) Model">
-      <metadata inherited="true">
-        <documentation xlink:href="http://www.bsc.es/wmo/files/Westphal_presentation.pdf"
-                       xlink:title="FAROP documentation(pdf)"/>
-      </metadata>
-
-      <featureCollection name="FNMOC FAROP Global 1.0 Degree" featureType="GRIB1" harvest="true" path="grib/FNMOC/FAROP/Global_1p0deg">
-        <metadata inherited="true">
-          <documentation type="summary">FNMOC FAROP Global_1p0deg Model : Global Lat/Lon grid.
-            Model runs are made at 0, 6, 12, and 18Z, with analysis and forecasts every 3 hours out 9 hours.
-            Horizontal= 181 by 360 points, resolution 1 degree, Lat/Lon projection.
-          </documentation>
-        </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_#yyyyMMdd_HHmm#.grib1"
-                    name="FNMOC_FAROP_Global_1p0deg"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 27 * * * ? *" />
-      </featureCollection>
-
-    </dataset>
-
     <dataset name="Coupled Ocean / Atmosphere Mesoscale Prediction System (COAMPS) Model">
       <metadata inherited="true">
         <documentation xlink:href="http://www.nrlmry.navy.mil/coamps-web/web/home"
@@ -1200,21 +1033,6 @@
 
         <collection spec="${DATA_DIR}/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_#yyyyMMdd_HHmm#.grib1"
                     name="FNMOC_COAMPS_Europe"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 27 * * * ? *" />
-      </featureCollection>
-
-      <featureCollection name="FNMOC COAMPS Equatorial America" featureType="GRIB1" harvest="true" path="grib/FNMOC/COAMPS/Equatorial_America">
-        <metadata inherited="true">
-          <documentation type="summary">FNMOC COAMPS Equatorial America Model : Global Lat/Lon grid.
-             Model runs are made at 0 and 12Z, with analysis and forecasts every 3 hours out 48 hours.
-             Horizontal= 298 by 461 points, resolution 0.15 degree, Lat/Lon projection.
-          </documentation>
-        </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_#yyyyMMdd_HHmm#.grib1"
-                    name="FNMOC_COAMPS_Equatorial_America"
                     timePartition="file"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 27 * * * ? *" />

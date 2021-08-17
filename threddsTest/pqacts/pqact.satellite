@@ -12,13 +12,6 @@
 # - Satellite Imager Data -
 # -------------------------
 #
-# Shortwave IR (3.9 um)
-#
-#    location="${DATA_DIR}/native/satellite/3.9/WEST-CONUS_4km/">
-#    location="${DATA_DIR}/native/satellite/3.9/PR-REGIONAL_4km/">
-#    location="${DATA_DIR}/native/satellite/3.9/EAST-CONUS_4km/" >
-#    location="${DATA_DIR}/native/satellite/3.9/AK-REGIONAL_8km/">
-#
 # Imager 6.7/6.5 um IR (WV)
 #
 #    location="${DATA_DIR}/native/satellite/WV/">
@@ -26,14 +19,6 @@
 # IR (11 um)
 #
 #    location="${DATA_DIR}/native/satellite/IR/">
-#
-# Dirty Window (12.0 um)
-#
-#    location="${DATA_DIR}/native/satellite/12.0/" >
-#
-# CO2 (13.3 um)
-#
-#    location="${DATA_DIR}/native/satellite/13.3/" >
 #
 # Imager Visible
 #
@@ -43,32 +28,10 @@
 # - Satellite Sounder Data -
 # --------------------------
 #
-# Sounder Based Derived Lifted Index
+# Sounder Based Rainfall Rate
 #
-#    location="${DATA_DIR}/native/satellite/LI/">
+#    location="${DATA_DIR}/native/satellite/PRXX/">
 #
-# Sounder Based Derived Precipitable Water PW
-#
-#    location="${DATA_DIR}/native/satellite/PW/" >
-#
-# Satellite Product Sounder Image
-#
-#    location="${DATA_DIR}/native/satellite/SOUND-3.98/" >
-#    location="${DATA_DIR}/native/satellite/SOUND-4.45/" >
-#    location="${DATA_DIR}/native/satellite/SOUND-6.51/" >
-#    location="${DATA_DIR}/native/satellite/SOUND-7.02/" >
-#    location="${DATA_DIR}/native/satellite/SOUND-7.43/" >
-#    location="${DATA_DIR}/native/satellite/SOUND-11.03/" >
-#    location="${DATA_DIR}/native/satellite/SOUND-14.06/" >
-#    location="${DATA_DIR}/native/satellite/SOUND-VIS/" >
-#
-# Sounder Based Derived Surface Skin Temperature
-#
-#    location="${DATA_DIR}/native/satellite/SFC-T/SUPER-NATIONAL_1km/" >
-#
-# Sounder Based Derived Cloud Top Pressure
-#
-#    location="${DATA_DIR}/native/satellite/CTP/">
 # ------------------------
 # - NOAAPORT GINI Images -
 # ------------------------

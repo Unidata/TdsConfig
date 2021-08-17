@@ -26,12 +26,4 @@
     <catalogRef xlink:href="cf_examples.xml" xlink:title="CF DSG Example Datasets" name=""/>
   </dataset>
 
-  <!-- to access the GSD HRRR, we reference thredds-jumbo, so that thredds-test and thredds-dev do not
-    end up in scripts. Because of this, we need the follwing entry to make sure the grib files are
-    indexed properly -->
-  <dataset name="For GRIB Indexing Purposes - Not Intended for Data Access">
-    <catalogRef xlink:href="modelsHrrr.xml" xlink:title="GSD HRRR Datasets" name=""/>
-  </dataset>
-
 </catalog>
-

@@ -6,30 +6,6 @@
 # = NCEP data available via IDD =
 # ===============================
 #
-# ------------------------------------------
-# - Global Ensemble Forecast System (GEFS) -
-# ------------------------------------------
-#
-# http://www.nco.ncep.noaa.gov/pmb/products/gens/
-#
-# GEFS 1.0 degree Ensemble Members
-#
-CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge[cp].*pgrb2af
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member/GEFS_Global_1p0deg_Ensemble_\1_\200.grib2
-#
-# GEFS 1.0 degree Ensemble Members Analysis
-#
-CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge[cp].*pgrb2aanl
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/member_analysis/GEFS_Global_1p0deg_Ensemble_ana_\1_\200.grib2
-#
-# GEFS 1.0 degree Ensemble Statistics (Average and Spread)
-#
-CONDUIT	^data/nccf/com/gens/prod/gefs\.(........)/(..)/pgrb2a/ge(avg|spr)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/GEFS/Global_1p0deg_Ensemble/derived/GEFS_Global_1p0deg_Ensemble_derived_\1_\200.grib2
-#
 # --------------------------------
 # - Global Forecast System (GFS) -
 # --------------------------------
@@ -268,18 +244,6 @@ NGRID	E.A.88 KWBJ (..)(..)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/WW3/Global/WW3_Global_(\1:yyyy)(\1:mm)\1_\200.grib2
 #
-# WW3 Regional Alaska
-#
-NGRID	E.E.88 KWBJ (..)(..)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/WW3/Regional_Alaska/WW3_Regional_Alaska_(\1:yyyy)(\1:mm)\1_\200.grib2
-#
-# WW3 Coastal Alaska
-#
-NGRID	E.F.88 KWBJ (..)(..)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/WW3/Coastal_Alaska/WW3_Coastal_Alaska_(\1:yyyy)(\1:mm)\1_\200.grib2
-#
 # WW3 Eastern Pacific (Regional)
 #
 NGRID	E.D.88 KWBJ (..)(..)
@@ -292,23 +256,11 @@ NGRID	E.B.88 KWBJ (..)(..)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/WW3/Regional_US_East_Coast/WW3_Regional_US_East_Coast_(\1:yyyy)(\1:mm)\1_\200.grib2
 #
-# WW3 US East Coast (Coastal)
-#
-NGRID	E.H.88 KWBJ (..)(..)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/WW3/Coastal_US_East_Coast/WW3_Coastal_US_East_Coast_(\1:yyyy)(\1:mm)\1_\200.grib2
-#
 # WW3 US West Coast (Regional)
 #
 NGRID	E.C.88 KWBJ (..)(..)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/WW3/Regional_US_West_Coast/WW3_Regional_US_West_Coast_(\1:yyyy)(\1:mm)\1_\200.grib2
-#
-# WW3 US West Coast (Coastal)
-#
-NGRID	E.G.88 KWBJ (..)(..)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/NCEP/WW3/Coastal_US_West_Coast/WW3_Coastal_US_West_Coast_(\1:yyyy)(\1:mm)\1_\200.grib2
 #
 # ================================
 # = FNMOC data available via IDD =
@@ -333,16 +285,6 @@ FNMOC	(^US058.{4}-GR1mdl\.0078_0200_.{5}.{4})(.{4})(..)(..)(..)(.*)
 FNMOC	(^US058.{4}-GR1mdl\.0018_0056_.{5}.{4})(.{4})(..)(..)(..)(.*)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/FNMOC/NAVGEM/Global_0p5deg/FNMOC_NAVGEM_Global_0p5deg_\2\3\4_\500.grib1
-#
-# ------------------------------------------------------------
-# - Forecast of Aerosol Radiative Optical Properties (FAROP) -
-# ------------------------------------------------------------
-#
-# FAROP Global 1.0 degree
-#
-FNMOC	(^US058.{4}-GR1mdl\.0135_0240_.{5}.{4})(.{4})(..)(..)(..)(.*)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/FNMOC/FAROP/Global_1p0deg/FNMOC_FAROP_Global_1p0deg_\2\3\4_\500.grib1
 #
 # -----------------------
 # - WAVEWATCH III (WW3) -
@@ -375,12 +317,6 @@ FNMOC	^US058.{4}-GR1dyn\.COAMPS-NWATL_.{5}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
 FNMOC	^US058.{4}-GR1dyn\.COAMPS-EURO_.{4}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
 	FILE	-metadata
 	${DATA_DIR}/native/grid/FNMOC/COAMPS/Europe/FNMOC_COAMPS_Europe_\1\2\3_\400.grib1
-#
-# COAMPS Equatorial America
-#
-FNMOC	^US058.{4}-GR1dyn\.COAMPS-EQAM_.{4}-.{2}-.{2}_.{9}(....)(..)(..)(..)(.*)
-	FILE	-metadata
-	${DATA_DIR}/native/grid/FNMOC/COAMPS/Equatorial_America/FNMOC_COAMPS_Equatorial_America_\1\2\3_\400.grib1
 #
 # COAMPS Northeast Pacific
 #
