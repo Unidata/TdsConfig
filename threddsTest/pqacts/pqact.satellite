@@ -29,10 +29,6 @@
 #
 #    location="${DATA_DIR}/native/satellite/12.0/" >
 #
-# CO2 (13.3 um)
-#
-#    location="${DATA_DIR}/native/satellite/13.3/" >
-#
 # Imager Visible
 #
 #    location="${DATA_DIR}/native/satellite/VIS/">

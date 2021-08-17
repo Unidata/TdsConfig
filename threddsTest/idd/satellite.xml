@@ -170,12 +170,6 @@
           </filter>
           <addDatasetSize/>
         </datasetScan>
-        <datasetScan name="CO2 (13.3 um)" ID="SSEC/IDD-Satellite/13.3" path="satellite/13.3" location="${DATA_DIR}/native/satellite/13.3/" >
-          <filter>
-            <include wildcard="*.gini"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
         <datasetScan name="Visible" ID="SSEC/IDD-Satellite/VIS" path="satellite/VIS" location="${DATA_DIR}/native/satellite/VIS/">
           <metadata inherited="true">
             <geospatialCoverage>

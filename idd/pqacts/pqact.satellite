@@ -29,10 +29,6 @@
 #
 #    location="/data/ldm/pub/native/satellite/12.0/" >
 #
-# CO2 (13.3 um)
-#
-#    location="/data/ldm/pub/native/satellite/13.3/" >
-#
 # Imager Visible
 #
 #    location="/data/ldm/pub/native/satellite/VIS/">
