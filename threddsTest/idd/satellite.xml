@@ -199,6 +199,19 @@
           <addDatasetSize/>
         </datasetScan>
       </dataset><!-- end of Satellite Imager Data -->
+      <!--
+
+         Sounder Derived Products 
+
+        -->
+      <dataset name="Sounder Derived Products">
+        <datasetScan name="Rainfall Rate" ID="SSEC/IDD-Satellite/RR" path="satellite/PRXX" location="${DATA_DIR}/native/satellite/PRXX/" >
+          <filter>
+            <include wildcard="*.gini"/>
+          </filter>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset><!-- End of Sounder Derived Products -->
     </dataset><!-- End of NESDIS GOES Satellite Data -->
     <dataset name="NESDIS NOAA-20 Satellite Data">
       <metadata inherited="true">

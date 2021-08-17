@@ -12,11 +12,6 @@
 # - Satellite Imager Data -
 # -------------------------
 #
-# Shortwave IR (3.9 um)
-#
-#    location="${DATA_DIR}/native/satellite/3.9/PR-REGIONAL_4km/">
-#    location="${DATA_DIR}/native/satellite/3.9/EAST-CONUS_4km/" >
-#
 # Imager 6.7/6.5 um IR (WV)
 #
 #    location="${DATA_DIR}/native/satellite/WV/">
@@ -24,10 +19,6 @@
 # IR (11 um)
 #
 #    location="${DATA_DIR}/native/satellite/IR/">
-#
-# Dirty Window (12.0 um)
-#
-#    location="${DATA_DIR}/native/satellite/12.0/" >
 #
 # Imager Visible
 #
@@ -37,13 +28,9 @@
 # - Satellite Sounder Data -
 # --------------------------
 #
-# Sounder Based Derived Lifted Index
+# Sounder Based Rainfall Rate
 #
-#    location="${DATA_DIR}/native/satellite/LI/">
-#
-# Sounder Based Derived Precipitable Water PW
-#
-#    location="${DATA_DIR}/native/satellite/PW/" >
+#    location="${DATA_DIR}/native/satellite/PRXX/">
 #
 # ------------------------
 # - NOAAPORT GINI Images -
