@@ -853,26 +853,6 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="Wave Watch III Coastal Alaska" featureType="GRIB2" harvest="true"
-                         path="grib/NCEP/WW3/Coastal_Alaska">
-        <metadata inherited="true">
-          <documentation type="summary">
-            548 by 391 points, resolution 4 minute. Models are run daily at 0Z, 6Z, 12Z and 18Z.
-            Forecasts every 3 hours from 0 to 72, every 6 hours from 72 to 180 hours.
-          </documentation>
-        </metadata>
-
-        <collection name="WW3-Coastal_Alaska"
-                    spec="${DATA_DIR}/native/grid/NCEP/WW3/Coastal_Alaska/.*grib2$"
-                    dateFormatMark="#WW3_Coastal_Alaska_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 9/15 * * * ? *" />
-        <gribConfig>
-          <filesSort increasing="false" />
-        </gribConfig>
-      </featureCollection>
-
       <featureCollection name="Wave Watch III Regional Eastern Pacific" featureType="GRIB2" harvest="true"
                          path="grib/NCEP/WW3/Regional_Eastern_Pacific">
         <metadata inherited="true">
