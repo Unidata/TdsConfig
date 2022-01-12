@@ -110,94 +110,95 @@
 
       <dataset name="Imager Data (GINI)">
         <dataset name="Shortwave IR (3.9um)">
-        <datasetScan name="Water Vapor (6.5 / 5.7 um)" ID="SSEC/IDD-Satellite/WV" path="satellite/WV" location="${DATA_DIR}/native/satellite/WV/">
-          <metadata inherited="true">
-            <geospatialCoverage>
-              <northsouth>
-                <start>12.21424</start>
-                <size>49.07234</size>
-                <units>degrees_north</units>
-              </northsouth>
-              <eastwest>
-                <start>-133.50404</start>
-                <size>42.00197</size>
-                <units>degrees_east</units>
-              </eastwest>
-              <updown>
-                <start>0.0</start>
-                <size>0.0</size>
-                <units>km</units>
-              </updown>
-            </geospatialCoverage>
-            <variables vocabulary="">
-              <variable name="IR_WV" vocabulary_name="" units="N/A">Imager 6.7/6.5 micron IR (WV)</variable>
-            </variables>
-          </metadata>
-           <filter>
-             <include wildcard="*.gini"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
-        <datasetScan name="Infrared (11 um)" ID="SSEC/IDD-Satellite/IR" path="satellite/IR" location="${DATA_DIR}/native/satellite/IR/">
-          <timeCoverage>
-            <end>present</end>
-            <duration>7 days</duration>
-          </timeCoverage>
-          <metadata inherited="true">
-            <geospatialCoverage>
-              <northsouth>
-                <start>12.20212</start>
-                <size>49.06942</size>
-                <units>degrees_north</units>
-              </northsouth>
-              <eastwest>
-                <start>-133.48142</start>
-                <size>42.00738</size>
-                <units>degrees_east</units>
-              </eastwest>
-              <updown>
-                <start>0.0</start>
-                <size>0.0</size>
-                <units>km</units>
-              </updown>
-            </geospatialCoverage>
-            <variables vocabulary="">
-              <variable name="IR" vocabulary_name="" units="N/A">Imager 11 micron IR</variable>
-            </variables>
-          </metadata>
-          <filter>
-             <include wildcard="*.gini"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
-        <datasetScan name="Visible" ID="SSEC/IDD-Satellite/VIS" path="satellite/VIS" location="${DATA_DIR}/native/satellite/VIS/">
-          <metadata inherited="true">
-            <geospatialCoverage>
-              <northsouth>
-                <start>12.19303</start>
-                <size>49.06844</size>
-                <units>degrees_north</units>
-              </northsouth>
-              <eastwest>
-                <start>-133.46445</start>
-                <size>42.0137</size>
-                <units>degrees_east</units>
-              </eastwest>
-              <updown>
-                <start>0.0</start>
-                <size>0.0</size>
-                <units>km</units>
-              </updown>
-            </geospatialCoverage>
-            <variables vocabulary="">
-              <variable name="VIS" vocabulary_name="" units="N/A">Imager Visible</variable>
-            </variables>
-          </metadata>
-          <filter>
-             <include wildcard="*.gini"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
+          <datasetScan name="Water Vapor (6.5 / 5.7 um)" ID="SSEC/IDD-Satellite/WV" path="satellite/WV" location="${DATA_DIR}/native/satellite/WV/">
+            <metadata inherited="true">
+              <geospatialCoverage>
+                <northsouth>
+                  <start>12.21424</start>
+                  <size>49.07234</size>
+                  <units>degrees_north</units>
+                </northsouth>
+                <eastwest>
+                  <start>-133.50404</start>
+                  <size>42.00197</size>
+                  <units>degrees_east</units>
+                </eastwest>
+                <updown>
+                  <start>0.0</start>
+                  <size>0.0</size>
+                  <units>km</units>
+                </updown>
+              </geospatialCoverage>
+              <variables vocabulary="">
+                <variable name="IR_WV" vocabulary_name="" units="N/A">Imager 6.7/6.5 micron IR (WV)</variable>
+              </variables>
+            </metadata>
+             <filter>
+               <include wildcard="*.gini"/>
+            </filter>
+            <addDatasetSize/>
+          </datasetScan>
+          <datasetScan name="Infrared (11 um)" ID="SSEC/IDD-Satellite/IR" path="satellite/IR" location="${DATA_DIR}/native/satellite/IR/">
+            <timeCoverage>
+              <end>present</end>
+              <duration>7 days</duration>
+            </timeCoverage>
+            <metadata inherited="true">
+              <geospatialCoverage>
+                <northsouth>
+                  <start>12.20212</start>
+                  <size>49.06942</size>
+                  <units>degrees_north</units>
+                </northsouth>
+                <eastwest>
+                  <start>-133.48142</start>
+                  <size>42.00738</size>
+                  <units>degrees_east</units>
+                </eastwest>
+                <updown>
+                  <start>0.0</start>
+                  <size>0.0</size>
+                  <units>km</units>
+                </updown>
+              </geospatialCoverage>
+              <variables vocabulary="">
+                <variable name="IR" vocabulary_name="" units="N/A">Imager 11 micron IR</variable>
+              </variables>
+            </metadata>
+            <filter>
+               <include wildcard="*.gini"/>
+            </filter>
+            <addDatasetSize/>
+          </datasetScan>
+          <datasetScan name="Visible" ID="SSEC/IDD-Satellite/VIS" path="satellite/VIS" location="${DATA_DIR}/native/satellite/VIS/">
+            <metadata inherited="true">
+              <geospatialCoverage>
+                <northsouth>
+                  <start>12.19303</start>
+                  <size>49.06844</size>
+                  <units>degrees_north</units>
+                </northsouth>
+                <eastwest>
+                  <start>-133.46445</start>
+                  <size>42.0137</size>
+                  <units>degrees_east</units>
+                </eastwest>
+                <updown>
+                  <start>0.0</start>
+                  <size>0.0</size>
+                  <units>km</units>
+                </updown>
+              </geospatialCoverage>
+              <variables vocabulary="">
+                <variable name="VIS" vocabulary_name="" units="N/A">Imager Visible</variable>
+              </variables>
+            </metadata>
+            <filter>
+               <include wildcard="*.gini"/>
+            </filter>
+            <addDatasetSize/>
+          </datasetScan>
+        </dataset> <!-- end of Shortwave IR data -->
       </dataset><!-- end of Satellite Imager Data -->
       <!--
 
