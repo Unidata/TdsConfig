@@ -6,22 +6,9 @@
 
   <service name="latest" serviceType="Resolver" base=""/>
 
-  <service name="fullServices" serviceType="Compound" base="">
-    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
-    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
-    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
-    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
-    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
-    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
-    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
-    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
-    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
-  </service>
-
   <dataset name="NCEP Forecast Models">
 
     <metadata inherited="true">
-      <serviceName>fullServices</serviceName>
       <authority>edu.ucar.unidata</authority>
       <dataType>GRID</dataType>
       <dataFormat>GRIB-2</dataFormat>
@@ -300,7 +287,6 @@
     <dataset name="High Resolution Rapid Refresh (HRRR)">
 
       <metadata inherited="true">
-        <serviceName>fullServices</serviceName>
         <authority>edu.ucar.unidata</authority>
         <dataType>GRID</dataType>
         <dataFormat>GRIB-2</dataFormat>
@@ -914,7 +900,6 @@
   <dataset name="FNMOC Forecast Models">
 
     <metadata inherited="true">
-      <serviceName>fullServices</serviceName>
       <authority>edu.ucar.unidata</authority>
       <dataType>Grid</dataType>
       <dataFormat>GRIB-1</dataFormat>

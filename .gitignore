@@ -25,6 +25,7 @@ Thumbs.db
 
 # Build artifacts
 config.zip
+config
 fetch.sh
 
 # ignore pycache
