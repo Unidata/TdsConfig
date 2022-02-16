@@ -472,9 +472,9 @@
     <station name="OKLAHOMA_CITY/Norman" value="KCRI" state="OK" country="US">
        <location3D latitude="35.32" longitude="-97.27" elevation="370" />
     </station>
-    <station name="OKLAHOMA_CITY/Norman" value="NOP3" state="OK" country="US">
-       <location3D latitude="35.32" longitude="-97.27" elevation="370" />
-    </station>
+<!--    <station name="OKLAHOMA_CITY/Norman" value="NOP3" state="OK" country="US">-->
+<!--       <location3D latitude="35.32" longitude="-97.27" elevation="370" />-->
+<!--    </station>-->
     <station name="San_Juan/Puerta_Rico" value="TJUA" state="PR" country="US">
        <location3D latitude="18.12" longitude="-66.08" elevation="931" />
     </station>
