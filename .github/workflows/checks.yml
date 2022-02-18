@@ -53,7 +53,7 @@ jobs:
           name: configs
 
       - name: Upload config files
-        run: |
+        run: >
           find . -name config.zip -exec
           curl -u ${{ secrets.NEXUS_USER }}:${{ secrets.NEXUS_PW }}
           --upload-file "{}" https://artifacts.unidata.ucar.edu/repository/downloads-tds-config/"{}" \;
