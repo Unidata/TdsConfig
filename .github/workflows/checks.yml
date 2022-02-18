@@ -30,7 +30,7 @@ jobs:
       - name: Build config packages
         run: python build.py
 
-      - name: Upload docs as artifact
+      - name: Upload configs as artifact
         uses: actions/upload-artifact@v2
         with:
           name: configs
