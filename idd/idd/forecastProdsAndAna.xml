@@ -375,7 +375,7 @@
                          featureType="GRIB2" harvest="true" path="grib/NCEP/NBM/PuertoRico">
         <metadata inherited="true">
           <documentation type="summary">
-            Puerto Rico grids, 353 by 257 points, Mercator grid, resolution 1.25 km.
+            Puerto Rico grids, 339 by 225 points, Mercator grid, resolution 1.25 km.
           </documentation>
         </metadata>
 
@@ -383,6 +383,22 @@
                     dateFormatMark="#PuertoRico_#yyyyMMdd_HHmm"
                     timePartition="file"
                     name="NCEP_PUERTORICO_MODEL_BLEND"
+                    olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+      </featureCollection>
+
+      <featureCollection name="National Blend of Models Guam Grids"
+                         featureType="GRIB2" harvest="true" path="grib/NCEP/NBM/Guam">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Guam grids, 193 by 193 points, Mercator grid, resolution 2.5 km.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NBM/Guam/.*grib2$"
+                    dateFormatMark="#Guam_#yyyyMMdd_HHmm"
+                    timePartition="file"
+                    name="NCEP_GUAM_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
       </featureCollection>
