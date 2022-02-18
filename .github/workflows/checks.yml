@@ -1,0 +1,48 @@
+name: Build
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow}}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Build configs after running some simple checks
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+          cache: 'pip'
+
+      - run: python -m pip install pytest
+
+      - name: Run basic checks
+        run: python -m pytest basic_checks.py
+
+      - name: Build config packages
+        run: python build.py
+
+      - name: Upload docs as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: configs
+          path: '*/config.zip'
+          retention-days: 5
+
+  # Download artifact and upload to Unidata artifacts server
+  # upload:
+  #   name: Upload
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Download configs
+  #     uses: actions/download-artifact@v2
+  #     with:
+  #       name: configs
