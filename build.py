@@ -65,7 +65,7 @@ def write_script(scriptpath, configpath):
     configpath = configpath.replace('\\', '/')
     lines.append(('\twget'
                   ' --no-check-certificate'
-                  ' https://s3.amazonaws.com/unidata-tds/tdsConfig/%s'
+                  ' https://artifacts.unidata.ucar.edu/repository/downloads-tds-config/%s'
                   ' -O %s')
                   % (configpath, configfile))
     lines.append('\tjar xf %s' % os.path.split(configpath)[-1])
