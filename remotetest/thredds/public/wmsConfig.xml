@@ -16,7 +16,7 @@ for more information.
       <!-- The global defaults. All elements are mandatory -->
       <allowFeatureInfo>true</allowFeatureInfo>
       <defaultColorScaleRange>-50 50</defaultColorScaleRange>
-      <defaultPaletteName>rainbow</defaultPaletteName>
+      <defaultPaletteName>x-Rainbow</defaultPaletteName>
       <defaultNumColorBands>20</defaultNumColorBands>
       <logScaling>false</logScaling>
       <intervalTime>false</intervalTime>
