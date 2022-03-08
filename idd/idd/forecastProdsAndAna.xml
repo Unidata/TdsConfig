@@ -545,6 +545,93 @@
         </featureCollection>
       </dataset>
       <!-- end of GUAM -->
+
+      <dataset name="MRMS Hawaii Sector">
+        <featureCollection name="MRMS Base Reflectivity" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/BaseRef">
+          <metadata inherited="true">
+            <documentation type="summary">Base Reflectivity Fields</documentation>
+          </metadata>
+          <collection name="MRMS-HAWAII-BaseRef"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/HAWAII/BaseReflectivity/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_BaseReflectivity_#yyyyMMdd_HHmm"
+                      olderThan="1 min"/>
+          <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Hydrology Fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/FLASH">
+          <metadata inherited="true">
+            <documentation type="summary">Hydrology Fields</documentation>
+          </metadata>
+          <collection name="MRMS-HAWAII-FLASH"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/HAWAII/FLASH/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_FLASH_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/Model">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Model-derived fields</documentation>
+          </metadata>
+          <collection name="MRMS-HAWAII-Model"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/HAWAII/Model/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_Model_#yyyyMMdd"
+                      olderThan="10 min"/>
+          <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/Precip">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Precipitation fields</documentation>
+          </metadata>
+          <collection name="MRMS-HAWAII-Precip"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/HAWAII/Precip/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_Precip_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/Radar">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Radar fields</documentation>
+          </metadata>
+          <collection name="MRMS-HAWAII-Radar"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/HAWAII/Radar/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_Radar_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/RotationTrack">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Low-level Rotation Tracks</documentation>
+          </metadata>
+          <collection name="MRMS-HAWAII-RotationTracks"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/HAWAII/RotationTrack/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_RotationTrack_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/RotationTrackML">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Mid-level Rotation Tracks</documentation>
+          </metadata>
+          <collection name="MRMS-HAWAII-RotationTracksML"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/HAWAII/RotationTrackML/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_RotationTrackML_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+      </dataset>
+      <!-- end of HAWAII -->
     </dataset>
     <!-- end of MRMS -->
 
