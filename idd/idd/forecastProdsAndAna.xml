@@ -210,6 +210,69 @@
                        xlink:title="MRMS Documentation"/>
       </metadata>
 
+      <dataset name="MRMS Alaska Sector">
+        <featureCollection name="MRMS Base Reflectivity" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/ALASKA/BaseRef">
+          <metadata inherited="true">
+            <documentation type="summary">Base Reflectivity Fields</documentation>
+          </metadata>
+          <collection name="MRMS-ALASKA-BaseRef"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/ALASKA/BaseReflectivity/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_BaseReflectivity_#yyyyMMdd_HHmm"
+                      olderThan="1 min"/>
+          <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Hydrology Fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/ALASKA/FLASH">
+          <metadata inherited="true">
+            <documentation type="summary">Hydrology Fields</documentation>
+          </metadata>
+          <collection name="MRMS-ALASKA-FLASH"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/ALASKA/FLASH/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_FLASH_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/ALASKA/Model">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Model-derived fields</documentation>
+          </metadata>
+          <collection name="MRMS-ALASKA-Model"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/ALASKA/Model/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_Model_#yyyyMMdd"
+                      olderThan="10 min"/>
+          <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/ALASKA/Precip">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Precipitation fields</documentation>
+          </metadata>
+          <collection name="MRMS-ALASKA-Precip"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/ALASKA/Precip/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_Precip_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/ALASKA/Radar">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Radar fields</documentation>
+          </metadata>
+          <collection name="MRMS-ALASKA-Radar"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/ALASKA/Radar/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_Radar_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+      </dataset>
+      <!-- end of ALASKA -->
+
       <dataset name="MRMS CONUS Sector">
         <featureCollection name="MRMS Base Reflectivity" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/BaseRef">
           <metadata inherited="true">
