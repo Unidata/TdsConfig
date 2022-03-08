@@ -210,89 +210,103 @@
                        xlink:title="MRMS Documentation"/>
       </metadata>
 
-      <featureCollection name="MRMS Base Reflectivity" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/BaseRef">
+      <dataset name="MRMS CONUS Sector">
+      <featureCollection name="MRMS Base Reflectivity" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/BaseRef">
 	<metadata inherited="true">
           <documentation type="summary">Base Reflectivity Fields</documentation>
 	</metadata>
-        <collection name="MRMS-BaseRef"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/BaseRef/.*grib2$"
+        <collection name="MRMS-CONUS-BaseRef"
+                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/CONUS/BaseReflectivity/.*grib2$"
                     timePartition="file"
-                    dateFormatMark="#MRMS_BaseReflectivity_#yyyyMMdd_HHmm"
+                    dateFormatMark="#_BaseReflectivity_#yyyyMMdd_HHmm"
                     olderThan="1 min"/>
         <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
       </featureCollection>
 
-      <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/Model">
+      <featureCollection name="MRMS Hydrology Fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/FLASH">
+	<metadata inherited="true">
+          <documentation type="summary">Hydrology Fields</documentation>
+	</metadata>
+        <collection name="MRMS-CONUS-FLASH"
+                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/CONUS/FLASH/.*grib2$"
+                    timePartition="file"
+                    dateFormatMark="#_FLASH_#yyyyMMdd_HHmm"
+                    olderThan="3 min"/>
+        <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+      </featureCollection>
+
+      <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/Model">
 	<metadata inherited="true">
           <documentation type="summary">MRMS Model-derived fields</documentation>
 	</metadata>
-        <collection name="MRMS-Model"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/Model/.*grib2$"
+        <collection name="MRMS-CONUS-Model"
+                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/CONUS/Model/.*grib2$"
                     timePartition="file"
-                    dateFormatMark="#MRMS_Model_#yyyyMMdd"
+                    dateFormatMark="#_Model_#yyyyMMdd"
                     olderThan="10 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
       </featureCollection>
 
-      <featureCollection name="MRMS NLDN Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/NLDN">
+      <featureCollection name="MRMS Lighting Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/Lightning">
 	<metadata inherited="true">
-          <documentation type="summary">MRMS NLDN (lightning) fields</documentation>
+          <documentation type="summary">MRMS Lightning fields</documentation>
 	</metadata>
-        <collection name="MRMS-NLDN"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/NLDN/.*grib2$"
+        <collection name="MRMS-CONUS-Lightning"
+                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/CONUS/Lightning/.*grib2$"
                     timePartition="file"
-                    dateFormatMark="#MRMS_NLDN_#yyyyMMdd_HHmm"
+                    dateFormatMark="#_Lightning_#yyyyMMdd_HHmm"
                     olderThan="1 min"/>
         <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
       </featureCollection>
 
-      <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/Precip">
+      <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/Precip">
 	<metadata inherited="true">
           <documentation type="summary">MRMS Precipitation fields</documentation>
 	</metadata>
-        <collection name="MRMS-Precip"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/Precip/.*grib2$"
+        <collection name="MRMS-CONUS-Precip"
+                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/CONUS/Precip/.*grib2$"
                     timePartition="file"
-                    dateFormatMark="#MRMS_Precip_#yyyyMMdd_HHmm"
+                    dateFormatMark="#_Precip_#yyyyMMdd_HHmm"
                     olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
       </featureCollection>
 
-      <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/Radar">
+      <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/Radar">
 	<metadata inherited="true">
           <documentation type="summary">MRMS Radar fields</documentation>
 	</metadata>
-        <collection name="MRMS-Radar"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/Radar/.*grib2$"
+        <collection name="MRMS-CONUS-Radar"
+                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/CONUS/Radar/.*grib2$"
                     timePartition="file"
-                    dateFormatMark="#MRMS_Radar_#yyyyMMdd_HHmm"
+                    dateFormatMark="#_Radar_#yyyyMMdd_HHmm"
                     olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
       </featureCollection>
 
-      <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/RotationTrack">
+      <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/RotationTrack">
 	<metadata inherited="true">
           <documentation type="summary">MRMS Low-level Rotation Tracks</documentation>
 	</metadata>
-        <collection name="MRMS-RotationTracks"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrack/.*grib2$"
+        <collection name="MRMS-CONUS-RotationTracks"
+                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/CONUS/RotationTrack/.*grib2$"
                     timePartition="file"
-                    dateFormatMark="#MRMS_RotationTrack_#yyyyMMdd_HHmm"
+                    dateFormatMark="#_RotationTrack_#yyyyMMdd_HHmm"
                     olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
       </featureCollection>
 
-      <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/RotationTrackML">
+      <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/RotationTrackML">
 	<metadata inherited="true">
           <documentation type="summary">MRMS Mid-level Rotation Tracks</documentation>
 	</metadata>
-        <collection name="MRMS-RotationTracksML"
-                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/RotationTrackML/.*grib2$"
+        <collection name="MRMS-CONUS-RotationTracksML"
+                    spec="${DATA_DIR}/native/grid/NCEP/MRMS/CONUS/RotationTrackML/.*grib2$"
                     timePartition="file"
-                    dateFormatMark="#MRMS_RotationTrackML_#yyyyMMdd_HHmm"
+                    dateFormatMark="#_RotationTrackML_#yyyyMMdd_HHmm"
                     olderThan="3 min"/>
         <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
       </featureCollection>
+      </dataset>
     </dataset>
     <!-- end of MRMS -->
 
