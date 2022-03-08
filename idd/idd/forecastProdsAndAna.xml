@@ -273,6 +273,93 @@
       </dataset>
       <!-- end of ALASKA -->
 
+      <dataset name="MRMS Caribbean Sector">
+        <featureCollection name="MRMS Base Reflectivity" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/BaseRef">
+          <metadata inherited="true">
+            <documentation type="summary">Base Reflectivity Fields</documentation>
+          </metadata>
+          <collection name="MRMS-CARIB-BaseRef"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/CARIB/BaseReflectivity/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_BaseReflectivity_#yyyyMMdd_HHmm"
+                      olderThan="1 min"/>
+          <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Hydrology Fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/FLASH">
+          <metadata inherited="true">
+            <documentation type="summary">Hydrology Fields</documentation>
+          </metadata>
+          <collection name="MRMS-CARIB-FLASH"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/CARIB/FLASH/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_FLASH_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/Model">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Model-derived fields</documentation>
+          </metadata>
+          <collection name="MRMS-CARIB-Model"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/CARIB/Model/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_Model_#yyyyMMdd"
+                      olderThan="10 min"/>
+          <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/Precip">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Precipitation fields</documentation>
+          </metadata>
+          <collection name="MRMS-CARIB-Precip"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/CARIB/Precip/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_Precip_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/Radar">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Radar fields</documentation>
+          </metadata>
+          <collection name="MRMS-CARIB-Radar"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/CARIB/Radar/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_Radar_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/RotationTrack">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Low-level Rotation Tracks</documentation>
+          </metadata>
+          <collection name="MRMS-CARIB-RotationTracks"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/CARIB/RotationTrack/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_RotationTrack_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+
+        <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/RotationTrackML">
+          <metadata inherited="true">
+            <documentation type="summary">MRMS Mid-level Rotation Tracks</documentation>
+          </metadata>
+          <collection name="MRMS-CARIB-RotationTracksML"
+                      spec="${DATA_DIR}/native/grid/NCEP/MRMS/CARIB/RotationTrackML/.*grib2$"
+                      timePartition="file"
+                      dateFormatMark="#_RotationTrackML_#yyyyMMdd_HHmm"
+                      olderThan="3 min"/>
+          <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+        </featureCollection>
+      </dataset>
+      <!-- end of CARIB -->
+
       <dataset name="MRMS CONUS Sector">
         <featureCollection name="MRMS Base Reflectivity" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/BaseRef">
           <metadata inherited="true">
