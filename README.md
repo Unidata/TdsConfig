@@ -34,7 +34,7 @@ Configuration files
 - config.zip hosted on [Unidata Nexus](https://artifacts.unidata.ucar.edu/#browse/browse:downloads-tds-config)
 
 - to make changes to config files:
- - Edit files, e.g. `thredds/*`
- - Commit your changes
- - Make a PR to get it reviewed and merged
- - Use the fetch.sh (wget) that is also generated, from the target machine
+  - Edit files, e.g. `thredds/*`
+  - Commit your changes
+  - Make a PR to get it reviewed and merged
+  - Use the fetch.sh (wget) that is also generated, from the target machine
