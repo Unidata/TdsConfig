@@ -7,7 +7,7 @@ TDS configuration for the TDS at thredds.ucar.edu.
 
 Configuration files
 
-- kept in git repo thredds/TdsConfig
+- kept in git repo TdsConfig
 
 - each machine has their own subdirectory:
   - idd : common to all (4.6) idd servers
