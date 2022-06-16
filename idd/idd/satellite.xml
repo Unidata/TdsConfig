@@ -74,7 +74,7 @@
         </datasetScan>
       </dataset>
 
-      <dataset name="GOES West Datasets">
+      <dataset name="GOES West (GOES 17) Datasets">
         <metadata inherited="true">
           <dataType>GRID</dataType>
           <dataFormat>NetCDF-4</dataFormat>
@@ -94,6 +94,34 @@
                      ID="goes-west-products"
                      path="satellite/goes/west/products"
                      location="${DATA_DIR}/native/satellite/GOES/GRB17/Products">
+          <filter>
+            <include wildcard="*.nc4"/>
+            <include wildcard="*.nc"/>
+          </filter>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset>
+
+      <dataset name="GOES 18 (future GOES West) Datasets">
+        <metadata inherited="true">
+          <dataType>GRID</dataType>
+          <dataFormat>NetCDF-4</dataFormat>
+        </metadata>
+        <datasetScan name="GOES 18 GOES Rebroadcast (GRB)"
+                     ID="goes-18-grb"
+                     path="satellite/goes/18/grb"
+                     location="${DATA_DIR}/native/satellite/GOES/GRB18">
+          <filter>
+            <include wildcard="*.nc4"/>
+            <include wildcard="*.nc"/>
+            <exclude wildcard="^Products*" atomic="false" collection="true" />
+          </filter>
+          <addDatasetSize/>
+        </datasetScan>
+        <datasetScan name="GOES 18 Products"
+                     ID="goes-18-products"
+                     path="satellite/goes/18/products"
+                     location="${DATA_DIR}/native/satellite/GOES/GRB18/Products">
           <filter>
             <include wildcard="*.nc4"/>
             <include wildcard="*.nc"/>
