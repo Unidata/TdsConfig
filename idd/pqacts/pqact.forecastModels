@@ -102,7 +102,7 @@ HRS	^[YZ].(V)... KWB. ([0-3][0-9])([0-2][0-9]).*/m(ETA|NAM)
 #
 # NAM Alaska 45 km (FROM CONDUIT)
 #
-CONDUIT	^data/nccf/com/nam/prod/nam.(........)/nam.t(..)z.awipak.*grib2
+CONDUIT	^data/nccf/com/nam/.*/nam.(........)/nam.t(..)z.awipak.*grib2
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/NAM/Alaska_45km/conduit/NAM_Alaska_45km_conduit_\1_\200.grib2
 #
@@ -120,7 +120,7 @@ NGRID	^[LM].B... KWBE ([0-3][0-9])([0-2][0-9]).*NAM_84/#218
 #
 # NAM CONUS 12 km (FROM CONDUIT)
 #
-CONDUIT	^data/nccf/com/nam/prod/nam.(........)/nam.t(..)z.awip12.*grib2
+CONDUIT	^data/nccf/com/nam/.*/nam.(........)/nam.t(..)z.awip12.*grib2
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/NAM/CONUS_12km_conduit/NAM_CONUS_12km_conduit_\1_\200.grib2
 #
@@ -132,7 +132,7 @@ HRS	^[YZ].(U)... KWB. ([0-3][0-9])([0-2][0-9]).*/m(ETA|NAM)
 #
 # NAM CONUS 40 km (FROM CONDUIT)
 #
-CONDUIT	^data/nccf/com/nam/prod/nam.(........)/nam.t(..)z.awip3d..\.tm00\.grib2
+CONDUIT	^data/nccf/com/nam/.*/nam.(........)/nam.t(..)z.awip3d..\.tm00\.grib2
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/NAM/CONUS_40km/conduit/NAM_CONUS_40km_conduit_\1_\200.grib2
 #
@@ -144,13 +144,13 @@ HRS	^[YZ].(Q)... KWB. ([0-3][0-9])([0-2][0-9]).*/m(ETA|NAM)
 #
 # NAM Polar 90 km
 #
-CONDUIT	^data/nccf/com/nam/prod/nam.(........)/nam.t(..)z.grbgrd.*grib2
+CONDUIT	^data/nccf/com/nam/.*/nam.(........)/nam.t(..)z.grbgrd.*grib2
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/NAM/Polar_90km/NAM_Polar_90km_\1_\200.grib2
 #
 # NAM Fire Weather Nest
 #
-CONDUIT	^data/nccf/com/nam/prod/nam\.(........)/nam.t(..)z\.firewxnest
+CONDUIT	^data/nccf/com/nam/.*/nam\.(........)/nam.t(..)z\.firewxnest
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/NAM/Firewxnest/NAM_Firewxnest_\1_\200.grib2
 #
@@ -166,13 +166,13 @@ NGRID	^[LM].D... KWBG ([0-3][0-9])([0-2][0-9][0-6][0-9])
 #
 # RAP CONUS 20 km
 #
-CONDUIT	^data/nccf/com/rap/prod/rap.(........)/rap.t(..)z.awp252pgrb
+CONDUIT	^data/nccf/com/rap/.*/rap.(........)/rap.t(..)z.awp252pgrb
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/RR/CONUS_20km/RR_CONUS_20km_\1_\200.grib2
 #
 # RAP CONUS 40 km
 #
-CONDUIT	^data/nccf/com/rap/prod/rap.(........)/rap.t(..)z.awp236pgrb
+CONDUIT	^data/nccf/com/rap/.*/rap.(........)/rap.t(..)z.awp236pgrb
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/RR/CONUS_40km/RR_CONUS_40km_\1_\200.grib2
 # =====================================
@@ -212,13 +212,13 @@ NGRID	^[LM].R... KWBL ([0-3][0-9])([0-2][0-9][0-6][0-9])
 #
 # SREF CONUS 40 km Bias Corrected Ensemble Derived Products
 #
-CONDUIT	^data/nccf/com/sref/prod/sref\.(........)/(..)/(ensprod_biasc)/.*pgrb212
+CONDUIT	^data/nccf/com/sref/.*/sref\.(........)/(..)/(ensprod_biasc)/.*pgrb212
 	FILE	-metadata
 	${DATA_DIR}/native/grid/NCEP/SREF/CONUS_40km/\3/SREF_CONUS_40km_\3_\1_\200.grib2
 #
 # SREF CONUS 40 km Bias Corrected Ensemble Members
 #
-#CONDUIT	^data/nccf/com/sref/prod/sref\.(........)/(..)/(pgrb_biasc)/sref_.*\.pgrb212\.*
+#CONDUIT	^data/nccf/com/sref/.*/sref\.(........)/(..)/(pgrb_biasc)/sref_.*\.pgrb212\.*
 #	FILE	-metadata
 #	${DATA_DIR}/native/grid/NCEP/SREF/CONUS_40km/\3/SREF_CONUS_40km_\3_\1_\200.grib2
 #
