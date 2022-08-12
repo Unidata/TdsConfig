@@ -4,7 +4,7 @@
 
   <service name="all" serviceType="Compound" base="">
     <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
-    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+    <service name="ncssPoint" serviceType="NetcdfSubset" base="/thredds/ncss/point/"/>
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
   </service>
 
