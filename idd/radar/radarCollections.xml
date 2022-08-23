@@ -3,7 +3,7 @@
   <service name="radarServer" serviceType="QueryCapability" base="/thredds/radarServer/" />
   <dataset name="Radar Data">
     <datasetScan name="NEXRAD Level II Radar from IDD" collectionType="TimeSeries" ID="nexrad/level2/IDD" path="nexrad/level2/IDD" location="${DATA_DIR}/native/radar/level2">
-      <radarCollection layout="STATION/yyyyMMdd" dateRegex="(\d{8}_\d{4})\.ar2v$" dateFormat="yyyyMMdd_HHmm" />
+      <radarCollection layout="STATION/yyyyMMdd" dateRegex="(\d{8}_\d{6})\.ar2v$" dateFormat="yyyyMMdd_HHmmss" />
       <metadata inherited="true">
         <dataType>Radial</dataType>
         <dataFormat>NEXRAD2</dataFormat>
