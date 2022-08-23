@@ -8,40 +8,6 @@
 # = Satellite data available via IDD =
 # ======================================
 #
-# -------------------------
-# - Satellite Imager Data -
-# -------------------------
-#
-# Imager 6.7/6.5 um IR (WV)
-#
-#    location="/data/ldm/pub/native/satellite/WV/">
-#
-# IR (11 um)
-#
-#    location="/data/ldm/pub/native/satellite/IR/">
-#
-# Imager Visible
-#
-#    location="/data/ldm/pub/native/satellite/VIS/">
-#
-# --------------------------
-# - Satellite Sounder Data -
-# --------------------------
-#
-# Sounder Based Rainfall Rate
-#
-#    location="${DATA_DIR}/native/satellite/PRXX/">
-#
-# ------------------------
-# - NOAAPORT GINI Images -
-# ------------------------
-#
-# Zlib compressed NOAAPORT GOES-East/West GINI Images
-#
-NIMAGE	^satz/ch[0-9]/.*/(.*)/([12][0-9][0-9][0-9][01][0-9][0-3][0-9]) ([0-2][0-9])([0-5][0-9])/(.*)/(.*km)/
-	PIPE	-close
-	sh etc/TDS/util/ldmfile.sh ${DATA_DIR}/native/satellite/\1/\5_\6/\2/\5_\6_\1_\2_\3\4.gini
-#
 # ----------------------------------
 # - NOAAPORT NOAA-20 NUCAPS netCDF4 Soundings -
 # ----------------------------------
