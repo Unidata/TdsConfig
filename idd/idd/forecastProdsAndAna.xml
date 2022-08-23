@@ -4,24 +4,9 @@
          name="Unidata THREDDS Data Server - NCEP models"
          version="1.0.7">
 
-  <service name="latest" serviceType="Resolver" base=""/>
-
-  <service name="fullServices" serviceType="Compound" base="">
-    <service name="opendap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
-    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
-    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
-    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
-    <service name="ncssGrid" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
-    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
-    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
-    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
-    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
-  </service>
-
   <dataset name="NCEP Analyses">
 
     <metadata inherited="true">
-      <serviceName>fullServices</serviceName>
       <authority>edu.ucar.unidata</authority>
       <dataType>GRID</dataType>
       <dataFormat>GRIB-2</dataFormat>
@@ -86,6 +71,7 @@
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
         <gribConfig>
           <gdsHash from='-1506003048' to='-1505079527'/>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -106,10 +92,9 @@
                     olderThan="5 min"/>
 
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
-        <!-- gribConfig>
-          <gdsHash from="-328645426" to="1821883766"/>
-          <gdsHash from="1383738030" to="-760700074"/>
-        </gribConfig -->
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Storm Prediction Center CONUS Forecast Grids" featureType="GRIB2"
@@ -127,6 +112,9 @@
                     name="NDFD_SPC_CONUS_CONDUIT"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="Climate Prediction Center CONUS Forecast Grids" featureType="GRIB2"
@@ -144,6 +132,9 @@
                     name="NDFD_CPC_CONUS_CONDUIT"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
     </dataset>
 
@@ -177,6 +168,7 @@
           <pdsHash>
             <useGenType>true</useGenType>
           </pdsHash>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -198,6 +190,7 @@
           <pdsHash>
             <useGenType>true</useGenType>
           </pdsHash>
+          <filesSort increasing="false" />
         </gribConfig>
       </featureCollection>
 
@@ -221,6 +214,9 @@
                       dateFormatMark="#_BaseReflectivity_#yyyyMMdd_HHmm"
                       olderThan="1 min"/>
           <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Hydrology Fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/ALASKA/FLASH">
@@ -233,6 +229,9 @@
                       dateFormatMark="#_FLASH_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/ALASKA/Model">
@@ -245,6 +244,9 @@
                       dateFormatMark="#_Model_#yyyyMMdd"
                       olderThan="10 min"/>
           <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/ALASKA/Precip">
@@ -257,6 +259,9 @@
                       dateFormatMark="#_Precip_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/ALASKA/Radar">
@@ -269,6 +274,9 @@
                       dateFormatMark="#_Radar_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
       </dataset>
       <!-- end of ALASKA -->
@@ -284,6 +292,9 @@
                       dateFormatMark="#_BaseReflectivity_#yyyyMMdd_HHmm"
                       olderThan="1 min"/>
           <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Hydrology Fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/FLASH">
@@ -296,6 +307,9 @@
                       dateFormatMark="#_FLASH_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/Model">
@@ -308,6 +322,9 @@
                       dateFormatMark="#_Model_#yyyyMMdd"
                       olderThan="10 min"/>
           <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/Precip">
@@ -320,6 +337,9 @@
                       dateFormatMark="#_Precip_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/Radar">
@@ -332,6 +352,9 @@
                       dateFormatMark="#_Radar_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/RotationTrack">
@@ -344,6 +367,9 @@
                       dateFormatMark="#_RotationTrack_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CARIB/RotationTrackML">
@@ -356,6 +382,9 @@
                       dateFormatMark="#_RotationTrackML_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
       </dataset>
       <!-- end of CARIB -->
@@ -371,6 +400,9 @@
                       dateFormatMark="#_BaseReflectivity_#yyyyMMdd_HHmm"
                       olderThan="1 min"/>
           <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Hydrology Fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/FLASH">
@@ -383,6 +415,9 @@
                       dateFormatMark="#_FLASH_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/Model">
@@ -395,6 +430,9 @@
                       dateFormatMark="#_Model_#yyyyMMdd"
                       olderThan="10 min"/>
           <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Lighting Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/Lightning">
@@ -407,6 +445,9 @@
                       dateFormatMark="#_Lightning_#yyyyMMdd_HHmm"
                       olderThan="1 min"/>
           <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/Precip">
@@ -419,6 +460,9 @@
                       dateFormatMark="#_Precip_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/Radar">
@@ -431,6 +475,9 @@
                       dateFormatMark="#_Radar_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/RotationTrack">
@@ -443,6 +490,9 @@
                       dateFormatMark="#_RotationTrack_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/CONUS/RotationTrackML">
@@ -455,6 +505,9 @@
                       dateFormatMark="#_RotationTrackML_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
       </dataset>
       <!-- end of CONUS -->
@@ -470,6 +523,9 @@
                       dateFormatMark="#_BaseReflectivity_#yyyyMMdd_HHmm"
                       olderThan="1 min"/>
           <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Hydrology Fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/GUAM/FLASH">
@@ -482,6 +538,9 @@
                       dateFormatMark="#_FLASH_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/GUAM/Model">
@@ -494,6 +553,9 @@
                       dateFormatMark="#_Model_#yyyyMMdd"
                       olderThan="10 min"/>
           <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/GUAM/Precip">
@@ -506,6 +568,9 @@
                       dateFormatMark="#_Precip_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/GUAM/Radar">
@@ -518,6 +583,9 @@
                       dateFormatMark="#_Radar_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/GUAM/RotationTrack">
@@ -530,6 +598,9 @@
                       dateFormatMark="#_RotationTrack_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/GUAM/RotationTrackML">
@@ -542,6 +613,9 @@
                       dateFormatMark="#_RotationTrackML_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
       </dataset>
       <!-- end of GUAM -->
@@ -557,6 +631,9 @@
                       dateFormatMark="#_BaseReflectivity_#yyyyMMdd_HHmm"
                       olderThan="1 min"/>
           <tdm rewrite="test" rescan="0 0/2 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Hydrology Fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/FLASH">
@@ -569,6 +646,9 @@
                       dateFormatMark="#_FLASH_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Model-derived fields" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/Model">
@@ -581,6 +661,9 @@
                       dateFormatMark="#_Model_#yyyyMMdd"
                       olderThan="10 min"/>
           <tdm rewrite="test" rescan="0 0/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Precipitation Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/Precip">
@@ -593,6 +676,9 @@
                       dateFormatMark="#_Precip_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Radar Analysis" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/Radar">
@@ -605,6 +691,9 @@
                       dateFormatMark="#_Radar_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Low-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/RotationTrack">
@@ -617,6 +706,9 @@
                       dateFormatMark="#_RotationTrack_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
 
         <featureCollection name="MRMS Mid-Level Rotation Tracks" featureType="GRIB2" harvest="true" path="grib/NCEP/MRMS/HAWAII/RotationTrackML">
@@ -629,6 +721,9 @@
                       dateFormatMark="#_RotationTrackML_#yyyyMMdd_HHmm"
                       olderThan="3 min"/>
           <tdm rewrite="test" rescan="0 0/5 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
         </featureCollection>
       </dataset>
       <!-- end of HAWAII -->
@@ -660,6 +755,9 @@
                     name="NCEP_CONUS_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="National Blend of Models Oceanic Grids"
@@ -676,6 +774,9 @@
                     name="NCEP_OCEAN_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="National Blend of Models Alaska Grids"
@@ -692,6 +793,9 @@
                     name="NCEP_ALASKA_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="National Blend of Models Hawaii Grids"
@@ -708,6 +812,9 @@
                     name="NCEP_HAWAII_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="National Blend of Models Puerto Rico Grids"
@@ -724,6 +831,9 @@
                     name="NCEP_PUERTORICO_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
 
       <featureCollection name="National Blend of Models Guam Grids"
@@ -740,6 +850,9 @@
                     name="NCEP_GUAM_MODEL_BLEND"
                     olderThan="5 min"/>
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
       </featureCollection>
     </dataset>
     <!-- end of National Blend of Models -->
