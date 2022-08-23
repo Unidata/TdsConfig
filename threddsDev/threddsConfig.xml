@@ -23,6 +23,7 @@
     </hostInstitution>
   </serverInformation>
 
+  <catalogRoot>radar/radarCollections.xml</catalogRoot>
   <catalogRoot>tdscapabilities/capabilities.xml</catalogRoot>
 
   <!--
@@ -41,6 +42,7 @@
     <standardCssUrl>tds.css</standardCssUrl>
     <catalogCssUrl>tdsCat.css</catalogCssUrl>
     <openDapCssUrl>tdsDap.css</openDapCssUrl>
+    <generateDatasetJsonLD>true</generateDatasetJsonLD>
   </htmlSetup>
 
   <CORS>
@@ -96,11 +98,21 @@
     <allow>true</allow>
   </RadarServer>
 
+  <CatalogGen>
+    <allow>false</allow>
+  </CatalogGen>
+
   <!-- Enable DLwriter service but disable on remote catalogs. -->
   <DLwriter>
     <allow>true</allow>
     <allowRemote>false</allowRemote>
   </DLwriter>
+
+  <!-- Enable DqcService.
+   -->
+  <DqcService>
+    <allow>true</allow>
+  </DqcService>
 
   <!-- updated for lead 2014-03-20 jcaron -->
   <Netcdf4Clibrary>
