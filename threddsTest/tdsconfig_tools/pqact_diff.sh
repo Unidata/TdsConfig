@@ -9,7 +9,6 @@ declare -a PqactFiles=("pqact.forecastModels" \
                        "pqact.modelsCmc" \
                        "pqact.radars" \
                        "pqact.satellite" \
-                       "pqact.modelsGdas" \
                        "pqact.ryan-test" \
                        "pqact.testDatasets")
 

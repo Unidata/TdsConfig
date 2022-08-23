@@ -37,7 +37,6 @@ EXEC    "pqact -f HRS|FNEXRAD|NNEXRAD|CRAFT etc/TDS/pqact.radars"
 EXEC    "pqact -f WMO|HRS|NGRID|CONDUIT|EXP etc/TDS/pqact.testDatasets"
 EXEC    "pqact -f IDS|HRS|NOTHER etc/TDS/pqact.ryan-test"
 EXEC    "pqact -f CMC etc/TDS/pqact.modelsCmc"
-EXEC    "pqact -f CONDUIT etc/TDS/pqact.modelsGdas"
 
 Warning: you may need to change the path to the pqact files listed in the
 ldmd.conf snippet above.
