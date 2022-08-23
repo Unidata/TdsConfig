@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
          name="THREDDS Data Server - Satellite Data" version="1.0.6">
-  <service name="all" serviceType="Compound" base="">
-    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/" />
-    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
-    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
-    <service name="ncssGrid" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
-    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
+
+  <!-- Need some services for the NPP swath and profile data -->
+  <service name="nongrid" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
     <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
-    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
   </service>
-  <service name="latest" serviceType="Resolver" base="" />
   
   <dataset name="Satellite Data">
     <metadata inherited="true">
-      <serviceName>all</serviceName>
       <authority>edu.ucar.unidata</authority>
       <documentation type="rights">Freely available</documentation>
       <publisher>
@@ -41,6 +38,7 @@
           <duration>13 days</duration>
         </timeCoverage>
       </metadata>
+
       <!--
 
          GOES East/West Data and Products (netCDF) 
@@ -240,6 +238,61 @@
         </datasetScan>
       </dataset><!-- End of Sounder Derived Products -->
     </dataset><!-- End of NESDIS GOES Satellite Data -->
+    <dataset name="NESDIS NOAA-20 Satellite Data">
+      <metadata inherited="true">
+        <serviceName>nongrid</serviceName>
+        <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
+        <documentation xlink:href="http://www.nesdis.noaa.gov/satellites.html" xlink:title="NESDIS Satellite page" />
+        <documentation type="summary">National Environmental Satellite, Data, And Information Service (NESDIS) Suomi-National Polar-Orbiting Partnership (S-NPP) data consist of swath imagery and remotely-sensed atmospheric soundings.</documentation>
+        <dataFormat>NetCDF-4</dataFormat>
+        <creator>
+          <name>NOAA/NESDIS</name>
+          <contact url="http://www.nesdis.noaa.gov/satellites.html" email="http://www.nesdis.noaa.gov/contact.html" />
+        </creator>
+        <timeCoverage>
+          <end>present</end>
+          <duration>14 days</duration>
+        </timeCoverage>
+      </metadata>
+      <datasetScan name="NOAA-20 VIIRS NCC Swath Imagery" ID="noaa20-viirs" path="satellite/noaa20/viirs" location="${DATA_DIR}/native/satellite/NOAA20/VIIRS" >
+        <filter>
+          <include wildcard="*.nc4"/>
+          <include wildcard="*.nc"/>
+        </filter>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="NOAA-20 NUCAPS Soundings" ID="noaa20-nucaps" path="satellite/noaa20/nucaps" location="${DATA_DIR}/native/satellite/NOAA20/NUCAPS" >
+        <filter>
+          <include wildcard="*.nc4"/>
+          <include wildcard="*.nc"/>
+        </filter>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset><!-- End of NESDIS NOAA20 data -->
+    <dataset name="Hyrdology Products">
+      <metadata inherited="true">
+        <serviceName>nongrid</serviceName>
+        <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
+        <documentation xlink:href="http://www.nesdis.noaa.gov/satellites.html" xlink:title="NESDIS Satellite page" />
+        <documentation type="summary">National Environmental Satellite, Data, And Information Service (NESDIS) Suomi-National Polar-Orbiting Partnership (S-NPP) data consist of swath imagery and remotely-sensed atmospheric soundings.</documentation>
+        <dataFormat>NetCDF-4</dataFormat>
+        <creator>
+          <name>NOAA/NESDIS</name>
+          <contact url="https://www.ospo.noaa.gov/Products/bTPW/index.html" />
+        </creator>
+        <timeCoverage>
+          <end>present</end>
+          <duration>14 days</duration>
+        </timeCoverage>
+      </metadata>
+      <datasetScan name="Blended Satellite Products" ID="blended-satellite" path="satellite/blended" location="${DATA_DIR}/native/satellite/Blended" >
+        <filter>
+          <include wildcard="*.nc4"/>
+          <include wildcard="*.nc"/>
+        </filter>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset><!-- End of NESDIS Blended data -->
   </dataset><!-- End of Satellite Data -->
 </catalog>
 
