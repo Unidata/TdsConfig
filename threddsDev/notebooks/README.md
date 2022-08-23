@@ -1,5 +1,5 @@
 ## About this directory
-This folder contains Juptyer Notebooks (`.ipynb`) that will be included in the [Unidata THREDDS Test Server](thredds-test.unidata.ucar.edu) aS dataset viewers.
+This folder contains Juptyer Notebooks (`.ipynb`) that will be included in the [Unidata THREDDS Test Server](thredds-dev.unidata.ucar.edu) aS dataset viewers.
 
 ## Contributing notebooks
 If you have a Jupyter Notebook that you think would be useful for accessing/viewing any or all of the datasets on the Unidata THREDDS Test Server, 
