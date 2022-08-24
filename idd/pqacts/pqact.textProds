@@ -1,14 +1,6 @@
 #
-# Contains LDM pqacts for the model output served by the TDS
+# Contains LDM pqacts for the text productsserved by the TDS
 #   catalog newPointObs.xml
-#
-# ======================================
-# = Observation data available via IDD =
-# ======================================
-#
-# ----------------------------
-# - Decoded Observation Data -
-# ----------------------------
 #
 # Metar Station Data 
 #
@@ -36,32 +28,6 @@ DDS|IDS	^U[EFGHIKLMPQSYZ].... .... ([0-3][0-9])([0-2][0-9])
 DDS|IDS	^U[^EFGHIKLMPQSYZ].... .... ([0-3][0-9])([0-2][0-9])
 	FILE
 	${DATA_DIR}/native/text/upper_air_other/upper_air_other_(\1:yyyy)(\1:mm)\1_\200.txt
-#
-# BUFR
-#
-HRS	(^IS....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
-	FILE
-	${DATA_DIR}/native/bufr/obs/surface/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
-
-HRS	(IU....) ([^K]...) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
-	FILE
-	${DATA_DIR}/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
-
-HRS	(IU....) (K...) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
-	FILE
-	${DATA_DIR}/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
-
-HRS	(^I[^SUX]....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
-	FILE
-	${DATA_DIR}/native/bufr/obs/other/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
-
-HRS	(^JU....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
-	FILE
-	${DATA_DIR}/native/bufr/forecast/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
-
-HRS	(^J[^U]....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
-	FILE
-	${DATA_DIR}/native/bufr/forecast/other/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
 #
 # Text Front Products
 #
