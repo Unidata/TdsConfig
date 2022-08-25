@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LDM_PQACT_DIR="/opt/ldm/etc/TDS"
-TDS_PQACT_DIR="/opt/tds-test/content/thredds/pqacts"
+TDS_PQACT_DIR="/opt/tds/content/thredds/pqacts"
 
 
 declare -a PqactFiles=("pqact.forecastModels" \
@@ -9,8 +9,8 @@ declare -a PqactFiles=("pqact.forecastModels" \
                        "pqact.modelsCmc" \
                        "pqact.radars" \
                        "pqact.satellite" \
-                       "pqact.ryan-test" \
-                       "pqact.testDatasets")
+                       "pqact.textProds" \
+                       "pqact.bufr")
 
 # make sure we are in the correct directory
 echo "Change directory to ${LDM_PQACT_DIR}" 
