@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
          name="THREDDS Data Server - Satellite Data" version="1.0.6">
-  <service name="all" serviceType="Compound" base="">
-    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/" />
-    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
-    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
-    <service name="ncssGrid" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
-    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
+
+  <!-- Need some services for the NPP swath and profile data -->
+  <service name="nongrid" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
     <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
-    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
   </service>
-  <service name="latest" serviceType="Resolver" base="" />
   
   <dataset name="Satellite Data">
     <metadata inherited="true">
-      <serviceName>all</serviceName>
       <authority>edu.ucar.unidata</authority>
       <documentation type="rights">Freely available</documentation>
       <publisher>
@@ -41,6 +38,7 @@
           <duration>13 days</duration>
         </timeCoverage>
       </metadata>
+
       <!--
 
          GOES East/West Data and Products (netCDF) 
@@ -129,117 +127,62 @@
           <addDatasetSize/>
         </datasetScan>
       </dataset>
-
-      <!--
-
-         Satellite Imager Data (GINI) 
-
-      -->
-
-      <dataset name="Imager Data (GINI)">
-        <datasetScan name="Water Vapor (6.5 / 5.7 um)" ID="SSEC/IDD-Satellite/WV" path="satellite/WV" location="${DATA_DIR}/native/satellite/WV/">
-          <metadata inherited="true">
-            <geospatialCoverage>
-              <northsouth>
-                <start>12.21424</start>
-                <size>49.07234</size>
-                <units>degrees_north</units>
-              </northsouth>
-              <eastwest>
-                <start>-133.50404</start>
-                <size>42.00197</size>
-                <units>degrees_east</units>
-              </eastwest>
-              <updown>
-                <start>0.0</start>
-                <size>0.0</size>
-                <units>km</units>
-              </updown>
-            </geospatialCoverage>
-            <variables vocabulary="">
-              <variable name="IR_WV" vocabulary_name="" units="N/A">Imager 6.7/6.5 micron IR (WV)</variable>
-            </variables>
-          </metadata>
-           <filter>
-             <include wildcard="*.gini"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
-        <datasetScan name="Infrared (11 um)" ID="SSEC/IDD-Satellite/IR" path="satellite/IR" location="${DATA_DIR}/native/satellite/IR/">
-          <timeCoverage>
-            <end>present</end>
-            <duration>7 days</duration>
-          </timeCoverage>
-          <metadata inherited="true">
-            <geospatialCoverage>
-              <northsouth>
-                <start>12.20212</start>
-                <size>49.06942</size>
-                <units>degrees_north</units>
-              </northsouth>
-              <eastwest>
-                <start>-133.48142</start>
-                <size>42.00738</size>
-                <units>degrees_east</units>
-              </eastwest>
-              <updown>
-                <start>0.0</start>
-                <size>0.0</size>
-                <units>km</units>
-              </updown>
-            </geospatialCoverage>
-            <variables vocabulary="">
-              <variable name="IR" vocabulary_name="" units="N/A">Imager 11 micron IR</variable>
-            </variables>
-          </metadata>
-          <filter>
-             <include wildcard="*.gini"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
-        <datasetScan name="Visible" ID="SSEC/IDD-Satellite/VIS" path="satellite/VIS" location="${DATA_DIR}/native/satellite/VIS/">
-          <metadata inherited="true">
-            <geospatialCoverage>
-              <northsouth>
-                <start>12.19303</start>
-                <size>49.06844</size>
-                <units>degrees_north</units>
-              </northsouth>
-              <eastwest>
-                <start>-133.46445</start>
-                <size>42.0137</size>
-                <units>degrees_east</units>
-              </eastwest>
-              <updown>
-                <start>0.0</start>
-                <size>0.0</size>
-                <units>km</units>
-              </updown>
-            </geospatialCoverage>
-            <variables vocabulary="">
-              <variable name="VIS" vocabulary_name="" units="N/A">Imager Visible</variable>
-            </variables>
-          </metadata>
-          <filter>
-             <include wildcard="*.gini"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
-      </dataset><!-- end of Satellite Imager Data -->
-      <!--
-
-         Sounder Derived Products 
-
-        -->
-      <dataset name="Sounder Derived Products">
-        <datasetScan name="Rainfall Rate" ID="SSEC/IDD-Satellite/RR" path="satellite/PRXX" location="${DATA_DIR}/native/satellite/PRXX/" >
-          <filter>
-            <include wildcard="*.gini"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
-      </dataset><!-- End of Sounder Derived Products -->
     </dataset><!-- End of NESDIS GOES Satellite Data -->
+    <dataset name="NESDIS NOAA-20 Satellite Data">
+      <metadata inherited="true">
+        <serviceName>nongrid</serviceName>
+        <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
+        <documentation xlink:href="http://www.nesdis.noaa.gov/satellites.html" xlink:title="NESDIS Satellite page" />
+        <documentation type="summary">National Environmental Satellite, Data, And Information Service (NESDIS) Suomi-National Polar-Orbiting Partnership (S-NPP) data consist of swath imagery and remotely-sensed atmospheric soundings.</documentation>
+        <dataFormat>NetCDF-4</dataFormat>
+        <creator>
+          <name>NOAA/NESDIS</name>
+          <contact url="http://www.nesdis.noaa.gov/satellites.html" email="http://www.nesdis.noaa.gov/contact.html" />
+        </creator>
+        <timeCoverage>
+          <end>present</end>
+          <duration>14 days</duration>
+        </timeCoverage>
+      </metadata>
+      <datasetScan name="NOAA-20 VIIRS NCC Swath Imagery" ID="noaa20-viirs" path="satellite/noaa20/viirs" location="${DATA_DIR}/native/satellite/NOAA20/VIIRS" >
+        <filter>
+          <include wildcard="*.nc4"/>
+          <include wildcard="*.nc"/>
+        </filter>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="NOAA-20 NUCAPS Soundings" ID="noaa20-nucaps" path="satellite/noaa20/nucaps" location="${DATA_DIR}/native/satellite/NOAA20/NUCAPS" >
+        <filter>
+          <include wildcard="*.nc4"/>
+          <include wildcard="*.nc"/>
+        </filter>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset><!-- End of NESDIS NOAA20 data -->
+    <dataset name="Hyrdology Products">
+      <metadata inherited="true">
+        <serviceName>nongrid</serviceName>
+        <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
+        <documentation xlink:href="http://www.nesdis.noaa.gov/satellites.html" xlink:title="NESDIS Satellite page" />
+        <documentation type="summary">National Environmental Satellite, Data, And Information Service (NESDIS) Suomi-National Polar-Orbiting Partnership (S-NPP) data consist of swath imagery and remotely-sensed atmospheric soundings.</documentation>
+        <dataFormat>NetCDF-4</dataFormat>
+        <creator>
+          <name>NOAA/NESDIS</name>
+          <contact url="https://www.ospo.noaa.gov/Products/bTPW/index.html" />
+        </creator>
+        <timeCoverage>
+          <end>present</end>
+          <duration>14 days</duration>
+        </timeCoverage>
+      </metadata>
+      <datasetScan name="Blended Satellite Products" ID="blended-satellite" path="satellite/blended" location="${DATA_DIR}/native/satellite/Blended" >
+        <filter>
+          <include wildcard="*.nc4"/>
+          <include wildcard="*.nc"/>
+        </filter>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset><!-- End of NESDIS Blended data -->
   </dataset><!-- End of Satellite Data -->
 </catalog>
 

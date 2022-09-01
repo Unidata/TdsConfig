@@ -8,7 +8,7 @@
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
   </service>
 
-  <datasetScan name="CF 1.6 Discrete Sampling Geometry (DSG) point file examples" path="pointData/cf_dsg/example" location="/data/thredds/tds-test/content/thredds/public/cfDsgExamples">
+  <datasetScan name="CF 1.6 Discrete Sampling Geometry (DSG) point file examples" path="pointData/cf_dsg/example" location="/data/thredds/tds/content/thredds/public/cfDsgExamples">
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <dataType>Point</dataType>
@@ -30,7 +30,7 @@
 
   </datasetScan>
 
-  <datasetScan name="CF 1.6 Discrete Sampling Geometry (DSG) appendix H examples" path="pointData/cf_doc_dsg/example" location="/data/thredds/tds-test/content/thredds/public/cfDocDsgExamples">
+  <datasetScan name="CF 1.6 Discrete Sampling Geometry (DSG) appendix H examples" path="pointData/cf_doc_dsg/example" location="/data/thredds/tds/content/thredds/public/cfDocDsgExamples">
     <metadata inherited="true">
       <serviceName>all</serviceName>
       <dataType>Point</dataType>

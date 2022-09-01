@@ -1,0 +1,26 @@
+#
+# BUFR
+#
+HRS	(^IS....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
+	FILE
+	${DATA_DIR}/native/bufr/obs/surface/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+
+HRS	(IU....) ([^K]...) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
+	FILE
+	${DATA_DIR}/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+
+HRS	(IU....) (K...) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
+	FILE
+	${DATA_DIR}/native/bufr/obs/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+
+HRS	(^I[^SUX]....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
+	FILE
+	${DATA_DIR}/native/bufr/obs/other/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+
+HRS	(^JU....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
+	FILE
+	${DATA_DIR}/native/bufr/forecast/upper_air/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr
+
+HRS	(^J[^U]....) (....) ([0-3][0-9])([0-2][0-9])[0-9][0-9]
+	FILE
+	${DATA_DIR}/native/bufr/forecast/other/\2_\1_(\3:yyyy)(\3:mm)\3_\400.bufr

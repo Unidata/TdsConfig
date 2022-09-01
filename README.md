@@ -11,14 +11,12 @@ Configuration files
 
 - each machine has their own subdirectory:
   - idd : common to all (4.6) idd servers
-  - miami: brian mapes machine
-  - ou: ?
   - rdavm : at CISL/RDA
   - remotetest : where? opendap/netcdf C test server
   - startup: this should be the minimal configuration for running a thredds server
   - thredds : motherlode (/opt/tds-live) (idd + casestudies)
-  - threddsDev : lead (/opt/tds-dev). now for 5.0
-  - threddsTest : lead (/opt/tds-test)
+  - threddsDev : lead (/opt/tds-dev)
+  - awsL2 : jetstream machine serving AWS Level2 radar archive data
 
 - to build the config:
    `./build.py [machine]` machine is optional e.g. remotetest
