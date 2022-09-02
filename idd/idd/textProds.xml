@@ -4,9 +4,13 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          name="Unidata THREDDS Data Server - NCEP models">
 
+  <service name="OnlyHTTPServer" serviceType="Compound" base="">
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
   <datasetScan name="NOAAPORT Text Products" ID="noaaport-text" path="noaaport/text" location="${DATA_DIR}/native/text" >
     <metadata inherited="true">
-      <serviceName>HTTPServer</serviceName>
+      <serviceName>OnlyHTTPServer</serviceName>
     </metadata>
     <filter>
       <include wildcard="*.txt"/>
