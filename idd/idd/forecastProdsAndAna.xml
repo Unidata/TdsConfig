@@ -94,6 +94,8 @@
         <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
         <gribConfig>
           <filesSort increasing="false" />
+          <!-- Convert from minutes to hours so that all grib files in collection have the same units -->
+          <timeUnitConvert from="0" to="1"/>
         </gribConfig>
       </featureCollection>
 
