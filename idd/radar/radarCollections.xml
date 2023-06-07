@@ -119,85 +119,123 @@
       </timeCoverage>
       <variables vocabulary="DIF">
         <variable name="N0R/Base Reflectivity 124nm" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ" />
-        <variable name="N0Q/Base Reflectivity DR Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
-        <variable name="NAQ/Base Reflectivity DR Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
-        <variable name="N1Q/Base Reflectivity DR Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
-        <variable name="NBQ/Base Reflectivity DR Tilt 4" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
-        <variable name="N2Q/Base Reflectivity DR Tilt 5" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
-        <variable name="N3Q/Base Reflectivity DR Tilt 6" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="N0Q/Base Reflectivity DR 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NAQ/Base Reflectivity DR 0.9 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="N1Q/Base Reflectivity DR 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NBQ/Base Reflectivity DR 1.8 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="N2Q/Base Reflectivity DR 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="N3Q/Base Reflectivity DR 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NXQ/Base Reflectivity DR -0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NYQ/Base Reflectivity DR 0.0-0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NZQ/Base Reflectivity DR 0.3-0.4 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
         <variable name="N0Z/Base Reflecitvity 248nm" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ" />
 
+        <variable name="N0B/Base Reflectivity Super-res 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NAB/Base Reflectivity Super-res 0.9 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="N1B/Base Reflectivity Super-res 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NBB/Base Reflectivity Super-res 1.8 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="N2B/Base Reflectivity Super-res 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="N3B/Base Reflectivity Super-res 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NXB/Base Reflectivity Super-res -0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NYB/Base Reflectivity Super-res 0.0-0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+        <variable name="NZB/Base Reflectivity Super-res 0.3-0.4 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dBZ" />
+
         <variable name="N0V/Radial Velocity 124nm" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
-        <variable name="N0U/Radial Velocity DV Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
-        <variable name="NAU/Radial Velocity DV Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
-        <variable name="N1U/Radial Velocity DV Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
-        <variable name="NBU/Radial Velocity DV Tilt 4" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
-        <variable name="N2U/Radial Velocity DV Tilt 5" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
-        <variable name="N3U/Radial Velocity DV Tilt 6" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="N0U/Radial Velocity DV 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="NAU/Radial Velocity DV 0.9 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="N1U/Radial Velocity DV 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="NBU/Radial Velocity DV 1.8 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="N2U/Radial Velocity DV 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="N3U/Radial Velocity DV 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="NXU/Radial Velocity DV -0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="NYU/Radial Velocity DV 0.0-0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="NZU/Radial Velocity DV 0.3-0.4 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+
+        <variable name="N0G/Radial Velocity Super-res 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="NAG/Radial Velocity Super-res 0.9 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="N1G/Radial Velocity Super-res 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="NXG/Radial Velocity Super-res -0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="NYG/Radial Velocity Super-res 0.0-0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="NZG/Radial Velocity Super-res 0.3-0.4 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
 
         <variable name="DHR/Digital Hybrid Scan Reflectivity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; " units="dbZ" />
         <variable name="NCR/Composite Reflectivity" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dbZ" />
         <variable name="NET/Echo Tops" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Clouds &gt; Cloud Optical Depth/Thickness" units="1000 feet" />
         <variable name="EET/Enchanced Echo Tops" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Clouds &gt; Cloud Optical Depth/Thickness" units="1000 feet" />
         <variable name="NVW/Velocity Azimuth Display Wind Profile" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Atmospheric Winds &gt; Wind Profiles" units="knots" />
-        <variable name="N0S/Storm-Rel Mean Vel Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
-        <variable name="N1S/Storm-Rel Mean Vel Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
-        <variable name="N2S/Storm-Rel Mean Vel Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
-        <variable name="N3S/Storm-Rel Mean Vel Tilt 4" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="N0S/Storm-Rel Mean Vel 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="N1S/Storm-Rel Mean Vel 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="N2S/Storm-Rel Mean Vel 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
+        <variable name="N3S/Storm-Rel Mean Vel 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Doppler Velocity" units="knots" />
         <variable name="NVL/Vertically Integrated Liquid" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Liquid Water Equivalent" units="kg/m2" />
         <variable name="NST/Storm Tracking Information" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
         <variable name="DVL/Digital Vertically Integrated Liquid" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Liquid Water Equivalent" units="kg/m2" />
         <variable name="N1P/1-hour Rainfall" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount &gt; Hourly Precipitation Amount" units="in" />
         <variable name="NTP/Storm Total Rainfall" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount" units="in" />
         <variable name="DPA/Digital Precipitation Array" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount" units="dBA" />
-	<variable name="DSP/Digital Storm Total Precipitation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount" units="in" />
+        <variable name="DSP/Digital Storm Total Precipitation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount" units="in" />
         <variable name="NMD/Mesocyclone" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
 
-        <variable name="N0X/Differential Reflectivity Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
-        <variable name="NAX/Differential Reflectivity Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
-        <variable name="N1X/Differential Reflectivity Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
-        <variable name="NBX/Differential Reflectivity Tilt 4" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
-        <variable name="N2X/Differential Reflectivity Tilt 5" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
-        <variable name="N3X/Differential Reflectivity Tilt 6" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
+        <variable name="N0X/Differential Reflectivity 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
+        <variable name="NAX/Differential Reflectivity 0.9 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
+        <variable name="N1X/Differential Reflectivity 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
+        <variable name="NBX/Differential Reflectivity 1.8 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
+        <variable name="N2X/Differential Reflectivity 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
+        <variable name="N3X/Differential Reflectivity 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
+        <variable name="NXX/Differential Reflectivity -0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
+        <variable name="NYX/Differential Reflectivity 0.0-0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
+        <variable name="NZX/Differential Reflectivity 0.3-0.4 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt; Radar Reflectivity" units="dB" />
 
-	<variable name="N0C/Correlation Coefficient Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
-	<variable name="NAC/Correlation Coefficient Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
-	<variable name="N1C/Correlation Coefficient Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
-	<variable name="NBC/Correlation Coefficient Tilt 4" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
-	<variable name="N2C/Correlation Coefficient Tilt 5" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
-	<variable name="N3C/Correlation Coefficient Tilt 6" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
+        <variable name="N0C/Correlation Coefficient 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
+        <variable name="NAC/Correlation Coefficient 0.9 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
+        <variable name="N1C/Correlation Coefficient 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
+        <variable name="NBC/Correlation Coefficient 1.8 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
+        <variable name="N2C/Correlation Coefficient 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
+        <variable name="N3C/Correlation Coefficient 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
+        <variable name="NXC/Correlation Coefficient -0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
+        <variable name="NYC/Correlation Coefficient 0.0-0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
+        <variable name="NZC/Correlation Coefficient 0.3-0.4 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="dimensionless" />
 
-	<variable name="N0K/Specific Differential Phase Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
-	<variable name="NAK/Specific Differential Phase Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
-	<variable name="N1K/Specific Differential Phase Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
-	<variable name="NBK/Specific Differential Phase Tilt 4" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
-	<variable name="N2K/Specific Differential Phase Tilt 5" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
-	<variable name="N3K/Specific Differential Phase Tilt 6" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
+        <variable name="N0K/Specific Differential Phase 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
+        <variable name="NAK/Specific Differential Phase 0.9 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
+        <variable name="N1K/Specific Differential Phase 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
+        <variable name="NBK/Specific Differential Phase 1.8 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
+        <variable name="N2K/Specific Differential Phase 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
+        <variable name="N3K/Specific Differential Phase 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
+        <variable name="NXK/Specific Differential Phase 1.8 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
+        <variable name="NYK/Specific Differential Phase 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
+        <variable name="NZK/Specific Differential Phase 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="deg/km" />
 
-	<variable name="N0H/Hydrometeor Classification Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
-	<variable name="NAH/Hydrometeor Classification Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
-	<variable name="N1H/Hydrometeor Classification Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
-	<variable name="NBH/Hydrometeor Classification Tilt 4" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
-	<variable name="N2H/Hydrometeor Classification Tilt 5" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
-	<variable name="N3H/Hydrometeor Classification Tilt 6" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="N0H/Hydrometeor Classification 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="NAH/Hydrometeor Classification 0.9 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="N1H/Hydrometeor Classification 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="NBH/Hydrometeor Classification 1.8 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="N2H/Hydrometeor Classification 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="N3H/Hydrometeor Classification 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="NXH/Hydrometeor Classification -0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="NYH/Hydrometeor Classification 0.0-0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="NZH/Hydrometeor Classification 0.3-0.4 deg" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
 
-        <variable name="N0M/Melting Layer Tilt 1" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
-        <variable name="NAM/Melting Layer Tilt 2" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
-        <variable name="N1M/Melting Layer Tilt 3" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
-        <variable name="NBM/Melting Layer Tilt 4" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
-        <variable name="N2M/Melting Layer Tilt 5" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
-        <variable name="N3M/Melting Layer Tilt 6" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
+        <variable name="N0M/Melting Layer 0.5 deg" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
+        <variable name="NAM/Melting Layer 0.9 deg" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
+        <variable name="N1M/Melting Layer 1.3-1.5 deg" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
+        <variable name="NBM/Melting Layer 1.8 deg" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
+        <variable name="N2M/Melting Layer 2.4-2.5 deg" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
+        <variable name="N3M/Melting Layer 3.1-3.5 deg" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
+        <variable name="NXM/Melting Layer -0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
+        <variable name="NYM/Melting Layer 0.0-0.2 deg" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
+        <variable name="NZM/Melting Layer 0.3-0.4 deg" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation" units="1000 feet" />
 
-	<variable name="DPR/Digital Instantaneous Precipitation Rate" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Rate" units="in/hr" />
-	<variable name="HHC/Hybrid Hydrometeor Classification" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
+        <variable name="DPR/Digital Instantaneous Precipitation Rate" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Rate" units="in/hr" />
+        <variable name="HHC/Hybrid Hydrometeor Classification" vocabulary_name="EARTH SCIENCE &gt; Spectral/Engineering &gt; Radar &gt;" units="" />
         <variable name="OHA/One Hour Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount &gt; Hourly Precipitation Amount" units="in" />
-	<variable name="DAA/Digital Accumulation Array" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount" units="in" />
+        <variable name="DAA/Digital Accumulation Array" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount" units="in" />
         <variable name="PTA/Storm Total Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount" units="in" />
-	<variable name="DTA/Digital Storm Total Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount" units="in" />
-	<variable name="DU3/Digital 3-hour Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount &gt; 3 and 6 Hour Precipitation Amount" units="in" />
-	<variable name="DU6/Digital 24-hour Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount &gt; 24 Hour Precipitation Amount" units="in" />
-	<variable name="DOD/Digital One-Hour Difference Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Anomalies" units="in" />
-	<variable name="DSD/Digital Storm Total Difference Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Anomalies" units="in" />
+        <variable name="DTA/Digital Storm Total Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount" units="in" />
+        <variable name="DU3/Digital 3-hour Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount &gt; 3 and 6 Hour Precipitation Amount" units="in" />
+        <variable name="DU6/Digital 24-hour Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount &gt; 24 Hour Precipitation Amount" units="in" />
+        <variable name="DOD/Digital One-Hour Difference Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Anomalies" units="in" />
+        <variable name="DSD/Digital Storm Total Difference Accumulation" vocabulary_name="EARTH SCIENCE &gt; Atmosphere &gt; Precipitation &gt; Precipitation Anomalies" units="in" />
 
       </variables>
       </metadata>
@@ -208,7 +246,7 @@
         <dataType>Radial</dataType>
         <dataFormat>NIDS</dataFormat>
         <serviceName>radarServer</serviceName>
-	<stationFile path="radar/CS039_stations.xml" />
+        <stationFile path="radar/CS039_stations.xml" />
         <documentation type="summary">NEXRAD Level II Radar WSR-88D for Case Study CCS039. </documentation>
       <documentation xlink:href="http://www.unidata.ucar.edu/data/radar.html" xlink:title="Unidata description of NOAAPORT radar data" />
       <documentation xlink:href="http://www.ncdc.noaa.gov/oa/radar/radarresources.html" xlink:title="NCDC Radar Resources" />
