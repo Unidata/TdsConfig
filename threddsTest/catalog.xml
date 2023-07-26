@@ -14,5 +14,6 @@
 
   <dataset name="Other Unidata Data">
     <catalogRef xlink:href="casestudies/catalog.xml" xlink:title="Unidata case studies" name=""/>
+    <catalogRef xlink:href="preprocessed/catalog.xml" xlink:title="Preprocessed data" name=""/>
   </dataset>
 </catalog>
