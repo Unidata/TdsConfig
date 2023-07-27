@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" >
+
+  <dataset name="Standardized data">
+    <datasetScan name="Standardized GOES West Products / CloudTopTemperature"
+      ID="standardized-goes-west-products/CloudTopTemperature"
+      path="standardized/satellite/goes/west/products/CloudTopTemperature"
+      location="${DATA_DIR}/native/satellite/GOES/GRB18/Products/CloudTopTemperature/">
+      <metadata inherited="true">
+        <dataType>GRID</dataType>
+        <dataFormat>NetCDF-4</dataFormat>
+      </metadata>
+      <filter>
+        <include wildcard="*.nc4"/>
+        <include wildcard="*.nc"/>
+      </filter>
+      <addDatasetSize/>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" enhance="all">
+        <variable name="TEMP">
+          <attribute name="standardize"/>
+        </variable>
+      </netcdf>
+    </datasetScan>
+
+    <datasetScan name="Standardized GFS Quarter Degree Analysis"
+      ID="standardized-grib-ncep-gfs-global_0p25deg_ana"
+      path="standardized/grib/NCEP/GFS/Global_0p25deg_ana"
+      location="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg_ana/">
+      <metadata inherited="true">
+        <dataType>GRID</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" enhance="all">
+        <variable name="Temperature_sigma">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Absolute_vorticity_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Cloud_mixing_ratio_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Cloud_mixing_ratio_hybrid">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Cloud_water_entire_atmosphere_single_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Convective_available_potential_energy_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Convective_available_potential_energy_pressure_difference_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Convective_inhibition_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Convective_inhibition_pressure_difference_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Geopotential_height_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Geopotential_height_zeroDegC_isotherm">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Geopotential_height_potential_vorticity_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Geopotential_height_maximum_wind">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Geopotential_height_tropopause">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Geopotential_height_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Geopotential_height_highest_tropospheric_freezing">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Graupel_snow_pellets_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Graupel_snow_pellets_hybrid">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="ICAO_Standard_Atmosphere_Reference_Height_maximum_wind">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="ICAO_Standard_Atmosphere_Reference_Height_tropopause">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Ice_temperature_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Ice_water_mixing_ratio_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Ice_water_mixing_ratio_hybrid">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Potential_temperature_sigma">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Precipitable_water_entire_atmosphere_single_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Precipitation_rate_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Pressure_potential_vorticity_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Pressure_maximum_wind">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Pressure_tropopause">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Pressure_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Pressure_reduced_to_MSL_msl">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Rain_mixing_ratio_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Rain_mixing_ratio_hybrid">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Relative_humidity_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Relative_humidity_zeroDegC_isotherm">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Relative_humidity_sigma">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Relative_humidity_entire_atmosphere_single_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Relative_humidity_highest_tropospheric_freezing">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Relative_humidity_pressure_difference_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Relative_humidity_sigma_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Snow_mixing_ratio_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Snow_mixing_ratio_hybrid">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Soil_type_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Specific_humidity_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Specific_humidity_pressure_difference_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Temperature_potential_vorticity_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Temperature_altitude_above_msl">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Temperature_maximum_wind">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Temperature_tropopause">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Temperature_height_above_ground">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Temperature_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Temperature_pressure_difference_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Total_ozone_entire_atmosphere_single_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Ozone_Mixing_Ratio_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Vertical_Speed_Shear_tropopause">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Vertical_Speed_Shear_potential_vorticity_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="MSLP_Eta_model_reduction_msl">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Surface_Lifted_Index_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Best_4_layer_Lifted_Index_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Vegetation_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Vertical_velocity_geometric_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Vertical_velocity_pressure_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="Vertical_velocity_pressure_sigma">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="u-component_of_wind_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="u-component_of_wind_potential_vorticity_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="u-component_of_wind_maximum_wind">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="u-component_of_wind_altitude_above_msl">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="u-component_of_wind_tropopause">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="u-component_of_wind_height_above_ground">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="u-component_of_wind_sigma">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="u-component_of_wind_pressure_difference_layer">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="v-component_of_wind_isobaric">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="v-component_of_wind_potential_vorticity_surface">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="v-component_of_wind_maximum_wind">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="v-component_of_wind_altitude_above_msl">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="v-component_of_wind_tropopause">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="v-component_of_wind_height_above_ground">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="v-component_of_wind_sigma">
+          <attribute name="standardize"/>
+        </variable>
+        <variable name="v-component_of_wind_pressure_difference_layer">
+          <attribute name="standardize"/>
+        </variable>
+      </netcdf>
+      <filter>
+        <include wildcard="*.grib2" collection="false"/>
+      </filter>
+    </datasetScan>
+  </dataset>
+
+  <dataset name="Normalized data">
+    <datasetScan name="Normalized GOES West Products / CloudTopTemperature"
+      ID="normalized-goes-west-products/CloudTopTemperature"
+      path="normalized/satellite/goes/west/products/CloudTopTemperature"
+      location="${DATA_DIR}/native/satellite/GOES/GRB18/Products/CloudTopTemperature/">
+      <metadata inherited="true">
+        <dataType>GRID</dataType>
+        <dataFormat>NetCDF-4</dataFormat>
+      </metadata>
+      <filter>
+        <include wildcard="*.nc4"/>
+        <include wildcard="*.nc"/>
+      </filter>
+      <addDatasetSize/>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" enhance="all">
+        <variable name="TEMP">
+          <attribute name="normalize"/>
+        </variable>
+      </netcdf>
+    </datasetScan>
+
+    <datasetScan name="Normalized GFS Quarter Degree Analysis"
+      ID="normalized-grib-ncep-gfs-global_0p25deg_ana"
+      path="normalized/grib/NCEP/GFS/Global_0p25deg_ana"
+      location="${DATA_DIR}/native/grid/NCEP/GFS/Global_0p25deg_ana/">
+      <metadata inherited="true">
+        <dataType>GRID</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" enhance="all">
+        <variable name="Temperature_sigma">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Absolute_vorticity_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Cloud_mixing_ratio_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Cloud_mixing_ratio_hybrid">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Cloud_water_entire_atmosphere_single_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Convective_available_potential_energy_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Convective_available_potential_energy_pressure_difference_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Convective_inhibition_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Convective_inhibition_pressure_difference_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Geopotential_height_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Geopotential_height_zeroDegC_isotherm">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Geopotential_height_potential_vorticity_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Geopotential_height_maximum_wind">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Geopotential_height_tropopause">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Geopotential_height_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Geopotential_height_highest_tropospheric_freezing">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Graupel_snow_pellets_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Graupel_snow_pellets_hybrid">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="ICAO_Standard_Atmosphere_Reference_Height_maximum_wind">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="ICAO_Standard_Atmosphere_Reference_Height_tropopause">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Ice_temperature_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Ice_water_mixing_ratio_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Ice_water_mixing_ratio_hybrid">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Potential_temperature_sigma">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Precipitable_water_entire_atmosphere_single_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Precipitation_rate_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Pressure_potential_vorticity_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Pressure_maximum_wind">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Pressure_tropopause">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Pressure_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Pressure_reduced_to_MSL_msl">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Rain_mixing_ratio_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Rain_mixing_ratio_hybrid">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Relative_humidity_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Relative_humidity_zeroDegC_isotherm">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Relative_humidity_sigma">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Relative_humidity_entire_atmosphere_single_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Relative_humidity_highest_tropospheric_freezing">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Relative_humidity_pressure_difference_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Relative_humidity_sigma_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Snow_mixing_ratio_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Snow_mixing_ratio_hybrid">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Soil_type_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Specific_humidity_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Specific_humidity_pressure_difference_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Temperature_potential_vorticity_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Temperature_altitude_above_msl">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Temperature_maximum_wind">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Temperature_tropopause">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Temperature_height_above_ground">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Temperature_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Temperature_pressure_difference_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Total_ozone_entire_atmosphere_single_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Ozone_Mixing_Ratio_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Vertical_Speed_Shear_tropopause">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Vertical_Speed_Shear_potential_vorticity_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="MSLP_Eta_model_reduction_msl">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Surface_Lifted_Index_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Best_4_layer_Lifted_Index_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Vegetation_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Vertical_velocity_geometric_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Vertical_velocity_pressure_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="Vertical_velocity_pressure_sigma">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="u-component_of_wind_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="u-component_of_wind_potential_vorticity_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="u-component_of_wind_maximum_wind">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="u-component_of_wind_altitude_above_msl">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="u-component_of_wind_tropopause">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="u-component_of_wind_height_above_ground">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="u-component_of_wind_sigma">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="u-component_of_wind_pressure_difference_layer">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="v-component_of_wind_isobaric">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="v-component_of_wind_potential_vorticity_surface">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="v-component_of_wind_maximum_wind">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="v-component_of_wind_altitude_above_msl">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="v-component_of_wind_tropopause">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="v-component_of_wind_height_above_ground">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="v-component_of_wind_sigma">
+          <attribute name="normalize"/>
+        </variable>
+        <variable name="v-component_of_wind_pressure_difference_layer">
+          <attribute name="normalize"/>
+        </variable>
+      </netcdf>
+      <filter>
+        <include wildcard="*.grib2" collection="false"/>
+      </filter>
+    </datasetScan>
+  </dataset>
+</catalog>

@@ -14,7 +14,8 @@ Configuration files
   - rdavm : at CISL/RDA
   - remotetest : where? opendap/netcdf C test server
   - startup: this should be the minimal configuration for running a thredds server
-  - thredds : motherlode (/opt/tds-live) (idd + casestudies)
+  - thredds : atm-nwsc (/opt/tds) (idd + casestudies)
+  - threddsTest : atm-nwsc (/opt/tds-test) (idd + casestudies + preprocessed)
   - threddsDev : lead (/opt/tds-dev)
   - awsL2 : jetstream machine serving AWS Level2 radar archive data
 
