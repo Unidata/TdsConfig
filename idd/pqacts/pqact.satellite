@@ -55,3 +55,23 @@ NOTHER	^TITX39 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 NOTHER	^TICX70 KNES ([0-9][0-9])([0-9][0-9][0-9][0-9])
 	PIPE	-close
 	etc/TDS/ldm-alchemy/strip_header.py ${DATA_DIR}/native/satellite/Blended/PctTPW/Blended_PercentNormalTPW_(\1:yyyy)(\1:mm)\1_\2.nc4
+#
+# --------------------------------------
+# - Radio Occultation Data from COSMIC -
+# --------------------------------------
+#
+EXP	gnomesbrt/level2/atmPrf/([0-9]{4}).([0-9]{3})/(atmPrf.*_nc)
+	FILE	-close
+	${DATA_DIR}/native/satellite/Radio_Occultation/COSMIC/PlanetIQ/atmPrf/\1\2/\3
+EXP	gnomesbrt/level2/wetPf2/([0-9]{4}).([0-9]{3})/(wetPf2.*_nc)
+	FILE	-close
+	${DATA_DIR}/native/satellite/Radio_Occultation/COSMIC/PlanetIQ/wetPf2/\1\2/\3
+EXP	gnomesbrt/level2/bfrPrf/([0-9]{4}).([0-9]{3})/(bfrPrf.*_bufr)
+	FILE	-close
+	${DATA_DIR}/native/satellite/Radio_Occultation/COSMIC/PlanetIQ/bfrPrf/\1\2/\3
+EXP	gnomesbrt/level1b/podTec/([0-9]{4}).([0-9]{3})/(podTec.*_nc)
+	FILE	-close
+	${DATA_DIR}/native/satellite/Radio_Occultation/COSMIC/PlanetIQ/podTec/\1\2/\3
+EXP	gnomesbrt/level2/ionPrf/([0-9]{4}).([0-9]{3})/(ionPrf.*_nc)
+	FILE	-close
+	${DATA_DIR}/native/satellite/Radio_Occultation/COSMIC/PlanetIQ/ionPrf/\1\2/\3
