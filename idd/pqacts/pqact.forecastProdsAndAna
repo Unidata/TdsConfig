@@ -57,7 +57,7 @@ NGRID	^[LM].G... KWBR ([0-3][0-9])([0-2][0-9])([0-6][0-9])
 #
 # MRMS from FNEXRAD
 #
-FNEXRAD	MRMS/(.*)/(.*)/MRMS_.*_(........)-(..).....grib2
+FNEXRAD	MRMS/(.*)/(.*)/MRMS_.*_(........)-(...)....grib2
 	FILE
 	/data/ldm/pub/native/grid/NCEP/MRMS/\2/\1/MRMS_\2_\1_\3_\40.grib2
 
