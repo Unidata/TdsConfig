@@ -19,7 +19,7 @@
 # 
 #
 # defaults
-#	datadir = "/data/ldm/pub/native/radar/level2";
+#	datadir = "${DATA_DIR}/native/radar/level2";
 #	log = "/data/ldm/logs/radar";
 #	actual log name makeRadarII.log.yyyymmdd";
 # 
@@ -43,7 +43,7 @@ if( $#ARGV == 3 ) {
 }
 
 if( ! $datadir ) {
-	$datadir = "/data/ldm/pub/native/radar/level2";
+	$datadir = "${DATA_DIR}/native/radar/level2";
 }
 if( ! $log ) {
 	$log = "/data/ldm/logs/radar/makeRadarII.log";
