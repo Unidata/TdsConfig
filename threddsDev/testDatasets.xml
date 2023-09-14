@@ -59,7 +59,7 @@ for a particular purpose.</documentation>
         <dimension name="t" orgName="timeAgg" />
         <variable name="t" orgName="timeAgg" />
         <aggregation dimName="timeAgg" type="joinNew" recheckEvery="1 min">
-          <scan location="/data/ldm/pub/native/satellite/GOES/GOES16/Products/CloudTopHeight/CONUS/"
+          <scan location="${DATA_DIR}/native/satellite/GOES/GOES16/Products/CloudTopHeight/CONUS/"
                 suffix='.nc'
                 dateFormatMark="OR_ABI-L2-ACHAC-M3_G16_s20180011937199_e#yyyyDDDHHmmssS"
                 subdirs="true"/>
@@ -77,7 +77,7 @@ for a particular purpose.</documentation>
         <dimension name="t" orgName="timeAgg" />
         <variable name="t" orgName="timeAgg" />
         <aggregation dimName="timeAgg" type="joinNew" recheckEvery="1 min">
-          <scan location="/data/ldm/pub/native/satellite/GOES/GOES16/Products/LandSurfaceTemperature/CONUS/"
+          <scan location="${DATA_DIR}/native/satellite/GOES/GOES16/Products/LandSurfaceTemperature/CONUS/"
                 suffix='.nc'
                 dateFormatMark="OR_ABI-L2-LSTC-M3_G16_s20180090947215_e#yyyyDDDHHmmssS"
                 subdirs="true"/>
@@ -96,7 +96,7 @@ ellite/goes16/agg/conus/tpw">
         <dimension name="t" orgName="timeAgg" />
         <variable name="t" orgName="timeAgg" />
         <aggregation dimName="timeAgg" type="joinNew" recheckEvery="1 min">
-          <scan location="/data/ldm/pub/native/satellite/GOES/GOES16/Products/TotalPrecipitableWater/CONUS/"
+          <scan location="${DATA_DIR}/native/satellite/GOES/GOES16/Products/TotalPrecipitableWater/CONUS/"
                 suffix='.nc'
                 dateFormatMark="OR_ABI-L2-TPWC-M3_G16_s20173610002256_e#yyyyDDDHHmmssS"
                 subdirs="true"/>
@@ -115,7 +115,7 @@ ellite/goes16/agg/conus/tpw">
       <metadata inherited="true">
         <dataType>Point</dataType>
       </metadata>
-      <collection spec="/data/ldm/pub/native/satellite/GOES/GOES16/Products/DerivedWindMotion/CONUS/Channel14/**/.*nc$"
+      <collection spec="${DATA_DIR}/native/satellite/GOES/GOES16/Products/DerivedWindMotion/CONUS/Channel14/**/.*nc$"
                   dateFormatMark="OR_ABI-L2-DMWC-M3C14_G16_s20180181857193_e#yyyyDDDHHmmssS" />
       <protoDataset choice="Penultimate" />
       <pointConfig datasetTypes="cdmrFeature Files"/>
