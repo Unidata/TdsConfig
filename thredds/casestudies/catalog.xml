@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-         xmlns:xlink="http://www.w3.org/1999/xlink" >
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:ncml="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" version="1.2">
   <service name="ncdods" serviceType="OPENDAP"
            base="/thredds/dodsC/" />
 
@@ -343,6 +344,23 @@
         <include wildcard="*.nc4" />
       </filter>
     </datasetScan>
+
+    <dataset name="Moisture Transport" ID="casestudies/NamAggregate" urlPath="casestudies/nam/Agg.nc">
+      <serviceName>all</serviceName>
+      <dataType>Grid</dataType>
+      <ncml:netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time1" type="joinExisting">
+          <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100430_0000_000.grb"/>
+          <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100501_0000_000.grb"/>
+          <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100502_0000_000.grb">
+            <variable name="time2" orgName="time1"/>
+            <variable name="time1" orgName="time"/>
+          </netcdf>
+          <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100503_0000_000.grb"/>
+          <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100504_0000_000.grb"/>
+        </aggregation>
+      </ncml:netcdf>
+    </dataset>
 
   </dataset>
 </catalog>
