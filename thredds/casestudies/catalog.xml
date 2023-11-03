@@ -363,8 +363,6 @@
       <dataset name="PType Dataset" ID="ncar-ml-ptype" serviceName="BasicRemote" urlPath="casestudies/ncar-ml-course/ptype-dataset"/>
     </dataset>
 
-  <dataset name="Test Grid as Point" ID="testGAP" serviceName="all" urlPath="localContent/testGridAsPoint.nc" dataType="Grid"/>
-
     <dataset name="Moisture Transport">
       <dataset name="NAM aggregation" ID="casestudies/NamAggregate" urlPath="casestudies/nam/Agg.nc">
         <serviceName>fullServices</serviceName>
