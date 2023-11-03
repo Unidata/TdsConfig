@@ -359,11 +359,9 @@
     <datasetRoot path="casestudies" location="${DATA_DIR}/casestudies/"/>
 
     <dataset name="NCAR ML Course">
-      <dataset name="SST Anomalies" ID="ncar-ml-sst" serviceName="BasicRemote" urlPath="casestudies/ncar-ml-course/sst-anomalies"/>
-      <dataset name="PType Dataset" ID="ncar-ml-ptype" serviceName="BasicRemote" urlPath="casestudies/ncar-ml-course/ptype-dataset"/>
+      <dataset name="SST Anomalies" ID="ncar-ml-sst" serviceName="BasicRemote" urlPath="casestudies/ncar_ml/sst.mon.mean.trefadj.anom.1880to2018.nc"/>
+      <dataset name="PType Dataset" ID="ncar-ml-ptype" serviceName="BasicRemote" urlPath="casestudies/ncar_ml/ptype_data_workshop.parquet"/>
     </dataset>
-
-  <dataset name="Test Grid as Point" ID="testGAP" serviceName="all" urlPath="localContent/testGridAsPoint.nc" dataType="Grid"/>
 
     <dataset name="Moisture Transport">
       <dataset name="NAM aggregation" ID="casestudies/NamAggregate" urlPath="casestudies/nam/Agg.nc">
