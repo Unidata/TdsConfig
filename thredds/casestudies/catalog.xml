@@ -364,22 +364,15 @@
     </dataset>
 
     <dataset name="Moisture Transport">
-      <dataset name="NAM aggregation" ID="casestudies/NamAggregate" urlPath="casestudies/nam/Agg.nc">
+      <featureCollection name="NAM Moisture Transport" featureType="GRIB1" path="casestudies/moisture_transport/nam">
         <serviceName>fullServices</serviceName>
         <dataType>Grid</dataType>
-        <ncml:netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-          <aggregation dimName="time1" type="joinExisting">
-            <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100430_0000_000.grb"/>
-            <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100501_0000_000.grb"/>
-            <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100502_0000_000.grb">
-              <variable name="time2" orgName="time1"/>
-              <variable name="time1" orgName="time"/>
-            </netcdf>
-            <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100503_0000_000.grb"/>
-            <netcdf location="${DATA_DIR}/casestudies/moisture_transport/namanl_218_20100504_0000_000.grb"/>
-          </aggregation>
-        </ncml:netcdf>
-      </dataset>
+        <collection spec="${DATA_DIR}/casestudies/moisture_transport/.*grb"
+          name="NAM_Moisture_Transport"
+          dateFormatMark="#namanl_218#yyyyMMdd_HHmm_sss"
+          olderThan="5 min" />
+        <tdm rewrite="nocheck"/>
+      </featureCollection>
     </dataset>
 
   </dataset>
