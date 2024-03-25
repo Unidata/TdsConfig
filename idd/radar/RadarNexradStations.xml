@@ -486,5 +486,8 @@
     <station name="KOREA/Kunsan AFB" value="KJK" state="KR" country="KR">
        <location3D latitude="35.924" longitude="126.622" elevation="191" />
     </station>
+    <station name="NEW_ORLEANS/BATON_ROUGE/Hammond" value="HDC" state="LA" country="US">
+       <location3D latitude="30.519" longitude="-90.407" elevation="43" />
+    </station>
 
 </stationList>
