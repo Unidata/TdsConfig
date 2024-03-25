@@ -55,7 +55,7 @@ NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(SGF|SHV
 #
 NEXRAD3	^_ELSE_$
 	FILE	-overwrite	-close
-	${DATA_DIR}/native/radar/level3/other/level3_%Y%m%d_%H%M
+	${DATA_DIR}/native/radar/level3/other/level3_%Y%m%d_%H%M%S
 #
 # ---------------------------------
 # - NEXRAD Level II Radar WSR-88D -
