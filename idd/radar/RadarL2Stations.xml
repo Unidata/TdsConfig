@@ -478,5 +478,8 @@
     <station name="San_Juan/Puerta_Rico" value="TJUA" state="PR" country="US">
        <location3D latitude="18.12" longitude="-66.08" elevation="931" />
     </station>
+    <station name="NEW_ORLEANS/BATON_ROUGE/Hammond" value="KHDC" state="LA" country="US">
+       <location3D latitude="30.519" longitude="-90.407" elevation="43" />
+    </station>
 
 </stationList>

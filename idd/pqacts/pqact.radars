@@ -35,19 +35,19 @@ NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(ABC|ABR
 #
 # | NEXRAD LEVEL III, Part 2
 #
-NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(EMX|ENX|EOX|EPZ|ESX|EVX|EWX|EYX|FCX|FDR|FDX|FFC|FSD|FSX|FTG|FWS|GGW|GJX|GLD|GRB|GRK|GRR|GSP|GUA|GWX|GYX|HDX|HGX|HKI|HKM|HMO|HNX|HPX|HTX|HWA|ICT|ICX|ILN|ILX|IND|INX|IWA|IWX|JAX|JGX|JKL|JUA)
+NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(EMX|ENX|EOX|EPZ|ESX|EVX|EWX|EYX|FCX|FDR|FDX|FFC|FSD|FSX|FTG|FWS|GGW|GJX|GLD|GRB|GRK|GRR|GSP|GUA|GWX|GYX|HDC|HDX|HGX|HKI|HKM|HMO|HNX|HPX|HTX|HWA|ICT|ICX|ILN|ILX|IND|INX|IWA|IWX|JAX|JGX|JKL)
 	FILE	-overwrite	-close
 	${DATA_DIR}/native/radar/level3/nexrad/\4/\5/(\1:yyyy)(\1:mm)\1/Level3_\5_\4_(\1:yyyy)(\1:mm)\1_\2\3.nids
 #
 # | NEXRAD LEVEL III, Part 3
 #
-NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(KJK|KSG|LBB|LCH|LGX|LIX|LNX|LOT|LRX|LSX|LTX|LVX|LWX|LZK|MAF|MAX|MBX|MHX|MKX|MLB|MOB|MPX|MQT|MRX|MSX|MTX|MUX|MVX|MXX|NKX|NQA|OAX|ODN|OHX|OKX|OTX|PAH|PBZ|PDT|POE|PUX|RAX|RGX|RIW|RLX|RTX|SFX)
+NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(JUA|KJK|KSG|LBB|LCH|LGX|LIX|LNX|LOT|LRX|LSX|LTX|LVX|LWX|LZK|MAF|MAX|MBX|MHX|MKX|MLB|MOB|MPX|MQT|MRX|MSX|MTX|MUX|MVX|MXX|NKX|NQA|OAX|ODN|OHX|OKX|OTX|PAH|PBZ|PDT|POE|PUX|RAX|RGX|RIW|RLX|RTX)
 	FILE	-overwrite	-close
 	${DATA_DIR}/native/radar/level3/nexrad/\4/\5/(\1:yyyy)(\1:mm)\1/Level3_\5_\4_(\1:yyyy)(\1:mm)\1_\2\3.nids
 #
 # | NEXRAD LEVEL III, Part 4
 #
-NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(SGF|SHV|SJT|SOX|SRX|TBW|TFX|TLH|TLX|TWX|TYX|UDX|UEX|VAX|VBX|VNX|VTX|VWX|YUX)
+NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(SFX|SGF|SHV|SJT|SOX|SRX|TBW|TFX|TLH|TLX|TWX|TYX|UDX|UEX|VAX|VBX|VNX|VTX|VWX|YUX)
 	FILE	-overwrite	-close
 	${DATA_DIR}/native/radar/level3/nexrad/\4/\5/(\1:yyyy)(\1:mm)\1/Level3_\5_\4_(\1:yyyy)(\1:mm)\1_\2\3.nids
 #
@@ -55,7 +55,7 @@ NEXRAD3	^SDUS[23578]. .... ([0-3][0-9])([0-2][0-9])([0-6][0-9]).*/p(...)(SGF|SHV
 #
 NEXRAD3	^_ELSE_$
 	FILE	-overwrite	-close
-	${DATA_DIR}/native/radar/level3/other/level3_%Y%m%d_%H%M
+	${DATA_DIR}/native/radar/level3/other/level3_%Y%m%d_%H%M%S
 #
 # ---------------------------------
 # - NEXRAD Level II Radar WSR-88D -
