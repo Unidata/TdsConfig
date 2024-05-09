@@ -16,4 +16,8 @@
     <catalogRef xlink:href="casestudies/catalog.xml" xlink:title="Unidata case studies" name=""/>
     <catalogRef xlink:href="preprocessed/catalog.xml" xlink:title="Preprocessed data" name=""/>
   </dataset>
+
+  <dataset name="DAP and DAP4 Tests">
+    <catalogRef xlink:href="remotetest/catalog.xml" xlink:title="Test Data" name=""/>
+  </dataset>
 </catalog>
