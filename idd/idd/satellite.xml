@@ -188,6 +188,8 @@
         <addDatasetSize/>
       </datasetScan>
     </dataset><!-- End of NESDIS NOAA20 data -->
+
+    <!--
     <dataset name="Hyrdology Products">
       <metadata inherited="true">
         <serviceName>nongrid</serviceName>
@@ -211,7 +213,7 @@
         </filter>
         <addDatasetSize/>
       </datasetScan>
-    </dataset><!-- End of NESDIS Blended data -->
+    </dataset>  End of NESDIS Blended data -->
   </dataset><!-- End of Satellite Data -->
 </catalog>
 
