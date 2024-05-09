@@ -10,12 +10,11 @@ Configuration files
 - kept in git repo TdsConfig
 
 - each machine has their own subdirectory:
-  - idd : common to all (4.6) idd servers
+  - idd : common to all idd servers
   - rdavm : at CISL/RDA
-  - remotetest : where? opendap/netcdf C test server
   - startup: this should be the minimal configuration for running a thredds server
   - thredds : atm-nwsc (/opt/tds) (idd + casestudies)
-  - threddsTest : atm-nwsc (/opt/tds-test) (idd + casestudies + preprocessed)
+  - threddsTest : atm-nwsc (/opt/tds-test) (idd + casestudies + preprocessed + remotetest)
   - threddsDev : lead (/opt/tds-dev)
   - awsL2 : jetstream machine serving AWS Level2 radar archive data
 
@@ -30,7 +29,7 @@ Configuration files
    The build and upload of config.zip files is automatically performed by GitHub Actions for
    all changes committed to the repository.
 
-- config.zip hosted on [Unidata Nexus](https://artifacts.unidata.ucar.edu/#browse/browse:downloads-tds-config)
+- config.zip hosted on the [Unidata artifacts server](https://artifacts.unidata.ucar.edu/#browse/browse:downloads-tds-config)
 
 - to make changes to config files:
   - Edit files, e.g. `thredds/*`
