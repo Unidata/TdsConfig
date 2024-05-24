@@ -358,9 +358,11 @@
 
     <datasetRoot path="casestudies" location="${DATA_DIR}/casestudies/"/>
 
-    <dataset name="NCAR ML Course">
+    <dataset name="ML Case Study Data">
       <dataset name="SST Anomalies" ID="ncar-ml-sst" serviceName="BasicRemote" urlPath="casestudies/ncar_ml/sst.mon.mean.trefadj.anom.1880to2018.nc"/>
       <dataset name="PType Dataset" ID="ncar-ml-ptype" serviceName="BasicRemote" urlPath="casestudies/ncar_ml/ptype_data_workshop.parquet"/>
+      <dataset name="Tasmania Hard Rock Geoscience Data" ID="tasmania-hard-rock-geoscience-data"
+        serviceName="HTTPServer" urlPath="casestudies/ml_case_study_data/tas_sn_w_datasets.zip"/>
     </dataset>
 
     <dataset name="Moisture Transport">
