@@ -547,4 +547,75 @@
       </filter>
     </datasetScan>
   </dataset>
+
+  <dataset name="Classified data">
+    <datasetScan name="Classified GFS CONUS 20km"
+                 ID="classified-grib-ncep-gfs-conus_20km"
+                 path="classified/grib/NCEP/GFS/CONUS_20km"
+                 location="${DATA_DIR}/native/grid/NCEP/GFS/CONUS_20km/">
+      <metadata inherited="true">
+        <dataType>GRID</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" enhance="all">
+        <variable name="Relative_humidity_height_above_ground">
+          <attribute name="classify" value="0 65 0; 65 85 1; 85 100 2"/>
+        </variable>
+        <variable name="Temperature_height_above_ground">
+          <attribute name="classify" value="0 291 0; 291 303 1; 303 1000 2"/>
+        </variable>
+        <remove name="Absolute_vorticity_isobaric" type="variable" />
+        <remove name="Convective_available_potential_energy_surface" type="variable" />
+        <remove name="Convective_available_potential_energy_pressure_difference_layer" type="variable" />
+        <remove name="Convective_inhibition_surface" type="variable" />
+        <remove name="Convective_inhibition_pressure_difference_layer" type="variable" />
+        <remove name="Convective_precipitation_surface_Mixed_intervals_Accumulation" type="variable" />
+        <remove name="Geopotential_height_surface" type="variable" />
+        <remove name="Geopotential_height_isobaric" type="variable" />
+        <remove name="Geopotential_height_zeroDegC_isotherm" type="variable" />
+        <remove name="Geopotential_height_potential_vorticity_surface" type="variable" />
+        <remove name="Maximum_temperature_height_above_ground_Mixed_intervals_Maximum" type="variable" />
+        <remove name="Minimum_temperature_height_above_ground_Mixed_intervals_Minimum" type="variable" />
+        <remove name="Precipitable_water_entire_atmosphere" type="variable" />
+        <remove name="Pressure_surface" type="variable" />
+        <remove name="Pressure_middle_cloud_bottom_Mixed_intervals_Average" type="variable" />
+        <remove name="Pressure_low_cloud_bottom_Mixed_intervals_Average" type="variable" />
+        <remove name="Pressure_high_cloud_bottom_Mixed_intervals_Average" type="variable" />
+        <remove name="Pressure_potential_vorticity_surface" type="variable" />
+        <remove name="Pressure_maximum_wind" type="variable" />
+        <remove name="Pressure_tropopause" type="variable" />
+        <remove name="Relative_humidity_pressure_difference_layer" type="variable" />
+        <remove name="Relative_humidity_isobaric" type="variable" />
+        <remove name="Relative_humidity_zeroDegC_isotherm" type="variable" />
+        <remove name="Temperature_pressure_difference_layer" type="variable" />
+        <remove name="Temperature_isobaric" type="variable" />
+        <remove name="Temperature_potential_vorticity_surface" type="variable" />
+        <remove name="Total_precipitation_surface_Mixed_intervals_Accumulation" type="variable" />
+        <remove name="Categorical_Rain_surface_Mixed_intervals_Average" type="variable" />
+        <remove name="Categorical_Freezing_Rain_surface_Mixed_intervals_Average" type="variable" />
+        <remove name="Categorical_Ice_Pellets_surface_Mixed_intervals_Average" type="variable" />
+        <remove name="Categorical_Snow_surface_Mixed_intervals_Average" type="variable" />
+        <remove name="Vertical_Speed_Shear_tropopause" type="variable" />
+        <remove name="MSLP_Eta_model_reduction_msl" type="variable" />
+        <remove name="Surface_Lifted_Index_surface" type="variable" />
+        <remove name="Best_4_layer_Lifted_Index_surface" type="variable" />
+        <remove name="Vertical_velocity_geometric_isobaric" type="variable" />
+        <remove name="Water_equivalent_of_accumulated_snow_depth_surface" type="variable" />
+        <remove name="u-component_of_wind_pressure_difference_layer" type="variable" />
+        <remove name="u-component_of_wind_isobaric" type="variable" />
+        <remove name="u-component_of_wind_potential_vorticity_surface" type="variable" />
+        <remove name="u-component_of_wind_maximum_wind" type="variable" />
+        <remove name="u-component_of_wind_height_above_ground" type="variable" />
+        <remove name="u-component_of_wind_tropopause" type="variable" />
+        <remove name="v-component_of_wind_pressure_difference_layer" type="variable" />
+        <remove name="v-component_of_wind_isobaric" type="variable" />
+        <remove name="v-component_of_wind_potential_vorticity_surface" type="variable" />
+        <remove name="v-component_of_wind_maximum_wind" type="variable" />
+        <remove name="v-component_of_wind_height_above_ground" type="variable" />
+        <remove name="v-component_of_wind_tropopause" type="variable" />
+      </netcdf>
+      <filter>
+        <include wildcard="*.grib2" collection="false"/>
+      </filter>
+    </datasetScan>
+  </dataset>
 </catalog>
