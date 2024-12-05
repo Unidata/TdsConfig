@@ -3,7 +3,7 @@
   
   <serverInformation>
     <name>THREDDS-DEV Data Server</name>
-    <logoUrl>/thredds/threddsIcon.png</logoUrl>
+    <logoUrl>/thredds/NSF-Unidata.png</logoUrl>
     <logoAltText>TDS</logoAltText>
 
     <abstract>Scientific Data</abstract>
@@ -11,15 +11,15 @@
     
     <contact>
       <name>THREDDS Support</name>
-      <organization>Unidata</organization>
+      <organization>NSF Unidata</organization>
       <email>support-thredds@unidata.ucar.edu</email>
       <!--phone></phone-->
     </contact>
     <hostInstitution>
       <name>Unidata</name>
-      <webSite>http://www.unidata.ucar.edu/</webSite>
-      <logoUrl>/thredds/unidataLogo.jpg</logoUrl>
-      <logoAltText>Unidata</logoAltText>
+      <webSite>https://www.unidata.ucar.edu/</webSite>
+      <logoUrl>/thredds/unidataIcon.gif</logoUrl>
+      <logoAltText>NSF Unidata</logoAltText>
     </hostInstitution>
   </serverInformation>
 
