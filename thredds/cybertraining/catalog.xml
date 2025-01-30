@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:ncml="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+         version="1.2">
+    <service name="HTTPServer"
+             serviceType="HTTPServer"
+             base="/thredds/fileServer/"/>
+    <datasetRoot path="cybertraining" location="${DATA_DIR}/cybertraining/"/>
+    <dataset name="CyberTraining Data">
+        <dataset name="NC ECOnet"
+                 ID="nc-econet-data"
+                 serviceName="HTTPServer"
+                 urlPath="cybertraining/CyberTraining_NC_ECOnet_data.parquet"/>
+    </dataset>
+</catalog>
