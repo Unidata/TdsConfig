@@ -50,6 +50,8 @@
 
   <catalogRoot>tdscapabilities/capabilities.xml</catalogRoot>
 
+  <catalogRoot>cybertraining/catalog.xml</catalogRoot>
+
   <!--
    * Setup for generated HTML pages.
    *
