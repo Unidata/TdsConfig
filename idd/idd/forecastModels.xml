@@ -927,7 +927,7 @@
 
       <creator>
         <name vocabulary="DIF">Environment Canada (EC) / Canadian Meteorological Centre (CMC)</name>
-        <contact url="http://gcmd.nasa.gov/Aboutus/software_docs/help_guide.html" email="http://gcmd.nasa.gov/MailComments/MailComments.jsf?rcpt=gcmduso"/>
+        <contact url="https://weather.gc.ca/mainmenu/contact_us_e.html" email="https://weather.gc.ca/mainmenu/contact_us_e.html"/>
       </creator>
       <publisher>
         <name vocabulary="ADN">University Corporation for Atmospheric Research (UCAR)/Unidata</name>
