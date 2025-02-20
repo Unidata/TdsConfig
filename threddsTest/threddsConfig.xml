@@ -2,7 +2,7 @@
 <threddsConfig>
 
   <serverInformation>
-    <name>THREDDS Data Server</name>
+    <name>THREDDS Test Data Server</name>
     <logoUrl>/thredds/NSF-Unidata.png</logoUrl>
     <logoAltText>TDS</logoAltText>
 
@@ -51,6 +51,8 @@
   <catalogRoot>tdscapabilities/capabilities.xml</catalogRoot>
 
   <catalogRoot>cybertraining/catalog.xml</catalogRoot>
+
+  <catalogRoot>dev/thomas.xml</catalogRoot>
 
   <!--
    * Setup for generated HTML pages.
