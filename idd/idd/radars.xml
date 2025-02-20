@@ -10,7 +10,7 @@
       <documentation type="rights">Freely available</documentation>
       <publisher>
         <name vocabulary="DIF">UCAR/UNIDATA</name>
-        <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
+        <contact url="https://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
       </publisher>
     </metadata>
 
@@ -289,7 +289,7 @@
         </documentation>
         <creator>
           <name vocabulary="DIF">UCAR/UNIDATA</name>
-          <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
+          <contact url="https://www.unidata.ucar.edu/" email="support@unidata.ucar.edu"/>
         </creator>
         <geospatialCoverage>
           <northsouth>
