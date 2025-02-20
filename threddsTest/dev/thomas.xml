@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+	 name="Thomas Playground" version="1.2">
+
+  <datasetScan name="Thosmas Unmodified Data" 
+               ID="thomas/unmodified"
+               path="thomas/unmodified"
+               location="/data/thredds-test-data/thomas/">
+    <metadata inherited="true">
+      <dataType>Grid</dataType>
+    </metadata>
+  </datasetScan>
+
+  <datasetScan name="Thosmas Modified Data" 
+               ID="thomas/modified"
+               path="thomas/modified"
+               location="/data/thredds-test-data/thomas/">
+    <filter>
+      <include wildcard="*.nc" />
+    </filter>
+    <metadata inherited="true">
+      <dataType>Grid</dataType>
+    </metadata>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <group name="global">
+        <variable name="ensemble" shape="ensemble" type="int">
+          <values start="1" increment="1" />
+          <attribute name="_CoordinateAxisType" value="Ensemble" />
+        </variable>
+        <variable name="t2m">
+          <attribute name="coordinates" value="ensemble time lat lon" />
+        </variable>
+        <variable name="u10m">
+          <attribute name="coordinates" value="ensemble time lat lon" />
+        </variable>
+      </group>    
+    </netcdf>
+  </datasetScan>
+</catalog>
