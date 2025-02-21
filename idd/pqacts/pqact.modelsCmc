@@ -9,4 +9,4 @@
 # Regional Deterministic Prediction System (RDPS)
 #
 CMC	^CMC_reg_.*_(ps..km)_(........)(..)
-	FILE	${DATA_DIR}/native/grid/CMC/RDPS/NA_\1km/CMC_RDPS_\1_\2_\300.grib2
+	FILE	${DATA_DIR}/native/grid/CMC/RDPS/\1/CMC_RDPS_\1_\2_\300.grib2

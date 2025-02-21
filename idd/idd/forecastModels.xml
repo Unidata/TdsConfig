@@ -948,7 +948,7 @@
           </documentation>
         </metadata>
 
-        <collection spec="${DATA_DIR}/native/grid/CMC/RDPS/NA_10km/CMC_RDPS_ps10km_#yyyyMMdd_HHmm#.grib2"
+        <collection spec="${DATA_DIR}/native/grid/CMC/RDPS/ps10km/CMC_RDPS_ps10km_#yyyyMMdd_HHmm#.grib2"
                     name="CMC_RDPS_NA_10km"
                     timePartition="file"
                     olderThan="5 min"/>
