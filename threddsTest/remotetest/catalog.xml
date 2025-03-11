@@ -34,7 +34,7 @@
       </metadata>
     </datasetScan>
 
-    <datasetScan name="DAP4 Intercomparison Datasets - restricted"
+    <datasetScan name="DAP4 Intercomparison Datasets - restricted (ds)"
                  ID="dap4-intercomparison-datasets-restricted"
                  path="dev/d4icomp/restricted"
                  restrictAccess="opendapTesterRole"
@@ -44,6 +44,16 @@
         <serviceName>dapdl</serviceName>
       </metadata>
     </datasetScan>
+
+    <datasetScan name="DAP4 Intercomparison Datasets - restricted (sc)"
+                 ID="dap4-intercomparison-datasets-restricted-sc"
+                 path="dev/d4icomp/restricted-sc"
+                 location="/data/thredds-test-data/tds-test-data/dap4_tests">
+      <addDatasetSize/>
+      <metadata inherited="true">
+        <serviceName>dapdl</serviceName>
+      </metadata>
+    </datasetScan>>
 
     <dataset name="Mixed Endianness Aggregation"
              ID="mixed_endianness_agg"
