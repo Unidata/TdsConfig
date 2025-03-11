@@ -12,5 +12,9 @@
                  ID="nc-econet-data"
                  serviceName="HTTPServer"
                  urlPath="cybertraining/CyberTraining_NC_ECOnet_data.parquet"/>
+        <dataset name="sam ptype"
+                 ID="sam_ptype"
+                 serviceName="HTTPServer"
+                 urlPath="cybertraining/sam_ptype.parquet"/>
     </dataset>
 </catalog>
