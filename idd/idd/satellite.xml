@@ -11,7 +11,16 @@
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
     <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
   </service>
-  
+
+  <service name="satgrid" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+
   <dataset name="Satellite Data">
     <metadata inherited="true">
       <authority>edu.ucar.unidata</authority>
@@ -25,6 +34,7 @@
     <dataset name="NESDIS GOES Satellite Data">
       <metadata inherited="true">
         <dataType>Grid</dataType>
+        <serviceName>satgrid</serviceName>
         <dataFormat>GINI</dataFormat>
         <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
         <documentation xlink:href="http://www.nesdis.noaa.gov/satellites.html" xlink:title="NESDIS Satellite page" />
@@ -127,36 +137,7 @@
           <addDatasetSize/>
         </datasetScan>
       </dataset>
-
-      <dataset name="GOES 17 Datasets">
-        <metadata inherited="true">
-          <dataType>GRID</dataType>
-          <dataFormat>NetCDF-4</dataFormat>
-        </metadata>
-        <datasetScan name="GOES 17 GOES Rebroadcast (GRB)"
-                     ID="goes-17-grb"
-                     path="satellite/goes/17/grb"
-                     location="${DATA_DIR}/native/satellite/GOES/GRB17">
-          <filter>
-            <include wildcard="*.nc4"/>
-            <include wildcard="*.nc"/>
-            <exclude wildcard="^Products*" atomic="false" collection="true" />
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
-        <datasetScan name="GOES 17 Products"
-                     ID="goes-17-products"
-                     path="satellite/goes/17/products"
-                     location="${DATA_DIR}/native/satellite/GOES/GRB17/Products">
-          <filter>
-            <include wildcard="*.nc4"/>
-            <include wildcard="*.nc"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
-      </dataset>
-
-  </dataset><!-- End of NESDIS GOES Satellite Data -->
+    </dataset><!-- End of NESDIS GOES Satellite Data -->
     <dataset name="NESDIS NOAA-20 Satellite Data">
       <metadata inherited="true">
         <serviceName>nongrid</serviceName>
