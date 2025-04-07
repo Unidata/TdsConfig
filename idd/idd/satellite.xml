@@ -62,7 +62,7 @@
         <datasetScan name="GOES East GOES Rebroadcast (GRB)"
                      ID="goes-east-grb"
                      path="satellite/goes/east/grb"
-                     location="${DATA_DIR}/native/satellite/GOES/GRB16">
+                     location="${DATA_DIR}/native/satellite/GOES/GRB19">
           <filter>
             <include wildcard="*.nc4"/>
             <include wildcard="*.nc"/>
@@ -73,7 +73,7 @@
         <datasetScan name="GOES East Products"
                      ID="goes-east-products"
                      path="satellite/goes/east/products"
-                     location="${DATA_DIR}/native/satellite/GOES/GRB16/Products">
+                     location="${DATA_DIR}/native/satellite/GOES/GRB19/Products">
           <filter>
             <include wildcard="*.nc4"/>
             <include wildcard="*.nc"/>
