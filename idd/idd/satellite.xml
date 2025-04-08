@@ -16,6 +16,7 @@
     <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
     <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
     <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
     <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
@@ -33,26 +34,22 @@
 
     <dataset name="NESDIS GOES Satellite Data">
       <metadata inherited="true">
-        <dataType>Grid</dataType>
         <serviceName>satgrid</serviceName>
-        <dataFormat>GINI</dataFormat>
-        <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
-        <documentation xlink:href="http://www.nesdis.noaa.gov/satellites.html" xlink:title="NESDIS Satellite page" />
+        <documentation xlink:href="https://www.unidata.ucar.edu/data/index.html#satellite" xlink:title="Satellite Data Available Through Unidata" />
+        <documentation xlink:href="https://www.nesdis.noaa.gov/" xlink:title="National Environmental Satellite, Data, and Information Service" />
         <documentation type="summary">National Environmental Satellite, Data, And Information Service (NESDIS) Geostationary Operational Environmental Satellites (GOES) Data is remapped to standard projections.</documentation>
         <creator>
           <name>NOAA/NESDIS</name>
-          <contact url="http://www.nesdis.noaa.gov/satellites.html" email="http://www.nesdis.noaa.gov/contact.html" />
+          <contact url="https://www.nesdis.noaa.gov/" email="https://www.nesdis.noaa.gov/about/contact-us" />
         </creator>
         <timeCoverage>
           <end>present</end>
           <duration>13 days</duration>
         </timeCoverage>
+        <dataFormat>NetCDF-4</dataFormat>
       </metadata>
-
       <!--
-
          GOES East/West Data and Products (netCDF) 
-
       -->
       <dataset name="GOES East Datasets">
         <metadata inherited="true">
@@ -109,33 +106,11 @@
           <addDatasetSize/>
         </datasetScan>
       </dataset>
-
-      <dataset name="GOES 18 Datasets">
-        <metadata inherited="true">
-          <dataType>GRID</dataType>
-          <dataFormat>NetCDF-4</dataFormat>
-        </metadata>
-        <datasetScan name="GOES 18 GOES Rebroadcast (GRB)"
-                     ID="goes-18-grb"
-                     path="satellite/goes/18/grb"
-                     location="${DATA_DIR}/native/satellite/GOES/GRB18">
-          <filter>
-            <include wildcard="*.nc4"/>
-            <include wildcard="*.nc"/>
-            <exclude wildcard="^Products*" atomic="false" collection="true" />
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
-        <datasetScan name="GOES 18 Products"
-                     ID="goes-18-products"
-                     path="satellite/goes/18/products"
-                     location="${DATA_DIR}/native/satellite/GOES/GRB18/Products">
-          <filter>
-            <include wildcard="*.nc4"/>
-            <include wildcard="*.nc"/>
-          </filter>
-          <addDatasetSize/>
-        </datasetScan>
+      <dataset name="GOES Datasets by Platform">
+        <catalogRef xlink:href="goes/goes16.xml" xlink:title="GOES 16 (on-orbit spare)" name=""/>
+        <catalogRef xlink:href="goes/goes17.xml" xlink:title="GOES 17 (on-orbit spare)" name=""/>
+        <catalogRef xlink:href="goes/goes18.xml" xlink:title="GOES 18" name=""/>
+        <catalogRef xlink:href="goes/goes19.xml" xlink:title="GOES 19" name=""/>
       </dataset>
     </dataset><!-- End of NESDIS GOES Satellite Data -->
     <dataset name="NESDIS NOAA-20 Satellite Data">
