@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="THREDDS Data Server - Satellite Data"
+         version="1.2">
+
+  <service name="satgrid" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <!-- GOES 17 Data and Products -->
+  <dataset name="GOES 17 Datasets">
+    <metadata inherited="true">
+      <authority>edu.ucar.unidata</authority>
+      <documentation type="rights">Freely available</documentation>
+      <publisher>
+        <name vocabulary="DIF">UCAR/UNIDATA</name>
+        <contact url="https://www.unidata.ucar.edu/"
+                 email="support@unidata.ucar.edu"/>
+      </publisher>
+      <serviceName>satgrid</serviceName>
+      <documentation xlink:href="https://www.unidata.ucar.edu/data/index.html#satellite"
+                     xlink:title="Satellite Data Available Through Unidata"/>
+      <documentation xlink:href="https://www.nesdis.noaa.gov/"
+                     xlink:title="National Environmental Satellite, Data, and Information Service"/>
+      <documentation type="summary">National Environmental Satellite, Data, And Information Service (NESDIS) Geostationary Operational Environmental Satellites (GOES) Data is remapped to standard projections.</documentation>
+      <creator>
+        <name>NOAA/NESDIS</name>
+        <contact url="https://www.nesdis.noaa.gov/"
+                 email="https://www.nesdis.noaa.gov/about/contact-us"/>
+      </creator>
+      <timeCoverage>
+        <end>present</end>
+        <duration>13 days</duration>
+      </timeCoverage>
+      <dataFormat>NetCDF-4</dataFormat>
+    </metadata>
+    <datasetScan name="GOES 17 GOES Rebroadcast (GRB)"
+                 ID="goes-17-grb"
+                 path="satellite/goes/17/grb"
+                 location="${DATA_DIR}/native/satellite/GOES/GRB17">
+      <filter>
+        <include wildcard="*.nc4"/>
+        <include wildcard="*.nc"/>
+        <exclude wildcard="^Products*"
+                 atomic="false"
+                 collection="true"/>
+      </filter>
+      <addDatasetSize/>
+    </datasetScan>
+    <datasetScan name="GOES 17 Products"
+                 ID="goes-17-products"
+                 path="satellite/goes/17/products"
+                 location="${DATA_DIR}/native/satellite/GOES/GRB17/Products">
+      <filter>
+        <include wildcard="*.nc4"/>
+        <include wildcard="*.nc"/>
+      </filter>
+      <addDatasetSize/>
+    </datasetScan>
+  </dataset>
+</catalog>
