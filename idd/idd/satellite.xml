@@ -116,13 +116,16 @@
     <dataset name="NESDIS NOAA-20 Satellite Data">
       <metadata inherited="true">
         <serviceName>nongrid</serviceName>
-        <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
-        <documentation xlink:href="http://www.nesdis.noaa.gov/satellites.html" xlink:title="NESDIS Satellite page" />
+        <documentation xlink:href="https://www.unidata.ucar.edu/data/index.html#satellite"
+                       xlink:title="Satellite Data Available Through Unidata"/>
+        <documentation xlink:href="https://www.nesdis.noaa.gov/"
+                       xlink:title="National Environmental Satellite, Data, and Information Service"/>
         <documentation type="summary">National Environmental Satellite, Data, And Information Service (NESDIS) Suomi-National Polar-Orbiting Partnership (S-NPP) data consist of swath imagery and remotely-sensed atmospheric soundings.</documentation>
         <dataFormat>NetCDF-4</dataFormat>
         <creator>
           <name>NOAA/NESDIS</name>
-          <contact url="http://www.nesdis.noaa.gov/satellites.html" email="http://www.nesdis.noaa.gov/contact.html" />
+          <contact url="https://www.nesdis.noaa.gov/"
+                   email="https://www.nesdis.noaa.gov/about/contact-us"/>
         </creator>
         <timeCoverage>
           <end>present</end>
@@ -144,32 +147,34 @@
         <addDatasetSize/>
       </datasetScan>
     </dataset><!-- End of NESDIS NOAA20 data -->
-
-    <!--
     <dataset name="Hyrdology Products">
       <metadata inherited="true">
         <serviceName>nongrid</serviceName>
-        <documentation xlink:href="http://www.unidata.ucar.edu/data/satellite_data_2.html" xlink:title="Satellite Data Available Through Unidata " />
-        <documentation xlink:href="http://www.nesdis.noaa.gov/satellites.html" xlink:title="NESDIS Satellite page" />
-        <documentation type="summary">National Environmental Satellite, Data, And Information Service (NESDIS) Suomi-National Polar-Orbiting Partnership (S-NPP) data consist of swath imagery and remotely-sensed atmospheric soundings.</documentation>
+        <documentation xlink:href="https://www.unidata.ucar.edu/data/index.html#satellite"
+                       xlink:title="Satellite Data Available Through Unidata"/>
+        <documentation xlink:href="https://www.nesdis.noaa.gov/"
+                       xlink:title="National Environmental Satellite, Data, and Information Service"/>
+        <documentation xlink:href="https://www.ospo.noaa.gov/Products/bTPW/index.html"
+                       xlink:title="Global Satellite-based Blended Hydrology products"/>
         <dataFormat>NetCDF-4</dataFormat>
         <creator>
           <name>NOAA/NESDIS</name>
-          <contact url="https://www.ospo.noaa.gov/Products/bTPW/index.html" />
+          <contact url="https://www.nesdis.noaa.gov/"
+                   email="https://www.nesdis.noaa.gov/about/contact-us"/>
         </creator>
         <timeCoverage>
           <end>present</end>
           <duration>14 days</duration>
         </timeCoverage>
       </metadata>
-      <datasetScan name="Blended Satellite Products" ID="blended-satellite" path="satellite/blended" location="${DATA_DIR}/native/satellite/Blended" >
+      <datasetScan name="NESDIS Blended Satellite Products" ID="blended-satellite" path="satellite/blended" location="${DATA_DIR}/native/satellite/Blended" >
         <filter>
           <include wildcard="*.nc4"/>
           <include wildcard="*.nc"/>
         </filter>
         <addDatasetSize/>
       </datasetScan>
-    </dataset>  End of NESDIS Blended data -->
+    </dataset>  <!-- End of NESDIS Satellite Products -->
   </dataset><!-- End of Satellite Data -->
 </catalog>
 
