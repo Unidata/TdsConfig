@@ -469,17 +469,63 @@
     <station name="BRANDON/Jackson" value="KDGX" state="MS" country="US">
        <location3D latitude="32.17" longitude="-89.59" elevation="186" />
     </station>
+    <!-- KCRI and its aliases -->
     <station name="OKLAHOMA_CITY/Norman" value="KCRI" state="OK" country="US">
        <location3D latitude="35.32" longitude="-97.27" elevation="370" />
     </station>
-<!--    <station name="OKLAHOMA_CITY/Norman" value="NOP3" state="OK" country="US">-->
-<!--       <location3D latitude="35.32" longitude="-97.27" elevation="370" />-->
-<!--    </station>-->
+    <station name="OKLAHOMA_CITY/Norman" value="NOP3" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="NOP4" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="ROP3" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="ROP4" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="FOP1" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="DAN1" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="DOP1" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="NOK1" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="NOK2" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="NOK3" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="NOK4" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="NOK5" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="ROK1" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="ROK2" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="ROK4" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <station name="OKLAHOMA_CITY/Norman" value="ROK5" state="OK" country="US">
+      <location3D latitude="35.32" longitude="-97.27" elevation="370" />
+    </station>
+    <!-- End of KCRI and its aliases -->
     <station name="San_Juan/Puerta_Rico" value="TJUA" state="PR" country="US">
        <location3D latitude="18.12" longitude="-66.08" elevation="931" />
     </station>
     <station name="NEW_ORLEANS/BATON_ROUGE/Hammond" value="KHDC" state="LA" country="US">
        <location3D latitude="30.519" longitude="-90.407" elevation="43" />
     </station>
-
 </stationList>
