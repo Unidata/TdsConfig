@@ -25,7 +25,7 @@ def get_config_includes(path):
     ret.append(path)
     return ret
 
-exclude = {build_file, 'fetch.sh', 'config.zip'}
+exclude = {build_file, 'fetch.sh', 'config.zip', '.DS_Store'}
 def get_files(path):
     '''
     Get relative and full paths for the files to be included.
@@ -49,12 +49,6 @@ def write_script(scriptpath, configpath):
     'Create script for downloading this config file'
     lines = ['#!/bin/sh']
 
-    # On Sun machines, set path as needed
-    lines.append('unamestr=`uname`')
-    lines.append('if [[ "$unamestr" == "SunOS" ]]; then')
-    lines.append('\tPATH=/opt/csw/bin:/opt/jdk/bin:$PATH')
-    lines.append('fi\n')
-
     # Enclosing script in '{}' forces it to be read into memory, dealing
     # with the problem of the script being modified (via jar xf) while
     # running.
@@ -64,7 +58,6 @@ def write_script(scriptpath, configpath):
     configfile = os.path.split(configpath)[-1]
     configpath = configpath.replace('\\', '/')
     lines.append(('\twget'
-                  ' --no-check-certificate'
                   ' https://artifacts.unidata.ucar.edu/repository/downloads-tds-config/%s'
                   ' -O %s')
                   % (configpath, configfile))
