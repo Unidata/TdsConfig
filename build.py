@@ -25,7 +25,7 @@ def get_config_includes(path):
     ret.append(path)
     return ret
 
-exclude = {build_file, 'fetch.sh', 'config.zip'}
+exclude = {build_file, 'fetch.sh', 'config.zip', '.DS_Store'}
 def get_files(path):
     '''
     Get relative and full paths for the files to be included.
