@@ -49,12 +49,6 @@ def write_script(scriptpath, configpath):
     'Create script for downloading this config file'
     lines = ['#!/bin/sh']
 
-    # On Sun machines, set path as needed
-    lines.append('unamestr=`uname`')
-    lines.append('if [[ "$unamestr" == "SunOS" ]]; then')
-    lines.append('\tPATH=/opt/csw/bin:/opt/jdk/bin:$PATH')
-    lines.append('fi\n')
-
     # Enclosing script in '{}' forces it to be read into memory, dealing
     # with the problem of the script being modified (via jar xf) while
     # running.
