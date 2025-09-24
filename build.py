@@ -58,7 +58,6 @@ def write_script(scriptpath, configpath):
     configfile = os.path.split(configpath)[-1]
     configpath = configpath.replace('\\', '/')
     lines.append(('\twget'
-                  ' --no-check-certificate'
                   ' https://artifacts.unidata.ucar.edu/repository/downloads-tds-config/%s'
                   ' -O %s')
                   % (configpath, configfile))
