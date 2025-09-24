@@ -2,7 +2,7 @@
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS Radar Server" version="1.0.1">
   <service name="radarServer" serviceType="QueryCapability" base="/thredds/radarServer/" />
   <dataset name="Radar Data">
-  <datasetScan name="S3 NEXRAD Level II" collectionType="TimeSeries" ID="nexrad/level2/S3" path="nexrad/level2/S3" location="s3://noaa-nexrad-level2">
+	  <datasetScan name="S3 NEXRAD Level II" collectionType="TimeSeries" ID="nexrad/level2/S3" path="nexrad/level2/S3" location="cdms3:unidata-nexrad-level2#delimiter=/">
     <radarCollection layout="yyyy/MM/dd/STATION" dateRegex="(\d{8}_\d{6})(_V\d{2})?(\.gz)?$" dateFormat="yyyyMMdd_HHmmss" crawlItems="1"/>
       <metadata inherited="true">
         <dataType>Radial</dataType>

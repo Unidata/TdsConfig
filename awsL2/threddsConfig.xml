@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <threddsConfig>
-  
+
+  <!-- all options are commented out in standard install - meaning use default values -->
+  <!-- see https://www.unidata.ucar.edu/software/thredds/current/tds/reference/ThreddsConfigXMLFile.html -->
   <serverInformation>
-    <name>THREDDS Data Server - AWS Level 2 RADAR Test Server</name>
-    <logoUrl>/thredds/unidataLogo.jpg</logoUrl>
+    <name>NSF Unidata AWS Level 2 RADAR Test TDS</name>
+    <logoUrl>/thredds/threddsIcon.png</logoUrl>
     <logoAltText>TDS</logoAltText>
 
     <abstract>Scientific Data</abstract>
@@ -11,161 +13,239 @@
     
     <contact>
       <name>THREDDS Support</name>
-      <organization>Unidata</organization>
+      <organization>NSF Unidata</organization>
       <email>support-thredds@unidata.ucar.edu</email>
       <!--phone></phone-->
     </contact>
     <hostInstitution>
-      <name>Unidata</name>
-      <webSite>http://www.unidata.ucar.edu/</webSite>
-      <logoUrl>unidataIcon.gif</logoUrl>
-      <logoAltText>Unidata</logoAltText>
+      <name>NSF Unidata</name>
+      <webSite>https://unidata.ucar.edu/</webSite>
+      <logoUrl>https://thredds.ucar.edu/thredds/unidataIcon.gif</logoUrl>
+      <logoAltText>NSF Unidata</logoAltText>
     </hostInstitution>
   </serverInformation>
 
-  <CORS>
-    <enabled>true</enabled>
-  </CORS>
+  <!--
+  The <catalogRoot> element:
+  For catalogs you don't want visible from the /thredds/catalog.xml chain
+  of catalogs, you can use catalogRoot elements. Each catalog root config
+  catalog is crawled and used in configuring the TDS.
 
-  <contentRoots>
-    <contentRoot>motherlode</contentRoot>
-    <contentRoot>idd</contentRoot>
-  </contentRoots>
-
-  <DataRoots>
-    <idd>${DATA_DIR}</idd>
-  </DataRoots>
+  <catalogRoot>myExtraCatalog.xml</catalogRoot>
+  <catalogRoot>myOtherExtraCatalog.xml</catalogRoot>
+  -->
 
   <catalogRoot>radar/radarCollections.xml</catalogRoot>
 
   <!--
    * Setup for generated HTML pages.
-   *
-   * NOTE: URLs may be absolute or relative, relative URLs must be relative
-   * to the webapp URL, i.e., http://server:port/thredds/.
-   * -->
+    -->
   <htmlSetup>
     <!--
      * CSS documents used in generated HTML pages.
-     * The CSS document given in the "catalogCssUrl" element is used for all pages
-     * that are HTML catalog views. The CSS document given in the "standardCssUrl"
-     * element is used in all other generated HTML pages.
-     * -->
-    <standardCssUrl>tds.css</standardCssUrl>
-    <catalogCssUrl>tdsCat.css</catalogCssUrl>
-    <openDapCssUrl>tdsDap.css</openDapCssUrl>
-  </htmlSetup>
+     * The CSS document given in the "catalogCssUrl" element is used for HTML catalog views,
+     * "datasetCssUrl" is used for the dataset access HTML view,
+     * and the CSS document given in the "standardCssUrl"element is used in all other generated HTML pages.
+     * The OPeNDAP HTML form is treated special - the only CSS document applied to this page is
+     * defined by the `openDapCssUrl` element.
+     *
+     * NOTE: CSS documents should be placed inside tds.content.root.path/thredds/public
+     *
 
+     <standardCssUrl>standard.css</standardCssUrl>
+     <catalogCssUrl>catalog.css</catalogCssUrl>
+     <datasetCssUrl>dataset.css</datasetCssUrl>
+     <openDapCssUrl>tdsDap.css</openDapCssUrl>
+     * -->
+
+    <!--
+     * The Google Analytics Tracking ID you would like to use for the
+     * webpages associated with THREDDS. This will not track WMS or DAP
+     * requests for data, only browsing the catalog.
+
+    <googleTrackingCode></googleTrackingCode>
+    -->
+
+    <!--
+     * Allow the TDS to generate JSON-LD in Dataset HTML pages following
+     * schema.org Dataset (https://schema.org/Dataset)
+     * The default is false, as this is experimental
+
+    <generateDatasetJsonLD>false</generateDatasetJsonLD>
+    -->
+
+  </htmlSetup>
+  
+  <!-- 
+    The <TdsUpdateConfig> element controls if and how the TDS checks
+    for updates. The default is for the TDS to check for the current
+    stable and development release versions, and to log that information
+    in the TDS serverStartup.log file as INFO entries.
+
+  <TdsUpdateConfig>
+     <logVersionInfo>true</logVersionInfo>
+  </TdsUpdateConfig>
+  -->
+
+  <!--
+   The <CatalogServices> element:
+   - Services on local TDS served catalogs are always on.
+   - Services on remote catalogs are set with the allowRemote element
+   below. They are off by default (recommended).
+   -->
   <CatalogServices>
-    <allowRemote>true</allowRemote>
+    <allowRemote>false</allowRemote>
   </CatalogServices>
 
-  <NetcdfFileCache>
-    <minFiles>42</minFiles>
-    <maxFiles>100</maxFiles>
-    <scour>13 min</scour>
-  </NetcdfFileCache>
+  <!--
+  Configuring the CDM (netcdf-java library)
+  see https://www.unidata.ucar.edu/software/netcdf-java/reference/RuntimeLoading.html
 
-  <GribCollection>
-    <minFiles>42</minFiles>
-    <maxFiles>100</maxFiles>
-    <scour>17 min</scour>
-  </GribCollection>
-
-  <TimePartition>
-    <minFiles>42</minFiles>
-    <maxFiles>100</maxFiles>
-    <scour>19 min</scour>
-  </TimePartition>
-
-  <HTTPFileCache>
-    <minFiles>0</minFiles>
-    <maxFiles>10</maxFiles>
-    <scour>31 min</scour>
-  </HTTPFileCache>
-
-  <NetcdfSubsetService>
-    <allow>true</allow>
-    <scour>15 min</scour>
-    <maxAge>30 min</maxAge>
-    <!--maxFileDownloadSize>52428800</maxFileDownloadSize-->
-  </NetcdfSubsetService>
-
-   <FeatureCollection>
-     <RollingFileAppender>
-       <MaxFileSize>10 MB</MaxFileSize>
-       <MaxBackups>50</MaxBackups>
-     </RollingFileAppender>
-  </FeatureCollection>
-
-  <WCS>
-    <allow>true</allow>
-    <allowRemote>false</allowRemote>
-    <scour>15 min</scour>
-    <maxAge>30 min</maxAge>
-  </WCS>
-
-  <WMS>
-    <allow>true</allow>
-    <allowRemote>false</allowRemote>
-    <allowFeatureInfo>true</allowFeatureInfo>
-    <maxImageWidth>5000</maxImageWidth>
-    <maxImageHeight>5000</maxImageHeight>
-  </WMS>
-
-  <NCISO>
-    <ncmlAllow>true</ncmlAllow>
-    <uddcAllow>true</uddcAllow>
-    <isoAllow>true</isoAllow>
-  </NCISO>
-
-  <RadarServer>
-    <allow>true</allow>
-  </RadarServer>
-
-  <CatalogGen>
-    <allow>false</allow>
-  </CatalogGen>
-
-  <!-- Enable DLwriter service but disable on remote catalogs. -->
-  <DLwriter>
-    <allow>true</allow>
-    <allowRemote>false</allowRemote>
-  </DLwriter>
-
-  <!-- Enable DqcService.
-   -->
-  <DqcService>
-    <allow>true</allow>
-  </DqcService>
-
-  <!-- added 11/13/2012 jcaron -->
-  <!-- updated path 2013-08-20 sarms -->
-  <!-- updated for lead 2014-03-20 jcaron -->
-  <!--Netcdf4Clibrary>
-    <libraryPath>/opt/netcdf-tds/lib</libraryPath>
-    <libraryName>netcdf</libraryName>
-  </Netcdf4Clibrary -->
-
-  <!-- nj22Config
+  <nj22Config>
     <ioServiceProvider class="edu.univ.ny.stuff.FooFiles"/>
     <coordSysBuilder convention="foo" class="test.Foo"/>
     <coordTransBuilder name="atmos_ln_sigma_coordinates" type="vertical" class="my.stuff.atmosSigmaLog"/>
     <typedDatasetFactory datatype="Point" class="gov.noaa.obscure.file.Flabulate"/>
-  </nj22Config -->
+  </nj22Config>
+  -->
 
+  <!--
+  CDM uses the DiskCache directory to store temporary files, like uncompressed files.
+  -->
   <DiskCache>
     <alwaysUse>false</alwaysUse>
     <scour>1 hour</scour>
     <maxSize>1 Gb</maxSize>
   </DiskCache>
 
+  <!--
+  Caching open NetcdfFile objects.
+  default is to allow 50 - 100 open files, cleanup every 11 minutes
+  -->
+  <NetcdfFileCache>
+    <minFiles>42</minFiles>
+    <maxFiles>100</maxFiles>
+    <scour>13 min</scour>
+  </NetcdfFileCache>
+
+  <!--
+  The <HTTPFileCache> element:
+  allow 10 - 20 open datasets, cleanup every 17 minutes
+  used by HTTP Range requests.
+  -->
+  <HTTPFileCache>
+    <minFiles>0</minFiles>
+    <maxFiles>10</maxFiles>
+    <scour>31 min</scour>
+  </HTTPFileCache>
+
+  <!--
+  Writing GRIB indexes.
+  -->
+  <GribIndex>
+    <neverUse>true</neverUse>
+  </GribIndex>
+
+  <!--
+  Persist joinNew aggregations to named directory. scour every 24 hours, delete stuff older than 90 days
   <AggregationCache>
     <scour>24 hours</scour>
-    <maxAge>30 days</maxAge>
+    <maxAge>90 days</maxAge>
+    <cachePathPolicy>NestedDirectory</cachePathPolicy>
   </AggregationCache>
+  -->
 
-   <GribIndex>
-     <neverUse>true</neverUse>
-   </GribIndex>
+  <!--
+  How to choose the template dataset for an aggregation. latest, random, or penultimate
+  <Aggregation>
+    <typicalDataset>penultimate</typicalDataset>
+  </Aggregation>
+  -->
+
+  <RadarServer>
+    <allow>true</allow>
+  </RadarServer>
+
+  <NetcdfSubsetService>
+    <allow>false</allow>
+  </NetcdfSubsetService>
+
+  <!--
+  <JupyterNotebookService>
+    <allow>true</allow>
+    <maxAge>60</maxAge>
+    <maxFiles>100</maxFiles>
+  </JupyterNotebookService>
+  -->
+
+  <!--
+  <Opendap>
+    <ascLimit>50</ascLimit>
+    <binLimit>500</binLimit>
+    <serverVersion>opendap/3.7</serverVersion>
+  </Opendap>
+    -->
+  
+  <WCS>
+    <allow>false</allow>
+    <allowRemote>false</allowRemote>
+  </WCS>
+
+  <WMS>
+    <allow>false</allow>
+    <allowRemote>false</allowRemote>
+  </WMS>
+
+  <NCISO>
+    <ncmlAllow>false</ncmlAllow>
+    <uddcAllow>false</uddcAllow>
+    <isoAllow>false</isoAllow>
+  </NCISO>
+
+  <!-- CatalogGen service is off by default.
+  <CatalogGen>
+    <allow>false</allow>
+  </CatalogGen>
+   -->
+
+  <!-- DLwriter service is off by default.
+       As is support for operating on remote catalogs.
+  <DLwriter>
+    <allow>false</allow>
+    <allowRemote>false</allowRemote>
+  </DLwriter>
+   -->
+
+  <!-- DqcService is off by default.
+  <DqcService>
+    <allow>false</allow>
+  </DqcService>
+   -->
+
+  <!--
+   Link to a Viewer application on the HTML page:
+   <Viewer>my.package.MyViewer</Viewer>
+   -->
+
+   <!--
+   Add a DataSource - essentially an IOSP with access to Servlet request parameters
+   <datasetSource>my.package.DatsetSourceImpl</datasetSource>
+   -->
+
+  <!--
+    Configure how the NetCDF-4 C library is discovered and used.
+    libraryPath: The directory in which the native library is installed.
+    libraryName: The name of the native library. This will be used to locate the proper .DLL, .SO, or .DYLIB file
+      within the libraryPath directory.
+    useForReading: By default, the native library is only used for writing NetCDF-4 files; a pure-Java layer is
+      responsible for reading them. However, if this property is set to true, then it will be used for reading
+      NetCDF-4 (and HDF5) files as well.
+  -->
+  <!--
+  <Netcdf4Clibrary>
+    <libraryPath>/usr/local/lib</libraryPath>
+    <libraryName>netcdf</libraryName>
+    <useForReading>false</useForReading>
+  </Netcdf4Clibrary>
+  -->
 </threddsConfig>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>TDS custom template fragments</title>
+  </head>
+
+  <body>
+
+    <div th:fragment="banner" class="banner">
+      <h2>
+        Welcome to the NSF Unidata AWS Level 2 RADAR Test TDS!
+      </h2>
+    </div>
+
+    <div th:fragment="footer">
+      <div class="footer-buffer"></div>
+      <div class="footer">
+        <h4>
+          <a class="static" th:href="${installUrl}" th:text="${installName}"></a> at <a class="static" th:href="${hostInstUrl}" th:text="${hostInst}"></a> see <a class="static" th:href="${contextPath} + '/info/serverInfo.html'"> Info </a></h4>
+
+        <h4><th:block th:text="${webappName} + ' [Version ' + ${webappVersion} + ' - ' + ${webappBuildTimestamp} + ']'"/></h4>
+
+        <h4>
+          <a class="static" href="https://docs.unidata.ucar.edu/tds/current/userguide/index.html">TDS Documentation</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;
+          <a class="static" href="https://www.unidata.ucar.edu/data/web_scraping.html">Web Scraping Policy</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;
+          <a class="static" href="https://ucar.edu/privacy-notice">Privacy Policy</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;
+          <a class="static" href="https://ucar.edu/terms-of-use">Terms Of Use</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;
+          <a class="static" href="https://ucar.edu/accessibility">Accessibility</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;
+          <a class="static" href="https://www.unidata.ucar.edu/data/guidelines.html">Guidelines for Data Use</a>
+        </h4>
+      </div>
+    </div>
+
+  </body>
+
+</html>
