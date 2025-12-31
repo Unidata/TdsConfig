@@ -10,6 +10,24 @@
 # - Global Forecast System (GFS) -
 # --------------------------------
 #
+# AI-GFS Global 0.25 degree forecast only
+#
+CONDUIT ^data/nccf/com/aigfs/.*/aigfs\.(........)/(..)/model/atmos/grib2/aigfs
+	FILE
+	${DATA_DIR}/native/grid/NCEP/AIGFS/forecast/AIGFS_\1_\200.grib2
+#
+# AI-GEFS Global 0.25 degree forecast only
+#
+CONDUIT ^data/nccf/com/aigefs/.*/aigefs\.(........)/(..)/ensstat/products/atmos/grib2/aigefs
+	FILE
+	${DATA_DIR}/native/grid/NCEP/AIGEFS/ensemble_forecast/AIGEFS_\1_\200.grib2
+#
+# AI-HGEFS Global 0.25 degree forecast only
+#
+CONDUIT ^data/nccf/com/hgefs/.*/hgefs\.(........)/(..)/ensstat/products/atmos/grib2/hgefs
+	FILE
+	${DATA_DIR}/native/grid/NCEP/HGEFS/hybrid_ensemble_forecast/HGEFS_\1_\200.grib2#
+#
 # GFS Global 0.25 degree analysis only
 #
 CONDUIT	^data/nccf/com/gfs/.*/gfs\.(........)/(..).*pgrb2\.0p25\.a
