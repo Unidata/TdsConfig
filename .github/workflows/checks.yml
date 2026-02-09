@@ -36,24 +36,3 @@ jobs:
           name: configs
           path: '*/config.zip'
           retention-days: 5
-
-  # Download artifact and upload to Unidata artifacts server
-  upload:
-    if: ${{ github.event_name != 'pull_request' }}
-    name: Upload to artifacts
-    needs: build
-    environment:
-      name: Unidata Artifacts
-      url: https://artifacts.unidata.ucar.edu/#browse/browse:downloads-tds-config
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download configs
-        uses: actions/download-artifact@v4
-        with:
-          name: configs
-
-      - name: Upload config files
-        run: >
-          find . -name config.zip -exec
-          curl -u ${{ secrets.NEXUS_USER }}:${{ secrets.NEXUS_PW }}
-          --upload-file "{}" https://artifacts.unidata.ucar.edu/repository/downloads-tds-config/"{}" \;
