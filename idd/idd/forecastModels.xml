@@ -48,11 +48,79 @@
                        xlink:title="NCEP Model Notes"/>
       </metadata>
 
+      <dataset name="Artificial Intelligence GFS: - Global Coverage">
+        <metadata inherited="true">
+          <documentation type="summary">NCEP AIGFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
+            Model runs at 0, 6, 12, and 18Z.
+            Horizontal= 721 by 1440 points, resolution 0.25 degree, Lat/Lon projection.
+            Vertical= 1000 to 50 hPa pressure levels (13 levels); surface, height above ground, pressure layers.
+          </documentation>
+          <documentation xlink:href="https://www.noaa.gov/news-release/noaa-deploys-new-generation-of-ai-driven-global-weather-models"
+            xlink:title="AIGFS Announcement"/>
+          <documentation xlink:href="https://www.epic.noaa.gov/ai/eagle-overview/"
+            xlink:title="NOAA's Project EAGLE"/>
+        </metadata>
+
+        <featureCollection name="AIGFS Quarter Degree Forecast" featureType="GRIB2" harvest="true" path="grib/NCEP/AIGFS/Global_0p25deg">
+          <metadata inherited="true">
+            <documentation type="summary">Forecasts grids starting from the 0 hour forecast
+              every 6 hours out to 16 days.
+            </documentation>
+          </metadata>
+
+          <collection name="AIGFS-Global_0p25deg"
+            spec="${DATA_DIR}/native/grid/NCEP/AIGFS/forecast/.*grib2$"
+            timePartition="file"
+            dateFormatMark="#AIGFS_#yyyyMMdd_HHmm"
+            olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 16/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
+        </featureCollection>
+
+        <featureCollection name="AIGEFS Quarter Degree Ensemble Forecast - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/AIGEFS/Global_0p25deg">
+          <metadata inherited="true">
+            <documentation type="summary">AIGFS ensemble forecast statistics grids starting from the 0 hour forecast
+              every 6 hours out to 16 days.
+            </documentation>
+          </metadata>
+
+          <collection name="AIGEFS-Global_0p25deg"
+            spec="${DATA_DIR}/native/grid/NCEP/AIGEFS/ensemble_forecast/.*grib2$"
+            timePartition="file"
+            dateFormatMark="#AIGEFS_#yyyyMMdd_HHmm"
+            olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 16/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
+        </featureCollection>
+
+        <featureCollection name="HGEFS Quarter Degree Ensemble Forecast - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/HGFS/Global_0p25deg">
+          <metadata inherited="true">
+            <documentation type="summary">HFEFS is a hybrid "grand ensemble" that combines the AI-based AIGEFS with the GEFS.
+              Ensemble forecast statistics grids starting from the 0 hour forecast every 6 hours out to 16 days.
+            </documentation>
+          </metadata>
+
+          <collection name="HGEFS-Global_0p25deg"
+            spec="${DATA_DIR}/native/grid/NCEP/HGEFS/hybrid_ensemble_forecast/.*grib2$"
+            timePartition="file"
+            dateFormatMark="#HGEFS_#yyyyMMdd_HHmm"
+            olderThan="5 min"/>
+          <tdm rewrite="test" rescan="0 16/15 * * * ? *"/>
+          <gribConfig>
+            <filesSort increasing="false" />
+          </gribConfig>
+        </featureCollection>
+      </dataset>
+
       <dataset name="GFS Quarter Degree - Global Coverage">
         <metadata inherited="true">
           <documentation type="summary">NCEP GFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
             Model runs at 0, 6, 12, and 18Z.
-            Horizontal= 721 by 14400 points, resolution 0.25 degree, Lat/Lon projection.
+            Horizontal= 721 by 1440 points, resolution 0.25 degree, Lat/Lon projection.
             Vertical= 1000 to 100 hPa mandatory pressure levels (26 levels); surface, height above ground, pressure layers.
           </documentation>
         </metadata>
