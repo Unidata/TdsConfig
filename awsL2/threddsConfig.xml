@@ -114,7 +114,7 @@
   -->
   <DiskCache>
     <alwaysUse>false</alwaysUse>
-    <scour>1 hour</scour>
+    <scour>5 minutes</scour>
     <maxSize>1 Gb</maxSize>
   </DiskCache>
 
@@ -125,7 +125,7 @@
   <NetcdfFileCache>
     <minFiles>42</minFiles>
     <maxFiles>100</maxFiles>
-    <scour>13 min</scour>
+    <scour>1 min</scour>
   </NetcdfFileCache>
 
   <!--
@@ -136,7 +136,7 @@
   <HTTPFileCache>
     <minFiles>0</minFiles>
     <maxFiles>10</maxFiles>
-    <scour>31 min</scour>
+    <scour>1 min</scour>
   </HTTPFileCache>
 
   <!--
