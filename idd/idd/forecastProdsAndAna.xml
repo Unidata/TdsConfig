@@ -49,38 +49,17 @@
         <documentation type="summary">National Digital Forecast Database (NDFD): US National Weather Service gridded
           forecasts of sensible weather elements.
         </documentation>
-        <documentation xlink:href="http://www.weather.gov/ndfd/" xlink:title="NWS/NDFD Website"/>
-        <documentation xlink:href="http://www.nws.noaa.gov/ndfd/definitions.htm"
-                       xlink:title="NDFD parameter descriptions"/>
+        <documentation xlink:href="https://vlab.noaa.gov/web/mdl/ndfd" xlink:title="NWS/MDL/NDFD Website"/>
+        <documentation xlink:href="https://vlab.noaa.gov/web/mdl/ndfd-information-links"
+                       xlink:title="NDFD Information Links"/>
       </metadata>
-
-      <featureCollection name="National Weather Service CONUS Forecast Grids (NOAAPORT)"
-                         featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/NWS/CONUS/NOAAPORT">
-        <metadata inherited="true">
-          <documentation type="summary">
-            CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids from
-            00Z and 12Z.
-          </documentation>
-        </metadata>
-
-        <collection spec="${DATA_DIR}/native/grid/NCEP/NDFD/NWS_noaaport/.*grib2$"
-                    dateFormatMark="#5km_#yyyyMMdd_HHmm"
-                    timePartition="file"
-                    name="NDFD_NWS_CONUS_NOAAPORT"
-                    olderThan="5 min"/>
-        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
-        <gribConfig>
-          <gdsHash from='-1506003048' to='-1505079527'/>
-          <filesSort increasing="false" />
-        </gribConfig>
-      </featureCollection>
 
       <featureCollection name="National Weather Service CONUS Forecast Grids (CONDUIT)"
                          featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/NWS/CONUS/CONDUIT">
         <metadata inherited="true">
           <documentation type="summary">
             CONUS, 2145 by 1377 points, resolution 2.5 km. Forecast grids,
-            updated hourly. Forecast intervals and duration vary with the
+            updated every 30 minutes. Forecast intervals and duration vary with the
             time of forecast and the particular parameter.
           </documentation>
         </metadata>
@@ -96,6 +75,29 @@
           <filesSort increasing="false" />
           <!-- Convert from minutes to hours so that all grib files in collection have the same units -->
           <timeUnitConvert from="0" to="1"/>
+        </gribConfig>
+      </featureCollection>
+
+      <featureCollection name="Weather Prediction Center CONUS Medium Range Forecast Grids (NOAAPORT)"
+        featureType="GRIB2" harvest="true" path="grib/NCEP/NDFD/CPC/MEDR/CONUS">
+        <metadata inherited="true">
+          <documentation type="summary">
+            CONUS, Medium Range Forecasts from the Weather Prediction Center.
+            2145 by 1377 points (1597 by 2345 for wind fields), resolution 2.5 km.
+            Forecast grids from 00Z and 12Z for days 3-7.
+          </documentation>
+        </metadata>
+
+        <collection spec="${DATA_DIR}/native/grid/NCEP/NDFD/WPC/MEDR/.*grib2$"
+          dateFormatMark="#5km_#yyyyMMdd_HHmm"
+          timePartition="file"
+          name="NDFD_WPC_MEDR_CONUS_NOAAPORT"
+          olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 0/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+          <gdsName hash='-737623088' groupName='Wind Fields'/>
+          <gdsName hash='233348362' groupName='Non-wind Fields'/>
         </gribConfig>
       </featureCollection>
 
