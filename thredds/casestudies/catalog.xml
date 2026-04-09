@@ -163,7 +163,7 @@
                         timePartition="file"
                         dateFormatMark="#GFS_Global_0p5deg_ana_#yyyyMMdd_HHmm"
                         olderThan="5 min"/>
-            <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+            <tdm rewrite="nocheck" />
           </featureCollection>
 
           <featureCollection name="GFS Half Degree Forecast" featureType="GRIB2" harvest="true"
@@ -179,7 +179,7 @@
                         timePartition="file"
                         dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
                         olderThan="5 min"/>
-            <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+            <tdm rewrite="nocheck" />
           </featureCollection>
         </dataset>
         <dataset name="Surface Observations">
@@ -279,7 +279,7 @@
                       timePartition="file"
                       dateFormatMark="#GFS_Global_0p5deg_ana_#yyyyMMdd_HHmm"
                       olderThan="5 min"/>
-          <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+          <tdm rewrite="nocheck" />
         </featureCollection>
 
         <featureCollection name="GFS Half Degree Forecast" featureType="GRIB2" harvest="true"
@@ -295,7 +295,7 @@
                       timePartition="file"
                       dateFormatMark="#GFS_Global_0p5deg_#yyyyMMdd_HHmm"
                       olderThan="5 min"/>
-          <tdm rewrite="test" rescan="0 5,20,35,50 * * * ? *" />
+          <tdm rewrite="nocheck" />
         </featureCollection>
       </dataset>
 
@@ -373,7 +373,7 @@
           name="NAM_Moisture_Transport"
           dateFormatMark="#namanl_218#yyyyMMdd_HHmm_sss"
           olderThan="5 min" />
-        <tdm rewrite="nocheck"/>
+        <tdm rewrite="nocheck" />
       </featureCollection>
     </dataset>
 
