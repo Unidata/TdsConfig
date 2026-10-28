@@ -1,7 +1,7 @@
 TdsConfig
 =========
 
-TDS configuration for the TDS at thredds.ucar.edu.
+Shared THREDDS Data Server configurations.
 
 =========================
 
@@ -26,10 +26,9 @@ Configuration files
    This script runs on Python 2.7 as well as >= 3.2.
    Note `<machine>/build.info` is used for this script.
 
-   The build and upload of config.zip files is automatically performed by GitHub Actions for
-   all changes committed to the repository.
+   The build and upload of config.zip files is manually performed.
 
-- config.zip hosted on the [Unidata artifacts server](https://artifacts.unidata.ucar.edu/#browse/browse:downloads-tds-config)
+- config.zip hosted on the Unidata downloads server (for example, https://downloads.unidata.ucar.edu/tds/tds-config/idd/config.zip).
 
 - to make changes to config files:
   - Edit files, e.g. `thredds/*`

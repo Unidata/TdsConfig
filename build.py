@@ -58,7 +58,7 @@ def write_script(scriptpath, configpath):
     configfile = os.path.split(configpath)[-1]
     configpath = configpath.replace('\\', '/')
     lines.append(('\twget'
-                  ' https://artifacts.unidata.ucar.edu/repository/downloads-tds-config/%s'
+                  ' https://downloads.unidata.ucar.edu/tds/tds-config/%s'
                   ' -O %s')
                   % (configpath, configfile))
     lines.append('\tjar xf %s' % os.path.split(configpath)[-1])
