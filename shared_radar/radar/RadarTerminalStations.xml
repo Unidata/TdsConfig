@@ -102,7 +102,7 @@
     <station name="O'Hare" value="ORD" state="IL" country="US">
       <location3D latitude="41.797" longitude="-87.858" elevation="227" />
     </station>
-    <station name="Palm Beach" value="PBI" state="FL" country="US">
+    <station name="Palm Beach" value="DJT" state="FL" country="US">
       <location3D latitude="26.688" longitude="-80.273" elevation="41" />
     </station>
     <station name="Philadelphia" value="PHL" state="PA" country="US">
