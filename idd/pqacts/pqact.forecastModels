@@ -26,7 +26,7 @@ CONDUIT ^data/nccf/com/aigefs/.*/aigefs\.(........)/(..)/ensstat/products/atmos/
 #
 CONDUIT ^data/nccf/com/hgefs/.*/hgefs\.(........)/(..)/ensstat/products/atmos/grib2/hgefs
 	FILE
-	${DATA_DIR}/native/grid/NCEP/HGEFS/hybrid_ensemble_forecast/HGEFS_\1_\200.grib2#
+	${DATA_DIR}/native/grid/NCEP/HGEFS/hybrid_ensemble_forecast/HGEFS_\1_\200.grib2
 #
 # GFS Global 0.25 degree analysis only
 #
