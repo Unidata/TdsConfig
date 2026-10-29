@@ -422,7 +422,7 @@
       </featureCollection>
     </dataset>
 
-    <dataset name="North American Model (NAM)">
+    <dataset name="North American Model (NAM) (discontinued November 3rd 2026 12Z)">
 
       <metadata inherited="true">
         <documentation type="summary">NCEP Nonhydrostatic Mesoscale Model (NMM) and Gridpoint Statistical Interpolation
@@ -791,7 +791,7 @@
       </featureCollection>
     </dataset>
 
-    <dataset name="Short Range Ensemble Forecasting (SREF)">
+    <dataset name="Short Range Ensemble Forecasting (SREF) (discontinued November 3rd 2026 12Z)">
       <metadata inherited="true">
         <documentation type="summary">NCEP Short Range Ensemble Forecast (SREF)</documentation>
         <documentation xlink:href="http://w1.spc.woc.noaa.gov/exper/sref/" xlink:title="NCEP/SREF Website"/>
