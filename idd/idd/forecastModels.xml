@@ -422,7 +422,7 @@
       </featureCollection>
     </dataset>
 
-    <dataset name="North American Model (NAM)">
+    <dataset name="North American Model (NAM) (discontinued November 3rd 2026 12Z)">
 
       <metadata inherited="true">
         <documentation type="summary">NCEP Nonhydrostatic Mesoscale Model (NMM) and Gridpoint Statistical Interpolation
@@ -791,7 +791,144 @@
       </featureCollection>
     </dataset>
 
-    <dataset name="Short Range Ensemble Forecasting (SREF)">
+    <dataset name="Rapid Refresh Forecast System (RRFS) (available starting with the November 3rd 2026 12Z run)">
+      <metadata inherited="true">
+        <documentation type="summary">Rapid Refresh Forecast System (RRFS): A deterministic weather forecast system.
+          Replaced NAM and HiresW on 03 November 2026 12Z. Model runs are made hourly. The 00, 06, 12, and
+          18 UTC cycles have forecasts out to 84 hours, with other hourly cycles out to 18 hours.
+        </documentation>
+        <documentation xlink:href="https://gsl.noaa.gov/rrfs/"
+          xlink:title="Global Systems Laboratory (GSL)"/>
+        <documentation xlink:href="https://www.nco.ncep.noaa.gov/pmb/products/noaaport/rrfs_headers_noaaport.pdf"
+          xlink:title="National Center for Environmental Prediction (NCEP) NOAAPORT Inventory"/>
+      </metadata>
+
+      <featureCollection name="RRFS North American 3 km (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/RRFS/NA_3km">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Horizontal = 4680 by 2830 points, 3 km grid spacing, polar stereographic projection.
+          </documentation>
+        </metadata>
+
+        <collection name="RRFS-NA_3km"
+          spec="${DATA_DIR}/native/grid/NCEP/RRFS/NA_3km/.*grib2$"
+          dateFormatMark="#RRFS_NA_3km_#yyyyMMdd_HHmm"
+          timePartition="file"
+          olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
+
+      <featureCollection name="RRFS North American 13 km (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/RRFS/NA_13km">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Horizontal = 1080 by 653 points, 13 km grid spacing, polar stereographic projection.
+          </documentation>
+        </metadata>
+
+        <collection name="RRFS-NA_13km"
+          spec="${DATA_DIR}/native/grid/NCEP/RRFS/NA_13km/.*grib2$"
+          dateFormatMark="#RRFS_NA_13km_#yyyyMMdd_HHmm"
+          timePartition="file"
+          olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
+    </dataset>
+
+    <dataset name="RRFS Ensemble Forecast System (REFS) (available starting with the November 3rd 2026 12Z run)">
+      <metadata inherited="true">
+        <documentation type="summary"> RRFS Ensemble Forecast System (REFS): A probabilistic weather forecast system.
+          The REFS combines the forecast output from the current and 6 h old cycles of RRFS deterministic and ensemble
+          systems to generate ensemble products. Replaced SREF and HREF on 03 November 2026 12Z. REFS runs are every
+          six hours at 00, 06, 12, and 18 UTC and have forecasts out to 60 hours.
+        </documentation>
+        <documentation xlink:href="https://gsl.noaa.gov/rrfs/"
+          xlink:title="Global Systems Laboratory (GSL)"/>
+        <documentation xlink:href="https://www.nco.ncep.noaa.gov/pmb/products/noaaport/refs_headers_noaaport.pdf"
+          xlink:title="National Center for Environmental Prediction (NCEP) NOAAPORT Inventory"/>
+      </metadata>
+
+      <featureCollection name="REFS CONUS 3 km - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/CONUS_3km">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Horizontal = 1799 by 1059 points, 3 km grid spacing, Lambert Conformal projection.
+            For the CONUS domain, the HRRR provides two additional members (from current and 6 h old cycles).
+          </documentation>
+        </metadata>
+
+        <collection name="REFS-CONUS_3km"
+          spec="${DATA_DIR}/native/grid/NCEP/REFS/CONUS_3km/.*grib2$"
+          dateFormatMark="#REFS_CONUS_3km_#yyyyMMdd_HHmm"
+          timePartition="file"
+          olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
+
+      <featureCollection name="REFS Alaska 3 km - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/ALASKA_3km">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Horizontal = 1649 by 1105 points, 3 km grid spacing, Polar Sterographic projection.
+            For the Alaska domain, the HRRR provides two additional members (from current and 6 h old cycles).
+          </documentation>
+        </metadata>
+
+        <collection name="REFS-ALASKA_3km"
+          spec="${DATA_DIR}/native/grid/NCEP/REFS/AK_3km/.*grib2$"
+          dateFormatMark="#REFS_Alaska_3km_#yyyyMMdd_HHmm"
+          timePartition="file"
+          olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
+
+      <featureCollection name="REFS Hawaii 2.5 km - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/HAWAII_2p5km">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Horizontal = 321 by 225 points, 2.5 km grid spacing, Mercator projection.
+          </documentation>
+        </metadata>
+
+        <collection name="REFS-HAWAII_2p5km"
+          spec="${DATA_DIR}/native/grid/NCEP/REFS/HI_2p5km/.*grib2$"
+          dateFormatMark="#REFS_Hawaii_2p5km_#yyyyMMdd_HHmm"
+          timePartition="file"
+          olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
+
+      <featureCollection name="REFS Puerto Rico 2.5 km - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/PUERTO_RICO_2p5km">
+        <metadata inherited="true">
+          <documentation type="summary">
+            Horizontal = 544 by 310 points, 2.5 km grid spacing, Mercator projection.
+          </documentation>
+        </metadata>
+
+        <collection name="REFS-PUERTO_RICO_2p5km"
+          spec="$${DATA_DIR}/native/grid/NCEP/REFS/PR_2p5km/.*grib2$"
+          dateFormatMark="#REFS_Puerto_Rico_2p5km_#yyyyMMdd_HHmm"
+          timePartition="file"
+          olderThan="5 min"/>
+        <tdm rewrite="test" rescan="0 7/15 * * * ? *" />
+        <gribConfig>
+          <filesSort increasing="false" />
+        </gribConfig>
+      </featureCollection>
+    </dataset>
+
+    <dataset name="Short Range Ensemble Forecasting (SREF) (discontinued November 3rd 2026 12Z)">
       <metadata inherited="true">
         <documentation type="summary">NCEP Short Range Ensemble Forecast (SREF)</documentation>
         <documentation xlink:href="http://w1.spc.woc.noaa.gov/exper/sref/" xlink:title="NCEP/SREF Website"/>
