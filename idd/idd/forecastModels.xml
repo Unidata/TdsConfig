@@ -853,7 +853,7 @@
           xlink:title="National Center for Environmental Prediction (NCEP) NOAAPORT Inventory"/>
       </metadata>
 
-      <featureCollection name="REFS CONUS 3 km - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/CONUS_3km">
+      <featureCollection name="REFS CONUS 3 km - Statistics (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/CONUS_3km">
         <metadata inherited="true">
           <documentation type="summary">
             Horizontal = 1799 by 1059 points, 3 km grid spacing, Lambert Conformal projection.
@@ -872,7 +872,7 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="REFS Alaska 3 km - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/ALASKA_3km">
+      <featureCollection name="REFS Alaska 3 km - Statistics (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/ALASKA_3km">
         <metadata inherited="true">
           <documentation type="summary">
             Horizontal = 1649 by 1105 points, 3 km grid spacing, Polar Sterographic projection.
@@ -891,7 +891,7 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="REFS Hawaii 2.5 km - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/HAWAII_2p5km">
+      <featureCollection name="REFS Hawaii 2.5 km - Statistics (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/HAWAII_2p5km">
         <metadata inherited="true">
           <documentation type="summary">
             Horizontal = 321 by 225 points, 2.5 km grid spacing, Mercator projection.
@@ -909,7 +909,7 @@
         </gribConfig>
       </featureCollection>
 
-      <featureCollection name="REFS Puerto Rico 2.5 km - Statistics" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/PUERTO_RICO_2p5km">
+      <featureCollection name="REFS Puerto Rico 2.5 km - Statistics (NOAAPORT)" featureType="GRIB2" harvest="true" path="grib/NCEP/REFS/PUERTO_RICO_2p5km">
         <metadata inherited="true">
           <documentation type="summary">
             Horizontal = 544 by 310 points, 2.5 km grid spacing, Mercator projection.
