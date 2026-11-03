@@ -917,7 +917,7 @@
         </metadata>
 
         <collection name="REFS-PUERTO_RICO_2p5km"
-          spec="$${DATA_DIR}/native/grid/NCEP/REFS/PR_2p5km/.*grib2$"
+          spec="${DATA_DIR}/native/grid/NCEP/REFS/PR_2p5km/.*grib2$"
           dateFormatMark="#REFS_Puerto_Rico_2p5km_#yyyyMMdd_HHmm"
           timePartition="file"
           olderThan="5 min"/>
