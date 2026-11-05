@@ -48,7 +48,7 @@
                        xlink:title="NCEP Model Notes"/>
       </metadata>
 
-      <dataset name="Artificial Intelligence GFS: - Global Coverage">
+      <dataset name="Artificial Intelligence GFS - Global Coverage">
         <metadata inherited="true">
           <documentation type="summary">NCEP AIGFS Model : AWIPS 230 (G) Grid. Global Lat/Lon grid.
             Model runs at 0, 6, 12, and 18Z.
@@ -791,7 +791,7 @@
       </featureCollection>
     </dataset>
 
-    <dataset name="Rapid Refresh Forecast System (RRFS) (available starting with the November 3rd 2026 12Z run)">
+    <dataset name="Rapid Refresh Forecast System (RRFS)">
       <metadata inherited="true">
         <documentation type="summary">Rapid Refresh Forecast System (RRFS): A deterministic weather forecast system.
           Replaced NAM and HiresW on 03 November 2026 12Z. Model runs are made hourly. The 00, 06, 12, and
@@ -840,7 +840,7 @@
       </featureCollection>
     </dataset>
 
-    <dataset name="RRFS Ensemble Forecast System (REFS) (available starting with the November 3rd 2026 12Z run)">
+    <dataset name="RRFS Ensemble Forecast System (REFS)">
       <metadata inherited="true">
         <documentation type="summary"> RRFS Ensemble Forecast System (REFS): A probabilistic weather forecast system.
           The REFS combines the forecast output from the current and 6 h old cycles of RRFS deterministic and ensemble
